@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkboxes and Radio Buttons</title>
+</head>
+<body>
+  <h1>Preferences</h1>
+  <form>
+    <fieldset>
+      <legend>Your Interests</legend>
+      <label><input type="checkbox" name="interests" value="html" /> HTML</label>
+      <label><input type="checkbox" name="interests" value="css" /> CSS</label>
+      <label><input type="checkbox" name="interests" value="js" /> JavaScript</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Experience Level</legend>
+      <label><input type="radio" name="level" value="beginner" checked /> Beginner</label>
+      <label><input type="radio" name="level" value="intermediate" /> Intermediate</label>
+      <label><input type="radio" name="level" value="advanced" /> Advanced</label>
+    </fieldset>
+
+    <button type="submit">Save Preferences</button>
+  </form>
+</body>
+</html>
