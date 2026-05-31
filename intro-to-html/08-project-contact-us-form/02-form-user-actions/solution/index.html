@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us Form Actions</title>
+</head>
+<body>
+  <h1>Contact Us</h1>
+
+  <form method="post">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message"></textarea>
+
+    <fieldset>
+      <legend>Interests</legend>
+      <label><input type="checkbox" name="interests" value="product" /> Product Demo</label>
+      <label><input type="checkbox" name="interests" value="support" /> Support</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Preferred Contact Method</legend>
+      <label><input type="radio" name="contact_method" value="email" /> Email</label>
+      <label><input type="radio" name="contact_method" value="phone" /> Phone</label>
+    </fieldset>
+
+    <label>
+      <input type="checkbox" name="consent" required />
+      I agree to be contacted about my request.
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
