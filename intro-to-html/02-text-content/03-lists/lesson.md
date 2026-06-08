@@ -98,6 +98,9 @@ You can nest a list inside an `<li>` to create sub-items:
 
 Build a page that uses all three list types:
 
-1. An `<ol>` with at least **3 steps** for making your favourite recipe (or anything step-by-step).
-2. A `<ul>` with at least **3 items** you'd pack for a trip (or a shopping list).
-3. A `<dl>` with at least **2 term–definition pairs** (e.g., programming languages and their uses).
+1. Add an `<ol>` to the page.
+2. Inside your `<ol>`, add at least **3 `<li>`** steps.
+3. Add a `<ul>` to the page.
+4. Inside your `<ul>`, add at least **3 `<li>`** items.
+5. Add a `<dl>` to the page.
+6. Inside your `<dl>`, add at least **2 `<dt>`** terms (with matching `<dd>` definitions).

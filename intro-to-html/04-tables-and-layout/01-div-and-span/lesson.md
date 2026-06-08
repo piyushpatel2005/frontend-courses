@@ -72,5 +72,6 @@ Common use cases:
 ## Exercise
 
 1. Create a `<div class="container">` that wraps all of the page content.
-2. Inside, add two `<div class="card">` elements, each with an `<h2>` and a `<p>`.
-3. In one paragraph, use a `<span>` to highlight a word (e.g., mark it as `class="highlight"`).
+2. Inside, add at least two `<div class="card">` elements.
+3. In each `.card`, add an `<h2>` and a `<p>`.
+4. In one paragraph, use a `<span>` to highlight a word (e.g., `class="highlight"`).

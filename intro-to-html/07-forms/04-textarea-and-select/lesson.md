@@ -96,5 +96,6 @@ Hold `Ctrl`/`Cmd` to select multiple items.
 ## Exercise
 
 1. Add a `<textarea>` for a bio field (at least 4 rows).
-2. Add a `<select>` dropdown for a favourite language (at least 4 options, one pre-selected).
-3. Add a `<datalist>` for a city field with at least 3 city suggestions.
+2. Add a `<select>` dropdown with at least 4 options.
+3. Pre-select one `<option>` using `selected`.
+4. Add a `<datalist>` for a city field with at least 3 suggestions.

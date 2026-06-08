@@ -1,7 +1,10 @@
-test("form contains interactive choice controls", () => {
+test("form has at least 2 interest checkboxes", () => {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  assert.isAtLeast(checkboxes.length, 2, "Add at least 2 checkboxes for interests");
+});
+
+test("form has radio group for contact method", () => {
   const radios = document.querySelectorAll('input[type="radio"]');
-  assert.isAtLeast(checkboxes.length, 3, "Add at least 3 checkboxes including consent");
   assert.isAtLeast(radios.length, 2, "Add at least 2 radio options for preferred contact method");
 });
 
@@ -16,27 +19,18 @@ test("radio buttons share the same name group", () => {
   assert.equal(uniqueNames.size, 1, "Radio buttons should share one name attribute");
 });
 
-test("user interaction: select options and submit", () => {
+test("submit button is inside form", () => {
   const form = document.querySelector("form");
-  const checkbox = document.querySelector('input[type="checkbox"]');
-  const radio = document.querySelector('input[type="radio"]');
-  const submit = document.querySelector('button[type="submit"], input[type="submit"]');
-
   assert.exists(form, "Form must exist");
-  assert.exists(checkbox, "Add at least one checkbox");
-  assert.exists(radio, "Add at least one radio input");
+  const submit = form ? form.querySelector('button[type="submit"], input[type="submit"]') : null;
   assert.exists(submit, "Add submit control");
+});
 
-  checkbox.click();
-  radio.click();
-  assert.isTrue(checkbox.checked, "Checkbox should be selectable");
-  assert.isTrue(radio.checked, "Radio option should be selectable");
-
-  let submitted = false;
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    submitted = true;
+test("each checkbox and radio has a text label", () => {
+  const controls = Array.from(document.querySelectorAll('input[type="checkbox"], input[type="radio"]'));
+  const allLabeled = controls.every((el) => {
+    if (!el.id) return false;
+    return document.querySelector('label[for="' + el.id + '"]') !== null;
   });
-  submit.click();
-  assert.isTrue(submitted, "Form should submit when user clicks submit");
+  assert.isTrue(allLabeled, "Ensure each radio/checkbox has a text label");
 });

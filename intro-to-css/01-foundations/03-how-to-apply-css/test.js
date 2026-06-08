@@ -11,3 +11,8 @@ test("internal style rule exists", () => {
 test("external stylesheet linked", () => {
   assert.exists(document.querySelector('link[rel="stylesheet"][href="style.css"]'), "Link style.css from head");
 });
+
+test("body background-color is set in style.css", () => {
+  const bg = getComputedStyle(document.body).backgroundColor;
+  assert.equal(bg, "rgb(238, 246, 255)", "Set body background-color to #eef6ff in style.css");
+});

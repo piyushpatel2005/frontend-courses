@@ -90,6 +90,8 @@ Common sandbox tokens:
 
 ## Exercise
 
-1. Embed a public webpage in an `<iframe>` — use `https://example.com` if you're unsure.
-2. Set meaningful `width`, `height`, and `title` attributes.
-3. Add a `sandbox` attribute that allows scripts.
+1. Add an `<iframe>` that embeds a public webpage (for example `https://example.com`).
+2. Set the `src` attribute on the iframe.
+3. Add a meaningful `title` attribute for accessibility.
+4. Set both `width` and `height` on the iframe.
+5. Add a `sandbox` attribute that allows scripts.

@@ -72,6 +72,8 @@ The benefit of `<figure>` over a plain `<div>` is semantic: it tells browsers, s
 
 ## Exercise
 
-1. Create an FAQ section with **at least 2 `<details>`** elements, each with a `<summary>` question and a `<p>` answer.
-2. Add a `<figure>` with an `<img>` (use a public image URL) and a `<figcaption>`.
-3. Make one `<details>` expanded by default with the `open` attribute.
+1. Add at least 2 `<details>` elements for an FAQ.
+2. Ensure each `<details>` has a `<summary>`.
+3. Make one `<details>` expanded by default using `open`.
+4. Add a `<figure>` with an `<img>`.
+5. Add a `<figcaption>` inside the figure.

@@ -95,6 +95,7 @@ Use `scope="col"` or `scope="row"` on `<th>` for accessibility.
 
 Build a table showing a weekly class schedule with at least:
 
-1. A `<thead>` row with `<th>` headers for each day (e.g., Monday–Friday).
-2. A `<tbody>` with at least **2 rows** of schedule data (use `<td>` cells).
-3. At least one cell that uses `colspan` to span multiple columns.
+1. Add one `<table>` element.
+2. Add a `<thead>` row with `<th>` headers for each day (e.g., Monday–Friday).
+3. Add a `<tbody>` with at least **2 rows** of schedule data (use `<td>` cells).
+4. Add at least one cell that uses `colspan` to span multiple columns.

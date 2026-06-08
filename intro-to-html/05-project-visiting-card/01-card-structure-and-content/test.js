@@ -18,11 +18,15 @@ test("profile image exists with alt text", () => {
   assert.notEqual((img.getAttribute("alt") || "").trim(), "", "Image alt text cannot be empty");
 });
 
-test("contact block and inline spans exist", () => {
+test("contact block has list items", () => {
   const block = document.querySelector("div.card div.contact, div.card div");
   const items = document.querySelectorAll("div.card ul li");
-  const spanItems = Array.from(items).filter((li) => li.querySelectorAll("span").length >= 2);
   assert.exists(block, "Add a nested <div> block for contact details");
   assert.isAtLeast(items.length, 2, "Add at least two contact list items");
+});
+
+test("contact list uses inline spans", () => {
+  const items = document.querySelectorAll("div.card ul li");
+  const spanItems = Array.from(items).filter((li) => li.querySelectorAll("span").length >= 2);
   assert.isAtLeast(spanItems.length, 2, "In at least two list items, use two <span> tags for label and value");
 });

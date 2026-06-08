@@ -1,6 +1,10 @@
-test("mobile-first grid setup exists", () => {
+test("layout uses display grid", () => {
   const css = document.querySelector("style").textContent;
   assert.match(css, /\.layout\s*\{[^}]*display\s*:\s*grid\s*;/i, "Set .layout display to grid");
+});
+
+test("layout has single column by default", () => {
+  const css = document.querySelector("style").textContent;
   assert.match(css, /\.layout\s*\{[^}]*grid-template-columns\s*:\s*1fr\s*;/i, "Set default columns to 1fr");
 });
 

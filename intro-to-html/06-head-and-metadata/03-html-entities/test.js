@@ -1,14 +1,19 @@
 test("page displays a less-than comparison", () => {
-  var text = document.body.textContent;
-  assert.exists(text.indexOf("<") !== -1, "Display a < character using the &lt; entity");
+  const text = document.body.textContent;
+  assert.exists(text.includes("<"), "Display a < character using the &lt; entity");
 });
 
 test("page displays a copyright symbol", () => {
-  var text = document.body.textContent;
-  assert.exists(text.indexOf("©") !== -1, "Display the © symbol using &copy;");
+  const text = document.body.textContent;
+  assert.exists(text.includes("©"), "Display the © symbol using &copy;");
 });
 
 test("page displays an ampersand", () => {
-  var text = document.body.textContent;
-  assert.exists(text.indexOf("&") !== -1, "Display a literal & using &amp;");
+  const text = document.body.textContent;
+  assert.exists(text.includes("&"), "Display a literal & using &amp;");
+});
+
+test("page uses a non-breaking space", () => {
+  const html = document.body.innerHTML;
+  assert.exists(html.includes("&nbsp;"), "Use &nbsp; to keep two words together");
 });

@@ -79,6 +79,7 @@ Wrap `<img>` in an `<a>` tag to make it a clickable link:
 
 ## Exercise
 
-1. Add an `<img>` using a public image URL (e.g. a Wikipedia image). Give it a meaningful `alt` attribute.
-2. Add a second `<img>` with a `width` and `height` attribute set.
-3. Wrap one of your images in an `<a>` tag so clicking it opens a link.
+1. Add at least **two** `<img>` elements using public image URLs.
+2. Ensure **every image** has a meaningful `alt` attribute.
+3. Add `width` and `height` attributes to at least one `<img>`.
+4. Wrap one image in an `<a>` tag so clicking it opens a link.

@@ -74,7 +74,7 @@ This is how "Back to top" links and table-of-contents navigation work.
 
 In the starter `index.html` you have two empty sections. Your tasks:
 
-1. Add a `<nav>` containing:
-   - An external link to `https://www.wikipedia.org` that opens in a **new tab**.
-   - An anchor link that jumps to the `#about` section on the same page.
-2. Add a `<section id="about">` below the nav with an `<h2>` heading and a `<p>`.
+1. Add an external link (`<a href="https://www.wikipedia.org">`) in a `<nav>`.
+2. Make that external link open in a new tab using `target="_blank"`.
+3. Add an anchor link `<a href="#about">` in the nav.
+4. Add a `<section id="about">` below the nav with an `<h2>` and a `<p>`.

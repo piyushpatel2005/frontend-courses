@@ -89,8 +89,10 @@ Semantic HTML uses tags that describe their **meaning** — not just their appea
 
 Build a semantic blog post page:
 
-1. Wrap the whole page in `<header>`, `<main>`, and `<footer>`.
-2. Inside `<main>`, add an `<article>` with a heading and at least two paragraphs.
-3. Inside the `<article>`, include a `<time>` element with a `datetime` attribute.
-4. Add a `<nav>` inside the `<header>` with at least two links.
-5. Add an `<aside>` next to the article with some related links.
+1. Add a `<header>` element.
+2. Inside the header, add a `<nav>` with at least two links.
+3. Add a `<main>` element.
+4. Inside main, add an `<article>` with a heading and at least two paragraphs.
+5. Inside the article, include a `<time>` element with a `datetime` attribute.
+6. Add an `<aside>` next to the article with related links.
+7. Add a `<footer>` element.

@@ -16,7 +16,8 @@ Improve the contact form with realistic interaction fields.
 ## Requirements
 
 1. Add at least 2 checkboxes for user interests.
-2. Add a radio button group for preferred contact method.
-3. Add a consent checkbox (`required`).
-4. Keep the submit button inside the form.
-5. Ensure each radio/checkbox has a text label.
+2. Add at least 2 radio buttons for preferred contact method.
+3. Ensure radio buttons use the same `name` attribute so they behave as one group.
+4. Add a consent checkbox (`required`).
+5. Keep the submit button inside the form.
+6. Ensure each radio/checkbox has a text label.

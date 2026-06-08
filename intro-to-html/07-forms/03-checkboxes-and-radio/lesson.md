@@ -80,6 +80,8 @@ Wrap related inputs in a `<fieldset>` with a `<legend>` for screen readers:
 
 ## Exercise
 
-1. Add a `<fieldset>` with a `<legend>` "Your Interests" containing **at least 3 checkboxes**.
-2. Add another `<fieldset>` "Experience Level" with **3 radio buttons** (Beginner, Intermediate, Advanced). Pre-select "Beginner".
-3. Add a submit button.
+1. Add at least **3 checkboxes**.
+2. Add at least **3 radio buttons**.
+3. Ensure all radio buttons share the same `name` attribute.
+4. Pre-select one radio button using `checked`.
+5. Group controls with `<fieldset>` and `<legend>`.

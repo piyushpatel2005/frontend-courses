@@ -11,12 +11,20 @@ test("required name and email fields exist", () => {
   assert.exists(emailInput, "Add required email input");
 });
 
-test("message textarea and topic select are present", () => {
+test("message textarea exists", () => {
   const message = document.querySelector("textarea");
-  const topic = document.querySelector("select");
   assert.exists(message, "Add a textarea for message");
+});
+
+test("topic select has at least 3 options", () => {
+  const topic = document.querySelector("select");
   assert.exists(topic, "Add a select field for topic");
   assert.isAtLeast(topic.querySelectorAll("option").length, 3, "Topic select should have at least 3 options");
+});
+
+test("form has a submit control", () => {
+  const submit = document.querySelector('button[type="submit"], input[type="submit"]');
+  assert.exists(submit, "Add a submit button");
 });
 
 test("all form controls have linked labels", () => {
