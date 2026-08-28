@@ -78,6 +78,30 @@ Linked labels make inputs clickable and are essential for screen reader accessib
 | `autocomplete` | Controls browser autofill (`on` / `off`) |
 | `minlength` / `maxlength` | Character limits |
 
+## Global attributes: `id` and `class`
+
+You may have noticed `id` on the `<input>` elements above. `id` and `class` are **global attributes** — they can be added to any HTML element.
+
+**`id`** gives an element a unique identifier on the page. No two elements should share the same `id`. Forms use `id` to link `<label>` elements to their `<input>` via the `for` attribute:
+
+```html
+<label for="email">Email</label>
+<input type="email" id="email" name="email" />
+```
+
+**`class`** assigns one or more reusable labels to an element. Unlike `id`, many elements can share the same class. Classes are mainly used by CSS and JavaScript to target groups of elements:
+
+```html
+<p class="hint">Your password must be at least 8 characters.</p>
+<p class="hint">Use a mix of letters and numbers.</p>
+```
+
+```html
+<h1 id="page-title" class="hero-heading">Welcome</h1>
+```
+
+> An element can have both an `id` and a `class`. Use `id` when you need to identify one specific element; use `class` when you want to style or select a group.
+
 ## Exercise
 
 Build a contact form with:

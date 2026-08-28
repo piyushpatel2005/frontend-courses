@@ -8,43 +8,42 @@ lesson_type: informational
 
 # What is HTML?
 
-The World Wide Web is full of information written using different languages. One of the most popular languages used to display information in a browser is **HTML** — HyperText Markup Language.
+The world wide web is full of information written in different languages. Those information are written using different languages. One of the most popular language used to write information on the web is HTML. 
 
-HTML files are plain text files written with a specific syntax that tells browsers how to structure and display content. If you want to create a web page yourself, all you need is a text editor and a web browser.
+> HTML stands for HyperText Markup Language. 
 
-> HTML is **not** a programming language. It is a **markup language** — it structures content on the web, but it does not perform calculations or logic. Web pages are usually augmented by CSS (for styling) and JavaScript (for interactivity).
+HTML files are simple text files that are written with specific syntax to represent information to the web browsers. If you want to create one of the web pages yourself, all you need is a text editor and a web browser. 
+
+You can use text editors like VS Code, Atom or Sublime text which offer syntax highlighting for HTML. Please note that Microsoft Word is not really a text editor because it applies formatting to the text which is not suitable for writing code. The most common text editor is Notepad in Windows and TextEdit in Mac. These text editors are simple and do not apply any specific styling to the files you create.
+
+HTML is *not* a programming language. It is a *markup language*. It is used to structure content on the web. HTML is the standard markup language for documents designed to be displayed in a web browser. Web pages can be augmented by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
 
 ## How browsers read HTML
 
-When you open an HTML file in a browser, the browser reads the file from top to bottom, interprets the tags, and renders the content on screen. The browser takes care of layout, default fonts, and spacing — you just provide the structure.
+When you open an HTML file in a browser, the browser reads the file from top to bottom, interprets the HTML tags, and renders the content on screen. The browser takes care of layout, default fonts, and spacing — you just provide the structure. You might wonder, wait what's the tag? Just hold on, you'll get to know the glory details of tags in the next lesson. 
 
 ## Your first HTML file
 
-The simplest possible HTML file is a plain text file with the `.html` extension:
+Let's write some HTML code now. The simplest possible HTML file is a plain text file with the `.html` extension. For this lesson, let's create a file called `index.html`. Open your text editor and write the following:
 
 ```html
 Hello World
 ```
 
-Save this as `index.html` and open it in a browser. You will see the text `Hello World` displayed. The browser happily shows it even though there are no HTML tags — it guesses what to do.
+Save this as `index.html` and open it in a browser. You will see the text `Hello World` displayed. The browser happily shows it even though yout simply wrote plain English.
 
-Now change the file to:
+Now change the file to below:
 
 ```html
 <h1>Hello World</h1>
 ```
 
-Refresh the browser. The text is now displayed as a large, bold heading. The `<h1>` is an HTML **tag** — more on that in the next lesson.
+Refresh the browser window. The text is now displayed as a large, bold heading. Just for teaser, the `<h1>` is called an HTML **tag** — more on that in the next lesson.
 
-## A note on text editors
+![Hello World Heading](hello-world-heading.png "Hello World as a heading")
 
-You can use any plain text editor:
+## Key Takeaways
 
-- **VS Code** (recommended) — free, cross-platform, excellent HTML support.
-- Notepad (Windows) or TextEdit (Mac) — simple but work fine.
+- HTML is simply a markup language used to structure the content on the web. 
+- HTML files are plain text files with the `.html` extension.
 
-Avoid Microsoft Word — it saves files in its own format and adds hidden formatting that browsers cannot read.
-
-## Next up
-
-In the next lesson you will learn about **elements, tags, and attributes** — the three building blocks that make every HTML page work.

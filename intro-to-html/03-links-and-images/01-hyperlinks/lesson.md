@@ -68,6 +68,8 @@ Use an element's `id` as the `href` target to scroll to that part of the page:
 <h2 id="contact">Contact Us</h2>
 ```
 
+The `id` attribute gives an element a **unique identifier** on the page. No two elements should share the same `id`. Prefixing the value with `#` in `href` tells the browser to scroll to that element rather than navigate to a new page.
+
 This is how "Back to top" links and table-of-contents navigation work.
 
 ## Exercise
