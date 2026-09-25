@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: Georgia, serif;
+  background: #e9e5dd;
+  color: #252422;
+}
+.maker-profile {
+  margin: auto;
+  padding: 3rem;
+  background: white;
+  border-top: .6rem solid #7f5539;
+  /* Add max-width. */;
+}
+.role {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #7f5539;
+}
+h1 {
+  margin: .25rem 0 2rem;
+  /* Add font-size. */;
+}
+h2 {
+  border-bottom: 2px solid #ddb892;
+  padding-bottom: .4rem;
+}

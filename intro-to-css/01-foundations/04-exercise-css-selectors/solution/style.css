@@ -1,0 +1,10 @@
+p {
+  line-height: 1.6;
+}
+.note {
+  background-color: #fff4cc;
+  padding: 0.5rem;
+}
+#specimen-title {
+  color: #7a1fa2;
+}

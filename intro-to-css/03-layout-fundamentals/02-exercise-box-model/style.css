@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #e7f0df;
+  color: #24412a;
+  font-family: Arial, sans-serif;
+}
+main {
+  max-width: 420px;
+  margin: 48px auto;
+}
+.packet {
+  width: 100%;
+  background: #fff8df;
+  /* Add padding, border, and margin here. */;
+}

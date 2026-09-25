@@ -1,0 +1,20 @@
+body {
+  margin: 2rem;
+  font-family: system-ui, sans-serif;
+}
+.table-wrap {
+  /* Add overflow-x. */;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* Add min-width. */;
+}
+th, td {
+  padding: .75rem;
+  text-align: left;
+  border-bottom: 1px solid #b8c4ce;
+}
+th {
+  background: #dff3e4;
+}

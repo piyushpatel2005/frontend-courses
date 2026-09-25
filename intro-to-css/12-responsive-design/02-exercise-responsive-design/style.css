@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  background: #edf6f9;
+}
+.weather-bulletin {
+  max-width: 48rem;
+  margin: auto;
+}
+.forecast {
+  display: grid;
+  gap: 1rem;
+  /* Add grid-template-columns. */;
+}
+.forecast article {
+  padding: 1rem;
+  background: white;
+  border-radius: .75rem;
+}
+@media (min-width: 42rem) {
+  .forecast {
+    /* Add grid-template-columns. */;
+  }
+}

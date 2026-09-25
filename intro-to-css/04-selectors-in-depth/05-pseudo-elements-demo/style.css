@@ -1,0 +1,19 @@
+.page-shell {
+  max-width: 42rem;
+  margin: 3rem auto;
+  font-family: Georgia, serif;
+}
+.quote-card {
+  display: grid;
+  gap: 1rem;
+}
+.card {
+  padding: 1.25rem;
+  background: #1f2937;
+  color: #f8fafc;
+}
+.card:first-child::before {
+  content: "“";
+  color: #fbbf24;
+  font-size: 2rem;
+}

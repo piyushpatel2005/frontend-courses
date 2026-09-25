@@ -1,0 +1,17 @@
+.page-shell {
+  max-width: 42rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.notice-row {
+  display: flex;
+  gap: 1rem;
+}
+.card {
+  width: 14rem;
+  max-width: 100%;
+  min-height: 8rem;
+  overflow: auto;
+  padding: 1rem;
+  background: #ecfdf5;
+}

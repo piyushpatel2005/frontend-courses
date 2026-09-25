@@ -1,0 +1,27 @@
+:root {
+  --ink: #183153;
+  --accent: #e76f51;
+  --paper: #fff8e7;
+}
+body {
+  margin: 0;
+  padding: 3rem;
+  font-family: system-ui, sans-serif;
+  background: var(--paper);
+}
+.field-note {
+  padding: 2rem;
+  border-left: .5rem solid var(--accent);
+  color: var(--ink);
+  background: white;
+}
+button {
+  padding: .65rem .9rem;
+  border: 0;
+  color: white;
+  background: var(--ink);
+  transition: background-color 180ms ease;
+}
+button:hover {
+  background: var(--accent);
+}

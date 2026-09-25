@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  background: #f5efe2;
+  color: #2d4739;
+  font-family: Arial, sans-serif;
+}
+.swap-table {
+  max-width: 460px;
+  margin: 48px auto;
+  padding: 24px;
+  background: white;
+}
+.tag {
+  display: inline-block;
+  margin: 0 8px 12px 0;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #d8e9c8;
+}
+.swap-note {
+  display: block;
+  padding-top: 12px;
+  border-top: 1px solid #a9c3a0;
+}
+.hidden-helper {
+  display: none;
+}

@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  background: #201a32;
+  color: #fff7ed;
+  font-family: Arial, sans-serif;
+}
+.order-panel {
+  display: grid;
+  gap: 14px;
+  max-width: 400px;
+  margin: 48px auto;
+  padding: 28px;
+  border-radius: 16px;
+  background: #33284f;
+}
+.reserve-button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #f59e0b;
+  color: #2d1b08;
+  font-weight: 700;
+}
+/* Add pseudo-class rules for hover, first item, and focus. */

@@ -1,0 +1,25 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 2rem;
+  background: #f3f8fb;
+}
+.schedule-layout {
+  max-width: 56rem;
+  margin: auto;
+}
+.schedule-head {
+  justify-content: space-between;
+  align-items: center;
+  /* Add display. */;
+}
+.show-grid {
+  display: grid;
+  gap: 1rem;
+  /* Add grid-template-columns. */;
+}
+.show-grid article {
+  padding: 1rem;
+  background: white;
+  border-radius: .75rem;
+  box-shadow: 0 2px 8px #19324d22;
+}

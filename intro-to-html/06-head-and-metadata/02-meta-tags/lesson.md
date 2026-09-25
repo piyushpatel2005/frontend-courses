@@ -89,3 +89,7 @@ Imagine sharing the route URL in a group chat. The Open Graph title and descript
 | `robots` | Search engine crawl instructions |
 
 The route page now has a clear hidden briefing: browsers can render it, search tools can describe it, and shared links can identify it.
+
+## Learn more
+
+MDN’s official documentation explains the available metadata, including description-related tags used by search engines and social previews. Read [MDN’s reference for MDN metadata in HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta) when you want to go further.

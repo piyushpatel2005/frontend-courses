@@ -1,0 +1,31 @@
+body {
+  margin: 3rem;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+  background: #e0f2fe;
+}
+.kite {
+  display: inline-block;
+  font-size: 5rem;
+  color: #f97316;
+  animation: drift 2s ease-in-out infinite alternate;
+}
+button {
+  padding: .7rem 1rem;
+  border: 0;
+  border-radius: .5rem;
+  background: #075985;
+  color: white;
+  transition: transform 160ms ease;
+}
+button:hover {
+  transform: translateY(-2px);
+}
+@keyframes drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-14px);
+  }
+}

@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  background: #17182d;
+  color: #f7f0d8;
+  font-family: Georgia, serif;
+}
+.book-card {
+  max-width: 430px;
+  margin: 56px auto;
+  padding: 28px;
+  border: 1px solid #6b6f9e;
+  background: #262849;
+}
+.book-card > h2 {
+  font-size: 26px;
+}
+.book-card p {
+  color: #bfd0e5;
+}
+a[target="_blank"] {
+  text-decoration: underline;
+}

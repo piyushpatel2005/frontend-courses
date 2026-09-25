@@ -45,3 +45,7 @@ Use the preview to connect each visible result to the HTML that created it. This
 ## Next
 
 Continue to **Exercise: Build an Relay Intake Form**. You will recreate the same idea from a smaller starter file.
+
+## Learn more
+
+MDN’s official documentation explains how a label is associated with its form control and why that connection matters for usability and accessibility. Read [MDN’s reference for the `<label>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/label) when you want to go further.
