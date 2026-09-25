@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="320" viewBox="0 0 900 320" role="img" aria-labelledby="title desc">
+  <title id="title">String slice positions</title><desc id="desc">The string STARLINE is shown in separate cells numbered zero through seven. Cells one through four are highlighted to show STARLINE slice one comma five returns TARL.</desc>
+  <rect width="900" height="320" fill="#fffdf7"/><text x="450" y="42" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="27">"STARLINE".slice(1, 5)</text>
+  <g font-family="Comic Sans MS, cursive" text-anchor="middle" stroke="#1e1e1e" stroke-width="3" fill="#1e1e1e">
+    <text x="120" y="100" font-size="17" stroke="none">index</text><text x="120" y="180" font-size="17" stroke="none">letter</text>
+    <g><rect x="190" y="125" width="65" height="70" fill="#a5d8ff"/><text x="222" y="112" font-size="18" stroke="none">0</text><text x="222" y="171" font-size="29" stroke="none">S</text></g>
+    <g><rect x="265" y="125" width="65" height="70" fill="#b2f2bb"/><text x="297" y="112" font-size="18" stroke="none">1</text><text x="297" y="171" font-size="29" stroke="none">T</text></g>
+    <g><rect x="340" y="125" width="65" height="70" fill="#b2f2bb"/><text x="372" y="112" font-size="18" stroke="none">2</text><text x="372" y="171" font-size="29" stroke="none">A</text></g>
+    <g><rect x="415" y="125" width="65" height="70" fill="#b2f2bb"/><text x="447" y="112" font-size="18" stroke="none">3</text><text x="447" y="171" font-size="29" stroke="none">R</text></g>
+    <g><rect x="490" y="125" width="65" height="70" fill="#b2f2bb"/><text x="522" y="112" font-size="18" stroke="none">4</text><text x="522" y="171" font-size="29" stroke="none">L</text></g>
+    <g><rect x="565" y="125" width="65" height="70" fill="#a5d8ff"/><text x="597" y="112" font-size="18" stroke="none">5</text><text x="597" y="171" font-size="29" stroke="none">I</text></g>
+    <g><rect x="640" y="125" width="65" height="70" fill="#a5d8ff"/><text x="672" y="112" font-size="18" stroke="none">6</text><text x="672" y="171" font-size="29" stroke="none">N</text></g>
+    <g><rect x="715" y="125" width="65" height="70" fill="#a5d8ff"/><text x="747" y="112" font-size="18" stroke="none">7</text><text x="747" y="171" font-size="29" stroke="none">E</text></g>
+    <path d="M265 225 L555 225" fill="none"/><path d="M265 225 l12 -8 M265 225 l12 8 M555 225 l-12 -8 M555 225 l-12 8" fill="none"/><text x="410" y="270" font-size="19" stroke="none">start at 1; stop before 5 → "TARL"</text>
+  </g>
+</svg>

@@ -1,3 +1,3 @@
 const messageOrder = [];
 
-document.getElementById("output").textContent = "";
+console.log("");

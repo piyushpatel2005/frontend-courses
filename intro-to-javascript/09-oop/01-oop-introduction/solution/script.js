@@ -7,4 +7,4 @@ const car = {
 };
 
 car.accelerate(20);
-document.getElementById("output").textContent = `${car.brand} | ${car.speed}`;
+console.log(`${car.brand} | ${car.speed}`);

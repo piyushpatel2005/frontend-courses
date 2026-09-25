@@ -9,38 +9,33 @@ hints:
   - "Class syntax: `class Name { constructor(...) { this.prop = val; } }`"
   - "Methods go directly in the class body — no commas between them."
   - "Create instances with `new`: `const obj = new MyClass(args);`"
+summary: Practice classes with a focused Starline Awards programming mission.
+seo_title: Classes | Introduction to JavaScript
+seo_description: Learn classes through a focused JavaScript programming mission and console-based practice.
+seo_keywords: javascript, classes, beginner javascript, programming practice
 ---
 
 # Classes
+
+## Mission: Talent Roster
+
+You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you build reusable artist blueprints for the Starline Awards roster. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+
+Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
 
 ES6 classes provide a cleaner syntax for creating objects with shared structure and behavior. Under the hood they use JavaScript's prototype system.
 
 ## Basic class
 
 ```javascript
-class Rectangle {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
-
-    area() {
-        return this.width * this.height;
-    }
-
-    perimeter() {
-        return 2 * (this.width + this.height);
-    }
-
-    toString() {
-        return `Rectangle(${this.width}×${this.height})`;
-    }
+class WorkshopSession {
+  constructor(topic, seats) {
+    this.topic = topic;
+    this.seats = seats;
+  }
 }
 
-const rect = new Rectangle(5, 3);
-console.log(rect.area());       // 15
-console.log(rect.perimeter());  // 16
-console.log(rect.toString());   // "Rectangle(5×3)"
+console.log(new WorkshopSession("Testing", 12).topic);
 ```
 
 ## Getters and setters
@@ -79,9 +74,9 @@ MathUtils.clamp(15, 0, 10); // 10
 ## Your Task
 
 1. Create a class `BankAccount` with:
-   - Constructor `(owner, initialBalance = 0)` — stores `owner` and `balance`.
-   - `deposit(amount)` — adds amount to balance (ignore negative amounts).
-   - `withdraw(amount)` — subtracts amount; if insufficient funds, do nothing and return `false`; otherwise return `true`.
-   - `getBalance()` — returns current balance.
-   - `toString()` — returns `"BankAccount(owner: Alice, balance: $150)"`.
 2. Create an account for `"Alice"` with balance `100`, deposit `50`, withdraw `30`, then display its `toString()` in `#output`.
+3. Verify the program behavior: deposit ignores negative amounts.
+4. Verify the program behavior: withdraw reduces balance and returns true.
+5. Verify the program behavior: withdraw fails on insufficient funds and returns false.
+6. Verify the program behavior: toString returns formatted string.
+7. Verify the program behavior: logs the mission result.

@@ -16,8 +16,6 @@ test("boundary values are handled correctly", () => {
   assert.equal(getGrade(60), "D", "getGrade(60) should return 'D'");
 });
 
-test("#output shows Grade: B", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "Grade: B", '#output should show "Grade: B"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Grade: B", "Log the mission result with console.log()");
 });

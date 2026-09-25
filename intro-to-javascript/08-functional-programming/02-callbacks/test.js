@@ -5,8 +5,6 @@ test("repeatAction calls the callback three times", () => {
   assert.deepEqual(items, ['run', 'run', 'run'], "repeatAction should call the callback three times");
 });
 
-test("#output shows the callback results", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), 'run,run,run', "#output should show the callback results");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "run,run,run", "Log the mission result with console.log()");
 });

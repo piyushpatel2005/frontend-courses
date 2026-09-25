@@ -22,10 +22,6 @@ test("maskEmail masks correctly", () => {
     "Should mask 'bob' to 'b**'");
 });
 
-test("#output shows the formatted result", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(),
-    "valid: true | numbers: 3,12 | masked: a****@example.com",
-    '#output should show "valid: true | numbers: 3,12 | masked: a****@example.com"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "valid: true | numbers: 3,12 | masked: a****@example.com", "Log the mission result with console.log()");
 });

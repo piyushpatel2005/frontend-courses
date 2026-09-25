@@ -32,10 +32,6 @@ test("Rectangle toString is correct", () => {
     "Rectangle toString format mismatch");
 });
 
-test("#output shows both shapes", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(),
-    "Circle(radius: 5, color: red, area: 78.54) | Rectangle(4×6, color: blue, area: 24)",
-    "Should show both shapes joined with ' | '");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Circle(radius: 5, color: red, area: 78.54) | Rectangle(4×6, color: blue, area: 24)", "Log the mission result with console.log()");
 });

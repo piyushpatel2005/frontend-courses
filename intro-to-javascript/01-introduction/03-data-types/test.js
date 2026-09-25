@@ -4,8 +4,6 @@ test("data type variables are correct", () => {
   assert.equal(isStudent, true, "isStudent should be true");
 });
 
-test("#output shows values with their types", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), "Mia:string | 14:number | true:boolean", "Show each value with its type in #output");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Mia:string | 14:number | true:boolean", "Log the mission result with console.log()");
 });

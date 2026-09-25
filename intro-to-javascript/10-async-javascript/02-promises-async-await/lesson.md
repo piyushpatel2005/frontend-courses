@@ -9,20 +9,35 @@ hints:
   - "A Promise has 3 states: pending, fulfilled, rejected."
   - "Use `resolve(value)` for success and `reject(error)` for failure."
   - "`await` can only be used inside `async` functions."
+summary: Practice promises and async await with a focused Starline Awards programming mission.
+seo_title: Promises and Async Await | Introduction to JavaScript
+seo_description: Learn promises and async await through a focused JavaScript programming mission and console-based practice.
+seo_keywords: javascript, promises and async await, beginner javascript, programming practice
 ---
 
 # Promises and async/await
+
+## Mission: Live Broadcast
+
+You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you coordinate delayed score updates without freezing the show. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+
+Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
 
 A **Promise** represents a value that may be available now, later, or never.
 
 ## Creating a Promise
 
 ```javascript
-const promise = new Promise((resolve, reject) => {
-    const success = true;
-    if (success) resolve("Done");
-    else reject(new Error("Failed"));
-});
+function getTrailCondition() {
+  return Promise.resolve("dry");
+}
+
+async function reportCondition() {
+  const condition = await getTrailCondition();
+  console.log(`Trail: ${condition}`);
+}
+
+reportCondition();
 ```
 
 ## Consuming with `.then/.catch`
@@ -52,9 +67,6 @@ async function run() {
 
 1. Write a function `delay(ms, value)` that returns a Promise resolving with `value` after `ms` milliseconds.
 2. Write an async function `loadMessage()` that:
-   - awaits `delay(10, "Hello Async")`
-   - returns the message in uppercase.
 3. Write an async function `safeDivide(a, b)` that:
-   - returns a rejected Promise with `Error("Division by zero")` when `b === 0`
-   - otherwise resolves to `a / b`
-4. Run `loadMessage()` and `safeDivide(10, 2)`, then display in `#output`: `"HELLO ASYNC | 10/2 = 5"`.
+4. Run `loadMessage()` and `safeDivide(10, 2)`, then log with `console.log()`: `"HELLO ASYNC | 10/2 = 5"`.
+5. Verify the program behavior: logs the mission result.

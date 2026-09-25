@@ -22,4 +22,4 @@ class BankAccount {
 }
 
 // Create account, deposit 50, withdraw 30, display toString()
-document.getElementById("output").textContent = "";
+console.log("");

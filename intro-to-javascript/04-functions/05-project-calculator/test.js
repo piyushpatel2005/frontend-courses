@@ -30,15 +30,10 @@ test("calculate delegates correctly", () => {
   assert.equal(calculate(1, "%", 1), null, "Unknown operator should return null");
 });
 
-test("#result shows 10 + 5 = 15", () => {
-  var r = document.getElementById("result");
-  assert.exists(r, "Keep the <p id=\"result\"> element");
-  assert.equal(r.textContent.trim(), "10 + 5 = 15", '#result should show "10 + 5 = 15"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "10 + 5 = 15", "Log the mission result with console.log()");
 });
 
-test("#zero-result shows division by zero message", () => {
-  var z = document.getElementById("zero-result");
-  assert.exists(z, "Keep the <p id=\"zero-result\"> element");
-  assert.equal(z.textContent.trim(), "8 / 0 = Error: Division by zero",
-    '#zero-result should show "8 / 0 = Error: Division by zero"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "8 / 0 = Error: Division by zero", "Log the mission result with console.log()");
 });

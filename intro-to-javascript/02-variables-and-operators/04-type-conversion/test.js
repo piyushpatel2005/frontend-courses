@@ -13,8 +13,6 @@ test("total is calculated correctly", () => {
   assert.equal(total, 87, "total should be 87 (29 × 3)");
 });
 
-test("#output shows the formatted message", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "Total: $87", '#output should show "Total: $87"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Total: $87", "Log the mission result with console.log()");
 });

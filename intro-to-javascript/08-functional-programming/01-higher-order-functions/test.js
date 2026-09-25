@@ -4,8 +4,6 @@ test("makeMultiplier returns a working function", () => {
   assert.equal(triple(7), 21, "The returned function should multiply the value");
 });
 
-test("#output shows the multiplied result", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), '21', "#output should show the multiplied result");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "21", "Log the mission result with console.log()");
 });

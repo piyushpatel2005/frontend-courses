@@ -9,9 +9,19 @@ hints:
   - "Use `extends` to inherit: `class Child extends Parent {}`"
   - "Call `super(args)` inside the child constructor before using `this`."
   - "Override a parent method by defining it again in the child class."
+summary: Practice inheritance with a focused Starline Awards programming mission.
+seo_title: Inheritance | Introduction to JavaScript
+seo_description: Learn inheritance through a focused JavaScript programming mission and console-based practice.
+seo_keywords: javascript, inheritance, beginner javascript, programming practice
 ---
 
 # Inheritance
+
+## Mission: Talent Roster
+
+You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you build reusable artist blueprints for the Starline Awards roster. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+
+Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
 
 Inheritance lets a child class reuse and extend the behavior of a parent class.
 
@@ -75,15 +85,9 @@ dog instanceof Cat;     // false
 ## Your Task
 
 1. Create a base class `Shape` with:
-   - Constructor `(color = "black")`.
-   - `area()` — returns `0` (to be overridden).
-   - `toString()` — returns `"Shape(color: black)"`.
 2. Create `Circle extends Shape` with:
-   - Constructor `(radius, color)` — calls `super(color)`.
-   - `area()` — returns `Math.PI * radius² ` rounded to 2 decimal places.
-   - `toString()` — returns `"Circle(radius: 5, color: red, area: 78.54)"`.
 3. Create `Rectangle extends Shape` with:
-   - Constructor `(width, height, color)`.
-   - `area()` — returns `width * height`.
-   - `toString()` — returns `"Rectangle(4×6, color: blue, area: 24)"`.
-4. Display in `#output`: both `toString()` values joined with `" | "`.
+4. log with `console.log()`: both `toString()` values joined with `" | "`.
+5. Verify the program behavior: Rectangle area is correct.
+6. Verify the program behavior: Rectangle toString is correct.
+7. Verify the program behavior: logs the mission result.

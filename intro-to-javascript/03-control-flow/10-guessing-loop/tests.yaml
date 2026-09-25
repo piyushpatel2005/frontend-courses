@@ -1,0 +1,6 @@
+blocks:
+  - index: 0
+    expected_output: |
+      Try again: 3
+      Try again: 9
+      Correct: 7

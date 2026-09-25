@@ -13,4 +13,4 @@ function maskEmail(email) {
 
 }
 
-document.getElementById("output").textContent = "";
+console.log("");

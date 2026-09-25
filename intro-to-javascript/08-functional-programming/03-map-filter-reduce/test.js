@@ -14,9 +14,6 @@ test("salaryReport has correct entries", () => {
   assert.ok(salaryReport[0].includes("95"), "First entry should include the salary");
 });
 
-test("#output shows the formatted message", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "Engineers: Alice,Carol,Eve | Avg salary: $107,667",
-    '#output should show "Engineers: Alice,Carol,Eve | Avg salary: $107,667"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Engineers: Alice,Carol,Eve | Avg salary: $107,667", "Log the mission result with console.log()");
 });

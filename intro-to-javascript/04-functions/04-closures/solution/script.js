@@ -7,4 +7,4 @@ function makeCounter() {
 }
 
 const counter = makeCounter();
-document.getElementById("output").textContent = `${counter()} | ${counter()} | ${counter()}`;
+console.log(`${counter()} | ${counter()} | ${counter()}`);

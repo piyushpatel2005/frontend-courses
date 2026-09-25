@@ -7,4 +7,4 @@
 // TODO 4: Calculate total = price * quantity
 
 // TODO 5: Display "Total: $87" in #output
-document.getElementById("output").textContent = "";
+console.log("");

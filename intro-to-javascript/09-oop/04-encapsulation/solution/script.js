@@ -13,4 +13,4 @@ stack.push(10);
 stack.push(20);
 stack.push(30);
 stack.pop(); // removes 30
-document.getElementById("output").textContent = `Stack size: ${stack.size} | top: ${stack.peek()}`;
+console.log(`Stack size: ${stack.size} | top: ${stack.peek()}`);

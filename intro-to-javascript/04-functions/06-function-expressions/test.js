@@ -3,8 +3,6 @@ test("greetStudent is a working function expression", () => {
   assert.equal(greetStudent('Maya'), 'Welcome, Maya!', "greetStudent should return the welcome message");
 });
 
-test("#output shows the expression result", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), 'Welcome, Maya!', "#output should show the function expression result");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Welcome, Maya!", "Log the mission result with console.log()");
 });

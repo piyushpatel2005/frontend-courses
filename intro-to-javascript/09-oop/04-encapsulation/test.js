@@ -39,9 +39,6 @@ test("isEmpty works correctly", () => {
   assert.equal(s.isEmpty, false, "Stack with items should not be empty");
 });
 
-test("#output shows correct stack state", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "Stack size: 2 | top: 20",
-    '#output should show "Stack size: 2 | top: 20"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Stack size: 2 | top: 20", "Log the mission result with console.log()");
 });

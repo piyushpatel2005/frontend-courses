@@ -23,9 +23,6 @@ test("safeDivide rejects on division by zero", async () => {
   }
 });
 
-test("#output shows final combined message", () => {
-  const out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "HELLO ASYNC | 10/2 = 5",
-    '#output should show "HELLO ASYNC | 10/2 = 5"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "HELLO ASYNC | 10/2 = 5", "Log the mission result with console.log()");
 });

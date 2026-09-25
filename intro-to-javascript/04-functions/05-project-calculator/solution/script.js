@@ -17,8 +17,7 @@ function calculate(a, op, b) {
 }
 
 const res = calculate(10, "+", 5);
-document.getElementById("result").textContent = `10 + 5 = ${res}`;
+console.log(`10 + 5 = ${res}`);
 
 const divResult = calculate(8, "/", 0);
-document.getElementById("zero-result").textContent =
-  `8 / 0 = ${divResult === null ? "Error: Division by zero" : divResult}`;
+console.log(`8 / 0 = ${divResult === null ? "Error: Division by zero" : divResult}`);

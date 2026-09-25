@@ -16,4 +16,4 @@ const avgEngineerSalary = 0;
 const salaryReport = [];
 
 // TODO 4: Display "Engineers: Alice,Carol,Eve | Avg salary: $107,667"
-document.getElementById("output").textContent = "";
+console.log("");

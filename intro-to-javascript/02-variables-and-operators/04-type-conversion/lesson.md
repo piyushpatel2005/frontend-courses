@@ -9,9 +9,19 @@ hints:
   - "Use `Number()` to convert a string to a number."
   - "Use `String()` or template literals to convert a number to a string."
   - "Use `Boolean()` to convert any value to true/false."
+summary: Practice type conversion with a focused Starline Awards programming mission.
+seo_title: Type Conversion | Introduction to JavaScript
+seo_description: Learn type conversion through a focused JavaScript programming mission and console-based practice.
+seo_keywords: javascript, type conversion, beginner javascript, programming practice
 ---
 
 # Type Conversion
+
+## Mission: Scoreboard Engine
+
+You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you store and calculate the numbers behind a rising superstar's tour score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+
+Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
 
 Sometimes you need to change a value from one type to another. JavaScript supports both **explicit** (manual) and **implicit** (automatic) type conversion.
 
@@ -61,5 +71,8 @@ undefined + 1 // NaN
 1. Declare a variable `priceStr` with the string value `"29"`.
 2. Convert `priceStr` to a number and store it in a variable `price`.
 3. Declare a variable `quantity` with the number value `3`.
-4. Calculate `total` as `price * quantity`.
-5. Display in `#output`: `"Total: $87"` (use `String()` or a template literal for the final message).
+4. Calculate `total` as `price * quantity`. log with `console.log()`: `"Total: $87"` (use `String()` or a template literal for the final message).
+
+## Scoreboard Engine complete
+
+You can name values, calculate with them, and convert data deliberately. Take the section quiz, then teach the engine how to make decisions.

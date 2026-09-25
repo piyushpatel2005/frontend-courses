@@ -4,8 +4,6 @@ test("car stores data and behavior together", () => {
   assert.equal(car.speed, 100, "car.speed should be updated after accelerate is called");
 });
 
-test("#output shows the updated car state", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), 'Roadster | 100', "#output should show the brand and updated speed");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Roadster | 100", "Log the mission result with console.log()");
 });

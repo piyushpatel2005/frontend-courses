@@ -48,6 +48,5 @@ async function loadDashboard() {
 
 (async function run() {
   const data = await loadDashboard();
-  document.getElementById("output").textContent =
-    `${data.userName} | posts: ${data.postCount} | unread: ${data.unreadCount}`;
+  console.log(`${data.userName} | posts: ${data.postCount} | unread: ${data.unreadCount}`);
 })();

@@ -44,4 +44,4 @@ class Rectangle extends Shape {
 }
 
 // Display both toString() values in #output
-document.getElementById("output").textContent = "";
+console.log("");

@@ -3,8 +3,6 @@ test("variables are declared and updated", () => {
   assert.equal(favoriteNumber, 8, "favoriteNumber should be reassigned to 8");
 });
 
-test("#output shows both variable values", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), "tacos | 8", "#output should show the food and updated number");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "tacos | 8", "Log the mission result with console.log()");
 });

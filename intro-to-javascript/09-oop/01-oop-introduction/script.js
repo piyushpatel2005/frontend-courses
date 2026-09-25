@@ -1,3 +1,3 @@
 const car = {};
 
-document.getElementById("output").textContent = "";
+console.log("");

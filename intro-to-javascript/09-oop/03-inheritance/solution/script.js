@@ -27,4 +27,4 @@ class Rectangle extends Shape {
 
 const circle = new Circle(5, "red");
 const rect = new Rectangle(4, 6, "blue");
-document.getElementById("output").textContent = `${circle.toString()} | ${rect.toString()}`;
+console.log(`${circle.toString()} | ${rect.toString()}`);

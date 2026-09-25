@@ -5,4 +5,4 @@ function makeMultiplier(multiplier) {
 }
 
 const triple = makeMultiplier(3);
-document.getElementById("output").textContent = String(triple(7));
+console.log(String(triple(7)));

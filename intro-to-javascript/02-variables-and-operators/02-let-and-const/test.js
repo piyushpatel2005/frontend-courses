@@ -8,9 +8,6 @@ test("score starts at 0 and is increased to 10", () => {
   assert.equal(score, 10, "Increase score by 10 with `score += 10`");
 });
 
-test("#output displays the combined message", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "Hello, JavaScript! Score: 10",
-    '#output should show "Hello, JavaScript! Score: 10"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Hello, JavaScript! Score: 10", "Log the mission result with console.log()");
 });

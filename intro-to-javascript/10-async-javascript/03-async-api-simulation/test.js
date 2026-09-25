@@ -21,9 +21,6 @@ test("loadDashboard handles failure fallback", async () => {
   fetchUser = originalFetchUser;
 });
 
-test("#output shows formatted dashboard", () => {
-  const out = document.getElementById("output");
-  assert.exists(out, "Keep <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "Alex | posts: 3 | unread: 2",
-    '#output should show "Alex | posts: 3 | unread: 2"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Alex | posts: 3 | unread: 2", "Log the mission result with console.log()");
 });

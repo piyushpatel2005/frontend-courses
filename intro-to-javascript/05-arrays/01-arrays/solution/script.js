@@ -1,3 +1,3 @@
 const colors = ['red', 'green', 'blue'];
 
-document.getElementById("output").textContent = `${colors[0]} | ${colors[colors.length - 1]}`;
+console.log(`${colors[0]} | ${colors[colors.length - 1]}`);

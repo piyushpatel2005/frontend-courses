@@ -1,3 +1,3 @@
 const colors = [];
 
-document.getElementById("output").textContent = "";
+console.log("");

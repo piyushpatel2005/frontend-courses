@@ -38,9 +38,6 @@ test("toString returns formatted string", () => {
     'toString should return "BankAccount(owner: Alice, balance: $120)"');
 });
 
-test("#output shows account state", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "BankAccount(owner: Alice, balance: $120)",
-    "Should display Alice account after deposit 50 and withdraw 30");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "BankAccount(owner: Alice, balance: $120)", "Log the mission result with console.log()");
 });

@@ -16,9 +16,6 @@ test("toSlug converts title to slug", () => {
   assert.equal(toSlug("Hello, World!"), "hello-world", "toSlug should remove special chars");
 });
 
-test("#output shows the formatted result", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "$1,234.50 | Hello... | hello-world",
-    '#output should show "$1,234.50 | Hello... | hello-world"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "$1,234.50 | Hello... | hello-world", "Log the mission result with console.log()");
 });

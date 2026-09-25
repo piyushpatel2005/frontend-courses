@@ -6,4 +6,4 @@ function repeatAction(callback) {
 
 const runs = [];
 repeatAction(() => runs.push('run'));
-document.getElementById("output").textContent = runs.join(',');
+console.log(runs.join(','));

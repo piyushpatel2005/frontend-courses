@@ -26,4 +26,4 @@ class BankAccount {
 const account = new BankAccount("Alice", 100);
 account.deposit(50);
 account.withdraw(30);
-document.getElementById("output").textContent = account.toString();
+console.log(account.toString());

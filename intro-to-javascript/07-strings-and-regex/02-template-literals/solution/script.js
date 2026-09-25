@@ -14,5 +14,4 @@ function toSlug(title) {
     .replace(/[^a-z0-9-]/g, "");
 }
 
-document.getElementById("output").textContent =
-  `${formatCurrency(1234.5)} | ${truncate("Hello World", 5)} | ${toSlug("Hello World")}`;
+console.log(`${formatCurrency(1234.5)} | ${truncate("Hello World", 5)} | ${toSlug("Hello World")}`);

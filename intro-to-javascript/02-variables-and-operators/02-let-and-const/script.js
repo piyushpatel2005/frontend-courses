@@ -5,4 +5,4 @@
 // TODO 3: Increase score by 10
 
 // TODO 4: Set the #output paragraph text to: "Hello, JavaScript! Score: 10"
-document.getElementById("output").textContent = "";
+console.log("");

@@ -1,3 +1,3 @@
 const totalPrice = 0;
 
-document.getElementById("output").textContent = "";
+console.log("");

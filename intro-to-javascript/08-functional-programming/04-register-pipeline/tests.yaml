@@ -1,0 +1,4 @@
+blocks:
+  - index: 0
+    expected_output: |
+      Ari: JavaScript

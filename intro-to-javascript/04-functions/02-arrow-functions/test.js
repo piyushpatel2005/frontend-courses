@@ -28,9 +28,6 @@ test("isEven returns correct boolean", () => {
   assert.equal(isEven(0), true, "isEven(0) should return true");
 });
 
-test("#output shows the combined result", () => {
-  var out = document.getElementById("output");
-  assert.exists(out, "Keep the <p id=\"output\"> element");
-  assert.equal(out.textContent.trim(), "5² = 25 | 98°F = 36.7°C | 4 is even: true",
-    '#output should show "5² = 25 | 98°F = 36.7°C | 4 is even: true"');
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "5² = 25 | 98°F = 36.7°C | 4 is even: true", "Log the mission result with console.log()");
 });

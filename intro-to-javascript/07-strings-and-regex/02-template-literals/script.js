@@ -14,4 +14,4 @@ function toSlug(title) {
 }
 
 // TODO 4: Display "$1,234.50 | Hello... | hello-world"
-document.getElementById("output").textContent = "";
+console.log("");

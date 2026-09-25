@@ -3,4 +3,4 @@ function repeatAction(callback) {
 }
 
 const runs = [];
-document.getElementById("output").textContent = "";
+console.log("");

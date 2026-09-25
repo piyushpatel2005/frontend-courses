@@ -5,4 +5,4 @@ function getGrade(score) {
   else if (score >= 60) return "D";
   else return "F";
 }
-document.getElementById("output").textContent = `Grade: ${getGrade(85)}`;
+console.log(`Grade: ${getGrade(85)}`);

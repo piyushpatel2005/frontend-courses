@@ -17,5 +17,5 @@ async function safeDivide(a, b) {
 (async function run() {
   const msg = await loadMessage();
   const div = await safeDivide(10, 2);
-  document.getElementById("output").textContent = `${msg} | 10/2 = ${div}`;
+  console.log(`${msg} | 10/2 = ${div}`);
 })();

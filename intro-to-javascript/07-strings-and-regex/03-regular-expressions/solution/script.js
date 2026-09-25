@@ -12,5 +12,4 @@ function maskEmail(email) {
   return `${masked}@${domain}`;
 }
 
-document.getElementById("output").textContent =
-  `valid: ${isValidEmail("alice@example.com")} | numbers: ${extractNumbers("I have 3 cats and 12 dogs").join(",")} | masked: ${maskEmail("alice@example.com")}`;
+console.log(`valid: ${isValidEmail("alice@example.com")} | numbers: ${extractNumbers("I have 3 cats and 12 dogs").join(",")} | masked: ${maskEmail("alice@example.com")}`);

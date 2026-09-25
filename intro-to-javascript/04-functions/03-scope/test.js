@@ -3,8 +3,6 @@ test("scope example keeps global and local values separate", () => {
   assert.equal(buildLabel(), 'Frontend Lab - Variables', "buildLabel should use both the global and local values");
 });
 
-test("#output shows the scoped label", () => {
-  const out = document.getElementById("output");
-  assert.exists(out);
-  assert.equal(out.textContent.trim(), 'Frontend Lab - Variables', "#output should show the combined label");
+test("logs the mission result", () => {
+  assert.includes(OUTPUT, "Frontend Lab - Variables", "Log the mission result with console.log()");
 });

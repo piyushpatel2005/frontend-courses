@@ -5,4 +5,4 @@ function buildLabel() {
   return `${siteName} - ${sectionName}`;
 }
 
-document.getElementById("output").textContent = buildLabel();
+console.log(buildLabel());

@@ -38,7 +38,7 @@ modules:
     sort_order: 10
 ---
 
-# JavaScript
+# JavaScript: Starline Awards Programming Mission
 
 JavaScript is the language of the web. Every interactive page you have ever visited — a dropdown menu, a live search box, a chat window — is powered by JavaScript running right inside your browser. You do not need to install anything: it is already there.
 
@@ -59,10 +59,19 @@ JavaScript is the language of the web. Every interactive page you have ever visi
 3. **Control Flow** — `if`/`else`, `switch`, `for`, `while`, `do-while`, `break`, and `continue`.
 4. **Functions** — declarations, parameters, return values, arrow functions, scope, and closures.
 5. **Arrays** — creation, indexing, mutation methods, search/slice, iteration, multidimensional arrays, and destructuring.
-6. **Objects and Built-ins** — object literals, methods, JSON, `Math`, and `Date`.
+6. **Objects and Built-ins** — object literals, methods, `Map`, `Set`, `Number`, `BigInt`, JSON, `Math`, and `Date`.
 7. **Strings and Regular Expressions** — string methods, template literals, and regex patterns.
 8. **Functional Programming** — higher-order functions, callbacks, `map`/`filter`/`reduce`, and recursion.
 9. **Object-Oriented Programming** — ES6 classes, inheritance, and encapsulation.
 10. **Asynchronous JavaScript** — event loop, callbacks, Promises, and `async`/`await`.
 
 > After this course, continue with a dedicated **JavaScript DOM** course to learn browser interactivity, or move into **Node.js** and frameworks like **React**.
+
+
+## How the mission works
+
+You are the programmer behind the Starline Awards, helping a rising superstar's team turn raw information into reliable decisions. Each section is a short mission: inspect a worked example, run a small console demo, complete a practical coding task, and earn a stage badge before the section quiz. The course deliberately stops before DOM manipulation; a separate course will cover changing browser pages with JavaScript.
+
+## Intentionally later
+
+This beginner course includes the built-ins you will use regularly for application logic: arrays, objects, `Map`, `Set`, `Number`, `BigInt`, JSON, `Math`, and `Date`. `ArrayBuffer` is for low-level binary data and belongs in a later browser or data-processing course. `eval()` executes a string as code, so it is intentionally not taught as a tool for application code; write direct functions and data transformations instead.

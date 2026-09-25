@@ -7,4 +7,4 @@ const celsius = null;
 // TODO 3: Arrow function isEven(n)
 const isEven = null;
 
-document.getElementById("output").textContent = "";
+console.log("");
