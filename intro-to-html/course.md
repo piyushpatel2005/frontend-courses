@@ -27,7 +27,7 @@ modules:
   - slug: forms
     title: Forms
     sort_order: 7
-  - slug: project-contact-form
+  - slug: project-contact-us-form
     title: Project - Contact Us Form
     sort_order: 8
   - slug: media-embedding

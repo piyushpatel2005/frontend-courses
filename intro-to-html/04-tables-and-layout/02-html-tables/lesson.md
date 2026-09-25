@@ -3,6 +3,17 @@ title: HTML Tables
 slug: html-tables
 order: 2
 language: html
+summary: Build accessible HTML tables with rows, headers, sections, and spanning cells.
+seo_title: "HTML Tables: Rows, Headers, and Cells | Introduction to HTML"
+seo_description: Learn how to create HTML tables with table rows, data cells, header cells, table sections, colspan, and rowspan.
+seo_keywords:
+  - HTML tables
+  - table rows
+  - table headers
+  - thead
+  - tbody
+  - colspan
+  - rowspan
 validationRules: []
 hints:
   - "A table needs at least three tags: <table>, <tr> (row), and <td> (cell)."
@@ -13,85 +24,61 @@ hints:
 
 # HTML Tables
 
-Tables are for **tabular data** — information that logically belongs in rows and columns, like schedules, comparison grids, or pricing tables.
+## Mission
 
-> **Note:** Tables should **never** be used for page layout. Use CSS Flexbox or Grid for that.
+The community repair café is posting a two-day schedule. Visitors need to scan times and stations in rows and columns, not read a paragraph. Build the schedule so its labels and data stay connected.
 
-## Basic table structure
+> **Note:** Use tables for related data — schedules, price lists, comparison charts — not for page layout. CSS Flexbox or Grid handles layout.
 
-```html
-<table>
-    <tr>
-        <td>Row 1, Cell 1</td>
-        <td>Row 1, Cell 2</td>
-    </tr>
-    <tr>
-        <td>Row 2, Cell 1</td>
-        <td>Row 2, Cell 2</td>
-    </tr>
-</table>
-```
+## What you'll build
 
-| Tag | Meaning |
-|-----|---------|
-| `<table>` | The table container |
-| `<tr>` | Table Row |
-| `<td>` | Table Data cell |
-| `<th>` | Table Header cell (bold + centred) |
+A structured schedule table with a header row, at least two data rows, and one cell that spans multiple columns.
 
-## Header cells: `<th>`
+## The table frame
+
+A table is made of rows. Put each row in `<tr>`, then use `<td>` for ordinary data cells and `<th>` for labels.
 
 ```html
 <table>
     <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>City</th>
+        <th scope="col">Station</th>
+        <th scope="col">Time</th>
     </tr>
     <tr>
-        <td>Alice</td>
-        <td>28</td>
-        <td>London</td>
+        <td>Bike repair</td>
+        <td>10:00</td>
     </tr>
 </table>
 ```
 
-Use `scope="col"` or `scope="row"` on `<th>` for accessibility.
+`scope="col"` tells assistive technology that each header describes a column. Use `scope="row"` when a header describes the row instead.
 
-## Structural sections: `<thead>`, `<tbody>`, `<tfoot>`
+## Give the schedule sections
+
+`<thead>` holds the column labels, `<tbody>` holds the repeated schedule entries, and `<tfoot>` can hold a summary. Those groups make the table easier to read and style.
 
 ```html
 <table>
     <thead>
-        <tr><th>Item</th><th>Qty</th><th>Price</th></tr>
+        <tr><th scope="col">Station</th><th scope="col">Slots</th><th scope="col">Host</th></tr>
     </thead>
     <tbody>
-        <tr><td>Apple</td><td>3</td><td>$1.50</td></tr>
-        <tr><td>Bread</td><td>1</td><td>$2.00</td></tr>
+        <tr><td>Bike repair</td><td>2</td><td>Mika</td></tr>
+        <tr><td>Book mending</td><td>3</td><td>Ren</td></tr>
     </tbody>
     <tfoot>
-        <tr><td colspan="2">Total</td><td>$3.50</td></tr>
+        <tr><td colspan="2">Open stations</td><td>2</td></tr>
     </tfoot>
 </table>
 ```
 
-## Spanning cells
+`colspan="2"` lets the footer label cover two columns. `rowspan="2"` works the same way down across two rows.
 
-- `colspan="n"` — cell spans `n` **columns**
-- `rowspan="n"` — cell spans `n` **rows**
+## Checkpoint
 
-```html
-<table>
-    <tr>
-        <th colspan="3">Q1 Sales Report</th>
-    </tr>
-    <tr>
-        <td>January</td><td>February</td><td>March</td>
-    </tr>
-</table>
-```
+Run the page. You should see a header row above at least two schedule rows, plus one wider cell spanning columns. If the columns shift, count the cells in every row and check the `colspan` value.
 
-## Exercise
+## Your Tasks
 
 Build a table showing a weekly class schedule with at least:
 
@@ -99,3 +86,7 @@ Build a table showing a weekly class schedule with at least:
 2. Add a `<thead>` row with `<th>` headers for each day (e.g., Monday–Friday).
 3. Add a `<tbody>` with at least **2 rows** of schedule data (use `<td>` cells).
 4. Add at least one cell that uses `colspan` to span multiple columns.
+
+## Payoff
+
+The repair café now has a schedule that visitors can scan and assistive technology can navigate by header.

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Semantic page landmarks</title>
+  <desc id="desc">A page layout diagram identifies header, navigation, main, article, aside, and footer as distinct semantic HTML landmarks.</desc>
+  <rect width="900" height="560" fill="#fffdf7"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="28" fill="#242424">Semantic HTML gives each page part a name</text>
+  <rect x="130" y="75" width="640" height="430" rx="18" fill="#f8f9fa" stroke="#242424" stroke-width="3"/>
+  <rect x="165" y="105" width="570" height="58" rx="12" fill="#a5d8ff" stroke="#242424" stroke-width="3"/>
+  <text x="450" y="141" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="23" fill="#242424">&lt;header&gt;</text>
+  <rect x="165" y="178" width="570" height="45" rx="10" fill="#fff3bf" stroke="#242424" stroke-width="3"/>
+  <text x="450" y="208" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="21" fill="#242424">&lt;nav&gt; links to other pages</text>
+  <rect x="165" y="240" width="390" height="190" rx="12" fill="#b2f2bb" stroke="#242424" stroke-width="3"/>
+  <text x="360" y="275" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="23" fill="#242424">&lt;main&gt;</text>
+  <rect x="195" y="300" width="330" height="95" rx="10" fill="#d0bfff" stroke="#242424" stroke-width="3"/>
+  <text x="360" y="338" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="21" fill="#242424">&lt;article&gt;</text>
+  <text x="360" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#242424">the page's main story</text>
+  <rect x="575" y="240" width="160" height="190" rx="12" fill="#ffd8a8" stroke="#242424" stroke-width="3"/>
+  <text x="655" y="325" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="21" fill="#242424">&lt;aside&gt;</text>
+  <text x="655" y="354" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#242424">related links</text>
+  <rect x="165" y="447" width="570" height="35" rx="9" fill="#c3fae8" stroke="#242424" stroke-width="3"/>
+  <text x="450" y="472" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="20" fill="#242424">&lt;footer&gt;</text>
+</svg>

@@ -1,49 +1,51 @@
 ---
-title: What is HTML?
+title: What Is HTML? See Tags in Action
 slug: what-is-html
 order: 1
 language: html
-lesson_type: informational
+summary: See a complete HTML page use headings and paragraphs before writing those tags yourself.
+seo_title: "What Is HTML? See Tags in Action | Introduction to HTML"
+seo_description: See h1 and p tags rendered in a working HTML page before completing a guided HTML exercise.
+seo_keywords: [HTML, HTML tags, h1 tag, p tag, HTML preview]
+lesson_type: coding
+hints:
+  - "This is a completed demo. Read the code and use the preview before moving to the exercise."
 ---
 
-# What is HTML?
+# What Is HTML? See Tags in Action
 
-The world wide web is full of information written in different languages. Those information are written using different languages. One of the most popular language used to write information on the web is HTML. 
+## Course context
 
-> HTML stands for HyperText Markup Language. 
+You are the web-systems trainee aboard the survey vessel **Meridian**. The crew is building a small mission site for a newly discovered world. Each section adds one useful capability to that site; this first one makes a signal readable.
 
-HTML files are simple text files that are written with specific syntax to represent information to the web browsers. If you want to create one of the web pages yourself, all you need is a text editor and a web browser. 
+## Mission
 
-You can use text editors like VS Code, Atom or Sublime text which offer syntax highlighting for HTML. Please note that Microsoft Word is not really a text editor because it applies formatting to the text which is not suitable for writing code. The most common text editor is Notepad in Windows and TextEdit in Mac. These text editors are simple and do not apply any specific styling to the files you create.
+The bridge needs a short signal card. Run the completed example and compare the preview with the HTML that gives it structure.
 
-HTML is *not* a programming language. It is a *markup language*. It is used to structure content on the web. HTML is the standard markup language for documents designed to be displayed in a web browser. Web pages can be augmented by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.
+## What you'll see
 
-## How browsers read HTML
+A completed `index.html` page with a browser-tab title, one main heading, and two short signal paragraphs.
 
-When you open an HTML file in a browser, the browser reads the file from top to bottom, interprets the HTML tags, and renders the content on screen. The browser takes care of layout, default fonts, and spacing — you just provide the structure. You might wonder, wait what's the tag? Just hold on, you'll get to know the glory details of tags in the next lesson. 
-
-## Your first HTML file
-
-Let's write some HTML code now. The simplest possible HTML file is a plain text file with the `.html` extension. For this lesson, let's create a file called `index.html`. Open your text editor and write the following:
+## Read the demo code
 
 ```html
-Hello World
+<h1>Meridian Signal</h1>
+<p>A transmission has arrived from the survey zone.</p>
+<p>The bridge crew is preparing a response.</p>
 ```
 
-Save this as `index.html` and open it in a browser. You will see the text `Hello World` displayed. The browser happily shows it even though yout simply wrote plain English.
+- `<h1>` marks the main heading and browsers display it prominently by default.
+- `<p>` marks a paragraph; browsers separate paragraphs by default.
+- `<title>` labels the browser tab but is not visible inside the page body.
 
-Now change the file to below:
+## Try the preview
 
-```html
-<h1>Hello World</h1>
-```
+Run the page. The tab is named **Meridian Signal**, the first line is the prominent heading, and the two paragraphs appear as separate blocks.
 
-Refresh the browser window. The text is now displayed as a large, bold heading. Just for teaser, the `<h1>` is called an HTML **tag** — more on that in the next lesson.
+## Checkpoint
 
-![Hello World Heading](hello-world-heading.png "Hello World as a heading")
+You should be able to connect every visible part of the preview to its tag. Nothing needs editing in this demo. The `title` may not be apparent in the **Browser Preview** but you will notice that at the top when you use your own browser with this code.
 
-## Key Takeaways
+## Next
 
-- HTML is simply a markup language used to structure the content on the web. 
-- HTML files are plain text files with the `.html` extension.
-
+Continue to **Exercise: Build the Meridian Signal** and recreate the same structure from an empty body.

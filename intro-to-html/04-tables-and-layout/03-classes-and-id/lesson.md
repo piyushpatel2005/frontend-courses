@@ -3,6 +3,15 @@ title: Classes and IDs
 slug: classes-and-id
 order: 3
 language: html
+summary: Use HTML classes and IDs to target elements with CSS, JavaScript, and anchor links.
+seo_title: "HTML Classes and IDs | Introduction to HTML"
+seo_description: Learn how HTML class and id attributes work, how to select them in CSS, and how IDs create page anchors.
+seo_keywords:
+  - HTML classes
+  - HTML IDs
+  - CSS selectors
+  - anchor links
+  - HTML attributes
 validationRules: []
 hints:
   - "Apply multiple classes with a space: class=\"card featured large\""
@@ -13,19 +22,25 @@ hints:
 
 # Classes and IDs
 
-The `class` and `id` attributes are the bridges between HTML and CSS (and JavaScript). They let you target specific elements without changing the HTML structure.
+## Mission
 
-## The `class` attribute
+The makers' fair program page needs three quick-jump stops — about, projects, and contact — and a row of project cards. Give each stop a unique landing point while keeping the cards easy to style as a group.
 
-A class can be applied to **many elements** and one element can have **many classes**:
+## What you'll build
+
+A one-page portfolio skeleton with navigation links that jump to matching sections, and project cards that share a reusable class. One card gets a second class for special styling.
+
+## One name or a reusable label
+
+Use `class` for a label that can appear on many elements. One element can carry several class names, separated by spaces.
 
 ```html
-<div class="card">First card</div>
-<div class="card">Second card</div>
-<div class="card featured">Featured card (two classes!)</div>
+<div class="card">Solar oven</div>
+<div class="card">Seed library</div>
+<div class="card featured">Repair map</div>
 ```
 
-In CSS, target a class with `.`:
+In CSS, a dot selects a class:
 
 ```css
 .card {
@@ -38,46 +53,27 @@ In CSS, target a class with `.`:
 }
 ```
 
-Classes make it easy to apply consistent styling to groups of related elements.
-
-## The `id` attribute
-
-An `id` must be **unique** — no two elements on the same page should share an id:
+Use `id` for one unique element on the page. An ID becomes an anchor target when a link uses `#` followed by that value.
 
 ```html
-<header id="site-header">...</header>
-<main id="main-content">...</main>
-<footer id="site-footer">...</footer>
-```
-
-In CSS, target an id with `#`:
-
-```css
-#site-header {
-    background-color: #333;
-    color: white;
-}
-```
-
-## IDs as anchor targets
-
-`id` values also serve as scroll anchors — perfect for table-of-contents navigation:
-
-```html
-<!-- Navigation -->
 <nav>
-    <a href="#intro">Introduction</a>
-    <a href="#features">Features</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<!-- Sections -->
-<section id="intro"><h2>Introduction</h2></section>
-<section id="features"><h2>Features</h2></section>
+<section id="about"><h2>About</h2></section>
+<section id="projects"><h2>Projects</h2></section>
 <section id="contact"><h2>Contact</h2></section>
 ```
 
-## Class vs. ID — quick guide
+CSS uses `#` before an ID: `#contact { ... }`.
+
+## Checkpoint
+
+Run the page and select each navigation link. It should land on the section with the same ID. If a link does not move, compare its `href="#..."` value with the section's `id`; they must match exactly.
+
+## Class vs. ID
 
 | | `class` | `id` |
 |-|---------|------|
@@ -86,7 +82,7 @@ In CSS, target an id with `#`:
 | Multiple per element | Yes | Only one id per element |
 | Use for | Styling groups | Unique landmarks, anchors |
 
-## Exercise
+## Your Tasks
 
 Build a one-page portfolio skeleton:
 
@@ -94,3 +90,7 @@ Build a one-page portfolio skeleton:
 2. Add three `<section>` elements, each with the matching `id`.
 3. Each section should have at least one `<div class="card">` inside it.
 4. One card should have two classes (e.g., `class="card highlight"`).
+
+## Payoff
+
+Your fair page can now link directly to each stop and style every project card with one reusable label.

@@ -3,6 +3,10 @@ title: Semantic HTML Tags
 slug: semantic-tags
 order: 1
 language: html
+summary: Use meaningful HTML landmarks to organize a page for people and assistive technology.
+seo_title: Semantic HTML Tags | Learn HTML
+seo_description: Learn how header, nav, main, article, section, aside, and footer give an HTML page useful structure.
+seo_keywords: [semantic HTML, HTML landmarks, header, main, accessibility]
 validationRules: []
 hints:
   - "Use <main> for the primary content area — there should only be one per page."
@@ -13,86 +17,80 @@ hints:
 
 # Semantic HTML Tags
 
-Semantic HTML uses tags that describe their **meaning** — not just their appearance. This benefits:
+## Mission
 
-- **Accessibility**: Screen readers navigate by landmarks (`<nav>`, `<main>`, `<footer>`)
-- **SEO**: Search engines better understand page structure
-- **Readability**: Other developers immediately understand the layout
+The Riverstone Community Garden is publishing a short harvest update. Build a page whose regions are clear enough for a visitor—or a screen-reader user—to jump straight to the update, its related links, or its contact details.
 
-## Page landmarks
+## What you'll build
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>...</head>
-<body>
-    <header>
-        <h1>Site Name</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
+A page with semantic landmarks: a site header and navigation, one self-contained article update, a related-links sidebar, and a footer — all organized inside a single main content region.
 
-    <main>
-        <article>
-            <h2>Article Title</h2>
-            <p>Article content...</p>
-        </article>
-        <aside>
-            <h3>Related Links</h3>
-        </aside>
-    </main>
+**Target:** a page with a site header and navigation, one self-contained update, a related-links sidebar, and a footer. When you preview it, the update sits inside the page's single primary-content region.
 
-    <footer>
-        <p>&copy; 2024 Site Name</p>
-    </footer>
-</body>
-</html>
-```
+## Give each part a job
 
-## Landmark elements
+Semantic HTML names the role of a region instead of using a generic `<div>` everywhere. Those names create landmarks that assistive technology can announce and navigate. They also make the document easier for a teammate and a search engine to understand.
 
-| Element | Purpose |
-|---------|---------|
-| `<header>` | Introductory content — site/page/section header |
-| `<nav>` | Navigation links |
-| `<main>` | Primary content (one per page) |
-| `<article>` | Self-contained, re-distributable content |
-| `<section>` | Thematic grouping of content |
-| `<aside>` | Tangentially related content (sidebars) |
-| `<footer>` | Closing content — copyright, links, contact |
+For this garden update, use:
 
-## `<article>` vs `<section>`
+| Element | Job on this page |
+| --- | --- |
+| `<header>` | Introduces the garden site |
+| `<nav>` | Holds site-navigation links |
+| `<main>` | Holds this page's primary content; use one per page |
+| `<article>` | Contains an update that could stand on its own |
+| `<aside>` | Holds related, secondary links |
+| `<footer>` | Holds closing contact or copyright information |
 
-- `<article>` is for content that could be removed from the page and still make sense on its own — a blog post, a comment, a news story.
-- `<section>` groups related content that is part of the page, not independently meaningful.
+`<section>` groups related content that belongs to the current page. An `<article>` is stronger: its content should still make sense if shared or listed by itself.
 
-## Text semantics
+## Build the update's landmarks
+
+Start with the outer shape. Notice that `<nav>` belongs inside the `<header>`, while the update and its sidebar belong inside `<main>`.
 
 ```html
-<!-- A quotation from another source -->
-<blockquote cite="https://example.com/source">
-    <p>The best way to predict the future is to invent it.</p>
-</blockquote>
+<header>
+    <h1>Riverstone Community Garden</h1>
+    <nav>
+        <a href="/plots">Plots</a>
+        <a href="/events">Events</a>
+    </nav>
+</header>
 
-<!-- A specific date/time -->
-<p>Published on <time datetime="2024-01-15">January 15, 2024</time></p>
+<main>
+    <article>
+        <h2>Saturday Harvest Share</h2>
+        <p>Tomatoes and basil will be ready at the tool shed.</p>
+        <time datetime="2026-08-15">August 15, 2026</time>
+    </article>
 
-<!-- Contact information for the nearest article/body -->
-<address>
-    Written by <a href="mailto:jane@example.com">Jane Smith</a>
-</address>
+    <aside>
+        <h3>Garden links</h3>
+        <a href="/volunteer">Volunteer times</a>
+    </aside>
+</main>
+
+<footer>
+    <p>Riverstone Community Garden</p>
+</footer>
 ```
 
-## Exercise
+`<time>` gives the browser a machine-readable date through `datetime` while visitors read the friendly date. Use it for a specific date or time, not for vague phrases such as “last week.”
 
-Build a semantic blog post page:
+## Checkpoint
 
-1. Add a `<header>` element.
+Preview the page. You should be able to point to a header, one navigation area, one main content area, the harvest update, related links, and a footer. If the update is outside `<main>`, check the opening and closing tags first.
+
+## Your Tasks
+
+1. Add one `<header>` element to introduce the garden page.
 2. Inside the header, add a `<nav>` with at least two links.
-3. Add a `<main>` element.
-4. Inside main, add an `<article>` with a heading and at least two paragraphs.
-5. Inside the article, include a `<time>` element with a `datetime` attribute.
-6. Add an `<aside>` next to the article with related links.
-7. Add a `<footer>` element.
+3. Add one `<main>` element for the primary content.
+4. Inside `<main>`, add an `<article>` for a garden update.
+5. Add a `<time>` element with a `datetime` attribute inside the article.
+6. Add one `<aside>` with related links.
+7. Add one `<footer>` element with closing contact or copyright information.
+
+## Payoff
+
+With those landmarks in place, the garden update is no longer just a stack of boxes: its structure explains where visitors are and where they can go next.

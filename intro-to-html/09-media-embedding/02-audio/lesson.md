@@ -3,6 +3,14 @@ title: Embedding Audio
 slug: audio
 order: 2
 language: html
+summary: Add audio players, fallback formats, custom controls, and transcripts to a web page.
+seo_title: Embed Audio with HTML
+seo_description: Learn to embed accessible HTML audio with controls, source formats, and transcripts.
+seo_keywords:
+  - HTML audio
+  - audio element
+  - audio transcript
+  - HTML media
 lesson_type: informational
 validationRules: []
 hints: []
@@ -10,68 +18,50 @@ hints: []
 
 # Embedding Audio
 
-The `<audio>` element embeds sound content — music, podcasts, sound effects — without requiring any plugin.
+## Mission
 
-## Basic syntax
+The Riverlight Community Hall is publishing a two-minute volunteer orientation. Add an audio player that works across browsers and gives visitors a clear way to play, pause, and read the spoken information.
 
-```html
-<audio src="song.mp3" controls>
-    Your browser does not support the audio element.
-</audio>
-```
+## What you'll build
 
-## Multiple formats with `<source>`
+An accessible audio player with multiple source formats, visible controls, and a transcript link for visitors who cannot or prefer not to listen.
 
-Provide multiple formats for cross-browser compatibility:
+The Riverlight Community Hall is publishing a two-minute volunteer orientation. Add an audio player that works across browsers and gives visitors a clear way to play, pause, and read the spoken information.
+
+## Target
+
+A visitor sees audio controls, and the page can offer more than one audio format plus a nearby transcript link.
+
+## One idea: audio needs an explicit listening path
+
+`<audio>` embeds sound. Give it `controls` so people can start, pause, seek, and adjust volume. Multiple sources let the browser choose a format it supports.
 
 ```html
 <audio controls>
-    <source src="song.ogg" type="audio/ogg" />
-    <source src="song.mp3" type="audio/mpeg" />
+    <source src="orientation.ogg" type="audio/ogg" />
+    <source src="orientation.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
 </audio>
+<p><a href="orientation-transcript.html">Read the orientation transcript</a></p>
 ```
 
-**Recommended formats:**
-- `.mp3` (MPEG Audio) — universally supported
-- `.ogg` (Vorbis) — open format, good quality
-- `.wav` — uncompressed, large file size, good for short clips
+MP3 plays in nearly every browser; OGG is a useful open alternative. The fallback text appears only when the browser cannot play the element.
 
-## Common attributes
+## Checkpoint
 
-| Attribute | Description |
-|-----------|-------------|
-| `controls` | Shows play/pause, volume, seek controls |
-| `autoplay` | Starts playing immediately (often blocked by browsers) |
-| `muted` | Starts muted |
-| `loop` | Repeats the audio |
-| `preload` | `auto`, `metadata`, or `none` |
+With the audio files present, the preview should show a control bar before anything plays. If it starts unexpectedly, remove `autoplay`. If it has no usable interface, add `controls` or provide equivalent custom buttons.
 
-## Differences from `<video>`
+## Use the right attributes
 
-- No `poster` attribute (audio has no visual)
-- No `width`/`height` (the control bar size is determined by the browser)
-- Otherwise the API is nearly identical
+| Attribute | Result |
+|---|---|
+| `controls` | Shows play, pause, volume, and seek controls. |
+| `muted` | Starts without sound. |
+| `loop` | Repeats the clip. |
+| `preload` | Hints how much media to fetch before playback. |
 
-## Styling the audio player
+Unlike video, audio has no `poster`, width, or height that communicates the content. For spoken material, a transcript supplies the words to people who cannot or prefer not to listen.
 
-The default `<audio controls>` player looks different in every browser. You can hide native controls and build a custom UI with JavaScript:
+## Payoff
 
-```html
-<audio id="player" src="song.mp3"></audio>
-<button onclick="document.getElementById('player').play()">Play</button>
-<button onclick="document.getElementById('player').pause()">Pause</button>
-```
-
-## Accessibility
-
-Always provide the `controls` attribute or a custom playback UI — hidden audio that auto-plays is confusing and disorienting for screen reader users.
-
-If the audio is a podcast or speech recording, consider linking a text transcript alongside it.
-
-## Summary
-
-- Use `<audio controls>` for inline audio
-- Provide `.mp3` and `.ogg` sources for best coverage
-- Avoid `autoplay` without user interaction
-- Link a transcript for spoken-word audio
+The orientation is available as a deliberate, controllable audio experience instead of an inaccessible background sound.

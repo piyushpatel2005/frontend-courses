@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">HTML document structure</title>
+  <desc id="desc">A hand-drawn style diagram showing html contains head and body, while body contains visible page content.</desc>
+  <rect width="900" height="360" fill="#fffdf7"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="28" fill="#222">An HTML page has two main parts</text>
+  <rect x="340" y="70" width="220" height="62" rx="14" fill="#a5d8ff" stroke="#222" stroke-width="3"/>
+  <text x="450" y="108" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="25" fill="#222">&lt;html&gt;</text>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3.5 L0,7 Z" fill="#222"/>
+    </marker>
+  </defs>
+  <path d="M400 132 L240 205" stroke="#222" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500 132 L660 205" stroke="#222" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <rect x="105" y="205" width="270" height="86" rx="14" fill="#fff3bf" stroke="#222" stroke-width="3"/>
+  <text x="240" y="242" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="24" fill="#222">&lt;head&gt;</text>
+  <text x="240" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">title, metadata, linked files</text>
+  <rect x="525" y="205" width="270" height="86" rx="14" fill="#b2f2bb" stroke="#222" stroke-width="3"/>
+  <text x="660" y="242" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="24" fill="#222">&lt;body&gt;</text>
+  <text x="660" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#222">visible page content</text>
+</svg>

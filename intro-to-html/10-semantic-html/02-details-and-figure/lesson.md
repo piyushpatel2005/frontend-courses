@@ -3,6 +3,10 @@ title: Details, Figure, and Figcaption
 slug: details-and-figure
 order: 2
 language: html
+summary: Build expandable content and properly captioned media with native HTML elements.
+seo_title: Details, Figure, and Figcaption | Learn HTML
+seo_description: Learn when to use details, summary, figure, and figcaption for FAQs, images, diagrams, and captions.
+seo_keywords: [HTML details, HTML summary, HTML figure, figcaption, accessible HTML]
 validationRules: []
 hints:
   - "The <details> element is collapsed by default. Add the open attribute to expand it on load."
@@ -13,67 +17,63 @@ hints:
 
 # Details, Figure, and Figcaption
 
-## The `<details>` and `<summary>` elements
+## Mission
 
-`<details>` creates a native, no-JavaScript disclosure widget — content is hidden by default and revealed on click:
+The Riverstone garden page needs a compact “Before You Visit” area. Add questions people can open when needed and a seedling photo whose caption stays connected to the image.
+
+## What you'll build
+
+An FAQ with expandable answers (one open by default) and a captioned figure with an image and figcaption, keeping media and explanation together.
+
+**Target:** an FAQ with one answer already visible and a captioned image beneath it. In the preview, clicking each question should reveal only that question's answer.
+
+## Let optional information stay optional
+
+`<details>` creates a disclosure widget with no JavaScript. Its `<summary>` is the visible control; the rest of the content appears when a visitor opens it.
 
 ```html
 <details>
-    <summary>What is HTML?</summary>
-    <p>HTML stands for HyperText Markup Language. It is the standard markup language for creating web pages.</p>
+    <summary>Can I bring a reusable bag?</summary>
+    <p>Yes. Bring one for your harvest share.</p>
 </details>
 ```
 
-- Clicking the `<summary>` toggles the visibility of everything else inside `<details>`
-- Add the `open` attribute to expand it by default:
+The content starts collapsed. Add the boolean `open` attribute when one answer should be visible on page load.
 
 ```html
 <details open>
-    <summary>Already expanded</summary>
-    <p>This content is visible when the page loads.</p>
+    <summary>Where is the garden gate?</summary>
+    <p>Enter beside the blue tool shed on Willow Lane.</p>
 </details>
 ```
 
-**Great for:** FAQs, spoilers, progressive disclosure.
+Use this pattern for FAQs, optional instructions, or spoiler-free extra detail. Put `<summary>` first so the control is easy to find and use.
 
-## The `<figure>` and `<figcaption>` elements
+## Keep media and its caption together
 
-`<figure>` wraps self-contained media (images, diagrams, code snippets, charts) that is referenced from the main text. `<figcaption>` provides a caption:
-
-```html
-<figure>
-    <img src="diagram.png" alt="Network topology diagram" />
-    <figcaption>Figure 1. A simple star network topology.</figcaption>
-</figure>
-```
-
-`<figcaption>` can be the first or last child of `<figure>`:
+A `<figure>` groups self-contained media with its explanation. The media can be an image, diagram, chart, or code sample. `<figcaption>` names or describes it.
 
 ```html
 <figure>
-    <figcaption>Listing 1. Hello World in Python.</figcaption>
-    <pre><code>print("Hello, World!")</code></pre>
+    <img src="seedlings.jpg" alt="Tomato seedlings in trays beside a sunny window">
+    <figcaption>Tomato seedlings ready for the Saturday planting table.</figcaption>
 </figure>
 ```
 
-The benefit of `<figure>` over a plain `<div>` is semantic: it tells browsers, search engines, and screen readers that this media is a discrete unit with its own caption.
+Unlike a plain `<div>`, this structure tells browsers and assistive technology that the image and caption belong together. The caption may be the first or last child of the figure.
 
-## Combining both
+## Checkpoint
 
-```html
-<details>
-    <summary>View the architecture diagram</summary>
-    <figure>
-        <img src="architecture.png" alt="System architecture overview" />
-        <figcaption>High-level overview of the three-tier architecture.</figcaption>
-    </figure>
-</details>
-```
+Preview the page. One FAQ answer should be visible immediately; the other answers should appear only after their summaries are clicked. The seedling caption should read as part of the same unit as the image. If a question will not toggle, make sure its `<summary>` is inside its `<details>`.
 
-## Exercise
+## Your Tasks
 
-1. Add at least 2 `<details>` elements for an FAQ.
-2. Ensure each `<details>` has a `<summary>`.
-3. Make one `<details>` expanded by default using `open`.
-4. Add a `<figure>` with an `<img>`.
-5. Add a `<figcaption>` inside the figure.
+1. Add at least two `<details>` elements for the garden FAQ.
+2. Put a `<summary>` inside each `<details>` element.
+3. Add the `open` attribute to one `<details>` element so its answer starts expanded.
+4. Add a `<figure>` containing an `<img>` for the garden page.
+5. Add a `<figcaption>` inside that figure to describe the image.
+
+## Payoff
+
+The visit information now stays tidy while the photo carries its own explanation—useful context without extra scripting or detached captions.
