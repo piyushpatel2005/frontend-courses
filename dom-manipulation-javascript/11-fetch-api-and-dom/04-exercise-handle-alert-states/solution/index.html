@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trail alerts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Trail alerts</h1>
+    <p class="note">Offline preview · deterministic mock data, not a live API</p>
+    <label for="alert-mode">Scenario</label>
+    <select id="alert-mode"><option value="alerts">Alerts</option><option value="empty">Empty</option><option value="http">HTTP error</option><option value="offline">Network failure</option></select>
+    <button id="check-alerts" type="button">Check alerts</button>
+    <p id="alert-status" role="status">Choose a scenario.</p>
+    <ul id="alert-list"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

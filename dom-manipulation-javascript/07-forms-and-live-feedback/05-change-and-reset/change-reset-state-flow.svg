@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 270" role="img" aria-labelledby="title desc">
+<title id="title">Change and reset synchronize a select and its preview</title>
+<desc id="desc">A selection change updates the preview immediately; resetting the form restores the selection first, then the preview update runs.</desc>
+<rect width="820" height="270" rx="22" fill="#fffdf6"/>
+<text x="36" y="38" fill="#24334b" font-family="Comic Sans MS, cursive" font-size="23" font-weight="bold">One form, two paths to the same preview</text>
+<path d="M33 60 Q30 56 37 55 L229 56 Q234 59 231 64 L229 178 Q230 184 222 183 L37 182 Q30 184 33 177 Z" fill="#a5d8ff" stroke="#253e67" stroke-width="3"/>
+<text x="52" y="95" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="20">Select: Cool</text><text x="52" y="130" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="17">or Reset → Warm</text>
+<path d="M286 63 Q284 57 291 58 L506 60 Q512 61 508 68 L509 177 Q508 183 503 183 L291 182 Q283 182 286 173 Z" fill="#d0bfff" stroke="#253e67" stroke-width="3"/>
+<text x="315" y="94" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="19">change: render now</text><text x="314" y="130" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="17">reset: render after</text><text x="314" y="154" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="17">browser restores value</text>
+<path d="M560 61 Q557 56 564 59 L788 58 Q793 61 789 66 L790 177 Q788 182 782 182 L564 183 Q557 180 560 174 Z" fill="#b2f2bb" stroke="#253e67" stroke-width="3"/>
+<text x="582" y="108" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="20">Summary matches</text><text x="582" y="137" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="19">select.value</text>
+<path d="M233 118 L281 118" fill="none" stroke="#253e67" stroke-width="3" marker-end="url(#arrow)"/><path d="M510 118 L555 118" fill="none" stroke="#253e67" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="47" y="225" fill="#34445b" font-family="Comic Sans MS, cursive" font-size="17">Reset fires before defaults return. Do not read the old value for the final preview.</text>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#253e67"/></marker></defs>
+</svg>

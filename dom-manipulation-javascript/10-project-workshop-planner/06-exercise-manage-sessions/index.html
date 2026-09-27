@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Workshop planner</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body><main>
+<h1>Community workshop planner</h1>
+<p>Build an itinerary that stays current as plans change.</p>
+<ol id="sessions"></ol>
+<button id="update-session" type="button">Update first session time</button>
+<h2>Add a session</h2>
+<form id="session-form" novalidate>
+  <label for="session-title">Session title</label><input id="session-title" name="title" type="text" aria-describedby="session-status">
+  <label for="session-time">Start time</label><input id="session-time" name="time" type="time" aria-describedby="session-status">
+  <label for="session-track">Track</label><select id="session-track" name="track"><option value="Art">Art</option><option value="Making">Making</option></select>
+  <button type="submit">Add session</button>
+</form>
+<p id="session-status" role="status"></p>
+<h2>Manage itinerary</h2>
+<label for="session-query">Filter sessions by title</label>
+<input id="session-query" type="search">
+<p id="session-count">2 sessions shown</p>
+</main></body>
+</html>

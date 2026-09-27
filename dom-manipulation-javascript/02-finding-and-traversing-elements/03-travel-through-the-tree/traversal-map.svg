@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 415" role="img" aria-labelledby="title desc">
+<title id="title">Routes around a book card's DOM</title>
+<desc id="desc">An article contains a heading and a featured span. From the span parentElement and closest article reach the card; children zero of the card reaches the heading.</desc>
+<rect width="790" height="415" rx="20" fill="#fcfaf5"/>
+<text x="36" y="43" font-family="system-ui" font-size="23" font-weight="700" fill="#273445">From a label, navigate its family</text>
+<rect x="248" y="83" width="325" height="272" rx="18" fill="#e9f3f1" stroke="#244c64" stroke-width="3" transform="rotate(-.3 410 219)"/>
+<text x="267" y="117" font-family="system-ui" font-size="20" font-weight="700" fill="#244c64">&lt;article&gt;  card</text>
+<rect x="285" y="143" width="250" height="62" rx="12" fill="#fff3bf" stroke="#244c64" stroke-width="2.5"/>
+<text x="410" y="181" text-anchor="middle" font-family="system-ui" font-size="19" fill="#243447">&lt;h2&gt; River atlas</text>
+<rect x="285" y="265" width="250" height="62" rx="12" fill="#a5d8ff" stroke="#244c64" stroke-width="2.5"/>
+<text x="410" y="303" text-anchor="middle" font-family="system-ui" font-size="19" fill="#243447">&lt;span&gt; Staff pick</text>
+<path d="M285 280 L254 237" stroke="#244c64" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M249 230 l2 13 10 -7z" fill="#244c64"/>
+<path d="M543 297 C609 292 622 205 570 132" stroke="#168052" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M568 127 l-2 14 12 -6z" fill="#168052"/>
+<text x="37" y="173" font-family="system-ui" font-size="18" fill="#244c64">card.children[0]</text><path d="M210 167 L279 167" stroke="#244c64" stroke-width="2.5"/><path d="M282 167 l-10 -6 v12z" fill="#244c64"/>
+<text x="37" y="300" font-family="system-ui" font-size="18" fill="#244c64">start at .featured</text><path d="M216 295 L279 295" stroke="#244c64" stroke-width="2.5"/><path d="M282 295 l-10 -6 v12z" fill="#244c64"/>
+<text x="586" y="209" font-family="system-ui" font-size="18" fill="#168052">closest('article')</text>
+<text x="300" y="244" font-family="system-ui" font-size="17" fill="#244c64">parentElement ↑</text>
+<text x="36" y="391" font-family="system-ui" font-size="16" fill="#435766">Both routes reach article here; a wrapper would change parentElement.</text>
+</svg>

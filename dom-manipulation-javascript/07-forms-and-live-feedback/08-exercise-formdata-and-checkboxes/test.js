@@ -1,0 +1,43 @@
+test("form has named, labelled controls and a live status", () => {
+  const form = document.querySelector("#garden-form");
+  const guest = form.querySelector("#guest");
+  const boxes = [...form.querySelectorAll('input[type="checkbox"][name="help"]')];
+  const status = document.querySelector("#garden-status");
+  assert.exists(guest, "Keep the guest input");
+  assert.equal(guest.name, "guest", "Name the guest field for FormData");
+  assert.equal(guest.labels.length > 0, true, "Label the guest input");
+  assert.equal(boxes.length, 2, "Add two help checkboxes");
+  assert.equal(boxes.every((box) => box.labels.length > 0), true, "Label both checkboxes");
+  assert.equal(boxes.map((box) => box.value).sort().join(","), "Compost,Watering", "Use Compost and Watering values");
+  assert.equal(status.getAttribute("role"), "status", "Announce updates with a status region");
+});
+test("submit reads current checkbox selection including none", () => {
+  const form = document.querySelector("#garden-form");
+  const guest = document.querySelector("#guest");
+  const status = document.querySelector("#garden-status");
+  guest.value = "Ari";
+  const boxes = [...form.querySelectorAll('input[name="help"]')];
+  boxes.forEach((box) => { box.checked = box.value === "Watering"; });
+  let event = new Event("submit", { bubbles: true, cancelable: true });
+  form.dispatchEvent(event);
+  assert.equal(event.defaultPrevented, true, "Prevent navigation");
+  assert.equal(status.textContent.includes("Watering"), true, "Show the checked value");
+  assert.equal(status.textContent.includes("Compost"), false, "Omit unchecked values");
+  boxes.forEach((box) => { box.checked = false; });
+  event = new Event("submit", { bubbles: true, cancelable: true });
+  form.dispatchEvent(event);
+  assert.equal(status.textContent.toLowerCase().includes("no help"), true, "Explain an empty selection");
+});
+test("guest name is trimmed and shown as safe text; blank names rejected", () => {
+  const form = document.querySelector("#garden-form");
+  const guest = document.querySelector("#guest");
+  const status = document.querySelector("#garden-status");
+  guest.value = "  <em>Jo</em>  ";
+  form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  assert.equal(status.textContent.includes("<em>Jo</em>"), true, "Show the trimmed name literally");
+  assert.equal(status.querySelector("em"), null, "Never parse names as markup");
+  guest.value = "   ";
+  form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  assert.equal(status.textContent.includes("<em>Jo</em>"), false, "Do not keep an old request for a blank name");
+  assert.equal(status.textContent.trim().length > 0, true, "Explain the missing name");
+});

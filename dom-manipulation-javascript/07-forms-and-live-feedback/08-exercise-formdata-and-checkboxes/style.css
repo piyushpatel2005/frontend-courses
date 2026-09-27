@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { max-width: 42rem; margin: 2rem auto; padding: 0 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #182638; background: #f7fafc; }
+fieldset { border: 1px solid #718198; border-radius: .4rem; margin: 1rem 0; }
+label { display: block; margin: .55rem 0; }
+input, button { font: inherit; padding: .4rem; }
+button { background: #254d83; color: white; border: 0; border-radius: .3rem; padding: .6rem 1rem; cursor: pointer; }
+:focus-visible { outline: 3px solid #b85d13; outline-offset: 2px; }
+[role="status"] { background: #e7f0ff; padding: .7rem; border-radius: .35rem; }

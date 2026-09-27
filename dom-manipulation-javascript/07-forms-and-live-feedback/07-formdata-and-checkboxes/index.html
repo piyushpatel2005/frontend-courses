@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seed swap sign-up</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Seed swap sign-up</h1>
+    <form id="seed-form">
+      <label for="visitor">Your name</label>
+      <input id="visitor" name="visitor" required>
+      <fieldset>
+        <legend>Seeds you would like</legend>
+        <label><input type="checkbox" name="interest" value="Basil"> Basil</label>
+        <label><input type="checkbox" name="interest" value="Marigold"> Marigold</label>
+      </fieldset>
+      <button type="submit">Show request</button>
+    </form>
+    <p id="seed-status" role="status" aria-live="polite">Choose your interests and submit.</p>
+  </main>
+</body>
+</html>

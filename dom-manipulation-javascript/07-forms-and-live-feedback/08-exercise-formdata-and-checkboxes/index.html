@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Garden help request</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Garden help request</h1>
+    <form id="garden-form" novalidate>
+      <label for="guest">Your name</label>
+      <input id="guest" name="guest">
+      <fieldset>
+        <legend>Help needed</legend>
+        <label><input type="checkbox" name="help" value="Watering"> Watering</label>
+      </fieldset>
+      <button type="submit">Send request</button>
+    </form>
+    <p id="garden-status">No request yet.</p>
+  </main>
+</body>
+</html>
