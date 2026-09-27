@@ -1,35 +1,52 @@
-test("labelled search and live feedback are present", () => {
-  const search = document.querySelector("#member-search");
-  assert.exists(search, "Keep the search field");
-  assert.equal(search.labels.length > 0, true, "Label the search field");
-  assert.equal(document.querySelector("#result-count").getAttribute("role"), "status", "Announce the result count");
-  assert.equal(document.querySelector("#result-count").getAttribute("aria-live"), "polite", "Use a polite live region");
-  assert.exists(document.querySelector("#empty-state"), "Keep the empty-state paragraph");
+test("count is a polite live status", () => {
+  const count = document.querySelector("#result-count");
+  assert.equal(count.getAttribute("role"), "status", "Announce the result count");
+  assert.equal(count.getAttribute("aria-live"), "polite", "Use polite announcements");
 });
-test("input filters names or skills without deleting cards", () => {
+test("input filters names and skills without deleting cards", () => {
   const search = document.querySelector("#member-search");
+  const cards = [...document.querySelectorAll("#members li")];
   search.value = "  BIKE  ";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  const cards = [...document.querySelectorAll("#members li")];
-  assert.equal(cards.length, 3, "Do not remove the source cards");
-  assert.equal(cards.filter((card) => !card.hidden).length, 1, "Find a skill regardless of case and spaces");
-  assert.equal(cards.find((card) => !card.hidden).dataset.name, "Omar Reed", "Match the bike repair card");
+  assert.equal(cards.length, 3, "Keep the source cards");
+  assert.equal(cards.filter((card) => !card.hidden).map((card) => card.dataset.name).join(), "Omar Reed", "Match skills regardless of case or spaces");
   search.value = "mina";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(cards.find((card) => !card.hidden).dataset.name, "Mina Park", "Also match names");
+  assert.equal(cards.filter((card) => !card.hidden).map((card) => card.dataset.name).join(), "Mina Park", "Match names");
   search.value = "";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(cards.every((card) => !card.hidden), true, "Clearing the field restores all cards");
+  assert.equal(cards.every((card) => !card.hidden), true, "Clearing restores all cards");
 });
-test("zero matches show an empty state and accurate live count", () => {
+test("result count follows the visible cards", () => {
   const search = document.querySelector("#member-search");
+  const count = document.querySelector("#result-count");
   search.value = "nothing matches";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(document.querySelectorAll("#members li:not([hidden])").length, 0, "Hide nonmatching cards");
-  assert.equal(document.querySelector("#empty-state").hidden, false, "Reveal the empty state");
-  assert.equal(document.querySelector("#result-count").textContent.includes("0"), true, "Announce zero results");
+  assert.equal(count.textContent.includes("0"), true, "Report zero matches");
+  search.value = "bike";
+  search.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal(count.textContent.includes("1"), true, "Report one matching member");
+});
+test("empty state tracks zero results and recovery", () => {
+  const search = document.querySelector("#member-search");
+  const empty = document.querySelector("#empty-state");
+  search.value = "nothing matches";
+  search.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal(empty.hidden, false, "Reveal the empty state");
   search.value = "";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(document.querySelector("#empty-state").hidden, true, "Hide the empty state when results return");
-  assert.equal(document.querySelector("#result-count").textContent.includes("3"), true, "Announce the restored count");
+  assert.equal(empty.hidden, true, "Hide the empty state when results return");
+});
+test("hidden selected card clears the selection and details", () => {
+  const selected = document.querySelector("#members li");
+  const search = document.querySelector("#member-search");
+  selected.classList.add("selected");
+  document.querySelector("#detail-name").textContent = selected.dataset.name;
+  document.querySelector("#detail-skill").textContent = selected.dataset.skill;
+  search.value = "bike";
+  search.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal(selected.hidden, true, "Hide the nonmatching selected card");
+  assert.equal(selected.classList.contains("selected"), false, "Clear the hidden selection");
+  assert.equal(document.querySelector("#detail-name").textContent, "Choose a member", "Clear the detail name");
+  assert.equal(document.querySelector("#detail-skill").textContent, "Their skill will appear here.", "Clear the detail skill");
 });

@@ -21,7 +21,7 @@ A programme card needs a quick highlight control. Instead of rewriting the whole
 
 ## What the code does
 
-`classList.add("active")` adds a class without removing existing classes. `classList.remove("active")` removes only that class. `classList.contains("active")` returns a boolean so your code can report the current state. CSS defines what `.active` looks like; JavaScript only chooses whether the element has it.
+`classList.add("active")` adds a class without removing existing classes. `classList.remove("active")` removes only that class. `classList.contains("active")` returns a boolean so your code can report the current state. CSS defines what `.active` looks like; JavaScript only chooses whether the element has it. As with the checkbox in the previous section, `addEventListener("click", () => { ... })` waits for a button click before running the code inside. The events section will unpack this pattern further; for now, use it to see the class changes.
 
 In `script.js`, this is the important part of the already-working preview:
 

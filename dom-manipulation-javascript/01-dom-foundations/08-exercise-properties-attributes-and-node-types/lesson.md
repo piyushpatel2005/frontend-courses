@@ -31,6 +31,7 @@ Edit only `script.js`. Set the room input's current `value` property to **East r
 
 ## Your Tasks
 
-1. Set `#room-input.value` to `East room` and display the current property value in `#current-room`, leaving its HTML `value` attribute as `West room`.
-2. Read the input's `value` attribute with `getAttribute` and display it in `#default-room`.
-3. Display `#room-label.nodeType` and its `firstChild.nodeType` in `#room-node-types` as `1 / 3`.
+1. Set `#room-input.value` to `East room`. The supplied HTML `value` attribute stays `West room`; do not edit the markup.
+2. Display the input's current `value` property in `#current-room`.
+3. Read the input's original `value` attribute with `getAttribute` and display it in `#default-room`.
+4. Display `#room-label.nodeType` and its `firstChild.nodeType` in `#room-node-types` as `1 / 3`.

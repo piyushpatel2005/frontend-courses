@@ -49,8 +49,10 @@ document.querySelector("#sort-books").addEventListener("click", () => {
 
 ## Your Tasks
 
-1. Keep the captioned two-column table and its three resource rows; add a labelled `type="button"` control inside the Resource column header, which starts at `aria-sort="none"`.
-2. On the first activation, arrange resource rows A–Z and mark the Resource header `aria-sort="ascending"`; preserve the matching Category cells.
-3. On the next activation, arrange the same rows Z–A and mark `aria-sort="descending"`; repeated activations should keep alternating.
+1. In the Resource header, add a labelled `type="button"` sort control and initialize that header with `aria-sort="none"`.
+2. On its first click, sort whole resource rows A–Z and mark the header `aria-sort="ascending"`.
+3. On the next click, sort the whole rows Z–A and mark `aria-sort="descending"`; keep alternating on subsequent clicks.
 
 Try keyboard activation, then click again. Watch both columns: a category must stay with its resource, while the header's announced direction follows the visible order.
+
+You can now filter, reveal, add, remove, and reorder existing page content without losing accessible controls or treating visitor text as HTML.

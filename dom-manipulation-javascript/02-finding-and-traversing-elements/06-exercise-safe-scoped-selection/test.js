@@ -7,9 +7,15 @@ test("Only the bike clinic status changes", () => {
     "Tables being set up", "Leave the book exchange status alone");
 });
 
-test("The missing optional alert does not interrupt initialization", () => {
-  assert.equal(document.querySelector(".optional-alert"), null,
-    "This exercise intentionally has no optional alert");
-  assert.equal(document.body.dataset.scriptFinished, "yes",
-    "Guard the absent alert, then set data-script-finished to yes at the end of script.js");
+test("The optional alert is updated when present and safely ignored when absent", () => {
+  const alert = document.createElement("p");
+  alert.className = "optional-alert";
+  document.body.appendChild(alert);
+  try {
+    updateOptionalAlert();
+    assert.equal(alert.textContent, "Check the desk", "Update a present optional alert");
+  } finally {
+    alert.remove();
+  }
+  updateOptionalAlert(); // The missing optional element must not throw.
 });

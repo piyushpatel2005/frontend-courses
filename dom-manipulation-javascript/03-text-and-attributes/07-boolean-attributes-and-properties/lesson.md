@@ -21,9 +21,9 @@ A garden tour booking button should stay unavailable until a visitor agrees to t
 
 ## Presence, not a string value
 
-In HTML, `disabled` and `checked` are **boolean attributes**. Their presence means true, even if the markup says `disabled="false"`; only leaving the attribute out means false. In JavaScript, use the corresponding boolean properties: `button.disabled` and `checkbox.checked`. Assign `true` or `false`, not the strings `"true"` or `"false"`. Changing these properties updates the reflected HTML attributes on these native controls. `element.hasAttribute("disabled")` reports whether the attribute is present; unlike `getAttribute`, it returns a boolean, so it is useful for checking the markup state after a change. The checkbox's `.checked` property reports its **current** state, whereas `getAttribute("checked")` reads the original/default markup attribute and does not reliably track later clicks.
+In HTML, `disabled` and `checked` are **boolean attributes**. Their presence means true, even if the markup says `disabled="false"`; only leaving the attribute out means false. In JavaScript, use the corresponding boolean properties: `button.disabled` and `checkbox.checked`. Assign `true` or `false`, not the strings `"true"` or `"false"`. Changing `button.disabled` reflects in its HTML attribute, but changing a checkbox's current `.checked` state does **not** rewrite its default `checked` attribute. `element.hasAttribute("disabled")` reports whether the button attribute is present; unlike `getAttribute`, it returns a boolean. The checkbox's `.checked` property reports its **current** state, whereas `getAttribute("checked")` reads the original/default markup attribute and does not reliably track later clicks.
 
-The working `script.js` reads the initial state and updates both the control and a plain-language message:
+This is the first completed click/change interaction in this part of the course. `addEventListener("change", updateBooking)` asks the browser to call the function whenever the checkbox changes; the separate `updateBooking()` call sets the initial state before any interaction. Events get a dedicated section later. The working `script.js` updates both the control and a plain-language message:
 
 ```javascript
 const consent = document.querySelector("#tour-consent");

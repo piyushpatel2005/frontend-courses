@@ -28,4 +28,4 @@ const pageTitle = document.title;
 document.body.dataset.pageTitle = pageTitle;
 ```
 
-Run the preview: the badge appears and the tab title is **Harbor notices**. Try changing only the title in `index.html` and run again; the attribute follows it. The DOM tree stays the same shape even when its text changes. Next, you will read a different document property yourself.
+Run the preview: the badge changes from **waiting** to **Page connected**. The `<title>` in `index.html` is **Harbor notices**. Try changing only that title and run again; the body's `data-page-title` follows it, and the ready badge still appears. The DOM tree stays the same shape even when its text changes. Next, you will read a different document property yourself.

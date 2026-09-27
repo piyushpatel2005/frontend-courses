@@ -1,9 +1,16 @@
 const list = document.querySelector("#exhibits");
 const original = list.querySelector(".exhibit");
-const batch = document.createDocumentFragment();
-for (const name of ["Woven basket", "Glass bead"]) {
+
+function makeExhibit(name) {
   const copy = original.cloneNode(true);
   copy.querySelector(".exhibit-name").textContent = name;
-  batch.append(copy);
+  return copy;
 }
-list.append(batch);
+
+function addExhibits() {
+  const batch = document.createDocumentFragment();
+  batch.append(makeExhibit("Woven basket"), makeExhibit("Glass bead"));
+  list.append(batch);
+}
+
+addExhibits();

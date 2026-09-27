@@ -28,6 +28,8 @@ const next = document.createElement("li");
 next.className = "sighting";
 next.textContent = "Heron — new";
 document.getElementById("sightings").appendChild(next);
+document.getElementById("live-count").textContent = live.length;
+document.getElementById("static-count").textContent = staticList.length;
 ```
 
-Run: the original two sightings gain **— checked**; the new heron stays **— new**. The live collection now contains three, but the earlier static NodeList still contains two. This is a difference in *membership*, not whether edits to existing nodes are visible: both lists still refer to the original elements. We convert the live collection to an array **before** iterating so adding matching nodes cannot extend the loop unexpectedly. Unlike a NodeList, an HTMLCollection does not have `forEach` directly. Try changing `next.className` to `"other"` and run again; the live count then stays two. Restore it for the next exercise.
+`createElement("li")` makes a new list item in memory; setting `className` and `textContent` prepares it, and `appendChild(next)` puts it in the list. Node creation gets a fuller treatment later; here it makes the two collection types visibly diverge. Run: the original two sightings gain **— checked**; the new heron stays **— new**. The live collection now contains three, but the earlier static NodeList still contains two. This is a difference in *membership*, not whether edits to existing nodes are visible: both lists still refer to the original elements. We convert the live collection to an array **before** iterating so adding matching nodes cannot extend the loop unexpectedly. Unlike a NodeList, an HTMLCollection does not have `forEach` directly. Try changing `next.className` to `"other"` and run again; the live count then stays two. Restore it for the next exercise.

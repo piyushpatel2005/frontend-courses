@@ -44,8 +44,7 @@ Run the starter first to see what is present and what still does nothing. Edit `
 
 ## Your Tasks
 
-1. Keep the labelled `#trail-query` search field, three trail list items, and an `aria-live` result count.
-2. As the query changes, show case-insensitive matching trails and hide nonmatches; an empty query shows all trails again.
-3. Update `#trail-count` to reflect the number of visible trails, including zero matches.
+1. On each edit to `#trail-query`, hide nonmatching trails case-insensitively; an empty query shows all trails again.
+2. Update `#trail-count` to reflect the number of visible trails, including zero matches.
 
 Search for “river” in lowercase and then in uppercase; both should keep the same two trails. Clear the field and verify all three return. A query with no matches should announce zero rather than removing the list.

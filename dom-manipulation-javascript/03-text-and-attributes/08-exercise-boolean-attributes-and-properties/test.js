@@ -21,7 +21,6 @@ test("Checking the agreement enables sign-up", () => {
   box.dispatchEvent(new Event("change", { bubbles: true }));
   assert.equal(button.disabled, false, "Use the checked property to enable sign-up");
   assert.equal(button.hasAttribute("disabled"), false, "Remove disabled when enabled");
-  assert.equal(status.textContent.trim(), "Sign-up is ready.", "Announce the available action");
 });
 
 test("Unchecking the agreement disables sign-up again", () => {
@@ -31,6 +30,7 @@ test("Unchecking the agreement disables sign-up again", () => {
   box.checked = true;
   box.dispatchEvent(new Event("change", { bubbles: true }));
   assert.equal(button.disabled, false, "Checking should first enable sign-up");
+  assert.equal(status.textContent.trim(), "Sign-up is ready.", "Announce the available action");
   box.checked = false;
   box.dispatchEvent(new Event("change", { bubbles: true }));
   assert.equal(button.disabled, true, "Disable sign-up when unchecked");

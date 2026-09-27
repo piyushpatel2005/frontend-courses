@@ -1,2 +1,5 @@
-// Guard the bike card and its status. Then safely check an optional alert.
-// After those checks, mark document.body.dataset.scriptFinished as "yes".
+// Guard the bike card and its status.
+function updateOptionalAlert() {
+  // Look for an optional alert and update it only if present.
+}
+updateOptionalAlert();

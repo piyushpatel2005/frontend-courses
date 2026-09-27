@@ -40,5 +40,7 @@ In the ferry board, click **Slow pier** and immediately **Fast pier**. The board
 
 ## Your Tasks
 
-1. On a second route click, abort the previous request via `AbortController` and pass the current controller's `signal` into `mockFetch`.
-2. Show `Loading route…` for a new lookup and safely display the latest route name and status `Route ready.` after it resolves; ignore `AbortError` so an old request cannot overwrite the newer display.
+1. Wire both route buttons to start `mockFetch` for their route and immediately announce `Loading route…`.
+2. On a newer click, abort the previous request with `AbortController` and pass each request its controller’s `signal`.
+3. Render only the latest route name as literal text and report `Route ready.` after its response arrives.
+4. Ignore an old request’s `AbortError` so it never replaces the newest route’s ready status with an error.

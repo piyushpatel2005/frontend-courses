@@ -40,4 +40,5 @@ In this starter, `index.html` contains the targets, `style.css` holds the visual
 
 1. On `#set-border` click, set the notice’s inline `style.borderColor` to `teal` (and a solid border so it is visible).
 2. On `#emphasize` click, add the reusable `highlight` CSS class to `#community-notice` without removing its `note` class.
-3. On `#dismiss` click hide `#community-notice` using its `hidden` property; on `#restore` click show it again.
+3. On `#dismiss` click hide `#community-notice` using its `hidden` property.
+4. On `#restore` click show the dismissed notice again.

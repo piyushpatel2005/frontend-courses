@@ -38,5 +38,7 @@ In this starter, `index.html` contains the targets, `style.css` holds the visual
 
 ## Your Tasks
 
-1. On `#favourite` click, add `active` to `#book-card` without losing its `note` class, and report `Favourite: yes` in `#favourite-status`.
-2. On `#unfavourite` click, remove `active` while keeping `note`, and report `Favourite: no`; check membership using `classList.contains`.
+1. On `#favourite` click, add `active` to `#book-card` without losing its `note` class.
+2. After that click, report `Favourite: yes` in `#favourite-status`, checking membership with `classList.contains`.
+3. On `#unfavourite` click, remove `active` while keeping `note`.
+4. After removing it, report `Favourite: no` in `#favourite-status` using `classList.contains`.

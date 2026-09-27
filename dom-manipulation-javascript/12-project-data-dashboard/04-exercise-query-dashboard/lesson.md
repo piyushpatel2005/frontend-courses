@@ -16,7 +16,7 @@ seo_keywords:
 
 # Add event search to the dashboard
 
-Keep the event dashboard from the first exercise and add a labelled search field. The preceding trail demo shows how to prevent form navigation and send an encoded `q` parameter; the event fixture already knows how to read it. Your starter retains the working load/error/empty states so you can focus on search.
+Keep the event dashboard from the first exercise and connect the already-labelled search field. The preceding trail demo shows how to prevent form navigation and send an encoded `q` parameter; the event fixture already knows how to read it. Your starter retains the working load/error/empty states so you can focus on search.
 
 For a separate library catalogue, the browser might prepare its query like this:
 
@@ -30,8 +30,10 @@ Use the `#search-form` and `#search` controls already in `index.html`. Make a fu
 
 ## Your Tasks
 
-1. Keep the search input labelled and prevent `#search-form` from navigating on submit while starting a new load.
-2. Build the request URL with `URLSearchParams` so an event title containing `&` can be found without breaking the query.
-3. Show only matching events for a search; show the empty message for no matches and restore all events for an empty search.
+1. Prevent `#search-form` submission from navigating and start a fresh dashboard load. The labelled input and existing loader are supplied.
+2. Use `URLSearchParams` to encode the trimmed search as `q` in the request URL so reserved characters such as `&` reach the mock intact.
+3. Show only the event rows matching the current search.
+4. For a search with no matches, clear earlier rows and announce `No matching entries.`.
+5. For a blank search, restore the full event list.
 
 The fixture is still offline. A deployed fetch replacement needs a CORS-enabled endpoint that understands the same query parameter and JSON shape.

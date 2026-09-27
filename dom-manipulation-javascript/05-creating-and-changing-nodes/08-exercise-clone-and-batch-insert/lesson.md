@@ -37,7 +37,7 @@ setList.append(queued);
 
 ## Try the preview
 
-Run the preview: Clay vessel, Woven basket, and Glass bead should appear in that order, each with the original Collection item note. If a copy has no title span, make sure you passed `true` to `cloneNode`.
+The starter displays only Clay vessel. After the second step, run the preview: Clay vessel, Woven basket, and Glass bead should appear in that order, each with the original Collection item note. If a copy has no title span, make sure you passed `true` to `cloneNode`.
 
 ## Remember
 
@@ -45,5 +45,5 @@ Earlier you changed text on a newly made element. On a deep clone, find the nest
 
 ## Your Tasks
 
-1. Deep-clone the existing `.exhibit` twice, preserving both its nested title and Collection item note; set the new `.exhibit-name` text to `Woven basket` and `Glass bead`.
-2. Create a `DocumentFragment`, add the two distinct clones to it in that order, and append the fragment to `#exhibits` while keeping Clay vessel first.
+1. Complete `makeExhibit(name)` so it returns a detached deep clone of the sample with that name in its nested title, while keeping the sample and note unchanged.
+2. In `addExhibits()`, use a `DocumentFragment` to append the `Woven basket` and `Glass bead` clones together after Clay vessel.

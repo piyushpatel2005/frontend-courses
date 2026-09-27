@@ -19,19 +19,26 @@ async function dashboardFetch(url, options = {}) {
   data.failNext = false;
   const delay = data.delay;
   await new Promise((resolve, reject) => {
-    const timer = setTimeout(resolve, delay);
-    options.signal?.addEventListener("abort", () => {
+    if (options.signal?.aborted) {
+      reject(new DOMException("Request cancelled", "AbortError"));
+      return;
+    }
+    const timer = setTimeout(() => {
+      options.signal?.removeEventListener("abort", onAbort);
+      resolve();
+    }, delay);
+    function onAbort() {
       clearTimeout(timer);
       reject(new DOMException("Request cancelled", "AbortError"));
-    }, { once: true });
+    }
+    options.signal?.addEventListener("abort", onAbort, { once: true });
   });
-  if (shouldFail) return { ok: false, status: 503 };
-  const params = new URL(url, location.href).searchParams;
+  if (shouldFail) return new Response("Unavailable", { status: 503 });
+  const params = new URL(url, "https://preview.invalid").searchParams;
   const query = (params.get("q") || "").toLowerCase();
-  return {
-    ok: true,
-    json: async () => ({ items: items.filter(item => item.title.toLowerCase().includes(query)) })
-  };
+  return new Response(JSON.stringify({
+    items: items.filter(item => item.title.toLowerCase().includes(query))
+  }), { status: 200, headers: { "Content-Type": "application/json" } });
 }
 
 const list = document.querySelector("#entries");

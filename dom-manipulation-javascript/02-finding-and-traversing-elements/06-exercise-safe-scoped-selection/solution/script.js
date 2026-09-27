@@ -5,8 +5,10 @@ if (bike) {
     status.textContent = "Mechanics ready";
   }
 }
-const alert = document.querySelector(".optional-alert");
-if (alert) {
-  alert.textContent = "Check the desk";
+function updateOptionalAlert() {
+  const alert = document.querySelector(".optional-alert");
+  if (alert) {
+    alert.textContent = "Check the desk";
+  }
 }
-document.body.dataset.scriptFinished = "yes";
+updateOptionalAlert();

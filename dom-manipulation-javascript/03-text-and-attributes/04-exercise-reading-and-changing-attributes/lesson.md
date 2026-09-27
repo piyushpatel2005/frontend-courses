@@ -41,5 +41,6 @@ In this starter, `index.html` contains the targets, `style.css` holds the visual
 ## Your Tasks
 
 1. Read the original `href` with `getAttribute` before changing it; display `Previous destination: #` in `#destination`.
-2. Set `#club-link`’s `href` to `https://example.org/reading-club` and `aria-label` to `View the reading club schedule`; keep its descriptive visible text.
-3. Remove the obsolete `data-draft` attribute from `#club-link`.
+2. Set `#club-link`’s `href` to `https://example.org/reading-club`. Its descriptive visible text is supplied in the markup.
+3. Set `#club-link`’s `aria-label` to `View the reading club schedule`.
+4. Remove the obsolete `data-draft` attribute from `#club-link`.

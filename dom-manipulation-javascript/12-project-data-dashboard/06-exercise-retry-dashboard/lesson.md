@@ -16,7 +16,7 @@ seo_keywords:
 
 # Finish a resilient event dashboard
 
-Your event search works, but rapid submissions can leave an old request running. Use the preceding trail demo to make the latest search win and leave Retry available for genuine failures. The starter retains your previous working dashboard; finish the marked TODOs in `script.js`.
+Your event search works, but rapid submissions can leave an old request running. Use the preceding trail demo to make the latest search win and leave Retry available for genuine failures. The starter retains your previous working dashboard, including the Retry listener; finish the marked TODOs in `script.js`.
 
 In a separate weather widget, the smallest request identity guard would be:
 
@@ -34,8 +34,8 @@ For this dashboard, add `AbortController` so a newly started request cancels the
 
 ## Your Tasks
 
-1. Preserve the event search and failure UI; a failed request must reveal Retry, and clicking Retry must load the current search and hide the button on success.
-2. Cancel an in-flight request with `AbortController` when a newer search starts, and keep only the newest search result in the list.
-3. Ignore cancelled requests in the error handler; rapid searches must not display a false error or reveal Retry after the successful latest request.
+1. Pass an `AbortController` signal to each request and abort the previous in-flight request when a newer search begins. The existing Retry listener is setup.
+2. Guard rendering so an older request that settles after a newer one cannot overwrite the latest search result.
+3. Ignore cancelled requests in the error handler so a superseded search never shows a false error or reveals Retry.
 
 The finished dashboard runs entirely on a mock fetch fixture. To connect it later, replace the fetch-shaped call with a CORS-enabled endpoint and verify its response contract. Your page now handles delayed data as carefully as immediate DOM updates.

@@ -45,8 +45,11 @@ For the garden, do the read **inside** `submit` so each request uses the latest 
 
 ## Your Tasks
 
-1. Complete `#garden-form` with a labelled, named `#guest` input, two labelled checkboxes named `help` with values `Watering` and `Compost`, and a live `#garden-status` region.
-2. On submit, prevent navigation and report the current checked help values from `FormData.getAll("help")`; if neither is checked, clearly report that no help was selected.
-3. Include the trimmed guest name in the status as literal text, even for a name containing `<` and `>`; reject an empty name rather than publishing a nameless request.
+1. Add a labelled `help` checkbox with value `Compost` beside the existing `Watering` option.
+2. Make `#garden-status` a polite live status region.
+3. Prevent default navigation when `#garden-form` is submitted.
+4. On submit, report the checked help values using `FormData.getAll("help")`; report “no help selected” when none are checked.
+5. Include the trimmed guest name as literal text in the report, without parsing markup.
+6. For a blank or whitespace-only guest name, show a missing-name error instead of a request.
 
 Try one check, both checks, and neither, resubmitting each time. Type `<em>Jo</em>` as a name: the output should show the angle brackets rather than create an emphasized element.

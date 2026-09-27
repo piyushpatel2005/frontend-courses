@@ -21,7 +21,7 @@ A museum accepts a visitor caption that happens to contain angle brackets. Rende
 
 ## Recall and transfer
 
-`textContent` replaces a node’s text, escaping any tags in the assigned string. `innerHTML` parses the assigned string as HTML and can create elements, including unsafe markup when the string comes from a user. Reserve `innerHTML` for carefully controlled, trusted markup; do not use it for visitor input. Reading `.textContent` returns the visible text characters rather than an HTML source string.
+`textContent` replaces a node’s children with plain text; angle brackets in the assigned string are displayed literally rather than parsed as tags. `innerHTML` parses the assigned string as HTML and can create elements, including unsafe markup when the string comes from a user. Reserve `innerHTML` for carefully controlled, trusted markup; do not use it for visitor input. Reading `.textContent` returns descendant text, including text in hidden descendants, rather than an HTML source string.
 
 Here is the same technique in a **different setting**; its selectors and data are not the answer to this exercise:
 
@@ -38,5 +38,4 @@ In this starter, `index.html` contains the targets, `style.css` holds the visual
 
 ## Your Tasks
 
-1. Set `#caption` to the exact text `A sketch of <clouds>` from `visitorCaption`.
-2. Keep the caption as plain text: no `<clouds>` element should appear inside `#caption` (use `textContent`, not `innerHTML`).
+1. Set `#caption` to the exact text `A sketch of <clouds>` from `visitorCaption` using `textContent`, so the brackets stay literal and no `<clouds>` element is created.

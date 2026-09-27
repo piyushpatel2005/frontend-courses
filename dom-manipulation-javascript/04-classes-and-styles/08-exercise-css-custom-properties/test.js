@@ -5,7 +5,6 @@ test("Card starts with the stylesheet's teal accent", () => {
   assert.exists(card, "Keep #workshop-card");
   assert.exists(tag, "Keep the card tag");
   assert.exists(status, "Keep #theme-status");
-  card.style.removeProperty("--accent");
   assert.equal(card.style.getPropertyValue("--accent"), "", "Start without an inline override");
   assert.equal(getComputedStyle(card).borderTopColor, "rgb(22, 112, 105)", "Keep the CSS teal default on the border");
   assert.equal(getComputedStyle(tag).backgroundColor, "rgb(22, 112, 105)", "Use the same accent on the tag");

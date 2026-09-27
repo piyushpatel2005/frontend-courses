@@ -5,7 +5,7 @@ order: 1
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: See how the input event updates a market stall preview on every keystroke.
+summary: See how the input event updates a garden plot badge on every edit.
 seo_title: Read a field while someone types | Beginner DOM Manipulation with JavaScript
 seo_description: Learn to read input.value as someone types and update a live preview with textContent, without waiting for form submission.
 seo_keywords:

@@ -31,6 +31,7 @@ The catalog starts with a search field and no results. Search `tea & honey` to s
 
 ## Your Tasks
 
-1. On form submit, prevent navigation and use `URLSearchParams` to encode the trimmed search field as `q` in a `/api/catalog` request; display the resulting request URL in `#request-url`.
-2. Await the mock response and render each matching product name as safe `li` text in `#results`, replacing earlier results.
-3. When there are no matches, leave `#results` empty and set `#search-status` to `No matches.` instead of showing stale results.
+1. Prevent `#catalog-form` from navigating on submit.
+2. Encode the trimmed query as `q` with `URLSearchParams` in a `/api/catalog` request and display that URL in `#request-url`.
+3. Await the mock JSON response and replace `#results` with matching product names as literal list-item text.
+4. For an unmatched query, clear old results and show `No matches.` in `#search-status`.

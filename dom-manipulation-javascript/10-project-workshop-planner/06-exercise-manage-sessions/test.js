@@ -1,55 +1,63 @@
-test("filters titles without deleting state", () => {
+test("typing filters without deleting state", () => {
   const query = document.querySelector("#session-query");
-  query.value = "REPAIR";
-  query.dispatchEvent(new Event("input", { bubbles: true }));
+  query.value = "REPAIR"; query.dispatchEvent(new Event("input", { bubbles: true }));
   const rows = [...document.querySelectorAll("#sessions li")];
-  assert.equal(rows.length, 2, "Filtering should retain stored rows");
-  assert.equal(rows.filter(row => !row.hidden).length, 1, "Find one title regardless of case");
-  query.value = "not here";
-  query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(rows.filter(row => !row.hidden).length, 0, "Support zero matches");
-  query.value = "";
-  query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(rows.filter(row => !row.hidden).length, 2, "Clearing restores both entries");
+  assert.equal(rows.length, 2);
+  assert.equal(rows.filter(row => !row.hidden).length, 1);
+  query.value = "not here"; query.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal([...document.querySelectorAll("#sessions li")].filter(row => !row.hidden).length, 0);
+  query.value = ""; query.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal([...document.querySelectorAll("#sessions li")].filter(row => !row.hidden).length, 2);
 });
-test("delegated Remove buttons work on original and new sessions", () => {
-  const list = document.querySelector("#sessions");
-  const first = list.querySelector("li button.remove-session");
-  assert.exists(first, "Give each initial row a Remove button");
-  assert.equal(first.type, "button", "Use a native non-submit button");
-  assert.equal(first.textContent.includes("Screen printing"), true, "Name the session in the button");
+test("every row has a descriptive native Remove button", () => {
+  const check = row => {
+    const button = row.querySelector("button.remove-session");
+    assert.exists(button);
+    assert.equal(button.type, "button");
+    assert.equal(button.textContent.includes("Remove"), true);
+    assert.equal(button.textContent.includes(row.firstChild.textContent.split(" — ")[1].split(" (")[0]), true);
+  };
+  [...document.querySelectorAll("#sessions li")].forEach(check);
   document.querySelector("#session-title").value = "New weaving";
   document.querySelector("#session-time").value = "15:00";
   document.querySelector("#session-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  const newest = [...list.querySelectorAll("li")].find(row => row.textContent.includes("New weaving"));
-  assert.exists(newest, "Keep adding sessions from the previous exercise");
-  const button = newest.querySelector("button.remove-session");
-  assert.exists(button, "New rows need Remove buttons too");
-  button.focus();
-  button.click(); // Native button click is also fired by Enter/Space in a browser.
-  assert.equal([...list.querySelectorAll("li")].some(row => row.textContent.includes("New weaving")), false, "Remove a new row");
-  list.querySelector("li button.remove-session").click();
-  assert.equal([...list.querySelectorAll("li")].some(row => row.textContent.includes("Screen printing")), false, "Remove an original row");
+  check([...document.querySelectorAll("#sessions li")].at(-1));
 });
-test("live visible count follows filtering, adding, and removal", () => {
+test("delegated clicks remove new and original sessions", () => {
+  const list = document.querySelector("#sessions");
+  document.querySelector("#session-title").value = "Late weaving";
+  document.querySelector("#session-time").value = "16:00";
+  document.querySelector("#session-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  const before = list.querySelectorAll("li").length;
+  const added = [...list.querySelectorAll("li")].find(row => row.textContent.includes("Late weaving"));
+  assert.exists(added?.querySelector("button.remove-session"));
+  added.querySelector("button.remove-session").click();
+  assert.equal(list.querySelectorAll("li").length, before - 1);
+  assert.equal(list.textContent.includes("Late weaving"), false);
+  list.querySelector("li button.remove-session").click();
+  assert.equal(list.textContent.includes("Screen printing"), false);
+});
+test("Update handles an empty itinerary", () => {
+  const list = document.querySelector("#sessions");
+  while (list.querySelector("li button.remove-session")) list.querySelector("li button.remove-session").click();
+  document.querySelector("#update-session").click();
+  assert.equal(document.querySelector("#session-status").textContent, "No sessions to update.");
+});
+test("polite status counts visible rows after changes", () => {
   const count = document.querySelector("#session-count");
-  assert.equal(count.getAttribute("role"), "status", "Make the count a status region");
-  assert.equal(count.getAttribute("aria-live"), "polite", "Announce changes politely");
+  assert.equal(count.getAttribute("role"), "status");
+  assert.equal(count.getAttribute("aria-live"), "polite");
   const query = document.querySelector("#session-query");
-  query.value = "";
-  query.dispatchEvent(new Event("input", { bubbles: true }));
-  const current = document.querySelectorAll("#sessions li").length;
-  assert.equal(count.textContent.includes(String(current)), true, "Count all visible rows");
-  query.value = "no matching workshop";
-  query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(count.textContent.includes("0"), true, "Announce zero matches");
-  query.value = "";
-  query.dispatchEvent(new Event("input", { bubbles: true }));
+  query.value = ""; query.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal(count.textContent.includes(String(document.querySelectorAll("#sessions li").length)), true);
+  query.value = "absent"; query.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal(count.textContent.includes("0"), true);
+  query.value = ""; query.dispatchEvent(new Event("input", { bubbles: true }));
   document.querySelector("#session-title").value = "Late mosaic";
   document.querySelector("#session-time").value = "16:00";
   document.querySelector("#session-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
   const added = document.querySelectorAll("#sessions li").length;
-  assert.equal(count.textContent.includes(String(added)), true, "Recount after adding");
+  assert.equal(count.textContent.includes(String(added)), true);
   document.querySelector("#sessions li:last-child button.remove-session").click();
-  assert.equal(count.textContent.includes(String(added - 1)), true, "Recount after removal");
+  assert.equal(count.textContent.includes(String(added - 1)), true);
 });

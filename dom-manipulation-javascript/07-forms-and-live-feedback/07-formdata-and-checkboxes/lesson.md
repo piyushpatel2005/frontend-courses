@@ -21,7 +21,7 @@ A neighborhood seed swap needs one sign-up name and any number of seed interests
 
 ## Follow the form data
 
-The `name` attributes, not the element IDs, become FormData keys. Both checkboxes share `name="interest"` but have different values. `new FormData(form)` reads successful controls at submit time: unchecked checkboxes are **not included**. `data.get("visitor")` returns the name; `data.getAll("interest")` returns an array of checked values (or an empty array). We trim the name and use `join(", ")` only when there is at least one interest.
+The `name` attributes, not the element IDs, become FormData keys. Both checkboxes share `name="interest"` but have different values. `new FormData(form)` reads successful controls at submit time: unchecked checkboxes are **not included**. `data.get("visitor")` returns the name; `data.getAll("interest")` returns an array of checked values (or an empty array). We trim the name and use `join(", ")` only when there is at least one interest. The form uses `novalidate` so the browser does not block a blank-name submit before our own message can run; without it, the input's `required` attribute would stop the submit event.
 
 Open `index.html` and locate each label, shared checkbox name, and live status. In `script.js`, follow the submit handler: `preventDefault()` keeps the page in place; the data read reflects the current checks. `textContent` treats a typed `<tag>` as characters rather than markup. Never put form values into `innerHTML`.
 

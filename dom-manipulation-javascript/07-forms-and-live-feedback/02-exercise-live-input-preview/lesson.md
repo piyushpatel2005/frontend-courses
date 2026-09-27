@@ -40,8 +40,7 @@ Run the starter first to see what is present and what still does nothing. Edit `
 
 ## Your Tasks
 
-1. Keep a labelled `#volunteer` input and a `#greeting` preview in the HTML.
-2. As someone types a name and then changes it, show its latest value in `#greeting` using text, not HTML.
-3. When the field is cleared, restore the friendly fallback “friend”.
+1. On each `input`, replace `#greeting` with the current name as literal text (including angle brackets); changing the name should update it again.
+2. When the input is cleared, restore “friend” in `#greeting`.
 
 Type a name, then erase it. The visible greeting should return to “friend” without requiring a click. If nothing changes, check that your listener is on the input, not the paragraph.

@@ -1,9 +1,12 @@
-test("The current room changes without rewriting its HTML default", () => {
+test("The current room property changes", () => {
   const room = document.getElementById("room-input");
   assert.exists(room, "Keep the room input");
   assert.equal(room.value, "East room", "Set the input's current value property");
   assert.equal(room.getAttribute("value"), "West room", "Keep the original value attribute");
-  assert.equal(document.getElementById("current-room").textContent.trim(), room.value,
+});
+
+test("The current property is displayed", () => {
+  assert.equal(document.getElementById("current-room").textContent.trim(), "East room",
     "Show the current value property in #current-room");
 });
 

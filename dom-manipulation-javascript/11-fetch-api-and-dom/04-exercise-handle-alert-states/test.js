@@ -1,29 +1,38 @@
-test("Click starts an asynchronous alert check", () => {
-  document.querySelector("#alert-mode").value = "alerts";
-  document.querySelector("#check-alerts").click();
-  assert.text(document.querySelector("#alert-status"), "Checking alerts…");
+const settle = () => new Promise(resolve => setTimeout(resolve, 0));
+const check = mode => { document.querySelector("#alert-mode").value = mode; document.querySelector("#check-alerts").click(); };
+test("click shows loading before response settles", async () => {
+  const original = window.mockFetch;
+  let release, requested = false;
+  window.mockFetch = () => { requested = true; return new Promise(resolve => { release = resolve; }); };
+  try {
+    check("alerts");
+    assert.text(document.querySelector("#alert-status"), "Checking alerts…");
+    assert.equal(requested, true);
+  } finally {
+    if (release) release(new Response("[]", { status: 200 }));
+    await settle(); window.mockFetch = original;
+  }
 });
-test("Success safely renders alerts and empty success is distinct", async () => {
-  const mode = document.querySelector("#alert-mode");
-  const button = document.querySelector("#check-alerts");
-  mode.value = "alerts"; button.click();
-  await new Promise(resolve => setTimeout(resolve, 0));
+test("successful JSON renders text-only alerts", async () => {
+  check("alerts"); await settle();
   assert.text(document.querySelector("#alert-list > li"), "Boardwalk closed <until noon>");
-  assert.equal(document.querySelectorAll("#alert-list li *").length, 0, "Render the title as text");
-  mode.value = "empty"; button.click();
-  await new Promise(resolve => setTimeout(resolve, 0));
-  assert.equal(document.querySelectorAll("#alert-list li").length, 0, "Clear old alerts");
+  assert.equal(document.querySelectorAll("#alert-list li *").length, 0);
+});
+test("empty success clears old alerts", async () => {
+  document.querySelector("#alert-list").innerHTML = "<li>Old alert</li>";
+  check("empty"); await settle();
+  assert.equal(document.querySelectorAll("#alert-list li").length, 0);
   assert.text(document.querySelector("#alert-status"), "No alerts right now.");
 });
-test("HTTP errors and rejected requests show an error and clear old data", async () => {
-  const mode = document.querySelector("#alert-mode");
-  const button = document.querySelector("#check-alerts");
-  for (const failure of ["http", "offline"]) {
-    mode.value = "alerts"; button.click();
-    await new Promise(resolve => setTimeout(resolve, 0));
-    mode.value = failure; button.click();
-    await new Promise(resolve => setTimeout(resolve, 0));
-    assert.text(document.querySelector("#alert-status"), "Could not load alerts.");
-    assert.equal(document.querySelectorAll("#alert-list li").length, 0, "Clear stale alerts on failure");
-  }
+test("HTTP failures are checked before JSON", async () => {
+  document.querySelector("#alert-list").innerHTML = "<li>Old alert</li>";
+  check("http"); await settle();
+  assert.equal(document.querySelectorAll("#alert-list li").length, 0);
+  assert.text(document.querySelector("#alert-status"), "Could not load alerts.");
+});
+test("rejected requests clear old alerts", async () => {
+  document.querySelector("#alert-list").innerHTML = "<li>Old alert</li>";
+  check("offline"); await settle();
+  assert.equal(document.querySelectorAll("#alert-list li").length, 0);
+  assert.text(document.querySelector("#alert-status"), "Could not load alerts.");
 });

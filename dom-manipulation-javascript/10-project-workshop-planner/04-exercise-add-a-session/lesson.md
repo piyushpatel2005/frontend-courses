@@ -32,8 +32,10 @@ Your workshop also needs a time and must add the new object to `sessions`, then 
 
 ## Your Tasks
 
-1. Associate the title and time fields with `#session-status` via `aria-describedby`, and make that feedback paragraph a live `role="status"` region.
-2. Prevent navigation and reject a blank or whitespace-only title or missing time without changing the itinerary; explain the error and focus the missing field.
-3. Accept a valid title, time, and track; append the new object to state and render a third row, preserving typed `<em>` characters as text, then reset the form and announce success.
+1. Link both title and time fields to `#session-status` with `aria-describedby` and give the paragraph `role="status"`.
+2. Prevent navigation and reject a whitespace-only title: leave the itinerary unchanged, explain the problem, and focus the title.
+3. Reject a missing time in the same way, focusing the time field.
+4. Add a valid title, time, and track to `sessions` and render the new row with literal text, never parsed markup.
+5. After a successful add, reset the form and announce the addition in `#session-status`.
 
 Try an invalid time, then enter a session with angle brackets in its title. The preview should show those brackets literally.

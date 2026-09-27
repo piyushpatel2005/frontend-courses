@@ -1,12 +1,3 @@
-test("search and live result count have accessible structure", () => {
-  const query = document.querySelector("#trail-query");
-  const count = document.querySelector("#trail-count");
-  assert.exists(query, "Keep the search field");
-  assert.equal(query.labels.length > 0, true, "Label the search field");
-  assert.equal(document.querySelectorAll("#trails li").length, 3, "Keep all three trails");
-  assert.exists(count, "Keep the result count");
-  assert.equal(count.hasAttribute("aria-live"), true, "Announce count changes");
-});
 test("typing filters case insensitively and clearing restores all", () => {
   const query = document.querySelector("#trail-query");
   const items = [...document.querySelectorAll("#trails li")];

@@ -26,12 +26,12 @@ notice.textContent = `Due: ${loan.dueDate}`;
 document.querySelector("#notices").append(notice);
 ```
 
-The notice is not the workshop solution: your itinerary needs a loop, a rerender, and a button listener. Run the starter first; the list is empty. Edit `script.js` and check the preview after each step.
+The notice is not the workshop solution: your itinerary needs a loop, a rerender, and a button listener. Run the starter first; the list is empty. Edit `script.js` and check the preview after each step. For the text-safety check, temporarily give the second session a title containing `<em>` characters and rerender; restore the title afterward so the next lesson begins with the ordinary Repair café entry.
 
 ## Your Tasks
 
-1. Render both session objects into separate `#sessions li` rows at load, showing time, title, and track.
-2. Make the update button change the first session time to 10:00 and rerender without duplicating rows.
-3. Keep session titles as literal text when rerendering, even if a title contains markup-like characters such as `<em>`.
+1. Implement and call `renderSessions()` to render two `#sessions li` rows at load, one for each session, showing its time and track.
+2. In that renderer, include session titles as literal text; a title like `<em>Repair café</em>` must display its brackets without creating an `em` element.
+3. Wire the update button to change the first time to 10:00 and rerender without adding duplicate rows.
 
 After the update, two rows should still appear and the first should read 10:00.

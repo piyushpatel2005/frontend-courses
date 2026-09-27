@@ -43,8 +43,8 @@ Run the starter first to see what is present and what still does nothing. Edit `
 
 ## Your Tasks
 
-1. Keep the labelled `#book` field, its connected `#request-status` status region, and the `#request` form.
-2. On an empty or whitespace-only submission, prevent navigation, mark the field invalid, focus it, and show a useful error.
-3. After entering a title and submitting again, clear the invalid state and confirm that title in the status region.
+1. Prevent the default navigation when `#request` is submitted, whether its title is blank or filled in.
+2. For an empty or whitespace-only title, mark `#book` invalid, focus it, and explain the missing title in `#request-status`.
+3. For a valid title, remove the invalid state and confirm the trimmed title in the status region.
 
 Try submitting spaces, then a real book title. If the page reloads, check `preventDefault()`; if the message stays an error, make sure you remove the invalid state after a successful submit.

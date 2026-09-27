@@ -21,7 +21,7 @@ A seed swap board has one example plant card. Make two more cards with the same 
 
 ## How it works
 
-`cloneNode(true)` copies an element *and its descendants*; `false` would copy only the outer element. Each clone is a separate node, so change its nested `.plant-name` span before attaching it. Avoid repeating `id` attributes in a copied subtree—this template uses classes instead. A `DocumentFragment` is a temporary holder, not a visible element: appending cards to it leaves the page unchanged until `#plants.append(fragment)` moves all its children into the real list. After insertion the fragment is empty; the browser did not add a wrapper around the cards. Clone nodes do not copy JavaScript listeners registered with `addEventListener`; use the parent-list delegation technique if future cloned buttons need clicks.
+`cloneNode(true)` copies an element *and its descendants*; `false` would copy only the outer element. Each clone is a separate node, so change its nested `.plant-name` span before attaching it. Avoid repeating `id` attributes in a copied subtree—this template uses classes instead. A `DocumentFragment` is a temporary holder, not a visible element: appending cards to it leaves the page unchanged until `#plants.append(fragment)` moves all its children into the real list. After insertion the fragment is empty; the browser did not add a wrapper around the cards. Clone nodes do not copy JavaScript listeners registered with `addEventListener`. The next section introduces a listener on a parent list that can handle buttons added later.
 
 ```javascript
 const batch = document.createDocumentFragment();

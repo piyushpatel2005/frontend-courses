@@ -22,6 +22,11 @@ function filterMembers() {
   members.querySelectorAll("li").forEach((card) => {
     const matches = `${card.dataset.name} ${card.dataset.skill}`.toLowerCase().includes(query);
     card.hidden = !matches;
+    if (card.hidden && card.classList.contains("selected")) {
+      card.classList.remove("selected");
+      detailName.textContent = "Choose a member";
+      detailSkill.textContent = "Their skill will appear here.";
+    }
     if (matches) visible += 1;
   });
   count.textContent = `${visible} ${visible === 1 ? "member" : "members"} shown`;

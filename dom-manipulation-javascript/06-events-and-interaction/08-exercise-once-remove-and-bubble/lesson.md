@@ -44,5 +44,7 @@ The earlier event-target lesson used bubbling to *receive* a child click on a pa
 ## Your Tasks
 
 1. Add a click listener to `#welcome` with `{ once: true }` so `#welcome-count` changes from `Welcomes: 0` to `Welcomes: 1` on the first click and never counts higher.
-2. Register a named Bell click handler that increments `#bell-count` on each click; clicking `#mute` must remove that same handler so later Bell clicks no longer increment it.
-3. Let `#standard` clicks write `Standard Panel` to `#actions` by bubbling to `#controls`, but make `#private` write `Private` without adding `Panel` by stopping only that child click’s propagation.
+2. Register a named Bell click handler that increments `#bell-count` on each click.
+3. Clicking `#mute` must remove that same Bell handler so later Bell clicks no longer increment the count.
+4. Let `#standard` clicks write `Standard Panel` to `#actions` by bubbling to `#controls`.
+5. Make `#private` write `Private` without adding `Panel` by stopping only that child click’s propagation.

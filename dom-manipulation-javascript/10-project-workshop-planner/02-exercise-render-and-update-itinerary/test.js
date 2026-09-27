@@ -1,23 +1,28 @@
-test("renders two complete session rows from state", () => {
+test("renders two rows with each time and track", () => {
   const rows = [...document.querySelectorAll("#sessions li")];
-  assert.equal(rows.length, 2, "Render both sessions when the page loads");
-  assert.equal(rows[0].textContent.includes("09:00") && rows[0].textContent.includes("Screen printing basics") && rows[0].textContent.includes("Art"), true, "Show the first session's time, title and track");
-  assert.equal(rows[1].textContent.includes("11:00") && rows[1].textContent.includes("Repair café") && rows[1].textContent.includes("Making"), true, "Show the second session's details");
+  assert.equal(rows.length, 2);
+  assert.equal(rows[0].textContent.includes("09:00") && rows[0].textContent.includes("Art"), true);
+  assert.equal(rows[1].textContent.includes("11:00") && rows[1].textContent.includes("Making"), true);
 });
-test("updates a time and rerenders without duplicates", () => {
+test("session titles display literal markup-like text", () => {
+  const session = window.workshopSessions[1];
+  const previousTitle = session.title;
+  try {
+    session.title = "<em>Repair café</em>";
+    renderSessions();
+    const rows = document.querySelectorAll("#sessions li");
+    assert.equal(rows.length, 2);
+    assert.equal(rows[0].textContent.includes("Screen printing basics"), true);
+    assert.equal(rows[1].textContent.includes("<em>Repair café</em>"), true);
+    assert.equal(rows[1].querySelector("em"), null, "Never parse a session title as HTML");
+  } finally {
+    session.title = previousTitle;
+    renderSessions();
+  }
+});
+test("update rerenders without duplicate rows", () => {
   document.querySelector("#update-session").click();
   const rows = [...document.querySelectorAll("#sessions li")];
-  assert.equal(rows.length, 2, "Updating should not add extra rows");
-  assert.equal(rows[0].textContent.includes("10:00"), true, "Display the revised first time");
-});
-test("rerendered titles remain literal text", () => {
-  const button = document.querySelector("#update-session");
-  const rows = document.querySelectorAll("#sessions li");
-  if (rows.length) rows[0].textContent = "probe";
-  sessions[0].title = "<em>Safe</em>";
-  button.click();
-  const first = document.querySelector("#sessions li");
-  assert.exists(first, "Rerender a first row");
-  assert.equal(first.textContent.includes("<em>Safe</em>"), true, "Keep typed brackets as text");
-  assert.equal(first.querySelector("em"), null, "Do not parse a title as HTML");
+  assert.equal(rows.length, 2);
+  assert.equal(rows[0].textContent.includes("10:00"), true);
 });

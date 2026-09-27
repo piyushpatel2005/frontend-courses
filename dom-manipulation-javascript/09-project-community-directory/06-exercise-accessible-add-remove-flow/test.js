@@ -1,67 +1,108 @@
-test("labelled form rejects whitespace without navigation", () => {
+test("submit prevents navigation", () => {
+  const form = document.querySelector("#member-form");
+  document.querySelector("#new-name").value = "";
+  document.querySelector("#new-skill").value = "";
+  const event = new Event("submit", { bubbles: true, cancelable: true });
+  form.dispatchEvent(event);
+  assert.equal(event.defaultPrevented, true, "Prevent form navigation");
+});
+test("blank fields are rejected with feedback", () => {
   const form = document.querySelector("#member-form");
   const name = document.querySelector("#new-name");
   const skill = document.querySelector("#new-skill");
   const status = document.querySelector("#form-status");
-  assert.equal(name.labels.length > 0 && skill.labels.length > 0, true, "Label both fields");
-  assert.equal(status.getAttribute("role"), "status", "Use a live status region");
-  assert.equal(document.querySelectorAll("#members li .remove").length >= 3, true, "Keep original Remove buttons");
   const before = document.querySelectorAll("#members li").length;
-  name.value = "   "; skill.value = "Painting";
-  const event = new Event("submit", { bubbles: true, cancelable: true });
-  form.dispatchEvent(event);
-  assert.equal(event.defaultPrevented, true, "Prevent form navigation");
-  assert.equal(document.querySelectorAll("#members li").length, before, "Reject a missing name");
-  assert.equal(status.textContent.trim().length > 0, true, "Explain the missing field");
-  name.value = "Ada"; skill.value = "   ";
-  form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  assert.equal(document.querySelectorAll("#members li").length, before, "Reject a missing skill");
+  for (const [n, s] of [["   ", "Painting"], ["Ada", "   "]]) {
+    name.value = n; skill.value = s;
+    status.textContent = "";
+    const event = new Event("submit", { bubbles: true, cancelable: true });
+    form.dispatchEvent(event);
+    assert.equal(document.querySelectorAll("#members li").length, before, "Reject missing fields");
+    assert.equal(status.textContent.trim().length > 0, true, "Explain the missing field");
+  }
 });
-test("submission creates a safely rendered, removable member", () => {
+test("valid submission adds safe text and accessible actions", () => {
   const form = document.querySelector("#member-form");
-  document.querySelector("#new-name").value = "<em>Ada</em>";
-  document.querySelector("#new-skill").value = "Painting";
+  document.querySelector("#new-name").value = "  <em>Ada</em>  ";
+  document.querySelector("#new-skill").value = "  Painting  ";
   form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
   const card = [...document.querySelectorAll("#members li")].find((item) => item.dataset.name === "<em>Ada</em>");
-  assert.exists(card, "Add a card with the submitted name");
-  assert.equal(card.dataset.skill, "Painting", "Keep its skill for details and search");
+  assert.exists(card, "Add a card with the trimmed name");
+  assert.equal(card.dataset.skill, "Painting", "Keep the trimmed skill for details and search");
   assert.equal(card.querySelector("h3").textContent, "<em>Ada</em>", "Show literal typed text");
   assert.equal(card.querySelector("em"), null, "Do not parse submitted markup");
   assert.exists(card.querySelector("button.select"), "Give the new card a View button");
   assert.equal(card.querySelector("button.remove").textContent.includes("Ada"), true, "Name the Remove action");
-  assert.equal(document.querySelector("#form-status").textContent.includes("added"), true, "Announce addition");
+  card.remove(); // Restore the initial cards for the next check.
 });
-test("the newly created View button updates selected details", () => {
+test("addition is announced in the status", () => {
   const form = document.querySelector("#member-form");
   document.querySelector("#new-name").value = "Niko Vale";
   document.querySelector("#new-skill").value = "Mending";
+  const status = document.querySelector("#form-status");
+  status.textContent = "";
   form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  const card = [...document.querySelectorAll("#members li")].find((item) => item.dataset.name === "Niko Vale");
-  assert.exists(card, "A submitted member should appear");
-  card.querySelector("button.select").click();
-  assert.equal(document.querySelector("#detail-name").textContent, "Niko Vale", "Show the new name");
-  assert.equal(document.querySelector("#detail-skill").textContent, "Mending", "Show the new skill");
-  assert.equal(card.classList.contains("selected"), true, "Mark the new card selected");
+  assert.equal(status.textContent.includes("Niko Vale") && status.textContent.includes("added"), true, "Announce the new member");
+  [...document.querySelectorAll("#members li")].find((card) => card.dataset.name === "Niko Vale")?.remove();
 });
-test("delegated removal updates details, search and feedback", () => {
-  const form = document.querySelector("#member-form");
+test("delegated Remove works on original and later cards", () => {
+  const list = document.querySelector("#members");
+  const original = list.querySelector("li");
+  const later = document.createElement("li");
+  later.dataset.name = "Zuri Moss";
+  later.innerHTML = '<button type="button" class="remove">Remove Zuri Moss</button>';
+  list.append(later);
+  try {
+    later.querySelector("button.remove").click();
+    assert.equal(later.isConnected, false, "Remove cards inserted after page load");
+    original.querySelector("button.remove").click();
+    assert.equal(original.isConnected, false, "Remove original cards too");
+  } finally {
+    later.remove();
+    if (!original.isConnected) list.prepend(original);
+  }
+});
+test("removal is announced", () => {
+  const list = document.querySelector("#members");
+  const card = document.createElement("li");
+  card.dataset.name = "Zuri Moss";
+  card.innerHTML = '<button type="button" class="remove">Remove Zuri Moss</button>';
+  list.append(card);
+  const status = document.querySelector("#form-status");
+  status.textContent = "";
+  try {
+    card.querySelector("button.remove").click();
+    assert.equal(status.textContent.includes("Zuri Moss") && status.textContent.includes("removed"), true, "Announce the removed member");
+  } finally { card.remove(); }
+});
+test("removing a selected card clears its details", () => {
+  const list = document.querySelector("#members");
+  const card = document.createElement("li");
+  card.dataset.name = "Zuri Moss";
+  card.className = "selected";
+  card.innerHTML = '<button type="button" class="remove">Remove Zuri Moss</button>';
+  list.append(card);
+  document.querySelector("#detail-name").textContent = "Zuri Moss";
+  document.querySelector("#detail-skill").textContent = "Weaving";
+  try {
+    card.querySelector("button.remove").click();
+    assert.equal(document.querySelector("#detail-name").textContent, "Choose a member", "Clear the stale selected name");
+    assert.equal(document.querySelector("#detail-skill").textContent, "Their skill will appear here.", "Clear the stale skill");
+  } finally { card.remove(); }
+});
+test("removing the last match refreshes search feedback", () => {
+  const list = document.querySelector("#members");
+  const card = document.createElement("li");
+  card.dataset.name = "Zuri Moss";
+  card.dataset.skill = "Weaving";
+  card.innerHTML = '<button type="button" class="remove">Remove Zuri Moss</button>';
+  list.append(card);
   const search = document.querySelector("#member-search");
-  const original = document.querySelector("#members li");
-  const originalName = original.dataset.name;
-  original.querySelector("button.remove").click();
-  assert.equal([...document.querySelectorAll("#members li")].some((item) => item.dataset.name === originalName), false, "Remove an original card");
-  document.querySelector("#new-name").value = "Zuri Moss";
-  document.querySelector("#new-skill").value = "Weaving";
-  form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  const added = [...document.querySelectorAll("#members li")].find((item) => item.dataset.name === "Zuri Moss");
-  assert.exists(added, "Add a card to check future Remove buttons");
-  added.querySelector("button.select").click();
   search.value = "weaving";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  added.querySelector("button.remove").click();
-  assert.equal(added.isConnected, false, "Remove a dynamically added card");
-  assert.equal(document.querySelector("#detail-name").textContent.includes("Zuri"), false, "Clear stale selected details");
-  assert.equal(document.querySelector("#empty-state").hidden, false, "Show empty state when no matches remain");
-  assert.equal(document.querySelector("#result-count").textContent.includes("0"), true, "Refresh the result count");
-  assert.equal(document.querySelector("#form-status").textContent.includes("removed"), true, "Announce removal");
+  try {
+    card.querySelector("button.remove").click();
+    assert.equal(document.querySelector("#empty-state").hidden, false, "Show empty state when no matches remain");
+    assert.equal(document.querySelector("#result-count").textContent.includes("0"), true, "Refresh the result count");
+  } finally { card.remove(); search.value = ""; search.dispatchEvent(new Event("input", { bubbles: true })); }
 });

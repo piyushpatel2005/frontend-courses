@@ -21,7 +21,7 @@ A community board prints a submitted note. The note is data, not markup: the bro
 
 ## What the code does
 
-`textContent` replaces a node’s text, escaping any tags in the assigned string. `innerHTML` parses the assigned string as HTML and can create elements, including unsafe markup when the string comes from a user. Reserve `innerHTML` for carefully controlled, trusted markup; do not use it for visitor input. Reading `.textContent` returns the visible text characters rather than an HTML source string.
+`textContent` replaces a node’s children with plain text; angle brackets in the assigned string are displayed literally rather than parsed as tags. `innerHTML` parses the assigned string as HTML and can create elements, including unsafe markup when the string comes from a user. Reserve `innerHTML` for carefully controlled, trusted markup; do not use it for visitor input. Reading `.textContent` returns descendant text, including text in hidden descendants, rather than an HTML source string.
 
 In `script.js`, this is the important part of the already-working preview:
 

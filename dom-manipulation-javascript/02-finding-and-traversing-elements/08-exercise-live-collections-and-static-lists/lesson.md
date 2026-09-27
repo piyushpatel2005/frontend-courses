@@ -28,9 +28,11 @@ snapshot.forEach((painting) => {
 });
 ```
 
-In `script.js`, take both collections before changing the page. Loop over `Array.from(liveStations)` (or another fixed snapshot), not the live collection itself: appending matching nodes while iterating a changing collection can keep extending the work. For each of the two original `li.station` elements, append ** — staffed** to its text, then append a new `li.station` with the original station name followed by ** — backup** to `#stations`. Finally display the live collection's length in `#live-count` and the *earlier* static NodeList's length in `#static-count`. Run: the live count is **4**, static count **2**, and backup rows do not say staffed.
+The starter already takes the live collection, the earlier static NodeList, and a fixed `originalStations` snapshot. Work from that snapshot, not from the changing live collection: appending matching nodes while iterating a live collection can keep extending the work. First label the originals ** — staffed**. Then add backups by removing that suffix from each original name (or by saving the names first). Make each backup with `document.createElement("li")`, set its `className` to `"station"` and `textContent` to the original name plus ** — backup**, then append it to `#stations`. These node-creation calls are the same ones you just saw in the pond demo; the later node-creation section will explore them in depth. Run: the live count is **4**, static count **2**, and backup rows do not say staffed.
 
 ## Your Tasks
 
-1. Process only the two original stations with a fixed snapshot: label each `— staffed` and add exactly one `li.station` backup for each, named with the original station text plus `— backup`.
-2. Show the final live HTMLCollection length in `#live-count` after appending, and the earlier static NodeList length in `#static-count`.
+1. Use `originalStations` to label the two original stations `— staffed`.
+2. Use `originalStations` to add exactly one `li.station` backup for each, named with the original station text plus `— backup` (without `staffed`).
+3. Show the final `liveStations.length` in `#live-count` after appending.
+4. Show the earlier `initialStations.length` in `#static-count`.

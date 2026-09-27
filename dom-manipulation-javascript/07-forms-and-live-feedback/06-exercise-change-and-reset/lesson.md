@@ -41,8 +41,7 @@ Run the starter first to see what is present and what still does nothing. Edit `
 
 ## Your Tasks
 
-1. Keep a labelled `#lights` select inside `#lights-form` with Warm as its default, a reset button, and `#lights-summary`.
-2. On each committed selection change, update the summary to match the selected value.
-3. After changing to another option and resetting the form, restore both the control and the summary to Warm.
+1. On each committed change to `#lights`, update `#lights-summary` to the selected value.
+2. When `#lights-form` resets, restore the displayed summary to Warm as the control returns to its default.
 
 Select Cool, then Bright, then reset. The summary must agree with the control each time. If reset leaves “Bright” on screen, your listener may have read the select before its default was restored.

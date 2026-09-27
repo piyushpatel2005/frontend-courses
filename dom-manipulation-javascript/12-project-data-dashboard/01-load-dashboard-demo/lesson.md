@@ -18,7 +18,7 @@ seo_keywords:
 
 The trail desk needs a compact conditions list. Run the completed preview: it briefly says **Loading entries…**, then shows trail names. The small fixture in `script.js` is the entire data source: **no live request is made**.
 
-Follow `loadEntries()` from `dashboardFetch(API_URL)` to `response.ok`, `response.json()`, then `render(data.items)`. A response can arrive but still have a failure status; throwing when `ok` is false sends it to the same visible error state as a rejected request. `render` uses `createElement` and `textContent`: the angle brackets in the last trail title display as characters, not markup.
+Follow `loadEntries()` from `dashboardFetch(API_URL)` to `response.ok`, `response.json()`, then `render(data.items)`. The offline fixture returns a real `Response`, just like `fetch()` does; the URL is a local scenario key, not a live endpoint. A response can arrive but still have a failure status; throwing when `ok` is false sends it to the same visible error state as a rejected request. `render` uses `createElement` and `textContent`: the angle brackets in the last trail title display as characters, not markup.
 
 ```javascript
 const response = await dashboardFetch(API_URL);

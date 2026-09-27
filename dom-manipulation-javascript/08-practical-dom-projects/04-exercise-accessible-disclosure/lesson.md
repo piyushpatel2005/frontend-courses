@@ -42,8 +42,7 @@ Run the starter first to see what is present and what still does nothing. Edit `
 
 ## Your Tasks
 
-1. Keep a real `#menu-toggle` button with `aria-controls="guide-menu"`, initially `aria-expanded="false"`, and a hidden `#guide-menu` navigation landmark.
-2. Clicking the button opens the menu and sets `aria-expanded` to `true`.
-3. Clicking again hides the menu and restores `aria-expanded="false"`.
+1. Clicking `#menu-toggle` opens the menu and sets `aria-expanded` to `true`.
+2. Clicking the expanded button closes the menu and restores `aria-expanded="false"`.
 
 Click twice and inspect both the visible panel and the button’s `aria-expanded` value after each click. A mouse-visible menu with a stale aria value is not finished.

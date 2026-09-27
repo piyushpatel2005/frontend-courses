@@ -40,5 +40,7 @@ In this starter, `index.html` contains the targets, `style.css` holds the visual
 
 ## Your Tasks
 
-1. With `data-session-state="full"`, show `This session is full.` as the exact plain text in `#session-message`.
-2. Put the condition in a function named `updateSessionMessage`, call it once on load, and read `dataset.sessionState` inside it. When the attribute changes to `open` and the function is called again, show `Places are available.`.
+The starter already defines and calls `updateSessionMessage()` on load. Complete its two branches in order.
+
+1. In the function's `else` branch, show `This session is full.` as plain text in `#session-message` for the supplied `data-session-state="full"`.
+2. In its `open` branch, show `Places are available.` when `dataset.sessionState` changes to `open` and the function is called again.

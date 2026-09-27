@@ -19,6 +19,10 @@ function renderSessions() {
   filterSessions();
 }
 updateButton.addEventListener("click", () => {
+  if (!sessions.length) {
+    status.textContent = "No sessions to update.";
+    return;
+  }
   sessions[0].time = "10:00";
   renderSessions();
 });

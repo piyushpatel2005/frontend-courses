@@ -24,7 +24,7 @@ The tour demo used a consent checkbox to enable booking. Now a community kitchen
 
 ## Transfer the idea
 
-A boolean HTML attribute is true **because it is present**, not because its value spells `"true"`. `disabled="false"` still disables a button. The DOM property `.disabled` is a real boolean and reflects changes to the button's attribute; `.checked` gives a checkbox's current on/off state after interaction. Do not read `getAttribute("checked")` to determine its live state. `hasAttribute("disabled")` checks whether the reflected attribute exists and returns true or false. On each checkbox `change`, recompute the button state from the checkbox rather than guessing whether to toggle it.
+A boolean HTML attribute is true **because it is present**, not because its value spells `"true"`. `disabled="false"` still disables a button. The DOM property `.disabled` is a real boolean and reflects changes to the button's attribute; `.checked` gives a checkbox's current on/off state after interaction without rewriting the original `checked` attribute. Do not read `getAttribute("checked")` to determine its live state. `hasAttribute("disabled")` checks whether the reflected attribute exists and returns true or false. On each checkbox `change`, recompute the button state from the checkbox rather than guessing whether to toggle it.
 
 Here is the same technique on an unrelated **equipment loan** page, not the volunteer sign-up you will implement:
 
@@ -39,10 +39,10 @@ terms.addEventListener("change", updateLoan);
 updateLoan();
 ```
 
-Notice the last call initializes the page before the first change event. In your starter, the HTML already has a labelled checkbox, a disabled button, and a status line. Edit `script.js`, then use the preview to check, uncheck, and check again. Submit to run the three checks.
+Notice the last call initializes the page before the first change event. In your starter, the HTML already has a labelled checkbox, a disabled button, and a status line. The supplied `updateShift()` function already computes the button's disabled state and is called on load. Edit `script.js`, then use the preview to check, uncheck, and check again. Submit to run the three checks.
 
 ## Your Tasks
 
-1. Define and call `updateShift` on load so an unchecked `#shift-agreement` leaves `#join-shift` disabled and `#shift-status` says `Read the shift details first.`
-2. Listen for `change` on `#shift-agreement`; when checked, set `#join-shift.disabled` to `false` and show `Sign-up is ready.` in `#shift-status`.
-3. When unchecked again, restore the disabled property and `disabled` attribute and the initial message. Use `hasAttribute("disabled")` to choose the status text.
+1. Inside `updateShift()`, set `#shift-status` to `Read the shift details first.` for the initially unchecked checkbox.
+2. Listen for `change` on `#shift-agreement` by registering `updateShift`; checking the box should enable the button.
+3. Replace the fixed status message with one selected by `joinShift.hasAttribute("disabled")`: show `Sign-up is ready.` when enabled and the initial message when unchecked again.

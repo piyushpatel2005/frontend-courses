@@ -42,5 +42,4 @@ Recall the garden board: `createElement` gives you a node, `textContent` fills i
 
 ## Your Tasks
 
-1. Create an `li` in `script.js` and set its `textContent` to `The Hobbit` (not HTML markup).
-2. Append that new item as the last child of `#books`, after The Secret Garden.
+1. Create an `li` with plain `textContent` of `The Hobbit`, then append it to `#books` after The Secret Garden. The new item appears only after insertion.

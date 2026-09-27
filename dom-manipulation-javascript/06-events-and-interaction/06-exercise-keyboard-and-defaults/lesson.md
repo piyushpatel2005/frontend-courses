@@ -49,5 +49,5 @@ The earlier click and delegation lessons relied on native buttons. This shortcut
 
 ## Your Tasks
 
-1. When `#recipe` receives Enter on `keydown`, prevent only that default and set `#recipe-result` to `Finding: ` followed by the trimmed field value.
-2. Leave unrelated keys uncanceled (including Tab); handle `#recipe-form` submit by preventing page navigation and showing the same result for button activation.
+1. When `#recipe` receives Enter on `keydown`, prevent only that default, leave Tab and ordinary keys uncanceled, and set `#recipe-result` to `Finding: ` followed by the trimmed field value.
+2. Handle `#recipe-form` submit by preventing page navigation and showing the same trimmed result for button activation.

@@ -12,11 +12,10 @@ test("Chooses the open message when the data attribute changes", () => {
   const initial = card.dataset.sessionState;
   try {
     card.dataset.sessionState = "open";
-    // Re-run the update behavior when available; otherwise reload the preview after editing HTML.
-    if (typeof updateSessionMessage === "function") updateSessionMessage();
+    updateSessionMessage();
     assert.equal(message.textContent.trim(), "Places are available.", "Choose the open branch from dataset.sessionState");
   } finally {
     card.dataset.sessionState = initial;
-    if (typeof updateSessionMessage === "function") updateSessionMessage();
+    updateSessionMessage();
   }
 });

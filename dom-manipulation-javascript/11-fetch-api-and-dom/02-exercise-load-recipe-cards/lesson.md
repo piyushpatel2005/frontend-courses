@@ -37,5 +37,6 @@ The recipe fixture in `script.js` is deliberately local and labeled as mock data
 
 ## Your Tasks
 
-1. When `#load-recipes` is clicked, immediately set `#recipe-status` to `Loading recipes…` while the Promise is pending.
-2. Call `mockFetch("/api/recipes")`, await its JSON array, clear `#recipe-list`, and append one `li` per recipe using `textContent` for each title. Mark status `Recipes loaded.` after rendering.
+1. On click, start `mockFetch("/api/recipes")` and immediately show `Loading recipes…` in `#recipe-status` while its Promise is pending.
+2. Await that response and its JSON array, then render each recipe title as a text-only `li` in a cleared list.
+3. After the list has rendered, change the status to `Recipes loaded.`.

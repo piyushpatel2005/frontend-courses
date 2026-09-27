@@ -35,8 +35,10 @@ An empty string matches every dish. For the directory, repeat the comparison for
 
 ## Your Tasks
 
-1. Keep the labelled `#member-search` field and `#empty-state` message; make `#result-count` a live status (`role="status"` and `aria-live="polite"`).
-2. Filter existing cards by name **or** skill on each input, ignoring case and surrounding spaces; clearing the query restores all three.
-3. Report the visible count and show the empty state only when the result count is zero.
+1. Make `#result-count` a polite live status with `role="status"` and `aria-live="polite"`.
+2. Filter the three existing cards by name or skill on each input, ignoring case and surrounding spaces; clearing the query restores all three.
+3. Update `#result-count` to report the visible number of members after a search.
+4. Show `#empty-state` only when no cards match, and hide it again when results return.
+5. If filtering hides the selected card, clear its selected state and restore the detail panel’s default text.
 
 Try `BIKE`, then `zzz`, then clear. The next step starts from this solution, so your selected-card behavior remains intact.

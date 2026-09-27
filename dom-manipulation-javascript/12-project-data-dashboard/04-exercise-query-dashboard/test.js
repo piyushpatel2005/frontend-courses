@@ -1,40 +1,71 @@
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-const submit = () => {
+const settle = () => new Promise(resolve => setTimeout(resolve, 0));
+const submit = value => {
+  document.querySelector("#search").value = value;
   const event = new Event("submit", { bubbles: true, cancelable: true });
   document.querySelector("#search-form").dispatchEvent(event);
   return event;
 };
-test("search has a label and submits without navigation", async () => {
+test("labelled form prevents navigation and starts a new load", async () => {
+  await window.initialDashboardLoad;
   const input = document.querySelector("#search");
-  assert.exists(input, "Keep the search input");
-  assert.equal(input.labels.length > 0, true, "Label the search field");
-  input.value = "Repair";
-  const event = submit();
-  assert.equal(event.defaultPrevented, true, "Prevent browser form navigation");
-  await wait(45);
-  assert.equal(document.querySelectorAll("#entries li").length, 1, "Submit should start a new search");
+  assert.equal(input.labels.length > 0, true);
+  const original = window.dashboardFetch;
+  let release, started = 0;
+  window.dashboardFetch = () => { started++; return new Promise(resolve => { release = resolve; }); };
+  try {
+    assert.equal(submit("Repair").defaultPrevented, true);
+    assert.equal(started, 1);
+  } finally {
+    if (release) release(new Response('{"items":[]}', { status: 200 }));
+    await settle(); window.dashboardFetch = original;
+  }
 });
-test("encodes reserved characters in a query parameter", async () => {
-  window.dashboardFixture.items = [{ title: "Tea & tools", venue: "Studio", category: "skills" }];
-  document.querySelector("#search").value = "Tea & tools";
-  submit();
-  await wait(45);
-  assert.equal(document.querySelectorAll("#entries li").length, 1, "URLSearchParams should preserve ampersands in q");
-  assert.equal(document.querySelector("#entries").textContent.includes("Tea & tools"), true, "Show the matched title");
+test("the actual request URL encodes reserved characters", async () => {
+  await window.initialDashboardLoad;
+  const original = window.dashboardFetch;
+  let requested, release;
+  window.dashboardFetch = url => { requested = url; return new Promise(resolve => { release = resolve; }); };
+  try {
+    submit("  Tea & tools  ");
+    assert.equal(new URL(requested, "https://preview.invalid").searchParams.get("q"), "Tea & tools");
+    assert.equal(requested.includes("%26"), true);
+  } finally {
+    if (release) release(new Response('{"items":[]}', { status: 200 }));
+    await settle(); window.dashboardFetch = original;
+  }
 });
-test("filters, reports no matches, and resets on empty query", async () => {
-  window.dashboardFixture.items = [
-    { title: "Seed swap", venue: "Library", category: "garden" },
-    { title: "Repair cafe", venue: "Hall", category: "skills" }
-  ];
-  const input = document.querySelector("#search");
-  input.value = "missing";
-  submit();
-  await wait(45);
-  assert.equal(document.querySelectorAll("#entries li").length, 0, "Do not show nonmatching rows");
-  assert.equal(document.querySelector("#status").textContent.includes("No matching"), true, "Announce no matches");
-  input.value = "  ";
-  submit();
-  await wait(45);
-  assert.equal(document.querySelectorAll("#entries li").length, 2, "Blank query should restore the full list");
+// Each check supplies its own response, independent of previous submissions.
+const withEvents = async check => {
+  const original = window.dashboardFetch;
+  window.dashboardFetch = async url => {
+    const q = new URL(url, "https://preview.invalid").searchParams.get("q") || "";
+    const items = [{ title: "Seed swap", venue: "Library" }, { title: "Repair cafe", venue: "Hall" }]
+      .filter(item => item.title.toLowerCase().includes(q.toLowerCase()));
+    return new Response(JSON.stringify({ items }), { status: 200 });
+  };
+  try { await check(); } finally { window.dashboardFetch = original; }
+};
+test("matching search renders only matching events", async () => {
+  await window.initialDashboardLoad;
+  await withEvents(async () => {
+    submit("Repair"); await settle();
+    assert.equal(document.querySelectorAll("#entries li").length, 1);
+    assert.equal(document.querySelector("#entries").textContent.includes("Repair cafe"), true);
+  });
+});
+test("missing search clears earlier rows and reports no matches", async () => {
+  await window.initialDashboardLoad;
+  await withEvents(async () => {
+    document.querySelector("#entries").innerHTML = "<li>Old event</li>";
+    submit("missing"); await settle();
+    assert.equal(document.querySelectorAll("#entries li").length, 0);
+    assert.equal(document.querySelector("#status").textContent.includes("No matching"), true);
+  });
+});
+test("blank query restores the full event list", async () => {
+  await window.initialDashboardLoad;
+  await withEvents(async () => {
+    submit("  "); await settle();
+    assert.equal(document.querySelectorAll("#entries li").length, 2);
+  });
 });

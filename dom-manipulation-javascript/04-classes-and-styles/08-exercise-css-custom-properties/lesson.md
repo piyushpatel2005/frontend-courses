@@ -44,6 +44,6 @@ The starter stylesheet already uses `var(--accent)` for the card border and its 
 
 ## Your Tasks
 
-1. Keep the default CSS `--accent: #167069` on `#workshop-card`, with no inline override; on load, change `#theme-status` to `Teal accent selected.`
+1. On load, change `#theme-status` to `Teal accent selected.` The starter CSS already supplies `--accent: #167069` on the card; leave that default in place.
 2. On `#plum-accent` click, set `--accent` inline on `#workshop-card` to `#713e83` and show `Plum accent selected.`; the card border and tag should both change.
 3. On `#reset-accent` click, remove the inline `--accent` override and show `Teal accent restored.`; the border and tag should return to teal.

@@ -43,11 +43,8 @@ Run the starter first to see what is present and what still does nothing. Edit `
 
 ## Your Tasks
 
-1. Keep the labelled `#task-name` input, `#task-form`, live `#task-status`, and starter task with its Remove button.
-2. Reject a blank or whitespace-only submission without navigation or adding a task; give feedback in the status region.
-3. Submit a new task, creating an item with a Remove button; preserve typed `<` characters literally as text.
-4. Use one delegated listener on `#tasks` so Remove works for both the starter and dynamically added tasks.
+1. Reject a blank or whitespace-only submission without navigation or adding a task; give feedback in `#task-status`.
+2. Submit a new task with a Remove button, displaying typed `<` characters literally as text.
+3. Delegate Remove clicks on `#tasks` so both the starter task and newly added tasks can be removed.
 
 Add a task containing `<b>` characters, remove it, and then remove the original task. You should see plain angle brackets rather than a bold element; if only the original button works, move the listener to the list.
-
-You now have a page that accepts input, responds without navigation, and lets visitors undo their own entries.

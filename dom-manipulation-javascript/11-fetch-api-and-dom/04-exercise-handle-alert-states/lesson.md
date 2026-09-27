@@ -37,6 +37,8 @@ For the alert board, choose a scenario and click **Check alerts**. Read the stat
 
 ## Your Tasks
 
-1. On each click, set `#alert-status` to `Checking alerts…` immediately, then call the supplied `mockFetch` for the selected mode.
-2. For a successful response, await JSON; safely render alert titles as `li` text, or say `No alerts right now.` when its array is empty.
-3. Check `response.ok` before JSON and handle both HTTP errors and rejected network requests without leaving old alert items visible; show `Could not load alerts.` for either failure.
+1. On click, immediately show `Checking alerts…` and start `mockFetch` for the selected mode.
+2. For a successful nonempty response, await JSON and render each title as text-only `li` elements.
+3. For a successful empty response, clear earlier alerts and say `No alerts right now.`.
+4. Check `response.ok` before JSON; on an HTTP failure clear old alerts and say `Could not load alerts.`.
+5. Handle a rejected network request with the same cleared list and error status.

@@ -12,27 +12,34 @@ window.dashboardFixture = {
   failNext: false,
   delay: 15
 };
-async function dashboardFetch(url, options = {}) {
+window.dashboardFetch = async function dashboardFetch(url, options = {}) {
   const data = window.dashboardFixture;
   const items = data.items.map(item => ({ ...item }));
   const shouldFail = data.failNext;
   data.failNext = false;
   const delay = data.delay;
   await new Promise((resolve, reject) => {
-    const timer = setTimeout(resolve, delay);
-    options.signal?.addEventListener("abort", () => {
+    if (options.signal?.aborted) {
+      reject(new DOMException("Request cancelled", "AbortError"));
+      return;
+    }
+    const timer = setTimeout(() => {
+      options.signal?.removeEventListener("abort", onAbort);
+      resolve();
+    }, delay);
+    function onAbort() {
       clearTimeout(timer);
       reject(new DOMException("Request cancelled", "AbortError"));
-    }, { once: true });
+    }
+    options.signal?.addEventListener("abort", onAbort, { once: true });
   });
-  if (shouldFail) return { ok: false, status: 503 };
-  const params = new URL(url, location.href).searchParams;
+  if (shouldFail) return new Response("Unavailable", { status: 503 });
+  const params = new URL(url, "https://preview.invalid").searchParams;
   const query = (params.get("q") || "").toLowerCase();
-  return {
-    ok: true,
-    json: async () => ({ items: items.filter(item => item.title.toLowerCase().includes(query)) })
-  };
-}
+  return new Response(JSON.stringify({
+    items: items.filter(item => item.title.toLowerCase().includes(query))
+  }), { status: 200, headers: { "Content-Type": "application/json" } });
+};
 
 const list = document.querySelector("#entries");
 const status = document.querySelector("#status");
@@ -43,7 +50,13 @@ function render(items) {
   // TODO: create safe li rows and announce the count or empty state.
 }
 async function loadEntries() {
-  // TODO: loading state, dashboardFetch(API_URL), response.ok/json and error UI.
+  // The request and JSON parsing are setup; complete render(items) first.
+  // Then add loading, HTTP/error feedback, and Retry behavior here.
+  try {
+    const response = await dashboardFetch(API_URL);
+    const data = await response.json();
+    render(data.items);
+  } catch (error) { /* TODO: show failure and reveal Retry */ }
 }
 retry.addEventListener("click", loadEntries);
-loadEntries();
+window.initialDashboardLoad = loadEntries();
