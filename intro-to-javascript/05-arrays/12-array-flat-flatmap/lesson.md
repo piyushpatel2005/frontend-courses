@@ -18,9 +18,7 @@ seo_keywords: javascript, array flat and flatmap, beginner javascript, programmi
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A list of grouped items needs flattening, while a list of phrases needs splitting into words. Run `flat()` and `flatMap()` in `script.js` and compare the Console results.
 
 Some arrays contain arrays, and sometimes each string needs to turn into multiple pieces. flat() and flatMap() help with those two related problems.
 
@@ -36,4 +34,4 @@ console.log(sessions.flatMap((session) => session.split(" ")));
 ## Your Task
 
 1. Create flatNumbers from [[1, 2], [3, 4]] using flat().
-2. Create splitWords with flatMap() and display [1,2,3,4] | ["hello","world","js"] in #output.
+2. Create `splitWords` by using `flatMap()` to split `["hello world", "js"]` on spaces; the supplied probe prints both arrays.

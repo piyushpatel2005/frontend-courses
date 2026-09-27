@@ -1,17 +1,15 @@
-test("fizzBuzz is defined", () => {
-  assert.equal(typeof fizzBuzz, "function", "Define fizzBuzz(number)");
+test("Step 1: Ordinary 2: 2", () => {
+  assert.match(OUTPUT, /^Ordinary\ 2:\ 2$/m, "Log Ordinary 2: 2 as a complete Console line");
 });
 
-test("fizzBuzz handles multiples", () => {
-  assert.equal(fizzBuzz(3), "Fizz", "3 should return Fizz");
-  assert.equal(fizzBuzz(5), "Buzz", "5 should return Buzz");
-  assert.equal(fizzBuzz(15), "FizzBuzz", "15 should return FizzBuzz");
+test("Step 2: Multiples: Fizz,Buzz,FizzBuzz", () => {
+  assert.match(OUTPUT, /^Multiples:\ Fizz,Buzz,FizzBuzz$/m, "Log Multiples: Fizz,Buzz,FizzBuzz as a complete Console line");
 });
 
-test("fizzBuzz returns ordinary numbers", () => {
-  assert.equal(fizzBuzz(7), 7, "7 should stay 7");
+test("Step 3: Ordinary 7: 7", () => {
+  assert.match(OUTPUT, /^Ordinary\ 7:\ 7$/m, "Log Ordinary 7: 7 as a complete Console line");
 });
 
-test("logs the FizzBuzz checkpoint", () => {
-  assert.includes(OUTPUT, "FizzBuzz", "Log fizzBuzz(15)");
+test("Step 4: FizzBuzz", () => {
+  assert.match(OUTPUT, /^FizzBuzz$/m, "Log FizzBuzz as a complete Console line");
 });

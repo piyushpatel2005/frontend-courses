@@ -16,11 +16,7 @@ seo_keywords: javascript, higher-order functions, beginner javascript, programmi
 
 # Higher-Order Functions
 
-## Mission: Chart Analytics
-
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you transform chart data with focused functions instead of tangled steps. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+You have already passed functions to array methods and returned functions from closures. Here you will make a reusable multiplier in `script.js`, then inspect the Console result.
 
 A higher-order function either accepts a function or returns one. Returning a multiplier function is a clean beginner example because it shows functions as reusable values.
 
@@ -36,7 +32,7 @@ function makeDiscount(percent) {
 console.log(makeDiscount(0.2)(50));
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write makeMultiplier(multiplier) so it returns a new function that multiplies a value by multiplier.
-2. Log 21 with `console.log()`. by using a multiplier of 3 on the value 7.
+1. Complete `makeMultiplier(multiplier)` so it returns a function that multiplies its input by the captured multiplier.
+2. Log `makeMultiplier(3)(7)` as its own Console line.

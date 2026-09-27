@@ -8,4 +8,6 @@ function positiveOnly(numbers) {
 
 }
 
-console.log("");
+// These probes run as you implement the functions above.
+console.log(`First from -5,3: ${firstNegative([-5,3])}`);
+console.log(`Positive one: ${positiveOnly([0,-1,5])}`);

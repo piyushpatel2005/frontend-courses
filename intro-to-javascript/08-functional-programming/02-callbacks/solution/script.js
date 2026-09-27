@@ -6,4 +6,5 @@ function repeatAction(callback) {
 
 const runs = [];
 repeatAction(() => runs.push('run'));
-console.log(runs.join(','));
+console.log(`CHECK callbacks: ${runs.join(",")}`);
+console.log(runs.join(","));

@@ -8,4 +8,6 @@ function reverseArray(arr) {
 
 }
 
-console.log("");
+// These probes run as you implement the functions above.
+console.log(`Sum one: ${sumArray([2])}`);
+console.log(`Reverse one: ${reverseArray(["x"])}`);

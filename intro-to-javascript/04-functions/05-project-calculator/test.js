@@ -1,39 +1,27 @@
-test("add works correctly", () => {
-  assert.equal(typeof add, "function", "Define an add function");
-  assert.equal(add(3, 4), 7, "add(3, 4) should return 7");
-  assert.equal(add(-1, 1), 0, "add(-1, 1) should return 0");
+test("Checkpoint 1: Add 3,4: 7", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Add\\ 3,4:\\ 7(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("subtract works correctly", () => {
-  assert.equal(typeof subtract, "function", "Define a subtract function");
-  assert.equal(subtract(10, 4), 6, "subtract(10, 4) should return 6");
+test("Checkpoint 2: Subtract 10,4: 6", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Subtract\\ 10,4:\\ 6(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("multiply works correctly", () => {
-  assert.equal(typeof multiply, "function", "Define a multiply function");
-  assert.equal(multiply(3, 5), 15, "multiply(3, 5) should return 15");
+test("Checkpoint 3: Multiply 3,5: 15", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Multiply\\ 3,5:\\ 15(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("divide works correctly", () => {
-  assert.equal(typeof divide, "function", "Define a divide function");
-  assert.equal(divide(10, 2), 5, "divide(10, 2) should return 5");
-  assert.equal(divide(8, 0), null, "divide(8, 0) should return null");
+test("Checkpoint 4: Divide cases: 5,null", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Divide\\ cases:\\ 5,null(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("calculate delegates correctly", () => {
-  assert.equal(typeof calculate, "function", "Define a calculate function");
-  assert.equal(calculate(10, "+", 5), 15, 'calculate(10, "+", 5) should return 15');
-  assert.equal(calculate(10, "-", 3), 7, 'calculate(10, "-", 3) should return 7');
-  assert.equal(calculate(6, "*", 7), 42, 'calculate(6, "*", 7) should return 42');
-  assert.equal(calculate(9, "/", 3), 3, 'calculate(9, "/", 3) should return 3');
-  assert.equal(calculate(8, "/", 0), null, "Division by zero should return null");
-  assert.equal(calculate(1, "%", 1), null, "Unknown operator should return null");
+test("Checkpoint 5: Calculate cases: 15,7,42,3,null,null", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Calculate\\ cases:\\ 15,7,42,3,null,null(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "10 + 5 = 15", "Log the mission result with console.log()");
+test("Checkpoint 6: 10 + 5 = 15", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)10\\ \\+\\ 5\\ =\\ 15(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "8 / 0 = Error: Division by zero", "Log the mission result with console.log()");
+test("Checkpoint 7: 8 / 0 = Error: Division by zero", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)8\\ /\\ 0\\ =\\ Error:\\ Division\\ by\\ zero(?:\\n|$)"), "Log this result from your function calls");
 });

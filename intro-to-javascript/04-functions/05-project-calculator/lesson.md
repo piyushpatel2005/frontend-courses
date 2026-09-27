@@ -19,25 +19,33 @@ seo_keywords: javascript, project - calculator, beginner javascript, programming
 
 ## Mission: Backstage Toolkit
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you package repeatable backstage jobs into small, dependable functions. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+The awards desk needs one calculator that delegates each operation to a small helper. Build it in `script.js` and check its results in the Console.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+Put your function declarations and conditionals knowledge together to build a simple calculator engine. Function expressions are introduced in the next lesson; they are not required here.
 
-Put your functions, arrow functions, and conditionals knowledge together to build a simple calculator engine.
+## Worked example
 
-## Requirements
+One function can hand work to another. This separate postage example returns a value without changing the page:
 
-Build the following pure functions in `script.js`:
+```javascript
+function basePostage(weight) {
+  return weight * 2;
+}
 
-1. `add(a, b)` — returns `a + b`
-2. `subtract(a, b)` — returns `a - b`
-3. `multiply(a, b)` — returns `a * b`
-4. `divide(a, b)` — returns `a / b`; if `b` is `0` return `null`
-5. `calculate(a, op, b)` — delegates to the right function based on the `op` string (`"+"`, `"-"`, `"*"`, `"/"`); returns `null` for an unknown operator.
+function postage(weight, express) {
+  if (express) return basePostage(weight) + 5;
+  return basePostage(weight);
+}
 
-Then:
+console.log(postage(3, true)); // 11
+```
 
-6. Compute the result of `calculate(10, "+", 5)` and log with `console.log()` as `"10 + 5 = 15"`.
-7. Compute `calculate(8, "/", 0)` and log with `console.log()` as `"8 / 0 = Error: Division by zero"`.
+## Your Tasks
 
-## Starter structure
+1. Implement `add(a,b)`.
+2. Implement `subtract(a,b)`.
+3. Implement `multiply(a,b)`.
+4. Implement `divide(a,b)`, returning `null` on zero divisor.
+5. Implement `calculate(a,op,b)` for +, -, *, / (calling helpers), returning `null` for unknown operator.
+6. Log `10 + 5 = 15` using `calculate(10,"+",5)`.
+7. Log `8 / 0 = Error: Division by zero` using `calculate(8,"/",0)`.

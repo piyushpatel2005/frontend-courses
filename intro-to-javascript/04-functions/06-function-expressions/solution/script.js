@@ -3,3 +3,5 @@ const greetStudent = function (name) {
 };
 
 console.log(greetStudent('Maya'));
+
+console.log(`Welcome test: ${greetStudent("Maya")}`);

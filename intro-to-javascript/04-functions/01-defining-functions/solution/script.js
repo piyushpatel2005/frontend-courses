@@ -3,3 +3,5 @@ function greet(name) {
 }
 
 console.log(`${greet('Alice')} | ${greet('Bob')}`);
+
+console.log(`Greeting: ${greet("Alice")}`);

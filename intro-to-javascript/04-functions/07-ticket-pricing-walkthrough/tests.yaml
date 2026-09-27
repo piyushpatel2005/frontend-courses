@@ -1,0 +1,5 @@
+blocks:
+- index: 0
+  expected_output: 'Leena: standard ($12)
+
+    Omar: supporter ($18)'

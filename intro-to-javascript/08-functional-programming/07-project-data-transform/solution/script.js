@@ -25,6 +25,10 @@ function byCategory(items) {
   }, {});
 }
 
+console.log(`CHECK stock: ${inStockItems.map(i => i.name).join(",")}`);
+console.log(`CHECK expensive: ${expensiveItems.join(",")}`);
+console.log(`CHECK value: ${totalValue(inventory)}`);
+console.log(`CHECK categories: Electronics=${byCategory(inventory).Electronics.length} | Furniture=${byCategory(inventory).Furniture.length}`);
 console.log(`${inStockItems.length} items in stock`);
 console.log(`Top products: ${expensiveItems.join(", ")}`);
 console.log(`Total value: $${totalValue(inventory).toLocaleString()}`);

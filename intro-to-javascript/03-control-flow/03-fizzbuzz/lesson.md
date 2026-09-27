@@ -14,15 +14,27 @@ hints:
 
 # Challenge: FizzBuzz Announcer
 
-You have seen the pattern in the demo. Now write the program yourself in `script.js`. Keep the focus on values, conditions, loops, arrays, or functions—not page elements.
+The preceding carton demo checked the combined case before the individual cases. Apply that branch order to one number at a time in `fizzBuzz(number)`. `%` returns the remainder, so `number % 15 === 0` detects a multiple of both 3 and 5. Use `return` to send a value back from the function, then log calls in `script.js`.
+
+## Worked example
+
+Before building FizzBuzz, trace a smaller rule that checks the special case first:
+
+```javascript
+function signal(value) {
+  if (value % 4 === 0) return "Quad";
+  return "Ordinary";
+}
+console.log(signal(8)); // Quad
+```
 
 ## Your Tasks
 
-1. Define `fizzBuzz(number)`.
-2. Return `"FizzBuzz"` for multiples of 15, `"Fizz"` for multiples of 3, and `"Buzz"` for multiples of 5.
-3. Return the original number for every other value.
-4. Log `fizzBuzz(15)` to the Console.
+1. Implement `fizzBuzz(number)` to return `"FizzBuzz"` for multiples of 15, `"Fizz"` for multiples of 3, `"Buzz"` for multiples of 5, and the original number otherwise. The provided `Ordinary 2` probe should print `Ordinary 2: 2`.
+2. Log `Multiples: Fizz,Buzz,FizzBuzz` from calls with 3, 5, and 15.
+3. Log `Ordinary 7: 7` from `fizzBuzz(7)`.
+4. Log `FizzBuzz` on its own line from `fizzBuzz(15)`.
 
 ## Checkpoint
 
-Run your code after each small change. The Console should show one clear summary once all checks pass.
+Run after each change; the Console should show each requested line on its own.

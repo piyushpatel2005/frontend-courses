@@ -4,5 +4,5 @@ function makeMultiplier(multiplier) {
   };
 }
 
-const triple = makeMultiplier(3);
-console.log(String(triple(7)));
+console.log(`CHECK multiplier: ${makeMultiplier(3)(7)} | ${makeMultiplier(4)(5)}`);
+console.log(String(makeMultiplier(3)(7)));

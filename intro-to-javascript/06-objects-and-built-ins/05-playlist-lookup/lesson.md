@@ -17,6 +17,16 @@ hints:
 
 The walkthrough used badges and tour cities. Now build a separate playlist tool. Keep durations in a Map so a title can find its duration, and keep artists in a Set so repeats disappear.
 
+## Worked example
+
+A map retrieves a duration by key while a set removes duplicate categories:
+
+```javascript
+const readings = new Map([["Poem", 4]]);
+const genres = new Set(["spoken", "spoken", "music"]);
+console.log(readings.get("Poem"), genres.size); // 4 2
+```
+
 ## Your Tasks
 
 1. Create a `songDurations` Map with the key-value entries `"Orbit" → 203` and `"Glow" → 187`.

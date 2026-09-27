@@ -19,9 +19,7 @@ seo_keywords: javascript, type conversion, beginner javascript, programming prac
 
 ## Mission: Scoreboard Engine
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you store and calculate the numbers behind a rising superstar's tour score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A price arrives as text. Convert it before multiplying by the quantity so the total remains a number.
 
 Sometimes you need to change a value from one type to another. JavaScript supports both **explicit** (manual) and **implicit** (automatic) type conversion.
 
@@ -68,11 +66,8 @@ undefined + 1 // NaN
 
 ## Your Task
 
-1. Declare a variable `priceStr` with the string value `"29"`.
-2. Convert `priceStr` to a number and store it in a variable `price`.
-3. Declare a variable `quantity` with the number value `3`.
-4. Calculate `total` as `price * quantity`. log with `console.log()`: `"Total: $87"` (use `String()` or a template literal for the final message).
-
-## Scoreboard Engine complete
-
-You can name values, calculate with them, and convert data deliberately. Take the section quiz, then teach the engine how to make decisions.
+1. Set `priceStr` to `"29"`; the provided probe will show `priceStr: 29 (string)`.
+2. Convert `priceStr` with `Number()` into `price`; the provided probe will show `price: 29 (number)`.
+3. Set `quantity` to `3`; the provided probe will show `quantity: 3`.
+4. Calculate `total` as `price * quantity`; the provided probe will show `total: 87 (number)`.
+5. Log `Total: $87` using the numeric `total`.

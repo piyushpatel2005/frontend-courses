@@ -19,17 +19,15 @@ seo_keywords: javascript, for loops, beginner javascript, programming practice
 
 ## Mission: Decision Desk
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you teach the Starline Awards engine how to choose the next action. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+A loop can visit each value in a list, adding to a total or collecting a new order.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Loops let you repeat a block of code. JavaScript offers several loop styles.
+Loops let you repeat a block of code. An array such as `[2, 4, 6]` is an ordered list; you will study arrays in depth later, but here you only need to visit its values. `numbers.length` counts entries, `numbers[i]` reads one entry (starting at index 0), and `result.push(value)` adds an entry to a new array. To log a list on one line, `result.join(",")` joins its values with commas.
 
 ## Traditional `for` loop
 
 ```javascript
 for (let i = 0; i < 5; i++) {
-    console.log(i); // 0 1 2 3 4
+    console.log(i); // five separate lines: 0 through 4
 }
 ```
 
@@ -52,19 +50,14 @@ for (const fruit of fruits) {
 }
 ```
 
-## `for...in` — iterate object keys
+The `fruits` list here is the same list from the preceding example. If you copy this block into a new script, declare `fruits` first.
 
-```javascript
-const person = { name: "Alice", age: 30 };
-for (const key in person) {
-    console.log(key, person[key]); // name Alice / age 30
-}
-```
+For the reverse task, start at `arr.length - 1` (the last index), step backward with `i--`, and push each visited value into a new array. An empty array gives a sum of 0 because the loop runs zero times. Object-key iteration comes in the Objects module; it is not needed here.
 
-## Your Task
+## Your Tasks
 
-1. Write a function `sumArray(numbers)` that returns the sum of all numbers in the array using a `for` loop.
-2. Write a function `reverseArray(arr)` that returns a new array with the elements in reverse order.
-3. Call `sumArray([1, 2, 3, 4, 5])` and log with `console.log()` as `"Sum: 15"`.
-4. Verify the program behavior: reverseArray returns reversed array.
-5. Verify the program behavior: logs the mission result.
+1. Implement `sumArray(numbers)` with a `for` loop returning the sum (including negative numbers and empty arrays). The provided `Sum one` probe should print `Sum one: 2`.
+2. Implement `reverseArray(arr)` with a `for` loop returning a new reversed array. The provided `Reverse one` probe should print `Reverse one: x`.
+3. Log `Sums: 15,10,0` from `[1,2,3,4,5]`, `[10,-5,5]`, and `[]`.
+4. Log `Reversals: 3,2,1 | c,b,a` from `[1,2,3]` and `["a","b","c"]`.
+5. Log `Sum: 15` from `sumArray([1,2,3,4,5])`.

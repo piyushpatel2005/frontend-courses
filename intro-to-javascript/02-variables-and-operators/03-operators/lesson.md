@@ -18,11 +18,9 @@ seo_keywords: javascript, operators, beginner javascript, programming practice
 
 ## Mission: Scoreboard Engine
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you store and calculate the numbers behind a rising superstar's tour score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+Calculate an order total from an item price, a quantity, and shipping. The Console lets you verify the arithmetic.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Operators are how beginners make JavaScript do real work. A small shopping calculation is enough to practice arithmetic and see the result on screen.
+Arithmetic operators combine numbers: `*` multiplies, `+` adds, and multiplication happens before addition. For example, `3 * 8 + 4` is `28`, not `36`. Calculate in `script.js` and inspect the Console; this lesson does not change a page.
 
 ## Example
 
@@ -36,5 +34,5 @@ console.log(rentalTotal);
 
 ## Your Task
 
-1. Calculate totalPrice for 5 items that cost 12 each with 3 dollars shipping.
-2. Log 63 with `console.log()`.
+1. Calculate `totalPrice` for five items at 12 each, plus 3 shipping; the provided probe will log `totalPrice: 63`.
+2. Log `63` on its own line using `totalPrice`.

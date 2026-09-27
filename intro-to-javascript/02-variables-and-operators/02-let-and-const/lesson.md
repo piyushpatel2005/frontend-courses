@@ -19,17 +19,27 @@ seo_keywords: javascript, let and const in practice, beginner javascript, progra
 
 ## Mission: Scoreboard Engine
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you store and calculate the numbers behind a rising superstar's tour score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+Keep a greeting fixed while changing a score. The Console will show both the intermediate values and the finished message.
 
 In this exercise you will declare variables using `const` and `let` following best practices. Remember:
 
 - **`const`** for values that should not be reassigned.
 - **`let`** for values that will change.
 
+## Worked example
+
+A different counter shows why the label stays fixed while a value changes:
+
+```javascript
+const station = "Harbor";
+let visitors = 3;
+visitors += 2;
+console.log(`${station}: ${visitors}`); // Harbor: 5
+```
+
 ## Your Task
 
-1. Declare a `const` named `greeting` with the string value `"Hello, JavaScript!"`.
-2. Declare a `let` named `score` with the initial value `0`.
-3. Increase `score` by `10` using `+=`. Display both values in the `#output` paragraph — format: `"Hello, JavaScript! Score: 10"`.
+1. Set the existing `const greeting` to `"Hello, JavaScript!"`; the provided probe will show `greeting: Hello, JavaScript!`.
+2. Set the initial value of the existing `let score` to `0`; its probe will show `initial score: 0`.
+3. Increase `score` with `+= 10`; the provided probe will show `score: 10`.
+4. Log `Hello, JavaScript! Score: 10` using both variables.

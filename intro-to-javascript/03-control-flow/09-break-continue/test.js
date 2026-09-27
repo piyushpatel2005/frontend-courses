@@ -1,23 +1,19 @@
-test("firstNegative is defined", () => {
-  assert.equal(typeof firstNegative, "function", "Define a function named firstNegative");
+test("Step 1: First from -5,3: -5", () => {
+  assert.match(OUTPUT, /^First\ from\ \-5,3:\ \-5$/m, "Log First from -5,3: -5 as a complete Console line");
 });
 
-test("firstNegative returns the first negative number", () => {
-  assert.equal(firstNegative([-5, 3, -2, 8]), -5, "Should return -5");
-  assert.equal(firstNegative([3, 8, -2, -1]), -2, "Should return -2 (first negative)");
-  assert.equal(firstNegative([1, 2, 3]), null, "Should return null when no negatives");
+test("Step 2: Positive one: 5", () => {
+  assert.match(OUTPUT, /^Positive\ one:\ 5$/m, "Log Positive one: 5 as a complete Console line");
 });
 
-test("positiveOnly is defined", () => {
-  assert.equal(typeof positiveOnly, "function", "Define a function named positiveOnly");
+test("Step 3: First cases: -2,null", () => {
+  assert.match(OUTPUT, /^First\ cases:\ \-2,null$/m, "Log First cases: -2,null as a complete Console line");
 });
 
-test("positiveOnly returns only positive numbers", () => {
-  assert.deepEqual(positiveOnly([-5, 3, -2, 8, -1]), [3, 8], "Should return [3, 8]");
-  assert.deepEqual(positiveOnly([0, -1, 5]), [5], "Zero is not positive");
-  assert.deepEqual(positiveOnly([-1, -2]), [], "Empty array when no positives");
+test("Step 4: Positive cases: 3,8 | empty", () => {
+  assert.match(OUTPUT, /^Positive\ cases:\ 3,8\ \|\ empty$/m, "Log Positive cases: 3,8 | empty as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "First negative: -5 | Positives: 3,8", "Log the mission result with console.log()");
+test("Step 5: First negative: -5 | Positives: 3,8", () => {
+  assert.match(OUTPUT, /^First\ negative:\ \-5\ \|\ Positives:\ 3,8$/m, "Log First negative: -5 | Positives: 3,8 as a complete Console line");
 });

@@ -3,4 +3,6 @@ const labels = [];
 numbers.forEach((n) => labels.push(`Number: ${n}`));
 const doubledNumbers = numbers.map((n) => n * 2);
 
+console.log(`CHECK 1: ${labels.join(", ")}`);
+
 console.log(`${labels.join(', ')} | ${JSON.stringify(doubledNumbers)}`);

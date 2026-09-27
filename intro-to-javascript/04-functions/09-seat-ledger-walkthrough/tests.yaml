@@ -1,0 +1,9 @@
+blocks:
+- index: 0
+  expected_output: 'Seats left: 1
+
+    Seats left: 0
+
+    Seats left: 0
+
+    Sold out'

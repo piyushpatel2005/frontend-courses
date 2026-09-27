@@ -1,8 +1,7 @@
-test("find and includes return the expected values", () => {
-  assert.equal(firstLargePrice, 75, "firstLargePrice should be the first price above 50");
-  assert.equal(hasForty, true, "hasForty should be true");
+test("find returns the first large price", () => {
+  assert.match(OUTPUT, /^CHECK\ 1:\ 75$/m, "Log CHECK 1: 75 as a separate checkpoint line");
 });
 
 test("logs the mission result", () => {
-  assert.includes(OUTPUT, "75 | true", "Log the mission result with console.log()");
+  assert.match(OUTPUT, /^75\ \|\ true$/m, "Log the mission result with console.log()");
 });

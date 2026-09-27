@@ -1,10 +1,10 @@
-// TODO 1: Declare priceStr as the string "29"
+const priceStr = "";
+console.log(`priceStr: ${priceStr} (${typeof priceStr})`); // Probe for step 1.
+const price = 0;
+console.log(`price: ${price} (${typeof price})`); // Probe for step 2.
+const quantity = 0;
+console.log(`quantity: ${quantity}`); // Probe for step 3.
+const total = 0;
+console.log(`total: ${total} (${typeof total})`); // Probe for step 4.
 
-// TODO 2: Convert priceStr to a number and store in `price`
-
-// TODO 3: Declare quantity as the number 3
-
-// TODO 4: Calculate total = price * quantity
-
-// TODO 5: Display "Total: $87" in #output
-console.log("");
+// Log the formatted result here.

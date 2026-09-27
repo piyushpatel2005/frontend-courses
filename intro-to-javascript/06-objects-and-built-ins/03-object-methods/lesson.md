@@ -19,9 +19,7 @@ seo_keywords: javascript, object methods and destructuring, beginner javascript,
 
 ## Mission: Artist Profile Lab
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you model an artist profile and use JavaScript's built-in tools to keep it current. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The student record now has several scores. Extract its name properties and compute one average; use the Console to check each result.
 
 ## Object destructuring
 

@@ -1,8 +1,7 @@
-test("sorted and reversed arrays are correct", () => {
-  assert.deepEqual(sortedNumbers, [1, 2, 3, 4], "sortedNumbers should be ascending");
-  assert.deepEqual(reversedNumbers, [4, 3, 2, 1], "reversedNumbers should be descending");
+test("sort orders the numbers", () => {
+  assert.match(OUTPUT, /^CHECK\ 1:\ \[1,2,3,4\]$/m, "Log CHECK 1: [1,2,3,4] as a separate checkpoint line");
 });
 
 test("logs the mission result", () => {
-  assert.includes(OUTPUT, "[1,2,3,4] | [4,3,2,1]", "Log the mission result with console.log()");
+  assert.match(OUTPUT, /^\[1,2,3,4\]\ \|\ \[4,3,2,1\]$/m, "Log the mission result with console.log()");
 });

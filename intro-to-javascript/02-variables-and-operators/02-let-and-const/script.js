@@ -1,8 +1,8 @@
-// TODO 1: Declare a const named `greeting` with the value "Hello, JavaScript!"
+const greeting = "";
+console.log(`greeting: ${greeting}`); // Probe for step 1.
+let score = -1;
+console.log(`initial score: ${score}`); // Probe for step 2.
+// Increase score by 10 here.
+console.log(`score: ${score}`); // Probe for step 3.
 
-// TODO 2: Declare a let named `score` with the value 0
-
-// TODO 3: Increase score by 10
-
-// TODO 4: Set the #output paragraph text to: "Hello, JavaScript! Score: 10"
-console.log("");
+// Log the completed greeting and score here.

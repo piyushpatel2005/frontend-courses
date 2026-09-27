@@ -1,8 +1,10 @@
-test("push and pop update the queue", () => {
-  assert.deepEqual(queue, ['first', 'second'], "queue should end with the original two items after push and pop");
-  assert.equal(removedItem, 'third', "removedItem should store the popped value");
+test("push adds an item to the queue", () => {
+  assert.match(OUTPUT, /^CHECK 1: first,second,third$/m, "Log CHECK 1 after push");
+});
+test("pop removes the last item", () => {
+  assert.match(OUTPUT, /^CHECK 2: first,second \| third$/m, "Log CHECK 2 after pop");
 });
 
 test("logs the mission result", () => {
-  assert.includes(OUTPUT, "first,second | third", "Log the mission result with console.log()");
+  assert.match(OUTPUT, /^first,second \| third$/m, "Log first,second | third on its own line");
 });

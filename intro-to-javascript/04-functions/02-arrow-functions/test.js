@@ -1,33 +1,27 @@
-test("square is a function", () => {
-  assert.equal(typeof square, "function", "Declare square as an arrow function");
+test("Checkpoint 1: Square one: 1", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Square\\ one:\\ 1(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("square returns n * n", () => {
-  assert.equal(square(5), 25, "square(5) should return 25");
-  assert.equal(square(3), 9, "square(3) should return 9");
-  assert.equal(square(0), 0, "square(0) should return 0");
+test("Checkpoint 2: Squares: 25,9,0", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Squares:\\ 25,9,0(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("celsius is a function", () => {
-  assert.equal(typeof celsius, "function", "Declare celsius as an arrow function");
+test("Checkpoint 3: Freezing: 0", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Freezing:\\ 0(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("celsius converts Fahrenheit correctly", () => {
-  assert.equal(celsius(32), 0, "celsius(32) should return 0");
-  assert.equal(celsius(98), 36.7, "celsius(98) should return 36.7");
-  assert.equal(celsius(212), 100, "celsius(212) should return 100");
+test("Checkpoint 4: Celsius: 36.7,100", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Celsius:\\ 36\\.7,100(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("isEven is a function", () => {
-  assert.equal(typeof isEven, "function", "Declare isEven as an arrow function");
+test("Checkpoint 5: Even zero: true", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Even\\ zero:\\ true(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("isEven returns correct boolean", () => {
-  assert.equal(isEven(4), true, "isEven(4) should return true");
-  assert.equal(isEven(7), false, "isEven(7) should return false");
-  assert.equal(isEven(0), true, "isEven(0) should return true");
+test("Checkpoint 6: Parity: true,false", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Parity:\\ true,false(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "5² = 25 | 98°F = 36.7°C | 4 is even: true", "Log the mission result with console.log()");
+test("Checkpoint 7: 5\u00b2 = 25 | 98\u00b0F = 36.7\u00b0C | 4 is even: true", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)5\u00b2\\ =\\ 25\\ \\|\\ 98\u00b0F\\ =\\ 36\\.7\u00b0C\\ \\|\\ 4\\ is\\ even:\\ true(?:\\n|$)"), "Log this result from your function calls");
 });

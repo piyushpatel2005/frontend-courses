@@ -17,30 +17,24 @@ seo_keywords: javascript, regular expressions, beginner javascript, programming 
 
 # Regular Expressions
 
-## Mission: Lyrics Studio
-
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you shape captions, lyric snippets, and input patterns without changing the original message by accident. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The next intake step needs to recognize and clean up email-like text. Run `script.js` and inspect its Console output; regular expressions work on strings, without any page markup.
 
 A **regular expression** (regex) is a pattern that describes a set of strings. JavaScript has built-in regex support for searching, validating, and transforming strings.
 
 ## Creating a regex
 
 ```javascript
-// Literal syntax (preferred)
+// Literal syntax for a fixed pattern
 const pattern = /hello/i;   // i = case-insensitive
 
-// Constructor (for dynamic patterns)
-const word = "hello";
-const dynamic = new RegExp(word, "i");
+// The i flag ignores letter case; without it, HELLO does not match /hello/.
 ```
 
 ## Common special characters
 
 | Pattern | Meaning |
 |---------|---------|
-| `.` | Any character except newline |
+| `.` | Any character except newline (in basic regex mode) |
 | `\d` | Digit (0-9) |
 | `\w` | Word character (letter, digit, `_`) |
 | `\s` | Whitespace |
@@ -70,13 +64,9 @@ const dynamic = new RegExp(word, "i");
 "one,  two,   three".split(/,\s*/); // ["one", "two", "three"]
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write a function `isValidEmail(email)` that returns `true` if `email` matches the basic pattern `name@domain.tld` (use regex `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`).
-2. Write a function `extractNumbers(text)` that returns an array of all number strings found in `text`.
-3. Write a function `maskEmail(email)` that hides all but the first character of the local part, e.g. `"alice@example.com"` → `"a****@example.com"`.
-4. log with `console.log()`: `"valid: true | numbers: 3,12 | masked: a****@example.com"`.
-
-## Lyrics Studio complete
-
-You can reshape text and recognize patterns without touching the original value. Take the section quiz, then transform data with functions.
+1. Complete `isValidEmail(email)` with the basic shape regex `/^[^\s@]+@[^\s@]+\.[^\s@]+$/` and return its boolean result. This checks shape, not deliverability.
+2. Complete `extractNumbers(text)` to return all digit-sequence strings, or an empty array when none occur.
+3. Complete `maskEmail(email)` for a valid address with a nonempty local part: retain its first character, replace the rest with `*`, and keep the domain.
+4. Log one standalone combined line from the three functions: `valid: true | numbers: 3,12 | masked: a****@example.com`.

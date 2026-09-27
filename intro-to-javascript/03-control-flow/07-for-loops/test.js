@@ -1,22 +1,19 @@
-test("sumArray is defined", () => {
-  assert.equal(typeof sumArray, "function", "Define a function named sumArray");
+test("Step 1: Sum one: 2", () => {
+  assert.match(OUTPUT, /^Sum\ one:\ 2$/m, "Log Sum one: 2 as a complete Console line");
 });
 
-test("sumArray returns correct sum", () => {
-  assert.equal(sumArray([1, 2, 3, 4, 5]), 15, "sumArray([1,2,3,4,5]) should return 15");
-  assert.equal(sumArray([10, -5, 5]), 10, "sumArray([10,-5,5]) should return 10");
-  assert.equal(sumArray([]), 0, "sumArray([]) should return 0");
+test("Step 2: Reverse one: x", () => {
+  assert.match(OUTPUT, /^Reverse\ one:\ x$/m, "Log Reverse one: x as a complete Console line");
 });
 
-test("reverseArray is defined", () => {
-  assert.equal(typeof reverseArray, "function", "Define a function named reverseArray");
+test("Step 3: Sums: 15,10,0", () => {
+  assert.match(OUTPUT, /^Sums:\ 15,10,0$/m, "Log Sums: 15,10,0 as a complete Console line");
 });
 
-test("reverseArray returns reversed array", () => {
-  assert.deepEqual(reverseArray([1, 2, 3]), [3, 2, 1], "reverseArray([1,2,3]) should return [3,2,1]");
-  assert.deepEqual(reverseArray(["a", "b", "c"]), ["c", "b", "a"], "reverseArray should work with strings");
+test("Step 4: Reversals: 3,2,1 | c,b,a", () => {
+  assert.match(OUTPUT, /^Reversals:\ 3,2,1\ \|\ c,b,a$/m, "Log Reversals: 3,2,1 | c,b,a as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Sum: 15", "Log the mission result with console.log()");
+test("Step 5: Sum: 15", () => {
+  assert.match(OUTPUT, /^Sum:\ 15$/m, "Log Sum: 15 as a complete Console line");
 });

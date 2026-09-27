@@ -15,5 +15,8 @@ const avgEngineerSalary = 0;
 // TODO 3: salaryReport - array of "Name: $salary" strings for all employees
 const salaryReport = [];
 
-// TODO 4: Display "Engineers: Alice,Carol,Eve | Avg salary: $107,667"
-console.log("");
+// The probes below show each derived result as you complete it.
+console.log(`CHECK names: ${engineeringNames.join(",")}`);
+console.log(`CHECK average: ${avgEngineerSalary}`);
+console.log(`CHECK report: ${salaryReport[0]} | ${salaryReport[1]} | count: ${salaryReport.length}`);
+// Log the summary from engineeringNames and avgEngineerSalary separately.

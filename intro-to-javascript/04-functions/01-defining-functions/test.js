@@ -1,8 +1,7 @@
-test("greet returns the expected message", () => {
-  assert.equal(typeof greet, "function", "Define greet as a function");
-  assert.equal(greet('Alice'), "Hello, Alice!", "greet should return the correct greeting");
+test("Checkpoint 1: Greeting: Hello, Alice!", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Greeting:\\ Hello,\\ Alice!(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Hello, Alice! | Hello, Bob!", "Log the mission result with console.log()");
+test("Checkpoint 2: Hello, Alice! | Hello, Bob!", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Hello,\\ Alice!\\ \\|\\ Hello,\\ Bob!(?:\\n|$)"), "Log this result from your function calls");
 });

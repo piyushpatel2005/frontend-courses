@@ -1,0 +1,5 @@
+blocks:
+  - index: 0
+    expected_output: "aisle: C string\nseats: 12 number"
+  - index: 1
+    expected_output: "scanned: 12 string\nverified: 12 number\nsame type: false"

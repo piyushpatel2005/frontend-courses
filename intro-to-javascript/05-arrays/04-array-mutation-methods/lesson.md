@@ -18,9 +18,7 @@ seo_keywords: javascript, array mutation methods, beginner javascript, programmi
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The setlist queue changes when a new item arrives or the last one is removed. Practice `push()` and `pop()` in `script.js`; inspect the remaining queue in the Console.
 
 Mutation methods change the original array. This lesson focuses only on push() and pop() so learners can see how an array grows and shrinks at the end.
 
@@ -29,11 +27,12 @@ Mutation methods change the original array. This lesson focuses only on push() a
 ```javascript
 const wateringQueue = ["fern", "ivy"];
 wateringQueue.push("orchid");
-const nextPlant = wateringQueue.shift();
-console.log(nextPlant, wateringQueue);
+const lastPlant = wateringQueue.pop();
+console.log(lastPlant, wateringQueue); // orchid ["fern", "ivy"]
 ```
 
 ## Your Task
 
-1. Create queue with first and second, then use push() to add third and pop() to store the removed item in removedItem.
-2. Log first,second | third with `console.log()`.
+1. Use `push()` to add `"third"` to the provided `queue`.
+2. Use `pop()` to remove that last item into `removedItem`.
+3. Log `first,second | third` on its own line in the Console.

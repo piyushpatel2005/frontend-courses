@@ -1,10 +1,7 @@
-test("makeCounter returns an independent counter function", () => {
-  assert.equal(typeof makeCounter, "function", "Define makeCounter as a function");
-  const counter = makeCounter();
-  assert.equal(counter(), 1, "The first call should return 1");
-  assert.equal(counter(), 2, "The second call should return 2");
+test("Checkpoint 1: Counter calls: 1,2", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)Counter\\ calls:\\ 1,2(?:\\n|$)"), "Log this result from your function calls");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "1 | 2 | 3", "Log the mission result with console.log()");
+test("Checkpoint 2: 1 | 2 | 3", () => {
+  assert.match(OUTPUT, new RegExp("(?:^|\\n)1\\ \\|\\ 2\\ \\|\\ 3(?:\\n|$)"), "Log this result from your function calls");
 });

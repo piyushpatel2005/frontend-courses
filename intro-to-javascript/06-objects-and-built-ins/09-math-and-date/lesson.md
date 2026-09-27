@@ -18,9 +18,7 @@ seo_keywords: javascript, math and date, beginner javascript, programming practi
 
 ## Mission: Artist Profile Lab
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you model an artist profile and use JavaScript's built-in tools to keep it current. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+For a fixed event date, the crew needs one rounded quantity and one calendar year. Use built-in `Math` and `Date` methods and check both in the Console.
 
 Built-in objects save you from rewriting common utilities. This lesson combines one Math method with one Date method and keeps the output predictable for beginners.
 
@@ -35,5 +33,6 @@ console.log(roundedBill, eventDate.getUTCFullYear());
 
 ## Your Task
 
-1. Create roundedUp with Math.ceil(4.2) and launchYear from new Date('2024-05-06T00:00:00Z').
-2. Log 5 | 2024 with `console.log()`.
+1. Create `roundedUp` with `Math.ceil(4.2)`.
+2. Create `launchYear` using the UTC year of `new Date('2024-05-06T00:00:00Z')`.
+3. Log `5 | 2024` on its own Console line.

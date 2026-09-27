@@ -18,9 +18,7 @@ seo_keywords: javascript, string methods, beginner javascript, programming pract
 
 ## Mission: Lyrics Studio
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you shape captions, lyric snippets, and input patterns without changing the original message by accident. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The awards desk needs a readable caption and a quick check for a word in the original text. Work in `script.js` and inspect the Console; there are no page elements to edit.
 
 Strings are values with built-in helper methods. This lesson keeps the practice focused on one transformation and one membership check.
 
@@ -36,17 +34,10 @@ console.log(trailName.toUpperCase());
 console.log(trailName.includes("loop"));
 ```
 
-This does not change `label`; it returns a new string. Use the console to test another pair of positions before moving on.
+`slice()` also returns a new string; it does not change the original. Try `"STARLINE".slice(1, 5)` in the Console to check the diagram. The task below practices two other methods.
 
-## Example
+## Your Tasks
 
-```javascript
-const phrase = 'hello world';
-const upperPhrase = phrase.toUpperCase();
-const hasWorld = phrase.includes('world');
-```
-
-## Your Task
-
-1. Create upperPhrase from hello world using toUpperCase() and hasWorld using includes('world').
-2. Log HELLO WORLD | true with `console.log()`.
+1. Compute `upperPhrase` from `phrase` with `toUpperCase()`; inspect the supplied uppercase checkpoint.
+2. Compute `hasWorld` from `phrase` with `includes("world")`; inspect the supplied membership checkpoint.
+3. Log a separate `HELLO WORLD | true` line using the computed values.

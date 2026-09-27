@@ -18,9 +18,7 @@ seo_keywords: javascript, array reduce, some, and every, beginner javascript, pr
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The crew needs three quick summaries of its numbers: a total, whether any match a condition, and whether all match one. Use `reduce()`, `some()`, and `every()` in `script.js`.
 
 Some array methods return one combined answer instead of a new array. This lesson uses reduce(), some(), and every() together to show three different kinds of summary.
 
@@ -36,9 +34,9 @@ console.log(totalUse, hasLowTank, allValid);
 
 ## Your Task
 
-1. Create total, hasAdult, and allPositive using reduce(), some(), and every() on the example arrays.
-2. Log 30 | true | true with `console.log()`.
+1. Create `total` with `reduce()` on `[5, 10, 15]`.
+2. Create `hasAdult` with `some()` for an age of at least 18 in `[12, 17, 21]`.
+3. Create `allPositive` with `every()` for values above zero in `[1, 2, 3]`.
+4. Log `30 | true | true` on its own line in the Console.
 
-## Setlist Vault complete
-
-You can store, search, transform, and reshape ordered data. Take the section quiz, then add named facts with objects.
+Next, combine those array methods into a restock report before the section quiz.

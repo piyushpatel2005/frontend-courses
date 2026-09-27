@@ -1,0 +1,5 @@
+blocks:
+  - index: 0
+    expected_output: "sessions: 30\nsetup: 4\nfaulty: 38"
+  - index: 1
+    expected_output: "corrected: 34"

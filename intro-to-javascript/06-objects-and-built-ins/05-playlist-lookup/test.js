@@ -1,19 +1,15 @@
 test("songDurations is a Map with both songs", () => {
-  assert.equal(songDurations instanceof Map, true, "Create songDurations as a Map");
-  assert.equal(songDurations.get("Orbit"), 203, "Store Orbit with duration 203");
-  assert.equal(songDurations.get("Glow"), 187, "Store Glow with duration 187");
+  assert.match(OUTPUT, /^CHECK\ 1:\ 203\ \|\ 187$/m, "Log CHECK 1: 203 | 187 as a separate checkpoint line");
 });
 
 test("featuredArtists is a unique Set", () => {
-  assert.equal(featuredArtists instanceof Set, true, "Create featuredArtists as a Set");
-  assert.equal(featuredArtists.size, 2, "The repeated Nova entry should not add a second artist");
+  assert.match(OUTPUT, /^CHECK\ 2:\ 2\ \|\ true\ \|\ true$/m, "Log CHECK 2: 2 | true | true as a separate checkpoint line");
 });
 
 test("playlistSummary reads the Map and Set", () => {
-  assert.equal(typeof playlistSummary, "function", "Define playlistSummary(durations, artists)");
-  assert.equal(playlistSummary(songDurations, featuredArtists), "203 | 2");
+  assert.match(OUTPUT, /^CHECK\ 3:\ 203\ \|\ 2$/m, "Log CHECK 3: 203 | 2 as a separate checkpoint line");
 });
 
 test("logs the playlist summary", () => {
-  assert.includes(OUTPUT, "203 | 2", "Log the exact playlist summary");
+  assert.match(OUTPUT, /^203 \| 2$/m, "Log the playlist summary on its own line");
 });

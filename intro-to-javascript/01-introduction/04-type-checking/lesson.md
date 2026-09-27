@@ -18,11 +18,9 @@ seo_keywords: javascript, type checking, beginner javascript, programming practi
 
 ## Mission: Signal Launch
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you turn the Starline Awards scoreboard from a static page into a program that can report its own score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+An incoming value might be a single label or an entire list. Check what it is before treating it as either.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Beginners quickly notice that typeof [] is not as useful as they expect. This lesson teaches the practical pair: typeof for primitives and Array.isArray() for arrays.
+`typeof` reports `"object"` for an array, so it cannot distinguish an array from other objects. An array is an ordered list written with square brackets, such as `[1, 2, 3]`. Use `typeof` for primitive values and `Array.isArray()` when you need to recognize a list; the Arrays module will explore lists in depth.
 
 ## Example
 
@@ -35,9 +33,6 @@ console.log(Array.isArray(route));
 
 ## Your Task
 
-1. Create messageType from typeof 'hello' and isList from Array.isArray([1, 2, 3]).
-2. Log string | true with `console.log()`.
-
-## Signal Launch complete
-
-You can now connect a page to a script and inspect JavaScript values. Take the section quiz to lock in the basics, then move to the Scoreboard Engine.
+1. Set `messageType` to `typeof "hello"`; the provided probe will log `messageType: string`.
+2. Set `isList` with `Array.isArray([1, 2, 3])`; the provided probe will log `isList: true`.
+3. Log `string | true` on a separate line using the two results.

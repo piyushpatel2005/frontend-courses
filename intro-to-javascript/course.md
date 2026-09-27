@@ -38,9 +38,9 @@ modules:
     sort_order: 10
 ---
 
-# JavaScript: Starline Awards Programming Mission
+# JavaScript: From First Values to Reliable Programs
 
-JavaScript is the language of the web. Every interactive page you have ever visited — a dropdown menu, a live search box, a chat window — is powered by JavaScript running right inside your browser. You do not need to install anything: it is already there.
+JavaScript runs in the browser and can make a page respond to people. Here you will learn the language itself first: calculate values, choose what happens next, organize data, and coordinate work that finishes later. The built-in editor lets you run each example without installing anything.
 
 ## What you will learn
 
@@ -54,23 +54,23 @@ JavaScript is the language of the web. Every interactive page you have ever visi
 
 ## Course outline
 
-1. **Introduction** — what JavaScript is, how to run it, data types, and type checking.
-2. **Variables and Operators** — `var`, `let`, `const`, arithmetic, comparison, logical operators, and type conversion.
-3. **Control Flow** — `if`/`else`, `switch`, `for`, `while`, `do-while`, `break`, and `continue`.
-4. **Functions** — declarations, parameters, return values, arrow functions, scope, and closures.
-5. **Arrays** — creation, indexing, mutation methods, search/slice, iteration, multidimensional arrays, and destructuring.
-6. **Objects and Built-ins** — object literals, methods, `Map`, `Set`, `Number`, `BigInt`, JSON, `Math`, and `Date`.
-7. **Strings and Regular Expressions** — string methods, template literals, and regex patterns.
-8. **Functional Programming** — higher-order functions, callbacks, `map`/`filter`/`reduce`, and recursion.
-9. **Object-Oriented Programming** — ES6 classes, inheritance, and encapsulation.
-10. **Asynchronous JavaScript** — event loop, callbacks, Promises, and `async`/`await`.
+1. **Introduction** — run your first script and inspect values and types in the Console.
+2. **Variables and Operators** — name values, update totals, convert text to numbers, and fix a calculation.
+3. **Control Flow** — choose a path with conditions and repeat work with loops.
+4. **Functions** — turn repeated steps into reusable jobs, then explore scope and closures.
+5. **Arrays** — keep ordered collections, find entries, and transform lists.
+6. **Objects and Built-ins** — name related facts and work with `Map`, `Set`, numbers, JSON, math, and dates.
+7. **Strings and Regular Expressions** — prepare messages and validate text patterns.
+8. **Functional Programming** — pass functions as values and combine transformations into a pipeline.
+9. **Object-Oriented Programming** — give objects behavior, then build classes with inheritance and private state.
+10. **Asynchronous JavaScript** — understand delayed work, await Promises, combine independent results, and retry failures.
 
 > After this course, continue with a dedicated **JavaScript DOM** course to learn browser interactivity, or move into **Node.js** and frameworks like **React**.
 
 
-## How the mission works
+## How to work through the lessons
 
-You are the programmer behind the Starline Awards, helping a rising superstar's team turn raw information into reliable decisions. Each section is a short mission: inspect a worked example, run a small console demo, complete a practical coding task, and earn a stage badge before the section quiz. The course deliberately stops before DOM manipulation; a separate course will cover changing browser pages with JavaScript.
+Start with a tiny connection between an HTML page and `script.js`. After that first lesson, write JavaScript in `script.js` and check its output in the Console; this course does not ask you to edit page elements. Each section starts with a concrete problem, shows a runnable example, and lets you use the idea in a different exercise. The situations change—from a scoreboard to reservations, records, and deliveries—but the same language skills carry forward. Work through each section in order: later tasks reuse earlier ideas. The asynchronous section uses an offline preview to capture delayed Console output; its sample services do not make network requests.
 
 ## Intentionally later
 

@@ -1,0 +1,5 @@
+blocks:
+  - index: 0
+    expected_output: "starting: 10\nafter shift: 16\nafter second shift: 22"
+  - index: 1
+    expected_output: "adjusted: 20"

@@ -4,3 +4,6 @@ let month = 0;
 let day = 0;
 
 console.log("");
+
+// Supplied Console probes; implement the tasks above to make each checkpoint pass.
+try { console.log(`Parts: ${year},${month},${day}`); } catch (error) { console.log("CHECK pending"); }

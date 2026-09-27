@@ -18,9 +18,7 @@ seo_keywords: javascript, function expressions, beginner javascript, programming
 
 ## Mission: Backstage Toolkit
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you package repeatable backstage jobs into small, dependable functions. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A welcome helper can also be stored in a variable as a function expression. Call it from `script.js` and check the Console for the greeting.
 
 Not every function is declared with the function name() form. Function expressions are common in callbacks and assigned helpers, so beginners should practice that syntax too.
 
@@ -34,11 +32,7 @@ const formatParcel = function (recipient, zone) {
 console.log(formatParcel("Mina", "B"));
 ```
 
-## Your Task
+## Your Tasks
 
-1. Create a function expression greetStudent that returns Welcome, <name>!.
-2. Log Welcome, Maya! with `console.log()`. by calling the function.
-
-## Backstage Toolkit complete
-
-You can give repeated work a reusable name and a dependable result. Take the section quiz, then organize tour data in arrays.
+1. Assign a function expression to `greetStudent` returning `Welcome, <name>!`.
+2. Log `Welcome, Maya!` from a call to that function.

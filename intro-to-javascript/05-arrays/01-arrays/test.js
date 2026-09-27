@@ -1,7 +1,7 @@
 test("colors stores the expected values", () => {
-  assert.deepEqual(colors, ['red', 'green', 'blue'], "Create the colors array in the expected order");
+  assert.match(OUTPUT, /^CHECK\ 1:\ \["red","green","blue"\]$/m, "Log CHECK 1: [\"red\",\"green\",\"blue\"] as a separate checkpoint line");
 });
 
 test("logs the mission result", () => {
-  assert.includes(OUTPUT, "red | blue", "Log the mission result with console.log()");
+  assert.match(OUTPUT, /^red\ \|\ blue$/m, "Log the mission result with console.log()");
 });

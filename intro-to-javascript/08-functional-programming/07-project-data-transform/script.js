@@ -23,4 +23,8 @@ function byCategory(items) {
 
 }
 
-// TODO 5: Render to #in-stock-count, #top-products, #total-value
+console.log(`CHECK stock: ${inStockItems.map(i => i.name).join(",")}`);
+console.log(`CHECK expensive: ${expensiveItems.join(",")}`);
+console.log(`CHECK value: ${totalValue(inventory)}`);
+console.log(`CHECK categories: Electronics=${byCategory(inventory)?.Electronics?.length} | Furniture=${byCategory(inventory)?.Furniture?.length}`);
+// Log the three-line human-readable report after completing the computations.

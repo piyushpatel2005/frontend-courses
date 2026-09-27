@@ -1,33 +1,30 @@
 ---
-title: "Demo: FizzBuzz Decisions"
+title: "Demo: Combined Conditions Before FizzBuzz"
 slug: fizzbuzz-rules
 order: 2
 language: javascript
 lesson_type: interactive
-summary: Run a worked JavaScript demo before attempting the related practical challenge.
-seo_title: "Demo: FizzBuzz Decisions | Introduction to JavaScript"
-seo_description: Inspect a runnable JavaScript demonstration before the practical coding challenge.
+summary: Classify a shipment count by testing the combined divisibility case first.
+seo_title: "Combined Conditions Before FizzBuzz | Introduction to JavaScript"
+seo_description: Practice ordered if branches and the remainder operator before implementing FizzBuzz.
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Demo: FizzBuzz Decisions
+# Demo: Combined Conditions Before FizzBuzz
 
-This is the worked run before your practical challenge. The order matters: check divisibility by both 3 and 5 before either individual rule.
+Before you classify many numbers, classify **one** shipment count. `%` gives the remainder after division: `12 % 4` is `0`, so 12 is divisible by 4. Check the combined case before either single case; otherwise a number divisible by both would stop at the first matching branch.
 
 ```javascript run
-for (let number = 1; number <= 15; number++) {
-  if (number % 15 === 0) {
-    console.log("FizzBuzz");
-  } else if (number % 3 === 0) {
-    console.log("Fizz");
-  } else if (number % 5 === 0) {
-    console.log("Buzz");
-  } else {
-    console.log(number);
-  }
+const cartons = 12;
+if (cartons % 12 === 0) {
+  console.log("Pack in fours and threes");
+} else if (cartons % 4 === 0) {
+  console.log("Pack in fours");
+} else if (cartons % 3 === 0) {
+  console.log("Pack in threes");
+} else {
+  console.log("Pack individually");
 }
 ```
 
-## What to notice
-
-Run the example once, then trace the first two steps by hand. The next lesson gives you the same idea with a fresh problem to solve.
+Run it, then try `cartons = 8` and predict the branch before running again. In the next lesson, apply the combined-case-first rule to FizzBuzz; no loop is required yet.

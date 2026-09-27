@@ -3,4 +3,5 @@ function getDayType(day) {
 
 }
 
-console.log("");
+// These probes run as you implement the functions above.
+console.log(`Sunday: ${getDayType("Sunday")}`);

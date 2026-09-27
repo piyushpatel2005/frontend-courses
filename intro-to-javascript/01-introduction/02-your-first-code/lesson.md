@@ -18,11 +18,9 @@ seo_keywords: javascript, your first javascript code, beginner javascript, progr
 
 ## Mission: Signal Launch
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you turn the Starline Awards scoreboard from a static page into a program that can report its own score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+Your first standalone script prints a name and a division result in the Console. There is no page to edit.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-The first thing beginners learn in JavaScript is how to write a value and inspect the result. This lesson writes the result into the page so it can be validated immediately.
+Unlike the first lesson's page output, this and the following lessons run just `script.js`. Click Run and look in the Console. `console.log()` prints a line; a quoted value such as `"Ada"` is text, while `100 / 4` computes a number. A backtick-delimited string can insert both values with `${firstMessage}` and `${divisionResult}`.
 
 ## Example
 
@@ -34,5 +32,6 @@ console.log(trailMarker, distancePerGroup);
 
 ## Your Task
 
-1. Create firstMessage with the name Ada and divisionResult with the result of 100 / 4.
-2. Log Ada | 25 with `console.log()`.
+1. Set `firstMessage` to `"Ada"`; the provided probe will log `message: Ada`.
+2. Calculate `divisionResult` as `100 / 4`; the provided probe will log `division: 25`.
+3. Log `Ada | 25` on its own line using both values.

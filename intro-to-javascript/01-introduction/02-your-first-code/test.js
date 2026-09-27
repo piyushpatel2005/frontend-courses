@@ -1,8 +1,11 @@
-test("starter values are created", () => {
-  assert.equal(firstMessage, "Ada", "Set firstMessage to Ada");
-  assert.equal(divisionResult, 25, "divisionResult should equal 25");
+test("Step 1: message: Ada", () => {
+  assert.match(OUTPUT, /^message:\ Ada$/m, "Log message: Ada as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Ada | 25", "Log the mission result with console.log()");
+test("Step 2: division: 25", () => {
+  assert.match(OUTPUT, /^division:\ 25$/m, "Log division: 25 as a complete Console line");
+});
+
+test("Step 3: Ada | 25", () => {
+  assert.match(OUTPUT, /^Ada\ \|\ 25$/m, "Log Ada | 25 as a complete Console line");
 });

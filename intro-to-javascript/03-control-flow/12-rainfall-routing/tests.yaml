@@ -1,0 +1,13 @@
+blocks:
+- index: 0
+  expected_output: 'Normal: 4 mm
+
+    Alert: 18 mm
+
+    Normal: 0 mm
+
+    Alert: 23 mm
+
+    Normal: 12 mm
+
+    Alert days: 2'

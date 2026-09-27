@@ -18,9 +18,7 @@ seo_keywords: javascript, scope, beginner javascript, programming practice
 
 ## Mission: Backstage Toolkit
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you package repeatable backstage jobs into small, dependable functions. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The backstage label uses a shared site name and a section name that only exists inside the label function. Run `script.js` and inspect both labels in the Console.
 
 Scope decides where a variable can be used. This lesson shows one global value, one local value, and a function that combines them into a single label.
 
@@ -37,7 +35,7 @@ function describePlot() {
 console.log(describePlot());
 ```
 
-## Your Task
+## Your Tasks
 
-1. Declare a global siteName set to Frontend Lab and write buildLabel() so it creates a local sectionName set to Variables.
-2. Log Frontend Lab - Variables with `console.log()`.
+1. Declare global `siteName` as `"Frontend Lab"`; in `buildLabel()` create local `sectionName` as `"Variables"`, return their joined label.
+2. Log `Frontend Lab - Variables` from `buildLabel()`.

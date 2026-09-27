@@ -1,8 +1,11 @@
-test("type checks are stored", () => {
-  assert.equal(messageType, "string", "messageType should come from typeof 'hello'");
-  assert.equal(isList, true, "isList should be true for an array");
+test("Step 1: messageType: string", () => {
+  assert.match(OUTPUT, /^messageType:\ string$/m, "Log messageType: string as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "string | true", "Log the mission result with console.log()");
+test("Step 2: isList: true", () => {
+  assert.match(OUTPUT, /^isList:\ true$/m, "Log isList: true as a complete Console line");
+});
+
+test("Step 3: string | true", () => {
+  assert.match(OUTPUT, /^string\ \|\ true$/m, "Log string | true as a complete Console line");
 });
