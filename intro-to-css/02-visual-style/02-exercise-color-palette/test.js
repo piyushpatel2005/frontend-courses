@@ -8,9 +8,14 @@ test("heading is cream", () => {
   assert.equal(getComputedStyle(heading).color, "rgb(255, 247, 237)", "Set h1 color to #fff7ed.");
 });
 
-test("entry badge has accent colors", () => {
+test("entry badge has a coral background", () => {
   const entry = document.querySelector(".entry");
   const styles = getComputedStyle(entry);
   assert.equal(styles.backgroundColor, "rgb(251, 113, 133)", "Set .entry background-color to #fb7185.");
+});
+
+test("entry badge has readable navy text", () => {
+  const entry = document.querySelector(".entry");
+  const styles = getComputedStyle(entry);
   assert.equal(styles.color, "rgb(23, 37, 84)", "Set .entry color to #172554.");
 });

@@ -4,6 +4,8 @@ test('Use flexbox to separate the heading and button in `.schedule-head`.', () =
 });
 
 test('Use a three-column grid for `.show-grid`.', () => {
-  const value = getComputedStyle(document.querySelector('.show-grid')).gridTemplateColumns;
-  assert.equal(value.split(' ').length, 3, 'Use three equal grid columns.');
+  const rule = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []))
+    .find(item => item.selectorText === '.show-grid');
+  assert.exists(rule, 'Add a .show-grid rule.');
+  assert.match(rule.style.getPropertyValue('grid-template-columns').trim(), /^repeat\(3,\s*1fr\)$/i, 'Use repeat(3, 1fr) for three equal columns.');
 });

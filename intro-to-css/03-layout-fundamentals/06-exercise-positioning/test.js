@@ -6,8 +6,12 @@ test("pickup pin is absolutely positioned", () => {
   assert.equal(getComputedStyle(document.querySelector(".pickup-pin")).position, "absolute", "Set .pickup-pin to position: absolute.");
 });
 
-test("pickup pin sits at the upper-right offset", () => {
+test("pickup pin has a top offset", () => {
   const style = getComputedStyle(document.querySelector(".pickup-pin"));
   assert.equal(style.top, "12px", "Set .pickup-pin top to 12px.");
+});
+
+test("pickup pin has a right offset", () => {
+  const style = getComputedStyle(document.querySelector(".pickup-pin"));
   assert.equal(style.right, "12px", "Set .pickup-pin right to 12px.");
 });

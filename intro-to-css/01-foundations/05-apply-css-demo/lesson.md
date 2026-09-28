@@ -36,7 +36,7 @@ Run the completed page. Change the inline heading color, then the `p` font size 
 
 ## Checkpoint
 
-Identify the selector, property, and value that created the visible change. Nothing needs editing in this demo.
+The heading's `style` attribute affects that element, the `<style>` rule targets paragraphs in this page, and the linked `style.css` sets the body background. This demo is already complete.
 
 ## Next
 

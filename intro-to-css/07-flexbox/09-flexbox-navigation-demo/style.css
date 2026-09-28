@@ -17,3 +17,6 @@
   border-radius: .5rem;
   background: #28658a;
 }
+
+.nav-actions { display: inline-block; }
+.nav-actions a { display: inline-block; color: white; text-decoration: none; }

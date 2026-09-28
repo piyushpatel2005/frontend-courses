@@ -1,7 +1,6 @@
 test("hover state darkens the reserve button", () => {
-  const button = document.querySelector(".reserve-button");
-  button.dispatchEvent(new MouseEvent("mouseover", { bubbles: true }));
-  assert.equal(getComputedStyle(button).backgroundColor, "rgb(217, 119, 6)", "Use .reserve-button:hover with background-color: #d97706.");
+  const rules = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []));
+  assert.equal(rules.some(rule => rule.selectorText === '.reserve-button:hover' && ['#d97706', 'rgb(217, 119, 6)'].includes(rule.style.getPropertyValue('background-color') || rule.style.getPropertyValue('background'))), true, 'Use .reserve-button:hover with background-color: #d97706.');
 });
 
 test("first reading-list item is bold", () => {
@@ -9,9 +8,9 @@ test("first reading-list item is bold", () => {
 });
 
 test("focused email field has a cyan outline", () => {
-  const email = document.querySelector(".email");
+  const email = document.querySelector('.email');
   email.focus();
-  const style = getComputedStyle(email);
-  assert.equal(style.outlineWidth, "3px", "Set the focus outline width to 3px.");
-  assert.equal(style.outlineColor, "rgb(103, 232, 249)", "Use #67e8f9 for the focus outline.");
+  assert.equal(document.activeElement, email, 'The email field must be focusable.');
+  const rules = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []));
+  assert.equal(rules.some(rule => rule.selectorText === '.email:focus' && ['3px solid #67e8f9', '3px solid rgb(103, 232, 249)'].includes(rule.style.getPropertyValue('outline'))), true, 'Use .email:focus with outline: 3px solid #67e8f9.');
 });

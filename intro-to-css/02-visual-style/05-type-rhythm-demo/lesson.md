@@ -18,9 +18,9 @@ hints:
 
 # Type Rhythm Demo
 
-Visual style is also how text feels to read. This market note uses a serif body font for warmth, extra paragraph line height for breathing room, and modest heading letter spacing for a poster-like title.
+Visual style also affects how text reads. This market note uses a serif body font, extra paragraph line height, and modest heading letter spacing. The supplied card layout is just a frame for these typography changes.
 
-In `style.css`, `line-height: 1.7;` controls the vertical space between lines. `letter-spacing: 0.04em;` spaces heading letters relative to their font size.
+In `style.css`, `.note > p:not(.label)` selects the longer paragraph but not its small label. Its `line-height: 1.7;` controls the vertical space between lines. `letter-spacing: 0.04em;` spaces heading letters relative to their font size. You can use the simpler `.note p` selector in the exercise.
 
 ## Visible checkpoint
 

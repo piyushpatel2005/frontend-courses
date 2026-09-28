@@ -1,7 +1,7 @@
 ---
 slug: intro-to-css
 title: CSS
-description: Learn CSS from scratch - selectors, specificity, colors, layout, flexbox, grid, and responsive design through hands-on coding exercises.
+description: Style familiar HTML pages step by step, from your first CSS rule to readable layouts and responsive designs.
 language: html
 level: Beginner
 sort_order: 2
@@ -52,29 +52,24 @@ modules:
 
 # CSS
 
-CSS (Cascading Style Sheets) styles HTML content. This course introduces the full beginner path from selectors to responsive layouts.
+CSS (Cascading Style Sheets) controls how HTML looks and lays out. You should already recognize basic HTML elements, classes, and links; you do not need to know any CSS yet. Each worked demo shows a finished page you can change safely. In the next exercise, you apply the same idea to a different page and check the result in the preview.
+
+Start by styling individual elements and cards. Then combine selectors and spacing in a menu and form. After learning Flexbox and Grid, use them together in a page layout. Finish by adding motion where it helps and making designs fit smaller screens. The examples use different community projects so you can practice transferring a technique rather than copying one page throughout.
 
 ## What you will learn
 
-- CSS syntax, selectors, and specificity.
-- Color systems, backgrounds, and typography.
-- Box model, display modes, and positioning.
-- Flexbox and Grid layout strategies.
-- Variables, transitions, and responsive design.
+- Write CSS rules and choose the elements they affect.
+- Use color, type, spacing, and borders to make content readable.
+- Arrange content with positioning, Flexbox, and Grid.
+- Reuse values, add restrained motion, and adapt layouts to the available space.
 
 ## Course outline
 
-1. CSS Foundations
-2. Visual Style
-3. Layout Fundamentals
-4. Selectors In Depth
-5. Project - Dropdown Menu
-6. Project - Styled Form
-7. Flexbox
-8. Grid
-9. Project - Flexbox + Grid Website
-10. Modern CSS
-11. Project - Animation and Interaction
-12. Responsive Design
-13. Project - Responsive Table
-14. Project - Styled Resume
+1. Foundations: rules, selectors, and specificity
+2. Visual style: color, backgrounds, type, and borders
+3. Layout fundamentals: boxes, display, positioning, and overflow
+4. Selectors in depth: relationships and interactive states
+5. Apply those basics in a dropdown menu and styled form
+6. Learn Flexbox and Grid, then combine them in a page
+7. Add variables, transforms, and animation
+8. Make layouts responsive, then apply them to a table and profile sheet

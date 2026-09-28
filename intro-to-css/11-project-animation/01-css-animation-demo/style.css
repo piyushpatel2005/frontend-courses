@@ -29,3 +29,8 @@ button:hover {
     transform: translateY(-14px);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .kite { animation: none; }
+  button { transition: none; }
+}

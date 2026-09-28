@@ -17,7 +17,7 @@ hints:
 
 ## Mission
 
-The museum has asked you to reproduce each CSS source from the demonstration.
+The demo showed three CSS locations on a finished card. Here the internal `<style>` block and external `style.css` file are ready, but the new gallery notice has no rules yet.
 
 ## What you'll build
 
@@ -25,14 +25,14 @@ An exhibit card with one inline rule, one internal rule, and an external stylesh
 
 ## Your Tasks
 
-1. Add an inline `style` attribute to the `<h1>`.
+1. Set `color: #7a1fa2;` in an inline `style` attribute on the `<h1>`.
 2. Set `font-size: 18px;` in an internal `p` rule.
 3. Link `style.css` in `<head>`.
 4. Set `background-color: #eef6ff;` on `body` in `style.css`.
 
 ## Checkpoint
 
-Run the page. The heading has its local style, the paragraph is larger, and the page background comes from the external stylesheet.
+Run the page. The heading has its local style, the paragraph is larger, and the background color is set in `style.css`. This course's preview injects `style.css` automatically, even before you add the `<link>`; step 3 checks the connection a standalone HTML page needs.
 
 ## Payoff
 

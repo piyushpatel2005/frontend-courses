@@ -17,7 +17,7 @@ hints:
 
 ## Mission
 
-The exhibit card is plain again. Add the same kind of CSS rules you just observed in the demo.
+The completed demo styled a museum introduction. This new exhibit label starts unstyled; use the same selector/property/value pattern on its different content.
 
 ## What you'll build
 
@@ -25,9 +25,10 @@ A pale page background and a blue exhibit heading.
 
 ## Your Tasks
 
-1. Keep the existing link to `style.css`; write the CSS rules in that file.
-2. Add `background-color: #f6f8fb;` to a `body` rule.
-3. Add `color: #1b4d8c;` to an `h1` rule.
+The HTML already links `style.css`. Work in that stylesheet:
+
+1. Add `background-color: #f6f8fb;` to a `body` rule.
+2. Add `color: #1b4d8c;` to an `h1` rule.
 
 ## Checkpoint
 

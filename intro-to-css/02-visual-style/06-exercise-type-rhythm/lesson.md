@@ -19,7 +19,7 @@ hints:
 
 # Type Rhythm Exercise
 
-The demo made text easier to scan by changing three small values. Use those same controls to style this closing note for the market.
+The demo made text easier to scan by changing three small values. Use those same controls to style this closing note. The starter supplies its card layout and colors; only the three type settings are yours to add.
 
 Run the preview when you finish. The note should use Georgia, roomy paragraph lines, and a lightly spaced heading.
 

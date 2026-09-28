@@ -1,1 +1,19 @@
-/* Add the rules requested in Your Tasks. */
+.page-shell {
+  max-width: 46rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.nav-row {
+  gap: 1rem;
+  padding: 1rem;
+  background: #153c57;
+  color: white;
+}
+.card {
+  padding: .65rem .9rem;
+  border-radius: .5rem;
+  background: #28658a;
+}
+
+.nav-actions { display: inline-block; }
+.nav-actions a { display: inline-block; color: white; text-decoration: none; }

@@ -17,14 +17,12 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Lantern Market navigation demo
+# Lantern Market dropdown demo
 
-**Mission:** Build a compact navigation sign for the Lantern Market directory.
+A visitor needs to find the tea and paper stalls without cluttering the navigation. This finished menu starts with its links hidden, then reveals them to a pointer **or** a keyboard user.
 
-This finished mini-build shows **dropdown display and hover reveal** in context. In `style.css`, find the declarations that shape the preview and connect each selector to the element it changes.
+In `style.css`, `.menu-item` is `position: relative`, so the absolutely positioned `.submenu` sits below the Stalls button. `display: none` hides the submenu initially. The `:hover` rule reveals it when the pointer is over the menu; `:focus-within` reveals it whenever the button or one of its links has keyboard focus. The links are `display: block`, so they stack without Flexbox or Grid (both come later). The blue `:focus-visible` outline makes the focused control easy to find.
 
-## Try the demo
+**Checkpoint:** hover over Stalls to see the links; move away, then press Tab until Stalls is focused and use Tab again to reach Tea counter. The submenu stays visible while focus is inside it. This is a small CSS-only example: it does not implement click-to-toggle, Escape-to-close, or touch-menu behavior.
 
-Change one visible value in `style.css` (such as a color, gap, or size), select **Run Preview**, and observe exactly what moves or changes. Restore the original value before continuing so the completed example remains your reference.
-
-**Checkpoint:** the preview already shows the finished lantern market navigation demo interface. The next lesson asks you to recreate its key rules from a small starter.
+Change `.submenu` background temporarily, run Preview and check the open menu; restore `#f7c948` before the exercise.

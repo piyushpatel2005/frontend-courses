@@ -11,7 +11,7 @@ body {
 .forecast {
   display: grid;
   gap: 1rem;
-  /* Add grid-template-columns. */;
+  /* Add grid-template-columns. */
 }
 .forecast article {
   padding: 1rem;
@@ -20,6 +20,6 @@ body {
 }
 @media (min-width: 42rem) {
   .forecast {
-    /* Add grid-template-columns. */;
+    /* Add grid-template-columns. */
   }
 }

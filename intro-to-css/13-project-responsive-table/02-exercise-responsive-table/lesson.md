@@ -1,31 +1,26 @@
 ---
-title: Library tool checkout exercise
+title: "Tool checkout table exercise"
 slug: exercise-responsive-table
 order: 2
 language: html
-summary: Keep a library tool checkout table readable on small screens.
-seo_title: Library tool checkout exercise | Intro to CSS
-seo_description: Learn responsive overflow and table styling by building a small, visible CSS interface.
+summary: "Keep checkout columns readable with a minimum table width and scrolling wrapper."
+seo_title: "Tool checkout table exercise | Intro to CSS"
+seo_description: "Practice responsive table overflow and a 32rem table minimum width."
 seo_keywords:
   - CSS
   - responsive overflow and table styling
   - HTML
   - beginner CSS
 lesson_type: coding
-hints:
-  - Keep the stylesheet linked from the document head.
-  - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Library tool checkout exercise
+# Tool checkout table exercise
 
-**Mission:** Keep a library tool checkout table readable on small screens.
-
-You just inspected the completed demo. Rebuild its two essential CSS decisions in this starter. Keep the HTML structure intact; the work belongs in `style.css`.
+The supplied checkout table already has headings, data, and cell styles. Like the seed inventory demo, it needs a minimum width for readable columns and a wrapper that handles the extra width on a phone. Edit only `style.css`.
 
 ## Your Tasks
 
-1. Allow `.table-wrap` to scroll horizontally when space is tight.
-2. Give the table a `min-width` of `32rem` so columns stay legible.
+1. Set `.table-wrap` to `overflow-x: auto` so its contents can scroll horizontally when needed.
+2. Set `table` to `min-width: 32rem` so its columns keep enough room for the checkout information.
 
-Run Preview after each change, then submit when both visible outcomes match the demo.
+Narrow the preview and scroll within the table to read the Desk column, then widen it to see the whole table without scrolling. You have kept the data in a real table instead of hiding columns. The final project brings your responsive and typography choices together in a profile sheet.

@@ -5,7 +5,7 @@ order: 6
 language: html
 summary: "`align-items` aligns items across the cross axis."
 seo_title: "Exercise: Cross-Axis Alignment | Introduction to CSS"
-seo_description: "Practice `align-items` aligns items across the cross axis. with a tested CSS exercise."
+seo_description: "Practice cross-axis alignment with align-items center."
 seo_keywords: [CSS, exercise-cross-axis, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -13,21 +13,13 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Cross-Axis Alignment
+# Exercise: Trip briefing
 
-## Mission
-
-A status badge and a taller weather card need to line up cleanly in the trip briefing.
+The preceding demo centered short and tall briefing cards along the cross axis. Recreate that alignment here. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
 
 ## Your Tasks
 
-1. Make `.briefing-row` a flex container.
-2. Center its differently sized cards on the cross axis.
+1. Set `.briefing-row` to `display: flex` so its cards share a row.
+2. Set `.briefing-row` to `align-items: center` to align their vertical centers.
 
-## Checkpoint
-
-Run the preview. The layout should remain easy to scan before you submit the tests.
-
-## Payoff
-
-You have turned one layout intention into clear, reusable CSS.
+**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.

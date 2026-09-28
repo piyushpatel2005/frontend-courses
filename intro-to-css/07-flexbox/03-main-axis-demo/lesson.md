@@ -5,7 +5,7 @@ order: 3
 language: html
 summary: "`justify-content` distributes items along the main axis."
 seo_title: "Main-Axis Spacing Demo | Introduction to CSS"
-seo_description: "Learn `justify-content` distributes items along the main axis. in a completed CSS preview."
+seo_description: "See justify-content distribute three trail tools across the main axis."
 seo_keywords: [CSS, main-axis-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,20 +13,12 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Main-Axis Spacing Demo
+# Trail tools: completed layout
 
-## Mission
+Space the three tools across a single row. This completed preview shows the layout before you edit the next exercise.
 
-The trail guide needs equal breathing room between three quick-access tools.
+In `style.css`, `.tool-row` controls the section. With display: flex, the default main axis runs left to right. justify-content: space-between leaves no extra space at the ends and distributes remaining room between the tools.
 
-## What to notice
+**Checkpoint:** inspect the card positions in Preview and locate `justify-content: space-between` in the stylesheet.
 
-`justify-content` distributes items along the main axis.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
-
-## Try the preview
-
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
+Change `justify-content` temporarily to `flex-start`, run Preview, and compare the positions. Restore `space-between` before moving to the exercise.

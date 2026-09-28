@@ -5,7 +5,7 @@ order: 5
 language: html
 summary: "`grid-column` lets an item occupy selected grid tracks."
 seo_title: "Grid Placement Demo | Introduction to CSS"
-seo_description: "Learn `grid-column` lets an item occupy selected grid tracks. in a completed CSS preview."
+seo_description: "Learn `grid-column` lets an item occupy selected grid tracks in a completed CSS preview."
 seo_keywords: [CSS, grid-placement-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -21,11 +21,11 @@ One featured workshop needs to span the full width of the board.
 
 ## What to notice
 
-`grid-column` lets an item occupy selected grid tracks.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
+`grid-column: 1 / -1` places the first card from the first grid line to the last, across both columns. Find the selector, property, and value in `style.css` and compare the preview.
 
 ## Try the preview
 
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
+Remove that declaration to see the first card share a row, then restore it.
 
 ## Checkpoint
 

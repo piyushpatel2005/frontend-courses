@@ -16,7 +16,7 @@ hints:
 
 ## Mission
 
-Three archivists each styled the same note. The completed example shows the browser resolving the conflict with selector specificity.
+Three rules style the same museum note. The browser resolves their conflicting `color` values with selector specificity.
 
 ## What you'll see
 
@@ -24,7 +24,7 @@ One note with three matching rules; the ID rule controls its final green color.
 
 ## Read the code
 
-```html
+```css
 p { color: gray; }
 .highlight { color: orange; }
 #intro { color: green; }
@@ -36,7 +36,7 @@ Run the completed page. Change `.highlight` to blue; the note stays green becaus
 
 ## Checkpoint
 
-Identify the selector, property, and value that created the visible change. Nothing needs editing in this demo.
+All three selectors match the same paragraph. `#intro` is an ID selector, which outranks the class and element selectors here; its `color: green` wins. This demo is already complete.
 
 ## Next
 

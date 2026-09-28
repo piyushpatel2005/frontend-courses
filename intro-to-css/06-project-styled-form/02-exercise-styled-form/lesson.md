@@ -17,15 +17,13 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Community garden request card exercise
+# Finish the seed request card
 
-**Mission:** Style a clear seed-request form for the Community Garden tool shed.
-
-You just inspected the completed demo. Rebuild its two essential CSS decisions in this starter. Keep the HTML structure intact; the work belongs in `style.css`.
+The demo used block layout to stack controls and a focus pseudo-class for keyboard feedback. The starter already has the associated label, stacked controls, and a responsive-width email input; do not change the HTML. Add just the spacing and focus feedback in `style.css`.
 
 ## Your Tasks
 
-1. Arrange the form fields with `display: grid` on `form`.
-2. Give the focused input a visible `3px solid` outline.
+1. Add `margin-bottom: .75rem` to `input` to give the button breathing room.
+2. Add `outline: 3px solid #f4a261` on `input:focus` so keyboard users can see the focused field.
 
-Run Preview after each change, then submit when both visible outcomes match the demo.
+**Checkpoint:** Preview shows a gap below the email box, and tabbing to the input gives it an orange outline. This is a visual form only; submitting does not send data.

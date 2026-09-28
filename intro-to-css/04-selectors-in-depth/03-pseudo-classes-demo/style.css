@@ -5,8 +5,7 @@ body {
   font-family: Arial, sans-serif;
 }
 .order-panel {
-  display: grid;
-  gap: 14px;
+  display: block;
   max-width: 400px;
   margin: 48px auto;
   padding: 28px;

@@ -5,9 +5,9 @@ order: 4
 language: css
 lesson_type: coding
 runtime: srcdoc
-summary: "Use transform for a visual adjustment that does not reflow the rest of the layout."
+summary: "Run Preview: the pinned card should tilt while its neighbor stays put."
 seo_title: "Exercise: Rotate a Field Note | Introduction to CSS"
-seo_description: "Use transform for a visual adjustment that does not reflow the rest of the layout. Build and inspect the result in a live CSS preview."
+seo_description: "Run Preview: the pinned card should tilt while its neighbor stays put. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS
   - exercise transforms
@@ -23,14 +23,16 @@ hints:
 
 Give the pinned field note a small hand-placed angle without disturbing the adjacent note.
 
+The HTML and starter stylesheet supply the two cards and their shared styling; add the two missing declarations to `.tilted`.
+
 ## Your Tasks
 
-1. Set a non-`none` rotation transform on `.tilted`.
-2. Set `.tilted` `transform-origin` to `center`.
+1. Rotate `.tilted` by `-3deg`.
+2. Set `.tilted` `transform-origin` to `left center` so it pivots around the left edge.
 
 ## Checkpoint
 
-Use transform for a visual adjustment that does not reflow the rest of the layout.
+Run Preview: the pinned card should tilt while its neighbor stays put.
 
 ## Payoff
 

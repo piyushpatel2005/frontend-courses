@@ -5,7 +5,7 @@ order: 4
 language: html
 summary: "`justify-content` distributes items along the main axis."
 seo_title: "Exercise: Main-Axis Spacing | Introduction to CSS"
-seo_description: "Practice `justify-content` distributes items along the main axis. with a tested CSS exercise."
+seo_description: "Practice justify-content space-between on a row of trail tools."
 seo_keywords: [CSS, exercise-main-axis, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -13,21 +13,13 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Main-Axis Spacing
+# Exercise: Trail tools
 
-## Mission
-
-The trail guide needs equal breathing room between three quick-access tools.
+The preceding demo spread three tools across a dashed row. Recreate that spacing in this starter. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
 
 ## Your Tasks
 
-1. Make `.tool-row` a flex container.
-2. Use `justify-content: space-between` to spread the tools.
+1. Set `.tool-row` to `display: flex` to arrange the tools on one row.
+2. Set `.tool-row` to `justify-content: space-between` to spread them across the dashed area.
 
-## Checkpoint
-
-Run the preview. The layout should remain easy to scan before you submit the tests.
-
-## Payoff
-
-You have turned one layout intention into clear, reusable CSS.
+**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.

@@ -1,9 +1,10 @@
-test('Make the featured board a grid.', () => {
-  const value = getComputedStyle(document.querySelector('.feature-grid')).getPropertyValue('display').trim();
-  assert.equal(value, 'grid', 'Update .feature-grid so display is grid.');
-});
 test('Make the first card span both columns.', () => {
-  const item = document.querySelector('.card');
-  assert.equal(getComputedStyle(item).gridColumnStart, '1', 'Start the first card at line 1.');
-  assert.equal(getComputedStyle(item).gridColumnEnd, '-1', 'End the first card at line -1.');
+  const rule = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []))
+    .find(item => item.selectorText === '.card:first-child');
+  assert.exists(rule, 'Add a .card:first-child rule.');
+  const style = rule.style;
+  const shorthand = style.getPropertyValue('grid-column').trim();
+  const start = style.getPropertyValue('grid-column-start').trim();
+  const end = style.getPropertyValue('grid-column-end').trim();
+  assert.equal(shorthand === '1 / -1' || (start === '1' && end === '-1'), true, 'Span the first card from grid line 1 to -1.');
 });

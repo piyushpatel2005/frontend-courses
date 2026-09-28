@@ -17,7 +17,7 @@ hints:
 
 ## Mission
 
-Three rules target one exhibit note. Add them, then observe which rule controls the final color.
+The demo's `#intro` note was green. Here a different gallery notice carries the class `alert` and ID `opening`; use those selectors to see the same priority rule in action.
 
 ## What you'll build
 
@@ -26,8 +26,8 @@ A note where the ID selector wins the cascade.
 ## Your Tasks
 
 1. Add `p { color: gray; }`.
-2. Add `.highlight { color: orange; }`.
-3. Add `#intro { color: green; }`.
+2. Add `.alert { color: orange; }`.
+3. Add `#opening { color: green; }` so the ID wins over the earlier two rules.
 
 ## Checkpoint
 

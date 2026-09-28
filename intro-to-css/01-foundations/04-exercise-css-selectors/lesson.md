@@ -17,7 +17,7 @@ hints:
 
 ## Mission
 
-The specimen card needs targeted treatment: one rule for all notes, one for a caution, and one for its title.
+The demo styled a Moon Jelly card. This new Sea Star card uses the same three selector types, but its class and ID have different names. Look at `index.html` before writing the rules.
 
 ## What you'll build
 
@@ -26,12 +26,12 @@ A readable specimen card with an element rule, class rule, and ID rule.
 ## Your Tasks
 
 1. Set `line-height: 1.6;` in a `p` rule.
-2. Set `background-color: #fff4cc;` in a `.note` rule.
-3. Set `color: #7a1fa2;` in a `#specimen-title` rule.
+2. Set `background-color: #fff4cc;` in a `.care-tip` rule.
+3. Set `color: #7a1fa2;` in a `#sea-star-title` rule.
 
 ## Checkpoint
 
-Run the page. Both paragraphs gain spacing, only the caution gains a background, and only the title changes color.
+Run the page. The two-line paragraph gains breathing room between lines; only the care tip gets a background, and only the title changes color.
 
 ## Payoff
 

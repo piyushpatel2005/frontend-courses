@@ -1,6 +1,6 @@
-test("h1 has inline style", () => {
+test("h1 has the requested inline color", () => {
   const h1 = document.querySelector("h1");
-  assert.exists(h1.getAttribute("style"), "Add inline style to h1");
+  assert.match(h1.getAttribute("style") || "", /(?:^|;)\s*color\s*:\s*#7a1fa2\s*;?/i, "Set the h1 inline color to #7a1fa2");
 });
 
 test("internal style rule exists", () => {

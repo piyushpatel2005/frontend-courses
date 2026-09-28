@@ -1,14 +1,15 @@
 body {
   margin: 0;
-  padding: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
   font-family: Georgia, serif;
   background: #e9e5dd;
   color: #252422;
 }
 .maker-profile {
-  max-width: 42rem;
+  max-width: 38rem;
+  box-sizing: border-box;
   margin: auto;
-  padding: 3rem;
+  padding: clamp(1rem, 4vw, 3rem);
   background: white;
   border-top: .6rem solid #7f5539;
 }
@@ -21,7 +22,7 @@ body {
 }
 h1 {
   margin: .25rem 0 2rem;
-  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  font-size: clamp(2rem, 6vw, 4rem);
 }
 h2 {
   border-bottom: 2px solid #ddb892;

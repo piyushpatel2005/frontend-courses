@@ -29,4 +29,5 @@ The positioning demo anchored a “Today” label to a map card. Recreate that r
 
 1. Set `.map-card` to `position: relative;` to make it the pin’s reference box.
 2. Set `.pickup-pin` to `position: absolute;` to remove it from normal flow.
-3. Set `.pickup-pin` to `top: 12px;` and `right: 12px;` to place it in the upper-right corner.
+3. Set `.pickup-pin` to `top: 12px;` to move it down from the card's top edge.
+4. Set `.pickup-pin` to `right: 12px;` to move it in from the right edge.

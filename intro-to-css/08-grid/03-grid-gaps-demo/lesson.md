@@ -5,7 +5,7 @@ order: 3
 language: html
 summary: "`gap` creates space between grid tracks without adding margins to each card."
 seo_title: "Grid Gaps Demo | Introduction to CSS"
-seo_description: "Learn `gap` creates space between grid tracks without adding margins to each card. in a completed CSS preview."
+seo_description: "Learn `gap` creates space between grid tracks without adding margins to each card in a completed CSS preview."
 seo_keywords: [CSS, grid-gaps-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -21,11 +21,11 @@ The event cards need whitespace so neighbouring details do not run together.
 
 ## What to notice
 
-`gap` creates space between grid tracks without adding margins to each card.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
+The two-column grid uses `gap: 1rem` to space tracks without margins on individual cards. Find the selector, property, and value in `style.css` and compare the preview.
 
 ## Try the preview
 
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
+Change the gap to `2rem`, observe the larger space, then restore it.
 
 ## Checkpoint
 

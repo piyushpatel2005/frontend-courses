@@ -18,7 +18,7 @@ body {
   background: white;
   border-radius: .75rem;
 }
-@media (min-width: 42rem) {
+@media (min-width: 40rem) {
   .forecast {
     grid-template-columns: repeat(2, 1fr);
   }

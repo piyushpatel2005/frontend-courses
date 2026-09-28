@@ -5,7 +5,7 @@ order: 6
 language: html
 summary: "`grid-column` lets an item occupy selected grid tracks."
 seo_title: "Exercise: Grid Placement | Introduction to CSS"
-seo_description: "Practice `grid-column` lets an item occupy selected grid tracks. with a tested CSS exercise."
+seo_description: "Practice `grid-column` lets an item occupy selected grid tracks with a tested CSS exercise."
 seo_keywords: [CSS, exercise-grid-placement, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -17,17 +17,14 @@ hints:
 
 ## Mission
 
-One featured workshop needs to span the full width of the board.
+Make the opening talk span the board.
+
+The preceding demo showed the same technique on different cards. The HTML supplies the cards; edit `style.css` for the requested change.
 
 ## Your Tasks
 
-1. Make `.feature-grid` a two-column grid.
-2. Make the first card span from grid line `1` to `-1`.
+1. Make the first `.feature-grid` card span from grid line `1` to `-1`.
 
 ## Checkpoint
 
-Run the preview. The layout should remain easy to scan before you submit the tests.
-
-## Payoff
-
-You have turned one layout intention into clear, reusable CSS.
+Run Preview to see the change, then Submit.

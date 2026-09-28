@@ -21,11 +21,11 @@ hints:
 
 **Mission:** Combine flexbox and grid for a one-page River Radio schedule.
 
-You just inspected the completed demo. Rebuild its two essential CSS decisions in this starter. Keep the HTML structure intact; the work belongs in `style.css`.
+The demo used a different radio lineup. The HTML already supplies this show list, and the stylesheet supplies spacing and card styling. Add only the missing layout declarations in `style.css`.
 
 ## Your Tasks
 
 1. Use flexbox to separate the heading and button in `.schedule-head`.
-2. Use a three-column grid for `.show-grid`.
+2. Set `.show-grid` to three equal columns with `repeat(3, 1fr)`; its grid display is supplied.
 
 Run Preview after each change, then submit when both visible outcomes match the demo.

@@ -1,6 +1,8 @@
-test('Animate `.kite` with the `drift` keyframes.', () => {
-  const value = getComputedStyle(document.querySelector('.kite')).animationName;
-  assert.equal(value, 'drift', 'Set the kite animation to drift.');
+test('Name the drift animation on the banner.', () => {
+  const rule = Array.from(document.styleSheets).flatMap((sheet) => Array.from(sheet.cssRules || []))
+    .find((item) => item.selectorText === '.kite');
+  assert.exists(rule, 'Find the .kite rule.');
+  assert.equal(rule.style.getPropertyValue('animation-name').trim(), 'drift', 'Set animation-name: drift on .kite.');
 });
 
 test('Add a transform transition to the button.', () => {

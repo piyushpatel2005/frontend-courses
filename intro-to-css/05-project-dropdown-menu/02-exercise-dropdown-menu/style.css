@@ -1,33 +1,17 @@
-.site-nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: #17324d;
-}
-.brand, .submenu a {
-  color: white;
-  text-decoration: none;
-}
-.menu-item {
-  position: relative;
-}
-.menu-trigger {
-  padding: .5rem .75rem;
-  border: 0;
-  border-radius: .4rem;
-}
+body { margin: 0; font-family: system-ui, sans-serif; }
+.site-nav { padding: 1rem; background: #17324d; }
+.brand { display: inline-block; margin-right: 1rem; color: white; }
+.menu-item { display: inline-block; position: relative; }
+.menu-trigger { padding: .5rem .75rem; border: 0; border-radius: .4rem; cursor: pointer; }
+.menu-trigger:focus-visible, .submenu a:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
 .submenu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%; left: 0;
   min-width: 10rem;
   padding: .5rem;
   background: #f7c948;
-  /* Add display. */;
+  z-index: 1;
+  /* Hide the submenu until the menu is hovered or focused. */
 }
-.menu-item:hover .submenu {
-  gap: .35rem;
-  /* Add display. */
-  /* Add display. */;
-}
+.submenu a { display: block; padding: .35rem; color: #17324d; }
+/* Add pointer and keyboard reveal rules here. */
