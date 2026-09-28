@@ -13,8 +13,12 @@ test("email field has a connected label", () => {
 
 test("form has radio choices and a submit button", () => {
   const radios = document.querySelectorAll('input[type="radio"]');
-  assert.isAtLeast(radios.length, 2, "Add at least two radio inputs");
+  assert.equal(radios.length >= 2, true, "Add at least two radio inputs");
   assert.notEqual(radios[0].name, "", "Give the radio inputs a shared name");
   assert.equal(Array.from(radios).every((radio) => radio.name === radios[0].name), true, "Use the same name for both radio choices");
-  assert.exists(document.querySelector('button[type="submit"], input[type="submit"]'), "Add a submit button");
+  assert.equal(Array.from(radios).every(radio => radio.labels && Array.from(radio.labels).some(label => label.textContent.trim())), true, "Label each response channel");
+});
+
+test("form can submit", () => {
+  assert.exists(document.querySelector('form button[type="submit"], form input[type="submit"]'), "Put a submit button in the form");
 });

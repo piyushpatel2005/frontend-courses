@@ -19,7 +19,7 @@ hints:
 
 ## Mission
 
-the crew can practise several capabilities but must reserve only one training window. The relay form needs both kinds of choice.
+The crew can practise several capabilities but must reserve only one training window. The relay form needs both kinds of choice.
 
 ## What you'll see
 
@@ -44,4 +44,4 @@ Use the preview to connect each visible result to the HTML that created it. This
 
 ## Next
 
-Continue to **Exercise: Configure Training Choices**. You will recreate the same idea from a smaller starter file.
+Continue to **Exercise: Plan a Supply Pickup**. You will recreate the same idea from a smaller starter file.

@@ -21,7 +21,7 @@ hints:
 
 ## Mission
 
-the Meridian crew has unlocked Beacon Sight. The main briefing already has its title (`<h1>`) and two big sections (`<h2>`); now the rescue team needs increasingly specific information beneath them.
+The Meridian crew has unlocked Beacon Sight. The main briefing already has its title (`<h1>`) and two big sections (`<h2>`); now the rescue team needs increasingly specific information beneath them.
 
 ## What you'll build
 
@@ -29,8 +29,11 @@ A signal brief that keeps the existing `<h1>` and `<h2>` headings, then adds eve
 
 ## Your Tasks
 
-1. Add an `<h3>`, `<h4>`, `<h5>`, and `<h6>` below the existing heading hierarchy.
-2. Add an HTML comment above the detail headings explaining what they describe.
+1. Under the first `<h2>`, add an `<h3>` naming the signal source.
+2. After it, add an `<h4>` naming the location.
+3. After it, add an `<h5>` naming the access route.
+4. After it, add an `<h6>` with a final check.
+5. Add an HTML comment immediately above the new detail headings explaining what they describe.
 
 ## Checkpoint
 
@@ -38,4 +41,4 @@ Run the page. Each new detail level should appear smaller than the level before 
 
 ## Payoff
 
-the Meridian crew can now turn a broad emergency signal into a readable chain of rescue details.
+The Meridian crew can now turn a broad emergency signal into a readable chain of rescue details.

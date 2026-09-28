@@ -47,8 +47,8 @@ Add a profile image with text that describes the image, not just the filename. T
 ```html
 <div class="contact">
     <ul>
-        <li><span>Email:</span> samira@example.com</li>
-        <li><span>Area:</span> River district</li>
+        <li><span>Email:</span> <span>samira@example.com</span></li>
+        <li><span>Area:</span> <span>River district</span></li>
     </ul>
 </div>
 ```
@@ -59,11 +59,12 @@ Run the page. You should see one card containing a name, a role, an image, and a
 
 ## Your Tasks
 
-1. Add one outer card container using `<div class="card">`.
-2. Add an `<h1>` with your name and a `<p>` with your role/title.
-3. Add an `<img>` profile image with non-empty `alt` text.
-4. Add a contact block using another `<div>` containing a `<ul>` with at least 2 `<li>` items.
-5. In at least 2 list items, use `<span>` to separate label and value (example: `Email:` and the email address).
+1. Create an outer `<div class="card">` for the contributor.
+2. Add the contributor’s name in an `<h1>` inside the card.
+3. Add their role in a paragraph inside the card.
+4. Add a profile `<img>` with a working `src` and descriptive `alt` inside the card.
+5. Inside the card, add a nested `<div class="contact">` with a `<ul>` containing at least two contact items.
+6. In two contact items, use separate `<span>` elements for a non-empty label and value.
 
 ## Payoff
 

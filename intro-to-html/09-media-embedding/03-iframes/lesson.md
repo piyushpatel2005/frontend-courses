@@ -27,13 +27,11 @@ The Riverlight Community Hall wants to place a public transit map inside its vis
 
 ## What you'll build
 
-A titled, sized iframe embedding an external page with sandbox permissions that allow only scripts, demonstrating lazy loading and responsible embedded-content practices.
-
-The Riverlight Community Hall wants to place a public transit map inside its visitor page. Embed the map in a frame that names what it contains and limits permissions the map does not need.
+A titled, sized iframe for the hall’s transit-map embed, with restricted permissions and lazy loading.
 
 ## Target
 
-Your preview will show one titled embedded page with a defined size and a sandbox boundary.
+Your preview reserves space for the map iframe. The remote page may not load in the course preview; check the markup even if the frame stays blank.
 
 ## One idea: an iframe is another page with its own boundary
 
@@ -44,7 +42,7 @@ Your preview will show one titled embedded page with a defined size and a sandbo
     src="https://example.com"
     width="800"
     height="450"
-    title="Riverlight transit map"
+    title="Example Domain information page"
     sandbox="allow-scripts"
     loading="lazy"
 ></iframe>
@@ -54,7 +52,7 @@ Your preview will show one titled embedded page with a defined size and a sandbo
 
 ## Checkpoint
 
-Run the page. You should see a reserved frame area with a meaningful title in the markup. If the embedded page refuses to appear, it may block framing with `X-Frame-Options` or Content Security Policy; choose an embed URL the provider supports.
+The example above uses a documentation site, not a transit map; its frame may be blank because that site does not permit embedding. For the hall page, use a map provider’s **embed URL**, not the normal map page URL. Preview the reserved space and inspect the iframe attributes; playback of remote content is not required to pass the checks.
 
 ## Permission choices
 
@@ -71,11 +69,12 @@ Do not add permissions by habit. Cross-origin frames cannot freely read each oth
 
 Add the transit-map frame:
 
-1. Add an `<iframe>` that embeds a public webpage (for example `https://example.com`).
-2. Set the `src` attribute on the iframe.
-3. Add a meaningful `title` attribute for accessibility.
-4. Set both `width` and `height` on the iframe.
-5. Add a `sandbox` attribute that allows scripts.
+1. Add one `<iframe>` for the transit map below the page heading.
+2. Give it a `src` pointing to a public map **embed URL** (for example, OpenStreetMap’s export/embed URL).
+3. Give it a descriptive `title` identifying the map.
+4. Set both `width` and `height` to reserve space.
+5. Add `sandbox="allow-scripts"` to limit its permissions.
+6. Add `loading="lazy"` so it can wait until near the viewport.
 
 ## Payoff
 

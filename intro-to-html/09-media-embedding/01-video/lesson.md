@@ -24,13 +24,11 @@ The Riverlight Community Hall wants a short welcome clip on its events page. Add
 
 ## What you'll build
 
-An accessible video player with multiple source formats, a poster image, visible controls, and a subtitle track for visitors who cannot hear the soundtrack.
-
-The Riverlight Community Hall wants a short welcome clip on its events page. Add a player that people can control, a still image while it loads, and captions for visitors who cannot hear the soundtrack.
+An accessible video player with multiple source formats, a poster image, visible controls, and a caption track for visitors who cannot hear the soundtrack.
 
 ## Target
 
-A visitor sees a poster image and playback controls; when the clip is ready, they can play it and turn captions on.
+With the named media files hosted beside the page, a visitor sees a poster and controls, then can play the clip and enable captions. The filenames here are illustrative; this informational lesson does not provide playable files.
 
 ## One idea: the browser chooses the first playable source
 
@@ -40,7 +38,7 @@ A visitor sees a poster image and playback controls; when the clip is ready, the
 <video controls width="640" height="360" poster="hall-welcome.jpg">
     <source src="hall-welcome.webm" type="video/webm" />
     <source src="hall-welcome.mp4" type="video/mp4" />
-    <track kind="subtitles" src="hall-welcome-en.vtt" srclang="en" label="English" />
+    <track kind="captions" src="hall-welcome-en.vtt" srclang="en" label="English" />
     Your browser does not support the video tag.
 </video>
 ```

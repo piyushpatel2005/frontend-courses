@@ -19,13 +19,13 @@ hints:
 
 ## Mission
 
-The Riverstone garden page needs a compact “Before You Visit” area. Add questions people can open when needed and a seedling photo whose caption stays connected to the image.
+A second Riverstone garden page needs a compact “Before You Visit” area. Add questions people can open when needed and a seedling image whose caption stays connected to the image.
 
 ## What you'll build
 
 An FAQ with expandable answers (one open by default) and a captioned figure with an image and figcaption, keeping media and explanation together.
 
-**Target:** an FAQ with one answer already visible and a captioned image beneath it. In the preview, clicking each question should reveal only that question's answer.
+**Target:** an FAQ with one answer already visible and a captioned illustration beneath it. In the preview, clicking each question should reveal only that question's answer.
 
 ## Let optional information stay optional
 
@@ -64,14 +64,14 @@ Unlike a plain `<div>`, this structure tells browsers and assistive technology t
 
 ## Checkpoint
 
-Preview the page. One FAQ answer should be visible immediately; the other answers should appear only after their summaries are clicked. The seedling caption should read as part of the same unit as the image. If a question will not toggle, make sure its `<summary>` is inside its `<details>`.
+Preview the page. One FAQ answer should be visible immediately; the other answers should appear only after their summaries are clicked. The illustration caption should read as part of the same unit as the image. If a question will not toggle, make sure its `<summary>` is inside its `<details>`.
 
 ## Your Tasks
 
-1. Add at least two `<details>` elements for the garden FAQ.
+1. Add at least two `<details>` elements, each with an answer about visiting the garden.
 2. Put a `<summary>` inside each `<details>` element.
-3. Add the `open` attribute to one `<details>` element so its answer starts expanded.
-4. Add a `<figure>` containing an `<img>` for the garden page.
+3. Add the `open` attribute to exactly one `<details>` element so one answer starts expanded.
+4. Add a `<figure>` containing an `<img>` with descriptive `alt` text for the garden page. Use an available image URL (the starter contains no image asset).
 5. Add a `<figcaption>` inside that figure to describe the image.
 
 ## Payoff

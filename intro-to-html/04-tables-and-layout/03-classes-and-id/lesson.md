@@ -28,7 +28,7 @@ The makers' fair program page needs three quick-jump stops — about, projects, 
 
 ## What you'll build
 
-A one-page portfolio skeleton with navigation links that jump to matching sections, and project cards that share a reusable class. One card gets a second class for special styling.
+A makers’ fair program with navigation links to three stops and reusable exhibit cards. One card gets a second class as a future styling hook.
 
 ## One name or a reusable label
 
@@ -84,12 +84,13 @@ Run the page and select each navigation link. It should land on the section with
 
 ## Your Tasks
 
-Build a one-page portfolio skeleton:
+Build the fair program in the starter:
 
 1. Add a `<nav>` with three anchor links: `#about`, `#projects`, `#contact`.
 2. Add three `<section>` elements, each with the matching `id`.
-3. Each section should have at least one `<div class="card">` inside it.
-4. One card should have two classes (e.g., `class="card highlight"`).
+3. Give each section a short `<h2>` label.
+4. Put at least one non-empty `<div class="card">` inside each section.
+5. Give one of those cards a second class (e.g., `class="card featured"`).
 
 ## Payoff
 

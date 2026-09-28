@@ -19,7 +19,7 @@ hints:
 
 ## Mission
 
-the crew receives a mission alert. The response needs room for a briefing, one preferred role, and a nearby base that can be suggested without being forced.
+The crew receives a mission alert. The response needs room for a briefing, one preferred role, and a nearby base that can be suggested without being forced.
 
 ## What you'll see
 
@@ -46,4 +46,4 @@ Use the preview to connect each visible result to the HTML that created it. This
 
 ## Next
 
-Continue to **Exercise: Build Mission Response Controls**. You will recreate the same idea from a smaller starter file.
+Continue to **Exercise: Build a Rescue Dispatch Report**. You will recreate the same idea from a smaller starter file.

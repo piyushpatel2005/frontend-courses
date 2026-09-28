@@ -1,36 +1,35 @@
-test("form has at least 2 interest checkboxes", () => {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-  assert.isAtLeast(checkboxes.length, 2, "Add at least 2 checkboxes for interests");
+test("room and volunteer interests", () => {
+  const interest = Array.from(document.querySelectorAll('form input[type="checkbox"]')).filter(input => !input.required);
+  assert.equal(interest.length >= 2, true, "Add two optional interest checkboxes");
+  assert.equal([/book/, /volunteer/].every(pattern => interest.some(input => pattern.test(input.value) || pattern.test(input.labels?.[0]?.textContent || ""))), true, "Include booking and volunteering interests");
 });
 
-test("form has radio group for contact method", () => {
-  const radios = document.querySelectorAll('input[type="radio"]');
-  assert.isAtLeast(radios.length, 2, "Add at least 2 radio options for preferred contact method");
+test("labeled optional phone number", () => {
+  const phone = document.querySelector('form input[type="tel"][name]');
+  assert.exists(phone, "Add a named optional phone field for call backs");
+  assert.equal(phone.required, false, "Phone is optional");
+  assert.equal(Array.from(phone.labels || []).some(label => label.textContent.trim()), true, "Give the phone field a visible label");
 });
 
-test("consent checkbox is required", () => {
-  const requiredConsent = document.querySelector('input[type="checkbox"][required]');
-  assert.exists(requiredConsent, "Add a required consent checkbox");
+test("email and phone reply choices", () => {
+  const radios = Array.from(document.querySelectorAll('form input[type="radio"]'));
+  assert.equal(radios.length >= 2, true, "Add two reply-method radio buttons");
+  assert.equal([/email/, /phone/].every(pattern => radios.some(input => pattern.test(input.value) || pattern.test(input.labels?.[0]?.textContent || ""))), true, "Offer email and phone reply methods");
 });
 
-test("radio buttons share the same name group", () => {
-  const radios = Array.from(document.querySelectorAll('input[type="radio"]'));
-  const uniqueNames = new Set(radios.map((r) => r.name).filter(Boolean));
-  assert.equal(uniqueNames.size, 1, "Radio buttons should share one name attribute");
+test("one named reply group", () => {
+  const radios = Array.from(document.querySelectorAll('form input[type="radio"]'));
+  assert.equal(radios.length >= 2, true, "Add reply choices first");
+  assert.equal(radios[0].name !== "" && radios.every(radio => radio.name === radios[0].name), true, "Give both radios the same non-empty name");
 });
 
-test("submit button is inside form", () => {
-  const form = document.querySelector("form");
-  assert.exists(form, "Form must exist");
-  const submit = form ? form.querySelector('button[type="submit"], input[type="submit"]') : null;
-  assert.exists(submit, "Add submit control");
+test("required consent", () => {
+  const consent = document.querySelector('form input[type="checkbox"][required]');
+  assert.exists(consent, "Add a separate required consent checkbox");
 });
 
-test("each checkbox and radio has a text label", () => {
-  const controls = Array.from(document.querySelectorAll('input[type="checkbox"], input[type="radio"]'));
-  const allLabeled = controls.every((el) => {
-    if (!el.id) return false;
-    return document.querySelector('label[for="' + el.id + '"]') !== null;
-  });
-  assert.isTrue(allLabeled, "Ensure each radio/checkbox has a text label");
+test("every new choice has a visible label", () => {
+  const controls = Array.from(document.querySelectorAll('form input[type="checkbox"], form input[type="radio"]'));
+  assert.equal(controls.length >= 5, true, "Add two interests, two reply methods, and consent first");
+  assert.equal(controls.every(input => Array.from(input.labels || []).some(label => label.textContent.trim())), true, "Give each checkbox and radio a visible label");
 });

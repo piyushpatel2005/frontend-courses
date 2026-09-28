@@ -1,21 +1,22 @@
-test("page has at least one img", () => {
-  assert.count("img", 2, "Add at least two <img> elements");
+test("page has two public images", () => {
+  const images = document.querySelectorAll("body img");
+  assert.equal(images.length >= 2, true, "Add at least two <img> elements");
+  Array.from(images).forEach(img => assert.match(img.getAttribute("src") || "", /^https:\/\//, "Use public HTTPS image URLs"));
 });
 
-test("all images have alt attributes", () => {
-  var images = document.querySelectorAll("img");
-  var allHaveAlt = Array.from(images).every(function(img) {
-    return img.hasAttribute("alt");
-  });
-  assert.exists(allHaveAlt, "Every <img> must have an alt attribute");
+test("both images describe their content", () => {
+  const images = document.querySelectorAll("body img");
+  assert.equal(images.length >= 2, true, "Add both images before writing alt text");
+  Array.from(images).forEach(img => assert.notEqual((img.getAttribute("alt") || "").trim(), "", "Give each image descriptive alt text"));
 });
 
-test("at least one image has width and height", () => {
-  var sized = document.querySelector("img[width][height]");
-  assert.exists(sized, "Add width and height attributes to at least one <img>");
+test("an image reserves width and height", () => {
+  const sized = document.querySelector('body img[width][height]');
+  assert.exists(sized, "Add width and height to an image");
+  assert.equal(Number(sized.getAttribute("width")) > 0 && Number(sized.getAttribute("height")) > 0, true, "Use positive pixel dimensions");
 });
 
-test("at least one image is inside a link", () => {
-  var linkedImg = document.querySelector("a img");
-  assert.exists(linkedImg, "Wrap one <img> in an <a> tag to make it a clickable link");
+test("an image links to a page", () => {
+  const linked = document.querySelector('body a[href^="https://"] img');
+  assert.exists(linked, "Wrap an image in a link to a useful HTTPS page");
 });

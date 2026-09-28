@@ -26,7 +26,8 @@ A mission signal card with one title and two short details.
 ## Your Tasks
 
 1. Add an `<h1>` that includes **Meridian** or **Signal**.
-2. Add at least two `<p>` elements with a signal detail and a next-step message. Insert any content of your choice.
+2. Add a `<p>` with a signal detail of your choice.
+3. Add a second `<p>` with a next-step message of your choice.
 
 ## Checkpoint
 

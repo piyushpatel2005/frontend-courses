@@ -26,8 +26,6 @@ The Riverlight Community Hall is publishing a two-minute volunteer orientation. 
 
 An accessible audio player with multiple source formats, visible controls, and a transcript link for visitors who cannot or prefer not to listen.
 
-The Riverlight Community Hall is publishing a two-minute volunteer orientation. Add an audio player that works across browsers and gives visitors a clear way to play, pause, and read the spoken information.
-
 ## Target
 
 A visitor sees audio controls, and the page can offer more than one audio format plus a nearby transcript link.
@@ -49,7 +47,7 @@ MP3 plays in nearly every browser; OGG is a useful open alternative. The fallbac
 
 ## Checkpoint
 
-With the audio files present, the preview should show a control bar before anything plays. If it starts unexpectedly, remove `autoplay`. If it has no usable interface, add `controls` or provide equivalent custom buttons.
+With the audio files hosted, the page shows a control bar before anything plays. The example filenames are illustrative; this informational lesson has no supplied audio files. If it starts unexpectedly, remove `autoplay`. If it has no usable interface, add `controls` or provide equivalent custom buttons.
 
 ## Use the right attributes
 

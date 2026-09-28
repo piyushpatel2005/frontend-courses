@@ -17,47 +17,47 @@ hints:
 
 ## Mission
 
-A volunteer coordinator at the Riverstone Makers' Fair needs a one-page resume before the organizer reviews applications. Build the content skeleton first, so a reader can scan the candidate's role, experience, skills, and contact details in a sensible order.
+The Riverstone Makers' Fair needs a volunteer coordinator, and Sam Rivera is applying. Build Sam’s one-page content skeleton before the organizer reviews applications, so a reader can scan the candidate's role, experience, skills, and contact details in a sensible order.
 
 ## What you'll build
 
-A resume with semantic landmarks: a header with name and title, main with three labeled sections (summary, skills as a list, experience), and a footer with contact details.
+Sam’s resume with semantic landmarks: a header with name and role, main with three labeled sections (summary, skills as a list, experience), and a footer with contact details.
 
 **Target:** a resume with a clear heading, one primary-content area, three labeled content sections, and a contact footer. In the preview, the skills appear as a short bulleted list rather than as a sentence buried in a paragraph.
 
 ## Shape the document before filling every detail
 
-A resume is a structured document, not a collection of visual boxes. Use semantic regions to make its parts clear:
+A resume is a structured document, not a collection of visual boxes. Here is another applicant’s example; use its structure, but write Sam’s fair-coordinator resume in the editor:
 
 ```html
 <header>
-    <h1>Sam Rivera</h1>
-    <p>Community Events Assistant</p>
+    <h1>Mira Chen</h1>
+    <p>Library Program Assistant</p>
 </header>
 
 <main>
     <section>
         <h2>Professional Summary</h2>
-        <p>Organizes welcoming, practical events for local makers.</p>
+        <p>Plans reading programs for neighborhood families.</p>
     </section>
 
     <section>
         <h2>Skills</h2>
         <ul>
-            <li>Event coordination</li>
-            <li>Volunteer communication</li>
-            <li>Schedule planning</li>
+            <li>Program scheduling</li>
+            <li>Reader outreach</li>
+            <li>Book displays</li>
         </ul>
     </section>
 
     <section>
         <h2>Work Experience</h2>
-        <p>Supported the Riverstone Makers' Fair, 2024–2026.</p>
+        <p>Coordinated events at Willow Lane Library, 2023–2025.</p>
     </section>
 </main>
 
 <footer>
-    <p>sam.rivera@example.com</p>
+    <p>mira.chen@example.com</p>
 </footer>
 ```
 
@@ -69,10 +69,11 @@ Preview the page. The name and role should come first, followed by Summary, Skil
 
 ## Your Tasks
 
-1. Add one `<header>` with your name and professional title.
-2. Add one `<main>` containing at least three `<section>` blocks for Professional Summary, Skills, and Work Experience.
-3. In the Skills section, add an unordered list with at least three skill items.
-4. Add one `<footer>` with contact information.
+1. Add a `<header>` with Sam’s name in an `<h1>` and the coordinator role beneath it.
+2. Add one `<main>` to hold the resume’s primary content.
+3. Inside `<main>`, add three headed `<section>` blocks in order: Professional Summary, Skills, and Work Experience. Give the summary and experience sections a short description.
+4. In the Skills section, add an unordered list with at least three separate skills.
+5. Add a `<footer>` with Sam’s contact information.
 
 ## Payoff
 

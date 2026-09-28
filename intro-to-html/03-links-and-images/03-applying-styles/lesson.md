@@ -106,11 +106,11 @@ Preview after each change. The heading color should affect only the `<h1>`, the 
 
 ## Your Tasks
 
-You have a starter `index.html` linked to `style.css` (already in the same folder). Your tasks:
+The starter `index.html` already links to `style.css`. Edit that file for the last step:
 
 1. Add an inline style to the `<h1>` that sets `color` to any colour you choose.
 2. Add a `<style>` block in `<head>` that styles `p` — change the `font-size` to at least `16px`.
-3. In `style.css`, add a rule that sets a `background-color` on `body`.
+3. In `style.css`, add a `body` rule with a visible `background-color` (not transparent or white).
 
 ## Payoff
 

@@ -45,6 +45,8 @@ modules:
 
 HTML (HyperText Markup Language) is the skeleton of every web page you've ever visited. It provides the structure and meaning — headings, paragraphs, links, images, forms, and more — that browsers render into the pages you see. Everything runs directly in your browser with no installs required.
 
+You'll start with small signal pages, practise each new element on a different page, and bring those pieces together in a contributor card, a community-hall contact form, and a resume. These are separate practice projects, not one page you must keep editing throughout the course.
+
 ## What you will learn
 
 - How browsers read and render HTML documents.
@@ -63,7 +65,7 @@ HTML (HyperText Markup Language) is the skeleton of every web page you've ever v
 5. **Project - Visiting Card** — build a personal visiting card page with content hierarchy, image, links, and structure.
 6. **Head and Metadata** — the `<head>` element, page titles, `<meta>` tags, and HTML entities.
 7. **Forms** — form structure, text/email/password inputs, checkboxes, radio buttons, select menus, and textarea.
-8. **Project - Contact Us Form** — build a complete contact workflow with labels, inputs, validation attributes, and submission UX.
+8. **Project - Contact Us Form** — build a contact form with labels, inputs, validation attributes, and a submit action; processing messages requires a separate service.
 9. **Media and Embedding** — video, audio, and iframes.
 10. **Semantic HTML** — `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`, `<figure>`, `<details>`, and more.
 11. **Project - Resume** — create a semantic resume page with profile, experience, skills, and contact details.

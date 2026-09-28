@@ -80,13 +80,13 @@ Run the page. You should see a header row above at least two schedule rows, plus
 
 ## Your Tasks
 
-Build a table showing a weekly class schedule with at least:
+Build the repair café’s two-day station schedule:
 
 1. Add one `<table>` element.
-2. Add a `<thead>` row with `<th>` headers for each day (e.g., Monday–Friday).
-3. Add a `<tbody>` with at least **2 rows** of schedule data (use `<td>` cells).
-4. Add at least one cell that uses `colspan` to span multiple columns.
+2. Add a `<thead>` row with three `<th scope="col">` headers: time, day, and station.
+3. Add a `<tbody>` with at least **2 rows** of schedule data, using `<td>` cells for their times, days, and stations.
+4. Add one `<td colspan="2">` to a schedule row so its content spans two columns.
 
 ## Payoff
 
-The repair café now has a schedule that visitors can scan and assistive technology can navigate by header.
+The repair café now has a schedule whose column headers label the times, days, and stations.

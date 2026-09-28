@@ -25,11 +25,11 @@ hints:
 
 ## Mission
 
-The community seed swap needs a simple display table with two item cards. You'll group each item's information in a block container, then highlight one useful word inside a description.
+The community seed swap needs a simple swap-list page with two item cards. You'll group each item's information in a block container, then highlight one useful word inside a description.
 
 ## What you'll build
 
-A page with two side-by-side cards. Each card is a block container holding a title and description. Inside one description, an inline hook highlights a key word.
+A page with two stacked cards. Each card groups a title and description; a span marks a key word inside one description for future styling.
 
 ## The two container jobs
 
@@ -60,18 +60,19 @@ A generic container has no appearance or meaning on its own. Add a `class` when 
 </div>
 ```
 
-`card` can label every card. `swap-list` identifies one page region.
+`card` can label every card. `swap-list` identifies one page region. You will practice reusable classes and unique IDs in more detail later in this module.
 
 ## Checkpoint
 
-Run the page. Each card should start on its own line, while the highlighted word remains in the middle of its paragraph. If everything runs together, check that each card is wrapped in its own opening and closing `<div>`.
+Run the page. Each card should start on its own line, while the span stays within its paragraph. Without CSS, the marked word will not look different yet. If everything runs together, check that each card is wrapped in its own opening and closing `<div>`.
 
 ## Your Tasks
 
 1. Create a `<div class="container">` that wraps all of the page content.
 2. Inside, add at least two `<div class="card">` elements.
-3. In each `.card`, add an `<h2>` and a `<p>`.
-4. In one paragraph, use a `<span>` to highlight a word (e.g., `class="highlight"`).
+3. Add a non-empty `<h2>` naming the item in each `.card`.
+4. Add a non-empty `<p>` describing the item in each `.card`.
+5. In one paragraph, wrap a key word in `<span class="highlight">` for future styling.
 
 ## Payoff
 

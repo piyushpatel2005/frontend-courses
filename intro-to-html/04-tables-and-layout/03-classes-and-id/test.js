@@ -1,28 +1,36 @@
-test("page has anchor links for all three sections", () => {
-  var links = ["#about", "#projects", "#contact"];
-  links.forEach(function(href) {
-    var el = document.querySelector('a[href="' + href + '"]');
-    assert.exists(el, "Add an anchor link pointing to " + href);
+test("nav links to three fair stops", () => {
+  const nav = document.querySelector("body nav");
+  assert.exists(nav, "Add a <nav> for the program stops");
+  ["about", "projects", "contact"].forEach(id => {
+    const link = nav.querySelector(`a[href="#${id}"]`);
+    assert.exists(link, `Link to #${id} inside the nav`);
+    assert.notEqual(link.textContent.trim(), "", "Give each link a label");
   });
 });
 
-test("page has sections with correct ids", () => {
-  var ids = ["about", "projects", "contact"];
-  ids.forEach(function(id) {
-    var el = document.getElementById(id);
-    assert.exists(el, "Add a section with id=\"" + id + "\"");
+test("each stop has a unique section ID", () => {
+  ["about", "projects", "contact"].forEach(id => {
+    assert.count(`body section#${id}`, 1, `Add one <section id="${id}">`);
   });
 });
 
-test("page has at least 3 card divs", () => {
-  var cards = document.querySelectorAll(".card");
-  assert.exists(cards.length >= 3, "Add at least one .card inside each section");
+test("each stop has a heading", () => {
+  ["about", "projects", "contact"].forEach(id => {
+    const heading = document.querySelector(`section#${id} h2`);
+    assert.exists(heading, `Add an <h2> inside #${id}`);
+    assert.notEqual(heading.textContent.trim(), "", `Label #${id}`);
+  });
 });
 
-test("at least one element has two classes", () => {
-  var all = document.querySelectorAll("[class]");
-  var multiClass = Array.from(all).some(function(el) {
-    return el.className.trim().split(/\s+/).length >= 2;
+test("each stop contains a reusable card", () => {
+  ["about", "projects", "contact"].forEach(id => {
+    const card = document.querySelector(`section#${id} div.card`);
+    assert.exists(card, `Add a .card in #${id}`);
+    assert.notEqual(card.textContent.trim(), "", `Write content in the #${id} card`);
   });
-  assert.exists(multiClass, "Add an element with two classes e.g. class=\"card highlight\"");
+});
+
+test("one card carries a second class", () => {
+  const cards = document.querySelectorAll("section div.card");
+  assert.equal(Array.from(cards).some(card => card.classList.length >= 2), true, "Give a .card a second class");
 });

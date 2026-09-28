@@ -1,33 +1,25 @@
-test("page has a form element", () => {
-  assert.count("form", 1, "Add a <form> element");
+test("intake form", () => {
+  assert.count("form", 1, "Add one form");
 });
 
-test("form has a text input for name", () => {
-  var nameInput = document.querySelector('input[type="text"]');
-  assert.exists(nameInput, "Add an <input type=\"text\"> for the name field");
+test("crew contact", () => {
+  assert.exists(document.querySelector('form input[type="text"]'), "Put the crew-contact text input in the form");
 });
 
-test("form has an email input", () => {
-  var emailInput = document.querySelector('input[type="email"]');
-  assert.exists(emailInput, "Add an <input type=\"email\"> for the email field");
+test("contact email", () => {
+  assert.exists(document.querySelector('form input[type="email"]'), "Put an email input in the form");
 });
 
-test("form has a password input", () => {
-  var passInput = document.querySelector('input[type="password"]');
-  assert.exists(passInput, "Add an <input type=\"password\"> for the password field");
+test("training code", () => {
+  assert.exists(document.querySelector('form input[type="password"]'), "Put a password input in the form");
 });
 
-test("form has a submit button", () => {
-  var btn = document.querySelector('button[type="submit"], input[type="submit"]');
-  assert.exists(btn, "Add a submit button");
+test("submit action", () => {
+  assert.exists(document.querySelector('form button[type="submit"], form input[type="submit"]'), "Put a submit control in the form");
 });
 
-test("every input has a label", () => {
-  var inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]');
-  var allLabelled = Array.from(inputs).every(function(input) {
-    var id = input.id;
-    if (!id) return false;
-    return document.querySelector('label[for="' + id + '"]') !== null;
-  });
-  assert.exists(allLabelled, "Each input must have a <label for=\"...\"> matching its id");
+test("each field has a matching visible label", () => {
+  const inputs = Array.from(document.querySelectorAll('form input[type="text"], form input[type="email"], form input[type="password"]'));
+  assert.equal(inputs.length, 3, "First add the three intake fields");
+  assert.equal(inputs.every(input => input.id && Array.from(document.querySelectorAll('form label[for]')).some(label => label.htmlFor === input.id && label.textContent.trim())), true, "Connect a visible label to each field");
 });

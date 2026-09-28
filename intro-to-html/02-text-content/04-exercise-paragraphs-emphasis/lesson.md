@@ -16,7 +16,7 @@ validationRules: []
 hints:
   - "Use <p> for paragraphs. It automatically adds spacing before and after."
   - "<em> adds emphasis (usually italic). <strong> adds strong importance (usually bold)."
-  - "<br> is self-closing — use it for a single line break inside a paragraph, not between paragraphs."
+  - "<br> is a void element — use it for a single line break inside a paragraph, not between paragraphs."
   - "<hr> draws a visible divider between sections."
 ---
 
@@ -24,76 +24,37 @@ hints:
 
 ## Mission
 
-the Meridian crew is writing a flight log after the first controlled rooftop landing. Use paragraphs for the report, emphasis for the key move, strong text for the system update, and one deliberate line break for a radio-style sign-off.
+The Meridian crew is writing a flight log after the first controlled rooftop landing. Use paragraphs for the report, emphasis for the key move, strong text for the system update, and one deliberate line break for a radio-style sign-off.
 
 ## What you'll build
 
-A page with a title, a paragraph that wraps naturally, a key phrase in emphasis, a date in strong importance, and one deliberate line break.
+A survey log with a heading, a two-sentence landing report, an emphasized phrase, a priority update, a line break, and a divider.
 
-## Paragraphs: `<p>`
+## From the demo to your log
 
-The `<p>` element wraps a block of text. Browsers automatically add vertical spacing before and after each paragraph.
-
-```html
-<p>We met last Tuesday to discuss the book.</p>
-<p>Everyone agreed the ending was unexpected.</p>
-```
-
-Use `<p>` for prose. Don't use it just to get spacing — CSS margins handle that.
-
-## Emphasis and strong importance
-
-`<em>` marks text that carries emphasis. Browsers usually render it in italics.
+The preceding survey-log demo showed paragraphs with `<em>`, `<strong>`, and a `<br>` inside a transmission. Use the same tags for a different log entry. `<p>` groups prose; `<em>` emphasizes a phrase and `<strong>` marks important information. A `<br>` breaks a line *inside* a paragraph without starting a new one. Add `<hr>` between sections when the topic changes; both `<br>` and `<hr>` are void elements with no closing tag.
 
 ```html
-<p>We read <em>The Night Circus</em> this month.</p>
-```
-
-`<strong>` marks text with strong importance. Browsers usually render it in bold.
-
-```html
-<p><strong>Next meeting: March 15</strong></p>
-```
-
-These tags carry meaning. Screen readers and search engines use them; don't use them only for visual styling — CSS does that.
-
-## Line breaks: `<br>`
-
-`<br>` is a self-closing tag that forces a single line break. Use it sparingly — inside addresses, poems, or where a line must break without starting a new paragraph.
-
-```html
-<p>123 Main Street<br>Springfield, IL 62701</p>
-```
-
-Avoid using `<br>` between paragraphs. Let `<p>` handle that.
-
-## Horizontal rule: `<hr>`
-
-`<hr>` draws a horizontal line between sections of content:
-
-```html
-<p>Section one content.</p>
+<p>The weather shifted <em>after sunset</em>.<br>Return to the landing site.</p>
 <hr>
-<p>Section two content.</p>
+<p><strong>Priority: check the beacon.</strong></p>
 ```
-
-Like `<br>`, it is self-closing.
 
 ## Checkpoint
 
-Run the page. The recap should have one paragraph about the discussion, the book title in emphasis, the meeting date in strong importance, and one controlled line break.
+Run the page after each change. The first paragraph contains two lines, while the horizontal rule separates it from the second paragraph.
 
 ## Your Tasks
 
 The starter `index.html` has an empty body:
 
-1. Add an `<h1>` title for the recap (e.g., "Book Club Recap").
-2. Add a `<p>` with at least two sentences about a book or topic you choose.
-3. Wrap the book or topic title in `<em>`.
-4. Add a second `<p>` containing a date or important detail wrapped in `<strong>`.
-5. Add a self-closing `<br>` inside the first paragraph, between two sentences (like `<p>First sentence.<br>Second sentence.</p>`).
-6. Add a `<hr>` between the two paragraphs.
+1. Add an `<h1>` naming the survey log.
+2. Add a first `<p>` with two sentences about the rooftop landing.
+3. Emphasize a key phrase in the first paragraph with `<em>`.
+4. Add a second `<p>` with an important detail wrapped in `<strong>`.
+5. Add a `<br>` between the two sentences in the first paragraph.
+6. Add an `<hr>` between the first and second paragraphs.
 
 ## Payoff
 
-Your book-club recap is readable, the important details stand out, and the line break appears exactly where you need it.
+Your survey log now separates the landing report from the important update.

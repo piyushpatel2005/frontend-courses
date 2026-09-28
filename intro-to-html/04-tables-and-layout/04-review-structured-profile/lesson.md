@@ -22,31 +22,19 @@ The repair café needs a compact volunteer profile beside its schedule. Turn the
 
 A profile card with a unique `id` on its `<main>` container, a heading and description inside, and at least two reusable `tag` class elements for skill labels.
 
-The repair café needs a compact volunteer profile beside its schedule. Turn the empty starter into one clear card: a named main region, a short description, and repeatable skill tags. The preview should make all three pieces easy to spot.
-
-## Your target
-
-Use `<main>` for the page's central content. Give that one region the unique `profile` ID. Add a heading and description inside it, then reuse the `tag` class for more than one small skill label.
-
-```html
-<main id="profile">
-    <h1>Aria, tool librarian</h1>
-    <p>Helps visitors find the right repair guide.</p>
-    <span class="tag">Bicycles</span>
-    <span class="tag">Small appliances</span>
-</main>
-```
-
-An ID names one destination; a class labels a group. That distinction keeps the profile ready for anchor links and future styling.
+`<main>` names the page's central content; you will study semantic landmarks in detail later. Here it lets one profile have a unique `id`, while the repeated skill labels share a `class`. Unlike a `div`, the main landmark also tells readers what part of the document is primary. Keep just one `<main>` on this page.
 
 ## Checkpoint
 
-Run the starter. You should see one profile heading, its description, and at least two tag labels. If a tag is missing from the tests, check that its `class` value is exactly `tag`.
+Run the starter: it is empty except for a source comment. After your edits you should see a profile heading, a description, and two skill tags. The class names will not make the tags look different until you add CSS later.
 
 ## Your Tasks
 
 1. Add one `<main>` element with `id="profile"`.
-2. Inside it, add an `<h1>` and a non-empty `<p>`.
-3. Add at least two elements with the class `tag`.
+2. Inside it, add an `<h1>` with the volunteer’s name.
+3. Add a non-empty `<p>` describing their role inside the profile.
+4. Inside the profile, add at least two non-empty skill labels with `class="tag"`.
+
+## Payoff
 
 The schedule now has a focused volunteer profile with a unique page landmark and reusable skill labels.

@@ -94,12 +94,14 @@ Preview the page and use both links. The external resource should open in a new 
 
 ## Your Tasks
 
-In the starter `index.html` you have two empty sections. Your tasks:
+The starter has a heading and comments marking where the navigation and about section belong.
 
 1. Add an external link (`<a href="https://www.wikipedia.org">`) in a `<nav>`.
-2. Make that external link open in a new tab using `target="_blank"`.
+2. Make that same external link open in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
 3. Add an anchor link `<a href="#about">` in the nav.
-4. Add a `<section id="about">` below the nav with an `<h2>` and a `<p>`.
+4. Add a `<section id="about">` below the nav.
+5. Inside that section, add an `<h2>` naming it.
+6. Add a `<p>` describing the repair café inside the section.
 
 ## Payoff
 
