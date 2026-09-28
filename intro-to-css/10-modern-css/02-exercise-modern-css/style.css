@@ -19,7 +19,7 @@ button {
   border: 0;
   color: white;
   background: var(--ink);
-  /* Add transition. */;
+  /* Add transition. */
 }
 button:hover {
   background: var(--accent);

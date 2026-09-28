@@ -1,14 +1,17 @@
-test('Use a fluid page width capped at 48rem.', () => {
-  const width = getComputedStyle(document.querySelector('.page-shell')).width;
-  assert.notEqual(width, 'auto', 'Set a real width using min(92%, 48rem).');
+test('Cap the page width with min().', () => {
+  const shell = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules))
+    .find(rule => rule.selectorText === '.page-shell');
+  assert.match(shell?.style.getPropertyValue('width').trim() || '', /^min\(92%,\s*48rem\)$/i, 'Use width: min(92%, 48rem) on .page-shell.');
 });
 
-test('Use a responsive auto-fit grid for the bulletin.', () => {
-  const columns = getComputedStyle(document.querySelector('.bulletin')).gridTemplateColumns;
-  assert.isAtLeast(columns.split(' ').length, 1, 'Use a grid-template-columns rule with auto-fit and minmax.');
+test('Let bulletin columns fit available space.', () => {
+  const bulletin = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules))
+    .find(rule => rule.selectorText === '.bulletin');
+  assert.match(bulletin?.style.getPropertyValue('grid-template-columns').trim() || '', /^repeat\(auto-fit,\s*minmax\(14rem,\s*1fr\)\)$/i, 'Set .bulletin columns to repeat(auto-fit, minmax(14rem, 1fr)).');
 });
 
-test('Use clamp for scalable card padding.', () => {
-  const padding = getComputedStyle(document.querySelector('.card')).paddingTop;
-  assert.notEqual(padding, '0px', 'Set padding with clamp(1rem, 3vw, 2rem).');
+test('Bound card padding with clamp().', () => {
+  const card = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules))
+    .find(rule => rule.selectorText === '.card');
+  assert.match(card?.style.getPropertyValue('padding').trim() || '', /^clamp\(1rem,\s*3vw,\s*2rem\)$/i, 'Set .card padding to clamp(1rem, 3vw, 2rem).');
 });

@@ -21,18 +21,18 @@ hints:
 
 ## Mission
 
-Give the vendor cards an edge, soft corners, and a subtle shadow without changing the HTML.
+The demo styled food vendors. This starter shows two craft vendors with a supplied two-column layout and padding; give their cards an edge, soft corners, and a subtle shadow without changing the HTML.
 
 ## Your Tasks
 
 1. Set a `2px solid #f59e0b` border on `.card`.
 2. Set `.card` `border-radius` to `1rem`.
-3. Add a non-`none` `box-shadow` to `.card`.
+3. Set `.card` `box-shadow` to `0 0.5rem 1rem rgb(120 53 15 / 20%)` for a soft shadow below the cards.
 
 ## Checkpoint
 
-Use borders, radius, and shadows to separate a surface from its background.
+Run the preview: the cards should have amber edges, rounded corners, and a shadow below each card.
 
 ## Payoff
 
-You now have another focused CSS tool for making interfaces easier to use.
+You can now distinguish a card from its background using three different CSS properties.

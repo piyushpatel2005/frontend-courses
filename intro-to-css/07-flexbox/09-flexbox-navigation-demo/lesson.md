@@ -5,7 +5,7 @@ order: 9
 language: html
 summary: "Combining flex direction, main-axis spacing, alignment, and gaps creates a dependable one-dimensional layout."
 seo_title: "Flexbox Navigation Demo | Introduction to CSS"
-seo_description: "Learn combining flex direction, main-axis spacing, alignment, and gaps creates a dependable one-dimensional layout. in a completed CSS preview."
+seo_description: "Inspect a two-group expedition header built with Flexbox spacing and alignment."
 seo_keywords: [CSS, flexbox-navigation-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,20 +13,12 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Flexbox Navigation Demo
+# Expedition header: completed layout
 
-## Mission
+Keep the expedition title separate from its actions. This completed preview shows the layout before you edit the next exercise.
 
-Finish a compact expedition header: a title on one side and actions on the other.
+In `style.css`, `.nav-row` controls the section. The nav row uses display: flex; justify-content: space-between pushes its two groups apart, while align-items: center lines up their vertical centers. The gap prevents them touching.
 
-## What to notice
+**Checkpoint:** inspect the card positions in Preview and locate `align-items: center` in the stylesheet.
 
-Combining flex direction, main-axis spacing, alignment, and gaps creates a dependable one-dimensional layout.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
-
-## Try the preview
-
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
+Change `align-items` temporarily to `flex-start`, run Preview, and compare the positions. Restore `center` before moving to the exercise.

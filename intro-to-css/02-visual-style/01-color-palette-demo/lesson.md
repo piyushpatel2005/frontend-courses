@@ -18,7 +18,9 @@ hints:
 
 # Color Palette Demo
 
-You are styling a flyer for the **Lantern Lane Night Market**. A three-color palette makes the title, details, and callout easy to scan.
+The Tideglass exhibits are behind you; this module styles a separate **Lantern Lane Night Market** flyer. Its small palette makes the title, details, and callout easy to scan.
+
+The demo already supplies sizing and centering rules. You will learn layout later; for now, focus on the color declarations.
 
 In `style.css`, notice the selector, property, and value in rules such as `.flyer { background-color: #172554; }`. The selector chooses the flyer, `background-color` chooses what to paint, and `#172554` is the deep-blue value.
 

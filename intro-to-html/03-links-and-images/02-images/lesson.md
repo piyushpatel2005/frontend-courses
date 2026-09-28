@@ -29,7 +29,7 @@ Add a small photo strip to a local walking-club page. Each image should still ma
 
 A walking-club photo strip with descriptive alt text, one image reserving space with dimensions, and one clickable image link.
 
-The `<img>` tag puts an image on a page. It is a **self-closing** (void) element, so it has no content or closing tag.
+The `<img>` tag puts an image on a page. It is a **void** element with no content or closing tag; a trailing `/` is optional.
 
 ## Basic syntax
 
@@ -41,8 +41,8 @@ The `<img>` tag puts an image on a page. It is a **self-closing** (void) element
 |-----------|----------|-------------|
 | `src` | Yes | Path or URL to the image file |
 | `alt` | Yes | Alternative text description |
-| `width` | No | Width in pixels (or CSS units) |
-| `height` | No | Height in pixels (or CSS units) |
+| `width` | No | Width in pixels |
+| `height` | No | Height in pixels |
 
 ## The `src` attribute
 
@@ -53,7 +53,7 @@ The `<img>` tag puts an image on a page. It is a **self-closing** (void) element
 <img src="images/logo.png" alt="Company logo" />
 
 <!-- Absolute URL -->
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Fronalpstock_big.jpg/240px-Fronalpstock_big.jpg" alt="Mountain landscape" />
+<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fronalpstock_big.jpg?width=320" alt="Mountain landscape" />
 ```
 
 ## Why `alt` text matters
@@ -95,14 +95,14 @@ Wrap an `<img>` in an `<a>` tag to make it a clickable link:
 
 ## Checkpoint
 
-Preview the page with its images loaded, then imagine one fails. Every meaningful image should have a useful `alt` description; at least one should reserve visible space with `width` and `height`, and clicking one should follow its link.
+Preview the page. If remote images cannot load in the embedded preview, read their descriptive alt text and check your markup; the tests do not require a network connection. Every meaningful image should have a useful `alt` description; at least one should reserve visible space with `width` and `height`, and clicking one should follow its link.
 
 ## Your Tasks
 
 1. Add at least **two** `<img>` elements using public image URLs.
-2. Ensure **every image** has a meaningful `alt` attribute.
+2. Give **both images** non-empty, descriptive `alt` text.
 3. Add `width` and `height` attributes to at least one `<img>`.
-4. Wrap one image in an `<a>` tag so clicking it opens a link.
+4. Wrap one image in an `<a href="https://...">` so it links to a useful page.
 
 ## Payoff
 

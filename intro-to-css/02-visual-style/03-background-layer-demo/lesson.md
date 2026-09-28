@@ -20,7 +20,7 @@ hints:
 
 The market needs a welcome panel that feels brighter than a plain block of color. This demo layers a diagonal gradient over a fallback `background-color`.
 
-In `.hero`, `background-image: linear-gradient(135deg, #7c3aed, #ec4899);` creates a color blend. The `135deg` value sets the direction; the two colors set the stops.
+In `.hero`, `background-image: linear-gradient(135deg, #7c3aed, #ec4899);` creates a color blend. The `135deg` value sets the direction; the two colors set the stops. `background-color` remains a solid fallback if the image is unavailable. The other sizing and centering rules are supplied, not part of this exercise.
 
 ## Visible checkpoint
 

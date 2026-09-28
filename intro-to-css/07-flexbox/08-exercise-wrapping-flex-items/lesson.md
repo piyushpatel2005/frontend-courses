@@ -5,7 +5,7 @@ order: 8
 language: html
 summary: "`flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size."
 seo_title: "Exercise: Wrapping and Flex Items | Introduction to CSS"
-seo_description: "Practice `flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size. with a tested CSS exercise."
+seo_description: "Practice wrapping flex items with a nine-rem flexible base size."
 seo_keywords: [CSS, exercise-wrapping-flex-items, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -13,22 +13,14 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Wrapping and Flex Items
+# Exercise: Supply labels
 
-## Mission
-
-The supply labels must form new lines instead of shrinking into unreadable slivers.
+The preceding demo wrapped supply cards when the available width became narrow. Recreate that flexible arrangement. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
 
 ## Your Tasks
 
-1. Make `.supply-row` a flex container.
-2. Allow the supply labels to wrap onto a new line with `flex-wrap: wrap`.
-3. Give `.card` a flexible base size with `flex: 1 1 9rem`.
+1. Set `.supply-row` to `display: flex` so the cards share a flex row.
+2. Set `.supply-row` to `flex-wrap: wrap` so they can flow onto a new row.
+3. Set `.card` to `flex: 1 1 9rem` so each card grows and shrinks from a 9rem basis.
 
-## Checkpoint
-
-Run the preview. The layout should remain easy to scan before you submit the tests.
-
-## Payoff
-
-You have turned one layout intention into clear, reusable CSS.
+**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.

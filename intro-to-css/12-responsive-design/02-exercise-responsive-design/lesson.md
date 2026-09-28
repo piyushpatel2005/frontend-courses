@@ -1,31 +1,28 @@
 ---
-title: Pocket weather bulletin exercise
+title: "Harbor forecast exercise"
 slug: exercise-responsive-design
 order: 2
 language: html
-summary: Make a compact weather bulletin adapt from a narrow phone to a wide desk.
-seo_title: Pocket weather bulletin exercise | Intro to CSS
-seo_description: Learn media queries and flexible layouts by building a small, visible CSS interface.
+summary: "Set a narrow-screen grid and a 42rem two-column media query."
+seo_title: "Harbor forecast exercise | Intro to CSS"
+seo_description: "Practice mobile-first grid columns with a 42rem media query."
 seo_keywords:
   - CSS
   - media queries and flexible layouts
   - HTML
   - beginner CSS
 lesson_type: coding
-hints:
-  - Keep the stylesheet linked from the document head.
-  - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Pocket weather bulletin exercise
+# Harbor forecast exercise
 
-**Mission:** Make a compact weather bulletin adapt from a narrow phone to a wide desk.
+The Harbor weather cards start in a grid, but they need an explicit one-column base and a wider layout. The HTML and the card styling are already supplied; edit only `style.css`.
 
-You just inspected the completed demo. Rebuild its two essential CSS decisions in this starter. Keep the HTML structure intact; the work belongs in `style.css`.
+In the preceding garden forecast, a media query changed the grid's columns when the viewport grew. Here use a 42rem breakpoint instead. You can resize the preview to compare the two states.
 
 ## Your Tasks
 
-1. Start with one grid column for `.forecast` on narrow screens.
-2. Add a `min-width: 42rem` media query that uses two forecast columns.
+1. Set `.forecast` to one `1fr` grid column by default, so the cards stack on a narrow screen.
+2. Inside `@media (min-width: 42rem)`, set `.forecast` to `repeat(2, 1fr)` columns, so the cards share a row on a wide screen.
 
-Run Preview after each change, then submit when both visible outcomes match the demo.
+Submit after checking the narrow and wide views. The next lesson explores sizing that changes continuously rather than at one breakpoint.

@@ -21,7 +21,7 @@ hints:
 
 # Arrange swap table labels
 
-Use the completed display demo as your reference. The seed categories should be compact, the trading note should take its own row, and the organizer helper should disappear.
+Use the completed display demo as your reference. Here the labels are `<span>` elements (inline by default), while the trading note is also a `<span>`; set its display explicitly so it gets a full row. Hide only the organizer-only helper, not any essential instructions.
 
 **Checkpoint:** previewing your styles should show two labels side by side and no helper text.
 

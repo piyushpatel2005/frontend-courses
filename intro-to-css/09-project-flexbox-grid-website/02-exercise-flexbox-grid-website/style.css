@@ -10,12 +10,12 @@ body {
 .schedule-head {
   justify-content: space-between;
   align-items: center;
-  /* Add display. */;
+  /* Add display. */
 }
 .show-grid {
   display: grid;
   gap: 1rem;
-  /* Add grid-template-columns. */;
+  /* Add grid-template-columns. */
 }
 .show-grid article {
   padding: 1rem;

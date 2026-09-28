@@ -1,26 +1,23 @@
-test("page has at least 3 checkboxes", () => {
-  var boxes = document.querySelectorAll('input[type="checkbox"]');
-  assert.exists(boxes.length >= 3, "Add at least 3 checkboxes");
+test("three practice choices", () => {
+  assert.equal(document.querySelectorAll('form input[type="checkbox"]').length >= 3, true, "Add three practice checkboxes");
 });
 
-test("page has at least 3 radio buttons", () => {
-  var radios = document.querySelectorAll('input[type="radio"]');
-  assert.exists(radios.length >= 3, "Add at least 3 radio buttons");
+test("three training windows", () => {
+  assert.equal(document.querySelectorAll('form input[type="radio"]').length >= 3, true, "Add three training-window radios");
 });
 
-test("radio buttons share the same name", () => {
-  var radios = document.querySelectorAll('input[type="radio"]');
-  var names = new Set(Array.from(radios).map(function(r) { return r.name; }));
-  assert.exists(names.size === 1, "All radio buttons should share the same name attribute to group them");
+test("single named radio group", () => {
+  const radios = Array.from(document.querySelectorAll('form input[type="radio"]'));
+  assert.equal(radios.length >= 3, true, "Add training windows first");
+  assert.equal(radios[0].name !== "" && radios.every(r => r.name === radios[0].name), true, "Give every radio the same non-empty name");
 });
 
-test("one radio button is pre-selected", () => {
-  var checked = document.querySelector('input[type="radio"][checked]');
-  assert.exists(checked, "Add the checked attribute to one radio button to pre-select it");
+test("one default training window", () => {
+  assert.equal(document.querySelectorAll('form input[type="radio"][checked]').length, 1, "Mark exactly one radio as checked");
 });
 
-test("page uses fieldset and legend", () => {
-  var fieldsets = document.querySelectorAll("fieldset");
-  var legends = document.querySelectorAll("legend");
-  assert.exists(fieldsets.length >= 1 && legends.length >= 1, "Wrap your inputs in a <fieldset> with a <legend>");
+test("each choice set has a legend", () => {
+  const groups = Array.from(document.querySelectorAll("form fieldset"));
+  const kinds = ['checkbox', 'radio'];
+  assert.equal(kinds.every(kind => groups.some(group => group.querySelector('legend')?.textContent.trim() && group.querySelectorAll(`input[type="${kind}"]`).length >= 3)), true, "Put each choice set in a fieldset with a meaningful legend");
 });

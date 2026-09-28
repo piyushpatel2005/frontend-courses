@@ -17,21 +17,13 @@ hints:
   - Run Preview before submitting your tests.
 ---
 
-# Exercise: Add a Book-Quote Mark
+# Add a book-quote mark
 
-## Mission
-
-Add a visual quotation mark to the featured reader note without touching `index.html`.
+The demo created a decorative quote with `::before`. This time, add it only to the featured reader note; the second note should stay plain. `index.html` already supplies both cards, and `style.css` supplies their readable dark backgrounds.
 
 ## Your Tasks
 
-1. Target the first `.card` with a `::before` pseudo-element and give it non-empty `content`.
-2. Set the pseudo-element `content` to an opening quotation mark (`“`).
+1. Add `.card:first-child::before` with `content: "“"` to place an opening quote before the first note.
+2. In that same rule, set `color: #fbbf24` to distinguish the quote from the note text.
 
-## Checkpoint
-
-Use `::before` and `content` for a small decorative detail that belongs to CSS.
-
-## Payoff
-
-You now have another focused CSS tool for making interfaces easier to use.
+**Checkpoint:** Preview shows a gold quotation mark on the first card only.

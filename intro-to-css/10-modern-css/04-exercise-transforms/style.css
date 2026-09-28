@@ -1,1 +1,16 @@
-/* Add the requested CSS rules here. */
+.page-shell {
+  max-width: 42rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.stamp-row {
+  display: flex;
+  gap: 1rem;
+}
+.card {
+  padding: 1rem;
+  border: 2px solid #4d7c0f;
+  background: #f7fee7;
+}
+.tilted {
+}

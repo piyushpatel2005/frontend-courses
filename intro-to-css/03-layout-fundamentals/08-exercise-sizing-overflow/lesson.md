@@ -21,7 +21,7 @@ hints:
 
 ## Mission
 
-Keep an unusually detailed notice readable inside a small seed-swap card.
+The demo used a scrollable seed-swap card. This notice has a new, longer message; its card and row layout are supplied, including a height limit. Set the three missing sizing/overflow properties in `.card`.
 
 ## Your Tasks
 
@@ -31,8 +31,8 @@ Keep an unusually detailed notice readable inside a small seed-swap card.
 
 ## Checkpoint
 
-Use a width, max-width, and overflow rule to make a component resilient.
+Run the preview and scroll within the long note. Narrow the preview if possible; the cards should not become wider than the available row.
 
 ## Payoff
 
-You now have another focused CSS tool for making interfaces easier to use.
+You can cap a card's width and keep long text inside its height limit. After the layout quiz, the next module returns to selectors so you can target styles more precisely.

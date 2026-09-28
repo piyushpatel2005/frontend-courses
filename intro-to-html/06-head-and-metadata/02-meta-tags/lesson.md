@@ -22,7 +22,7 @@ The walking club is sharing its route page with new members. The page itself sta
 
 A concise reference of meta tags that handle encoding, viewport, search description, social sharing (Open Graph), author, and crawl instructions.
 
-The walking club is sharing its route page with new members. The page itself stays the same, but its hidden metadata decides whether a phone displays it correctly and whether a shared link has a useful title and summary. Read the head as a small briefing for browsers and services.
+You already set the route page’s title, viewport, and description. Here are other metadata fields you might meet when sharing it.
 
 ## The core briefing
 
@@ -92,4 +92,4 @@ The route page now has a clear hidden briefing: browsers can render it, search t
 
 ## Learn more
 
-MDN’s official documentation explains the available metadata, including description-related tags used by search engines and social previews. Read [MDN’s reference for MDN metadata in HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta) when you want to go further.
+MDN’s official documentation explains the available metadata, including description-related tags used by search engines and social previews. Read [MDN’s reference for the HTML meta element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta) when you want to go further.

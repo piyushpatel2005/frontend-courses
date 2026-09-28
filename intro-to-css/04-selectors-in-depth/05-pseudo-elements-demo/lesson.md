@@ -17,20 +17,12 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Pseudo-Elements Demo
+# Pseudo-elements: a note in the margin
 
-## Mission
+The Moonlit Book Cart puts a decorative opening quote before its featured reader note. The quote is presentation, not part of the note text in `index.html`.
 
-The Moonlit Book Cart wants one quotation mark to lead its featured reader note without adding extra HTML.
+In `style.css`, `.card:first-child::before` selects a generated piece *before the content* of the first card. `content: "“"` creates it; without `content`, `::before` has nothing to display. The gold `color` makes the new mark easy to spot. The second card stays unmarked.
 
-## What to notice
+**Checkpoint:** one gold opening quote appears on the first dark card, not on the second.
 
-A pseudo-element such as `::before` can create a presentational piece attached to a selected element.
-
-## Try the preview
-
-Change one visible value in `style.css`, run the preview, and observe the difference. Restore the original value before the exercise so this completed page remains your reference.
-
-## Checkpoint
-
-You can point to the selector, property, and value responsible for the visual change.
+Change the quote's `color` to another visible color and run Preview; restore `#fbbf24` before the exercise.

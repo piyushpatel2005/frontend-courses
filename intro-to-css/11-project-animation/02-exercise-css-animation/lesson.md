@@ -19,13 +19,13 @@ hints:
 
 # Kite festival signal exercise
 
-**Mission:** Add gentle motion to the Kite Festival signal without making it distracting.
+**Mission:** Give a garden festival banner a small drift without making motion mandatory.
 
-You just inspected the completed demo. Rebuild its two essential CSS decisions in this starter. Keep the HTML structure intact; the work belongs in `style.css`.
+The demo kite showed keyframes and hover transitions. The HTML now supplies a garden banner (still styled by `.kite`), and the starter supplies its keyframes and reduced-motion rule. Complete the two missing declarations in `style.css`.
 
 ## Your Tasks
 
-1. Animate `.kite` with the `drift` keyframes.
-2. Add a transform transition to the button.
+1. Set `.kite` to use `animation-name: drift`; the other animation settings are supplied.
+2. Add `transition: transform 160ms ease` to the button.
 
-Run Preview after each change, then submit when both visible outcomes match the demo.
+Run Preview to watch the banner and hover the button, then Submit. Motion stops for visitors who prefer reduced motion.

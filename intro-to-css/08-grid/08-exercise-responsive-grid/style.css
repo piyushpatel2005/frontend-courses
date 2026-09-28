@@ -1,1 +1,15 @@
-/* Add the rules requested in Your Tasks. */
+.page-shell {
+  max-width: 46rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.card {
+  padding: 1rem;
+  border-radius: .75rem;
+  background: #cfe8ff;
+}

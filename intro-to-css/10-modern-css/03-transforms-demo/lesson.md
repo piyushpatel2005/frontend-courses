@@ -25,11 +25,11 @@ A field-note stamp needs a small rotation so it looks pinned to the observation 
 
 ## What to notice
 
-`transform` changes an element visually without changing the surrounding layout flow.
+The `.tilted` rule rotates the pinned note by `-3deg`. Transforms change how an item is painted without moving its neighbor in the flex layout. `transform-origin: left center` makes it pivot around its left edge.
 
 ## Try the preview
 
-Change one visible value in `style.css`, run the preview, and observe the difference. Restore the original value before the exercise so this completed page remains your reference.
+Change `-3deg` to `3deg`, run Preview to see the tilt reverse, then restore it.
 
 ## Checkpoint
 

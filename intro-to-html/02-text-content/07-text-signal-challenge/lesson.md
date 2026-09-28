@@ -5,7 +5,7 @@ order: 7
 language: html
 summary: Combine headings, paragraph text, and a list in an original rescue signal.
 seo_title: "HTML Text Content Review | Introduction to HTML"
-seo_description: Practice using an HTML heading, paragraph, and unordered list to build a simple recipe card.
+seo_description: Practice an HTML heading, status paragraph, and rescue-gear list in a short signal.
 seo_keywords:
   - HTML practice
   - HTML headings
@@ -20,13 +20,11 @@ hints:
 
 ## Mission
 
-the Meridian crew must transmit a short rescue signal. It needs a title, a clear status paragraph, and a compact list of gear for the response team.
+The Meridian crew must transmit a short rescue signal. It needs a title, a clear status paragraph, and a compact list of gear for the response team.
 
 ## What you'll build
 
-A compact recipe card with one heading, a paragraph, and a three-item ingredient list.
-
-Build a short recipe card using the text elements from this section.
+A compact rescue signal with one heading, a status paragraph, and a three-item gear list.
 
 ## Checkpoint
 
@@ -40,4 +38,4 @@ When you preview the card, you should see one main heading, a readable paragraph
 
 ## Payoff
 
-You have a compact recipe card whose title, explanation, and ingredients each use the HTML structure that fits them.
+The response team can scan your signal title, status, and gear list.

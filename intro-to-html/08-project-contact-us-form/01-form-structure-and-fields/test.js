@@ -1,37 +1,44 @@
-test("page has a post form", () => {
-  const form = document.querySelector("form");
-  assert.exists(form, "Add a <form> element");
-  assert.equal((form.getAttribute("method") || "").toLowerCase(), "post", "Set form method to post");
+test("post form", () => {
+  const form = document.querySelector("body > form");
+  assert.exists(form, "Add a form below the heading");
+  assert.equal(form.method.toLowerCase(), "post", "Use method=post");
 });
 
-test("required name and email fields exist", () => {
-  const nameInput = document.querySelector('input[type="text"][required]');
-  const emailInput = document.querySelector('input[type="email"][required]');
-  assert.exists(nameInput, "Add required text input for name");
-  assert.exists(emailInput, "Add required email input");
+test("name field", () => {
+  assert.exists(document.querySelector('form input[type="text"]'), "Add a text input for Name inside the form");
 });
 
-test("message textarea exists", () => {
-  const message = document.querySelector("textarea");
-  assert.exists(message, "Add a textarea for message");
+test("email field", () => {
+  assert.exists(document.querySelector('form input[type="email"]'), "Add an email input inside the form");
 });
 
-test("topic select has at least 3 options", () => {
-  const topic = document.querySelector("select");
-  assert.exists(topic, "Add a select field for topic");
-  assert.isAtLeast(topic.querySelectorAll("option").length, 3, "Topic select should have at least 3 options");
+test("message field", () => {
+  assert.exists(document.querySelector("form textarea"), "Add a Message textarea inside the form");
 });
 
-test("form has a submit control", () => {
-  const submit = document.querySelector('button[type="submit"], input[type="submit"]');
-  assert.exists(submit, "Add a submit button");
+test("name is required", () => {
+  assert.exists(document.querySelector('form input[type="text"][required]'), "Require a name");
 });
 
-test("all form controls have linked labels", () => {
-  const controls = Array.from(document.querySelectorAll("input, textarea, select"));
-  const linked = controls.every((el) => {
-    if (!el.id) return false;
-    return document.querySelector('label[for="' + el.id + '"]') !== null;
-  });
-  assert.isTrue(linked, "Each form control must have a matching <label for=...>");
+test("email is required", () => {
+  assert.exists(document.querySelector('form input[type="email"][required]'), "Require an email");
+});
+
+test("topic choices", () => {
+  const select = document.querySelector("form select");
+  assert.exists(select, "Add a Topic menu");
+  const choices = Array.from(select.options).map(option => option.textContent.trim().toLowerCase());
+  assert.equal(choices.length >= 3, true, "Add three topic choices");
+  assert.equal([/book/, /volunteer/, /access/].every(pattern => choices.some(text => pattern.test(text))), true, "Offer room booking, volunteering, and accessibility topics");
+});
+
+test("submit button", () => {
+  assert.exists(document.querySelector('form button[type="submit"], form input[type="submit"]'), "Put a submit button in the form");
+});
+
+test("all four fields have visible connected labels", () => {
+  const controls = ['input[type="text"]', 'input[type="email"]', 'textarea', 'select'].map(selector => document.querySelector(`form ${selector}`));
+  assert.equal(controls.every(Boolean), true, "Add the four form fields first");
+  const labels = Array.from(document.querySelectorAll('form label[for]'));
+  assert.equal(controls.every(control => control.id && labels.some(label => label.htmlFor === control.id && label.textContent.trim())), true, "Give each field a matching, visible label");
 });

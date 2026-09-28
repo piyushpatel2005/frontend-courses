@@ -7,34 +7,41 @@
 <body>
   <h1>Contact Us</h1>
 
-  <form method="post">
+  <form method="post" action="/contact">
     <label for="name">Name</label>
     <input id="name" name="name" type="text" required />
 
     <label for="email">Email</label>
     <input id="email" name="email" type="email" required />
 
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic">
+      <option value="booking">Room booking</option>
+      <option value="volunteering">Volunteering</option>
+      <option value="accessibility">Accessibility request</option>
+    </select>
+
     <label for="message">Message</label>
-    <textarea id="message" name="message"></textarea>
+    <textarea id="message" name="message" rows="5"></textarea>
 
     <fieldset>
       <legend>Interests</legend>
-      <label><input type="checkbox" name="interests" value="product" /> Product Demo</label>
-      <label><input type="checkbox" name="interests" value="support" /> Support</label>
+      <label><input type="checkbox" name="interests" value="booking" /> Room booking</label>
+      <label><input type="checkbox" name="interests" value="volunteering" /> Volunteering</label>
     </fieldset>
+
+    <label for="phone">Phone (optional for a call back)</label>
+    <input id="phone" name="phone" type="tel" />
 
     <fieldset>
-      <legend>Preferred Contact Method</legend>
-      <label><input type="radio" name="contact_method" value="email" /> Email</label>
-      <label><input type="radio" name="contact_method" value="phone" /> Phone</label>
+      <legend>Preferred reply method</legend>
+      <label><input type="radio" name="reply_method" value="email" /> Email</label>
+      <label><input type="radio" name="reply_method" value="phone" /> Phone</label>
     </fieldset>
 
-    <label>
-      <input type="checkbox" name="consent" required />
-      I agree to be contacted about my request.
-    </label>
+    <label><input type="checkbox" name="consent" required /> I agree to be contacted about my request.</label>
 
-    <button type="submit">Submit</button>
+    <button type="submit">Send Message</button>
   </form>
 </body>
 </html>

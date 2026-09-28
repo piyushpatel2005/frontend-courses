@@ -1,21 +1,34 @@
 test("page has a container div", () => {
-  var container = document.querySelector("div.container");
-  assert.exists(container, "Add a <div class=\"container\"> to wrap your content");
+  assert.count("body > div.container", 1, 'Add one <div class="container"> for the swap list');
 });
 
-test("page has at least two card divs", () => {
-  var cards = document.querySelectorAll("div.card");
-  assert.exists(cards.length >= 2, "Add at least two <div class=\"card\"> elements");
+test("container groups two card divs", () => {
+  const cards = document.querySelectorAll("body > div.container > div.card");
+  assert.equal(cards.length >= 2, true, 'Add two <div class="card"> elements inside the container');
 });
 
-test("each card has a heading and paragraph", () => {
-  var cards = document.querySelectorAll("div.card");
-  var allHaveContent = Array.from(cards).every(function(card) {
-    return card.querySelector("h2") && card.querySelector("p");
+test("each card names its item", () => {
+  const cards = document.querySelectorAll("body > div.container > div.card");
+  assert.equal(cards.length >= 2, true, "Add both cards first");
+  Array.from(cards).forEach(card => {
+    const heading = card.querySelector("h2");
+    assert.exists(heading, "Give each card an <h2>");
+    assert.notEqual(heading.textContent.trim(), "", "Name each item");
   });
-  assert.exists(allHaveContent, "Each .card should contain an <h2> and a <p>");
 });
 
-test("page uses a span element", () => {
-  assert.count("span", 1, "Add a <span> to highlight a word inside a paragraph");
+test("each card describes its item", () => {
+  const cards = document.querySelectorAll("body > div.container > div.card");
+  assert.equal(cards.length >= 2, true, "Add both cards first");
+  Array.from(cards).forEach(card => {
+    const paragraph = card.querySelector("p");
+    assert.exists(paragraph, "Give each card a <p>");
+    assert.notEqual(paragraph.textContent.trim(), "", "Describe each item");
+  });
+});
+
+test("a card description marks a word inline", () => {
+  const span = document.querySelector(".container .card p span.highlight");
+  assert.exists(span, 'Wrap a key word in <span class="highlight"> inside a card paragraph');
+  assert.notEqual(span.textContent.trim(), "", "Write a key word inside the span");
 });

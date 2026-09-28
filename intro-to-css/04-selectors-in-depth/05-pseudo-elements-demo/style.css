@@ -3,11 +3,9 @@
   margin: 3rem auto;
   font-family: Georgia, serif;
 }
-.quote-card {
-  display: grid;
-  gap: 1rem;
-}
 .card {
+  display: block;
+  margin-bottom: 1rem;
   padding: 1.25rem;
   background: #1f2937;
   color: #f8fafc;

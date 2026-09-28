@@ -14,5 +14,5 @@
 }
 .tilted {
   transform: rotate(-3deg);
-  transform-origin: center;
+  transform-origin: left center;
 }

@@ -8,7 +8,11 @@ body {
   display: inline-block;
   font-size: 5rem;
   color: #f97316;
-  animation: drift 2s ease-in-out infinite alternate;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-name: drift;
 }
 button {
   padding: .7rem 1rem;
@@ -28,4 +32,9 @@ button:hover {
   to {
     transform: translateY(-14px);
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kite { animation: none; }
+  button { transition: none; }
 }

@@ -5,7 +5,7 @@ order: 1
 language: html
 summary: "A flex container has a main axis; `flex-direction` changes it."
 seo_title: "Flex Direction Demo | Introduction to CSS"
-seo_description: "Learn a flex container has a main axis; `flex-direction` changes it. in a completed CSS preview."
+seo_description: "Inspect flex-direction and compare a horizontal trail-kit row with a vertical column."
 seo_keywords: [CSS, flex-direction-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,26 +13,17 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Flex Direction Demo
+# Trail kit: completed layout
 
-## Mission
+The demo places three trail-kit cards in a horizontal row. Compare that row with a column before building the vertical version in the next exercise. This completed preview shows the layout before you edit the next exercise.
 
-Flex direction decides whether a trail-kit list grows across or down.
+In `style.css`, `.kit-row` controls the section. `display: flex` turns the kit section into a flex container. The main axis follows `flex-direction: row` from left to right; column would stack the items from top to bottom.
+![Diagram of the main and cross axes of a horizontal flex container.](assets/flex-axes.svg)
 
-## What to notice
 
-A flex container has a main axis; `flex-direction` changes it.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
+**Checkpoint:** inspect the card positions in Preview and locate `flex-direction: row` in the stylesheet.
 
-![Diagram of Flexbox main and cross axes.](assets/flex-axes.svg)
-
-## Try the preview
-
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
-
+Change `flex-direction` temporarily to `column`, run Preview, and compare the positions. Restore `row` before moving to the exercise.
 ## Learn more
 
-MDN’s official guide explains flex axes, alignment, wrapping, and the other layout controls you will use next. Read [MDN’s reference for CSS flexible box layout](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout) when you want to go further.
+See [MDN’s guide to CSS flexible box layout](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout) for more examples.

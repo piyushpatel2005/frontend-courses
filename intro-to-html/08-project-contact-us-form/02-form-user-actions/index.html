@@ -2,24 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Contact Us Form Actions</title>
+  <title>Contact Us Form</title>
 </head>
 <body>
   <h1>Contact Us</h1>
 
-  <form method="post">
+  <form method="post" action="/contact">
     <label for="name">Name</label>
-    <input id="name" type="text" required />
+    <input id="name" name="name" type="text" required />
 
     <label for="email">Email</label>
-    <input id="email" type="email" required />
+    <input id="email" name="email" type="email" required />
+
+    <label for="topic">Topic</label>
+    <select id="topic" name="topic">
+      <option value="booking">Room booking</option>
+      <option value="volunteering">Volunteering</option>
+      <option value="accessibility">Accessibility request</option>
+    </select>
 
     <label for="message">Message</label>
-    <textarea id="message"></textarea>
+    <textarea id="message" name="message" rows="5"></textarea>
 
-    <!-- Add checkbox/radio actions -->
+    <!-- Add interest, reply-method, and consent choices here. -->
 
-    <button type="submit">Submit</button>
+    <button type="submit">Send Message</button>
   </form>
 </body>
 </html>

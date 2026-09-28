@@ -1,1 +1,18 @@
-/* Add the requested CSS rules here. */
+.page-shell {
+  max-width: 42rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.vendor-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.card {
+  padding: 1.25rem;
+  background: #fffbeb;
+  /* Add border, border-radius, and box-shadow here. */
+}
+.featured {
+  background: #fef3c7;
+}

@@ -5,6 +5,7 @@ test("packet has inner padding", () => {
 test("packet has a green border", () => {
   const packet = document.querySelector(".packet");
   assert.equal(getComputedStyle(packet).borderTopWidth, "4px", "Add a 4px border to .packet.");
+  assert.equal(getComputedStyle(packet).borderTopStyle, "solid", "Use a solid packet border.");
   assert.equal(getComputedStyle(packet).borderTopColor, "rgb(60, 110, 71)", "Use #3c6e47 for the border color.");
 });
 

@@ -1,5 +1,6 @@
 test('Give the notice card a readable fixed starting width.', () => {
-  assert.equal(getComputedStyle(document.querySelector('.card')).width, '224px', 'Set .card width to 14rem.');
+  const rule = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || [])).find(rule => rule.selectorText === '.card' && rule.style.width);
+  assert.equal(rule?.style.width, '14rem', 'Set .card width to 14rem.');
 });
 
 test('Keep the card from overflowing a narrow container.', () => {

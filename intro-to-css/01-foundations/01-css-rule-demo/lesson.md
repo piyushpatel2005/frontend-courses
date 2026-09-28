@@ -24,7 +24,7 @@ A museum card with a pale background and blue heading.
 
 ## Read the code
 
-```html
+```css
 body { background-color: #f6f8fb; }
 h1 { color: #1b4d8c; }
 ```
@@ -35,7 +35,7 @@ Run the completed page. Then, just for exploration, change the `h1` color in `st
 
 ## Checkpoint
 
-Identify the selector, property, and value that created the visible change. Nothing needs editing in this demo.
+In `h1 { color: #1b4d8c; }`, `h1` selects the heading, `color` names the text property, and `#1b4d8c` is its value. This demo is already complete.
 
 ## Next
 

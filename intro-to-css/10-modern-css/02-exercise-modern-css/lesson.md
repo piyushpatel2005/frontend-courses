@@ -21,11 +21,11 @@ hints:
 
 **Mission:** Use reusable CSS values to give a field-note card a stable color system.
 
-You just inspected the completed demo. Rebuild its two essential CSS decisions in this starter. Keep the HTML structure intact; the work belongs in `style.css`.
+The HTML supplies another observation card. Its starter CSS already uses `var(--accent)` on the border and hover button, but the property is not defined yet. Edit only `style.css`.
 
 ## Your Tasks
 
-1. Define `--accent` on `:root` and use it for the note border.
-2. Add a `background-color` transition to the button.
+1. Define `--accent: #e76f51` on `:root`; the border and button already use it.
+2. Add `transition: background-color 180ms ease` to the button.
 
 Run Preview after each change, then submit when both visible outcomes match the demo.

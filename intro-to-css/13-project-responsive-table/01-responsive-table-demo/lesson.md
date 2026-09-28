@@ -1,30 +1,27 @@
 ---
-title: Library tool checkout demo
+title: "Seed inventory table demo"
 slug: responsive-table-demo
 order: 1
 language: html
-summary: Keep a library tool checkout table readable on small screens.
-seo_title: Library tool checkout demo | Intro to CSS
-seo_description: Learn responsive overflow and table styling by building a small, visible CSS interface.
+summary: "Inspect a horizontally scrollable data table on a narrow screen."
+seo_title: "Seed inventory table demo | Intro to CSS"
+seo_description: "See a seed inventory keep its columns legible using overflow-x and min-width."
 seo_keywords:
   - CSS
   - responsive overflow and table styling
   - HTML
   - beginner CSS
 lesson_type: coding
-hints:
-  - Keep the stylesheet linked from the document head.
-  - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Library tool checkout demo
+# Seed inventory table demo
 
-**Mission:** Keep a library tool checkout table readable on small screens.
+A seed-library inventory has several columns. On a narrow phone, shrinking every column until its text is unreadable is less useful than letting the table scroll inside its own wrapper.
 
-This finished mini-build shows **responsive overflow and table styling** in context. In `style.css`, find the declarations that shape the preview and connect each selector to the element it changes.
+The HTML places `<table>` inside `.table-wrap`. In `style.css`, `table` fills its wrapper but stays at least 30rem wide. `.table-wrap { overflow-x: auto; }` gives it a horizontal scrollbar only when the table is wider than the available space. The heading and rest of the page do not have to scroll sideways.
 
 ## Try the demo
 
-Change one visible value in `style.css` (such as a color, gap, or size), select **Run Preview**, and observe exactly what moves or changes. Restore the original value before continuing so the completed example remains your reference.
+Narrow the preview below the table's minimum width, then scroll the table sideways to the last column. Widen it and the scroll is no longer necessary. Temporarily remove `overflow-x: auto` to see why the wrapper matters, then restore it.
 
-**Checkpoint:** the preview already shows the finished library tool checkout demo interface. The next lesson asks you to recreate its key rules from a small starter.
+**Checkpoint:** All three columns remain legible at a narrow width. Next, apply the same pair of decisions to a tool checkout table.

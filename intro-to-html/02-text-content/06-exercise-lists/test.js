@@ -4,7 +4,7 @@ test("page has an ordered list", () => {
 
 test("ordered list has at least 3 items", () => {
   var items = document.querySelectorAll("ol li");
-  assert.exists(items.length >= 3, "Add at least 3 <li> items inside your <ol>");
+  assert.equal(items.length >= 3, true, "Add at least 3 <li> items inside your <ol>");
 });
 
 test("page has an unordered list", () => {
@@ -13,7 +13,7 @@ test("page has an unordered list", () => {
 
 test("unordered list has at least 3 items", () => {
   var items = document.querySelectorAll("ul li");
-  assert.exists(items.length >= 3, "Add at least 3 <li> items inside your <ul>");
+  assert.equal(items.length >= 3, true, "Add at least 3 <li> items inside your <ul>");
 });
 
 test("page has a description list", () => {
@@ -22,5 +22,9 @@ test("page has a description list", () => {
 
 test("description list has at least 2 terms", () => {
   var terms = document.querySelectorAll("dl dt");
-  assert.exists(terms.length >= 2, "Add at least 2 <dt> terms inside your <dl>");
+  assert.equal(terms.length >= 2, true, "Add at least 2 <dt> terms inside your <dl>");
+  Array.from(terms).forEach(term => {
+    assert.equal(term.nextElementSibling?.tagName, "DD", "Follow each <dt> with a <dd> definition");
+    assert.notEqual(term.nextElementSibling.textContent.trim(), "", "Write a definition for each term");
+  });
 });

@@ -21,10 +21,10 @@ hints:
 
 **Mission:** Combine flexbox and grid for a one-page River Radio schedule.
 
-This finished mini-build shows **using flexbox for controls and grid for cards** in context. In `style.css`, find the declarations that shape the preview and connect each selector to the element it changes.
+`.schedule-head` uses Flexbox to place the title and button at opposite ends of a row (`justify-content: space-between`). `.show-grid` uses Grid for three equal show columns (`repeat(3, 1fr)`). Flexbox handles the single row; Grid handles the card tracks.
 
 ## Try the demo
 
-Change one visible value in `style.css` (such as a color, gap, or size), select **Run Preview**, and observe exactly what moves or changes. Restore the original value before continuing so the completed example remains your reference.
+Change `.show-grid` to two columns and see the last show wrap. Restore three columns. Then remove `display: flex` from `.schedule-head` and notice the button drop below the title; restore it before continuing.
 
 **Checkpoint:** the preview already shows the finished river radio schedule demo interface. The next lesson asks you to recreate its key rules from a small starter.

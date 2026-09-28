@@ -1,1 +1,14 @@
-/* Add the rules requested in Your Tasks. */
+.page-shell {
+  max-width: 46rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.kit-row {
+  flex-direction: row;
+  gap: 1rem;
+}
+.card {
+  padding: 1rem;
+  border-radius: .75rem;
+  background: #dff1ff;
+}

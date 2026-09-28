@@ -25,15 +25,15 @@ The night-market vendor cards need clear edges and enough depth to stand apart f
 
 ## What to notice
 
-Borders define an edge; border radius softens it; a box shadow gives an element visual elevation.
+In `.card`, `border: 2px solid #f59e0b` draws an amber edge; `border-radius: 1rem` rounds its corners; and `box-shadow: 0 0.5rem 1rem rgb(120 53 15 / 20%)` puts a soft shadow below. The two-column layout is supplied here; Grid is taught later.
 
 ## Try the preview
 
-Change one visible value in `style.css`, run the preview, and observe the difference. Restore the original value before the exercise so this completed page remains your reference.
+Change `.card`'s `border-radius` from `1rem` to `0`, run the preview, and notice the square corners. Restore `1rem` before the exercise.
 
 ## Checkpoint
 
-You can point to the selector, property, and value responsible for the visual change.
+Both vendor cards have an amber border, rounded corners, and a soft shadow. The following exercise asks you to recreate these on a different pair of cards.
 
 ## Learn more
 

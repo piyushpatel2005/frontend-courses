@@ -5,12 +5,14 @@
 }
 .notice-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 .card {
+  box-sizing: border-box;
   width: 14rem;
   max-width: 100%;
-  min-height: 8rem;
+  max-height: 7rem;
   overflow: auto;
   padding: 1rem;
   background: #ecfdf5;

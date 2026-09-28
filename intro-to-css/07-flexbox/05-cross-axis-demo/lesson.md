@@ -5,7 +5,7 @@ order: 5
 language: html
 summary: "`align-items` aligns items across the cross axis."
 seo_title: "Cross-Axis Alignment Demo | Introduction to CSS"
-seo_description: "Learn `align-items` aligns items across the cross axis. in a completed CSS preview."
+seo_description: "See align-items center line up short and tall trip-briefing cards."
 seo_keywords: [CSS, cross-axis-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,20 +13,12 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Cross-Axis Alignment Demo
+# Trip briefing: completed layout
 
-## Mission
+Line up a short status card beside a taller weather card. This completed preview shows the layout before you edit the next exercise.
 
-A status badge and a taller weather card need to line up cleanly in the trip briefing.
+In `style.css`, `.briefing-row` controls the section. With a horizontal main axis, the cross axis runs top to bottom. align-items: center puts the cards’ vertical centers on the same line instead of stretching them.
 
-## What to notice
+**Checkpoint:** inspect the card positions in Preview and locate `align-items: center` in the stylesheet.
 
-`align-items` aligns items across the cross axis.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
-
-## Try the preview
-
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
+Change `align-items` temporarily to `flex-start`, run Preview, and compare the positions. Restore `center` before moving to the exercise.

@@ -20,11 +20,11 @@ The museum card has three kinds of content: ordinary notes, a caution note, and 
 
 ## What you'll see
 
-A specimen card where paragraphs have comfortable spacing, the caution note has a highlight, and the title has a distinct color.
+A specimen card where the two-line paragraph has comfortable line spacing, the caution note has a highlight, and the title has a distinct color.
 
 ## Read the code
 
-```html
+```css
 p { line-height: 1.6; }
 .note { background-color: #fff4cc; }
 #specimen-title { color: #7a1fa2; }
@@ -36,7 +36,7 @@ Run the completed page. Then change `#specimen-title` from `#7a1fa2` to another 
 
 ## Checkpoint
 
-Identify the selector, property, and value that created the visible change. Nothing needs editing in this demo.
+`p` selects both paragraphs, `.note` selects only the paragraph with that class, and `#specimen-title` selects the unique heading. The demo is already complete.
 
 ## Next
 

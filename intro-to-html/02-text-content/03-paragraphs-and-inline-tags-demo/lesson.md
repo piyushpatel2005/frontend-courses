@@ -41,7 +41,7 @@ Run the page. Notice that every example remains inside an ordinary paragraph; th
 
 ## Checkpoint
 
-You should be able to identify which tags carry meaning (`<em>`, `<strong>`, `<del>`, `<ins>`) and which visual effects are usually better controlled with CSS (`<b>`, `<i>`, `<u>`).
+Try removing the `<br>` from the first paragraph and rerun to see how the lines flow, then restore it. Notice which tags carry meaning (`<em>`, `<strong>`, `<del>`, `<ins>`) and which visual effects are usually better controlled with CSS (`<b>`, `<i>`, `<u>`).
 
 ## Next
 

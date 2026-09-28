@@ -20,7 +20,7 @@ hints:
 
 ## Mission
 
-the crew has enough control to request backup. Create the smallest useful emergency beacon: it needs a destination, a reliable contact method, and a single response channel.
+The crew has enough control to request backup. Create the smallest useful emergency beacon: it needs a destination, a reliable contact method, and a single response channel.
 
 ## What you'll build
 
@@ -28,9 +28,10 @@ A concise emergency-beacon form with an action, connected email label, two group
 
 ## Your Tasks
 
-1. Add a form with a non-empty `action` value.
+1. Add a form with a non-empty illustrative `action` value (there is no live endpoint in the preview).
 2. Add an email input with an `id` and a label whose `for` matches it.
-3. Add at least two radio inputs sharing a `name`, plus a submit button.
+3. Add at least two labeled radio inputs sharing a non-empty `name` for the response channel.
+4. Add a submit button inside the form.
 
 ## Checkpoint
 
@@ -38,4 +39,4 @@ Click the email label and choose a response channel. The label should focus the 
 
 ## Payoff
 
-the crew can now send a focused backup request using the form controls earned in this section.
+The crew can now send a focused backup request using the form controls earned in this section.

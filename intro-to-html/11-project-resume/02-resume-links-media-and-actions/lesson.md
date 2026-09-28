@@ -17,11 +17,11 @@ hints:
 
 ## Mission
 
-The Riverstone Makers' Fair organizer can now scan Sam's resume, but needs quick ways to view work, send a message, and save a copy. Add those actions without losing the clear structure you built in the first resume lesson.
+The Riverstone Makers' Fair organizer can now scan Sam's resume, but needs quick ways to view work, send a message, and save a copy. Your starter is the completed resume from the previous lesson; keep its header, three sections, skills list, and footer. Add those actions without losing the clear structure you built in the first resume lesson.
 
 ## What you'll build
 
-A resume enhanced with a captioned figure, two external portfolio links opening in new tabs, an email action link, and a downloadable resume PDF — all keeping the existing semantic structure.
+Sam’s existing resume enhanced with a captioned project image, two external links opening in new tabs, an email action, and a download link. The portfolio URLs and PDF filename are placeholders until Sam hosts real work and a PDF.
 
 **Target:** a resume with a captioned work image, two external destinations, an email action, and a download link. In the preview, visitors can tell what the image represents and where every action will take them.
 
@@ -42,7 +42,7 @@ For direct contact, a `mailto:` URL opens the visitor's email app with the addre
 <a href="mailto:sam.rivera@example.com">Email Sam</a>
 ```
 
-Use `download` when the link is a file that visitors should save instead of navigate to.
+Use `download` when the link is a file that visitors should save instead of navigate to. Host a same-origin PDF at the named path before sharing this link; no PDF is supplied in the editor. Likewise, replace example portfolio URLs with Sam’s real work before publishing.
 
 ```html
 <a href="sam-rivera-resume.pdf" download>Download resume PDF</a>
@@ -61,14 +61,14 @@ A profile image or project snapshot needs a text alternative and a visible capti
 
 ## Checkpoint
 
-Preview the page. The figure caption should sit with the image. The two portfolio links should be ready to open in a new tab, the email link should begin with `mailto:`, and the download link should carry `download`. If a link acts like plain text, check that the destination is in its `href` attribute.
+Preview the page. The figure caption should sit with the image. Try your own image URL or a small data-URL illustration so the preview can display it without an uploaded file. The two portfolio links should be ready to open in a new tab, the email link should begin with `mailto:`, and the download link should carry `download`. If a link acts like plain text, check that the destination is in its `href` attribute.
 
 ## Your Tasks
 
-1. Add a `<figure>` with a profile or work image and a `<figcaption>`.
-2. Add at least two external links—for example, a portfolio and code profile—that open in a new tab with `target="_blank"`.
-3. Add one `mailto:` link so a visitor can start a contact email.
-4. Add one downloadable resume link using the `download` attribute.
+1. Add a `<figure>` inside `<main>` with a project image, descriptive `alt` text, and a visible `<figcaption>`.
+2. Add two labeled `https://` links to work samples inside `<main>`; open both in a new tab with `target="_blank"` and `rel="noopener"`.
+3. Add a `mailto:sam.rivera@example.com` link so a visitor can start a contact email.
+4. Add a download link to `sam-rivera-resume.pdf` using the `download` attribute. This filename is a placeholder; it will work when you host the actual PDF beside the page.
 
 ## Payoff
 

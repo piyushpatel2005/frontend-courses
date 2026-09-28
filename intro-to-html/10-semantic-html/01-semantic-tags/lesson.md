@@ -19,7 +19,7 @@ hints:
 
 ## Mission
 
-The Riverstone Community Garden is publishing a short harvest update. Build a page whose regions are clear enough for a visitor—or a screen-reader user—to jump straight to the update, its related links, or its contact details.
+The Riverstone Community Garden is publishing a short harvest update. This is a new page, separate from the hall’s media examples. Build a page whose regions are clear enough for a visitor—or a screen-reader user—to jump straight to the update, its related links, or its contact details.
 
 ## What you'll build
 
@@ -46,32 +46,32 @@ For this garden update, use:
 
 ## Build the update's landmarks
 
-Start with the outer shape. Notice that `<nav>` belongs inside the `<header>`, while the update and its sidebar belong inside `<main>`.
+Here is the same landmark pattern on a **library** notice. Notice that `<nav>` belongs inside the `<header>`, while the announcement and its sidebar belong inside `<main>`. Transfer that structure to the garden update.
 
 ```html
 <header>
-    <h1>Riverstone Community Garden</h1>
+    <h1>Willow Lane Library</h1>
     <nav>
-        <a href="/plots">Plots</a>
-        <a href="/events">Events</a>
+        <a href="/catalog">Catalog</a>
+        <a href="/hours">Hours</a>
     </nav>
 </header>
 
 <main>
     <article>
-        <h2>Saturday Harvest Share</h2>
-        <p>Tomatoes and basil will be ready at the tool shed.</p>
+        <h2>Saturday Story Hour</h2>
+        <p>Story hour starts at ten in the reading room.</p>
         <time datetime="2026-08-15">August 15, 2026</time>
     </article>
 
     <aside>
-        <h3>Garden links</h3>
-        <a href="/volunteer">Volunteer times</a>
+        <h3>Library links</h3>
+        <a href="/membership">Become a member</a>
     </aside>
 </main>
 
 <footer>
-    <p>Riverstone Community Garden</p>
+    <p>Willow Lane Library</p>
 </footer>
 ```
 

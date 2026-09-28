@@ -1,1 +1,17 @@
-/* Add the requested CSS rules here. */
+.page-shell {
+  max-width: 42rem;
+  margin: 3rem auto;
+  font-family: system-ui, sans-serif;
+}
+.notice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card {
+  box-sizing: border-box;
+  max-height: 7rem;
+  padding: 1rem;
+  background: #ecfdf5;
+  /* Add width, max-width, and overflow here. */
+}

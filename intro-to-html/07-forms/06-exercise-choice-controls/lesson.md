@@ -1,11 +1,11 @@
 ---
-title: "Exercise: Configure Training Choices"
+title: "Exercise: Plan a Supply Pickup"
 slug: exercise-choice-controls
 order: 6
 language: html
-summary: Build checkbox and radio controls that distinguish several training capabilities from one training window.
-seo_title: "Exercise: Configure Training Choices | Introduction to HTML"
-seo_description: Build checkbox and radio controls that distinguish several training capabilities from one training window.
+summary: Use checkboxes for several supplies and radios for one delivery window.
+seo_title: "Exercise: Plan a Supply Pickup | Introduction to HTML"
+seo_description: Use checkboxes for several supplies and radios for one delivery window.
 seo_keywords:
   - HTML exercise
   - HTML forms
@@ -16,23 +16,23 @@ hints:
   - "Radio buttons become one group only when their name values match."
 ---
 
-# Exercise: Configure Training Choices
+# Exercise: Plan a Supply Pickup
 
 ## Mission
 
-the crew can practise many capabilities this week, but can reserve only one training window. Rebuild the relay choice form from the demo.
+After testing the training-choice demo, plan a supply pickup: the crew can request several supplies but must select one delivery window.
 
 ## What you'll build
 
-A labeled training form with three checkboxes, three grouped radio buttons, a default selection, and fieldset context.
+A supply request with three supply checkboxes, three grouped delivery-window radios, a default selection, and fieldset context.
 
 ## Your Tasks
 
-1. Add at least three checkboxes for practice capabilities.
-2. Add at least three radio buttons for training windows.
-3. Give every radio button the same `name` value.
-4. Preselect one radio button with `checked`.
-5. Group the controls with at least one `<fieldset>` and `<legend>`.
+1. Add at least three independently selectable checkboxes for supplies.
+2. Add at least three radio buttons for delivery windows.
+3. Give all the radio buttons one non-empty shared `name`.
+4. Preselect exactly one delivery window using `checked`.
+5. Wrap each choice set in its own `<fieldset>` with a describing `<legend>`.
 
 ## Checkpoint
 
@@ -40,4 +40,4 @@ Run the page. More than one checkbox can be on at once, but selecting a second r
 
 ## Payoff
 
-the crew can now express many practice goals and one definite training time without extra JavaScript.
+The crew can request several supplies and choose one pickup time without JavaScript.

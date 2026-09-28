@@ -3,12 +3,12 @@ body {
   font-family: system-ui, sans-serif;
 }
 .table-wrap {
-  /* Add overflow-x. */;
+  /* Add overflow-x. */
 }
 table {
   width: 100%;
   border-collapse: collapse;
-  /* Add min-width. */;
+  /* Add min-width. */
 }
 th, td {
   padding: .75rem;

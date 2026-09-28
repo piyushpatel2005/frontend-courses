@@ -20,7 +20,7 @@ hints:
 
 # Box model: seed packet card
 
-The Riverside Seed Swap needs a card that feels like a real packet instead of a line of text. This completed page gives the packet breathing room, an edge, and space from its neighbor.
+The market flyer is complete. For this module, a separate **Riverside Seed Swap** needs practical layout. Its packet card gets breathing room, an edge, and space from its neighbor.
 
 ## Read the finished card
 

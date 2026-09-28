@@ -5,7 +5,7 @@ order: 7
 language: html
 summary: "`flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size."
 seo_title: "Wrapping and Flex Items Demo | Introduction to CSS"
-seo_description: "Learn `flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size. in a completed CSS preview."
+seo_description: "See flex-wrap and flex basis keep supply cards readable on narrow screens."
 seo_keywords: [CSS, wrapping-flex-items-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,20 +13,12 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Wrapping and Flex Items Demo
+# Supply labels: completed layout
 
-## Mission
+Let supply cards move onto another line when space runs out. This completed preview shows the layout before you edit the next exercise.
 
-The supply labels must form new lines instead of shrinking into unreadable slivers.
+In `style.css`, `.supply-row` controls the section. flex-wrap: wrap allows another row. The flex shorthand on each card sets grow, shrink, and a 9rem starting width; compare the cards at narrow and wide preview widths.
 
-## What to notice
+**Checkpoint:** inspect the card positions in Preview and locate `flex-wrap: wrap` in the stylesheet.
 
-`flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
-
-## Try the preview
-
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
+Change `flex-wrap` temporarily to `nowrap`, run Preview, and compare the positions. Restore `wrap` before moving to the exercise.

@@ -12,7 +12,7 @@ hints:
   - "Use &lt; for < and &gt; for > when you want to display them as text (not as tags)."
   - "&amp; is the entity for the & character itself."
   - "&nbsp; is a non-breaking space — useful to prevent text from wrapping at a specific point."
-  - "Entity names are case-sensitive: &copy; works but &COPY; does not."
+  - "Write named entities with the terminating semicolon, such as &copy; or &amp;."
 ---
 
 # HTML Entities
@@ -25,7 +25,7 @@ The walking-club route notes need to show a trail rule, a copyright line, and �
 
 A route notes snippet that displays comparison operators, a copyright symbol, an ampersand, and a non-breaking distance label — all as visible text using HTML entities.
 
-The walking-club route notes need to show a trail rule, a copyright line, and "Maps & Snacks" exactly as written. Some of those characters mean something special to HTML, so use entities to make the browser display the intended text. Your preview should show the symbols, not broken markup.
+The starter supplies the document and heading; add four short route notes below it.
 
 ## Escape characters that HTML reads as markup
 
@@ -69,7 +69,7 @@ Run the page. You should see the comparison signs, copyright symbol, and ampersa
 ## Your Tasks
 
 1. Display the text: `5 < 10 and 10 > 5` using entities.
-2. Show a copyright line: `© 2024 Your Name. All rights reserved.`
+2. Show a copyright line using `&copy;`, for example `© City Walking Club. All rights reserved.`
 3. Use `&` to display a literal `&` (e.g., `HTML & CSS`).
 4. Use `&nbsp;` to prevent a line break between two words.
 

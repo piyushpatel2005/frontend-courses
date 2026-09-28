@@ -1,10 +1,10 @@
 ---
-title: "Form Basics Demo: Join the Meridian relay"
+title: "Form Basics Demo: Join the Meridian Relay"
 slug: form-basics-demo
 order: 1
 language: html
 summary: See a completed HTML form with connected labels, text and email fields, a password field, and a submit button.
-seo_title: "Form Basics Demo: Join the Meridian relay | Introduction to HTML"
+seo_title: "Form Basics Demo: Join the Meridian Relay | Introduction to HTML"
 seo_description: See a completed HTML form with connected labels, text and email fields, a password field, and a submit button.
 seo_keywords:
   - HTML demo
@@ -15,11 +15,11 @@ hints:
   - "This is a completed demo. Run the preview, then read the matching code."
 ---
 
-# Form Basics Demo: Join the Meridian relay
+# Form Basics Demo: Join the Meridian Relay
 
 ## Mission
 
-the crew has found the Meridian relay. The intake form must clearly identify each answer before a new operator can request training.
+You can now name and describe a page; next, use HTML to collect answers. The crew has found the Meridian Relay. Its intake form must clearly identify each answer before a new operator can request training.
 
 ## What you'll see
 
@@ -36,7 +36,7 @@ The label’s `for` value matches the input’s `id`, so clicking the label focu
 
 ## Try the preview
 
-Run the page and click each label. The matching field receives focus. The button is the form’s clear submit action.
+Run the page and click each label. The matching field receives focus. The button is the form’s clear submit action. The `/relay-intake` address is illustrative; this preview has no server to receive a real request.
 
 ## Checkpoint
 
@@ -44,7 +44,7 @@ Use the preview to connect each visible result to the HTML that created it. This
 
 ## Next
 
-Continue to **Exercise: Build an Relay Intake Form**. You will recreate the same idea from a smaller starter file.
+Continue to **Exercise: Build a Night-Shift Check-In**. You will recreate the same idea from a smaller starter file.
 
 ## Learn more
 

@@ -21,17 +21,13 @@ hints:
 
 ## Mission
 
-The Riverlight Community Hall needs a contact page for room bookings, volunteer questions, and accessibility requests. In this first step, build the essential fields so every visitor can tell the hall why they are writing.
+You have practiced labels, input types, and choice controls at the Meridian Relay. Now apply those patterns to the Riverlight Community Hall contact page for room bookings, volunteer questions, and accessibility requests.
 
 ## What you'll build
 
-A labeled contact form with required Name and Email fields, a Message box, a Topic menu, and a submit button — all inside one form that travels together.
+A labeled contact form with required Name and Email fields, a Message box, a Topic menu, and a submit button — all inside one form. The action URL in the reference answer is illustrative; the preview does not deliver messages to the hall.
 
-The Riverlight Community Hall needs a contact page for room bookings, volunteer questions, and accessibility requests. In this first step, build the essential fields so every visitor can tell the hall why they are writing.
-
-## Target
-
-Your preview will show a labeled contact form with required Name and Email fields, a Message box, a Topic menu, and a button to send it.
+The starter already includes the Contact Us heading; build the form below it.
 
 ## One idea: labels make a form usable before it is styled
 
@@ -54,12 +50,15 @@ Run the page. You should see a complete first-draft contact form. Try submitting
 
 ## Your Tasks
 
-1. Add one `<form method="post">`.
-2. Include fields for Name (`text`), Email (`email`), and Message (`textarea`).
-3. Mark Name and Email as `required`.
-4. Add a `<select>` for topic with at least 3 options.
-5. Add a submit button.
-6. Ensure all form controls have labels.
+1. Add a `<form method="post">` below the heading.
+2. Add a text input for Name inside the form.
+3. Add an email input for Email inside the form.
+4. Add a `<textarea>` for Message inside the form.
+5. Mark the Name input `required`.
+6. Mark the Email input `required`.
+7. Add a Topic `<select>` with at least three relevant choices (room booking, volunteering, and accessibility).
+8. Add a submit button inside the form.
+9. Give each of the four fields a visible `<label>` connected by matching `for` and `id`.
 
 ## Payoff
 

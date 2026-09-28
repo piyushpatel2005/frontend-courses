@@ -5,7 +5,7 @@ order: 1
 language: html
 summary: "Grid creates explicit rows and columns, called tracks."
 seo_title: "Grid Tracks Demo | Introduction to CSS"
-seo_description: "Learn grid creates explicit rows and columns, called tracks. in a completed CSS preview."
+seo_description: "Learn grid creates explicit rows and columns, called tracks in a completed CSS preview."
 seo_keywords: [CSS, grid-tracks-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -21,13 +21,13 @@ A volunteer board needs tidy columns for three workshop cards.
 
 ## What to notice
 
-Grid creates explicit rows and columns, called tracks.. Read the completed `index.html` and `style.css` together, then match each rule to the visible change.
+`display: grid` creates a grid container. `repeat(3, 1fr)` gives it three equal column tracks. Find the selector, property, and value in `style.css` and compare the preview.
 
 ![Diagram of CSS Grid rows, columns, and gaps.](assets/grid-tracks.svg)
 
 ## Try the preview
 
-Change one value in `style.css`, run the preview, and name what changed. Try a different `gap`, alignment value, or track size where it is relevant. Restore the original value before moving on.
+Change three columns to two and watch the last card wrap, then restore three.
 
 ## Checkpoint
 

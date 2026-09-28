@@ -40,11 +40,11 @@ A completed `index.html` page with a browser-tab title, one main heading, and tw
 
 ## Try the preview
 
-Run the page. The tab is named **Meridian Signal**, the first line is the prominent heading, and the two paragraphs appear as separate blocks.
+Run the page. The first line is the prominent heading, and the two paragraphs appear as separate blocks. The `<title>` supplies **Meridian Signal** as the document title, although the embedded preview may not show a tab.
 
 ## Checkpoint
 
-You should be able to connect every visible part of the preview to its tag. Nothing needs editing in this demo. The `title` may not be apparent in the **Browser Preview** but you will notice that at the top when you use your own browser with this code.
+You should be able to connect every visible part of the preview to its tag. For a safe experiment, change the heading text, rerun the preview, then restore it. The document title may not appear as a tab in the embedded preview.
 
 ## Next
 

@@ -3,9 +3,9 @@ title: "Input Types Demo: Build a Mission Profile"
 slug: input-types-demo
 order: 3
 language: html
-summary: See how different input types give the crew’s mission profile the right browser controls.
+summary: See how different input types give The crew’s mission profile the right browser controls.
 seo_title: "Input Types Demo: Build a Mission Profile | Introduction to HTML"
-seo_description: See how different input types give the crew’s mission profile the right browser controls.
+seo_description: See how different input types give The crew’s mission profile the right browser controls.
 seo_keywords:
   - HTML demo
   - HTML preview
@@ -19,7 +19,7 @@ hints:
 
 ## Mission
 
-the crew has gained a training slot. The relay collects a call sign, contact method, mission level, activation date, and beacon color.
+The crew has gained a training slot. The relay collects a call sign, contact method, mission level, activation date, and beacon color.
 
 ## What you'll see
 
@@ -45,4 +45,4 @@ Use the preview to connect each visible result to the HTML that created it. This
 
 ## Next
 
-Continue to **Exercise: Configure Mission Profile Inputs**. You will recreate the same idea from a smaller starter file.
+Continue to **Exercise: Record Beacon Maintenance**. You will recreate the same idea from a smaller starter file.

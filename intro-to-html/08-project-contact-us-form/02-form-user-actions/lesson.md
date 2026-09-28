@@ -25,17 +25,13 @@ The Riverlight Community Hall contact form can now collect a message. Add the ch
 
 ## What you'll build
 
-A contact form extended with checkbox interests, a radio-button group for a single reply method, a required consent checkbox, and a submit button — all properly labeled.
+A contact form extended with checkbox interests, an optional phone number, a radio-button group for a single reply method, required consent, and the existing submit button — all properly labeled.
 
-The Riverlight Community Hall contact form can now collect a message. Add the choices that help the team route it: interests, one preferred reply method, and clear consent.
-
-## Target
-
-Your preview will show selectable interests, a one-choice reply group, a required consent checkbox, and the same submit button inside the form.
+The starter carries forward the completed Name, Email, Topic, Message, and submit controls. Add the choices before the button; do not rebuild the previous form.
 
 ## One idea: names define a radio group
 
-Checkboxes allow several independent answers. Radio buttons share one `name` when they represent a single decision.
+Checkboxes allow several independent answers. Add an optional phone field so a visitor who requests a call can supply a number; `type="tel"` offers a phone-friendly keyboard but does not check the number’s format. Radio buttons share one `name` when they represent a single decision.
 
 ```html
 <fieldset>
@@ -51,16 +47,16 @@ Use a separate checkbox for consent and add `required` when it must be accepted 
 
 ## Checkpoint
 
-Run the form. You should be able to select several interests but only one reply method. Try to submit without consent: the browser should stop the request. If both reply options remain checked, make sure they use the same `name`.
+Run the form. You should be able to select several interests but only one reply method. Try to submit without consent: the browser should stop the request. If both reply options remain checked, make sure they use the same `name`. This HTML-only preview has no server to deliver messages or check that someone choosing a phone reply also supplied a number.
 
 ## Your Tasks
 
-1. Add at least 2 checkboxes for user interests.
-2. Add at least 2 radio buttons for preferred contact method.
-3. Ensure radio buttons use the same `name` attribute so they behave as one group.
-4. Add a consent checkbox (`required`).
-5. Keep the submit button inside the form.
-6. Ensure each radio/checkbox has a text label.
+1. Add two interest checkboxes inside the form for room booking and volunteering.
+2. Add an optional phone input (`type="tel"`) with a `name` and visible connected label, so a visitor can request a call.
+3. Add two radio buttons for one preferred reply method: email or phone.
+4. Give both reply-method radios the same non-empty `name` so only one stays selected.
+5. Add a separate required consent checkbox inside the form.
+6. Give every new checkbox and radio a visible label, either wrapping the control or connected with `for` and `id`.
 
 ## Payoff
 

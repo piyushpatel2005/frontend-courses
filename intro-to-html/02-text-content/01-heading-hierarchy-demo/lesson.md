@@ -3,13 +3,13 @@ title: "Heading Hierarchy Demo: H1 and H2"
 slug: heading-hierarchy-demo
 order: 1
 language: html
-summary: See how h1 and h2 create a clear crew member-mission hierarchy before extending it in an exercise.
+summary: See how h1 and h2 create a clear signal-brief hierarchy before extending it in an exercise.
 seo_title: "Heading Hierarchy Demo: H1 and H2 | Introduction to HTML"
-seo_description: See how h1 and h2 create a clear crew member-mission hierarchy before extending it in an exercise.
+seo_description: See how h1 and h2 create a clear signal-brief hierarchy before extending it in an exercise.
 seo_keywords:
   - HTML demo
   - HTML preview
-  - heading-mission system-demo
+  - HTML heading hierarchy
 lesson_type: coding
 hints:
   - "This is a completed demo. Run the preview, then read the matching code."
@@ -19,7 +19,7 @@ hints:
 
 ## Mission
 
-At the survey vessel Meridian, the Meridian crew has unlocked Beacon Sight. The signal brief needs a title and two major mission sections that a rescuer can scan instantly.
+Aboard the survey vessel Meridian, the crew is using Beacon Sight. The signal brief needs a title and two major mission sections that a rescuer can scan instantly.
 
 ## What you'll see
 
@@ -38,11 +38,11 @@ A completed signal brief with one main heading (`<h1>`) and two section headings
 
 ## Try the preview
 
-Run the page. The mission title is the largest heading; each mission system or mission section is a smaller, clearly separate heading.
+Run the page. The mission title is the largest heading; each system or mission section is a smaller, clearly separate heading.
 
 ## Checkpoint
 
-Use the preview to connect each visible result to the HTML that created it. This is a completed demonstration, so you do not need to edit the code.
+Use the preview to connect each visible result to the HTML that created it. Try changing one `<h2>` to `<h3>`, rerun the preview to compare its size and place in the outline, then restore it.
 
 ## Next
 

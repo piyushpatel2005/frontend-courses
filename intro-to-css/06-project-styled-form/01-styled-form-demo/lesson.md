@@ -17,14 +17,12 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Community garden request card demo
+# Seed request form demo
 
-**Mission:** Style a clear seed-request form for the Community Garden tool shed.
+A community garden volunteer needs a short reply form that is easy to read and navigate. The finished card places a label above the email input, leaves space before the button, and highlights the field when it has focus.
 
-This finished mini-build shows **form controls and focus feedback** in context. In `style.css`, find the declarations that shape the preview and connect each selector to the element it changes.
+The HTML already connects `label for="email"` to `input id="email"`. In `style.css`, the label and input use `display: block` to sit on separate lines; the input has `width: 100%` with `box-sizing: border-box` so its border fits inside the card. The input's bottom margin separates it from the button. When you tab into the input, `input:focus` adds an orange outline. This uses the block layout taught earlier—not Grid, which comes after Flexbox.
 
-## Try the demo
+**Checkpoint:** the email field fills the card width, the button sits below it, and tabbing into the field shows an orange ring.
 
-Change one visible value in `style.css` (such as a color, gap, or size), select **Run Preview**, and observe exactly what moves or changes. Restore the original value before continuing so the completed example remains your reference.
-
-**Checkpoint:** the preview already shows the finished community garden request card demo interface. The next lesson asks you to recreate its key rules from a small starter.
+Change the input's `margin-bottom` to `2rem`, run Preview and observe the added space; restore `.75rem` before the exercise. The submit button is only a visual example; no server handles the request.

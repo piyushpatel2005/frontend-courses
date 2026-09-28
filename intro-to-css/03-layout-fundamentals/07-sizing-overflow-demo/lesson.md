@@ -5,9 +5,9 @@ order: 7
 language: css
 lesson_type: coding
 runtime: srcdoc
-summary: "Width, max-width, min-height, and overflow control how a box responds when its content or screen changes."
+summary: "Width, max-width, max-height, and overflow control how a box responds when its content or screen changes."
 seo_title: "Sizing and Overflow Demo | Introduction to CSS"
-seo_description: "Width, max-width, min-height, and overflow control how a box responds when its content or screen changes. Build and inspect the result in a live CSS preview."
+seo_description: "Width, max-width, max-height, and overflow control how a box responds when its content or screen changes. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS
   - sizing overflow demo
@@ -25,12 +25,12 @@ The Riverside Seed Swap notice needs predictable card sizes even when someone ad
 
 ## What to notice
 
-Width, max-width, min-height, and overflow control how a box responds when its content or screen changes.
+The `.card` rule sets a `14rem` preferred width and a `100%` maximum so it can fit a narrow container. Its `max-height: 7rem` limits the height; `overflow: auto` lets a long note scroll rather than spill out. The row arrangement is supplied for this example; Flexbox comes later.
 
 ## Try the preview
 
-Change one visible value in `style.css`, run the preview, and observe the difference. Restore the original value before the exercise so this completed page remains your reference.
+Scroll the longer note inside its card. Then change `.card`'s `overflow` to `visible`, run the preview, and see the text spill below its boundary. Restore `auto` before the exercise.
 
 ## Checkpoint
 
-You can point to the selector, property, and value responsible for the visual change.
+The long note remains inside its card and can be scrolled; the shorter note fits without scrolling.

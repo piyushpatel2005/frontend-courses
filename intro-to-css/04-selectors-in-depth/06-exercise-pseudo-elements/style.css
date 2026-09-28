@@ -1,1 +1,13 @@
-/* Add the requested CSS rules here. */
+.page-shell {
+  max-width: 42rem;
+  margin: 3rem auto;
+  font-family: Georgia, serif;
+}
+.card {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1.25rem;
+  background: #1f2937;
+  color: #f8fafc;
+}
+/* Add the decorative mark to the first card here. */

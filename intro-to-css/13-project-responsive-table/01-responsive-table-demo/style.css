@@ -8,7 +8,7 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 32rem;
+  min-width: 30rem;
 }
 th, td {
   padding: .75rem;

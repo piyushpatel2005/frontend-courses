@@ -24,7 +24,7 @@ A seed-swap table needs compact labels, a full-width note, and one helper messag
 
 ## Read the arrangement
 
-`.tag` is `inline-block`, so the two labels keep their own padded shapes while sitting on one line. `.swap-note` is `block`, so it claims a whole row. `.hidden-helper` uses `none`, so it takes no space at all.
+`.tag` is `inline-block`, so the two labels keep their own padded shapes while sitting on one line. `.swap-note` is `block`, so it claims a whole row; paragraphs already default to block, so that rule simply makes the choice explicit. `.hidden-helper` uses `none`, so it takes no space at all. Hiding content this way also removes it from assistive technology, so do not use it for important instructions.
 
 **Checkpoint:** two rounded labels share a row, the note starts below them, and the helper text is absent.
 

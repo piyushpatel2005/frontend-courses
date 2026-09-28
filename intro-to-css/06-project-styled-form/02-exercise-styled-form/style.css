@@ -10,20 +10,25 @@ body {
   background: white;
   border-radius: 1rem;
 }
-form {
-  gap: .75rem;
-  /* Add display. */;
+label {
+  display: block;
+  margin-bottom: .5rem;
 }
 input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
   padding: .7rem;
   border: 2px solid #8ab17d;
   border-radius: .4rem;
 }
 input:focus {
   outline-offset: 2px;
-  /* Add outline. */;
+  /* Add focus outline below. */
 }
 button {
+  display: block;
+  margin-top: .75rem;
   padding: .7rem;
   border: 0;
   border-radius: .4rem;

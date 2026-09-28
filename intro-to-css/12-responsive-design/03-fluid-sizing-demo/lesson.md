@@ -1,36 +1,27 @@
 ---
-title: "Fluid Sizing Demo"
+title: "Fluid sizing demo"
 slug: fluid-sizing-demo
 order: 3
 language: css
 lesson_type: coding
 runtime: srcdoc
-summary: "`min()`, `max()`, `clamp()`, and `minmax()` let CSS make measured decisions from the available space."
-seo_title: "Fluid Sizing Demo | Introduction to CSS"
-seo_description: "`min()`, `max()`, `clamp()`, and `minmax()` let CSS make measured decisions from the available space. Build and inspect the result in a live CSS preview."
+summary: "Explore min(), minmax(), and clamp() in a fluid forecast layout."
+seo_title: "Fluid sizing demo | Intro to CSS"
+seo_description: "Inspect a fluid-width page, an auto-fit grid, and bounded padding."
 seo_keywords:
   - CSS
   - fluid sizing demo
   - CSS demo
-hints:
-  - Change one CSS value, then run the preview.
-  - Restore the original value before continuing.
 ---
 
-# Fluid Sizing Demo
+# Fluid sizing demo
 
-## Mission
+A breakpoint can flip a grid at a chosen width. This park forecast instead lets available space determine the layout between sizes.
 
-The pocket weather bulletin needs to fit a phone, tablet, or wide display without separate rules for every size.
+In `style.css`, `.page-shell` uses `width: min(90%, 46rem)`: it takes the smaller of 90% of its container or 46rem, keeping a margin on narrow screens and a readable limit on wide ones. `.bulletin` uses `repeat(auto-fit, minmax(12rem, 1fr))`. Each card column needs at least 12rem; when there is room, the columns expand and another card fits beside the first. `gap` keeps them apart. `.card` uses `clamp(.75rem, 2vw, 1.5rem)` for padding: the middle value follows viewport width but never goes below or above the limits. These are three independent sizing decisions; no media query is needed here.
 
-## What to notice
+## Try the demo
 
-`min()`, `max()`, `clamp()`, and `minmax()` let CSS make measured decisions from the available space.
+Resize the preview from narrow to wide and watch the cards move from a stack to a row. Change `12rem` to `16rem` briefly; the cards need more room before sharing a row. Restore the original value afterward.
 
-## Try the preview
-
-Change one visible value in `style.css`, run the preview, and observe the difference. Restore the original value before the exercise so this completed page remains your reference.
-
-## Checkpoint
-
-You can point to the selector, property, and value responsible for the visual change.
+**Checkpoint:** You can point to the width cap, the column minimum, and the padding bounds in the stylesheet. Next you will make similar choices for a different forecast.

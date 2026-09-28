@@ -5,7 +5,7 @@ order: 2
 language: html
 summary: "Grid creates explicit rows and columns, called tracks."
 seo_title: "Exercise: Grid Tracks | Introduction to CSS"
-seo_description: "Practice grid creates explicit rows and columns, called tracks. with a tested CSS exercise."
+seo_description: "Practice grid creates explicit rows and columns, called tracks with a tested CSS exercise."
 seo_keywords: [CSS, exercise-grid-tracks, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -17,7 +17,9 @@ hints:
 
 ## Mission
 
-A volunteer board needs tidy columns for three workshop cards.
+Arrange volunteer shifts in equal columns.
+
+The preceding demo showed the same technique on different cards. The HTML supplies the cards; edit `style.css` for the requested change.
 
 ## Your Tasks
 
@@ -26,8 +28,4 @@ A volunteer board needs tidy columns for three workshop cards.
 
 ## Checkpoint
 
-Run the preview. The layout should remain easy to scan before you submit the tests.
-
-## Payoff
-
-You have turned one layout intention into clear, reusable CSS.
+Run Preview to see the change, then Submit.

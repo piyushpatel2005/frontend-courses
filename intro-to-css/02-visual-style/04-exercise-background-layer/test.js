@@ -4,8 +4,9 @@ test("announcement has a violet fallback background", () => {
 });
 
 test("announcement uses the requested diagonal gradient", () => {
-  const image = getComputedStyle(document.querySelector(".announcement")).backgroundImage;
-  assert.includes(image.replaceAll(" ", ""), "linear-gradient(135deg,rgb(124,58,237),rgb(236,72,153))", "Add linear-gradient(135deg, #7c3aed, #ec4899) as the background image.");
+  const rules = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []));
+  const image = rules.filter(rule => rule.selectorText === ".announcement").map(rule => rule.style.getPropertyValue("background-image")).find(Boolean) || "";
+  assert.match(image.replaceAll(" ", ""), /linear-gradient\(135deg,(?:#7c3aed|rgb\(124,58,237\)),(?:#ec4899|rgb\(236,72,153\))\)/i, "Add linear-gradient(135deg, #7c3aed, #ec4899) as the background image.");
 });
 
 test("announcement text is white", () => {
