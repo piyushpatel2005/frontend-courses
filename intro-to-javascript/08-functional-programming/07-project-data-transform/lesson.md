@@ -17,15 +17,9 @@ seo_keywords: javascript, project - data transform pipeline, beginner javascript
 
 # Project — Data Transform Pipeline
 
-## Mission: Chart Analytics
+Analyze a product inventory dataset in `script.js` by selecting in-stock items, sorting expensive ones, and totaling inventory value. The previous lesson used recursion for nested inputs; this flat list is a better fit for array methods.
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you transform chart data with focused functions instead of tangled steps. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Apply your functional programming skills to analyze a product inventory dataset.
-
-## Dataset
+## Worked example
 
 ```javascript
 const books = [
@@ -36,16 +30,12 @@ const labels = books.filter((book) => book.available).map((book) => book.title);
 console.log(labels);
 ```
 
-## Your Task
+## Your Tasks
 
-1. `inStockItems` — array of items with `stock > 0`.
-2. `expensiveItems` — array of item names with `price >= 300`, sorted by price descending.
-3. `totalValue(items)` — returns the total inventory value: `sum of (price * stock)` for all items.
-4. `byCategory(items)` — returns an object grouping items by category: `{ Electronics: [...], Furniture: [...] }`.
-5. Render to `#output`:
-6. Verify the program behavior: logs the mission result.
-7. Verify the program behavior: logs the mission result.
-
-## Chart Analytics complete
-
-You can build predictable data pipelines from small transformations. Take the section quiz, then turn those ideas into reusable object blueprints.
+1. Compute `inStockItems` by filtering for positive stock.
+2. Compute `expensiveItems` as names priced at least $300, in descending price order.
+3. Complete `totalValue(items)` to sum each price multiplied by stock.
+4. Complete `byCategory(items)` to group all records into category-keyed arrays.
+5. Log the standalone in-stock count from `inStockItems`.
+6. Log the standalone top-products line from `expensiveItems`.
+7. Log the standalone total-value line from `totalValue(inventory)`.

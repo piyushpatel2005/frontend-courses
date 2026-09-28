@@ -17,11 +17,7 @@ seo_keywords: javascript, map, filter, and reduce, beginner javascript, programm
 
 # map, filter, and reduce
 
-## Mission: Chart Analytics
-
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you transform chart data with focused functions instead of tangled steps. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The reporting desk needs to summarize employee records. Run `script.js` and inspect the Console; the three array methods here accept callback functions, building on the previous lessons.
 
 These three methods are the workhorses of functional JavaScript. Chain them together for expressive data pipelines.
 
@@ -42,9 +38,9 @@ const total = orders
 console.log(total); // 34 (12*2 + 1*10 = 24 + 10)
 ```
 
-## Your Task
+## Your Tasks
 
-1. `engineeringNames` — an array of names of employees in `"Engineering"` (use `filter` + `map`).
-2. `avgEngineerSalary` — the average salary of Engineering employees (use `filter` + `reduce`), rounded to the nearest integer.
-3. `salaryReport` — an array of strings like `"Alice: $95,000"` for all employees (use `map` + `toLocaleString`).
-4. log with `console.log()`: `"Engineers: Alice,Carol,Eve | Avg salary: $107,667"`.
+1. Compute `engineeringNames` with `filter` and `map` to retain the Engineering names.
+2. Compute `avgEngineerSalary` with `filter` and `reduce`, rounded to the nearest integer.
+3. Compute `salaryReport` for all employees with `map` and `toLocaleString()` for salaries.
+4. Log the standalone Engineering names and rounded average summary from the computed values.

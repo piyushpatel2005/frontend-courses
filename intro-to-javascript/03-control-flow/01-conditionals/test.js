@@ -1,21 +1,15 @@
-test("getGrade is defined", () => {
-  assert.equal(typeof getGrade, "function", "Define a function named getGrade");
+test("Step 1: Grade 95: A", () => {
+  assert.match(OUTPUT, /^Grade\ 95:\ A$/m, "Log Grade 95: A as a complete Console line");
 });
 
-test("getGrade returns correct grades", () => {
-  assert.equal(getGrade(95), "A", "getGrade(95) should return 'A'");
-  assert.equal(getGrade(85), "B", "getGrade(85) should return 'B'");
-  assert.equal(getGrade(75), "C", "getGrade(75) should return 'C'");
-  assert.equal(getGrade(65), "D", "getGrade(65) should return 'D'");
-  assert.equal(getGrade(50), "F", "getGrade(50) should return 'F'");
+test("Step 2: Grade set: A,B,C,D,F", () => {
+  assert.match(OUTPUT, /^Grade\ set:\ A,B,C,D,F$/m, "Log Grade set: A,B,C,D,F as a complete Console line");
 });
 
-test("boundary values are handled correctly", () => {
-  assert.equal(getGrade(90), "A", "getGrade(90) should return 'A'");
-  assert.equal(getGrade(80), "B", "getGrade(80) should return 'B'");
-  assert.equal(getGrade(60), "D", "getGrade(60) should return 'D'");
+test("Step 3: Grade boundaries: A,B,D", () => {
+  assert.match(OUTPUT, /^Grade\ boundaries:\ A,B,D$/m, "Log Grade boundaries: A,B,D as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Grade: B", "Log the mission result with console.log()");
+test("Step 4: Grade: B", () => {
+  assert.match(OUTPUT, /^Grade:\ B$/m, "Log Grade: B as a complete Console line");
 });

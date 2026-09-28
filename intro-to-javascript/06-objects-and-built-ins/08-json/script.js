@@ -13,5 +13,10 @@ function deepClone(obj) {
 
 }
 
-// TODO 4: Display "Sam is level 5 | status: ok, count: 42"
-console.log("");
+const original = { a: 1, nested: { b: 2 } };
+let cloned = null; // Use deepClone(original) here.
+try { console.log(`CHECK 3: ${original.nested.b} | ${cloned.nested.b}`); } catch (error) { console.log("CHECK pending"); }
+// Change only the copy's nested value here.
+try { console.log(`CHECK 4: ${original.nested.b} | ${cloned.nested.b}`); } catch (error) { console.log("CHECK pending"); }
+
+// TODO 5: Display "Sam is level 5 | status: ok, count: 42"

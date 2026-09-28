@@ -8,4 +8,6 @@ function collatz(n) {
 
 }
 
-console.log("");
+// These probes run as you implement the functions above.
+console.log(`Countdown one: ${countdown(1)}`);
+console.log(`Collatz one: ${collatz(1)}`);

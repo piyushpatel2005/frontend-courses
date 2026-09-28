@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 315" role="img" aria-labelledby="title desc">
+<title id="title">Safe list creation and delegated removal</title><desc id="desc">Submitting the form creates a list item with textContent; clicks on buttons within both old and new items bubble to a single listener on the list.</desc>
+<rect width="870" height="315" rx="22" fill="#fffdf6"/>
+<text x="28" y="38" fill="#24334b" font-family="Comic Sans MS, cursive" font-size="23" font-weight="bold">Create safely; remove through one parent</text>
+<path d="M33 71 Q31 66 38 67 L244 68 Q248 69 245 75 L246 177 Q244 184 238 181 L38 183 Q32 181 33 173 Z" fill="#a5d8ff" stroke="#253e67" stroke-width="3"/>
+<text x="57" y="109" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="19">Form submit</text><text x="57" y="139" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="17">input.value.trim()</text>
+<path d="M316 68 Q311 64 319 68 L558 67 Q564 68 561 75 L562 177 Q562 184 555 182 L319 182 Q312 180 316 173 Z" fill="#fff3bf" stroke="#253e67" stroke-width="3"/>
+<text x="335" y="105" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="18">createElement('li')</text><text x="335" y="135" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="18">label.textContent</text><text x="335" y="160" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="17">+ Remove button</text>
+<path d="M630 68 Q627 65 635 67 L838 67 Q843 70 840 77 L840 177 Q839 183 833 182 L634 183 Q628 180 630 175 Z" fill="#b2f2bb" stroke="#253e67" stroke-width="3"/>
+<text x="655" y="108" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="19">#tasks list</text><text x="655" y="139" fill="#142c45" font-family="Comic Sans MS, cursive" font-size="17">old + new items</text>
+<path d="M247 125 L310 125" fill="none" stroke="#253e67" stroke-width="3" marker-end="url(#arrow)"/><path d="M563 125 L625 125" fill="none" stroke="#253e67" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="77" y="249" fill="#24334b" font-family="Comic Sans MS, cursive" font-size="17">Button clicks bubble to the list listener → remove clicked row</text>
+<text x="76" y="285" fill="#34445b" font-family="Comic Sans MS, cursive" font-size="16">Typed angle brackets remain characters, not elements.</text>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#253e67"/></marker></defs>
+</svg>

@@ -18,9 +18,7 @@ seo_keywords: javascript, defining functions, beginner javascript, programming p
 
 ## Mission: Backstage Toolkit
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you package repeatable backstage jobs into small, dependable functions. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The Starline Awards desk needs the same greeting for every guest. Write it once as a function, then call it with different names. Work in `script.js` and check your output in the Console.
 
 Functions package logic into a reusable block. This lesson keeps the goal small: write one greeting function and prove that it works for two different names.
 
@@ -34,7 +32,7 @@ function makeBadge(name) {
 console.log(makeBadge("Ari"));
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write a function greet(name) that returns Hello, <name>!.
-2. Log Hello, Alice! | Hello, Bob! with `console.log()`. by calling the function twice.
+1. Define `greet(name)` returning `Hello, <name>!`.
+2. Log `Hello, Alice! | Hello, Bob!` by calling `greet` twice.

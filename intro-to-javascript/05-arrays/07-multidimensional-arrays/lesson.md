@@ -19,9 +19,7 @@ seo_keywords: javascript, multidimensional arrays, beginner javascript, programm
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A seating chart has rows and columns, not just one list. Read nested arrays and total their values in `script.js`; check the Console.
 
 A **multidimensional array** is an array of arrays. The most common use is a **2D array** (matrix) to represent tabular data.
 
@@ -34,7 +32,10 @@ console.log(seats[1][0]);
 
 ## Accessing elements
 
+The first index chooses a row and the second chooses a column:
+
 ```javascript
+const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 matrix[0][0]; // 1 — row 0, col 0
 matrix[1][2]; // 6 — row 1, col 2
 matrix[2][1]; // 8 — row 2, col 1
@@ -52,8 +53,6 @@ for (let row = 0; row < matrix.length; row++) {
 
 ## Your Task
 
-1. Write a function `matrixSum(matrix)` that returns the sum of **all** elements.
-2. Write a function `diagonal(matrix)` that returns an array of the **main diagonal** elements (top-left to bottom-right).
-3. log with `console.log()`: `"Sum: 45 | Diagonal: 1,5,9"`.
-4. Verify the program behavior: diagonal returns main diagonal elements.
-5. Verify the program behavior: logs the mission result.
+1. Write `matrixSum(matrix)` to sum **all** values, even when given a different-sized grid.
+2. Write `diagonal(matrix)` to return the **main diagonal** (top-left to bottom-right).
+3. Log `Sum: 45 | Diagonal: 1,5,9` on its own line in the Console.

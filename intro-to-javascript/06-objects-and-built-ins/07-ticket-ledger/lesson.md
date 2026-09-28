@@ -17,8 +17,19 @@ hints:
 
 The walkthrough parsed a score and compared large ticket IDs. Now build a separate ledger that stores one large identifier and calculates a normal currency total.
 
+## Worked example
+
+BigInt identifies large whole numbers; convert it before combining it with ordinary decimal arithmetic:
+
+```javascript
+const crateId = 9007199254740995n;
+const unitPrice = Number("7.50");
+console.log(typeof crateId, 2 * unitPrice); // bigint 15
+```
+
 ## Your Tasks
 
-1. Create `ticketId` with the BigInt value `9007199254740993n` and `ticketPrice` by converting the text `"19.50"` with `Number()`.
-2. Define `calculateTotal(ticketCount, price)` so `calculateTotal(3n, 19.5)` returns `58.5`.
-3. Print this exact double-quoted text with `console.log()`: `"Ticket 9007199254740993 | Total: 58.5"`.
+1. Create `ticketId` with the BigInt value `9007199254740993n`.
+2. Create `ticketPrice` by converting the text `"19.50"` with `Number()`.
+3. Define `calculateTotal(ticketCount, price)` so `calculateTotal(3n, 19.5)` returns `58.5`.
+4. Log `Ticket 9007199254740993 | Total: 58.5` on its own Console line.

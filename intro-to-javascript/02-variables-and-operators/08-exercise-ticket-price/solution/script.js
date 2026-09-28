@@ -1,0 +1,10 @@
+const basePrice = 24;
+const facilityCharge = 5;
+const credit = 3;
+let ticketPrice = basePrice;
+ticketPrice += facilityCharge;
+console.log(`charged: ${ticketPrice}`);
+ticketPrice -= credit;
+console.log(`credited: ${ticketPrice}`);
+console.log(`base: ${basePrice}`);
+console.log(`ticket: ${ticketPrice}`);

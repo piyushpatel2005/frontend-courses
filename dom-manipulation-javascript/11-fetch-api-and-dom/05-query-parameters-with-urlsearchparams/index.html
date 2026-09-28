@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seed library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Seed library</h1>
+    <p class="note">Offline preview · deterministic mock data, not a live API</p>
+    <form id="seed-form"><label for="seed-query">Search seeds</label> <input id="seed-query" value="mint &amp; lime"><button>Search</button></form>
+    <p>Mock request: <code id="seed-url">Not requested.</code></p>
+    <p id="seed-status" role="status">Enter a term.</p>
+    <ul id="seed-list"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

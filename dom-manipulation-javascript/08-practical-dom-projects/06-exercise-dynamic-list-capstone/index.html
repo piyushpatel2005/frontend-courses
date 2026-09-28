@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DOM practice</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Neighborhood task board</h1><form id="task-form" novalidate><label for="task-name">New task</label><input id="task-name" aria-describedby="task-status"><button type="submit">Add task</button></form><p id="task-status" role="status" aria-live="polite">Tasks for today.</p><ul id="tasks"><li><span>Water seedlings</span> <button type="button">Remove</button></li></ul>
+  </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Museum sound desk</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Museum sound desk</h1>
+    <button id="once" type="button">One-time announcement</button>
+    <p id="once-count" role="status">Announcements: 0</p>
+    <button id="chime" type="button">Chime</button>
+    <button id="disable" type="button">Disable chime</button>
+    <p id="chime-count" role="status">Chimes: 0</p>
+    <div id="panel" aria-label="Sound panel">
+      <button id="normal" type="button">Normal</button>
+      <button id="quiet" type="button">Quiet</button>
+    </div>
+    <p id="log" role="status">Actions: </p>
+  </main>
+</body>
+</html>

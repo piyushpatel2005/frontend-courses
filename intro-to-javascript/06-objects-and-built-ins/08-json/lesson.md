@@ -19,9 +19,7 @@ seo_keywords: javascript, json, beginner javascript, programming practice
 
 ## Mission: Artist Profile Lab
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you model an artist profile and use JavaScript's built-in tools to keep it current. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The artist profile may need to travel as text between programs. Turn an object into JSON text, parse a response, and compare a copy with its original in the Console.
 
 **JSON** (JavaScript Object Notation) is the standard format for exchanging data between systems — APIs, config files, local storage. It looks like a JavaScript object literal but with stricter rules.
 
@@ -62,5 +60,6 @@ console.log(obj.score); // 95
 
 1. Given the object `user = { name: "Sam", level: 5, active: true }`, serialize it to a JSON string and store in `userJson`.
 2. Parse the string `apiResponse = '{"status":"ok","count":42}'` and store the result in `parsed`.
-3. Write a function `deepClone(obj)` that uses JSON serialization to create a deep copy of an object.
-4. log with `console.log()`: `"Sam is level 5 | status: ok, count: 42"`.
+3. Write `deepClone(obj)` using `JSON.parse(JSON.stringify(obj))` for JSON-safe data only; functions, `undefined`, `Date`, and `BigInt` are not preserved.
+4. Set only the copy’s `nested.b` to `99`, leaving the original unchanged.
+5. Log `Sam is level 5 | status: ok, count: 42` on its own Console line.

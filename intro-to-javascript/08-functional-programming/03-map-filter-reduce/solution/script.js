@@ -13,4 +13,7 @@ const avgEngineerSalary = Math.round(
 );
 const salaryReport = employees.map(e => `${e.name}: $${e.salary.toLocaleString()}`);
 
+console.log(`CHECK names: ${engineeringNames.join(",")}`);
+console.log(`CHECK average: ${avgEngineerSalary}`);
+console.log(`CHECK report: ${salaryReport[0]} | ${salaryReport[1]} | count: ${salaryReport.length}`);
 console.log(`Engineers: ${engineeringNames.join(",")} | Avg salary: $${avgEngineerSalary.toLocaleString()}`);

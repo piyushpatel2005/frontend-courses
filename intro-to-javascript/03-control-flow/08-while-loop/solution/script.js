@@ -16,4 +16,8 @@ function collatz(n) {
   return steps;
 }
 
-console.log(`Countdown from 5: ${countdown(5).join(",")}`);
+console.log(`Countdown one: ${countdown(1)}`);
+console.log(`Collatz one: ${collatz(1)}`);
+console.log(`Countdown three: ${countdown(3)}`);
+console.log(`Collatz six: ${collatz(6)}`);
+console.log(`Countdown from 5: ${countdown(5)}`);

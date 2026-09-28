@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Community directory</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<main>
+  <h1>Community directory</h1>
+  <div class="layout">
+    <section aria-labelledby="members-heading">
+      <h2 id="members-heading">Members</h2>
+      <label for="member-search">Search members by name or skill</label>
+      <input id="member-search" type="search" autocomplete="off">
+      <p id="result-count" role="status" aria-live="polite">3 members shown</p>
+      <p id="empty-state" hidden>No members match your search.</p>
+      <ul id="members" class="cards">
+        <li data-name="Mina Park" data-skill="Garden planning"><h3>Mina Park</h3><p>Garden planning</p><button type="button" class="select">View Mina Park</button><button type="button" class="remove">Remove Mina Park</button></li>
+        <li data-name="Omar Reed" data-skill="Bike repair"><h3>Omar Reed</h3><p>Bike repair</p><button type="button" class="select">View Omar Reed</button><button type="button" class="remove">Remove Omar Reed</button></li>
+        <li data-name="Leah Chen" data-skill="Bread baking"><h3>Leah Chen</h3><p>Bread baking</p><button type="button" class="select">View Leah Chen</button><button type="button" class="remove">Remove Leah Chen</button></li>
+      </ul>
+    </section>
+    <section class="detail" aria-labelledby="detail-heading">
+      <h2 id="detail-heading">Member details</h2>
+      <p id="detail-name">Choose a member</p>
+      <p id="detail-skill">Their skill will appear here.</p>
+    </section>
+  </div>
+    <section aria-labelledby="add-heading">
+      <h2 id="add-heading">Add a member</h2>
+      <form id="member-form" novalidate>
+        <label for="new-name">Member name</label>
+        <input id="new-name" name="name" aria-describedby="form-status">
+        <label for="new-skill">Skill to share</label>
+        <input id="new-skill" name="skill" aria-describedby="form-status">
+        <button type="submit">Add member</button>
+      </form>
+      <p id="form-status" role="status" aria-live="polite"></p>
+    </section>
+</main>
+<script src="script.js" defer></script>
+</body>
+</html>

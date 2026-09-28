@@ -1,9 +1,15 @@
-test("data type variables are correct", () => {
-  assert.equal(studentName, "Mia", "studentName should be Mia");
-  assert.equal(studentAge, 14, "studentAge should be 14");
-  assert.equal(isStudent, true, "isStudent should be true");
+test("Step 1: name: Mia (string)", () => {
+  assert.match(OUTPUT, /^name:\ Mia\ \(string\)$/m, "Log name: Mia (string) as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Mia:string | 14:number | true:boolean", "Log the mission result with console.log()");
+test("Step 2: age: 14 (number)", () => {
+  assert.match(OUTPUT, /^age:\ 14\ \(number\)$/m, "Log age: 14 (number) as a complete Console line");
+});
+
+test("Step 3: student: true (boolean)", () => {
+  assert.match(OUTPUT, /^student:\ true\ \(boolean\)$/m, "Log student: true (boolean) as a complete Console line");
+});
+
+test("Step 4: Mia:string | 14:number | true:boolean", () => {
+  assert.match(OUTPUT, /^Mia:string\ \|\ 14:number\ \|\ true:boolean$/m, "Log Mia:string | 14:number | true:boolean as a complete Console line");
 });

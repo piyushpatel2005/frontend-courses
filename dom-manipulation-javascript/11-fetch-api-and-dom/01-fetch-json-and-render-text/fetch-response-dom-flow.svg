@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 264" role="img" aria-labelledby="title desc">
+  <title id="title">From a fetch request to safe DOM text</title>
+  <desc id="desc">A request goes to an offline mock response, then JSON parsing, then textContent. Separate arrows indicate each step.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#173a50" stroke-width="2"/></marker></defs>
+  <rect x="0" y="0" width="940" height="264" rx="18" fill="#f4f8fb"/>
+  <text x="30" y="42" font-family="system-ui, sans-serif" font-size="23" font-weight="700" fill="#142f42">Async data to safe browser text</text>
+  <rect x="28" y="98" width="177" height="95" rx="12" fill="#d9eafb" stroke="#24536a" stroke-width="2"/>
+  <text x="116" y="137" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#142f42">mockFetch(url)</text>
+  <text x="116" y="164" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#34596a">async request</text>
+  <path d="M205 145 L255 145" fill="none" stroke="#173a50" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="259" y="98" width="174" height="95" rx="12" fill="#ffebcc" stroke="#915b23" stroke-width="2"/>
+  <text x="346" y="137" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#142f42">Response</text>
+  <text x="346" y="164" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#34596a">fixed local data</text>
+  <path d="M433 145 L483 145" fill="none" stroke="#173a50" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="487" y="98" width="176" height="95" rx="12" fill="#e6dbff" stroke="#56447e" stroke-width="2"/>
+  <text x="575" y="137" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#142f42">await .json()</text>
+  <text x="575" y="164" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#34596a">JavaScript data</text>
+  <path d="M663 145 L713 145" fill="none" stroke="#173a50" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="717" y="98" width="195" height="95" rx="12" fill="#d4f4db" stroke="#286440" stroke-width="2"/>
+  <text x="814" y="137" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#142f42">textContent</text>
+  <text x="814" y="164" text-anchor="middle" font-family="system-ui, sans-serif" font-size="15" fill="#34596a">literal DOM text</text>
+  <text x="30" y="230" font-family="system-ui, sans-serif" font-size="15" fill="#34596a">Preview uses an offline fixture; real fetch needs a reachable server and CORS permission.</text>
+</svg>

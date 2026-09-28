@@ -1,0 +1,13 @@
+const admissionText = "18";
+const refreshmentText = "4";
+const feeText = "6";
+const guests = 3;
+const admission = Number(admissionText);
+console.log(`admission: ${admission} (${typeof admission})`);
+const refreshment = Number(refreshmentText);
+console.log(`refreshment: ${refreshment} (${typeof refreshment})`);
+const fee = Number(feeText);
+console.log(`fee: ${fee} (${typeof fee})`);
+console.log(`per guest: ${admission + refreshment}`);
+const totalExpense = (admission + refreshment) * guests + fee;
+console.log(`expense total: ${totalExpense}`);

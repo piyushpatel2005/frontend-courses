@@ -1,0 +1,5 @@
+blocks:
+  - index: 0
+    expected_output: "raw add: 405"
+  - index: 1
+    expected_output: "nightly: 45\ntotal: 93"

@@ -1,15 +1,11 @@
-test("students contains three records", () => {
-  assert.equal(students.length, 3, "Create all three student records");
+test("Three student records", () => {
+  assert.match(OUTPUT, /^CHECK students: Ari,Bea,Chen \| active: true,false,true$/m, "Expected this standalone Console line: CHECK students: Ari,Bea,Chen | active: true,false,true");
 });
 
-test("activeRegister is defined", () => {
-  assert.equal(typeof activeRegister, "function", "Define activeRegister(records)");
+test("Active register transformation", () => {
+  assert.match(OUTPUT, /^CHECK register: Ari: JavaScript \| Chen: JavaScript$/m, "Expected this standalone Console line: CHECK register: Ari: JavaScript | Chen: JavaScript");
 });
 
-test("activeRegister filters and maps records", () => {
-  assert.deepEqual(activeRegister(students), ["Ari: JavaScript", "Chen: JavaScript"]);
-});
-
-test("logs the active register", () => {
-  assert.includes(OUTPUT, "Ari: JavaScript | Chen: JavaScript", "Log the joined register");
+test("Standalone student register", () => {
+  assert.match(OUTPUT, /^Ari: JavaScript \| Chen: JavaScript$/m, "Expected this standalone Console line: Ari: JavaScript | Chen: JavaScript");
 });

@@ -19,11 +19,9 @@ seo_keywords: javascript, while loop, beginner javascript, programming practice
 
 ## Mission: Decision Desk
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you teach the Starline Awards engine how to choose the next action. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+Use a condition to decide whether another iteration is needed, and update the value each time.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Use `while` when you do not know ahead of time how many iterations you need.
+Use `while` when you repeat until a condition changes. The countdown task has a known starting value; the later Collatz task repeats until the value reaches 1. Both need an update inside the loop or they would keep running.
 
 ## `while` loop
 
@@ -49,10 +47,10 @@ do {
 } while (num < 3);
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write a function `countdown(n)` that returns an array containing numbers from `n` down to `1`, using a `while` loop. For example, `countdown(5)` → `[5, 4, 3, 2, 1]`.
-2. Write a function `collatz(n)` that returns the number of steps to reach `1` using the Collatz sequence:
-3. log with `console.log()`: `"Countdown from 5: 5,4,3,2,1"`.
-4. Verify the program behavior: collatz returns correct step count.
-5. Verify the program behavior: logs the mission result.
+1. Implement `countdown(n)` using `while` to return the integers from n to 1 in an array. The provided one-item probe should print `Countdown one: 1`.
+2. Implement `collatz(n)` using `while` to count steps until 1 (even: halve; odd: triple and add 1). The provided one-item probe should print `Collatz one: 0`.
+3. Log `Countdown three: 3,2,1` using `countdown(3)`.
+4. Log `Collatz six: 8` using `collatz(6)`.
+5. Log `Countdown from 5: 5,4,3,2,1`.

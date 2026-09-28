@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community events dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="panel">
+    <h1>Community events</h1>
+    <p class="note">Offline API fixture · no live network data</p>
+      <form id="search-form" role="search">
+        <label for="search">Search titles</label>
+        <input id="search" type="search" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+    <p id="status" role="status" aria-live="polite">Ready to load.</p>
+    <button id="retry" type="button" hidden>Retry</button>
+    <ul id="entries" aria-label="Community events results"></ul>
+  </main>
+</body>
+</html>

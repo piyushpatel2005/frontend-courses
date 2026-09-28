@@ -18,11 +18,9 @@ seo_keywords: javascript, date basics, beginner javascript, programming practice
 
 ## Mission: Artist Profile Lab
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you model an artist profile and use JavaScript's built-in tools to keep it current. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+The event calendar needs the year, month, and day from one fixed timestamp. Extract its UTC parts in `script.js` and inspect the formatted date in the Console.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Dates can feel noisy at first, so this lesson keeps them deterministic. A fixed UTC date lets beginners practice reading the year, month, and day without timezone surprises.
+The previous lesson read a UTC year. Now extract all three UTC calendar parts. `getUTCMonth()` counts January as 0, so add 1 before formatting; a fixed timestamp avoids timezone-dependent results.
 
 ## Example
 
@@ -36,6 +34,4 @@ console.log(deliveryDate.getUTCMonth() + 1);
 1. Create launchDate from 2024-05-06T00:00:00Z and read the UTC year, month, and day into separate variables.
 2. Log 2024-05-06 with `console.log()`.
 
-## Artist Profile Lab complete
-
-You can model related facts and use JavaScript helpers for common jobs. Take the section quiz, then work precisely with text.
+Next, apply objects and built-ins to two real data-processing jobs before the section quiz.

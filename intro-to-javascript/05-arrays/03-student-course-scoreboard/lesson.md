@@ -16,6 +16,17 @@ hints:
 
 You have seen the pattern in the demo. Now write the program yourself in `script.js`. Keep the focus on values, conditions, loops, arrays, or functions—not page elements.
 
+## Worked example
+
+For a different collection, read every value rather than hard-coding a position:
+
+```javascript
+const miles = [2, 4, 6];
+let total = 0;
+for (const mile of miles) total += mile;
+console.log(total / miles.length); // 4
+```
+
 ## Your Tasks
 
 1. Create a `scores` array containing `84`, `91`, and `76`.

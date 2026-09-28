@@ -16,11 +16,7 @@ seo_keywords: javascript, callbacks, beginner javascript, programming practice
 
 # Callbacks
 
-## Mission: Chart Analytics
-
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you transform chart data with focused functions instead of tangled steps. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The previous lesson returned a function. Now pass one *into* `repeatAction` to collect three results. Run `script.js` and inspect the Console.
 
 A callback is a function passed into another function. Instead of only describing that idea, this lesson makes the callback run three times and shows the collected results.
 
@@ -34,7 +30,7 @@ function repeatNotice(times, callback) {
 repeatNotice(3, (index) => console.log(`Subscriber ${index + 1}`));
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write repeatAction(callback) so it runs the callback three times.
-2. Use it to fill runs with three run values and display run,run,run in #output.
+1. Complete `repeatAction(callback)` so it invokes the callback exactly three times.
+2. Log the collected `runs` values as a standalone `run,run,run` line.

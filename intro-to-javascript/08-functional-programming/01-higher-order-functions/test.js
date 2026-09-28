@@ -1,9 +1,7 @@
-test("makeMultiplier returns a working function", () => {
-  assert.equal(typeof makeMultiplier, "function", "Define makeMultiplier as a function");
-  const triple = makeMultiplier(3);
-  assert.equal(triple(7), 21, "The returned function should multiply the value");
+test("Multiplying closure", () => {
+  assert.match(OUTPUT, /^CHECK multiplier: 21 \| 20$/m, "Expected this standalone Console line: CHECK multiplier: 21 | 20");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "21", "Log the mission result with console.log()");
+test("Standalone product", () => {
+  assert.match(OUTPUT, /^21$/m, "Expected this standalone Console line: 21");
 });

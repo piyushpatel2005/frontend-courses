@@ -1,18 +1,19 @@
-test("priceStr is a string", () => {
-  assert.equal(typeof priceStr, "string", 'Declare `const priceStr = "29"`');
-  assert.equal(priceStr, "29", 'priceStr should be the string "29"');
+test("Step 1: priceStr: 29 (string)", () => {
+  assert.match(OUTPUT, /^priceStr:\ 29\ \(string\)$/m, "Log priceStr: 29 (string) as a complete Console line");
 });
 
-test("price is converted to a number", () => {
-  assert.equal(typeof price, "number", "Convert priceStr to a number with Number()");
-  assert.equal(price, 29, "price should be the number 29");
+test("Step 2: price: 29 (number)", () => {
+  assert.match(OUTPUT, /^price:\ 29\ \(number\)$/m, "Log price: 29 (number) as a complete Console line");
 });
 
-test("total is calculated correctly", () => {
-  assert.equal(typeof total, "number", "Declare `total = price * quantity`");
-  assert.equal(total, 87, "total should be 87 (29 × 3)");
+test("Step 3: quantity: 3", () => {
+  assert.match(OUTPUT, /^quantity:\ 3$/m, "Log quantity: 3 as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Total: $87", "Log the mission result with console.log()");
+test("Step 4: total: 87 (number)", () => {
+  assert.match(OUTPUT, /^total:\ 87\ \(number\)$/m, "Log total: 87 (number) as a complete Console line");
+});
+
+test("Step 5: Total: $87", () => {
+  assert.match(OUTPUT, /^Total:\ \$87$/m, "Log Total: $87 as a complete Console line");
 });

@@ -1,19 +1,15 @@
-test("engineeringNames has correct names", () => {
-  assert.deepEqual(engineeringNames, ["Alice", "Carol", "Eve"],
-    "engineeringNames should be ['Alice', 'Carol', 'Eve']");
+test("Engineering names", () => {
+  assert.match(OUTPUT, /^CHECK names: Alice,Carol,Eve$/m, "Expected this standalone Console line: CHECK names: Alice,Carol,Eve");
 });
 
-test("avgEngineerSalary is correct", () => {
-  assert.equal(avgEngineerSalary, 107667,
-    "Average of [95000, 108000, 120000] rounded should be 107667");
+test("Average Engineering salary", () => {
+  assert.match(OUTPUT, /^CHECK average: 107667$/m, "Expected this standalone Console line: CHECK average: 107667");
 });
 
-test("salaryReport has correct entries", () => {
-  assert.equal(salaryReport.length, 5, "salaryReport should have 5 entries");
-  assert.ok(salaryReport[0].includes("Alice"), "First entry should include Alice");
-  assert.ok(salaryReport[0].includes("95"), "First entry should include the salary");
+test("Salary report", () => {
+  assert.match(OUTPUT, /^CHECK report: Alice: \$95,000 \| Bob: \$72,000 \| count: 5$/m, "Expected this standalone Console line: CHECK report: Alice: $95,000 | Bob: $72,000 | count: 5");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Engineers: Alice,Carol,Eve | Avg salary: $107,667", "Log the mission result with console.log()");
+test("Standalone Engineering summary", () => {
+  assert.match(OUTPUT, /^Engineers: Alice,Carol,Eve \| Avg salary: \$107,667$/m, "Expected this standalone Console line: Engineers: Alice,Carol,Eve | Avg salary: $107,667");
 });

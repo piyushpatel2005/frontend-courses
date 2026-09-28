@@ -1,27 +1,15 @@
-test("isValidEmail validates correctly", () => {
-  assert.equal(typeof isValidEmail, "function", "Define isValidEmail");
-  assert.equal(isValidEmail("alice@example.com"), true, "Valid email should return true");
-  assert.equal(isValidEmail("bob@domain.org"), true, "Valid email should return true");
-  assert.equal(isValidEmail("notanemail"), false, "No @ sign should return false");
-  assert.equal(isValidEmail("@domain.com"), false, "Empty local part should return false");
+test("Basic email shape", () => {
+  assert.match(OUTPUT, /^CHECK email: true \| true \| false \| false$/m, "Expected this standalone Console line: CHECK email: true | true | false | false");
 });
 
-test("extractNumbers finds all numbers", () => {
-  assert.equal(typeof extractNumbers, "function", "Define extractNumbers");
-  assert.deepEqual(extractNumbers("I have 3 cats and 12 dogs"), ["3", "12"],
-    "Should extract ['3', '12']");
-  assert.deepEqual(extractNumbers("no numbers here"), [],
-    "Should return empty array when no numbers");
+test("Number extraction including empty input", () => {
+  assert.match(OUTPUT, /^CHECK numbers: 3,12 \| none: $/m, "Expected this standalone Console line: CHECK numbers: 3,12 | none: ");
 });
 
-test("maskEmail masks correctly", () => {
-  assert.equal(typeof maskEmail, "function", "Define maskEmail");
-  assert.equal(maskEmail("alice@example.com"), "a****@example.com",
-    "Should mask 'alice' to 'a****'");
-  assert.equal(maskEmail("bob@domain.org"), "b**@domain.org",
-    "Should mask 'bob' to 'b**'");
+test("Mask local part of valid addresses", () => {
+  assert.match(OUTPUT, /^CHECK mask: a\*\*\*\*@example\.com \| b\*\*@domain\.org$/m, "Expected this standalone Console line: CHECK mask: a****@example.com | b**@domain.org");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "valid: true | numbers: 3,12 | masked: a****@example.com", "Log the mission result with console.log()");
+test("Standalone regex summary", () => {
+  assert.match(OUTPUT, /^valid: true \| numbers: 3,12 \| masked: a\*\*\*\*@example\.com$/m, "Expected this standalone Console line: valid: true | numbers: 3,12 | masked: a****@example.com");
 });

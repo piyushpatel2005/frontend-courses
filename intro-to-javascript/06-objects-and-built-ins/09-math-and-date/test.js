@@ -1,8 +1,10 @@
-test("Math and Date values are correct", () => {
-  assert.equal(roundedUp, 5, "roundedUp should be 5");
-  assert.equal(launchYear, 2024, "launchYear should be 2024");
+test("Math.ceil rounds upward", () => {
+  assert.match(OUTPUT, /^CHECK 1: 5$/m, "Log CHECK 1 from roundedUp");
+});
+test("Date provides the UTC year", () => {
+  assert.match(OUTPUT, /^CHECK 2: 2024$/m, "Log CHECK 2 from launchYear");
 });
 
 test("logs the mission result", () => {
-  assert.includes(OUTPUT, "5 | 2024", "Log the mission result with console.log()");
+  assert.match(OUTPUT, /^5 \| 2024$/m, "Log the values on their own line");
 });

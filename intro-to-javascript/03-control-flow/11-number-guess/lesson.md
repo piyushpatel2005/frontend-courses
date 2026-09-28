@@ -14,19 +14,29 @@ hints:
 
 # Challenge: Number Guess Referee
 
-You have seen the pattern in the demo. Now write the program yourself in `script.js`. Keep the focus on values, conditions, loops, arrays, or functions—not page elements.
+The ticket-scan demo stopped at the first matching ID. Apply the same search to guesses in `findGuess(secret, guesses)`, returning a match message immediately. If the loop ends without a match, return `"No match"`. Keep all work in `script.js` and log each checkpoint separately.
+
+## Worked example
+
+A loop can return as soon as it finds the first matching item:
+
+```javascript
+function firstEven(values) {
+  for (const value of values) {
+    if (value % 2 === 0) return value;
+  }
+  return null;
+}
+console.log(firstEven([3, 8, 10])); // 8
+```
 
 ## Your Tasks
 
-1. Define `findGuess(secret, guesses)`.
-2. Return `"Correct: <number>"` when the first matching guess is found.
-3. Return `"No match"` when the loop finishes without a match.
-4. Log the result of `findGuess(7, [3, 9, 7])`.
+1. Implement `findGuess(secret, guesses)` to return `"Correct: <number>"` on the first match or `"No match"` if none matches. The provided first-guess probe should print `First guess: Correct: 2`.
+2. Log `Match: Correct: 7` from `(7, [3,9,7,7])`.
+3. Log `Missing: No match` from `(7, [1,2,3])`.
+4. Log `Correct: 7` alone from `(7, [3,9,7])`.
 
 ## Checkpoint
 
-Run your code after each small change. The Console should show one clear summary once all checks pass.
-
-## Decision Desk complete
-
-You can choose paths and repeat work without losing control of the program. Take the section quiz, then package those moves into functions.
+Run after each change; the Console should show four separate checkpoint lines.

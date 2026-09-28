@@ -10,4 +10,6 @@ function activeRegister(records) {
     .map((student) => `${student.name}: ${student.course}`);
 }
 
+console.log(`CHECK students: ${students.map(s => s.name).join(",")} | active: ${students.map(s => s.active).join(",")}`);
+console.log(`CHECK register: ${activeRegister(students).join(" | ")}`);
 console.log(activeRegister(students).join(" | "));

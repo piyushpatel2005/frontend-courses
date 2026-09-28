@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Catalog</h1>
+    <p class="note">Offline preview · deterministic mock data, not a live API</p>
+    <form id="catalog-form"><label for="catalog-query">Search products</label> <input id="catalog-query" value="tea &amp; honey"><button>Search</button></form>
+    <p>Mock request: <code id="request-url">Not requested.</code></p>
+    <p id="search-status" role="status">Enter a term.</p>
+    <ul id="results"></ul>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

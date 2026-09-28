@@ -1,0 +1,9 @@
+blocks:
+- index: 0
+  expected_output: 'true
+
+    false
+
+    Travel camera: on loan (wide lens)
+
+    Travel camera: ready (wide lens)'

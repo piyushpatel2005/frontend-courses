@@ -1,22 +1,19 @@
-test("getDayType is defined", () => {
-  assert.equal(typeof getDayType, "function", "Define a function named getDayType");
+test("Step 1: Sunday: Weekend", () => {
+  assert.match(OUTPUT, /^Sunday:\ Weekend$/m, "Log Sunday: Weekend as a complete Console line");
 });
 
-test("getDayType identifies weekends", () => {
-  assert.equal(getDayType("Saturday"), "Weekend", "Saturday should return 'Weekend'");
-  assert.equal(getDayType("Sunday"), "Weekend", "Sunday should return 'Weekend'");
+test("Step 2: Weekend pair: Weekend,Weekend", () => {
+  assert.match(OUTPUT, /^Weekend\ pair:\ Weekend,Weekend$/m, "Log Weekend pair: Weekend,Weekend as a complete Console line");
 });
 
-test("getDayType identifies weekdays", () => {
-  assert.equal(getDayType("Monday"), "Weekday", "Monday should return 'Weekday'");
-  assert.equal(getDayType("Wednesday"), "Weekday", "Wednesday should return 'Weekday'");
-  assert.equal(getDayType("Friday"), "Weekday", "Friday should return 'Weekday'");
+test("Step 3: Weekdays: Weekday,Weekday,Weekday,Weekday,Weekday", () => {
+  assert.match(OUTPUT, /^Weekdays:\ Weekday,Weekday,Weekday,Weekday,Weekday$/m, "Log Weekdays: Weekday,Weekday,Weekday,Weekday,Weekday as a complete Console line");
 });
 
-test("getDayType returns Unknown for invalid input", () => {
-  assert.equal(getDayType("Holiday"), "Unknown", "Invalid day name should return 'Unknown'");
+test("Step 4: Holiday: Unknown", () => {
+  assert.match(OUTPUT, /^Holiday:\ Unknown$/m, "Log Holiday: Unknown as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Saturday: Weekend", "Log the mission result with console.log()");
+test("Step 5: Saturday: Weekend", () => {
+  assert.match(OUTPUT, /^Saturday:\ Weekend$/m, "Log Saturday: Weekend as a complete Console line");
 });

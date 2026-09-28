@@ -18,9 +18,7 @@ seo_keywords: javascript, array fill, beginner javascript, programming practice
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A seating row needs a quick way to mark a contiguous group of unavailable seats. Use `fill()` on a copy and inspect the Console.
 
 The fill() method is small but useful. It lets learners replace a range of values in one step and makes a good transition from simple indexing to array methods.
 

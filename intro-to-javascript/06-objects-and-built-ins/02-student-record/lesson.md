@@ -23,11 +23,22 @@ In an object, the **key** names a fact and the **value** stores that fact. For e
 
 The interactive walkthrough used a producer profile. This exercise uses a different perspective: a student course record.
 
+## Worked example
+
+An object groups facts under named keys; dot notation updates one fact:
+
+```javascript
+const exhibit = { title: "Fossils", visitors: 6 };
+exhibit.visitors = 7;
+console.log(exhibit.title, exhibit.visitors); // Fossils 7
+```
+
 ## Your Tasks
 
-1. Create a `student` object with these key-value pairs exactly: `name: "Riley"`, `course: "JavaScript"`, and `score: 88`; then update the `score` property to `92` with dot notation.
-2. Add a `status` key-value pair with the value `"enrolled"`.
-3. Print this exact double-quoted text with `console.log()`: `"Riley | JavaScript | 92 | enrolled"`.
+1. Create a `student` object with `name: "Riley"`, `course: "JavaScript"`, and `score: 88`.
+2. Update `student.score` to `92` with dot notation.
+3. Add `student.status` with the value `"enrolled"`.
+4. Log `Riley | JavaScript | 92 | enrolled` on its own Console line.
 
 ## Checkpoint
 

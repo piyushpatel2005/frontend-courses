@@ -1,13 +1,15 @@
-test("greeting is declared as a string", () => {
-  assert.equal(typeof greeting, "string", 'Declare `const greeting = "Hello, JavaScript!"`');
-  assert.equal(greeting, "Hello, JavaScript!", 'greeting should be "Hello, JavaScript!"');
+test("Step 1: greeting: Hello, JavaScript!", () => {
+  assert.match(OUTPUT, /^greeting:\ Hello,\ JavaScript!$/m, "Log greeting: Hello, JavaScript! as a complete Console line");
 });
 
-test("score starts at 0 and is increased to 10", () => {
-  assert.equal(typeof score, "number", "Declare `let score = 0`");
-  assert.equal(score, 10, "Increase score by 10 with `score += 10`");
+test("Step 2: initial score: 0", () => {
+  assert.match(OUTPUT, /^initial\ score:\ 0$/m, "Log initial score: 0 as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Hello, JavaScript! Score: 10", "Log the mission result with console.log()");
+test("Step 3: score: 10", () => {
+  assert.match(OUTPUT, /^score:\ 10$/m, "Log score: 10 as a complete Console line");
+});
+
+test("Step 4: Hello, JavaScript! Score: 10", () => {
+  assert.match(OUTPUT, /^Hello,\ JavaScript!\ Score:\ 10$/m, "Log Hello, JavaScript! Score: 10 as a complete Console line");
 });

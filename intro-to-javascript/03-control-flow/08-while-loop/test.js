@@ -1,22 +1,19 @@
-test("countdown is defined", () => {
-  assert.equal(typeof countdown, "function", "Define a function named countdown");
+test("Step 1: Countdown one: 1", () => {
+  assert.match(OUTPUT, /^Countdown\ one:\ 1$/m, "Log Countdown one: 1 as a complete Console line");
 });
 
-test("countdown returns correct array", () => {
-  assert.deepEqual(countdown(5), [5, 4, 3, 2, 1], "countdown(5) should return [5,4,3,2,1]");
-  assert.deepEqual(countdown(3), [3, 2, 1], "countdown(3) should return [3,2,1]");
-  assert.deepEqual(countdown(1), [1], "countdown(1) should return [1]");
+test("Step 2: Collatz one: 0", () => {
+  assert.match(OUTPUT, /^Collatz\ one:\ 0$/m, "Log Collatz one: 0 as a complete Console line");
 });
 
-test("collatz is defined", () => {
-  assert.equal(typeof collatz, "function", "Define a function named collatz");
+test("Step 3: Countdown three: 3,2,1", () => {
+  assert.match(OUTPUT, /^Countdown\ three:\ 3,2,1$/m, "Log Countdown three: 3,2,1 as a complete Console line");
 });
 
-test("collatz returns correct step count", () => {
-  assert.equal(collatz(1), 0, "collatz(1) should return 0 steps");
-  assert.equal(collatz(6), 8, "collatz(6) should return 8 steps");
+test("Step 4: Collatz six: 8", () => {
+  assert.match(OUTPUT, /^Collatz\ six:\ 8$/m, "Log Collatz six: 8 as a complete Console line");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "Countdown from 5: 5,4,3,2,1", "Log the mission result with console.log()");
+test("Step 5: Countdown from 5: 5,4,3,2,1", () => {
+  assert.match(OUTPUT, /^Countdown\ from\ 5:\ 5,4,3,2,1$/m, "Log Countdown from 5: 5,4,3,2,1 as a complete Console line");
 });

@@ -1,0 +1,6 @@
+blocks:
+  - index: 0
+    expected_output: |
+      true
+      false
+      false

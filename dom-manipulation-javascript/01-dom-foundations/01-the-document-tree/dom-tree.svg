@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" role="img" aria-labelledby="title desc">
+<title id="title">The DOM is a family tree</title>
+<desc id="desc">Document leads to html, which branches to head and body. The body contains main. The title lives inside head.</desc>
+<rect width="760" height="440" rx="22" fill="#fcfaf5"/>
+<text x="40" y="42" font-family="system-ui" font-size="23" font-weight="700" fill="#273445">The DOM: from document to page content</text>
+<g stroke="#244c64" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M380 111 L380 143"/><path d="M380 205 L177 242"/><path d="M380 205 L567 242"/><path d="M177 304 L177 344"/><path d="M567 304 L567 344"/>
+</g>
+<g fill="#244c64"><path d="M380 148 l-7 -10 h14z"/><path d="M172 248 l-2 -12 11 9z"/><path d="M572 248 l-11 -9 2 12z"/><path d="M177 350 l-7 -10 h14z"/><path d="M567 350 l-7 -10 h14z"/></g>
+<g stroke="#244c64" stroke-width="2.5"><rect x="275" y="61" width="210" height="50" rx="11" fill="#a5d8ff" transform="rotate(-.6 380 86)"/><rect x="275" y="150" width="210" height="55" rx="11" fill="#c3fae8" transform="rotate(.5 380 177)"/><rect x="85" y="248" width="184" height="56" rx="11" fill="#fff3bf" transform="rotate(-.6 177 276)"/><rect x="475" y="248" width="184" height="56" rx="11" fill="#ffd8a8" transform="rotate(.7 567 276)"/><rect x="85" y="351" width="184" height="56" rx="11" fill="#fff3bf"/><rect x="475" y="351" width="184" height="56" rx="11" fill="#b2f2bb"/></g>
+<g font-family="system-ui" font-size="20" font-weight="600" text-anchor="middle" fill="#243447"><text x="380" y="94">document</text><text x="380" y="184">&lt;html&gt;</text><text x="177" y="284">&lt;head&gt;</text><text x="567" y="284">&lt;body&gt;</text><text x="177" y="387">&lt;title&gt;</text><text x="567" y="387">&lt;main&gt;</text></g>
+</svg>

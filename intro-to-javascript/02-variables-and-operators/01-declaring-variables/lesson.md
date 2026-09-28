@@ -18,11 +18,9 @@ seo_keywords: javascript, declaring variables, beginner javascript, programming 
 
 ## Mission: Scoreboard Engine
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you store and calculate the numbers behind a rising superstar's tour score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+Start by naming a fixed value and a value you can update. This task uses a food label and a favorite number rather than a scoreboard.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Variables give names to values so you can reuse and change them. This lesson uses one const and one let so learners can see both styles in action.
+Variables give names to values so you can reuse them. `const` prevents reassignment of a name; `let` permits it. The example's `+= 2` is shorthand for `returnedBooks = returnedBooks + 2`. In your task, start at 5 and then assign 8 rather than adding 8.
 
 ## Example
 
@@ -35,5 +33,7 @@ console.log(`${sectionLabel}: ${returnedBooks}`);
 
 ## Your Task
 
-1. Declare favoriteFood as tacos and favoriteNumber as 5, then update favoriteNumber to 8.
-2. Log tacos | 8 with `console.log()`.
+1. Set `favoriteFood` to `"tacos"`; the provided probe will log `food: tacos`.
+2. Set the initial `favoriteNumber` to `5`; the provided probe will log `initial number: 5`.
+3. Update `favoriteNumber` to `8`; the provided probe will log `updated number: 8`.
+4. Log `tacos | 8` on its own line using both variables.

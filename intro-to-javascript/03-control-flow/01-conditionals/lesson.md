@@ -19,11 +19,9 @@ seo_keywords: javascript, conditionals, beginner javascript, programming practic
 
 ## Mission: Decision Desk
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you teach the Starline Awards engine how to choose the next action. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+This section teaches a script to choose between outcomes. Keep the work in `script.js` and check results in the Console.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Conditional statements let your program make decisions. JavaScript provides `if`, `else if`, and `else` for branching logic.
+Conditional statements let your program make decisions. `score >= 90` asks whether a number is at least 90 and yields `true` or `false`. JavaScript tests branches from top to bottom; only the first matching branch runs. Put the highest threshold first so 95 does not get classified by a lower one.
 
 ## Syntax
 
@@ -37,18 +35,23 @@ if (condition) {
 }
 ```
 
-## Ternary operator — compact one-liner
+## A named calculation
 
-For a simple true/false choice:
+The task asks for a function even though the dedicated Functions module comes next. For now, read `function name(input) { ... }` as a reusable calculation: the input takes a different value on each call, and `return` sends back its result. This separate example uses a different rule:
 
 ```javascript
-let age = 20;
-let status = age >= 18 ? "adult" : "minor";
+function accessLevel(age) {
+  if (age >= 18) return "adult";
+  return "minor";
+}
+console.log(accessLevel(20)); // adult
 ```
 
-## Your Task
+Use the same function shape to classify scores, but use `else if` for the intermediate grade thresholds. The shorthand `? :` appears later; you do not need it here.
 
-1. Write a function `getGrade(score)` that returns a letter grade:
-2. Call `getGrade(85)` and display the result in `#output` as `"Grade: B"`.
-3. Verify the program behavior: boundary values are handled correctly.
-4. Verify the program behavior: logs the mission result.
+## Your Tasks
+
+1. Implement `getGrade(score)` to return A, B, C, D, or F for the 90/80/70/60 cutoffs (otherwise F). The provided `Grade 95` probe should print `Grade 95: A`.
+2. Log `Grade set: A,B,C,D,F` by calling `getGrade` for 95, 85, 75, 65, and 50.
+3. Log `Grade boundaries: A,B,D` by calling `getGrade` for 90, 80, and 60.
+4. Log `Grade: B` by calling `getGrade(85)`.

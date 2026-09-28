@@ -1,3 +1,0 @@
-const messageOrder = [];
-
-console.log("");

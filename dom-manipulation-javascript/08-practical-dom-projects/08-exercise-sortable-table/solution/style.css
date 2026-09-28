@@ -1,0 +1,8 @@
+* { box-sizing: border-box; }
+body { max-width: 46rem; margin: 2rem auto; padding: 0 1rem; font: 1rem/1.6 system-ui, sans-serif; color: #182638; background: #f7fafc; }
+table { border-collapse: collapse; width: 100%; background: white; }
+caption { text-align: left; font-weight: 600; padding-bottom: .5rem; }
+th, td { border: 1px solid #687b91; padding: .65rem; text-align: left; }
+th { background: #e7f0ff; }
+button { font: inherit; color: #143f70; background: transparent; border: 0; text-decoration: underline; cursor: pointer; padding: .2rem; }
+button:focus-visible { outline: 3px solid #b85d13; outline-offset: 2px; }

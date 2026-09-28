@@ -19,11 +19,9 @@ seo_keywords: javascript, break and continue, beginner javascript, programming p
 
 ## Mission: Decision Desk
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you teach the Starline Awards engine how to choose the next action. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+A list scan can stop at the first match or skip entries that should not be collected.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Two special statements let you control loop execution mid-flight.
+Two statements change a loop while it runs: `break` exits the loop, while `continue` skips only the current iteration. The task uses an array as an input list and a new array as output; use `result.push(value)` to collect accepted numbers. When none is found, return `null` rather than a made-up number.
 
 ## `break` — exit the loop early
 
@@ -45,10 +43,10 @@ for (let i = 0; i < 5; i++) {
 }
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write a function `firstNegative(numbers)` that returns the **first negative number** in the array, or `null` if there isn't one. Use `break` to stop as soon as you find it.
-2. Write a function `positiveOnly(numbers)` that returns a new array containing only positive numbers (> 0). Use `continue` to skip non-positive values.
-3. Call both with `[-5, 3, -2, 8, -1]` and log with `console.log()`: `"First negative: -5 | Positives: 3,8"`.
-4. Verify the program behavior: positiveOnly returns only positive numbers.
-5. Verify the program behavior: logs the mission result.
+1. Implement `firstNegative(numbers)` to return the first negative (using `break`) or `null` when none is found. The provided first-negative probe should print `First from -5,3: -5`.
+2. Implement `positiveOnly(numbers)` to return a new array of positive values (skip non-positive values with `continue`). The provided positive probe should print `Positive one: 5`.
+3. Log `First cases: -2,null` from `[3,8,-2,-1]` and `[1,2,3]`.
+4. Log `Positive cases: 3,8 | empty` from `[-5,3,-2,8,-1]` and `[-1,-2]`.
+5. Log `First negative: -5 | Positives: 3,8` using both functions.

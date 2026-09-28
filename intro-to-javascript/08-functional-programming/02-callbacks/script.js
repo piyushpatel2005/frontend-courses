@@ -3,4 +3,6 @@ function repeatAction(callback) {
 }
 
 const runs = [];
-console.log("");
+repeatAction(() => runs.push("run"));
+console.log(`CHECK callbacks: ${runs.join(",")}`);
+// Log the collected runs on their own Console line.

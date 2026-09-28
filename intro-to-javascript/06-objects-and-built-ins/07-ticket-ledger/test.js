@@ -1,14 +1,14 @@
-test("ticketId and ticketPrice use the intended numeric types", () => {
-  assert.equal(typeof ticketId, "bigint", "Create ticketId as a BigInt");
-  assert.equal(ticketId, 9007199254740993n, "Use the required ticket ID");
-  assert.equal(ticketPrice, 19.5, "Convert the text price with Number()");
+test("ticketId stores an exact BigInt", () => {
+  assert.match(OUTPUT, /^CHECK 1: bigint \| 9007199254740993$/m, "Log CHECK 1 from ticketId");
+});
+test("ticketPrice converts text to a Number", () => {
+  assert.match(OUTPUT, /^CHECK 2: 19\.5$/m, "Log CHECK 2 from ticketPrice");
 });
 
 test("calculateTotal converts the ticket count deliberately", () => {
-  assert.equal(typeof calculateTotal, "function", "Define calculateTotal(ticketCount, price)");
-  assert.equal(calculateTotal(3n, 19.5), 58.5);
+  assert.match(OUTPUT, /^CHECK 3: 58\.5$/m, "Log CHECK 3 from calculateTotal");
 });
 
 test("logs the ticket ledger", () => {
-  assert.includes(OUTPUT, "Ticket 9007199254740993 | Total: 58.5", "Log the exact ledger summary");
+  assert.match(OUTPUT, /^Ticket 9007199254740993 \| Total: 58\.5$/m, "Log the ledger on its own line");
 });

@@ -19,9 +19,7 @@ seo_keywords: javascript, switch statement, beginner javascript, programming pra
 
 ## Mission: Decision Desk
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you teach the Starline Awards engine how to choose the next action. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+For a day name, select one of three outcomes: weekend, weekday, or unknown.
 
 The `switch` statement is an alternative to long `if/else if` chains when you are matching a single value against several discrete options.
 
@@ -40,26 +38,28 @@ switch (expression) {
 }
 ```
 
-> **Important:** Always add `break` at the end of each case. Without it, execution "falls through" to the next case.
+When a case logs or assigns a result, use `break` to stop execution from falling into the next case. In a function, `return` also stops execution, so a case that returns does **not** need `break`.
 
 ## Fall-through (sometimes intentional)
 
 ```javascript
-let day = "Saturday";
-switch (day) {
-    case "Saturday":
-    case "Sunday":
-        console.log("Weekend!");
+const light = "amber";
+switch (light) {
+    case "amber":
+    case "red":
+        console.log("Stop");
         break;
     default:
-        console.log("Weekday");
+        console.log("Go");
 }
 ```
 
-## Your Task
+Adjacent cases can share a result. The switch matches exact values: `"Saturday"` is not the same as `"saturday"`.
 
-1. Write a function `getDayType(day)` that accepts a day name (e.g. `"Monday"`) and returns:
-2. Call `getDayType("Saturday")` and display the result in `#output` as `"Saturday: Weekend"`.
-3. Verify the program behavior: getDayType identifies weekdays.
-4. Verify the program behavior: getDayType returns Unknown for invalid input.
-5. Verify the program behavior: logs the mission result.
+## Your Tasks
+
+1. Implement `getDayType(day)` using `switch`: Saturday and Sunday return `"Weekend"`, weekdays return `"Weekday"`, and any other name returns `"Unknown"`. The provided Sunday probe should print `Sunday: Weekend`.
+2. Log `Weekend pair: Weekend,Weekend` from Saturday and Sunday calls.
+3. Log `Weekdays: Weekday,Weekday,Weekday,Weekday,Weekday` from Monday through Friday calls.
+4. Log `Holiday: Unknown` from an invalid name.
+5. Log `Saturday: Weekend` from `getDayType("Saturday")`.

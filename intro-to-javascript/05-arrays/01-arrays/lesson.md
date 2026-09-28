@@ -18,9 +18,7 @@ seo_keywords: javascript, arrays, beginner javascript, programming practice
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+The Starline Awards setlist needs an ordered place to store its stops. Create an array in `script.js` and read its endpoints in the Console.
 
 Arrays store ordered values. This first array lesson focuses on the two basics beginners need immediately: creating an array and reading the first and last elements.
 
@@ -34,5 +32,5 @@ console.log(stops[stops.length - 1]);
 
 ## Your Task
 
-1. Create a colors array with red, green, and blue.
-2. Log red | blue with `console.log()`. using the first and last values.
+1. Create a `colors` array with `"red"`, `"green"`, and `"blue"`.
+2. Log `red | blue` from the first and last values.

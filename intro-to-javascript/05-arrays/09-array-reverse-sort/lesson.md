@@ -18,9 +18,7 @@ seo_keywords: javascript, array reverse and sort, beginner javascript, programmi
 
 ## Mission: Setlist Vault
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you organize a superstar's songs, venues, and tour moments as ordered collections. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A leaderboard needs numeric order, but the incoming scores should stay untouched. Sort a copy and reverse another copy in `script.js`; compare both in the Console.
 
 Sorting and reversing are two common array operations that beginners often use together. This lesson keeps the data small and the output explicit so the order is easy to verify.
 
@@ -35,4 +33,4 @@ console.log(leaderboard);
 ## Your Task
 
 1. Create sortedNumbers from [3, 1, 4, 2] so it becomes [1, 2, 3, 4].
-2. Create reversedNumbers from the sorted array and display [1,2,3,4] | [4,3,2,1] in #output.
+2. Create `reversedNumbers` by reversing a copy of `sortedNumbers`, leaving the original sorted; the supplied probe prints both arrays.

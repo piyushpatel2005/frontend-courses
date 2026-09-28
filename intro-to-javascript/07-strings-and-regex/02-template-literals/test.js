@@ -1,21 +1,7 @@
-test("formatCurrency formats USD correctly", () => {
-  assert.equal(typeof formatCurrency, "function", "Define formatCurrency");
-  assert.equal(formatCurrency(1234.5), "$1,234.50", 'formatCurrency(1234.5) should return "$1,234.50"');
-  assert.equal(formatCurrency(0), "$0.00", 'formatCurrency(0) should return "$0.00"');
+test("Trimmed two-line guest sign", () => {
+  assert.match(OUTPUT, /^CHECK sign: Guest: Lee \| Seat: C4$/m, "Expected this standalone Console line: CHECK sign: Guest: Lee | Seat: C4");
 });
 
-test("truncate shortens long text", () => {
-  assert.equal(typeof truncate, "function", "Define truncate");
-  assert.equal(truncate("Hello World", 5), "Hello...", "truncate('Hello World', 5) should return 'Hello...'");
-  assert.equal(truncate("Hi", 10), "Hi", "truncate should not add '...' if text fits");
-});
-
-test("toSlug converts title to slug", () => {
-  assert.equal(typeof toSlug, "function", "Define toSlug");
-  assert.equal(toSlug("Hello World"), "hello-world", "toSlug should lowercase and hyphenate");
-  assert.equal(toSlug("Hello, World!"), "hello-world", "toSlug should remove special chars");
-});
-
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "$1,234.50 | Hello... | hello-world", "Log the mission result with console.log()");
+test("Separate supplied guest sign", () => {
+  assert.match(OUTPUT, /^Guest: Nia\nSeat: B12$/m, "Expected this standalone Console line: Guest: Nia\nSeat: B12");
 });

@@ -1,8 +1,11 @@
-test("string methods return the expected values", () => {
-  assert.equal(upperPhrase, 'HELLO WORLD', "upperPhrase should be uppercase");
-  assert.equal(hasWorld, true, "hasWorld should be true");
+test("Uppercase transformation", () => {
+  assert.match(OUTPUT, /^CHECK uppercase: HELLO WORLD$/m, "Use toUpperCase() on phrase");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "HELLO WORLD | true", "Log the mission result with console.log()");
+test("Word membership check", () => {
+  assert.match(OUTPUT, /^CHECK includes: true$/m, "Use includes() to check phrase");
+});
+
+test("Standalone combined result", () => {
+  assert.match(OUTPUT, /^HELLO WORLD \| true$/m, "Log the combined result on its own line");
 });

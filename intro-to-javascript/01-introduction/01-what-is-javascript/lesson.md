@@ -18,9 +18,9 @@ seo_keywords: javascript, what is javascript?, beginner javascript, programming 
 
 ## Mission: Signal Launch
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you turn the Starline Awards scoreboard from a static page into a program that can report its own score. This one integration lesson uses `index.html` and `script.js` together; later stages focus on JavaScript programming in `script.js`, not changing page elements.
+The Starline Awards scoreboard starts as a static page. In this one bridge lesson, connect `index.html` to `script.js` and show a calculated result in the page. The remaining lessons in these sections use only `script.js` and the Console.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+Run the starter and watch the paragraph in the preview. It is empty until your script writes the message and number into `#output`.
 
 JavaScript runs in the browser and powers the interactive parts of the web. This first coding lesson keeps the idea simple: store a message, calculate a number, and show both on the page.
 
@@ -36,7 +36,7 @@ JavaScript runs in the browser and powers the interactive parts of the web. This
 
 ![Diagram showing index.html loading script.js with a script src tag, then script.js writing a result.](html-loads-javascript.svg)
 
-`index.html` contains the page shell and add this line near the end of `<body>`:
+`index.html` contains the page shell and includes this line near the end of `<body>`:
 
 ```html
 <script src="script.js"></script>
@@ -46,13 +46,16 @@ That `src` value is the filename. The browser reads `index.html`, reaches the sc
 
 ## Example
 
+`const` gives a value a name. In the last line, `${...}` inserts a value into the backtick-delimited message. The Console displays the result; the starter's `document.getElementById("output").textContent` displays it on the page instead. You will study these tools in more detail later.
+
 ```javascript
 const notice = "Exhibit open";
 const visitors = 4 * 6 - 1;
 console.log(`${notice}: ${visitors}`);
 ```
 
-## Your Task
+## Your Tasks
 
-1. Create introMessage with the text "JavaScript rocks!" and introNumber with the result of (5 * 3) + 2.
-2. Display `JavaScript rocks! | 17` in `#output` after the script runs.
+1. Set `introMessage` to `"JavaScript rocks!"`; the provided probe will log `message: JavaScript rocks!`.
+2. Calculate `introNumber` as `(5 * 3) + 2`; the provided probe will log `number: 17`.
+3. Show `JavaScript rocks! | 17` in `#output` using both values.

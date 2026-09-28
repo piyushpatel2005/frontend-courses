@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 2rem 1rem; background: #101a2b; color: #f2f6ff; font: 1rem/1.5 system-ui, sans-serif; }
+.panel { max-width: 42rem; margin: auto; padding: 1.5rem; background: #1b2c43; border-radius: 1rem; }
+h1 { margin-top: 0; }
+.note { color: #a6d5db; }
+form { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; margin: 1rem 0; }
+input { min-width: 12rem; padding: .5rem; }
+button { padding: .5rem .9rem; cursor: pointer; }
+ul { list-style: none; padding: 0; }
+li { padding: .75rem; margin: .5rem 0; background: #273d58; border-radius: .5rem; }

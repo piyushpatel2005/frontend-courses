@@ -19,19 +19,17 @@ seo_keywords: javascript, arrow functions, beginner javascript, programming prac
 
 ## Mission: Backstage Toolkit
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you package repeatable backstage jobs into small, dependable functions. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
+A backstage calculation can be written as an arrow function instead of a function declaration. Try three short calculations in `script.js` and check their results in the Console.
 
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
-
-Arrow functions are a concise syntax for writing functions introduced in ES6. They are especially popular for short one-liners and callbacks.
+An arrow function is another way to store a function in a variable. For a single expression, the expression's value is returned automatically. You will meet function expressions and callbacks in more detail later; for now, compare this with the function declaration you just used.
 
 ## Syntax variations
 
 ```javascript
-// Traditional function expression
-const add = function(a, b) { return a + b; };
+// Function declaration from the previous lesson
+function traditionalAdd(a, b) { return a + b; }
 
-// Arrow function — same result
+// Arrow function — same result, stored in a variable
 const add = (a, b) => a + b;
 
 // Single parameter — parentheses optional
@@ -46,20 +44,19 @@ const classify = n => {
     if (n < 0) return "negative";
     return "zero";
 };
+console.log(add(2, 3), double(4)); // 5 8
 ```
 
-## Key differences from regular functions
+For this exercise, use an arrow function for each calculation. Arrow functions also differ in how they handle `this` and constructors; those details matter later when you learn objects and classes.
 
-- Arrow functions do **not** have their own `this` — they inherit `this` from the surrounding scope (important in OOP, covered later).
-- Arrow functions cannot be used as constructors.
-- Arrow functions do not have an `arguments` object.
+For temperature conversion, `Math.round(value * 10) / 10` rounds to one decimal place: scaling by ten makes the first decimal a whole number before rounding. You will explore `Math` in the built-ins module.
 
-## Your Task
+## Your Tasks
 
-1. Write an arrow function `square(n)` that returns `n * n`.
-2. Write an arrow function `celsius(f)` that converts Fahrenheit to Celsius: `(f - 32) * 5/9`, rounded to 1 decimal place (`Math.round(value * 10) / 10`).
-3. Write an arrow function `isEven(n)` that returns `true` if `n` is even, `false` otherwise.
-4. log with `console.log()`: `"5² = 25 | 98°F = 36.7°C | 4 is even: true"`.
-5. Verify the program behavior: isEven is a function.
-6. Verify the program behavior: isEven returns correct boolean.
-7. Verify the program behavior: logs the mission result.
+1. Declare `square` as an arrow function.
+2. Return `n * n` from `square(n)`.
+3. Declare `celsius` as an arrow function.
+4. Convert Fahrenheit with `(f - 32) * 5 / 9`, rounded to one decimal via `Math.round(value * 10) / 10`.
+5. Declare `isEven` as an arrow function.
+6. Return boolean parity from `isEven`.
+7. Log `5² = 25 | 98°F = 36.7°C | 4 is even: true` using all three functions.

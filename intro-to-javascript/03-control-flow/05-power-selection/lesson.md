@@ -1,37 +1,35 @@
 ---
-title: "Demo: Choose a Power with switch"
+title: "Demo: Switch a Venue Sign"
 slug: power-selection
 order: 5
 language: javascript
 lesson_type: interactive
-summary: Run a worked JavaScript demo before attempting the related practical challenge.
-seo_title: "Demo: Choose a Power with switch | Introduction to JavaScript"
-seo_description: Inspect a runnable JavaScript demonstration before the practical coding challenge.
+summary: Route guests by entrance name with switch cases and a default.
+seo_title: "Switch a Venue Sign | Introduction to JavaScript"
+seo_description: Assign a direction using switch, break, and default before mapping stage-prop effects.
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Demo: Choose a Power with switch
+# Demo: Switch a Venue Sign
 
-This is the worked run before your practical challenge. A `switch` compares one value against several named cases. `break` prevents a matching case from falling into the next one.
+Before choosing an effect for a stage prop, use `switch` to assign a message for a venue sign. Each case handles one exact value. `break` prevents the message from being overwritten by a later case.
 
 ```javascript run
-const choice = "sword";
-let power;
+const entrance = "west";
+let direction;
 
-switch (choice) {
-  case "sword":
-    power = "Blade burst";
+switch (entrance) {
+  case "west":
+    direction = "Use the garden gate";
     break;
-  case "gun":
-    power = "Pulse shot";
+  case "east":
+    direction = "Use the river gate";
     break;
   default:
-    power = "Training mode";
+    direction = "Ask at reception";
 }
 
-console.log(power);
+console.log(direction);
 ```
 
-## What to notice
-
-Run the example once, then trace the first two steps by hand. The next lesson gives you the same idea with a fresh problem to solve.
+Run it, then try `entrance = "north"` to check the default. In the next exercise, use the same choice pattern in a function that selects a stage-prop effect; a `return` can replace the assignment and `break`.

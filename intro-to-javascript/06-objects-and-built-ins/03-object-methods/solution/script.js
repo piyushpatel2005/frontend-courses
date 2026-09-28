@@ -15,4 +15,8 @@ function averageScore(s) {
   return Math.round((sum / s.scores.length) * 10) / 10;
 }
 
+console.log(`CHECK 1: ${firstName} | ${lastName}`);
+console.log(`CHECK 2: ${fullName(student)}`);
+console.log(`CHECK 3: ${averageScore(student)}`);
+
 console.log(`${fullName(student)} — avg: ${averageScore(student)}`);

@@ -18,9 +18,7 @@ seo_keywords: javascript, data types, beginner javascript, programming practice
 
 ## Mission: Signal Launch
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you turn the Starline Awards scoreboard from a static page into a program that can report its own score. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A check-in record has text, a number, and a true/false flag. Compare the types before formatting a summary.
 
 JavaScript values have types, and beginners need to see that a string, number, and boolean behave differently. This lesson turns that idea into a small typed summary.
 
@@ -35,5 +33,7 @@ console.log(typeof petName, typeof petAge, typeof isAdopted);
 
 ## Your Task
 
-1. Create studentName, studentAge, and isStudent using the values Mia, 14, and true.
-2. Log Mia:string | 14:number | true:boolean with `console.log()`.
+1. Set `studentName` to `"Mia"`; the provided probe will log `name: Mia (string)`.
+2. Set `studentAge` to `14`; the provided probe will log `age: 14 (number)`.
+3. Set `isStudent` to `true`; the provided probe will log `student: true (boolean)`.
+4. Log the typed summary `Mia:string | 14:number | true:boolean` on its own line.

@@ -1,0 +1,5 @@
+blocks:
+- index: 0
+  expected_output: 'Mina: 1 entries
+
+    Teo: 1 entries'

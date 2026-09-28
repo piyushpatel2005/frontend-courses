@@ -5,4 +5,5 @@ function buildLabel() {
   return `${siteName} - ${sectionName}`;
 }
 
+console.log(`Label: ${buildLabel()}`);
 console.log(buildLabel());

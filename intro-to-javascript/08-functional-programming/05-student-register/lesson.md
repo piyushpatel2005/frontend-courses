@@ -16,12 +16,21 @@ hints:
 
 You have seen the pattern in the demo. Now write the program yourself in `script.js`. Keep the focus on values, conditions, loops, arrays, or functions—not page elements.
 
+## Worked example
+
+A different register combines a filter with a map:
+
+```javascript
+const books = [{ title: "Atlas", ready: true }, { title: "Drift", ready: false }];
+const readyTitles = books.filter(book => book.ready).map(book => book.title);
+console.log(readyTitles.join(", ")); // Atlas
+```
+
 ## Your Tasks
 
-1. Create the provided `students` array with Ari, Bea, and Chen records.
-2. Define `activeRegister(records)` using `filter` and `map`.
-3. Return `["Ari: JavaScript", "Chen: JavaScript"]` for the provided records.
-4. Log the register with entries joined by `" | "`.
+1. Replace the empty `students` array with Ari (JavaScript, active), Bea (CSS, inactive), and Chen (JavaScript, active) records.
+2. Complete `activeRegister(records)` using `filter` and `map` to return active students as `"Name: Course"` strings.
+3. Log the joined register as its own `Ari: JavaScript | Chen: JavaScript` line.
 
 ## Checkpoint
 

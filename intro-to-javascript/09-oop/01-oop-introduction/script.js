@@ -1,3 +1,0 @@
-const car = {};
-
-console.log("");

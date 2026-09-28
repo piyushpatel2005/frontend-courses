@@ -1,10 +1,7 @@
-test("repeatAction calls the callback three times", () => {
-  assert.equal(typeof repeatAction, "function", "Define repeatAction as a function");
-  const items = [];
-  repeatAction(() => items.push('run'));
-  assert.deepEqual(items, ['run', 'run', 'run'], "repeatAction should call the callback three times");
+test("Three callback invocations", () => {
+  assert.match(OUTPUT, /^CHECK callbacks: run,run,run$/m, "Expected this standalone Console line: CHECK callbacks: run,run,run");
 });
 
-test("logs the mission result", () => {
-  assert.includes(OUTPUT, "run,run,run", "Log the mission result with console.log()");
+test("Standalone run values", () => {
+  assert.match(OUTPUT, /^run,run,run$/m, "Expected this standalone Console line: run,run,run");
 });

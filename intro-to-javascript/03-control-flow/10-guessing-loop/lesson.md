@@ -1,32 +1,30 @@
 ---
-title: "Demo: Number Guess Loop"
+title: "Demo: Stop a Ticket Scan"
 slug: guessing-loop
 order: 10
 language: javascript
 lesson_type: interactive
-summary: Run a worked JavaScript demo before attempting the related practical challenge.
-seo_title: "Demo: Number Guess Loop | Introduction to JavaScript"
-seo_description: Inspect a runnable JavaScript demonstration before the practical coding challenge.
+summary: Stop a loop as soon as the target ticket is found.
+seo_title: "Stop a Ticket Scan | Introduction to JavaScript"
+seo_description: Trace a for-of loop that breaks at the first matching ticket before writing a guess search.
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Demo: Number Guess Loop
+# Demo: Stop a Ticket Scan
 
-This is the worked run before your practical challenge. A loop can inspect guesses one at a time. `break` stops immediately once the program has found the answer.
+Before searching a list of guesses, watch a desk scan ticket IDs. `break` stops when the target appears; entries after it are never inspected.
 
 ```javascript run
-const secret = 7;
-const guesses = [3, 9, 7, 5];
+const targetTicket = 42;
+const scannedTickets = [18, 42, 51];
 
-for (const guess of guesses) {
-  if (guess === secret) {
-    console.log("Correct: 7");
+for (const ticket of scannedTickets) {
+  if (ticket === targetTicket) {
+    console.log(`Found ticket: ${ticket}`);
     break;
   }
-  console.log(`Try again: ${guess}`);
+  console.log(`Not this one: ${ticket}`);
 }
 ```
 
-## What to notice
-
-Run the example once, then trace the first two steps by hand. The next lesson gives you the same idea with a fresh problem to solve.
+Run it and notice that 51 never appears in the Console. In the next exercise, put a similar search in a function so it can return either a match message or `"No match"` after the loop finishes.

@@ -18,9 +18,7 @@ seo_keywords: javascript, closures, beginner javascript, programming practice
 
 ## Mission: Backstage Toolkit
 
-You are the programmer for the Starline Awards, a live showcase for a rising superstar. This stage helps you package repeatable backstage jobs into small, dependable functions. Keep the work in `script.js`: this course is about JavaScript programming, not changing page elements.
-
-Run the code and use the Console as your checkpoint. Read the example, make one focused change, then complete the task.
+A ticket counter has to remember how many tickets it has issued. Build a returned function that keeps that count between calls, then watch its Console output.
 
 A closure lets an inner function remember the variables around it. A counter is the clearest beginner example because each call proves the function kept its previous state.
 
@@ -38,7 +36,7 @@ const takeTicket = makeTicketDispenser();
 console.log(takeTicket(), takeTicket());
 ```
 
-## Your Task
+## Your Tasks
 
-1. Write makeCounter() so it returns a function that increases and returns a private count value.
-2. Log 1 | 2 | 3 with `console.log()`. by calling the same counter three times.
+1. Define `makeCounter()` to return a function that remembers a private count, increments it, and returns it.
+2. Log `1 | 2 | 3` by calling a fresh counter three times.
