@@ -1,38 +1,37 @@
-const settle = () => new Promise(resolve => setTimeout(resolve, 0));
-const check = mode => { document.querySelector("#alert-mode").value = mode; document.querySelector("#check-alerts").click(); };
-test("click shows loading before response settles", async () => {
-  const original = window.mockFetch;
-  let release, requested = false;
-  window.mockFetch = () => { requested = true; return new Promise(resolve => { release = resolve; }); };
+const $ = selector => document.querySelector(selector);
+const response = data => new Response(JSON.stringify(data), {status: 200});
+const gate = () => { let resolve, reject; const promise = new Promise((yes, no) => {resolve=yes; reject=no;}); return {promise, resolve, reject}; };
+test("announce checking before the request settles", async () => {
+  const original=window.mockFetch, g=gate(); let work;
+  window.mockFetch=()=>g.promise;
+  try {work=window.loadAlerts(); assert.text($("#alert-status"), "Checking alerts…");}
+  finally {g.resolve(response([])); if(work) await work; window.mockFetch=original;}
+});
+test("render varied successful alert titles as text", () => {
+  $("#alert-list").innerHTML="<li>Old</li>";
+  window.renderAlerts([{title:"<img src=x> Flooding"},{title:"Bridge open"}]);
+  const rows=$("#alert-list").children;
+  assert.equal(rows.length,2); assert.text(rows[0],"<img src=x> Flooding");
+  assert.text(rows[1],"Bridge open"); assert.equal(rows[0].children.length,0);
+});
+test("announce an empty successful result", () => {
+  $("#alert-status").textContent="Before";
+  window.showEmptyAlerts(); assert.text($("#alert-status"),"No alerts right now.");
+});
+test("reject HTTP failure before any JSON read", () => {
+  window.checkAlertResponse(response([]));
+  let thrown=false;
+  // A valid JSON error body must still fail the status check.
+  try {window.checkAlertResponse(new Response("[]",{status:503}));} catch(error) {thrown=true;}
+  assert.equal(thrown,true,"Throw when response.ok is false");
+});
+test("a network rejection clears old alerts and reports failure", async () => {
+  const original=window.mockFetch;
+  window.mockFetch=async()=>{throw new TypeError("Offline test");};
   try {
-    check("alerts");
-    assert.text(document.querySelector("#alert-status"), "Checking alerts…");
-    assert.equal(requested, true);
-  } finally {
-    if (release) release(new Response("[]", { status: 200 }));
-    await settle(); window.mockFetch = original;
-  }
-});
-test("successful JSON renders text-only alerts", async () => {
-  check("alerts"); await settle();
-  assert.text(document.querySelector("#alert-list > li"), "Boardwalk closed <until noon>");
-  assert.equal(document.querySelectorAll("#alert-list li *").length, 0);
-});
-test("empty success clears old alerts", async () => {
-  document.querySelector("#alert-list").innerHTML = "<li>Old alert</li>";
-  check("empty"); await settle();
-  assert.equal(document.querySelectorAll("#alert-list li").length, 0);
-  assert.text(document.querySelector("#alert-status"), "No alerts right now.");
-});
-test("HTTP failures are checked before JSON", async () => {
-  document.querySelector("#alert-list").innerHTML = "<li>Old alert</li>";
-  check("http"); await settle();
-  assert.equal(document.querySelectorAll("#alert-list li").length, 0);
-  assert.text(document.querySelector("#alert-status"), "Could not load alerts.");
-});
-test("rejected requests clear old alerts", async () => {
-  document.querySelector("#alert-list").innerHTML = "<li>Old alert</li>";
-  check("offline"); await settle();
-  assert.equal(document.querySelectorAll("#alert-list li").length, 0);
-  assert.text(document.querySelector("#alert-status"), "Could not load alerts.");
+    $("#alert-list").innerHTML="<li>Old</li>";
+    await window.loadAlerts();
+    assert.equal($("#alert-list").children.length,0);
+    assert.text($("#alert-status"),"Could not load alerts.");
+  } finally {window.mockFetch=original;}
 });

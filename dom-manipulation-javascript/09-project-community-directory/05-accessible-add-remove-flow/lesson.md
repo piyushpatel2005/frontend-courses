@@ -26,3 +26,5 @@ The seed-swap table is a separate completed example. Its form adds varieties, an
 `submit` prevents navigation, trims the value, and gives feedback when it is blank. For a valid variety, `createElement` builds a row and `textContent` places the visitor’s text in it; typed angle brackets are not parsed as HTML. A real button with a specific label travels with the row. The parent `#seed-list` receives bubbled clicks from every Remove button, including future buttons, and the live status region announces the outcome.
 
 Run it with `<em>Marigold</em>`, remove the new entry, then remove Sunflower. You should see literal brackets and two working buttons. In the directory exercise you will reuse the *mechanics* while retaining search and selected details; it has different fields and data.
+
+After an invalid submission, focus stays on the field that needs a value. After adding or removing, it returns to that field. Try removing the last row with Space; you should still have a focused control. Duplicate varieties are separate entries in this example.

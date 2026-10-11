@@ -27,25 +27,42 @@ The neighborhood tool library lists available resources out of order. Add a sort
 Here is a separate worked example: a book table with its own IDs. The `th` describes the sort; the button activates it. The rows are moved rather than rebuilt:
 
 ```html
-<th id="book-heading" scope="col" aria-sort="none"><button id="sort-books" type="button">Sort books</button></th>
-<tbody id="books"><tr><td>Zines</td></tr><tr><td>Atlases</td></tr></tbody>
+<th id="book-heading" scope="col" aria-sort="none">
+  <button id="sort-books" type="button">
+    Sort books
+  </button>
+</th>
+<tbody id="books">
+  <tr><td>Zines</td></tr>
+  <tr><td>Atlases</td></tr>
+</tbody>
 ```
 
 ```javascript
 const books = document.querySelector("#books");
 const heading = document.querySelector("#book-heading");
-document.querySelector("#sort-books").addEventListener("click", () => {
-  const next = heading.getAttribute("aria-sort") === "ascending" ? "descending" : "ascending";
-  const rows = Array.from(books.rows);
-  rows.sort((a, b) => next === "ascending"
-    ? a.cells[0].textContent.localeCompare(b.cells[0].textContent)
-    : b.cells[0].textContent.localeCompare(a.cells[0].textContent));
-  books.replaceChildren(...rows);
-  heading.setAttribute("aria-sort", next);
-});
+document.querySelector("#sort-books")
+  .addEventListener("click", () => {
+    const next =
+      heading.getAttribute("aria-sort") === "ascending"
+        ? "descending"
+        : "ascending";
+    const rows = Array.from(books.rows);
+    rows.sort((a, b) => next === "ascending"
+      ? a.cells[0].textContent.localeCompare(
+          b.cells[0].textContent
+        )
+      : b.cells[0].textContent.localeCompare(
+          a.cells[0].textContent
+        ));
+    books.replaceChildren(...rows);
+    heading.setAttribute("aria-sort", next);
+  });
 ```
 
 `Array.from` makes an array of the row elements; `localeCompare` compares words; `replaceChildren(...rows)` reattaches those very elements. The `aria-sort` value begins at `none`, then alternates `ascending` and `descending`. Use a real button so Enter and Space already work. For your resource table, retain the category cells with their original rows.
+
+Edit `index.html` for the button and `script.js` for its listener. Run to inspect each direction, then Submit. Sorting should also work if another resource row is added; do not hardcode the three titles.
 
 ## Your Tasks
 

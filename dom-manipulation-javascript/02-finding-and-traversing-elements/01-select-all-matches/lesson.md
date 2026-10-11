@@ -5,11 +5,9 @@ order: 1
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Use querySelectorAll and forEach to update every matching element in a static
-  list.
+summary: Find all matching stalls and use a callback to label each one.
 seo_title: Find every match with querySelectorAll | Beginner JavaScript DOM
-seo_description: Use querySelectorAll and forEach to update every matching element
-  in a static list. Practice in a live JavaScript DOM preview.
+seo_description: Find all matching stalls and use a callback to label each one.
 seo_keywords:
 - JavaScript DOM
 - querySelectorAll
@@ -17,7 +15,9 @@ seo_keywords:
 - forEach
 ---
 
-One `querySelector` found the first tip. A neighborhood market board has three stalls, and all three need an open label. `querySelectorAll(".stall")` returns a **static NodeList** of matches in document order. It can hold zero, one, or many elements. `forEach` visits each element and gives it a temporary name (`stall`) inside the callback.
+The market board has three stalls. `querySelector` would find only the first one; `querySelectorAll(".stall")` collects every matching element in document order.
+
+Its result is a NodeList, a list of nodes rather than one element. Use `forEach` to work on each match:
 
 ```javascript
 const stalls = document.querySelectorAll(".stall");
@@ -26,4 +26,8 @@ stalls.forEach((stall) => {
 });
 ```
 
-Run the preview: the suffix appears on each stall, not only the first. Read the callback aloud: “for each stall, append the open label.” An empty list simply runs the callback zero times; no error occurs. Try adding a fourth `.stall` paragraph in HTML and running again, then remove it. Because the NodeList is static, a new element added *after* the query would require a new query to be included. The next exercise gives you a different list and label.
+`(stall) => { ... }` is an arrow function. Here it is a **callback**: a function you give to `forEach`, which calls it once for each element. On each call, the `stall` parameter receives the next element. The name is yours to choose; it is not another selector. `+=` reads the existing text and adds the suffix.
+
+Run the preview and check all three labels. Add a fourth `.stall` paragraph in `index.html`, then Run again. It receives the label too. Remove your extra paragraph afterward.
+
+This NodeList is **static**: its membership records matches at query time. It still refers to real elements, so changing their text changes the page. Elements added after the query do not join that earlier list. A query with no matches returns an empty NodeList; `forEach` then calls the callback zero times. Later in this section you will compare this with a live collection.

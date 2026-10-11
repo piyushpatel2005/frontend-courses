@@ -5,9 +5,9 @@ order: 1
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Render untrusted strings as text without interpreting HTML tags.
+summary: Display visitor text literally instead of parsing it as HTML.
 seo_title: Safe text and HTML | DOM Manipulation with JavaScript
-seo_description: Learn textContent and innerHTML through a runnable browser preview.
+seo_description: Display visitor text literally instead of parsing it as HTML.
 seo_keywords:
 - JavaScript DOM
 - textContent and innerHTML
@@ -15,28 +15,18 @@ seo_keywords:
 - demo
 ---
 
-# Safe text and HTML
+A visitor submits a note containing angle brackets. Show the note as written, without turning any of it into HTML.
 
-A community board prints a submitted note. The note is data, not markup: the browser must show its angle brackets literally.
-
-## What the code does
-
-`textContent` replaces a node’s children with plain text; angle brackets in the assigned string are displayed literally rather than parsed as tags. `innerHTML` parses the assigned string as HTML and can create elements, including unsafe markup when the string comes from a user. Reserve `innerHTML` for carefully controlled, trusted markup; do not use it for visitor input. Reading `.textContent` returns descendant text, including text in hidden descendants, rather than an HTML source string.
-
-In `script.js`, this is the important part of the already-working preview:
+`textContent` reads or writes an element's text. Assigning it replaces the element's children with plain text. `innerHTML` instead parses a string as markup, which can create elements and introduce unsafe content. Use `textContent` for visitor input and remote data. Reserve `innerHTML` for markup you control and trust.
 
 ```javascript
 const boardNote = document.querySelector("#board-note");
-const visitorNote = "I brought <seedlings> today"; // Pretend this came from a form.
+const visitorNote = "I brought <seedlings> today";
 boardNote.textContent = visitorNote;
 ```
 
-![Two paths from visitor input: textContent preserves literal angle brackets, while innerHTML parses markup](text-content-vs-inner-html.svg)
+![The same example string becomes literal text through textContent and an element through innerHTML](text-content-vs-inner-html.svg)
 
-## Try it in the preview
+Run the preview. It prints `<seedlings>` rather than creating an element with that name. Change the string in `script.js` to `"<strong>hello</strong>"` and Run: the tags should appear as text, not bold formatting. Restore the original note afterward.
 
-The preview shows the literal `<seedlings>` characters; there is no new `seedlings` element. Change the string to `"<strong>hello</strong>"` and Run again: you should see the tags printed, not bold text. Restore the original string afterward.
-
-When a string comes from a person or remote data, which property keeps it as text? `textContent`. Why not `innerHTML` here? It would parse the string as markup.
-
-The next lesson gives you a different page to build from a starter.
+Reading `textContent` gives the descendant text, including hidden descendants. It does not return HTML source. In the next exercise, you will use it for a museum caption.

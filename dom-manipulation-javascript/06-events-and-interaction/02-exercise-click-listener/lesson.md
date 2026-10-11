@@ -17,31 +17,17 @@ hints:
 - Pass showHours rather than showHours() to addEventListener.
 ---
 
-# Exercise: Check Library Hours
+# Check the library hours
 
-The library page begins with Hours not checked. Add a click listener so its button updates the status only when someone activates it.
+The library's button and status region are supplied. Start by writing what a button activation should do, then connect that behavior to the button.
 
-## How it works
-
-The park demo used a function reference without parentheses; here is a separate cafe example. Both keep a native button for built-in keyboard activation. If you write `announceHours()` inside `addEventListener`, it runs at setup time and hands the listener its return value instead of waiting for a click.
-
-```javascript
-// Different example: a cafe, not your library.
-function revealSpecial() {
-  document.querySelector("#special").textContent = "Soup today";
-}
-document.querySelector("#menu-button").addEventListener("click", revealSpecial);
-```
-
-## Try the preview
-
-Run the page before and after activating the button. Only the activation should change the status to Open until 6 pm. Keep `role="status"` so the changed message can be announced without moving focus.
-
-## Remember
-
-A listener is registration, not an immediate call. The button supplies keyboard activation automatically; JavaScript only supplies the response.
+Edit `script.js`. The empty `showHours` function is ready for your response. The supplied `window.showHours` reference lets Submit call it before a listener exists. Calling a function yourself and registering it as a callback are different operations.
 
 ## Your Tasks
 
-1. Define a named function `showHours` that sets `#hours` text to `Open until 6 pm`.
-2. Register `showHours` as the click listener of `#hours-button` without invoking it during page setup.
+1. Complete `showHours()` so it sets `#hours` text to `Open until 6 pm`.
+2. Register `showHours` for clicks on `#hours-button`, without calling it during setup.
+
+After step 1, Run still says Hours not checked because nothing calls the function yet. Submit can check the function directly. After step 2, activating the button should update the message. Clicking the heading should not.
+
+Keep the native button and its `type="button"`. Run again and test Enter and Space while it is focused; no extra key listener is needed.

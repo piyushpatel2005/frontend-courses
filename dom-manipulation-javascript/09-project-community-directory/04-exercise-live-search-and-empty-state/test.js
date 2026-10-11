@@ -15,17 +15,17 @@ test("input filters names and skills without deleting cards", () => {
   assert.equal(cards.filter((card) => !card.hidden).map((card) => card.dataset.name).join(), "Mina Park", "Match names");
   search.value = "";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(cards.every((card) => !card.hidden), true, "Clearing restores all cards");
+  assert.equal(cards.every((card) => !card.hidden && card.isConnected), true, "Clearing restores all cards");
 });
 test("result count follows the visible cards", () => {
   const search = document.querySelector("#member-search");
   const count = document.querySelector("#result-count");
   search.value = "nothing matches";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(count.textContent.includes("0"), true, "Report zero matches");
+  assert.equal(/^0\b/.test(count.textContent), true, "Report zero matches");
   search.value = "bike";
   search.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(count.textContent.includes("1"), true, "Report one matching member");
+  assert.equal(/^1\b/.test(count.textContent), true, "Report one matching member");
 });
 test("empty state tracks zero results and recovery", () => {
   const search = document.querySelector("#member-search");
@@ -43,6 +43,10 @@ test("hidden selected card clears the selection and details", () => {
   selected.classList.add("selected");
   document.querySelector("#detail-name").textContent = selected.dataset.name;
   document.querySelector("#detail-skill").textContent = selected.dataset.skill;
+  search.value = "garden";
+  search.dispatchEvent(new Event("input", { bubbles: true }));
+  assert.equal(selected.classList.contains("selected"), true, "Keep a selection that still matches");
+  assert.equal(document.querySelector("#detail-name").textContent, selected.dataset.name);
   search.value = "bike";
   search.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(selected.hidden, true, "Hide the nonmatching selected card");

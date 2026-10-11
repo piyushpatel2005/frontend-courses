@@ -23,3 +23,7 @@ A studio booking board changes its opening time. Follow the data from an array t
 `bookings` is the source of truth. `paint()` clears old rows with `replaceChildren()`, creates each `<li>`, assigns a string through `textContent`, and appends it. This avoids treating a booking name as HTML. The button changes the array first, then calls `paint()` again. A `button` already works with pointer, Enter, and Space; it does not need a custom key handler.
 
 Run the preview. You should see two bookings; activate **Update first session time** and the first time becomes 09:30 without duplicating a row. Change the second name in the array, Run again, and see which line follows it. Restore the name before continuing. The next exercise transfers this pattern to a workshop itinerary.
+
+`replaceChildren()` with no arguments empties the list before rebuilding it. It does not clear the `bookings` array. The button changes the first object in that array, so the next render keeps the updated time.
+
+![A button changes a booking object. Painting empties the list and creates safe text rows from the current array.](workshop-state-render-flow.svg)

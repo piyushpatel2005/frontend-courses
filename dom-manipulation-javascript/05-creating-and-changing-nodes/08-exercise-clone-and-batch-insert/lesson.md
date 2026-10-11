@@ -16,34 +16,17 @@ hints:
 - Call original.cloneNode(true), then query the name within the copy, not within the original.
 ---
 
-# Exercise: Clone Two Exhibit Cards
+# Make two exhibit cards
 
-The gallery has a single sample exhibit. Add two more exhibits using its nested layout, then place both copies in the list together.
+The gallery's Clay vessel card is the sample. Prepare Woven basket and Glass bead copies with the same nested title and Collection item note.
 
-## How it works
+Edit `script.js`. The supplied `original` refers to the sample. `makeExhibit(name)` should return a detached copy, while `addExhibits()` handles insertion. The call at the bottom runs `addExhibits` once. Keep the supplied `window` references so the checks can call the helpers separately.
 
-The seed swap demo cloned Thyme into Basil and Mint. Here is another separate example from a concert set list: it changes each copied song title before adding the copies to a fragment. `true` matters because it preserves the nested title and note; each copied node must get its own title. Avoid adding IDs to copied cards, since duplicate IDs make selectors ambiguous.
-
-```javascript
-// Different example: concert songs, not your gallery.
-const queued = document.createDocumentFragment();
-for (const song of ["Sunrise", "Lanterns"]) {
-  const copy = firstSong.cloneNode(true);
-  copy.querySelector(".song-title").textContent = song;
-  queued.append(copy);
-}
-setList.append(queued);
-```
-
-## Try the preview
-
-The starter displays only Clay vessel. After the second step, run the preview: Clay vessel, Woven basket, and Glass bead should appear in that order, each with the original Collection item note. If a copy has no title span, make sure you passed `true` to `cloneNode`.
-
-## Remember
-
-Earlier you changed text on a newly made element. On a deep clone, find the nested span inside *that clone* before inserting it; otherwise you may accidentally change the original card.
+A deep clone keeps the nested `strong` title and `span` note. Find `.exhibit-name` within the copy, not through `document`, or you could rename Clay vessel instead.
 
 ## Your Tasks
 
-1. Complete `makeExhibit(name)` so it returns a detached deep clone of the sample with that name in its nested title, while keeping the sample and note unchanged.
-2. In `addExhibits()`, use a `DocumentFragment` to append the `Woven basket` and `Glass bead` clones together after Clay vessel.
+1. Complete `makeExhibit(name)` to return a detached deep clone with the supplied name as literal text. Keep the sample and the copied Collection item note unchanged.
+2. Complete `addExhibits()` to put `Woven basket` and `Glass bead` copies in a `DocumentFragment`, then append that batch after Clay vessel.
+
+After step 1, Run still shows only the sample; Submit can inspect the detached copy. After step 2, all three cards should appear in order, with no extra wrapper around the new cards. Submit checks preparation and insertion separately.

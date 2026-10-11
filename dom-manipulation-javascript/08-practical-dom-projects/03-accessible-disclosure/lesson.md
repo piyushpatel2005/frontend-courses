@@ -24,10 +24,12 @@ You have already changed classes and visibility and handled click events. This t
 
 A real `<button>` already supports keyboard activation. Its `aria-expanded` tells assistive technology whether the controlled content is open. Keep that attribute and the panel’s `hidden` property synchronized in the same click handler; `aria-controls` points to the panel ID. Toggling a visual class alone cannot convey state to screen readers.
 
-Open `index.html` to locate the labelled control and output. In `script.js`, notice the selectors point to those IDs, then follow the event from the control to the updated page. `style.css` only changes presentation; it does not cause the behavior. This example is finished already so you can run it before writing the next exercise.
+Run the preview while the directions are closed. The handler reads the old expanded state before writing the new one: if the panel was open, `directions.hidden = isOpen` hides it. Change the button label, Run again, and confirm that the same control still opens the same panel.
 
 ## Try it in the preview
 
 Activate the Directions button with click or keyboard. The panel appears and disappears; inspect how `aria-expanded` changes from “false” to “true” alongside `hidden`. Both describe the same state.
 
-Nothing in this demo is graded. The following exercise asks you to build the same *idea* for a different situation; come back here if the event or state change feels hard to trace.
+This is a finished example, not a graded task. The next exercise uses different data and leaves the behavior for you to write.
+
+Keep keyboard focus on the button when opening or closing this disclosure. These directions are plain text, so opening them does not add a new Tab stop. The next exercise contains links, which become reachable with Tab while its panel is open.

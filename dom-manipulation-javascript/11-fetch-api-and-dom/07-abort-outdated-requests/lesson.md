@@ -13,31 +13,28 @@ seo_keywords: AbortController, stale fetch, race condition
 
 # Abort outdated requests
 
-A town guide offers rapid neighborhood lookups. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+Click Slow: North, then quickly click Fast: South. South should remain on the board even after the older lookup would have finished. Both results come from local timers; the demo never contacts a town service.
 
-Imagine a slow neighborhood lookup followed quickly by a fast one. Without protection, the slow response may arrive last and overwrite the newer choice. `AbortController` provides a `signal` for a request; calling `abort()` tells fetch to reject it with an `AbortError`. A mock that accepts the same `{ signal }` option lets us demonstrate that behavior offline.
+Without a guard, the last response to finish could replace the latest choice. An `AbortController` owns a `signal`. Give that signal to fetch in the options object, then call the controller's `abort()` when its work is no longer wanted.
 
 ```javascript
 let controller;
-async function showDistrict(name) {
+async function startLookup(name) {
   controller?.abort();
   controller = new AbortController();
-  try {
-    const response = await mockFetch(`/api/district?q=${encodeURIComponent(name)}`, {
-      signal: controller.signal
-    });
-    const district = await response.json();
-    document.querySelector("#district").textContent = district.name;
-  } catch (error) {
-    if (error.name !== "AbortError") throw error;
-  }
+  const signal = controller.signal;
+  // Use this signal for this call, including after await.
 }
 ```
 
-Click **Slow: North** then quickly **Fast: South**. The southern name remains even after the slow lookup would have finished. This fixture uses timers to mimic request latency, not network access. Inspect the controller in `script.js`: aborting previous work matters when a request is pending; an abort is an expected change of mind and should not be shown as a user-facing failure.
+The `?.` means “call abort only if controller exists.” The first click has no earlier controller. Every later click cancels the previous one and creates a new controller; an aborted signal cannot be reset for reuse.
 
-In a real network request, use `fetch(url, { signal: controller.signal })`. Some work after `fetch` may still continue independently, so complex multi-step operations can also check a request ID before painting the DOM. The exercise practices cancellation in a smaller view.
+Read `lookUpDistrict()` in `script.js`. It checks the HTTP status, awaits JSON, then checks its own `signal.aborted` before writing to the DOM. That last check protects the page if other asynchronous work finishes despite cancellation. Checking a shared controller there would be wrong: it may already belong to a newer request.
+
+The mock rejects with a `DOMException` named `AbortError` when cancelled. That name lets `catch` distinguish an expected cancellation from a genuine current failure. The fixture also checks signals that were already aborted before the call and removes listeners when its timer finishes.
+
+Run the demo with a longer slow delay, such as `800`, to make the overlap easier to trigger. Restore it afterwards. The ferry exercise supplies the request plumbing so you can focus on the loading, cancellation, result, and error helpers.
 
 ## Learn more
 
-MDN's [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) shows its signal and cancellation methods.
+MDN's [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) describes controllers and signals.

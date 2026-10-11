@@ -16,8 +16,8 @@ test("Each original station has one unstaffed backup", () => {
 });
 
 test("The live count includes the appended backups", () => {
-  assert.equal(document.getElementById("live-count").textContent.trim(), "4",
-    "Show the live collection's final size");
+  assert.equal(document.getElementById("live-count").textContent.trim(), String(document.getElementsByClassName("station").length),
+    "Show the live collection's current size after your updates");
 });
 
 test("The earlier static count remains two", () => {

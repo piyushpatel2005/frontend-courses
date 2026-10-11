@@ -13,25 +13,18 @@ seo_keywords: search query, URLSearchParams, DOM list
 
 # Exercise: search the catalog
 
-A small catalog needs an encoded search box. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+Search the catalog for `tea & honey`. The ampersand belongs inside one `q` value, not between two parameters. `URLSearchParams` handles that encoding; `textContent` has a different job when the result reaches the page.
 
-The seed search showed why a raw `&` breaks hand-built query strings. The catalog fixture in this lesson reads the `q` parameter back from your URL; an incorrectly encoded term loses part of its value. Its data stays local, and `mockFetch` never reaches the network.
+The form listener and async loader are supplied. Start by stopping navigation, then build and display the request URL. Finally render the returned names and an empty message. The mock reads the actual URL and filters local products.
 
-For another setting, a gallery could form its request like this:
-
-```javascript
-async function findPaintings(term) {
-  const params = new URLSearchParams({ q: term });
-  const response = await mockFetch(`/api/paintings?${params}`);
-  return response.json();
-}
-```
-
-The catalog starts with a search field and no results. Search `tea & honey` to see a single result, then search an unmatched term to see an empty message. Check the visible request URL: `%26` encodes the ampersand, while `textContent` protects any resulting title in the list. Avoid treating URL encoding as permission to put server text into `innerHTML`.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. Prevent `#catalog-form` from navigating on submit.
-2. Encode the trimmed query as `q` with `URLSearchParams` in a `/api/catalog` request and display that URL in `#request-url`.
-3. Await the mock JSON response and replace `#results` with matching product names as literal list-item text.
-4. For an unmatched query, clear old results and show `No matches.` in `#search-status`.
+1. Prevent navigation in the supplied `#catalog-form` submit handler.
+2. Make `catalogURL(term)` return `/api/catalog` with the trimmed term encoded as a `q` parameter using `URLSearchParams`. Include `q` even for an empty term.
+3. Make `showCatalogURL(url)` display the URL as literal text in `#request-url`.
+4. Make `renderProducts(products)` replace `#results` with one text-only `li` per product name, clearing it for an empty array.
+5. Make `showCatalogEmpty()` announce `No matches.` in `#search-status`.
+
+Search a missing name, then clear the field to restore every product. The fixture makes no network request. Loading and failures return in the dashboard; this page isolates query construction.

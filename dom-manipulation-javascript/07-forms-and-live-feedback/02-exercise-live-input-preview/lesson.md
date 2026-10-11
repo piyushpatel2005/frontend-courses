@@ -16,31 +16,13 @@ seo_keywords:
 
 # Build a live name preview
 
-Now make an introduction card for a volunteer. The starter already has a labelled input and a preview, but typing does not update the page yet. In the preceding demo, you saw the complete behavior before having to build it yourself.
+The volunteer introduction has its label, field, and live greeting already. The supplied input listener reads and trims the current name, then separates nonblank and blank input into two branches.
 
-## Transfer the pattern
-
-The earlier text-content lesson showed how to change a node safely. Here the value comes from a form control rather than a fixed string, so read it inside the event handler instead of saving it once when the page loads.
-
-The `input` event fires after each edit, and `.value` gives the current string from the control. Set a separate element’s `textContent` to mirror it; unlike `innerHTML`, that treats typed characters as text, not markup.
-
-A different control could preview a preferred color:
-
-```javascript
-const color = document.querySelector("#color");
-const colorNote = document.querySelector("#color-note");
-color.addEventListener("input", () => {
-  colorNote.textContent = color.value || "No color yet";
-});
-```
-
-Notice that the listener reads the *current* value inside its callback. The exercise uses different elements and copy; adapt the pattern rather than pasting these selectors.
-
-Run the starter first to see what is present and what still does nothing. Edit `script.js` and, if needed, the markup; use the Preview for a visible check before Submit. The checks exercise actions and state changes, not just the initial markup.
+Edit those branches in `script.js`. You do not need another listener or any markup changes. As in the plot-badge demo, use `textContent` so a name containing angle brackets remains text.
 
 ## Your Tasks
 
-1. On each `input`, replace `#greeting` with the current name as literal text (including angle brackets); changing the name should update it again.
-2. When the input is cleared, restore “friend” in `#greeting`.
+1. In the nonblank branch, set `#greeting` to the current trimmed `name` as literal text.
+2. In the blank branch, set `#greeting` to `friend`.
 
-Type a name, then erase it. The visible greeting should return to “friend” without requiring a click. If nothing changes, check that your listener is on the input, not the paragraph.
+Run after step 1 and type a made-up name. Change it again: the greeting should update without a click. After step 2, clearing the field or entering only spaces should restore friend. Try `<em>Bea</em>` and check that the brackets remain visible. Submit checks the nonblank and blank paths separately.

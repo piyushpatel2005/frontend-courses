@@ -1,12 +1,12 @@
 ---
-title: Create and Append a Text Node
+title: Create an Element and Append It
 slug: create-and-append-text
 order: 1
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Create a new list item with createElement, give it safe text, and append it to a parent.
-seo_title: Create and Append a Text Node | DOM Manipulation with JavaScript
+seo_title: Create an Element and Append It | DOM Manipulation with JavaScript
 seo_description: See how createElement, textContent and append build a safe new DOM node in a beginner JavaScript
   example.
 seo_keywords:
@@ -15,13 +15,11 @@ seo_keywords:
 - textContent safe text
 ---
 
-# Create and Append a Text Node
+# Create an element, then show it
 
-A community garden needs one more item on its supply board. The page already has a list; JavaScript will add a new row after the browser loads.
+The garden supply board already lists Gloves. Add Watering cans without rewriting the list's HTML. You will use the selectors and safe text updates from the previous section.
 
-## How it works
-
-`document.createElement("li")` makes a detached element: it is not visible yet. Assigning `textContent` makes the string plain text, even when it contains characters that look like HTML. `list.append(item)` moves that element into the list as its last child. The script uses `defer` so the existing list is available when these lines run.
+`document.createElement("li")` creates an **element node**, not a text node on its own. At first it has no parent: it is detached, so the preview cannot show it. Set its `textContent` to give it a label, then call the list's `append` method to insert it as the last child.
 
 ```javascript
 const item = document.createElement("li");
@@ -29,12 +27,12 @@ item.textContent = "Watering cans";
 document.querySelector("#supplies").append(item);
 ```
 
+`append` does not copy a node. If you append the same node elsewhere, it moves from its old parent to the new one.
+
+![A detached element becomes visible only when appended to its list.](detached-node-insertion.svg)
+
 ## Try the preview
 
-Run the preview: Watering cans should appear after Gloves. Change the string to `"<b>Watering cans</b>"` temporarily; you should see the angle brackets, not bold text. Restore the original label before moving on.
+Run the finished example. Watering cans should follow Gloves. In `script.js`, temporarily comment out the last line and run again: creating and labeling the item is not enough to display it. Restore the line.
 
-## Remember
-
-You previously used selectors to find an existing element and `textContent` to update it. Here the new step is creating an element *before* attaching it to the selected parent.
-
-The following exercise uses the same idea in a different setting.
+Next, try `"<b>Watering cans</b>"` as the label. The brackets should remain visible rather than becoming bold markup. Restore the original label before the reading-list exercise.

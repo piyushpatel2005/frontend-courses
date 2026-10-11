@@ -4,9 +4,11 @@ const status = document.querySelector("#booking-status");
 
 function updateBooking() {
   reserve.disabled = !consent.checked;
-  status.textContent = reserve.hasAttribute("disabled")
-    ? "Agree to the tour instructions first."
-    : "Tour booking is ready.";
+  if (reserve.hasAttribute("disabled")) {
+    status.textContent = "Agree to the tour instructions first.";
+  } else {
+    status.textContent = "Tour booking is ready.";
+  }
 }
 
 consent.addEventListener("change", updateBooking);

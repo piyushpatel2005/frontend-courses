@@ -45,49 +45,73 @@ const list = document.querySelector("#entries");
 const status = document.querySelector("#status");
 const retry = document.querySelector("#retry");
 
-function render(items) {
+window.makeEventRow = function(item) {
+  const row = document.createElement("li");
+  const title = document.createElement("strong");
+  title.textContent = item.title;
+  const venue = document.createElement("span");
+  venue.textContent = ` — ${item.venue}`;
+  row.append(title, venue);
+  return row;
+};
+window.render = function(items) {
   list.replaceChildren();
-  for (const item of items) {
-    const row = document.createElement("li");
-    const title = document.createElement("strong");
-    title.textContent = item.title;
-    const venue = document.createElement("span");
-    venue.textContent = ` — ${item.venue}`;
-    row.append(title, venue);
-    list.append(row);
-  }
-  status.textContent = items.length ? `${items.length} entries found.` : "No matching entries.";
-}
-
+  for (const item of items) list.append(window.makeEventRow(item));
+};
+window.showEventCount = function(items) {
+  status.textContent = `${items.length} entries found.`;
+};
+window.showDashboardLoading = function() {
+  status.textContent = "Loading entries…";
+  list.replaceChildren();
+};
+window.checkDashboardResponse = function(response) {
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+};
+window.showDashboardFailure = function() {
+  list.replaceChildren();
+  status.textContent = "Could not load entries. Try again.";
+  retry.hidden = false;
+};
+window.showDashboardEmpty = function() {
+  status.textContent = "No matching entries.";
+};
 const form = document.querySelector("#search-form");
 const search = document.querySelector("#search");
-function requestURL() {
+window.requestURL = function() {
   const params = new URLSearchParams();
   const query = search.value.trim();
   if (query) params.set("q", query);
   return params.size ? `${API_URL}?${params}` : API_URL;
-}
+};
 form.addEventListener("submit", event => {
   event.preventDefault();
-  loadEntries();
+  window.lastLoad = window.loadEntries();
 });
 
-async function loadEntries() {
-  // TODO: abort the prior request and identify the newest request.
-  status.textContent = "Loading entries…";
-  list.replaceChildren();
+let controller;
+let latestRequest = 0;
+
+window.loadEntries = async function() {
+  const request = ++latestRequest;
+  // TODO 1
+controller = new AbortController();
+  window.showDashboardLoading();
   retry.hidden = true;
   try {
-    const response = await dashboardFetch(requestURL());
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await window.dashboardFetch(window.requestURL(), {signal: controller.signal});
+    window.checkDashboardResponse(response);
     const data = await response.json();
-    // TODO: ignore responses that are no longer current.
-    render(data.items);
+    // TODO 2
+
+    window.render(data.items);
+    if (data.items.length) window.showEventCount(data.items);
+    else window.showDashboardEmpty();
   } catch (error) {
-    // TODO: ignore AbortError from cancelled requests.
-    status.textContent = "Could not load entries. Try again.";
-    retry.hidden = false;
+    // TODO 3
+
+    window.showDashboardFailure();
   }
-}
-retry.addEventListener("click", loadEntries); // Retry behavior is carried over from the earlier dashboard lesson.
-window.initialDashboardLoad = loadEntries();
+};
+retry.addEventListener("click", () => {window.lastLoad = window.loadEntries();});
+window.initialDashboardLoad = window.loadEntries();

@@ -15,27 +15,27 @@ seo_keywords:
 - button interaction
 ---
 
-# Listen for Clicks with a Named Handler
+# Wait for a button activation
 
-A park information card starts closed. Visitors can press a real button to reveal that the trail is open; the page must wait for the action instead of updating immediately.
+The trail status begins as Not checked. Unlike the node examples, this page should wait before changing anything: the visitor decides when to check.
 
-## How it works
-
-`addEventListener("click", showStatus)` registers the function; there are no parentheses after `showStatus` because the browser should call it later. A named function is easy to reuse or remove and keeps the listener line short. The function changes the status with `textContent`. A native `<button type="button">` is focusable and works with mouse, touch, Enter, and Space without writing separate keyboard-click code.
+`button.addEventListener("click", showStatus)` registers a function for a later event. Pass `showStatus`, without parentheses. Writing `showStatus()` would call it immediately and pass its return value instead.
 
 ```javascript
 function showStatus() {
-  document.querySelector("#status").textContent = "Trail is open";
+  document.querySelector("#status").textContent =
+    "Trail is open";
 }
-document.querySelector("#check").addEventListener("click", showStatus);
+document.querySelector("#check")
+  .addEventListener("click", showStatus);
 ```
+
+The browser calls this function when it delivers a click. A native `<button type="button">` already supports mouse, touch, Enter, and Space. Do not add a second keyboard handler to imitate its click behavior: one activation could then run your response twice. The supplied status region announces updated text without moving focus.
+
+![Registration saves the function; a later activation runs it.](listener-registration-flow.svg)
 
 ## Try the preview
 
-Run the preview: before clicking, the status says Not checked. Activate Check trail and it becomes Trail is open. Try calling `showStatus()` on the listener line, then restore the function reference: the status changes at page load instead of waiting.
+Run and check that Not checked remains until activation. Click Check trail. Run again, focus the button with Tab, and try Enter or Space. Each route should show Trail is open.
 
-## Remember
-
-Previously, scripts changed the page as soon as it loaded. A listener delays a DOM update until an interaction occurs.
-
-The following exercise uses the same idea in a different setting.
+Change the message in the handler and rerun to see that registration and response are separate. Restore it before the library exercise.

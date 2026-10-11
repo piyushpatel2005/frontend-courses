@@ -16,17 +16,22 @@ seo_keywords:
 
 # Load a dashboard from an offline API fixture
 
-The trail desk needs a compact conditions list. Run the completed preview: it briefly says **Loading entries…**, then shows trail names. The small fixture in `script.js` is the entire data source: **no live request is made**.
+Run the trail dashboard. It starts with Loading entries, then shows three trails. The `<em>` characters in the last title should stay visible as text. This completed demo uses trail data; the exercises will build a separate community events dashboard and keep its event data across stages.
 
-Follow `loadEntries()` from `dashboardFetch(API_URL)` to `response.ok`, `response.json()`, then `render(data.items)`. The offline fixture returns a real `Response`, just like `fetch()` does; the URL is a local scenario key, not a live endpoint. A response can arrive but still have a failure status; throwing when `ok` is false sends it to the same visible error state as a rejected request. `render` uses `createElement` and `textContent`: the angle brackets in the last trail title display as characters, not markup.
+Follow `loadEntries()` in `script.js`: it waits for `dashboardFetch`, checks `response.ok`, reads JSON, then passes `data.items` to `render`. The response body is an object containing an array, not a bare array. `render` clears earlier rows before inserting the new ones.
 
 ```javascript
 const response = await dashboardFetch(API_URL);
-if (!response.ok) throw new Error(`HTTP ${response.status}`);
+if (!response.ok)
+  throw new Error(`HTTP ${response.status}`);
 const data = await response.json();
 render(data.items);
 ```
 
-Try setting `window.dashboardFixture.items = []` in `script.js` before `loadEntries()` and run again to see the empty state. Or set `failNext: true` to reveal Retry. Restore the fixture afterwards. The status region announces each state; the list is cleared before a fresh request so old results cannot look current.
+`dashboardFetch` is an offline fetch-shaped function returning real Response objects. Its fixture snapshots the items when a request starts. The expression `items.map(item => ({ ...item }))` copies each item into a fresh object, so changing the fixture later does not change that request's captured data. You can read this as setup rather than code to reproduce.
 
-For an actual service, replace the **call** to `dashboardFetch(API_URL)` with `fetch("https://your-cors-enabled-api.example/events")` and adapt the expected JSON shape. An endpoint on another origin must allow this page via CORS; changing JavaScript cannot bypass that policy. The next lesson asks you to build the same pattern for events.
+Try `failNext: true` and Run again. The first request should fail and reveal Retry; clicking Retry should recover because the mock resets that flag after reading it. Next, temporarily replace the fixture's items array with `[]`; the page should announce No matching entries. Restore the three trails afterwards.
+
+Loading clears stale rows and hides Retry. A failure reveals Retry; success shows a count or an empty message. The next exercise separates those changes into small helpers so you can check each one before assembling the page.
+
+No live endpoint is involved here. To deploy against a real service, replace the fetch-shaped call with `fetch` and check the service's response shape. A cross-origin service must also allow the page through CORS.

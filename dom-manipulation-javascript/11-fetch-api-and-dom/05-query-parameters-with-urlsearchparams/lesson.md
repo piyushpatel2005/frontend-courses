@@ -13,18 +13,20 @@ seo_keywords: URLSearchParams, encode query, fetch URL
 
 # Build a query with URLSearchParams
 
-A seed library needs a search that can include spaces and symbols. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+Search this seed library for `mint & lime`. The list should show one match, and the request line should contain `%26`. That is the encoded ampersand.
 
-Typing `tea & honey` into a search box is not the same as appending `?q=tea & honey` to a URL. `&` separates query parameters and spaces need encoding. `URLSearchParams` accepts the input as a value and serializes it safely; it is **URL encoding**, not HTML escaping. When displaying the returned string, still use `textContent`.
+In a query string, `&` separates parameters. Appending raw input as `?q=mint & lime` would give that character the wrong job. `URLSearchParams` treats the input as one value and encodes it when the object becomes a string:
 
 ```javascript
-const params = new URLSearchParams({ q: "red beans & rice" });
-const url = `/api/seeds?${params.toString()}`;
-// q=red+beans+%26+rice; the server decodes the original value.
-const response = await mockFetch(url);
-const seeds = await response.json();
+const params = new URLSearchParams({
+  q: "red beans & rice"
+});
+const url = `/api/seeds?${params}`;
+// /api/seeds?q=red+beans+%26+rice
 ```
 
-The mock parses the actual URL you pass and returns fixed in-page seed data. Try the search `mint & lime`; the preview shows a match and the URL line shows `%26` instead of an unescaped ampersand. This is a local request simulation, **not a real API search**. A real `fetch(url)` can use the same URL construction when a same-origin API exists; cross-origin servers must explicitly permit CORS.
+The form handler trims leading and trailing spaces, prevents navigation, and awaits the mock response. The mock reads `q` back from the URL and filters a fixed local list. This demonstrates the request contract, not a live search service.
 
-The next exercise moves that exact encoding technique to a catalog, where the names and DOM targets are different.
+Try `clover`, then an unmatched word, then a blank search. You should see one row, an empty message, and all seeds. The supplied `filter` keeps entries whose lowercase name `includes` the lowercase query. An empty query matches every name.
+
+URL encoding does not make text safe to insert as HTML. The renderer still creates `li` nodes and assigns `textContent`. The next exercise uses the same query pattern with different catalog data and separate helpers for the URL and the visible result.

@@ -1,63 +1,109 @@
-test("typing filters without deleting state", () => {
+function withWorkshop(check) {
+  const saved = window.workshopSessions.map(session => ({ ...session }));
   const query = document.querySelector("#session-query");
-  query.value = "REPAIR"; query.dispatchEvent(new Event("input", { bubbles: true }));
-  const rows = [...document.querySelectorAll("#sessions li")];
-  assert.equal(rows.length, 2);
-  assert.equal(rows.filter(row => !row.hidden).length, 1);
-  query.value = "not here"; query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal([...document.querySelectorAll("#sessions li")].filter(row => !row.hidden).length, 0);
-  query.value = ""; query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal([...document.querySelectorAll("#sessions li")].filter(row => !row.hidden).length, 2);
-});
-test("every row has a descriptive native Remove button", () => {
-  const check = row => {
+  const oldQuery = query.value;
+  try { query.value = ""; renderSessions(); check(); }
+  finally {
+    window.workshopSessions.splice(0, window.workshopSessions.length, ...saved);
+    query.value = oldQuery;
+    renderSessions();
+  }
+}
+function searchWorkshop(value) {
+  const query = document.querySelector("#session-query");
+  query.value = value;
+  query.dispatchEvent(new Event("input", { bubbles: true }));
+}
+function removeControl(row) {
+  // A supplied fixture makes removal independent of the button-building task.
+  let button = row.querySelector("button.remove-session");
+  if (!button) {
+    button = document.createElement("button");
+    button.type = "button";
+    button.className = "remove-session";
+    row.append(button);
+  }
+  const nested = document.createElement("span");
+  nested.textContent = "Remove fixture";
+  button.append(nested);
+  return nested;
+}
+test("typing filters titles without deleting state", () => withWorkshop(() => {
+  for (const [term, expected] of [["  REPAIR  ", 1], ["09:00", 0], ["Making", 0], ["Remove", 0], ["absent", 0], ["   ", 2]]) {
+    searchWorkshop(term);
+    const rows = [...document.querySelectorAll("#sessions li")];
+    assert.equal(rows.length, 2, "Hide rows rather than deleting them");
+    assert.equal(rows.filter(row => !row.hidden).length, expected, "Search only normalized titles");
+    assert.equal(window.workshopSessions.length, 2);
+  }
+}));
+test("every current and future row has a named native Remove button", () => withWorkshop(() => {
+  window.workshopSessions.push({ title: "<em>New weaving</em>", time: "15:00", track: "Art" });
+  renderSessions();
+  [...document.querySelectorAll("#sessions li")].forEach((row, index) => {
     const button = row.querySelector("button.remove-session");
-    assert.exists(button);
+    assert.exists(button, "Give each row a Remove button");
     assert.equal(button.type, "button");
-    assert.equal(button.textContent.includes("Remove"), true);
-    assert.equal(button.textContent.includes(row.firstChild.textContent.split(" — ")[1].split(" (")[0]), true);
-  };
-  [...document.querySelectorAll("#sessions li")].forEach(check);
-  document.querySelector("#session-title").value = "New weaving";
-  document.querySelector("#session-time").value = "15:00";
-  document.querySelector("#session-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  check([...document.querySelectorAll("#sessions li")].at(-1));
-});
-test("delegated clicks remove new and original sessions", () => {
-  const list = document.querySelector("#sessions");
-  document.querySelector("#session-title").value = "Late weaving";
-  document.querySelector("#session-time").value = "16:00";
-  document.querySelector("#session-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  const before = list.querySelectorAll("li").length;
-  const added = [...list.querySelectorAll("li")].find(row => row.textContent.includes("Late weaving"));
-  assert.exists(added?.querySelector("button.remove-session"));
-  added.querySelector("button.remove-session").click();
-  assert.equal(list.querySelectorAll("li").length, before - 1);
-  assert.equal(list.textContent.includes("Late weaving"), false);
-  list.querySelector("li button.remove-session").click();
-  assert.equal(list.textContent.includes("Screen printing"), false);
-});
-test("Update handles an empty itinerary", () => {
-  const list = document.querySelector("#sessions");
-  while (list.querySelector("li button.remove-session")) list.querySelector("li button.remove-session").click();
+    const name = button.getAttribute("aria-label") || button.textContent;
+    assert.includes(name, "Remove");
+    assert.includes(name, window.workshopSessions[index].title);
+    assert.equal(button.querySelector("em"), null, "Keep button labels literal too");
+  });
+}));
+test("delegated nested clicks remove the matching stored session", () => withWorkshop(() => {
+  window.workshopSessions.push({ title: "Repair café", time: "16:00", track: "Art" });
+  renderSessions();
+  searchWorkshop("repair");
+  let rows = [...document.querySelectorAll("#sessions li")];
+  removeControl(rows[2]).click();
+  assert.equal(window.workshopSessions.length, 2, "Delete the matching object from state");
+  assert.equal(window.workshopSessions[1].time, "11:00", "Keep the other session with the same title");
+  searchWorkshop("");
+  rows = [...document.querySelectorAll("#sessions li")];
+  removeControl(rows[0]).click();
+  assert.equal(window.workshopSessions.length, 1);
+  assert.equal(document.querySelectorAll("#sessions li").length, 1);
+  renderSessions();
+  assert.equal(document.querySelectorAll("#sessions li").length, 1, "Removal survives another render");
+}));
+test("Update handles an empty itinerary", () => withWorkshop(() => {
+  window.workshopSessions.splice(0);
+  renderSessions();
+  document.querySelector("#session-status").textContent = "";
   document.querySelector("#update-session").click();
   assert.equal(document.querySelector("#session-status").textContent, "No sessions to update.");
-});
-test("polite status counts visible rows after changes", () => {
+}));
+test("count is a polite live region", () => {
   const count = document.querySelector("#session-count");
   assert.equal(count.getAttribute("role"), "status");
   assert.equal(count.getAttribute("aria-live"), "polite");
-  const query = document.querySelector("#session-query");
-  query.value = ""; query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(count.textContent.includes(String(document.querySelectorAll("#sessions li").length)), true);
-  query.value = "absent"; query.dispatchEvent(new Event("input", { bubbles: true }));
-  assert.equal(count.textContent.includes("0"), true);
-  query.value = ""; query.dispatchEvent(new Event("input", { bubbles: true }));
-  document.querySelector("#session-title").value = "Late mosaic";
-  document.querySelector("#session-time").value = "16:00";
-  document.querySelector("#session-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  const added = document.querySelectorAll("#sessions li").length;
-  assert.equal(count.textContent.includes(String(added)), true);
-  document.querySelector("#sessions li:last-child button.remove-session").click();
-  assert.equal(count.textContent.includes(String(added - 1)), true);
 });
+test("status counts visible rows on every render and query", () => withWorkshop(() => {
+  const count = document.querySelector("#session-count");
+  assert.match(count.textContent, /^2\b/, "Count on load");
+  searchWorkshop("repair");
+  assert.match(count.textContent, /^1\b/);
+  window.workshopSessions.push({ title: "Repair instruments", time: "16:00", track: "Making" });
+  renderSessions();
+  assert.match(count.textContent, /^2\b/, "Refresh after an addition with a filter active");
+  window.workshopSessions.splice(1, 2);
+  renderSessions();
+  assert.match(count.textContent, /^0\b/, "Refresh after removing the last matches");
+  searchWorkshop("");
+  assert.match(count.textContent, /^1\b/);
+}));
+test("removal announces the title", () => withWorkshop(() => {
+  const row = document.querySelector("#sessions li");
+  const title = window.workshopSessions[0].title;
+  const nested = removeControl(row);
+  nested.closest("button").focus();
+  document.querySelector("#session-status").textContent = "";
+  nested.click();
+  assert.includes(document.querySelector("#session-status").textContent, title);
+}));
+test("removal restores keyboard focus", () => withWorkshop(() => {
+  const nested = removeControl(document.querySelector("#sessions li"));
+  nested.closest("button").focus();
+  nested.click();
+  assert.equal(document.activeElement, document.querySelector("#session-query"));
+}));

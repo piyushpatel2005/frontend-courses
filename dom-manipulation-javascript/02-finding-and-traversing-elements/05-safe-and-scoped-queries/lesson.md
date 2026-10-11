@@ -5,11 +5,10 @@ order: 5
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Guard a possibly null match and limit a query to a chosen parent element.
+summary: Update one recipe card and safely skip a missing badge.
 seo_title: Check for missing elements and search within a card | Beginner JavaScript
   DOM
-seo_description: Guard a possibly null match and limit a query to a chosen parent
-  element. Practice in a live JavaScript DOM preview.
+seo_description: Update one recipe card and safely skip a missing badge.
 seo_keywords:
 - JavaScript DOM
 - null guard
@@ -17,7 +16,7 @@ seo_keywords:
 - optional DOM element
 ---
 
-A selector may not match anything: `querySelector` then returns `null`, and `null.textContent` throws. An optional badge on this community kitchen page is intentionally **absent**. The `if (badge)` guard allows the rest of the script to finish. Separately, two recipe cards share a `.status` class. Searching *inside* one card prevents a change to the other.
+Two kitchen cards use the same `.status` class. A document-wide query would find the first status, whether or not it belongs to the recipe you meant to update. First find the soup card, then search inside it.
 
 ```javascript
 const card = document.querySelector("#soup-card");
@@ -29,4 +28,8 @@ const status = card.querySelector(".status");
 status.textContent = "Ready to serve";
 ```
 
-Run: soup becomes ready while salad remains **In planning**. The missing optional badge does not stop the script. A scoped query starts at `card`, not `document`; it searches descendants of that element. Note that the `if` only protects `badge`: `card` and `status` exist in this completed example. When *either* the container or its target might be absent, guard both before reading their properties. The exercise practices precisely that case.
+`card.querySelector(...)` searches descendants of that card. The optional badge is missing, so its query returns `null`. `if (badge)` skips the update in that case; trying `null.textContent` would throw and stop the script.
+
+Run: soup says Ready to serve, while salad stays In planning. Add `<span class="optional-badge"></span>` inside the soup card and Run again. It now says Seasonal. Remove it and rerun to check the absent case.
+
+This example guarantees that the card and status exist. If the container can also be absent, guard it before calling its `querySelector`; then guard the returned status before changing its text. The next exercise puts these checks inside a function so you can safely repeat the update.

@@ -26,12 +26,17 @@ Keep every member card in the DOM. On each `input` event, compare a trimmed, cas
 Recall the route-search demo: filtering changes visibility, not the underlying list. In a different recipe index, a normalized query could drive one card like this:
 
 ```javascript
-const query = document.querySelector("#recipe-query").value.trim().toLowerCase();
+const query = document.querySelector("#recipe-query")
+  .value.trim().toLowerCase();
 const recipe = document.querySelector("[data-dish]");
-recipe.hidden = !recipe.dataset.dish.toLowerCase().includes(query);
+recipe.hidden = !recipe.dataset.dish
+  .toLowerCase()
+  .includes(query);
 ```
 
 An empty string matches every dish. For the directory, repeat the comparison for *every* card, check both name and skill, count visible cards, and update the status and empty state together.
+
+Select Mina before searching for `bike`. Her details must return to the default prompt when her card becomes hidden. Clearing the search reveals Mina again but does not silently select her. Edit the supplied files, Run, then Submit.
 
 ## Your Tasks
 
@@ -42,3 +47,5 @@ An empty string matches every dish. For the directory, repeat the comparison for
 5. If filtering hides the selected card, clear its selected state and restore the detail panel’s default text.
 
 Try `BIKE`, then `zzz`, then clear. The next step starts from this solution, so your selected-card behavior remains intact.
+
+![Normalize the query and hide nonmatching cards. Recount visible cards; clear the details if the selected card becomes hidden.](directory-filter-state.svg)

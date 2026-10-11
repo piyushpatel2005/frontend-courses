@@ -16,33 +16,18 @@ hints:
 - replaceChildren() with no arguments empties a parent without deleting it.
 ---
 
-# Exercise: Refresh a Museum Display
+# Refresh the museum display
 
-A museum display has an expired announcement, a label with the wrong date, and a draft list. Fix the exhibit without rewriting the entire page as HTML.
+The museum display contains last month's tour, an incorrect opening time, and a draft list. Fix each without rebuilding the entire display.
 
-## How it works
+Edit `script.js`. The provided IDs tell you which elements to change. `remove` acts on the unwanted element, `replaceWith` acts on the old hours, and `replaceChildren` acts on the parent whose children should disappear.
 
-In the separate recipe example below, the original recipe cards remain in the DOM except for the one deliberately removed or replaced. The replacement is a created element with text set safely. Clearing the scratch parent does not delete the parent itself. Apply those three decisions to the exhibit’s IDs.
-
-```javascript
-// Different example: recipe cards, not the exhibit.
-document.querySelector("#old-recipe").remove();
-const corrected = document.createElement("li");
-corrected.textContent = "Roast for 25 minutes";
-document.querySelector("#wrong-step").replaceWith(corrected);
-document.querySelector("#recipe-drafts").replaceChildren();
-```
-
-## Try the preview
-
-Run the preview: Last month’s tour disappears, Gallery opens at 10 am replaces the old hours in the same spot, and the draft list is blank. Keep the final Sculpture walk item visible.
-
-## Remember
-
-Earlier, `append`, `prepend`, and `insertBefore` added nodes. Here `remove`, `replaceWith`, and `replaceChildren` cover the opposite direction. Choose the smallest change that matches the job.
+The replacement hours need a new `li` with safe text, just as the community notice demo created a new market notice. Replacing that one element should leave Sculpture walk untouched.
 
 ## Your Tasks
 
-1. Remove `#expired` from the exhibit list while keeping `#exhibits`.
-2. Replace `#old-hours` in place with a newly created `li` whose `textContent` is `Gallery opens at 10 am`; preserve Sculpture walk.
-3. Empty `#drafts` without removing that list element or interpreting strings as HTML.
+1. Remove `#expired` while keeping its parent `#exhibits`.
+2. Replace `#old-hours` with a new text-only `li` labeled `Gallery opens at 10 am`, in the same position before Sculpture walk.
+3. Empty `#drafts` with `replaceChildren()` without removing the list itself.
+
+Run after each change. The first step removes only the expired tour; the second corrects the hours; the third clears the draft. Submit checks those outcomes separately in that order.

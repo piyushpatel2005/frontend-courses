@@ -15,30 +15,28 @@ seo_keywords:
 - event delegation
 ---
 
-# Event Target, Current Target, and Delegation
+# Handle a list's buttons from its parent
 
-Now that clicks make sense, a message board needs a Remove button for each message—including messages added later. A listener on each existing button would miss new buttons.
+A message board can add rows after the page loads. One listener on the stable list can handle Remove buttons in both old and new rows. This is called **event delegation**.
 
-## How it works
+A click normally bubbles: after the target's listeners, the browser visits listeners on its ancestors. Inside the list listener, `event.target` is the clicked element and `event.currentTarget` is the list running that listener. Clicking the nested label makes the `span` the target, not the button.
 
-On a bubbling `click`, `event.target` is the deepest clicked element; `event.currentTarget` is the element whose listener is running. Here the listener lives on `#messages`, so it can handle current and future descendants. `event.target.closest("button[data-remove]")` also works when a nested `<span>` receives the click. Check `list.contains(button)` to keep the action inside this list. A native button retains keyboard activation. A click on the list text alone does nothing.
+`element.closest(selector)` checks the element itself and then walks upward until it finds a match, or returns `null`. `list.contains(node)` checks whether a node belongs inside the list. Together they let the handler ignore plain text and buttons outside its own list.
 
 ```javascript
-list.addEventListener("click", function (event) {
-  const button = event.target.closest("button[data-remove]");
-  if (!button || !event.currentTarget.contains(button)) return;
+list.addEventListener("click", event => {
+  const button =
+    event.target.closest("button[data-remove]");
+  if (!button || !event.currentTarget.contains(button))
+    return;
   button.closest("li").remove();
 });
 ```
 
-![Sketch of a click bubbling from a nested button label to a parent list listener.](./event-delegation-path.svg)
+![The click travels from a nested label to its parent list listener.](event-delegation-path.svg)
+
+The supplied Add message handler builds a row. `document.createTextNode("Fresh message ")` makes a plain text node to put before its button; assigning `button.type` sets the button type. `button.dataset.remove = ""` adds the `data-remove` marker used by the selector.
 
 ## Try the preview
 
-Run the preview: Remove from the first row works, and Add message creates a new row whose Remove button also works. Click ordinary list text and observe that nothing is removed. Try clicking the nested Remove label: `closest` still finds its button.
-
-## Remember
-
-The previous pair registered one listener directly on one button. Delegation registers one listener on a stable parent and uses the event’s target to decide which child action occurred.
-
-The following exercise uses the same idea in a different setting.
+Run, add a message, and remove the new row. Remove also works when you click the original nested label. Clicking ordinary row text should leave the row alone. No new Remove listener is needed when a row is added.

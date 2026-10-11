@@ -1,65 +1,38 @@
-const settle = () => new Promise(resolve => setTimeout(resolve, 0));
-const submit = value => {
-  document.querySelector("#search").value = value;
-  document.querySelector("#search-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-};
-test("newer searches abort the previous signal", async () => {
+const $ = selector => document.querySelector(selector);
+const response = data => new Response(JSON.stringify(data), {status: 200});
+const gate = () => { let resolve, reject; const promise = new Promise((yes, no) => {resolve=yes; reject=no;}); return {promise, resolve, reject}; };
+test("each new request aborts the previous signal", async () => {
   await window.initialDashboardLoad;
-  const original = window.dashboardFetch;
-  const signals = [], releases = [];
-  window.dashboardFetch = (url, options) => { signals.push(options?.signal); return new Promise(resolve => releases.push(resolve)); };
+  const original=window.dashboardFetch,pending=[],signals=[]; const work=[];
+  window.dashboardFetch=(url,options)=>{const g=gate();pending.push(g);signals.push(options?.signal);return g.promise;};
   try {
-    submit("Seed"); submit("Repair");
-    assert.equal(signals.length, 2);
-    assert.equal(Boolean(signals[0]), true);
-    assert.equal(signals[0].aborted, true);
-    assert.equal(signals[1].aborted, false);
-  } finally {
-    releases.forEach(resolve => resolve(new Response('{"items":[]}', { status: 200 })));
-    await settle(); window.dashboardFetch = original;
-  }
+    work.push(window.loadEntries(),window.loadEntries());
+    assert.equal(signals.length,2); assert.equal(signals[0].aborted,true); assert.equal(signals[1].aborted,false);
+  } finally {pending.forEach(g=>g.resolve(response({items:[]})));await Promise.all(work);window.dashboardFetch=original;}
 });
-test("older late result cannot replace newer result", async () => {
+test("a late older result cannot overwrite the newest result", async () => {
   await window.initialDashboardLoad;
-  const original = window.dashboardFetch;
-  const pending = [];
-  window.dashboardFetch = () => new Promise(resolve => { pending.push(resolve); });
+  const original=window.dashboardFetch,pending=[],work=[];
+  window.dashboardFetch=()=>{const g=gate();pending.push(g);return g.promise;};
   try {
-    submit("Seed"); submit("Repair");
-    assert.equal(pending.length, 2);
-    pending[1](new Response('{"items":[{"title":"Repair cafe","venue":"Hall"}]}', { status: 200 }));
-    await settle();
-    pending[0](new Response('{"items":[{"title":"Seed swap","venue":"Library"}]}', { status: 200 }));
-    await settle();
-    assert.equal(document.querySelectorAll("#entries li").length, 1);
-    assert.equal(document.querySelector("#entries").textContent.includes("Repair cafe"), true);
-  } finally {
-    pending.forEach(resolve => resolve(new Response('{"items":[]}', { status: 200 })));
-    await settle(); window.dashboardFetch = original;
-  }
+    work.push(window.loadEntries(),window.loadEntries());
+    pending[1].resolve(response({items:[{title:"<b>Newest</b>",venue:"Hall"}]}));await work[1];
+    pending[0].resolve(response({items:[{title:"Old",venue:"Park"}]}));await work[0];
+    assert.text($("#entries strong"),"<b>Newest</b>");assert.equal($("#entries b"),null);
+    assert.text($("#status"),"1 entries found.");
+  } finally {pending.forEach(g=>g.resolve(response({items:[]})));await Promise.all(work);window.dashboardFetch=original;}
 });
-test("cancelled request rejection does not reveal Retry", async () => {
+test("cancelled and stale errors leave the newer state alone", async () => {
   await window.initialDashboardLoad;
-  const original = window.dashboardFetch;
-  const pending = [];
-  window.dashboardFetch = (url, options) => new Promise((resolve, reject) => {
-    pending.push({ resolve, reject, signal: options?.signal });
-    options?.signal?.addEventListener("abort", () => reject(new DOMException("Cancelled", "AbortError")), { once: true });
-  });
+  const original=window.dashboardFetch,pending=[],work=[];
+  window.dashboardFetch=()=>{const g=gate();pending.push(g);return g.promise;};
   try {
-    submit("Seed"); submit("Repair");
-    assert.equal(pending.length, 2);
-    // The earlier request must have a signal, and the new search must cancel it.
-    // A missing signal would leave the old Promise pending and falsely pass the UI checks.
-    assert.equal(Boolean(pending[0].signal), true);
-    assert.equal(pending[0].signal.aborted, true);
-    pending[1].resolve(new Response('{"items":[{"title":"Repair cafe","venue":"Hall"}]}', { status: 200 }));
-    await settle();
-    assert.equal(document.querySelector("#retry").hidden, true);
-    assert.equal(document.querySelector("#status").textContent.includes("Could not load"), false);
-    assert.equal(document.querySelector("#entries").textContent.includes("Repair cafe"), true);
-  } finally {
-    pending.forEach(p => p.resolve(new Response('{"items":[]}', { status: 200 })));
-    await settle(); window.dashboardFetch = original;
-  }
+    work.push(window.loadEntries(),window.loadEntries());
+    pending[0].reject(new TypeError("Old failure"));await work[0];
+    assert.text($("#status"),"Loading entries…");assert.equal($("#retry").hidden,true);
+    pending[1].reject(new DOMException("Cancelled","AbortError"));await work[1];
+    assert.equal($("#retry").hidden,true);
+    work.push(window.loadEntries());pending[2].reject(new TypeError("Current failure"));await work[2];
+    assert.text($("#status"),"Could not load entries. Try again.");assert.equal($("#retry").hidden,false);
+  } finally {pending.forEach(g=>g.resolve(response({items:[]})));await Promise.all(work);window.dashboardFetch=original;}
 });

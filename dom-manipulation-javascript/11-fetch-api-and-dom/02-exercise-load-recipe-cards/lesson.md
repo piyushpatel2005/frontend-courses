@@ -13,30 +13,18 @@ seo_keywords: mock fetch, recipe cards, safe DOM rendering
 
 # Exercise: load recipe cards
 
-A recipe shelf needs a button that loads names on demand. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+The noticeboard loaded one object. This shelf receives an array, so each title needs its own `li`. Build an item while it is detached, then put the items in the list. Use `textContent` even when a title looks like HTML.
 
-The preceding notice demo used a single object; this time the fixture returns an array of recipes. The button and list exist already. A `Response` is only a wrapper around the body: you still have to `await response.json()` to obtain the array. Since a server controls the text, create a node and set its `textContent` for each recipe instead of inserting an HTML string.
+The supplied click handler runs the helpers in order: loading message → read recipes → render rows → completion message. `readRecipes()` is async; its temporary `return []` keeps the unfinished page runnable. The fixture is local and never contacts a recipe service.
 
-For comparison, a separate example might render a book list:
-
-```javascript
-async function showBooks() {
-  const response = await mockFetch("/api/books");
-  const books = await response.json();
-  const list = document.querySelector("#books");
-  list.replaceChildren();
-  for (const book of books) {
-    const item = document.createElement("li");
-    item.textContent = book.name;
-    list.append(item);
-  }
-}
-```
-
-The recipe fixture in `script.js` is deliberately local and labeled as mock data; no external service is contacted. Click **Load recipes** after editing. First see “Loading recipes…”, then two readable list items. The second title includes HTML-looking text; it must remain text. If the list stays empty, check that you actually call the async function from the button handler.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. On click, start `mockFetch("/api/recipes")` and immediately show `Loading recipes…` in `#recipe-status` while its Promise is pending.
-2. Await that response and its JSON array, then render each recipe title as a text-only `li` in a cleared list.
-3. After the list has rendered, change the status to `Recipes loaded.`.
+1. Make `makeRecipeItem(recipe)` return a detached `li` containing `recipe.title` as literal text.
+2. In `renderRecipes(recipes)`, replace the old list with one item from `makeRecipeItem` per recipe. An empty array should clear it.
+3. In `readRecipes()`, await `mockFetch("/api/recipes")`, await its JSON body, and return that array.
+4. In `showRecipeLoading()`, set `#recipe-status` to `Loading recipes…`.
+5. In `showRecipeDone()`, set the status to `Recipes loaded.`.
+
+Click Load recipes when finished. You should get two rows, including the literal `<img src=x>` characters. The fixture settles quickly, so the loading message may be too brief to see; Submit holds a request pending rather than relying on a timer.

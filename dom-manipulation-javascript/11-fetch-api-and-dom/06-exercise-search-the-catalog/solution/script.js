@@ -8,13 +8,13 @@ window.mockFetch = async function mockFetch(url) {
   return new Response(JSON.stringify(products), { status: 200 });
 };
 
-document.querySelector("#catalog-form").addEventListener("submit", async event => {
-  event.preventDefault();
-  const term = document.querySelector("#catalog-query").value.trim();
-  const url = `/api/catalog?${new URLSearchParams({ q: term })}`;
+window.catalogURL = function(term) {
+  return `/api/catalog?${new URLSearchParams({ q: term.trim() })}`;
+};
+window.showCatalogURL = function(url) {
   document.querySelector("#request-url").textContent = url;
-  const response = await mockFetch(url);
-  const products = await response.json();
+};
+window.renderProducts = function(products) {
   const list = document.querySelector("#results");
   list.replaceChildren();
   for (const product of products) {
@@ -22,5 +22,20 @@ document.querySelector("#catalog-form").addEventListener("submit", async event =
     item.textContent = product.name;
     list.append(item);
   }
-  document.querySelector("#search-status").textContent = products.length ? "Matches found." : "No matches.";
+};
+window.showCatalogEmpty = function() {
+  document.querySelector("#search-status").textContent = "No matches.";
+};
+window.searchCatalog = async function() {
+  const url = window.catalogURL(document.querySelector("#catalog-query").value);
+  window.showCatalogURL(url);
+  const response = await window.mockFetch(url);
+  const products = await response.json();
+  window.renderProducts(products);
+  if (products.length === 0) window.showCatalogEmpty();
+  else document.querySelector("#search-status").textContent = "Matches found.";
+};
+document.querySelector("#catalog-form").addEventListener("submit", event => {
+  event.preventDefault();
+  window.lastLoad = window.searchCatalog();
 });

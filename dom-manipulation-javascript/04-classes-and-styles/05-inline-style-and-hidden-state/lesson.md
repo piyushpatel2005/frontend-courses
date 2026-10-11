@@ -5,9 +5,10 @@ order: 5
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Use an inline style for one-off color, a class for a reusable look, and hidden for visibility.
+summary: Compare inline styles, reusable classes, and hidden visibility on a notice.
 seo_title: Inline styles, classes, and hidden | DOM Manipulation with JavaScript
-seo_description: Learn element.style, CSS classes, and hidden through a runnable browser preview.
+seo_description: Compare inline styles, reusable classes, and hidden visibility on
+  a notice.
 seo_keywords:
 - JavaScript DOM
 - element.style, CSS classes, and hidden
@@ -15,37 +16,14 @@ seo_keywords:
 - demo
 ---
 
-# Inline styles, classes, and hidden
+A garden-walk notice can gain a border, receive a reusable highlight, or disappear from the page. These are different kinds of change.
 
-A notice can change tone without scattering all its design rules through JavaScript. Use the right tool for each change.
+`weatherNotice.style.borderColor = "teal"` writes an inline CSS property. JavaScript uses `borderColor` for CSS `border-color`. The demo also sets `borderStyle = "solid"` so there is a visible border. The `style` object reports inline declarations, not every rule applied by the stylesheet.
 
-## What the code does
+The Feature notice button adds `highlight`. Its background, spacing, and border rules live together in `style.css`. Use a class when several elements should share a named appearance; use an inline property for a particular value on one element.
 
-`element.style.borderColor` writes an inline CSS property; camelCase corresponds to CSS `border-color`. A CSS class stores reusable styling in `style.css`, so `classList.add("highlight")` is cleaner for a multi-property look. `element.hidden = true` removes an element from layout and the accessibility tree; `false` shows it again. Inline styles can override class styles of the same property, so do not set the same property both ways unless you intend that priority.
+The remaining callbacks set `weatherNotice.hidden` to `true` or `false`. In this stylesheet, true removes the notice from layout and the accessibility tree, while false reveals it again. CSS that explicitly overrides `display` could defeat that behavior, so do not add such a rule to hidden content.
 
-In `script.js`, this is the important part of the already-working preview:
+Run and try Feature notice, Accent border, Hide notice, then Show notice. The notice keeps its styles while hidden. Compare the class and inline border values: a normal inline declaration takes priority over a normal stylesheet declaration of the same property.
 
-```javascript
-const weatherNotice = document.querySelector("#weather-notice");
-document.querySelector("#accent-notice").addEventListener("click", () => {
-  weatherNotice.style.borderColor = "teal";
-  weatherNotice.style.borderStyle = "solid";
-});
-document.querySelector("#feature-notice").addEventListener("click", () => {
-  weatherNotice.classList.add("highlight");
-});
-document.querySelector("#hide-notice").addEventListener("click", () => {
-  weatherNotice.hidden = true;
-});
-document.querySelector("#show-notice").addEventListener("click", () => {
-  weatherNotice.hidden = false;
-});
-```
-
-## Try it in the preview
-
-Accent border applies two inline properties; Feature notice adds the reusable yellow class. Hide removes the paragraph from the layout, and Show restores it. Try Feature before Accent and observe that CSS class styling and inline border color affect different properties.
-
-Recall the split: `style.borderColor` for a one-off property, `classList` for a named reusable appearance, and `hidden` for real visibility. Which CSS property is camel-cased? `border-color` → `borderColor`.
-
-The next lesson gives you a different page to build from a starter.
+The click connections are supplied examples of the callback pattern introduced earlier. The next exercise supplies them too; your changes belong inside the bodies.

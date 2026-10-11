@@ -14,34 +14,17 @@ seo_keywords:
 - sync form UI
 ---
 
-# Sync a preference and its reset state
+# Reset the reading-room preference
 
-Build the same reliable interaction for a reading room’s lighting preference. The HTML already has the default “Warm”; JavaScript still needs to keep its display in sync. In the preceding demo, you saw the complete behavior before having to build it yourself.
+The reading room starts with Warm lighting. The supplied `renderLights()` copies the select's current value to its summary, but neither change nor reset calls it yet.
 
-## Transfer the pattern
-
-Your earlier event handlers responded after one action. This form has two routes to the same display—choosing a new option and restoring defaults—so both must update the summary.
-
-`change` fires when a committed selection changes, unlike the per-keystroke `input` event. A `reset` event arrives before the browser restores form values. Schedule the UI update in a microtask with `queueMicrotask` so the preview reads the restored default, or explicitly use the control’s `defaultValue` inside the reset handler.
-
-A checkbox uses a different property but the same synchronization idea:
-
-```javascript
-const alerts = document.querySelector("#alerts");
-const alertsState = document.querySelector("#alerts-state");
-function showAlerts() {
-  alertsState.textContent = alerts.checked ? "Alerts on" : "Alerts off";
-}
-alerts.addEventListener("change", showAlerts);
-```
-
-For a form with Reset, remember the reset event runs *before* controls return to defaults. Your reading-room select needs both event paths, not a one-time assignment.
-
-Run the starter first to see what is present and what still does nothing. Edit `script.js` and, if needed, the markup; use the Preview for a visible check before Submit. The checks exercise actions and state changes, not just the initial markup.
+Edit `script.js` to connect those two event paths. `change` can call the function directly because the chosen value is already updated. A reset listener needs to schedule a later call with `setTimeout(renderLights, 0)` so it reads the restored value, not the old choice.
 
 ## Your Tasks
 
-1. On each committed change to `#lights`, update `#lights-summary` to the selected value.
-2. When `#lights-form` resets, restore the displayed summary to Warm as the control returns to its default.
+1. Register `renderLights` for `change` on `#lights`.
+2. When `#lights-form` resets, schedule `renderLights` to run after the browser restores the select's default.
 
-Select Cool, then Bright, then reset. The summary must agree with the control each time. If reset leaves “Bright” on screen, your listener may have read the select before its default was restored.
+After step 1, Run and choose Cool, then Bright. After step 2, activate Restore default: both select and summary should say Warm. Test the reset button with the mouse and with Enter while focused. Submit checks both routes from their own starting state.
+
+The `selected` option is supplied in the HTML. A select does not have an input-style `defaultValue` property; do not use one to guess its reset value.

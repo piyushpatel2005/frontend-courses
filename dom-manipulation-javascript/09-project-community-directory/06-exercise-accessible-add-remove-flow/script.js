@@ -39,4 +39,8 @@ const form = document.querySelector("#member-form");
 const newName = document.querySelector("#new-name");
 const newSkill = document.querySelector("#new-skill");
 const status = document.querySelector("#form-status");
+// Build one detached card; the submit handler will insert it later.
+function createMemberCard(name, skill) {
+  return null;
+}
 // Add a submit handler and delegate Remove clicks from #members.

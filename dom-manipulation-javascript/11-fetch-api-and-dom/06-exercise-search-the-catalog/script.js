@@ -8,5 +8,33 @@ window.mockFetch = async function mockFetch(url) {
   return new Response(JSON.stringify(products), { status: 200 });
 };
 
-// TODO: Handle #catalog-form submit without reloading the page.
-// Encode q with URLSearchParams, call mockFetch, and safely render matches.
+window.catalogURL = function(term) {
+  // TODO 2
+return "/api/catalog";
+};
+window.showCatalogURL = function(url) {
+  // TODO 3
+
+};
+window.renderProducts = function(products) {
+  // TODO 4
+
+};
+window.showCatalogEmpty = function() {
+  // TODO 5
+
+};
+window.searchCatalog = async function() {
+  const url = window.catalogURL(document.querySelector("#catalog-query").value);
+  window.showCatalogURL(url);
+  const response = await window.mockFetch(url);
+  const products = await response.json();
+  window.renderProducts(products);
+  if (products.length === 0) window.showCatalogEmpty();
+  else document.querySelector("#search-status").textContent = "Matches found.";
+};
+document.querySelector("#catalog-form").addEventListener("submit", event => {
+  // TODO 1
+
+  window.lastLoad = window.searchCatalog();
+});

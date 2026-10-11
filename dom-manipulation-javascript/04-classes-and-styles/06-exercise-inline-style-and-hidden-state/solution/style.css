@@ -9,3 +9,5 @@ a { color: #124e90; }
 .muted { color: #687687; }
 .highlight { background: #fff0ba; border-left: 5px solid #c67813; padding: .6rem; }
 .is-open { background: #e8d9ff; border-color: #6843a6; }
+
+#community-notice { border: 2px solid #ccd7df; }

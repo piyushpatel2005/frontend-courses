@@ -10,23 +10,42 @@ window.mockFetch = async function mockFetch(url) {
   throw new Error("Unknown mock scenario");
 };
 
-document.querySelector("#check-alerts").addEventListener("click", async () => {
-  const status = document.querySelector("#alert-status");
+window.showAlertLoading = function() {
+  document.querySelector("#alert-status").textContent = "Checking alerts…";
+};
+window.renderAlerts = function(alerts) {
   const list = document.querySelector("#alert-list");
-  status.textContent = "Checking alerts…";
   list.replaceChildren();
+  for (const alert of alerts) {
+    const item = document.createElement("li");
+    item.textContent = alert.title;
+    list.append(item);
+  }
+};
+window.showEmptyAlerts = function() {
+  document.querySelector("#alert-status").textContent = "No alerts right now.";
+};
+window.checkAlertResponse = function(response) {
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+};
+window.showAlertFailure = function() {
+  document.querySelector("#alert-list").replaceChildren();
+  document.querySelector("#alert-status").textContent = "Could not load alerts.";
+};
+window.loadAlerts = async function() {
+  window.showAlertLoading();
   try {
     const mode = document.querySelector("#alert-mode").value;
-    const response = await mockFetch(`/api/alerts?mode=${encodeURIComponent(mode)}`);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const response = await window.mockFetch(`/api/alerts?mode=${encodeURIComponent(mode)}`);
+    window.checkAlertResponse(response);
     const alerts = await response.json();
-    status.textContent = alerts.length ? "Alerts loaded." : "No alerts right now.";
-    for (const alert of alerts) {
-      const item = document.createElement("li");
-      item.textContent = alert.title;
-      list.append(item);
-    }
+    window.renderAlerts(alerts);
+    if (alerts.length === 0) window.showEmptyAlerts();
+    else document.querySelector("#alert-status").textContent = "Alerts loaded.";
   } catch (error) {
-    status.textContent = "Could not load alerts.";
+    window.showAlertFailure();
   }
+};
+document.querySelector("#check-alerts").addEventListener("click", () => {
+  window.lastLoad = window.loadAlerts();
 });

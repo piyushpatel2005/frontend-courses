@@ -10,13 +10,29 @@ test("static member cards and labelled detail panel are present", () => {
     assert.equal(Boolean(card.dataset.name && card.dataset.skill), true, "Keep name and skill data on each card");
     assert.exists(card.querySelector("button.select"), "Give every card a View button");
   });
-  assert.exists(document.querySelector("[aria-labelledby='detail-heading']"), "Keep a labelled detail section");
+  assert.equal(leah.querySelector("button.select").type, "button", "Use a native non-submit View button");
 });
-test("View button updates details from its own card", () => {
+test("View button copies its own card data as literal text", () => {
   const card = document.querySelectorAll("#members li")[1];
-  card.querySelector("button.select").click();
-  assert.equal(document.querySelector("#detail-name").textContent, card.dataset.name, "Show the chosen name");
-  assert.equal(document.querySelector("#detail-skill").textContent, card.dataset.skill, "Show the chosen skill");
+  const savedName = card.dataset.name;
+  const savedSkill = card.dataset.skill;
+  const nested = document.createElement("strong");
+  nested.textContent = "View fixture";
+  card.querySelector("button.select").append(nested);
+  try {
+    card.dataset.name = "<em>Omar Reed</em>";
+    card.dataset.skill = "<b>Bike repair</b>";
+    nested.click();
+    assert.equal(document.querySelector("#detail-name").textContent, card.dataset.name);
+    assert.equal(document.querySelector("#detail-skill").textContent, card.dataset.skill);
+    assert.equal(document.querySelector("#detail-name em, #detail-skill b"), null, "Copy data as text, not markup");
+  } finally {
+    card.dataset.name = savedName;
+    card.dataset.skill = savedSkill;
+    nested.remove();
+    document.querySelector("#detail-name").textContent = "Choose a member";
+    document.querySelector("#detail-skill").textContent = "Their skill will appear here.";
+  }
 });
 test("changing selection highlights only the chosen card", () => {
   const cards = document.querySelectorAll("#members li");

@@ -2,8 +2,8 @@ test("Sets a one-off inline border color", () => {
   const notice = document.querySelector("#community-notice");
   assert.exists(notice, "Keep #community-notice");
   document.querySelector("#set-border").click();
-  assert.equal(notice.style.borderColor, "teal", "Set style.borderColor to teal");
-  assert.equal(notice.style.borderStyle, "solid", "Make the border visible");
+  assert.equal(notice.style.borderColor !== "", true, "Set an inline border color");
+  assert.equal(getComputedStyle(notice).borderTopColor, "rgb(0, 128, 128)", "Set the border to teal");
 });
 test("Applies the reusable highlight class", () => {
   const notice = document.querySelector("#community-notice");
@@ -18,10 +18,12 @@ test("Dismiss hides the notice", () => {
   notice.hidden = false;
   document.querySelector("#dismiss").click();
   assert.equal(notice.hidden, true, "Set hidden to true when dismissed");
+  assert.equal(getComputedStyle(notice).display, "none", "The hidden notice must leave layout");
 });
 test("Restore reveals a dismissed notice", () => {
   const notice = document.querySelector("#community-notice");
   notice.hidden = true;
   document.querySelector("#restore").click();
   assert.equal(notice.hidden, false, "Set hidden to false when restored");
+  assert.visible(notice, "The restored notice must be visible");
 });

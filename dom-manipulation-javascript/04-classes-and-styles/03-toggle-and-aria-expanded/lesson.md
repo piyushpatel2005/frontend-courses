@@ -5,9 +5,9 @@ order: 3
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Toggle a panel class while keeping the button’s expanded state in sync.
+summary: Keep a panel class, visibility, and expanded announcement in agreement.
 seo_title: Toggle a panel accessibly | DOM Manipulation with JavaScript
-seo_description: Learn classList.toggle and aria-expanded through a runnable browser preview.
+seo_description: Keep a panel class, visibility, and expanded announcement in agreement.
 seo_keywords:
 - JavaScript DOM
 - classList.toggle and aria-expanded
@@ -15,30 +15,28 @@ seo_keywords:
 - demo
 ---
 
-# Toggle a panel accessibly
+A Route details button opens and closes a panel. The panel's appearance, visibility, and accessible state must describe the same result.
 
-A route details button reveals or hides a panel. Keep what sighted users see and what assistive technology reads in agreement.
+`classList.toggle("is-open")` adds the class if absent and removes it if present. It returns `true` when the class is now present and `false` when absent. Save that result so the other updates can use it.
 
-## What the code does
-
-`classList.toggle("is-open")` adds the class if absent and removes it if present, returning the new boolean state. The button’s `aria-expanded` must be the string `"true"` when the panel is shown and `"false"` when hidden. `aria-controls` identifies the panel. Use the native `hidden` property to make a collapsed panel actually unavailable, not merely visually faded. Initialize all three states consistently.
-
-In `script.js`, this is the important part of the already-working preview:
+![Closed and open panel states pair the is-open class with opposite hidden values and matching aria-expanded strings](panel-state-agreement.svg)
 
 ```javascript
-const routeToggle = document.querySelector("#route-toggle");
-const routeDetails = document.querySelector("#route-details");
+const routeToggle =
+  document.querySelector("#route-toggle");
+const routeDetails =
+  document.querySelector("#route-details");
 routeToggle.addEventListener("click", () => {
   const isOpen = routeDetails.classList.toggle("is-open");
   routeDetails.hidden = !isOpen;
-  routeToggle.setAttribute("aria-expanded", String(isOpen));
+  routeToggle.setAttribute(
+    "aria-expanded", String(isOpen)
+  );
 });
 ```
 
-## Try it in the preview
+The listener is the same supplied pattern as before: the browser runs the arrow-function body once per click. Inside it, `!isOpen` gives the opposite boolean for `hidden`. `String(isOpen)` turns the boolean into the text `"true"` or `"false"` required by the attribute.
 
-The panel starts hidden and the button says `aria-expanded="false"`. Click once: details appear, the class exists, and the button state becomes `true`. Click again: all three return to the closed state.
+`hidden` controls whether the panel is displayed. `aria-expanded` tells assistive technology whether the controlled content is open; it does not show or hide anything by itself. The supplied `aria-controls` contains the panel's ID. The CSS gives `is-open` its appearance and does not override the browser's hidden behavior.
 
-Recall the three linked states: `is-open` class, panel `hidden`, button `aria-expanded`. When open they are present, false, and `"true"`; when closed they are absent, true, and `"false"`.
-
-The next lesson gives you a different page to build from a starter.
+Run and activate the button twice, including from the keyboard if you prefer. First the details appear; the second activation closes them. The button stays available in both states. In the exercise, the callback shell is supplied and each of the three state updates has its own check.

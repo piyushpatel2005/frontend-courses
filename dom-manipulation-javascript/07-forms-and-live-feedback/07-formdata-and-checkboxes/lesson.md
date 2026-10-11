@@ -15,20 +15,16 @@ seo_keywords:
   - DOM submit event
 ---
 
-# Read multiple checked values with FormData
+# Read named controls with FormData
 
-A neighborhood seed swap needs one sign-up name and any number of seed interests. Run the finished preview, change the checks, and submit to see the summary update.
+The seed-swap preview collects a made-up name and any checked seed interests. A fresh `new FormData(form)` reads the controls at that moment; it does not submit the form or keep updating by itself.
 
-## Follow the form data
+Its keys come from `name` attributes, not IDs. Only successful controls contribute values: unnamed and disabled controls are omitted, and an unchecked checkbox contributes nothing. A checked checkbox contributes its `value`; without an explicit value its default is `"on"`. These boxes share `name="interest"` but have distinct values.
 
-The `name` attributes, not the element IDs, become FormData keys. Both checkboxes share `name="interest"` but have different values. `new FormData(form)` reads successful controls at submit time: unchecked checkboxes are **not included**. `data.get("visitor")` returns the name; `data.getAll("interest")` returns an array of checked values (or an empty array). We trim the name and use `join(", ")` only when there is at least one interest. The form uses `novalidate` so the browser does not block a blank-name submit before our own message can run; without it, the input's `required` attribute would stop the submit event.
+`data.get("visitor")` returns the first matching value or `null`. `String(value ?? "")` substitutes an empty string for a missing value, then converts it to text. These fields hold strings, not uploaded files. `data.getAll("interest")` returns an array of all matching checked values, or an empty array. `join(", ")` turns that array into a readable list.
 
-Open `index.html` and locate each label, shared checkbox name, and live status. In `script.js`, follow the submit handler: `preventDefault()` keeps the page in place; the data read reflects the current checks. `textContent` treats a typed `<tag>` as characters rather than markup. Never put form values into `innerHTML`.
+The supplied submit listener prevents navigation and reads new FormData each time. Its blank-name branch returns early; otherwise it uses `textContent` to show the name and interests safely. `novalidate` lets the handler display its own error even though the name field is marked `required`.
 
-## Try it in the preview
+## Try the preview
 
-Submit with no interests, then select both and submit again. Try a name like `<garden>`: the brackets remain visible text. Toggle one checkbox and resubmit; FormData has no stale copy of the previous selection. Change one checkbox value in the HTML to see what `getAll` returns, then restore it. The next lesson uses the same pattern for a different sign-up.
-
-## Learn more
-
-MDN's [FormData interface](https://developer.mozilla.org/en-US/docs/Web/API/FormData) documents how named form fields are collected.
+Run with a fictional name. Submit with neither interest, each one separately, and both. Disable a checked box in the HTML and rerun: its value should be omitted. Restore the markup, then try `<garden>` as a name; the brackets remain text. Nothing is saved or sent.

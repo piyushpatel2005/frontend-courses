@@ -14,20 +14,16 @@ seo_keywords:
 - accessible form validation
 ---
 
-# Handle submit without leaving the page
+# Respond to form submission
 
-A workshop RSVP should respond in place instead of reloading the preview or silently accepting a blank name.
+The workshop RSVP should confirm locally or explain a blank name. This is a preview only: no seat is reserved and no personal information is sent. Use a made-up name.
 
-## Read the running example
+A form's `submit` event handles both its submit button and implicit submission from Enter in this simple text field. Listen on the form, rather than only on the button. Call `event.preventDefault()` before either outcome to keep the page in place.
 
-The previous preview reacted on every edit. A request is different: it should confirm only when the visitor submits, whether by button or by pressing Enter in the field.
+The handler reads `.value.trim()`. For a blank value, it marks the field with `aria-invalid="true"`, writes a useful message, and calls `.focus()` to move keyboard focus back to the field. The supplied `aria-describedby` connects that message to the field. For a valid name, `removeAttribute("aria-invalid")` clears the stale error state and `textContent` displays a confirmation.
 
-The form’s `submit` event also fires when a user presses Enter. Call `event.preventDefault()` to stop navigation, then inspect `.value.trim()`; show an error in a visible status region and associate it with the field through `aria-describedby`. Focus the invalid field so the person can correct it.
+`novalidate` on the form disables built-in constraint validation so this teaching example can show its own feedback. Client-side checks alone would not secure a real service.
 
-Open `index.html` to locate the labelled control and output. In `script.js`, notice the selectors point to those IDs, then follow the event from the control to the updated page. `style.css` only changes presentation; it does not cause the behavior. This example is finished already so you can run it before writing the next exercise.
+## Try the preview
 
-## Try it in the preview
-
-Submit empty, then enter a name and submit with Enter. The error changes to a confirmation and the page stays put. Inspect the form listener: it handles both the button and Enter. Remove `preventDefault()` briefly to see why it matters, then restore it.
-
-Nothing in this demo is graded. The following exercise asks you to build the same *idea* for a different situation; come back here if the event or state change feels hard to trace.
+Run, submit spaces, and check the message and focused field. Correct the name and press Enter; the error should change to a confirmation without navigation. Leave `preventDefault()` in place throughout the exercise.

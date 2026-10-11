@@ -5,9 +5,9 @@ order: 2
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Practice textContent and innerHTML in a small browser UI.
+summary: Show a museum caption with its angle brackets intact.
 seo_title: 'Exercise: render a safe notice | DOM Manipulation with JavaScript'
-seo_description: Practice textContent and innerHTML with a tested JavaScript DOM exercise.
+seo_description: Show a museum caption with its angle brackets intact.
 seo_keywords:
 - JavaScript DOM
 - textContent and innerHTML
@@ -15,27 +15,12 @@ seo_keywords:
 - exercise
 ---
 
-# Exercise: render a safe notice
+A museum visitor's caption contains `<clouds>`. Those characters are part of the caption, not instructions to create an element.
 
-A museum accepts a visitor caption that happens to contain angle brackets. Render that caption safely in the existing display. This follows the **Safe text and HTML** demo.
+The starter selects `#caption` and supplies `visitorCaption`. Finish `script.js` by assigning that string to the paragraph's `textContent`, as the board-note demo did. The HTML and CSS are ready.
 
-## Recall and transfer
-
-`textContent` replaces a node’s children with plain text; angle brackets in the assigned string are displayed literally rather than parsed as tags. `innerHTML` parses the assigned string as HTML and can create elements, including unsafe markup when the string comes from a user. Reserve `innerHTML` for carefully controlled, trusted markup; do not use it for visitor input. Reading `.textContent` returns descendant text, including text in hidden descendants, rather than an HTML source string.
-
-Here is the same technique in a **different setting**; its selectors and data are not the answer to this exercise:
-
-```javascript
-// A library label receives a member's plain-text suggestion.
-const label = document.querySelector("#library-label");
-const suggestion = "Try <poetry>";
-label.textContent = suggestion; // The brackets remain text, not an element.
-```
-
-When a string comes from a person or remote data, which property keeps it as text? `textContent`. Why not `innerHTML` here? It would parse the string as markup.
-
-In this starter, `index.html` contains the targets, `style.css` holds the visual rules, and `script.js` is where you finish the behavior. Run the preview, make the change, then Submit to check each step. If nothing changes, first check the selector and whether the script is attached at the bottom of the page.
+Run and look for the complete caption, brackets included. Submit checks the text and makes sure the paragraph contains no child elements.
 
 ## Your Tasks
 
-1. Set `#caption` to the exact text `A sketch of <clouds>` from `visitorCaption` using `textContent`, so the brackets stay literal and no `<clouds>` element is created.
+1. Display `visitorCaption` in `#caption` using `textContent`, showing `A sketch of <clouds>` literally without creating a `<clouds>` element.

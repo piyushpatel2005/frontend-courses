@@ -12,7 +12,7 @@ window.dashboardFixture = {
   failNext: false,
   delay: 15
 };
-async function dashboardFetch(url, options = {}) {
+window.dashboardFetch = async function dashboardFetch(url, options = {}) {
   const data = window.dashboardFixture;
   const items = data.items.map(item => ({ ...item }));
   const shouldFail = data.failNext;
@@ -39,7 +39,7 @@ async function dashboardFetch(url, options = {}) {
   return new Response(JSON.stringify({
     items: items.filter(item => item.title.toLowerCase().includes(query))
   }), { status: 200, headers: { "Content-Type": "application/json" } });
-}
+};
 
 const list = document.querySelector("#entries");
 const status = document.querySelector("#status");
@@ -87,4 +87,4 @@ async function loadEntries() {
   }
 }
 retry.addEventListener("click", loadEntries);
-loadEntries();
+window.initialDashboardLoad = loadEntries();

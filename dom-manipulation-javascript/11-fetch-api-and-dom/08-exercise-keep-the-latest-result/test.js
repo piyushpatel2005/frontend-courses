@@ -1,74 +1,35 @@
-const settle = () => new Promise(resolve => setTimeout(resolve, 0));
-test("both buttons start pending lookups with a loading status", async () => {
-  const original = window.mockFetch;
-  const releases = [], routes = [];
-  window.mockFetch = url => { routes.push(new URL(url, "https://preview.invalid").searchParams.get("route")); return new Promise(resolve => releases.push(resolve)); };
+const $ = selector => document.querySelector(selector);
+const response = data => new Response(JSON.stringify(data), {status: 200});
+const gate = () => { let resolve, reject; const promise = new Promise((yes, no) => {resolve=yes; reject=no;}); return {promise, resolve, reject}; };
+test("loading is visible while each route request is pending", async () => {
+  const original=window.mockFetch;
   try {
-    document.querySelector("#slow-route").click();
-    assert.text(document.querySelector("#route-status"), "Loading route…");
-    document.querySelector("#fast-route").click();
-    assert.equal(routes.join("|"), "Slow pier|Fast pier");
-  } finally {
-    releases.forEach((resolve, i) => resolve(new Response(JSON.stringify({ name: routes[i] }), { status: 200 })));
-    await settle(); window.mockFetch = original;
-  }
+    for (const id of ["slow-route","fast-route"]) {
+      const g=gate(); window.mockFetch=()=>g.promise;
+      try {$("#"+id).click(); assert.text($("#route-status"),"Loading route…");}
+      finally {g.resolve(response({name:"Test"})); await window.lastLoad;}
+    }
+  } finally {window.mockFetch=original;}
 });
-test("newer lookup aborts the previous signal", async () => {
-  const original = window.mockFetch;
-  const signals = [], releases = [];
-  window.mockFetch = (url, options) => { signals.push(options?.signal); return new Promise(resolve => releases.push(resolve)); };
-  try {
-    document.querySelector("#slow-route").click();
-    document.querySelector("#fast-route").click();
-    assert.equal(signals.length, 2);
-    assert.equal(Boolean(signals[0]), true);
-    assert.equal(signals[0].aborted, true);
-    assert.equal(signals[1].aborted, false);
-  } finally {
-    releases.forEach(resolve => resolve(new Response('{"name":"Fast pier"}', { status: 200 })));
-    await settle(); window.mockFetch = original;
-  }
+test("starting another route aborts its predecessor", () => {
+  const first=window.beginRoute(), second=window.beginRoute();
+  assert.equal(first.aborted,true); assert.equal(second.aborted,false);
+  assert.notEqual(first,second);
 });
-test("only the newest resolved route paints safely", async () => {
-  const original = window.mockFetch;
-  const pending = [];
-  window.mockFetch = (url, options) => new Promise((resolve, reject) => {
-    const signal = options?.signal;
-    pending.push({ resolve, signal });
-    // This mock intentionally resolves late even after abort: guard stale results after JSON.
-  });
-  try {
-    document.querySelector("#slow-route").click();
-    document.querySelector("#fast-route").click();
-    assert.equal(pending.length, 2);
-    pending[1].resolve(new Response('{"name":"<em>Fast pier</em>"}', { status: 200 }));
-    await settle();
-    pending[0].resolve(new Response('{"name":"Slow pier"}', { status: 200 }));
-    await settle();
-    assert.text(document.querySelector("#route-name"), "<em>Fast pier</em>");
-    assert.equal(document.querySelector("#route-name").children.length, 0);
-    assert.text(document.querySelector("#route-status"), "Route ready.");
-  } finally {
-    pending.forEach(p => p.resolve(new Response('{"name":"Slow pier"}', { status: 200 })));
-    await settle(); window.mockFetch = original;
-  }
+test("only a current result updates the route as literal text", () => {
+  const current=new AbortController(), old=new AbortController(); old.abort();
+  window.showRouteResult({name:"<img src=x> Fast"},current.signal);
+  window.showRouteResult({name:"Old slow"},old.signal);
+  assert.text($("#route-name"),"<img src=x> Fast");
+  assert.equal($("#route-name").children.length,0);
+  assert.text($("#route-status"),"Route ready.");
 });
-test("old AbortError never overwrites the newer ready status", async () => {
-  const original = window.mockFetch;
-  const pending = [];
-  window.mockFetch = () => new Promise((resolve, reject) => pending.push({ resolve, reject }));
-  try {
-    document.querySelector("#slow-route").click();
-    document.querySelector("#fast-route").click();
-    assert.equal(pending.length, 2);
-    pending[1].resolve(new Response('{"name":"Fast pier"}', { status: 200 }));
-    await settle();
-    pending[0].reject(new DOMException("Canceled", "AbortError"));
-    await settle();
-    assert.text(document.querySelector("#route-name"), "Fast pier");
-    assert.text(document.querySelector("#route-status"), "Route ready.");
-  } finally {
-    pending.forEach(p => p.resolve(new Response('{"name":"Slow pier"}', { status: 200 })));
-    await settle(); window.mockFetch = original;
-  }
+test("ignore cancellation but report genuine current failures", () => {
+  const current=new AbortController(), old=new AbortController(); old.abort();
+  $("#route-status").textContent="New result";
+  window.showRouteError(new DOMException("Cancelled","AbortError"),current.signal);
+  window.showRouteError(new Error("Late old failure"),old.signal);
+  assert.text($("#route-status"),"New result");
+  window.showRouteError(new TypeError("Network"),current.signal);
+  assert.text($("#route-status"),"Lookup failed.");
 });

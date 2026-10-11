@@ -16,26 +16,16 @@ seo_keywords:
 
 # Finish a resilient event dashboard
 
-Your event search works, but rapid submissions can leave an old request running. Use the preceding trail demo to make the latest search win and leave Retry available for genuine failures. The starter retains your previous working dashboard, including the Retry listener; finish the marked TODOs in `script.js`.
+Keep the event data and search from the previous exercise. A fresh controller and increasing request number are now supplied for each load. Finish cancellation and the two guards. The trail demo shows why both success and error paths need protection.
 
-In a separate weather widget, the smallest request identity guard would be:
+`request` captures the number for this call; `latestRequest` changes when another call starts. Compare them after awaiting JSON, before rendering. Do the same in `catch`, because an old failure is just as stale as an old success. Retry already reruns the current query.
 
-```javascript
-let newest = 0;
-async function refresh() {
-  const id = ++newest;
-  const reading = await readWeather();
-  if (id !== newest) return;
-  showWeather(reading);
-}
-```
-
-For this dashboard, add `AbortController` so a newly started request cancels the previous one, and pass its signal into `dashboardFetch`. Also compare a monotonic request ID after awaiting JSON and in `catch` so late or aborted results never replace current results or show a false error. Keep ordinary failure feedback and the Retry button. Try a missing query, then a real title; only the newest response belongs on screen.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. Pass an `AbortController` signal to each request and abort the previous in-flight request when a newer search begins. The existing Retry listener is setup.
-2. Guard rendering so an older request that settles after a newer one cannot overwrite the latest search result.
-3. Ignore cancelled requests in the error handler so a superseded search never shows a false error or reveals Retry.
+1. Abort the previous controller before the supplied code creates its replacement. Each request already receives its new signal.
+2. After JSON parsing, return without rendering when `request !== latestRequest`.
+3. In `catch`, return for an outdated request or an `AbortError`; preserve the existing feedback for genuine current failures.
 
-The finished dashboard runs entirely on a mock fetch fixture. To connect it later, replace the fetch-shaped call with a CORS-enabled endpoint and verify its response contract. Your page now handles delayed data as carefully as immediate DOM updates.
+To see the result, set the fixture delay to `800`, submit `Seed`, then quickly submit `Repair`. Only Repair cafe should remain. Set `failNext: true` and Run to try Retry, then restore the fixture. This is a complete offline dashboard; connecting a real API also requires checking its JSON contract and any cross-origin permissions.

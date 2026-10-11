@@ -1,43 +1,67 @@
-test("blank submit does not navigate or add a task", () => {
+test("blank submit reports the missing title without adding a task", () => {
   const form = document.querySelector("#task-form");
   const input = document.querySelector("#task-name");
+  const status = document.querySelector("#task-status");
   const before = document.querySelectorAll("#tasks li").length;
-  input.value = "   ";
-  const event = new Event("submit", { bubbles: true, cancelable: true });
-  form.dispatchEvent(event);
-  assert.equal(event.defaultPrevented, true, "Prevent form navigation");
-  assert.equal(document.querySelectorAll("#tasks li").length, before, "Do not create a blank task");
-  assert.equal(document.querySelector("#task-status").textContent.trim().length > 0, true, "Explain what is missing");
-});
-test("submit adds a removable task as safe text", () => {
-  const form = document.querySelector("#task-form");
-  const input = document.querySelector("#task-name");
-  input.value = "<em>Carry chairs</em>";
-  form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  const items = [...document.querySelectorAll("#tasks li")];
-  const last = items[items.length - 1];
-  try {
-    assert.equal(items.length, 2, "Add a second task");
-    assert.equal(last.textContent.includes("<em>Carry chairs</em>"), true, "Keep the typed characters literally");
-    assert.equal(last.querySelector("em"), null, "Never parse task text as HTML");
-    assert.exists(last.querySelector("button"), "Give each new task a Remove button");
-  } finally {
-    if (items.length > 1) last.remove(); // Restore the starter row even if an assertion fails.
+  for (const value of ["", "   "]) {
+    input.value = value;
+    status.textContent = "";
+    const event = new Event("submit", { bubbles: true, cancelable: true });
+    form.dispatchEvent(event);
+    assert.equal(event.defaultPrevented, true);
+    assert.equal(document.querySelectorAll("#tasks li").length, before);
+    assert.equal(status.textContent.trim().length > 0, true, "Explain the missing title");
   }
 });
-test("delegated removal works for old and new tasks", () => {
+test("helper builds a detached safe task with a named button", () => {
+  for (const title of ["<em>Carry chairs</em>", "Sweep path"]) {
+    const item = createTask(title);
+    assert.exists(item, "Return the prepared row");
+    assert.equal(item.tagName, "LI");
+    assert.equal(item.isConnected, false, "Do not insert inside the builder");
+    assert.equal(item.querySelector("span").textContent, title);
+    assert.equal(item.querySelector("em"), null);
+    const button = item.querySelector("button");
+    assert.exists(button);
+    assert.equal(button.type, "button");
+    assert.includes(button.getAttribute("aria-label") || button.textContent, title);
+  }
+});
+test("valid submit inserts a task without replacing existing rows", () => {
   const list = document.querySelector("#tasks");
-  const original = list.querySelector("li");
-  const added = document.createElement("li");
-  added.innerHTML = "<span>Set out tables</span> <button type='button'>Remove</button>";
-  list.append(added); // Set up a new task independently of the submit handler.
+  const original = [...list.children];
   try {
-    added.querySelector("button").click();
-    assert.equal(added.isConnected, false, "Remove a task inserted after page load");
-    original.querySelector("button").click();
-    assert.equal(original.isConnected, false, "Remove the original task too");
-  } finally {
-    added.remove();
-    if (!original.isConnected) list.prepend(original);
-  }
+    document.querySelector("#task-name").value = "  <b>Carry chairs</b>  ";
+    document.querySelector("#task-form").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    assert.equal(list.children.length, original.length + 1);
+    assert.equal(original.every(row => row.isConnected), true);
+    assert.equal(list.lastElementChild.querySelector("span").textContent, "<b>Carry chairs</b>");
+    assert.equal(list.lastElementChild.querySelector("b"), null);
+  } finally { list.replaceChildren(...original); }
 });
+function withTask(check) {
+  const list = document.querySelector("#tasks");
+  const original = [...list.children];
+  const item = document.createElement("li");
+  item.innerHTML = '<span>Temporary fixture</span> <button type="button"><strong>Remove</strong></button>';
+  list.append(item);
+  try { check(item, original); }
+  finally { list.replaceChildren(...original); }
+}
+test("delegation removes future and original rows through nested clicks", () => withTask((item, original) => {
+  item.querySelector("strong").click();
+  assert.equal(item.isConnected, false);
+  original[0].querySelector("button").click();
+  assert.equal(original[0].isConnected, false);
+}));
+test("removal announces the clicked task", () => withTask(item => {
+  const status = document.querySelector("#task-status");
+  status.textContent = "";
+  item.querySelector("strong").click();
+  assert.includes(status.textContent, "Temporary fixture");
+}));
+test("removal returns focus to the task field", () => withTask(item => {
+  item.querySelector("button").focus();
+  item.querySelector("strong").click();
+  assert.equal(document.activeElement, document.querySelector("#task-name"));
+}));

@@ -1,1 +1,5 @@
-// Define a named function, then register it as a click listener.
+function showHours() {
+  // Task 1: add your code here.
+}
+// Task 2: add your code here.
+window.showHours = showHours;

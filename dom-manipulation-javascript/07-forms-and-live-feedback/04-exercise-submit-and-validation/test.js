@@ -1,27 +1,58 @@
-test("submission stays on the page", () => {
-  const form = document.querySelector("#request");
-  const book = document.querySelector("#book");
-  for (const value of ["   ", "River Atlas"]) {
-    book.value = value;
-    const event = new Event("submit", { bubbles: true, cancelable: true });
-    form.dispatchEvent(event);
-    assert.equal(event.defaultPrevented, true, "Prevent navigation on every submission");
+// Restore the exact form/display state even when an assertion fails.
+async function withRestoredState(check) {
+  const elements = [...document.querySelectorAll("input, select, [role='status'], strong, button")];
+  const saved = elements.map(el => ({el, value:el.value, checked:el.checked,
+    invalid:el.getAttribute("aria-invalid"), children:[...el.childNodes]}));
+  const focus = document.activeElement;
+  try { await check(); } finally {
+    for (const {el,value,checked,invalid,children} of saved) {
+      if (value !== undefined) el.value = value;
+      if (checked !== undefined) el.checked = checked;
+      if (invalid === null) el.removeAttribute("aria-invalid"); else el.setAttribute("aria-invalid", invalid);
+      if (el.matches("[role='status'], strong")) el.replaceChildren(...children);
+    }
+    if (focus?.isConnected) focus.focus();
   }
-});
-test("blank title exposes a focused error", () => {
+}
+function submitTitle(value) {
+  document.querySelector("#book").value = value;
+  const event = new Event("submit", {bubbles: true, cancelable: true});
+  document.querySelector("#request").dispatchEvent(event);
+  return event;
+}
+test("Every submission stays on the page", () => withRestoredState(async () => {
+  for (const value of ["", "   ", "River Atlas"]) {
+    assert.equal(submitTitle(value).defaultPrevented, true, "Cancel every submit default");
+  }
+}));
+test("Blank titles get a useful message", () => withRestoredState(async () => {
+  const status = document.querySelector("#request-status");
+  for (const blank of ["", "  "]) {
+    status.textContent = "Previous request";
+    submitTitle(blank);
+    assert.includes(status.textContent, "Enter a book title");
+  }
+}));
+test("Blank titles expose the invalid field and focus it", () => withRestoredState(async () => {
   const book = document.querySelector("#book");
-  book.value = "   ";
-  document.querySelector("#request").dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  assert.equal(book.getAttribute("aria-invalid"), "true", "Mark an invalid field");
-  assert.equal(document.activeElement, book, "Focus the field to help correction");
-  assert.equal(document.querySelector("#request-status").textContent.includes("Enter a book title"), true, "Explain what is missing");
-});
-test("valid title clears error and confirms the request", () => {
-  const form = document.querySelector("#request");
+  book.removeAttribute("aria-invalid");
+  document.querySelector("button").focus();
+  submitTitle("   ");
+  assert.equal(book.getAttribute("aria-invalid"), "true");
+  assert.equal(document.activeElement, book);
+}));
+test("Valid titles receive a trimmed, literal confirmation", () => withRestoredState(async () => {
+  const status = document.querySelector("#request-status");
+  for (const title of ["River Atlas", "<em>Reed & River</em>"]) {
+    status.textContent = "Old message";
+    submitTitle("  " + title + "  ");
+    assert.equal(status.textContent, `Hold requested for ${title}.`);
+    assert.equal(status.children.length, 0, "Display the title as text");
+  }
+}));
+test("A corrected title loses its invalid state", () => withRestoredState(async () => {
   const book = document.querySelector("#book");
-  book.setAttribute("aria-invalid", "true"); // Set up the error independently.
-  book.value = "  River Atlas  ";
-  form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
-  assert.notEqual(book.getAttribute("aria-invalid"), "true", "Remove invalid state after correction");
-  assert.equal(document.querySelector("#request-status").textContent.includes("River Atlas"), true, "Confirm the requested title");
-});
+  book.setAttribute("aria-invalid", "true");
+  submitTitle("River Atlas");
+  assert.notEqual(book.getAttribute("aria-invalid"), "true");
+}));

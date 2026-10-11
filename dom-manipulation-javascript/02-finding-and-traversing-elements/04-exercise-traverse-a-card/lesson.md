@@ -5,11 +5,9 @@ order: 4
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Travel from a nested label to its immediate parent, sibling heading, and
-  enclosing article.
+summary: Navigate from a nested tool label to its row and enclosing card.
 seo_title: 'Exercise: trace a nested card | Beginner JavaScript DOM'
-seo_description: Travel from a nested label to its immediate parent, sibling heading,
-  and enclosing article. Practice in a live JavaScript DOM preview.
+seo_description: Navigate from a nested tool label to its row and enclosing card.
 seo_keywords:
 - JavaScript DOM
 - parentElement exercise
@@ -17,20 +15,20 @@ seo_keywords:
 - closest ancestor
 ---
 
-The book demo started from a `.featured` span and moved around its article. Your repair-café card has one extra layer: the `.featured-tool` label is inside a `.tool-row`, and that row sits inside an `<article>`. One step up should find the **row**, while `closest("article")` must find the outer card.
+The repair-café page has a label inside a row inside a card:
 
-On an unrelated music-card page, the same route could look like this:
-
-```javascript
-const tag = document.querySelector(".album-tag");
-const row = tag.parentElement;
-const name = row.children[0];
-const album = tag.closest("article");
-name.textContent += " (recommended)";
-album.dataset.highlight = "yes";
+```html
+<article class="card">
+  <div class="tool-row">
+    <strong>Needle kit</strong>
+    <span class="featured-tool">Volunteer pick</span>
+  </div>
+</article>
 ```
 
-In your page, the first child of `.tool-row` is the tool name. Append ** (available)** to it and mark the *article* with `data-featured="yes"`. Observe the green border in Preview. Keep the second card untouched.
+From `.featured-tool`, `parentElement` reaches the row. The row's `children[0]` is the tool name. `closest("article")` travels farther up to the card. Use those different routes rather than assuming the immediate parent is the article.
+
+Edit `script.js`. As in the demo, `card.dataset.featured = "yes"` sets a data attribute that the supplied CSS uses for a green border. Run after each change: first look for the available label, then the border. Glue brush should stay unchanged. Submit to check the two outcomes.
 
 ## Your Tasks
 

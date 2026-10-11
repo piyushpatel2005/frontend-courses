@@ -15,32 +15,23 @@ seo_keywords:
 - event bubbling stopPropagation
 ---
 
-# Once, Remove, and Bubble
+# Control a listener's lifetime
 
-A museum sound desk has one-time announcements, a chime you can disable, and two buttons inside a panel. Each behavior asks a different question about how long a listener should live and where its click should travel.
+The museum sound desk has a one-time announcement, a chime that can be disabled, and Normal and Quiet buttons inside a panel. They illustrate different reasons to limit a response.
 
-## How it works
+Pass `{ once: true }` as the third argument to `addEventListener` to remove that listener after its first invocation. For later cleanup, `removeEventListener("click", ring)` must receive the same function object used at registration. A new function with identical source is still a different object. The capture setting must match too; these examples use the default, `false`.
 
-`{ once: true }` makes a listener run on only the first click. To remove a listener later, pass the **same function object** and event name to `removeEventListener`; a new anonymous function will not match. Clicks normally bubble from a child through its ancestors, so a parent panel listener sees clicks on buttons inside it. Sometimes a child action must not also activate the parent: `event.stopPropagation()` prevents that one click from continuing upward. Use it sparingly, not on every click, because other legitimate ancestor listeners may need the event. `stopPropagation()` does not cancel a browser default; `preventDefault()` (from the previous pair) does that.
+Clicks normally bubble to ancestors. The Normal button writes Normal, then the panel writes Panel. Quiet calls `event.stopPropagation()` so its click does not continue to the panel. It still runs the button's own response. Stopping propagation does not cancel a browser default, and `preventDefault` does not stop propagation.
 
 ```javascript
 chime.addEventListener("click", ring);
-disable.addEventListener("click", function () {
+disable.addEventListener("click", () => {
   chime.removeEventListener("click", ring);
-});
-panel.addEventListener("click", () => log.textContent += "Panel ");
-quiet.addEventListener("click", event => {
-  event.stopPropagation();
-  log.textContent += "Quiet ";
 });
 ```
 
 ## Try the preview
 
-Run the page. One-time announcement counts only its first activation. Ring the chime, disable it, then try again. A click on Normal records both Normal and Panel, while Quiet records only Quiet. Native buttons remain operable by keyboard.
+Run and activate the announcement three times; the count stays at one. Ring the chime, disable it, then ring again; its count should stop.
 
-## Remember
-
-This builds on delegation: a parent sees descendant clicks because they bubble. Stopping one special child event is different from canceling a form default or unregistering a callback.
-
-The following exercise applies these ideas to a different page.
+Compare Normal and Quiet in the action log. Use propagation control only for the specific child that needs it, since other ancestor listeners may need ordinary clicks. Run again to restore listeners and counters before repeating the experiment.

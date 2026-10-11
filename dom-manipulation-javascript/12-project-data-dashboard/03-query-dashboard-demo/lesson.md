@@ -16,9 +16,9 @@ seo_keywords:
 
 # Query a dashboard with URLSearchParams
 
-The trail desk now needs a search box. Run the completed preview, enter part of a trail name, and press Search. The page stays put while only matching rows remain. Clear the field and search again to restore every trail.
+The trail dashboard now has a search field. Enter `River` and press Search: the page should stay put and show River lookout. Try `missing`, then submit a blank field to restore every trail.
 
-The form listener prevents navigation. `requestURL()` trims the query and lets `URLSearchParams` encode characters such as spaces and `&` instead of concatenating raw user input. The offline fixture parses the URL and filters a snapshot of its items; it does not contact a server.
+`requestURL()` builds the request from the field's current value. A blank field returns the base route; otherwise `URLSearchParams` encodes one `q` parameter. The form listener prevents navigation and calls the existing loader.
 
 ```javascript
 const params = new URLSearchParams();
@@ -27,4 +27,8 @@ if (term) params.set("q", term);
 const url = params.size ? `${API_URL}?${params}` : API_URL;
 ```
 
-The response still flows through the existing loading, error, and empty UI. This is a server-style query contract even though the demo uses mock data; a real API may use another parameter or response shape. Try searching for a nonexistent trail to see the empty state, then inspect the `requestURL()` call in `script.js`. Next, add the equivalent search to your event dashboard.
+The fixture reads `q` and filters its captured items. The page does not filter a second time: it renders the returned array through the same loading, failure, and empty-state code as before. This is still an offline simulation of a server query.
+
+Try a title containing an ampersand by temporarily editing one fixture item, then searching for that title. The query value should survive unchanged. Restore the fixture after the experiment.
+
+The next starter carries your completed event-dashboard helpers forward. Its form is already labelled; your work is to build a URL, use it in the request, and connect submission. Matching, empty, and blank results then follow from the existing code rather than three unrelated special cases.

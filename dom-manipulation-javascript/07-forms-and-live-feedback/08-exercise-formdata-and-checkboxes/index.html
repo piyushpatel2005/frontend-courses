@@ -16,10 +16,11 @@
       <fieldset>
         <legend>Help needed</legend>
         <label><input type="checkbox" name="help" value="Watering"> Watering</label>
+        <label><input type="checkbox" name="help" value="Compost"> Compost</label>
       </fieldset>
-      <button type="submit">Send request</button>
+      <button type="submit">Show request</button>
     </form>
-    <p id="garden-status">No request yet.</p>
+    <p id="garden-status" role="status" aria-live="polite">No request yet.</p>
   </main>
 </body>
 </html>

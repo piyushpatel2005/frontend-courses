@@ -4,9 +4,11 @@ const shiftStatus = document.querySelector("#shift-status");
 
 function updateShift() {
   joinShift.disabled = !agreement.checked;
-  shiftStatus.textContent = joinShift.hasAttribute("disabled")
-    ? "Read the shift details first."
-    : "Sign-up is ready.";
+  if (joinShift.hasAttribute("disabled")) {
+    shiftStatus.textContent = "Read the shift details first.";
+  } else {
+    shiftStatus.textContent = "Sign-up is ready.";
+  }
 }
 
 agreement.addEventListener("change", updateShift);

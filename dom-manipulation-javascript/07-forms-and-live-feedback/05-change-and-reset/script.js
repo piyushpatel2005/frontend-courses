@@ -5,4 +5,4 @@ function renderPickup() {
   pickupSummary.textContent = windowChoice.value;
 }
 windowChoice.addEventListener("change", renderPickup);
-pickupForm.addEventListener("reset", () => queueMicrotask(renderPickup));
+pickupForm.addEventListener("reset", () => setTimeout(renderPickup, 0));

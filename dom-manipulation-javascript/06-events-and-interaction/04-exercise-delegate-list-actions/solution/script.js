@@ -1,4 +1,5 @@
 const pantry = document.querySelector("#pantry");
+// Add item is supplied. It does not register any Remove listener.
 document.querySelector("#add-item").addEventListener("click", function () {
   const item = document.createElement("li");
   item.append(document.createTextNode("Beans "));
@@ -12,8 +13,10 @@ document.querySelector("#add-item").addEventListener("click", function () {
   pantry.append(item);
 });
 
-pantry.addEventListener("click", function (event) {
+function removePantryItem(event) {
   const button = event.target.closest("button[data-remove]");
   if (!button || !event.currentTarget.contains(button)) return;
   button.closest("li").remove();
-});
+}
+pantry.addEventListener("click", removePantryItem);
+window.removePantryItem = removePantryItem;

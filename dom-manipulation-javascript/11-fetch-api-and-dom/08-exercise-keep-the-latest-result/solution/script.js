@@ -20,23 +20,37 @@ window.mockFetch = function mockFetch(url, options = {}) {
 };
 
 let routeController;
-async function lookUpRoute(route) {
+window.beginRoute = function() {
   routeController?.abort();
   routeController = new AbortController();
-  const signal = routeController.signal;
+  return routeController.signal;
+};
+window.showRouteLoading = function() {
   document.querySelector("#route-status").textContent = "Loading route…";
+};
+window.showRouteResult = function(data, signal) {
+  if (signal.aborted) return;
+  document.querySelector("#route-name").textContent = data.name;
+  document.querySelector("#route-status").textContent = "Route ready.";
+};
+window.showRouteError = function(error, signal) {
+  if (error.name === "AbortError" || signal.aborted) return;
+  document.querySelector("#route-status").textContent = "Lookup failed.";
+};
+window.lookUpRoute = async function(route) {
+  const signal = window.beginRoute();
+  window.showRouteLoading();
   try {
-    const response = await mockFetch(`/api/routes?route=${encodeURIComponent(route)}`, { signal });
+    const response = await window.mockFetch(`/api/routes?route=${encodeURIComponent(route)}`, {signal});
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    if (signal.aborted) return;
-    document.querySelector("#route-name").textContent = data.name;
-    document.querySelector("#route-status").textContent = "Route ready.";
+    window.showRouteResult(data, signal);
   } catch (error) {
-    if (error.name !== "AbortError" && !signal.aborted) {
-      document.querySelector("#route-status").textContent = "Lookup failed.";
-    }
+    window.showRouteError(error, signal);
   }
+};
+for (const [id, route] of [["slow-route", "Slow pier"], ["fast-route", "Fast pier"]]) {
+  document.querySelector(`#${id}`).addEventListener("click", () => {
+    window.lastLoad = window.lookUpRoute(route);
+  });
 }
-document.querySelector("#slow-route").addEventListener("click", () => lookUpRoute("Slow pier"));
-document.querySelector("#fast-route").addEventListener("click", () => lookUpRoute("Fast pier"));

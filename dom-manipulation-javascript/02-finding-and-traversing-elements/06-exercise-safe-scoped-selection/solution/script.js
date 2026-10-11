@@ -1,8 +1,10 @@
-const bike = document.querySelector("#bike-clinic");
-if (bike) {
-  const status = bike.querySelector(".status");
-  if (status) {
-    status.textContent = "Mechanics ready";
+function updateBikeStatus() {
+  const bike = document.querySelector("#bike-clinic");
+  if (bike) {
+    const status = bike.querySelector(".status");
+    if (status) {
+      status.textContent = "Mechanics ready";
+    }
   }
 }
 function updateOptionalAlert() {
@@ -11,4 +13,5 @@ function updateOptionalAlert() {
     alert.textContent = "Check the desk";
   }
 }
+updateBikeStatus();
 updateOptionalAlert();
