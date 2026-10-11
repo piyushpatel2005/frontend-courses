@@ -25,6 +25,8 @@ The button lives inside a `<th scope="col">`, and `aria-sort` belongs on that **
 
 In `script.js`, `Array.from(body.rows)` copies the current row elements into an array. `sort((a, b) => ...)` compares each row's first cell using `localeCompare` (alphabetical text comparison). Swapping the comparison order reverses the result. `body.replaceChildren(...rows)` moves those **same existing nodes** into sorted order—no HTML strings, regenerated row markup, or lost cell contents. Finally `setAttribute("aria-sort", direction)` tells assistive technology the current order. The button label remains meaningful even when the direction changes.
 
+The three dots in `replaceChildren(...rows)` pass the array elements as separate arguments. Moving an entire row preserves the session-to-room relationship. The expression `condition ? first : second` chooses a value: this handler uses it to switch between ascending and descending.
+
 ## Try it in the preview
 
 Read the initial order, activate Sort by session twice, and watch the first column and header state each time. Tab to the button and press Enter; it sorts without any custom keyboard listener. In the code, change one session title, run again, and check the alphabetical result before restoring it. The following exercise applies this pattern to a different table.

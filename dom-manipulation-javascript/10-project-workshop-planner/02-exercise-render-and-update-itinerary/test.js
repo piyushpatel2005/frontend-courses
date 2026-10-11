@@ -1,28 +1,42 @@
-test("renders two rows with each time and track", () => {
-  const rows = [...document.querySelectorAll("#sessions li")];
-  assert.equal(rows.length, 2);
-  assert.equal(rows[0].textContent.includes("09:00") && rows[0].textContent.includes("Art"), true);
-  assert.equal(rows[1].textContent.includes("11:00") && rows[1].textContent.includes("Making"), true);
+test("builds a detached safe session row", () => {
+  for (const session of [
+    { title: "<em>Evening clay</em>", time: "18:15", track: "Making" },
+    { title: "Paper birds", time: "12:20", track: "Art" }
+  ]) {
+    const row = createSessionRow(session);
+    assert.exists(row, "Return a prepared row");
+    assert.equal(row.tagName, "LI");
+    assert.equal(row.isConnected, false, "Build the row without inserting it");
+    for (const value of [session.title, session.time, session.track]) assert.includes(row.textContent, value);
+    assert.equal(row.dataset.title, session.title);
+    assert.equal(row.querySelector("em"), null, "Keep title characters literal");
+  }
 });
-test("session titles display literal markup-like text", () => {
-  const session = window.workshopSessions[1];
-  const previousTitle = session.title;
+test("renderer inserts every session without duplicates", () => {
+  const before = window.workshopSessions.map(session => ({ ...session }));
   try {
-    session.title = "<em>Repair café</em>";
+    assert.equal(document.querySelectorAll("#sessions li").length, 2, "Render at load");
+    window.workshopSessions.push({ title: "<b>Evening sketch</b>", time: "19:00", track: "Art" });
     renderSessions();
-    const rows = document.querySelectorAll("#sessions li");
-    assert.equal(rows.length, 2);
-    assert.equal(rows[0].textContent.includes("Screen printing basics"), true);
-    assert.equal(rows[1].textContent.includes("<em>Repair café</em>"), true);
-    assert.equal(rows[1].querySelector("em"), null, "Never parse a session title as HTML");
+    renderSessions();
+    const rows = [...document.querySelectorAll("#sessions li")];
+    assert.equal(rows.length, 3, "Replace old rows before inserting the new list");
+    rows.forEach((row, index) => assert.includes(row.textContent, window.workshopSessions[index].title));
+    assert.equal(rows[2].querySelector("b"), null);
   } finally {
-    session.title = previousTitle;
+    window.workshopSessions.splice(0, window.workshopSessions.length, ...before);
     renderSessions();
   }
 });
-test("update rerenders without duplicate rows", () => {
-  document.querySelector("#update-session").click();
-  const rows = [...document.querySelectorAll("#sessions li")];
-  assert.equal(rows.length, 2);
-  assert.equal(rows[0].textContent.includes("10:00"), true);
+test("update changes state and rerenders without duplicates", () => {
+  const first = window.workshopSessions[0];
+  const time = first.time;
+  try {
+    document.querySelector("#update-session").click();
+    document.querySelector("#update-session").click();
+    assert.equal(first.time, "10:00", "Update the object, not only its displayed text");
+    const rows = [...document.querySelectorAll("#sessions li")];
+    assert.equal(rows.length, 2);
+    assert.includes(rows[0].textContent, "10:00");
+  } finally { first.time = time; renderSessions(); }
 });

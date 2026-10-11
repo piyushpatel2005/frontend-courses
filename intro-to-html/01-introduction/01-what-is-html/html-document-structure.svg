@@ -6,7 +6,7 @@
   <rect x="340" y="70" width="220" height="62" rx="14" fill="#a5d8ff" stroke="#222" stroke-width="3"/>
   <text x="450" y="108" text-anchor="middle" font-family="Comic Sans MS, cursive" font-size="25" fill="#222">&lt;html&gt;</text>
   <defs>
-    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L10,3.5 L0,7 Z" fill="#222"/>
     </marker>
   </defs>

@@ -1,10 +1,11 @@
-test("Math.ceil rounds upward", () => {
-  assert.match(OUTPUT, /^CHECK 1: 5$/m, "Log CHECK 1 from roundedUp");
-});
-test("Date provides the UTC year", () => {
-  assert.match(OUTPUT, /^CHECK 2: 2024$/m, "Log CHECK 2 from launchYear");
+test("Round upward", () => {
+  assert.match(OUTPUT, /^CHECK 1: 5$/m, "Task 1: expected a separate output line: CHECK 1: 5");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^5 \| 2024$/m, "Log the values on their own line");
+test("Read the fixed UTC year", () => {
+  assert.match(OUTPUT, /^CHECK 2: 2024$/m, "Task 2: expected a separate output line: CHECK 2: 2024");
+});
+
+test("Separate quantity and year", () => {
+  assert.match(OUTPUT, /^5 \| 2024$/m, "Task 3: expected a separate output line: 5 | 2024");
 });

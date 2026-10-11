@@ -1,10 +1,11 @@
-test("push adds an item to the queue", () => {
-  assert.match(OUTPUT, /^CHECK 1: first,second,third$/m, "Log CHECK 1 after push");
-});
-test("pop removes the last item", () => {
-  assert.match(OUTPUT, /^CHECK 2: first,second \| third$/m, "Log CHECK 2 after pop");
+test("Step 1: After push", () => {
+  assert.match(OUTPUT, new RegExp("^After\\ push:\\ first,second,third$", "m"), "Step 1: expected After push: first,second,third");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^first,second \| third$/m, "Log first,second | third on its own line");
+test("Step 2: After pop", () => {
+  assert.match(OUTPUT, new RegExp("^After\\ pop:\\ first,second\\ \\|\\ third$", "m"), "Step 2: expected After pop: first,second | third");
+});
+
+test("Step 3: first,second | third", () => {
+  assert.match(OUTPUT, new RegExp("^first,second\\ \\|\\ third$", "m"), "Step 3: expected first,second | third");
 });

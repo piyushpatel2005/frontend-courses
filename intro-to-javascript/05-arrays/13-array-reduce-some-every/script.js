@@ -1,10 +1,39 @@
-let total = 0;
-let hasAdult = false;
-let allPositive = false;
+// Step 1
 
-console.log("");
+const total = 0;
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${total}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: ${hasAdult}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${allPositive}`); } catch (error) { console.log("CHECK pending"); }
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Total: ${total}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+const hasAdult = false;
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Adult: ${hasAdult}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
+const allPositive = false;
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Positive: ${allPositive}`);
+} catch (error) {
+  console.log("Step 3 pending");
+}
+
+// Step 4
+
+// Complete this step here.

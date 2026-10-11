@@ -14,4 +14,4 @@ async function reportBroadcast() {
   // Await both results, then log the broadcast line.
 }
 globalThis.reportBroadcast = reportBroadcast;
-reportBroadcast();
+globalThis.initialBroadcast = reportBroadcast().catch(error => console.log(`Broadcast incomplete: ${error.message}`));

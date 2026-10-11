@@ -1,33 +1,49 @@
-test("captioned table has an accessible sort control and original rows", () => {
-  const table = document.querySelector("table");
+test("header has a labelled native sort control and unsorted state", () => {
   const heading = document.querySelector("#resource-heading");
-  const body = document.querySelector("#resources");
-  assert.equal(heading.getAttribute("aria-sort"), "none", "Begin unsorted");
+  assert.equal(heading.getAttribute("aria-sort"), "none");
   const button = heading.querySelector("button");
   assert.exists(button, "Add a keyboard-accessible sort button");
-  assert.equal(button.type, "button", "Use a non-submit button");
-  assert.equal(button.textContent.trim().length > 0, true, "Give the button a readable label");
+  assert.equal(button.type, "button");
+  assert.equal((button.getAttribute("aria-label") || button.textContent).trim().length > 0, true);
 });
-test("activation sorts A to Z without splitting resource from category", () => {
+function withResourceRows(direction, check) {
   const heading = document.querySelector("#resource-heading");
   const body = document.querySelector("#resources");
+  const original = [...body.rows];
+  const originalDirection = heading.getAttribute("aria-sort");
+  const extra = document.createElement("tr");
+  extra.innerHTML = "<td>Apron</td><td>Cloth</td>";
+  const rows = [...original, extra];
+  const pairs = new Map(rows.map(row => [row, row.textContent]));
+  try {
+    body.replaceChildren(...rows);
+    heading.setAttribute("aria-sort", direction);
+    check(heading, body, rows, pairs);
+  } finally {
+    body.replaceChildren(...original);
+    if (originalDirection === null) heading.removeAttribute("aria-sort");
+    else heading.setAttribute("aria-sort", originalDirection);
+  }
+}
+function checkRows(body, rows, pairs, expected) {
+  assert.equal([...body.rows].map(row => row.cells[0].textContent.trim()).join(","), expected);
+  assert.equal([...body.rows].every(row => rows.includes(row)), true, "Move original row nodes rather than replacing them");
+  rows.forEach(row => assert.equal(row.textContent, pairs.get(row), "Keep both cells in each original row"));
+}
+test("first activation sorts whole rows A to Z", () => withResourceRows("none", (heading, body, rows, pairs) => {
   const button = heading.querySelector("button");
-  // Establish the original order without depending on any earlier test.
-  body.replaceChildren(...[...body.rows].sort((a, b) => ["Tripod", "Extension cord", "Hand drill"].indexOf(a.cells[0].textContent.trim()) - ["Tripod", "Extension cord", "Hand drill"].indexOf(b.cells[0].textContent.trim())));
-  heading.setAttribute("aria-sort", "none");
+  assert.exists(button);
   button.click();
-  assert.equal(heading.getAttribute("aria-sort"), "ascending", "Announce ascending order");
-  assert.equal([...body.rows].map((row) => row.cells[0].textContent.trim()).join(","), "Extension cord,Hand drill,Tripod", "Sort titles A to Z");
-  assert.equal([...body.rows].map((row) => row.cells[1].textContent.trim()).join(","), "Electrical,Tools,Photography", "Move each whole row");
-});
-test("next activation sorts Z to A and updates aria-sort", () => {
-  const heading = document.querySelector("#resource-heading");
-  const body = document.querySelector("#resources");
+  assert.equal(heading.getAttribute("aria-sort"), "ascending");
+  checkRows(body, rows, pairs, "Apron,Extension cord,Hand drill,Tripod");
+}));
+test("next activation sorts Z to A and continues alternating", () => withResourceRows("ascending", (heading, body, rows, pairs) => {
   const button = heading.querySelector("button");
-  body.replaceChildren(...[...body.rows].sort((a, b) => a.cells[0].textContent.trim().localeCompare(b.cells[0].textContent.trim())));
-  heading.setAttribute("aria-sort", "ascending"); // Set up the second activation directly.
+  assert.exists(button);
   button.click();
-  assert.equal(heading.getAttribute("aria-sort"), "descending", "Announce descending order");
-  assert.equal([...body.rows].map((row) => row.cells[0].textContent.trim()).join(","), "Tripod,Hand drill,Extension cord", "Sort titles Z to A");
-  assert.equal([...body.rows].map((row) => row.cells[1].textContent.trim()).join(","), "Photography,Tools,Electrical", "Keep categories with titles");
-});
+  assert.equal(heading.getAttribute("aria-sort"), "descending");
+  checkRows(body, rows, pairs, "Tripod,Hand drill,Extension cord,Apron");
+  button.click();
+  assert.equal(heading.getAttribute("aria-sort"), "ascending");
+  checkRows(body, rows, pairs, "Apron,Extension cord,Hand drill,Tripod");
+}));

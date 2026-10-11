@@ -13,12 +13,12 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Trail tools: completed layout
+# Spread the trail tools across the row
 
-Space the three tools across a single row. This completed preview shows the layout before you edit the next exercise.
+The dashed `.tool-row` is wider than its three cards. The room left after the cards and any gaps take their space is **free space**. `justify-content` decides where to put that remaining room along the main axis.
 
-In `style.css`, `.tool-row` controls the section. With display: flex, the default main axis runs left to right. justify-content: space-between leaves no extra space at the ends and distributes remaining room between the tools.
+Here `display: flex` uses the default `row` direction. `justify-content: space-between` puts free space between the cards. The first and last cards sit against the inside edges of the row's padding, not against its outer border.
 
-**Checkpoint:** inspect the card positions in Preview and locate `justify-content: space-between` in the stylesheet.
+Run Preview, then change `space-between` to `flex-start` in `style.css`. The cards gather at the start and the unused room moves to the end. Try `center` as well: it keeps the cards together and shares the unused room between the two ends. Restore `space-between`.
 
-Change `justify-content` temporarily to `flex-start`, run Preview, and compare the positions. Restore `space-between` before moving to the exercise.
+Narrow the preview and notice that the spaces get smaller. This property does not promise a fixed gap; it distributes only the space that is left. If the cards fill the row, there may be no extra room to distribute. For a flex column, the same property works vertically, and the container needs spare height for the effect to show.

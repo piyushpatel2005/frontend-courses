@@ -1,26 +1,35 @@
-let welcomes = 0;
-document.querySelector("#welcome").addEventListener("click", function () {
-  welcomes += 1;
-  document.querySelector("#welcome-count").textContent = "Welcomes: " + welcomes;
-}, { once: true });
-let bells = 0;
-const bell = document.querySelector("#bell");
-function ringBell() {
-  bells += 1;
-  document.querySelector("#bell-count").textContent = "Bells: " + bells;
+// root is the supplied workshop <main>; all selectors stay inside it.
+function setupWorkshop(root) {
+  let welcomes = 0;
+  let bells = 0;
+  const welcome = root.querySelector("#welcome");
+  const bell = root.querySelector("#bell");
+  const output = root.querySelector("#actions");
+  function ringBell() {
+    bells += 1;
+    root.querySelector("#bell-count").textContent = "Bells: " + bells;
+  }
+  // These label updates are supplied; you control which clicks reach the panel.
+  root.querySelector("#standard").addEventListener("click", () => {
+    output.textContent += "Standard ";
+  });
+  root.querySelector("#private").addEventListener("click", () => {
+    output.textContent += "Private ";
+  });
+  welcome.addEventListener("click", () => {
+    welcomes += 1;
+    root.querySelector("#welcome-count").textContent = "Welcomes: " + welcomes;
+  }, { once: true });
+  bell.addEventListener("click", ringBell);
+  root.querySelector("#mute").addEventListener("click", () => {
+    bell.removeEventListener("click", ringBell);
+  });
+  root.querySelector("#controls").addEventListener("click", () => {
+    output.textContent += "Panel ";
+  });
+  root.querySelector("#private").addEventListener("click", event => {
+    event.stopPropagation();
+  });
 }
-bell.addEventListener("click", ringBell);
-document.querySelector("#mute").addEventListener("click", function () {
-  bell.removeEventListener("click", ringBell);
-});
-const output = document.querySelector("#actions");
-document.querySelector("#controls").addEventListener("click", function () {
-  output.textContent += "Panel ";
-});
-document.querySelector("#standard").addEventListener("click", function () {
-  output.textContent += "Standard ";
-});
-document.querySelector("#private").addEventListener("click", function (event) {
-  event.stopPropagation();
-  output.textContent += "Private ";
-});
+setupWorkshop(document.querySelector("main"));
+window.setupWorkshop = setupWorkshop;

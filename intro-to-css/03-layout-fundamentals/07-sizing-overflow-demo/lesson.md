@@ -17,20 +17,18 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Sizing and Overflow Demo
+# Keep long notes inside their cards
 
-## Mission
+One seed-swap note is much longer than the other. Instead of hiding its words or letting them spill onto the page, this demo limits the card's height and lets readers scroll inside it.
 
-The Riverside Seed Swap notice needs predictable card sizes even when someone adds a long message.
+`width: 14rem` gives `.card` a preferred width. `max-width: 100%` caps it at the containing row's width. `max-height: 7rem` limits height but does not force a short note to fill that height. A `rem` is relative to the root font size; this page uses the browser's default.
 
-## What to notice
+`overflow: auto` allows scrolling when content does not fit. `visible`, the default, lets extra content paint outside the box. `hidden` clips it without offering a scrollbar, which is not what this reading task needs. The supplied Flexbox row arranges the cards; its rules come later. Its supplied alignment keeps the cards at their own heights while lining up their top edges.
 
-The `.card` rule sets a `14rem` preferred width and a `100%` maximum so it can fit a narrow container. Its `max-height: 7rem` limits the height; `overflow: auto` lets a long note scroll rather than spill out. The row arrangement is supplied for this example; Flexbox comes later.
+![Illustrative short and long cards: one fits, while the height-limited long note scrolls inside its box.](notice-overflow.svg)
 
-## Try the preview
+## Scroll the long note
 
-Scroll the longer note inside its card. Then change `.card`'s `overflow` to `visible`, run the preview, and see the text spill below its boundary. Restore `auto` before the exercise.
+Run, place the pointer over the long card, and scroll to its final sentence. Your device may show a scrollbar only while scrolling. Set `overflow: visible` and Run to see the spill, then restore `auto`.
 
-## Checkpoint
-
-The long note remains inside its card and can be scrolled; the shorter note fits without scrolling.
+Narrow the preview. The `100%` maximum keeps cards within the row. The diagram illustrates these states rather than measuring your viewport.

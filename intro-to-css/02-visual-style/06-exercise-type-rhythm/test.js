@@ -1,19 +1,32 @@
-test("page uses Georgia for the body font", () => {
-  const family = getComputedStyle(document.body).fontFamily.toLowerCase();
-  assert.includes(family, "georgia", "Set body font-family to Georgia, serif.");
+// Use the real iframe's computed styles; only selector/source lessons inspect CSSOM.
+function each(selector, check) {
+  const elements = Array.from(document.querySelectorAll(selector));
+  assert.equal(elements.length > 0, true, 'Keep the supplied ' + selector + ' elements.');
+  elements.forEach(element => check(getComputedStyle(element), element));
+}
+function valueFor(property, value, target) {
+  if (property === 'display') return value;
+  const probe = document.createElement('span');
+  probe.style.cssText = 'all: initial; position: absolute; visibility: hidden;';
+  if (/^border-.*-width$/.test(property)) probe.style.borderStyle = 'solid';
+  if (target) probe.style.fontSize = getComputedStyle(target).fontSize;
+  probe.style.setProperty(property, value);
+  document.body.append(probe);
+  try { return getComputedStyle(probe).getPropertyValue(property); }
+  finally { probe.remove(); }
+}
+function expectStyle(selector, property, value) {
+  each(selector, (style, element) => assert.equal(style.getPropertyValue(property), valueFor(property, value, element), 'Set ' + selector + ' ' + property + ' to ' + value + '.'));
+}
+
+test("Body uses Georgia with a serif fallback", () => {
+  const names = getComputedStyle(document.body).fontFamily.toLowerCase().replace(/["']/g, '').split(',').map(x => x.trim()); assert.equal(JSON.stringify(names), JSON.stringify(['georgia', 'serif']), 'Set font-family: Georgia, serif on body.');
 });
 
-test("note paragraph has roomy line height", () => {
-  const paragraph = document.querySelector(".note p");
-  const computed = getComputedStyle(paragraph);
-  const lineHeight = computed.lineHeight;
-  const size = parseFloat(computed.fontSize);
-  assert.equal(lineHeight === "1.7" || Math.abs(parseFloat(lineHeight) - size * 1.7) < 0.02, true, "Set .note p line-height to 1.7.");
+test("Every note paragraph has 1.7 line height", () => {
+  each('.note p', s => assert.equal(Math.abs(parseFloat(s.lineHeight) / parseFloat(s.fontSize) - 1.7) < 0.002, true, 'Give every .note p a line-height of 1.7.'));
 });
 
-test("heading has poster-like letter spacing", () => {
-  const spacing = getComputedStyle(document.querySelector("h1")).letterSpacing;
-  assert.notEqual(spacing, "normal", "Set h1 letter-spacing to 0.04em.");
-  const declared = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || [])).filter(rule => rule.selectorText === "h1").map(rule => rule.style.getPropertyValue("letter-spacing")).find(Boolean);
-  assert.equal(declared, "0.04em", "Set h1 letter-spacing to 0.04em.");
+test("Heading has the requested relative letter spacing", () => {
+  expectStyle('h1', 'letter-spacing', '0.04em');
 });

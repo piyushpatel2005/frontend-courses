@@ -23,4 +23,6 @@ The supplied checkout table already has headings, data, and cell styles. Like th
 1. Set `.table-wrap` to `overflow-x: auto` so its contents can scroll horizontally when needed.
 2. Set `table` to `min-width: 32rem` so its columns keep enough room for the checkout information.
 
-Narrow the preview and scroll within the table to read the Desk column, then widen it to see the whole table without scrolling. You have kept the data in a real table instead of hiding columns. The final project brings your responsive and typography choices together in a profile sheet.
+The supplied wrapper already has a keyboard tab stop, a region name, and a focus outline. Run Preview at about 360px wide, press Tab to focus that region, then use Right Arrow to reach the Desk column. The table may scroll; the whole page should not.
+
+Widen the preview to see the whole table without scrolling, then Submit. The data stays in a real table instead of losing columns. The final project applies responsive sizing to a profile sheet.

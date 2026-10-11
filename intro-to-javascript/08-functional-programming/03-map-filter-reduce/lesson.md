@@ -8,18 +8,25 @@ validationRules: []
 hints:
   - "`map` transforms — returns a new array of the same length."
   - "`filter` selects — returns a new array that is shorter or equal."
-  - "`reduce` folds — returns a single value (not an array)."
-summary: Practice map, filter, and reduce with a focused Starline Awards programming mission.
+  - "`reduce` returns its final accumulator; here that is a number, but an accumulator can also be an array or object."
+summary: "The reporting desk needs names, an average salary, and a readable employee report. Each array method calls your callback once for each item it visits."
 seo_title: map, filter, and reduce | Introduction to JavaScript
-seo_description: Learn map, filter, and reduce through a focused JavaScript programming mission and console-based practice.
+seo_description: "The reporting desk needs names, an average salary, and a readable employee report. Each array method calls your callback once for each item it visits."
 seo_keywords: javascript, map, filter, and reduce, beginner javascript, programming practice
 ---
 
 # map, filter, and reduce
 
-The reporting desk needs to summarize employee records. Run `script.js` and inspect the Console; the three array methods here accept callback functions, building on the previous lessons.
+The reporting desk needs names, an average salary, and a readable employee report. Each array method calls your callback once for each item it visits.
 
-These three methods are the workhorses of functional JavaScript. Chain them together for expressive data pipelines.
+`filter` passes an item to its callback and keeps that item when the callback returns a truthy value. `map` puts each callback return value into a new array. Neither method changes the original array by itself. `reduce` passes the running result first and the current item second; the callback must return the running result for the next call. The final `0` supplies its starting value.
+
+Read a chain from top to bottom. In the orders example, `filter` returns two order objects. `map` turns those objects into `[24, 10]`. `reduce` receives numbers, not order objects, and returns 34. Once the chain returns a number, array methods no longer apply to that result.
+
+For an average, first keep the matching records, sum their salaries, then divide by their count. The supplied employee data always contains engineers. `Math.round` rounds the resulting average. Use `toLocaleString("en-US")` for the comma-separated salary display required here; choosing a locale avoids machine-dependent formatting.
+
+
+![Orders become selected objects, line totals, and finally one number.](order-transformation-pipeline.svg)
 
 ## Combining all three
 
@@ -38,9 +45,12 @@ const total = orders
 console.log(total); // 34 (12*2 + 1*10 = 24 + 10)
 ```
 
+Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.
+
 ## Your Tasks
 
-1. Compute `engineeringNames` with `filter` and `map` to retain the Engineering names.
-2. Compute `avgEngineerSalary` with `filter` and `reduce`, rounded to the nearest integer.
-3. Compute `salaryReport` for all employees with `map` and `toLocaleString()` for salaries.
-4. Log the standalone Engineering names and rounded average summary from the computed values.
+1. Set `engineers` to the employees whose `dept` is `"Engineering"`, using `filter`.
+2. Use `map` on `engineers` to set `engineeringNames` to their names.
+3. Set `avgEngineerSalary` to their salary sum divided by their count, rounded with `Math.round`; use `reduce` with an initial 0.
+4. Use `map` to build `salaryReport` for every employee as `Name: $salary`, formatting salaries with `toLocaleString("en-US")`.
+5. Log `Engineers: Alice,Carol,Eve | Avg salary: $107,667` using your computed names and average.

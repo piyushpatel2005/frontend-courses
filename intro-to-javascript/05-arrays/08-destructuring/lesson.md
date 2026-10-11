@@ -9,63 +9,42 @@ hints:
   - "Array destructuring: `const [a, b, c] = myArray;`"
   - "Skip elements with commas: `const [first, , third] = arr;`"
   - "Use rest: `const [head, ...tail] = arr;`"
-summary: Practice destructuring with a focused Starline Awards programming mission.
+summary: "Coordinates and route stops arrive in a fixed order. Array destructuring names values by position without writing a separate indexed assignment for each one."
 seo_title: Destructuring | Introduction to JavaScript
-seo_description: Learn destructuring through a focused JavaScript programming mission and console-based practice.
+seo_description: "Coordinates and route stops arrive in a fixed order. Array destructuring names values by position without writing a separate indexed assignment for each one."
 seo_keywords: javascript, destructuring, beginner javascript, programming practice
 ---
 
 # Destructuring
 
-## Mission: Setlist Vault
+Coordinates and route stops arrive in a fixed order. **Array destructuring** names values by position without writing a separate indexed assignment for each one.
 
-When a pair of values arrives together, destructuring names its parts by position. Try it with coordinates in `script.js`, then read the Console checkpoints.
-
-**Destructuring** unpacks array values into variables based on their positions. The next module applies a similar idea to named object properties.
-
-## Array destructuring
-
-```javascript
+```javascript run
 const point = [3, 7];
 const [x, y] = point;
-console.log(x); // 3
-console.log(y); // 7
+const [first, , third] = ["North", "East", "South"];
+console.log(x, y);
+console.log(first, third);
 ```
 
-### Skipping elements
+A blank position between commas skips a value. The chosen variable names do not have to match anything in the array.
 
-```javascript
-const [first, , third] = [10, 20, 30];
-console.log(first); // 10
-console.log(third); // 30
+```javascript run
+const [head, ...tail] = [10, 20, 30];
+const [width = 0, height = 0] = [12];
+console.log(head, JSON.stringify(tail));
+console.log(width, height);
 ```
 
-### Rest pattern
+The rest pattern `...tail` collects remaining values into a new array and must come last. A default applies when a position is missing or contains `undefined`.
 
-```javascript
-const [head, ...tail] = [1, 2, 3, 4, 5];
-console.log(head); // 1
-console.log(tail); // [2, 3, 4, 5]
-```
+A function parameter can destructure too: `function describe([left, right]) { ... }` receives one array argument, then names its first two items. Your `swapPair` should use that form and return a new array in the opposite order. This does not swap the caller's original array in place.
 
-### Swapping variables
+## Your Tasks
 
-```javascript
-let a = 1, b = 2;
-[a, b] = [b, a];
-console.log(a, b); // 2 1
-```
-
-### Default values
-
-```javascript
-const [x = 0, y = 0, z = 0] = [10, 20];
-console.log(z); // 0 — default applied
-```
-
-## Your Task
-
-1. Given `const coords = [40.7128, -74.0060]`, use array destructuring to extract `latitude` and `longitude`.
-2. Given `const stops = ["Harbor", "Museum", "Library"]`, destructure its first and third stops while skipping the middle.
-3. Write a function `swapPair([a, b])` that takes a two-element array and returns it with elements swapped: `swapPair([1, 2])` → `[2, 1]`.
+1. Destructure `coords` into `latitude` and `longitude`.
+2. Destructure `stops` into `firstStop` and `lastStop`, skipping its middle value.
+3. Change the parameter of `swapPair` to `[a, b]` and return `[b, a]`.
 4. Log `Harbor to Library | lat: 40.7128` using the destructured values.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

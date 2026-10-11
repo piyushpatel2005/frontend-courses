@@ -1,14 +1,25 @@
-function summarizeScores(scores) {
+function countPassed(scores) {
   let passed = 0;
-  let honors = 0;
   for (const score of scores) {
     if (score >= 60) passed += 1;
-    if (score >= 90) honors += 1;
   }
-  return `Passed: ${passed} | Honors: ${honors}`;
+  return passed;
 }
 
-console.log(`Single score: ${summarizeScores([74])}`);
+function countHonors(scores) {
+  let honors = 0;
+  for (const score of scores) {
+    if (score >= 90) honors += 1;
+  }
+  return honors;
+}
+
+function summarizeScores(scores) {
+  return `Passed: ${countPassed(scores)} | Honors: ${countHonors(scores)}`;
+}
+
+console.log(`Passed counts: ${countPassed([38,74,91,60])},${countPassed([])},${countPassed([59,60,90])}`);
+console.log(`Honors counts: ${countHonors([38,74,91,60])},${countHonors([])},${countHonors([89,90,91])}`);
 console.log(`Workshop: ${summarizeScores([38,74,91,60])}`);
 console.log(`Empty batch: ${summarizeScores([])}`);
 console.log(`Boundaries: ${summarizeScores([59,60,90])}`);

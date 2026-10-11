@@ -17,14 +17,18 @@ hints:
   - Target `.note p` for the paragraph line height.
 ---
 
-# Type Rhythm Exercise
+# Set the closing note's type
 
-The demo made text easier to scan by changing three small values. Use those same controls to style this closing note. The starter supplies its card layout and colors; only the three type settings are yours to add.
+Use the demo's typography controls on this closing message. The starter supplies the card and its colors; edit `style.css` to choose the body font, paragraph line height, and heading letter spacing.
 
-Run the preview when you finish. The note should use Georgia, roomy paragraph lines, and a lightly spaced heading.
+The space in `.note p` selects every paragraph inside the note, including its short label. The label keeps its supplied Arial font but should receive your line height.
 
 ## Your Tasks
 
-1. Set `body`’s font family to `Georgia, serif`.
-2. Set `.note p` line height to `1.7`.
-3. Set the `h1` letter spacing to `0.04em`.
+1. Set `body`'s `font-family` to `Georgia, serif`.
+2. Set `.note p`'s `line-height` to `1.7`.
+3. Set `h1`'s `letter-spacing` to `0.04em`.
+
+## Read the result
+
+Run after each change. Look for the longer message's serif letters, more space between its lines, and a little extra space between heading characters. Submit to check the settings. A font-family fallback is part of the first task, even on a computer that has Georgia.

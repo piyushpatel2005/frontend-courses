@@ -18,38 +18,19 @@ hints:
   - Read a new FormData(form) inside the submit handler, not once when the page loads.
 ---
 
-# Build a checkbox-based garden request
+# Read a garden help request
 
-A community garden wants visitors to request watering and/or compost help. The starter has the name field and one checkbox. Complete the form, then use the preceding seed-swap demo to guide the JavaScript.
+The garden preview asks for Watering, Compost, or neither. Both labeled checkboxes, the guest field, and a polite status region are supplied. Your work is JavaScript, not rebuilding those controls.
 
-## Transfer the pattern
-
-Here is a separate worked example for a library survey. The shared `name` groups checked fields, while `textContent` keeps the visitor's text literal:
-
-```html
-<form id="library-form">
-  <label><input type="checkbox" name="format" value="Audio"> Audio</label>
-  <label><input type="checkbox" name="format" value="Print"> Print</label>
-</form>
-<p id="library-result" role="status"></p>
-```
-
-```javascript
-const survey = document.querySelector("#library-form");
-const result = document.querySelector("#library-result");
-const selected = new FormData(survey).getAll("format");
-result.textContent = selected.length ? selected.join(", ") : "No formats chosen";
-```
-
-For the garden, do the read **inside** `submit` so each request uses the latest checkbox state. Prevent navigation and trim the visitor's name. An unchecked box is absent from FormData, not a value of `false`. Use `textContent`, not HTML insertion, for the output.
+The supplied submit callback creates fresh FormData and a trimmed `guest` string on each submission. It also provides a `report` string and writes that string to `textContent`. Add the missing behavior in `script.js`. FormData uses the shared `help` name, so the result should follow the current controls rather than a hardcoded pair of labels.
 
 ## Your Tasks
 
-1. Add a labelled `help` checkbox with value `Compost` beside the existing `Watering` option.
-2. Make `#garden-status` a polite live status region.
-3. Prevent default navigation when `#garden-form` is submitted.
-4. On submit, report the checked help values using `FormData.getAll("help")`; report “no help selected” when none are checked.
-5. Include the trimmed guest name as literal text in the report, without parsing markup.
-6. For a blank or whitespace-only guest name, show a missing-name error instead of a request.
+1. Prevent default navigation for every form submission.
+2. Read `data.getAll("help")` and set `report` to its values joined by `", "`, or `no help selected` when it is empty.
+3. Prefix that report with the trimmed guest name so the result reads `NAME requested SELECTION.`. Keep the name as literal text.
+4. Before building a report, reject a blank guest name: show `Enter your name to request help.` and return from the handler.
 
-Try one check, both checks, and neither, resubmitting each time. Type `<em>Jo</em>` as a name: the output should show the angle brackets rather than create an emphasized element.
+Run after each change, then Submit. Try each checkbox, both, and neither, resubmitting after every edit. A checked but disabled checkbox must be omitted. Try `<em>Jo</em>` as a fictional name, then spaces alone; the old report should become an error, not a request with an empty name.
+
+The Show request button only updates this local preview. No help request is sent.

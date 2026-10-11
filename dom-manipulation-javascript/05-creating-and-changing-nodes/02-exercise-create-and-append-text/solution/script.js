@@ -1,3 +1,7 @@
-const book = document.createElement("li");
-book.textContent = "The Hobbit";
-document.querySelector("#books").append(book);
+function makeBook(title) {
+  const book = document.createElement("li");
+  book.textContent = title;
+  return book;
+}
+document.querySelector("#books").append(makeBook("The Hobbit"));
+window.makeBook = makeBook;

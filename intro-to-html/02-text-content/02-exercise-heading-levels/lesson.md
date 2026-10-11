@@ -8,12 +8,12 @@ seo_title: "Exercise: Extend the Signal Brief | Introduction to HTML"
 seo_description: Use h3 through h6 to extend an existing h1 and h2 rescue signal hierarchy.
 seo_keywords:
   - HTML exercise
-  - HTML forms
+  - HTML headings
   - exercise-heading-levels
 lesson_type: coding
 validationRules: []
 hints:
-  - "Keep one level nested under the preceding level: h2, then h3, then h4, and so on."
+  - "Follow the outline in order: h2, then h3, then h4. Keep the heading elements separate, not inside each other."
   - "A comment starts with <!-- and ends with -->."
 ---
 
@@ -21,15 +21,17 @@ hints:
 
 ## Mission
 
-The Meridian crew has unlocked Beacon Sight. The main briefing already has its title (`<h1>`) and two big sections (`<h2>`); now the rescue team needs increasingly specific information beneath them.
+A signal has arrived from the east ridge. The starter supplies the page title and two `<h2>` sections. Under the first section, build a chain of increasingly specific rescue details. This is practice with heading depth, not a rule that every page needs six levels.
 
 ## What you'll build
 
 A signal brief that keeps the existing `<h1>` and `<h2>` headings, then adds every remaining heading level from `<h3>` through `<h6>` plus a source-only note.
 
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+
 ## Your Tasks
 
-1. Under the first `<h2>`, add an `<h3>` naming the signal source.
+1. Immediately after the first `<h2>`, add an `<h3>` naming the signal source.
 2. After it, add an `<h4>` naming the location.
 3. After it, add an `<h5>` naming the access route.
 4. After it, add an `<h6>` with a final check.
@@ -37,7 +39,7 @@ A signal brief that keeps the existing `<h1>` and `<h2>` headings, then adds eve
 
 ## Checkpoint
 
-Run the page. Each new detail level should appear smaller than the level before it. The comment should remain visible only in the editor source.
+Run the page. Follow the outline from signal source to final check; default font sizes may vary by browser. The comment should remain visible only in the editor source.
 
 ## Payoff
 

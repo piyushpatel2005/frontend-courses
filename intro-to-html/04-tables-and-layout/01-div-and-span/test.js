@@ -1,5 +1,5 @@
 test("page has a container div", () => {
-  assert.count("body > div.container", 1, 'Add one <div class="container"> for the swap list');
+  assert.equal(document.querySelectorAll("body > div.container").length, 1, 'Add one <div class="container"> for the swap list');
 });
 
 test("container groups two card divs", () => {

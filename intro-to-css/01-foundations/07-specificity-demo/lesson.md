@@ -12,17 +12,9 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# Specificity Demo: Resolve a Style Conflict
+# When matching rules disagree
 
-## Mission
-
-Three rules style the same museum note. The browser resolves their conflicting `color` values with selector specificity.
-
-## What you'll see
-
-One note with three matching rules; the ID rule controls its final green color.
-
-## Read the code
+The museum note is a paragraph with both `class="highlight"` and `id="intro"`. Three selectors match it, but its text can only have one final color. The **cascade** is the browser's process for choosing that value.
 
 ```css
 p { color: gray; }
@@ -30,14 +22,12 @@ p { color: gray; }
 #intro { color: green; }
 ```
 
-## Try the preview
+These are ordinary rules in the same stylesheet, with no special priority settings. Here **specificity**, the weight of a selector, decides: an ID selector outranks a class selector, and a class selector outranks an element selector. The note is green because `#intro` wins. This does not mean the last line always wins.
 
-Run the completed page. Change `.highlight` to blue; the note stays green because `#intro` is more specific. Then change `#intro` and observe the final color change. Restore the original values before continuing.
+![Three selectors match the note; the ID wins. A separate tied-selector example shows the later rule winning.](cascade-choice.svg)
 
-## Checkpoint
+If two otherwise equal rules use the same selector, the later declaration wins. For example, `p { color: gray; }` followed by `p { color: blue; }` gives paragraphs blue text unless a higher-priority rule overrides it. CSS has other priority mechanisms, but this exercise does not need them.
 
-All three selectors match the same paragraph. `#intro` is an ID selector, which outranks the class and element selectors here; its `color: green` wins. This demo is already complete.
+## Test the conflict
 
-## Next
-
-Continue to **Exercise: Resolve Specificity** and reproduce the idea from a starter file.
+Run, then change `.highlight` to blue and Run again. The note stays green. Move the entire `#intro` rule above the others: it still wins. Restore the original order and orange class color. In the exercise, add rules one at a time to watch the winner change.

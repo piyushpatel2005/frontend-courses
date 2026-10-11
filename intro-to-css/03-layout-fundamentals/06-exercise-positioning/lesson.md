@@ -19,15 +19,19 @@ hints:
   - Put both offsets in the `.pickup-pin` rule.
 ---
 
-# Pin the pickup location
+# Pin the greenhouse pickup notice
 
-The positioning demo anchored a “Today” label to a map card. Recreate that relationship here so the event status stays with its location.
+The library demo attached “Today” to a card. This greenhouse notice needs a “Saturday” pin in the same corner. Border, padding, and colors are supplied. Add the positioning declarations in `style.css`.
 
-**Checkpoint:** the orange label should sit at the upper-right of the bordered card rather than taking up a line of text.
+Give the card a reference position first. Then remove the pin from normal flow before setting its offsets. Each step has a check; the pin may briefly look misplaced while its offsets are unfinished.
 
 ## Your Tasks
 
-1. Set `.map-card` to `position: relative;` to make it the pin’s reference box.
-2. Set `.pickup-pin` to `position: absolute;` to remove it from normal flow.
-3. Set `.pickup-pin` to `top: 12px;` to move it down from the card's top edge.
-4. Set `.pickup-pin` to `right: 12px;` to move it in from the right edge.
+1. Set `.map-card` to `position: relative;`.
+2. Set `.pickup-pin` to `position: absolute;`.
+3. Set `.pickup-pin` to `top: 12px;`.
+4. Set `.pickup-pin` to `right: 12px;`.
+
+## Follow the offsets
+
+Run and Submit after each task. The first step alone should not move the card. The finished pin sits 12px inside the top and right inner border edges, without taking a line above the heading. Leave the supplied padding so the pin does not cover the message.

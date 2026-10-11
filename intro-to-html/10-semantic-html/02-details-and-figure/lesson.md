@@ -13,67 +13,51 @@ hints:
   - "The first child of <details> should be a <summary> — it becomes the clickable toggle text."
   - "<figure> is for self-contained media (image, diagram, code) referenced from the main text."
   - "<figcaption> provides a caption for a <figure> and can be placed at the top or bottom."
+lesson_type: coding
 ---
 
-# Details, Figure, and Figcaption
+# Details, figure, and figcaption
 
-## Mission
+The garden's visitor page needs two short answers and a captioned seedling illustration. Use native HTML to let visitors open the answers and keep the image's caption attached to it.
 
-A second Riverstone garden page needs a compact “Before You Visit” area. Add questions people can open when needed and a seedling image whose caption stays connected to the image.
+## Make an answer expandable
 
-## What you'll build
+A `<details>` element hides optional content until the visitor opens it. Put a `<summary>` first: it becomes the control that a visitor can click or reach with the keyboard.
 
-An FAQ with expandable answers (one open by default) and a captioned figure with an image and figcaption, keeping media and explanation together.
-
-**Target:** an FAQ with one answer already visible and a captioned illustration beneath it. In the preview, clicking each question should reveal only that question's answer.
-
-## Let optional information stay optional
-
-`<details>` creates a disclosure widget with no JavaScript. Its `<summary>` is the visible control; the rest of the content appears when a visitor opens it.
+Here is a separate repair-cafe example:
 
 ```html
 <details>
-    <summary>Can I bring a reusable bag?</summary>
-    <p>Yes. Bring one for your harvest share.</p>
+  <summary>Should I bring spare parts?</summary>
+  <p>Bring any parts you already have. Volunteers will help identify what is missing.</p>
 </details>
 ```
 
-The content starts collapsed. Add the boolean `open` attribute when one answer should be visible on page load.
+Add the boolean `open` attribute to show an answer initially. `open="false"` still means open because the attribute is present; remove the attribute to start closed. Separate details elements can stay open at the same time.
 
-```html
-<details open>
-    <summary>Where is the garden gate?</summary>
-    <p>Enter beside the blue tool shed on Willow Lane.</p>
-</details>
-```
+## Attach a caption to media
 
-Use this pattern for FAQs, optional instructions, or spoiler-free extra detail. Put `<summary>` first so the control is easy to find and use.
-
-## Keep media and its caption together
-
-A `<figure>` groups self-contained media with its explanation. The media can be an image, diagram, chart, or code sample. `<figcaption>` names or describes it.
+A `<figure>` groups a self-contained image, diagram, or other item with its caption. Place `<figcaption>` directly inside the figure, as its first or last element:
 
 ```html
 <figure>
-    <img src="seedlings.jpg" alt="Tomato seedlings in trays beside a sunny window">
-    <figcaption>Tomato seedlings ready for the Saturday planting table.</figcaption>
+  <img src="repair-table.jpg" alt="Volunteer examining the wiring inside a desk lamp">
+  <figcaption>A lamp repair at the neighborhood repair cafe.</figcaption>
 </figure>
 ```
 
-Unlike a plain `<div>`, this structure tells browsers and assistive technology that the image and caption belong together. The caption may be the first or last child of the figure.
+The filename above is illustrative. A caption gives visible context; `alt` supplies an image's text alternative. They serve different purposes, so do not omit the alt text just because a caption exists.
 
-## Checkpoint
+## Use the supplied illustration
 
-Preview the page. One FAQ answer should be visible immediately; the other answers should appear only after their summaries are clicked. The illustration caption should read as part of the same unit as the image. If a question will not toggle, make sure its `<summary>` is inside its `<details>`.
+The starter includes a small seedling image with a working data URL. A data URL contains the image itself, so it needs no external download. Leave its long `src` unchanged. You will move that image into a figure and replace its empty `alt` with a description. This supplied image is not a completed task.
 
 ## Your Tasks
 
-1. Add at least two `<details>` elements, each with an answer about visiting the garden.
-2. Put a `<summary>` inside each `<details>` element.
-3. Add the `open` attribute to exactly one `<details>` element so one answer starts expanded.
-4. Add a `<figure>` containing an `<img>` with descriptive `alt` text for the garden page. Use an available image URL (the starter contains no image asset).
-5. Add a `<figcaption>` inside that figure to describe the image.
+1. Add two separate `<details>` elements, each containing a paragraph that answers a question about visiting the garden.
+2. Add a nonempty `<summary>` as the first element inside each details element.
+3. Add `open` to exactly one details element so only that answer starts expanded.
+4. Move the supplied image into a `<figure>` and give it alt text describing the seedlings.
+5. Add a nonempty `<figcaption>` directly inside that figure, before or after the image.
 
-## Payoff
-
-The visit information now stays tidy while the photo carries its own explanation—useful context without extra scripting or detached captions.
+Edit `index.html`, Run, then Submit. Open and close each answer with its summary. Try Tab followed by Enter or Space on a summary too. Check that the seedling illustration and its visible caption read as one unit. The automated checks cover markup relationships; this keyboard check is your separate interaction check.

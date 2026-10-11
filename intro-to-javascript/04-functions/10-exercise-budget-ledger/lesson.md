@@ -4,37 +4,42 @@ slug: exercise-budget-ledger
 order: 10
 language: javascript
 lesson_type: coding
-summary: "Practice private budget ledger with a script-only JavaScript challenge."
+summary: "Make a spending desk that remembers its remaining budget. `makeBudget(startingBalance)` returns a function you can call with an expense. Affordable spending returns the new balance. An expense larger than that balance returns `null` and leaves the money untouched."
 seo_title: "Private Budget Ledger Exercise | Introduction to JavaScript"
-seo_description: "Build and test private budget ledger using JavaScript functions and console checkpoints."
+seo_description: "Make a spending desk that remembers its remaining budget. `makeBudget(startingBalance)` returns a function you can call with an expense. Affordable spending returns the new balance. An expense larger than that balance returns `null` and leaves the money untouched."
 seo_keywords: [javascript, "exercise budget ledger", programming exercise]
 hints:
   - "Read each expected Console line, then build it from your function calls."
 ---
 
-# Private Budget Ledger
+# Private budget ledger
 
-After the seat-ledger demo, make a **different** closure: a spending desk. `makeBudget(startingBalance)` returns a `spend(amount)` function that subtracts affordable expenses and returns the new balance. If there is not enough money, return `null` and leave the balance unchanged. Use positive amounts and nonnegative starting balances in this exercise. Work only in `script.js`; Run shows your checkpoints in the Console.
+Make a spending desk that remembers its remaining budget. `makeBudget(startingBalance)` returns a function you can call with an expense. Affordable spending returns the new balance. An expense larger than that balance returns `null` and leaves the money untouched.
 
-## A different example
+Use positive expenses and nonnegative starting balances here. Spending exactly the remaining balance is allowed and returns zero. You are not building a currency or account system; this exercise uses whole-number amounts to practice remembered state.
 
-This separate example shows a closure keeping a message prefix, not money:
+This smaller closure remembers text rather than a changing balance:
 
-```javascript
+```javascript run
 function makeTag(prefix) {
   return function (word) { return `${prefix}: ${word}`; };
 }
 const label = makeTag("Review");
-console.log(label("ready")); // Review: ready
+console.log(label("ready"));
+console.log(label("revised"));
 ```
+
+For your budget, declare `let balance` in the outer function. The inner function changes that same variable on repeated calls. First make affordable spending work; then insert the rejection guard before subtraction. The supplied probes use separate budgets so one checkpoint cannot spend another checkpoint's money.
 
 ## Your Tasks
 
-1. Define `makeBudget(startingBalance)` returning a spending function.
-2. Make repeated calls to the same returned function share remaining balance.
-3. Reject expenses larger than the remaining amount with `null` without deducting them.
-4. Log `Independent: 8,19` by spending from two fresh budgets.
+1. Complete `makeBudget(startingBalance)` so it returns a spending function. Keep `balance` outside that inner function, subtract each expense, and return the remaining balance. Handle affordable expenses first.
+2. Add a guard before subtraction: if `amount > balance`, return `null` without changing `balance`.
+3. Create budgets starting at 10 and 20; log `Independent: 8,19` after spending 2 from the first and 1 from the second.
 
-## Section complete
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.
 
-Backstage Toolkit complete: your functions now combine results, supply defaults, and remember private state. Take the section quiz before moving to arrays.
+
+## Functions complete
+
+Your helpers can now combine results, supply defaults, and keep private state. Take the section quiz before moving to arrays.

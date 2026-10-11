@@ -1,7 +1,13 @@
-// Implement the switch branches inside this function.
 function choosePower(item) {
-  // Return the matching power or the training default.
+  switch (item) {
+    // Add sword here.
+    // Add gun here.
+    // Add shield here.
+    default: return undefined;
+  }
 }
 
-// These probes run as you implement the functions above.
 console.log(`Sword: ${choosePower("sword")}`);
+console.log(`Gun: ${choosePower("gun")}`);
+console.log(`Shield: ${choosePower("shield")}`);
+console.log(`Other props: ${choosePower("pencil")},${choosePower("Sword")}`);

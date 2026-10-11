@@ -5,9 +5,9 @@ order: 4
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Practice classList.toggle and aria-expanded in a small browser UI.
+summary: Open and close a help panel using three separate state updates.
 seo_title: 'Exercise: toggle the help panel | DOM Manipulation with JavaScript'
-seo_description: Practice classList.toggle and aria-expanded with a tested JavaScript DOM exercise.
+seo_description: Open and close a help panel using three separate state updates.
 seo_keywords:
 - JavaScript DOM
 - classList.toggle and aria-expanded
@@ -15,31 +15,14 @@ seo_keywords:
 - exercise
 ---
 
-# Exercise: toggle the help panel
+Make the help button open and close its panel. The markup already starts closed: the panel has `hidden`, lacks `is-open`, and the button has `aria-expanded="false"`.
 
-The help button starts collapsed. Wire it so two clicks open then close its associated panel, updating visual and accessibility states together. This follows the **Toggle a panel accessibly** demo.
+Edit only the body of the supplied click callback in `script.js`. First toggle the class and save the returned boolean in a variable such as `isOpen`. Then use that same boolean to set the panel's `hidden` property and the button's `aria-expanded` attribute. `!isOpen` reverses the boolean; `String(isOpen)` converts it to attribute text.
 
-## Recall and transfer
-
-`classList.toggle("is-open")` adds the class if absent and removes it if present, returning the new boolean state. The button’s `aria-expanded` must be the string `"true"` when the panel is shown and `"false"` when hidden. `aria-controls` identifies the panel. Use the native `hidden` property to make a collapsed panel actually unavailable, not merely visually faded. Initialize all three states consistently.
-
-Here is the same technique in a **different setting**; its selectors and data are not the answer to this exercise:
-
-```javascript
-const menuButton = document.querySelector("#menu-button");
-const menu = document.querySelector("#menu");
-menuButton.addEventListener("click", () => {
-  const open = menu.classList.toggle("is-open");
-  menu.hidden = !open;
-  menuButton.setAttribute("aria-expanded", String(open));
-});
-```
-
-Recall the three linked states: `is-open` class, panel `hidden`, button `aria-expanded`. When open they are present, false, and `"true"`; when closed they are absent, true, and `"false"`.
-
-In this starter, `index.html` contains the targets, `style.css` holds the visual rules, and `script.js` is where you finish the behavior. Run the preview, make the change, then Submit to check each step. If nothing changes, first check the selector and whether the script is attached at the bottom of the page.
+After the class-only task, the panel is still hidden. That is expected: a class change alone does not remove `hidden`. Submit can check that first change independently. After the visibility task, Run and click twice to see the panel open and close. Finish the accessible state before treating the control as complete.
 
 ## Your Tasks
 
-1. Click `#help-toggle` once to add `is-open` to `#help-panel` and show it by setting `hidden` to `false`.
-2. Keep `aria-expanded` on the button synchronized: `true` while open, then after the next click remove `is-open`, hide the panel, and set `aria-expanded` back to `false`.
+1. In the supplied callback, toggle `is-open` on `#help-panel` on every click.
+2. Set the panel's `hidden` property to `false` when `is-open` is present and `true` when it is absent.
+3. Set the button's `aria-expanded` to `"true"` when open and `"false"` when closed.

@@ -1,19 +1,19 @@
-test("userJson is a JSON string of user", () => {
-  assert.match(OUTPUT, /^CHECK\ 1:\ \{"name":"Sam","level":5,"active":true\}$/m, "Log CHECK 1: {\"name\":\"Sam\",\"level\":5,\"active\":true} as a separate checkpoint line");
+test("JSON string contains the user data", () => {
+  assert.match(OUTPUT, /^CHECK 1: string \| Sam \| 5 \| true$/m, "Task 1: expected a separate output line: CHECK 1: string | Sam | 5 | true");
 });
 
-test("parsed is an object from apiResponse", () => {
-  assert.match(OUTPUT, /^CHECK\ 2:\ ok\ \|\ 42$/m, "Log CHECK 2: ok | 42 as a separate checkpoint line");
+test("Parsed response properties", () => {
+  assert.match(OUTPUT, /^CHECK 2: ok \| 42$/m, "Task 2: expected a separate output line: CHECK 2: ok | 42");
 });
 
-test("deepClone creates an independent copy", () => {
-  assert.match(OUTPUT, /^CHECK 3: 2 \| 2$/m, "Log CHECK 3: 2 | 2 from original and copy");
+test("Separate nested JSON-safe copy", () => {
+  assert.match(OUTPUT, /^CHECK 3: 2 \| 2 \| true \| 3,4$/m, "Task 3: expected a separate output line: CHECK 3: 2 | 2 | true | 3,4");
 });
 
-test("changing the copy does not change the original", () => {
-  assert.match(OUTPUT, /^CHECK 4: 2 \| 99$/m, "Log CHECK 4: 2 | 99 from original and changed copy");
+test("Copy-only nested update", () => {
+  assert.match(OUTPUT, /^CHECK 4: 2 \| 99$/m, "Task 4: expected a separate output line: CHECK 4: 2 | 99");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^Sam is level 5 \| status: ok, count: 42$/m, "Log the mission result on its own line");
+test("Separate user summary", () => {
+  assert.match(OUTPUT, /^Sam is level 5 \| status: ok, count: 42$/m, "Task 5: expected a separate output line: Sam is level 5 | status: ok, count: 42");
 });

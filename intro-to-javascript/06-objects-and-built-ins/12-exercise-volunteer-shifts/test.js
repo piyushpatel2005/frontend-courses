@@ -1,16 +1,15 @@
-test("looks up a dynamic key including zero and missing", () => {
-  assert.match(OUTPUT, /^CHECK 1: 0 \| null$/m, "Log CHECK 1 for present zero and absent key");
-});
-test("finds understaffed shifts in entry order", () => {
-  assert.match(OUTPUT, /^CHECK 2: morning,night$/m, "Log CHECK 2 from lowShiftNames");
-});
-test("combines availability and low shifts", () => {
-  assert.match(OUTPUT, /^CHECK 3: 0 \| morning,night$/m, "Log CHECK 3 from auditShifts");
-});
-test("does not modify the shift input", () => {
-  assert.match(OUTPUT, /^CHECK 4: unchanged:true$/m, "Log CHECK 4 after comparing the sample input");
+test("Lookup includes zero and missing keys", () => {
+  assert.match(OUTPUT, /^CHECK 1: 0 \| 4 \| null \| null$/m, "Task 1: expected a separate output line: CHECK 1: 0 | 4 | null | null");
 });
 
-test("logs the volunteer shift audit", () => {
-  assert.match(OUTPUT, /^2 \| checkIn, cleanup$/m, "Log the result from shiftSlots on its own line");
+test("Below-minimum names in entry order", () => {
+  assert.match(OUTPUT, /^CHECK 2: morning,night \| boundary:b \| empty:0$/m, "Task 2: expected a separate output line: CHECK 2: morning,night | boundary:b | empty:0");
+});
+
+test("Combined audit leaves its input unchanged", () => {
+  assert.match(OUTPUT, /^CHECK 3: 0 \| morning,night \| missing:null \| unchanged:true$/m, "Task 3: expected a separate output line: CHECK 3: 0 | morning,night | missing:null | unchanged:true");
+});
+
+test("Separate shift report", () => {
+  assert.match(OUTPUT, /^2 \| checkIn, cleanup$/m, "Task 4: expected a separate output line: 2 | checkIn, cleanup");
 });

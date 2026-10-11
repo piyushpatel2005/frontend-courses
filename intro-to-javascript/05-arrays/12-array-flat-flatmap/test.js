@@ -1,7 +1,7 @@
-test("flat flattens nested numbers", () => {
-  assert.match(OUTPUT, /^CHECK\ 1:\ \[1,2,3,4\]$/m, "Log CHECK 1: [1,2,3,4] as a separate checkpoint line");
+test("Step 1: Flat", () => {
+  assert.match(OUTPUT, new RegExp("^Flat:\\ \\[1,2,3,4\\]$", "m"), "Step 1: expected Flat: [1,2,3,4]");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^\[1,2,3,4\]\ \|\ \["hello","world","js"\]$/m, "Log the mission result with console.log()");
+test("Step 2: Words", () => {
+  assert.match(OUTPUT, new RegExp("^Words:\\ \\[\"hello\",\"world\",\"js\"\\]$", "m"), "Step 2: expected Words: [\"hello\",\"world\",\"js\"]");
 });

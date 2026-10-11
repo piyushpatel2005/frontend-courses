@@ -9,22 +9,20 @@ hints:
   - "Use `const` when the value should not change, `let` when it will."
   - "Declare `greeting` with `const` since it's a fixed message."
   - "Use `let` for `score` because you will increment it."
-summary: Practice let and const in practice with a focused Starline Awards programming mission.
+summary: "Keep a greeting fixed while increasing a mutable score."
 seo_title: let and const in Practice | Introduction to JavaScript
-seo_description: Learn let and const in practice through a focused JavaScript programming mission and console-based practice.
+seo_description: "Keep a greeting fixed while increasing a mutable score."
 seo_keywords: javascript, let and const in practice, beginner javascript, programming practice
 ---
 
 # let and const in Practice
 
-## Mission: Scoreboard Engine
 
 Keep a greeting fixed while changing a score. The Console will show both the intermediate values and the finished message.
 
-In this exercise you will declare variables using `const` and `let` following best practices. Remember:
+The declarations are already in the starter. Fill their initial values, then add the update where the comment points. Keep `greeting` as `const` because its binding does not need another value. Keep `score` as `let` because the next statement changes it.
 
-- **`const`** for values that should not be reassigned.
-- **`let`** for values that will change.
+`score += 10` means `score = score + 10`. It does not mean “set the score to 10” for every starting value. With the requested starting score of 0, the result happens to be 10. Initializing the score and applying the increase are separate tasks, with a probe after each.
 
 ## Worked example
 
@@ -36,6 +34,8 @@ let visitors = 3;
 visitors += 2;
 console.log(`${station}: ${visitors}`); // Harbor: 5
 ```
+
+Edit `script.js`, Run to inspect each checkpoint, then Submit to check the completed tasks. The supplied probes do not need rewriting.
 
 ## Your Task
 

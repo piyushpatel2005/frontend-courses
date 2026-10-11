@@ -13,27 +13,28 @@ hints:
   - "Object.entries(slots) gives [name, count] pairs to filter and map."
 ---
 
-# Exercise: Volunteer Shift Audit
+# Volunteer shift audit
 
-The supply-bin demo used a variable as an object key and scanned key-value pairs for low counts. Apply both ideas to volunteer shifts in `script.js`.
-
-For example, a **locker room** with `const lockers = { north: 0, south: 4 }` could read `lockers["north"]` as zero and use `Object.entries(lockers)` to find names below two. Use `Object.hasOwn(slots, requested)` to distinguish a missing key from a present key with a value of zero. Here, you are auditing people assigned to shifts, not lockers.
-
-## Worked example
-
-Here is the same lookup-and-scan pattern with supply bins rather than shifts:
+A coordinator needs the count for one requested shift and the names of shifts below a staffing minimum. Keep the schedule unchanged: this is a report, not a rescheduling operation.
 
 ```javascript
-const bins = { paper: 0, ink: 4 };
-const requested = "paper";
-const low = Object.entries(bins).filter(([, count]) => count < 2);
-console.log(bins[requested], low.map(([name]) => name)); // 0 ["paper"]
+const lockers = { north: 0, south: 4 };
+const requested = "north";
+console.log(Object.hasOwn(lockers, requested)); // true
+console.log(lockers[requested]); // 0
 ```
+
+`Object.hasOwn(object, key)` tells you whether that key belongs to the object itself. A value of zero is still a real count, so a truthiness check would confuse an empty shift with a missing one. Return `null` only when the requested key is absent.
+
+For the low-count list, use `Object.entries(slots)` to get `[name, count]` pairs. Keep those below `minimum`, then map each pair to its name. Preserve the entry order. A count equal to the minimum is not below it.
+
+The report shape is `{ available, needsHelp }`. The shorthand shown here means `{ available: available, needsHelp: needsHelp }` when the variable names match the property names. Read from `slots`; do not assign to or delete its properties.
+
+Edit `script.js`. The supplied probes include zero, missing keys, a threshold boundary, and unchanged-input checks. Run after each helper; Submit checks the tasks in order.
 
 ## Your Tasks
 
-1. Write `readAvailability(slots, requested)` using bracket lookup and `Object.hasOwn()` to return the requested count, or `null` when the key is missing.
-2. Write `lowShiftNames(slots, minimum)` using `Object.entries()` to return the names below the minimum in entry order.
-3. Write `auditShifts(slots, requested, minimum)` to return `{ available, needsHelp }` using those helpers.
-4. Keep the input object unchanged after calling `auditShifts()`.
-5. Log `2 | checkIn, cleanup` from `auditShifts(shiftSlots, "checkIn", 3)` on its own Console line.
+1. Complete `readAvailability(slots, requested)` with `Object.hasOwn()` and bracket lookup to return the count, or `null` for a missing key.
+2. Complete `lowShiftNames(slots, minimum)` with `Object.entries()` to return names below the minimum in entry order.
+3. Complete `auditShifts(slots, requested, minimum)` to return `{ available, needsHelp }` using those helpers, without modifying `slots`.
+4. Log `2 | checkIn, cleanup` from `auditShifts(shiftSlots, "checkIn", 3)` on its own line.

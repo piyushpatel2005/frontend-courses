@@ -1,0 +1,6 @@
+files:
+  - path: index.html
+    readonly: true
+  - path: style.css
+    readonly: true
+  - path: script.js

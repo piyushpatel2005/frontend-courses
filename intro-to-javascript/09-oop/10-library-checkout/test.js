@@ -1,32 +1,24 @@
-test('LibraryItem stores its title', () => {
-  assert.includes(OUTPUT, 'item title: River Atlas', 'Store the title in the constructor');
+test("Store title", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK title: River Atlas"), true, "Expected checkpoint: CHECK title: River Atlas");
 });
 
-test('New library item starts available', () => {
-  assert.includes(OUTPUT, 'new item available: true', 'Log new item available: true');
+test("Initial availability", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK available: true"), true, "Expected checkpoint: CHECK available: true");
 });
 
-test('Book inherits LibraryItem', () => {
-  assert.includes(OUTPUT, 'book inherits LibraryItem: true', 'Book should inherit LibraryItem');
-  assert.includes(OUTPUT, 'book author: N. Vale', 'Store the author in the Book constructor');
+test("Book author", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK author: N. Vale | inherits: true"), true, "Expected checkpoint: CHECK author: N. Vale | inherits: true");
 });
 
-test('Checkout changes availability', () => {
-  assert.includes(OUTPUT, 'checkout: true, available: false', "Log checkout: true, available: false in the Console");
+test("Checkout transition", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK checkout: true,false | repeat: false,false"), true, "Expected checkpoint: CHECK checkout: true,false | repeat: false,false");
 });
 
-test('Repeated checkout is rejected', () => {
-  assert.includes(OUTPUT, 'repeat checkout: false, available: false', "Log repeat checkout: false, available: false in the Console");
+test("Return transition", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK return: true,true | repeat: false,true"), true, "Expected checkpoint: CHECK return: true,true | repeat: false,true");
 });
 
-test('Return restores availability', () => {
-  assert.includes(OUTPUT, 'return: true, available: true', 'Log return: true, available: true');
-});
-
-test('Repeated return is rejected', () => {
-  assert.includes(OUTPUT, 'repeat return: false', 'Log repeat return: false');
-});
-
-test('Book describes its availability', () => {
-  assert.includes(OUTPUT, 'book description: River Atlas by N. Vale — available', 'Log the description after returning the book');
+test("Description in both states", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK loan description: River Atlas by N. Vale \u2014 on loan"), true, "Expected checkpoint: CHECK loan description: River Atlas by N. Vale \u2014 on loan");
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK description: River Atlas by N. Vale \u2014 available"), true, "Expected checkpoint: CHECK description: River Atlas by N. Vale \u2014 available");
 });

@@ -7,17 +7,16 @@ lesson_type: coding
 validationRules: []
 hints:
   - "Each `case` matches the value after `switch (expression)`."
-  - "Don't forget `break` at the end of each case to prevent fall-through."
+  - "A return exits the function, so returning cases do not need break."
   - "Use `default` as the catch-all (like `else`)."
-summary: Practice switch statement with a focused Starline Awards programming mission.
+summary: "Group exact day-name cases in a switch with an unknown-name fallback."
 seo_title: Switch Statement | Introduction to JavaScript
-seo_description: Learn switch statement through a focused JavaScript programming mission and console-based practice.
+seo_description: "Group exact day-name cases in a switch with an unknown-name fallback."
 seo_keywords: javascript, switch statement, beginner javascript, programming practice
 ---
 
 # Switch Statement
 
-## Mission: Decision Desk
 
 For a day name, select one of three outcomes: weekend, weekday, or unknown.
 
@@ -56,10 +55,14 @@ switch (light) {
 
 Adjacent cases can share a result. The switch matches exact values: `"Saturday"` is not the same as `"saturday"`.
 
+The starter supplies `switch (day)` and all calls. Add each group of cases inside that switch. An empty case falls through to the next case, so Saturday can share Sunday's return without duplicating the result. A returned value ends the function; do not add a separate `break` after it.
+
+Run after each group. The weekend line completes first, then the weekday line, then unknown names. Incomplete groups reach the `undefined` fallback and remain visible rather than stopping the script.
+
+Edit `script.js`, Run to inspect the supplied probes, and Submit to check the tasks.
+
 ## Your Tasks
 
-1. Implement `getDayType(day)` using `switch`: Saturday and Sunday return `"Weekend"`, weekdays return `"Weekday"`, and any other name returns `"Unknown"`. The provided Sunday probe should print `Sunday: Weekend`.
-2. Log `Weekend pair: Weekend,Weekend` from Saturday and Sunday calls.
-3. Log `Weekdays: Weekday,Weekday,Weekday,Weekday,Weekday` from Monday through Friday calls.
-4. Log `Holiday: Unknown` from an invalid name.
-5. Log `Saturday: Weekend` from `getDayType("Saturday")`.
+1. Add the Saturday and Sunday cases sharing the return value `"Weekend"`. Both weekend probes should agree.
+2. Add Monday through Friday as cases sharing the return value `"Weekday"`. All five weekday probes should agree.
+3. Make the default return `"Unknown"`. The Holiday and lowercase saturday probes should both use it.

@@ -1,13 +1,12 @@
-// TODO 1: Implement sumArray(numbers)
 function sumArray(numbers) {
-
+  // Build and return the total here.
 }
 
-// TODO 2: Implement reverseArray(arr)
 function reverseArray(arr) {
-
+  // Build and return the reversed list here.
 }
 
-// These probes run as you implement the functions above.
-console.log(`Sum one: ${sumArray([2])}`);
-console.log(`Reverse one: ${reverseArray(["x"])}`);
+// Supplied probes also work before the functions are complete.
+console.log(`Sums: ${sumArray([2])},${sumArray([1,2,3,4,5])},${sumArray([10,-5,5])},${sumArray([])}`);
+console.log(`Reversals: ${reverseArray([1,2,3])} | ${reverseArray(["a","b","c"])} | [${reverseArray([])}]`);
+// Add the final sum message here.

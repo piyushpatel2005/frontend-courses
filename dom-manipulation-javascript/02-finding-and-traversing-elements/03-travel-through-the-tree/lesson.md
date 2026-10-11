@@ -5,10 +5,9 @@ order: 3
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Navigate from a selected element through parentElement, children, and closest.
+summary: Find a book heading and its card by following parent and child relationships.
 seo_title: Move from a child to its relatives | Beginner JavaScript DOM
-seo_description: Navigate from a selected element through parentElement, children,
-  and closest. Practice in a live JavaScript DOM preview.
+seo_description: Find a book heading and its card by following parent and child relationships.
 seo_keywords:
 - JavaScript DOM
 - parentElement
@@ -16,9 +15,11 @@ seo_keywords:
 - closest
 ---
 
-Selectors find a starting place. After that, the tree provides routes to nearby elements. On these book cards, the `.featured` label sits *inside* an article. `parentElement` moves one element up; `children` lists the parent's direct **element** children (not text nodes); `closest("article")` searches upward from the starting element, including itself, until it finds a matching ancestor.
+The Staff pick label belongs to a book card. Start at that label and use its position in the DOM to find the card and its heading.
 
-![A sketched article containing a heading and a featured span, with routes for parentElement, children, and closest](traversal-map.svg)
+`parentElement` gives the immediate parent element. `children` is a collection of direct element children; it skips text nodes such as whitespace between tags. Its first element is at index `0`. `closest("article")` checks the starting element, then each ancestor, stopping at the first match. It returns `null` if no element on that route matches.
+
+![From the featured span, parentElement and closest reach the article; the article's first child is its heading](traversal-map.svg)
 
 ```javascript
 const label = document.querySelector(".featured");
@@ -29,4 +30,6 @@ firstChild.textContent += " ★";
 article.dataset.picked = "yes";
 ```
 
-Run: the first card's heading gains a star and its border becomes green. Compare `parentElement` and `closest("article")` here: they happen to reach the same article because the label is a direct child. If a wrapper were inserted between them, `parentElement` would stop at that wrapper while `closest` would continue upward. `children[0]` is the first *element child* of the card, the heading. In the exercise you will navigate a deeper card, where the difference matters.
+The last line is a small preview of data attributes: assigning `dataset.picked` writes `data-picked="yes"` on the article. The supplied CSS uses that attribute to draw a green border. You will study `dataset` in the next section; here it makes the selected ancestor visible.
+
+Run and find the star and green border on River atlas. In this markup, both upward routes reach the article. If the span were inside a wrapper, `parentElement` would stop at the wrapper, but `closest("article")` would continue up to the card. That extra layer appears in the next exercise. These example elements exist; when a query or upward search can fail, check for `null` before using the result.

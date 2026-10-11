@@ -39,15 +39,7 @@ const form = document.querySelector("#member-form");
 const newName = document.querySelector("#new-name");
 const newSkill = document.querySelector("#new-skill");
 const status = document.querySelector("#form-status");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const name = newName.value.trim();
-  const skill = newSkill.value.trim();
-  if (!name || !skill) {
-    status.textContent = "Enter a name and a skill.";
-    return;
-  }
+function createMemberCard(name, skill) {
   const card = document.createElement("li");
   card.dataset.name = name;
   card.dataset.skill = skill;
@@ -64,10 +56,25 @@ form.addEventListener("submit", (event) => {
   remove.className = "remove";
   remove.textContent = `Remove ${name}`;
   card.append(heading, description, view, remove);
+  return card;
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const name = newName.value.trim();
+  const skill = newSkill.value.trim();
+  if (!name || !skill) {
+    status.textContent = "Enter a name and a skill.";
+    (!name ? newName : newSkill).focus();
+    return;
+  }
+  const card = createMemberCard(name, skill);
+  if (!card) return;
   members.append(card);
-  form.reset();
   filterMembers();
   status.textContent = `${name} added.`;
+  form.reset();
+  newName.focus();
 });
 
 members.addEventListener("click", (event) => {
@@ -82,4 +89,5 @@ members.addEventListener("click", (event) => {
   card.remove();
   filterMembers();
   status.textContent = `${name} removed.`;
+  search.focus();
 });

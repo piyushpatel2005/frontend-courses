@@ -24,15 +24,16 @@ After testing the training-choice demo, plan a supply pickup: the crew can reque
 
 ## What you'll build
 
-A supply request with three supply checkboxes, three grouped delivery-window radios, a default selection, and fieldset context.
+A supply request with three supply checkboxes, three grouped delivery-window radios, a default selection, and fieldset context. Edit `index.html`. Give choices visible text with wrapping labels and distinct non-empty `value` attributes so each choice is recognizable. Leave the radio `name` values for task 3.
 
 ## Your Tasks
 
-1. Add at least three independently selectable checkboxes for supplies.
-2. Add at least three radio buttons for delivery windows.
-3. Give all the radio buttons one non-empty shared `name`.
+1. Add at least three labeled supply checkboxes with `name="supplies"` and distinct non-empty `value` attributes.
+2. Add at least three labeled delivery-window radios with distinct non-empty `value` attributes.
+3. Give all the delivery-window radios one non-empty shared `name`.
 4. Preselect exactly one delivery window using `checked`.
-5. Wrap each choice set in its own `<fieldset>` with a describing `<legend>`.
+5. Wrap the supply checkboxes in their own `<fieldset>` with a first-child `<legend>` describing the supplies.
+6. Wrap the delivery radios in a separate `<fieldset>` with a first-child `<legend>` describing the windows.
 
 ## Checkpoint
 
@@ -40,4 +41,4 @@ Run the page. More than one checkbox can be on at once, but selecting a second r
 
 ## Payoff
 
-The crew can request several supplies and choose one pickup time without JavaScript.
+Submit to check each group after trying it in the preview. The crew can now select several supplies and one pickup time without JavaScript; this practice form does not place an order.

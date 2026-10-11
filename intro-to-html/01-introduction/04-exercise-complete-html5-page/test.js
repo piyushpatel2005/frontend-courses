@@ -5,7 +5,7 @@ test("document has a meaningful title", () => {
 });
 
 test("body has one named crew heading", () => {
-  assert.count("body h1", 1, "Add exactly one <h1> inside <body>");
+  assert.equal(document.querySelectorAll("body h1").length, 1, "Add exactly one non-empty <h1> in the body");
   assert.notEqual(document.querySelector("body h1").textContent.trim(), "", "Name a crew member in the heading");
 });
 
@@ -17,6 +17,9 @@ test("body has a profile paragraph", () => {
 
 test("comment appears before the heading", () => {
   const heading = document.querySelector("body h1");
-  const comments = Array.from(document.body.childNodes).filter(n => n.nodeType === 8 && n.textContent.trim() && (n.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_FOLLOWING));
-  assert.equal(comments.length >= 1, true, "Add a source-only comment above the <h1>");
+  assert.exists(heading, "Add the crew heading first");
+  let node = heading.previousSibling;
+  while (node && node.nodeType === 3 && !node.textContent.trim()) node = node.previousSibling;
+  assert.equal(node?.nodeType, 8, "Add a comment immediately above the <h1>");
+  assert.notEqual(node.textContent.trim(), "", "Write a source note in the comment");
 });

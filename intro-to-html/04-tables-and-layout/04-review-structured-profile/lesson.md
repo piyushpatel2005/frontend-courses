@@ -9,14 +9,14 @@ seo_description: Practice using main, headings, paragraphs, IDs, and reusable cl
 seo_keywords: [HTML review, HTML profile card, HTML main element, HTML IDs, HTML classes]
 lesson_type: coding
 hints:
-  - Use a main container, then give it a unique id and reusable class.
+  - Use main for the profile, id for its unique name, and class on each repeated skill label.
 ---
 
 # Review: Structured Profile
 
 ## Mission
 
-The repair café needs a compact volunteer profile beside its schedule. Turn the empty starter into one clear card: a named main region, a short description, and repeatable skill tags. The preview should make all three pieces easy to spot.
+The repair café needs a separate volunteer profile to accompany its schedule. Turn the empty starter into one clear card: a main region identified as `profile`, a short description, and repeatable skill tags. The preview should make all three pieces easy to spot.
 
 ## What you'll build
 
@@ -28,13 +28,17 @@ A profile card with a unique `id` on its `<main>` container, a heading and descr
 
 Run the starter: it is empty except for a source comment. After your edits you should see a profile heading, a description, and two skill tags. The class names will not make the tags look different until you add CSS later.
 
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+
+For a skill label, use a `<span>` like the inline hook from the div-and-span lesson. Give each label its own `class="tag"` attribute; the class value is reusable.
+
 ## Your Tasks
 
-1. Add one `<main>` element with `id="profile"`.
+1. Add exactly one `<main>` element with the unique `id="profile"`.
 2. Inside it, add an `<h1>` with the volunteer’s name.
 3. Add a non-empty `<p>` describing their role inside the profile.
 4. Inside the profile, add at least two non-empty skill labels with `class="tag"`.
 
 ## Payoff
 
-The schedule now has a focused volunteer profile with a unique page landmark and reusable skill labels.
+The café now has a focused volunteer profile with a unique page landmark and reusable skill labels.

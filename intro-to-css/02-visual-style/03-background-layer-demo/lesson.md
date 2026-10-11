@@ -16,18 +16,21 @@ hints:
   - "`background-image` can hold a gradient without an image file."
 ---
 
-# Background Layer Demo
+# Paint a gradient behind the welcome message
 
-The market needs a welcome panel that feels brighter than a plain block of color. This demo layers a diagonal gradient over a fallback `background-color`.
+A gradient blends colors across a surface. CSS can generate that image directly, so the market welcome panel does not need an image file.
 
-In `.hero`, `background-image: linear-gradient(135deg, #7c3aed, #ec4899);` creates a color blend. The `135deg` value sets the direction; the two colors set the stops. `background-color` remains a solid fallback if the image is unavailable. The other sizing and centering rules are supplied, not part of this exercise.
+```css
+.hero {
+  background-color: #7c3aed;
+  background-image: linear-gradient(135deg, #7c3aed, #ec4899);
+}
+```
 
-## Visible checkpoint
+`background-image` places the gradient above the solid `background-color`. In `linear-gradient(...)`, the first value sets its direction: `135deg` runs diagonally toward the lower right. The comma-separated colors are the start and end of the blend. The opaque gradient covers the solid color; removing the image declaration reveals the violet fallback.
 
-Run the preview. The violet-to-pink panel should make the white event title easy to read.
+The dark backing behind the text is supplied so the small white text remains readable over the pink area. Sizing and centering are also supplied; focus on the background declarations.
 
-## Try it safely
+## Compare the layers
 
-Change `135deg` to `90deg`, run the preview, and observe the new gradient direction. Restore `135deg` before moving on.
-
-Next, create the background layer yourself in **Background Layer Exercise**.
+Run. Change `135deg` to `90deg` and Run again: the blend now runs left to right. Restore `135deg`. Temporarily remove `background-image`, Run to see the solid violet layer, then undo that removal before moving on.

@@ -17,30 +17,33 @@ seo_keywords:
 
 # Build a live trail finder
 
-Help visitors search a small trail list. This reuses labelled inputs, event listeners, `textContent`, a node collection, and a live result count. In the preceding demo, you saw the complete behavior before having to build it yourself.
+Help visitors search a small trail list. This reuses labelled inputs, event listeners, `textContent`, a node collection, and a live result count.
 
 ## Transfer the pattern
 
-Earlier you selected groups of elements and read `textContent`; the form chapter added `input` events. Here those two skills meet: a single typed query changes which existing nodes are visible, and the count reports the same state.
-
-The `input` event from the previous module gives a fresh query on every edit. `querySelectorAll` collects the existing list items; loop over them, compare each item’s `textContent` with the lowercased query, then set its `hidden` property. Keep an `aria-live` count so a screen-reader user hears when results change.
+The recipe demo hid rows without destroying them. Keep that behavior for the trails: a search for River hides Forest Ridge, and clearing the field brings it back. The starter already has a labelled search field and an `aria-live` count; your listener supplies their behavior.
 
 A contact picker could compare against a typed query without replacing its list:
 
 ```javascript
-const contactSearch = document.querySelector("#contact-search");
+const contactSearch =
+  document.querySelector("#contact-search");
 const people = document.querySelectorAll("#contacts li");
 contactSearch.addEventListener("input", () => {
   const needle = contactSearch.value.toLowerCase();
   for (const person of people) {
-    person.hidden = !person.textContent.toLowerCase().includes(needle);
+    person.hidden = !person.textContent
+      .toLowerCase()
+      .includes(needle);
   }
 });
 ```
 
 In your trail finder, also update the live result count on every edit, including a query that matches nothing. No new HTML strings are needed.
 
-Run the starter first to see what is present and what still does nothing. Edit `script.js` and, if needed, the markup; use the Preview for a visible check before Submit. The checks exercise actions and state changes, not just the initial markup.
+Run the starter, then edit `script.js`. Run after each task to inspect the preview; Submit checks your changes in task order.
+
+Treat surrounding spaces as accidental input: trim the query before comparing it. A spaces-only query should behave like clearing the field.
 
 ## Your Tasks
 

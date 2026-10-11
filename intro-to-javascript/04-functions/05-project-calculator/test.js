@@ -1,27 +1,27 @@
-test("Checkpoint 1: Add 3,4: 7", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Add\\ 3,4:\\ 7(?:\\n|$)"), "Log this result from your function calls");
+test("Step 1: Add", () => {
+  assert.match(OUTPUT, new RegExp("^Add:\\ 7,0,5$", "m"), "Step 1: expected Add: 7,0,5");
 });
 
-test("Checkpoint 2: Subtract 10,4: 6", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Subtract\\ 10,4:\\ 6(?:\\n|$)"), "Log this result from your function calls");
+test("Step 2: Subtract", () => {
+  assert.match(OUTPUT, new RegExp("^Subtract:\\ 6,\\-3$", "m"), "Step 2: expected Subtract: 6,-3");
 });
 
-test("Checkpoint 3: Multiply 3,5: 15", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Multiply\\ 3,5:\\ 15(?:\\n|$)"), "Log this result from your function calls");
+test("Step 3: Multiply", () => {
+  assert.match(OUTPUT, new RegExp("^Multiply:\\ 15,0,\\-6$", "m"), "Step 3: expected Multiply: 15,0,-6");
 });
 
-test("Checkpoint 4: Divide cases: 5,null", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Divide\\ cases:\\ 5,null(?:\\n|$)"), "Log this result from your function calls");
+test("Step 4: Divide", () => {
+  assert.match(OUTPUT, new RegExp("^Divide:\\ 5,null,0,1\\.5$", "m"), "Step 4: expected Divide: 5,null,0,1.5");
 });
 
-test("Checkpoint 5: Calculate cases: 15,7,42,3,null,null", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Calculate\\ cases:\\ 15,7,42,3,null,null(?:\\n|$)"), "Log this result from your function calls");
+test("Step 5: Calculate", () => {
+  assert.match(OUTPUT, new RegExp("^Calculate:\\ 15,7,42,3,null,null$", "m"), "Step 5: expected Calculate: 15,7,42,3,null,null");
 });
 
-test("Checkpoint 6: 10 + 5 = 15", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)10\\ \\+\\ 5\\ =\\ 15(?:\\n|$)"), "Log this result from your function calls");
+test("Step 6: 10 + 5 = 15", () => {
+  assert.match(OUTPUT, new RegExp("^10\\ \\+\\ 5\\ =\\ 15$", "m"), "Step 6: expected 10 + 5 = 15");
 });
 
-test("Checkpoint 7: 8 / 0 = Error: Division by zero", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)8\\ /\\ 0\\ =\\ Error:\\ Division\\ by\\ zero(?:\\n|$)"), "Log this result from your function calls");
+test("Step 7: 8 / 0 = Error", () => {
+  assert.match(OUTPUT, new RegExp("^8\\ /\\ 0\\ =\\ Error:\\ Division\\ by\\ zero$", "m"), "Step 7: expected 8 / 0 = Error: Division by zero");
 });

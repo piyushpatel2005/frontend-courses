@@ -4,9 +4,9 @@ slug: guessing-loop
 order: 10
 language: javascript
 lesson_type: interactive
-summary: Stop a loop as soon as the target ticket is found.
+summary: "Trace a ticket scan that stops when its target appears."
 seo_title: "Stop a Ticket Scan | Introduction to JavaScript"
-seo_description: Trace a for-of loop that breaks at the first matching ticket before writing a guess search.
+seo_description: "Trace a ticket scan that stops when its target appears."
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
@@ -27,4 +27,6 @@ for (const ticket of scannedTickets) {
 }
 ```
 
-Run it and notice that 51 never appears in the Console. In the next exercise, put a similar search in a function so it can return either a match message or `"No match"` after the loop finishes.
+The first iteration compares 18 with 42, misses, and prints `Not this one: 18`. The second finds 42, prints the match, and exits the loop before its non-match log. The third entry, 51, is never visited.
+
+`break` ends the loop rather than the whole script; a statement placed after the loop would still run. Run the block and check the two lines in that order. In the next exercise, put a similar search in a function so it can return either a match message or `"No match"` after the loop finishes.

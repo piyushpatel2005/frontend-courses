@@ -13,27 +13,17 @@ hints:
   - "A rule has the shape selector { property: value; }."
 ---
 
-# Exercise: Write Your First CSS Rule
+# Style the coral exhibit
 
-## Mission
+The demo styled the museum introduction. This new card describes coral after dark. Its HTML and stylesheet link are supplied, but `style.css` has no rules yet.
 
-The completed demo styled a museum introduction. This new exhibit label starts unstyled; use the same selector/property/value pattern on its different content.
-
-## What you'll build
-
-A pale page background and a blue exhibit heading.
+Write each selector followed by braces, then put its declaration inside. `background-color` paints behind an element; `color` changes its text. The values beginning with `#` are exact color codes.
 
 ## Your Tasks
 
-The HTML already links `style.css`. Work in that stylesheet:
+1. In `style.css`, add a `body` rule with `background-color: #f6f8fb;`.
+2. Add an `h1` rule with `color: #1b4d8c;`.
 
-1. Add `background-color: #f6f8fb;` to a `body` rule.
-2. Add `color: #1b4d8c;` to an `h1` rule.
+## Check your page
 
-## Checkpoint
-
-Run the page. The background should become pale and the heading blue.
-
-## Payoff
-
-You have written a selector, property, and value—the basic unit of CSS.
+Run after the first task: the page should turn pale while the heading stays dark. After the second, the heading should be blue too. Press **Submit** to check the tasks; you can submit after either step to see which change is complete. Leave the supplied HTML in place.

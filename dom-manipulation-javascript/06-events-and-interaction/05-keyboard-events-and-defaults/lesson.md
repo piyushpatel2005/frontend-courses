@@ -15,28 +15,24 @@ seo_keywords:
 - accessible keyboard behavior
 ---
 
-# Keyboard Events Without Trapping Keys
+# Handle a field's Enter key
 
-A trail finder has a search field inside a form. Pressing Enter should show a local result without causing the browser’s usual form submission. Ordinary typing and Tab navigation must keep working.
+The trail finder searches locally. It must not navigate away when someone presses Enter or activates Search. This example demonstrates a field-specific shortcut; an ordinary form usually needs only its submit handler.
 
-## How it works
-
-`keydown` reports a `KeyboardEvent`; `event.key` names the key, such as `"Enter"`. Only for Enter do we call `event.preventDefault()` to cancel the form’s default submit action, then update a live status. We also handle the form’s `submit` event for people who activate the Search button; that path has the same result. Do not cancel all keys: blocking Tab would trap keyboard users. A `<label>` gives the field an accessible name; `role="status"` announces a result without stealing focus.
+`keydown` supplies a `KeyboardEvent`. Its `key` property names the key, such as `"Enter"` or `"Tab"`. Return early for keys you do not handle. `event.preventDefault()` cancels a cancelable browser action for this event; it does not stop the event from bubbling.
 
 ```javascript
-field.addEventListener("keydown", function (event) {
+field.addEventListener("keydown", event => {
   if (event.key !== "Enter") return;
   event.preventDefault();
   showResult();
 });
 ```
 
+The field's `.value` is its current string, not its `textContent`. `.trim()` returns that string without surrounding whitespace. The supplied `showResult` reads it when called and writes a literal text result.
+
+The form also has a `submit` listener. Its `preventDefault()` blocks navigation for Search-button activation. The field's Enter listener cancels implicit submission before calling the same display function, so that path should run only once.
+
 ## Try the preview
 
-Run the preview. Type a trail name and press Enter to show the result without reloading. Press Tab: focus should move to the Search button. Clicking Search should also show the result.
-
-## Remember
-
-Native buttons already respond to Enter and Space; do not rebuild that behavior with keydown. Keyboard events are useful when a focused text field needs a specific shortcut.
-
-The following exercise uses the same idea in a different setting.
+Run, type Pine trail, and press Enter. Tab should still move focus to Search; pressing Space there should search through the form's submit path. Try a different term with the mouse. No real search or network request is made.

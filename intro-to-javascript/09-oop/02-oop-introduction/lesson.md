@@ -8,17 +8,17 @@ validationRules: []
 hints:
   - "Store both data and a method inside the car object."
   - "Inside accelerate, update this.speed by adding the amount."
-summary: Practice oop introduction with a focused Starline Awards programming mission.
+summary: "Give a car its starting data, then add a method that changes its speed. The notebook demo used the same pattern with page counts."
 seo_title: OOP Introduction | Introduction to JavaScript
-seo_description: Learn oop introduction through a focused JavaScript programming mission and console-based practice.
+seo_description: "Give a car its starting data, then add a method that changes its speed. The notebook demo used the same pattern with page counts."
 seo_keywords: javascript, oop introduction, beginner javascript, programming practice
 ---
 
 # OOP Introduction
 
-The notebook demo grouped state and a method on one object. Now make a car object that can change its own speed. Run `script.js` and inspect the Console.
+Give a car its starting data, then add a method that changes its speed. The notebook demo used the same pattern with page counts.
 
-Object-oriented thinking starts with objects that hold both data and behavior. A car that knows its own speed is a simple way to introduce that pattern.
+Use `this.speed` inside `accelerate(amount)` so the method updates the object that received the call. The supplied `car.accelerate(20)` provides 20 as `amount`. Use the parameter instead of adding a fixed 20 inside the method; a later call may ask for a different increase.
 
 ## Example
 
@@ -33,9 +33,11 @@ thermostat.raise(2);
 console.log(thermostat.temperature);
 ```
 
+Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.
+
 ## Your Tasks
 
-1. Give `car` a brand of `Roadster` and a speed of `80`. The starter logs its brand.
-2. Add an `accelerate(amount)` method that increases `this.speed`. The starter calls it with `20` and logs the updated speed.
-3. Log the final result `Roadster | 100` on its own Console line.
-
+1. Set the `car` brand to `"Roadster"`.
+2. Set its starting `speed` to 80.
+3. Add an `accelerate(amount)` method that adds `amount` to `this.speed`.
+4. Log the final brand and speed as `Roadster | 100`.

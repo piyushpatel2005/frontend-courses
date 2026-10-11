@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="435" viewBox="0 0 900 435" role="img" aria-labelledby="title desc">
+<title id="title">One Dependency, Two Independent Lookups</title><desc id="desc">Wait for event ID, start acts and seats, then combine their results in a summary.</desc>
+<rect width="900" height="435" rx="16" fill="#fffbf5"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10Z" fill="#1e293b"/></marker></defs>
+<text x="450" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#1e293b">One Dependency, Two Independent Lookups</text>
+<rect x="35" y="155" width="200" height="100" rx="12" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+<text x="135.0" y="198.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Await getEvent()</text>
+<text x="135.0" y="225.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Receive ID 7</text>
+<rect x="335" y="75" width="220" height="100" rx="12" fill="#99f6e4" stroke="#1e293b" stroke-width="2"/>
+<text x="445.0" y="118.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">getActs(7)</text>
+<text x="445.0" y="145.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Promise pending</text>
+<rect x="335" y="245" width="220" height="100" rx="12" fill="#fed7aa" stroke="#1e293b" stroke-width="2"/>
+<text x="445.0" y="288.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">getSeats(7)</text>
+<text x="445.0" y="315.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Promise pending</text>
+<rect x="665" y="155" width="200" height="100" rx="12" fill="#ddd6fe" stroke="#1e293b" stroke-width="2"/>
+<text x="765.0" y="198.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Promise.all</text>
+<text x="765.0" y="225.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Build summary</text>
+<path d="M235 205 L285 205 L285 125 L335 125" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M235 205 L285 205 L285 295 L335 295" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M555 125 L765 125 L765 155" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M555 295 L765 295 L765 255" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="450" y="395" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#1e293b">Both lookups start before the combined await; their waits can overlap.</text>
+</svg>

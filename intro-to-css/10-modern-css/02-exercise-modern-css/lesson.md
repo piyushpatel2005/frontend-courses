@@ -19,13 +19,13 @@ hints:
 
 # Field note color system exercise
 
-**Mission:** Use reusable CSS values to give a field-note card a stable color system.
+Use one named accent for the fox-track observation. The starter already reads `var(--accent)` on its border and highlighted button, but that custom property is missing. Until you define it, those declarations cannot use the intended accent.
 
-The HTML supplies another observation card. Its starter CSS already uses `var(--accent)` on the border and hover button, but the property is not defined yet. Edit only `style.css`.
+Work in `style.css`. The keyboard highlight, focus outline, and reduced-motion override are supplied. As in the bluebird demo, define the shared value on `:root`, then smooth the button's color change.
 
 ## Your Tasks
 
-1. Define `--accent: #e76f51` on `:root`; the border and button already use it.
-2. Add `transition: background-color 180ms ease` to the button.
+1. Define `--accent: #e76f51` on `:root`.
+2. Add `transition: background-color 180ms ease` to the normal `button` rule.
 
-Run Preview after each change, then submit when both visible outcomes match the demo.
+Run Preview after each edit. First inspect the border color; then hover or Tab to the button to inspect the color change. Submit to check the two declarations. With reduced motion enabled, the color still changes, but it changes immediately.

@@ -5,7 +5,7 @@ order: 4
 language: html
 summary: "`gap` creates space between grid tracks without adding margins to each card."
 seo_title: "Exercise: Grid Gaps | Introduction to CSS"
-seo_description: "Practice `gap` creates space between grid tracks without adding margins to each card with a tested CSS exercise."
+seo_description: "Water, Rest stop, and Finish are already in a two-column grid. They touch because the starter has no gap. Use the event-card demo's spacing technique without changing the track definition or adding card margins."
 seo_keywords: [CSS, exercise-grid-gaps, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -13,18 +13,12 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Grid Gaps
+# Separate the trail station cards
 
-## Mission
-
-Give trail station cards space without adding individual margins.
-
-The preceding demo showed the same technique on different cards. The HTML supplies the cards; edit `style.css` for the requested change.
+Water, Rest stop, and Finish are already in a two-column grid. They touch because the starter has no gap. Use the event-card demo's spacing technique without changing the track definition or adding card margins.
 
 ## Your Tasks
 
-1. Add a `1rem` gap to `.event-grid` between the cards.
+1. In `style.css`, add `gap: 1rem` to `.event-grid`.
 
-## Checkpoint
-
-Run Preview to see the change, then Submit.
+Run Preview. There should be a 1rem space between the first two cards and another between the two rows. The outside edges of the grid should stay in place. Submit to check both directions.

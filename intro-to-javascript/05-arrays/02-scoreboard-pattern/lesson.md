@@ -4,23 +4,32 @@ slug: scoreboard-pattern
 order: 2
 language: javascript
 lesson_type: interactive
-summary: Run a worked JavaScript demo before attempting the related practical challenge.
+summary: "An array keeps related scores together. To find their average, add the values and divide by the number of values."
 seo_title: "Demo: Student Scoreboard | Introduction to JavaScript"
-seo_description: Inspect a runnable JavaScript demonstration before the practical coding challenge.
+seo_description: "An array keeps related scores together. To find their average, add the values and divide by the number of values."
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Demo: Student Scoreboard
+# Demo: student scoreboard
 
-This is the worked run before your practical challenge. An array keeps a set of related scores together. Its `length` tells you how many scores are present.
+An array keeps related scores together. To find their average, add the values and divide by the number of values.
 
 ```javascript run
-const scores = [84, 91, 76];
-const total = scores[0] + scores[1] + scores[2];
-const average = total / scores.length;
+const practiceScores = [72, 88, 80];
+const total = practiceScores[0] + practiceScores[1] + practiceScores[2];
+const average = total / practiceScores.length;
 console.log(`Average: ${average}`);
 ```
 
-## What to notice
+Run the example: the average is 80. The sum above works for exactly three values. A loop handles a list whose length may change:
 
-Run the example once, then trace the first two steps by hand. The next lesson gives you the same idea with a fresh problem to solve.
+```javascript run
+const practiceScores = [72, 88, 80];
+let total = 0;
+for (const score of practiceScores) {
+  total += score;
+}
+console.log(`Average: ${total / practiceScores.length}`);
+```
+
+`for...of` gives `score` each array value in turn, not its index. Both blocks produce the same result, but the second keeps working if a fourth score is added. The next lesson asks you to put that calculation in a function so it works on different nonempty lists.

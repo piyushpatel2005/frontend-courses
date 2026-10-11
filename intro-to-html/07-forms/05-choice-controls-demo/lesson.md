@@ -32,7 +32,9 @@ A completed form using fieldsets, legends, three checkboxes, and a one-choice ra
 <label><input type="radio" name="window" value="dawn" checked /> Dawn</label>
 ```
 
-Checkboxes are independent. Radios with the same `name` form one group.
+Checkboxes are independent. Radios in the same form with the same `name` form one group. Each choice needs a distinct `value` so the receiving service can tell the answers apart. Wrapping an input in a `<label>` connects the text without `for` and `id`.
+
+A `<fieldset>` groups related controls. Its first child, `<legend>`, names the decision the group asks the visitor to make. `checked` marks the initial selection, not a permanent lock.
 
 ## Try the preview
 
@@ -40,7 +42,7 @@ Run the demo. Turn on more than one practice mission, then choose a training win
 
 ## Checkpoint
 
-Use the preview to connect each visible result to the HTML that created it. This is a completed demonstration, so you do not need to edit the code.
+Select Flight and Shield together, then switch from Dawn to Night. Both checkboxes should stay selected; only Night should remain selected in the radio group. You can change the default by moving `checked` to Midday, Run, then restore Dawn.
 
 ## Next
 

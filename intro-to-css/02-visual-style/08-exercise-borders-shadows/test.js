@@ -1,17 +1,32 @@
-test('Give each card a visible solid border.', () => {
-  const style = getComputedStyle(document.querySelector('.card'));
-  assert.equal(style.borderStyle, 'solid', 'Set a solid border on .card.');
-  assert.equal(style.borderTopWidth, '2px', 'Use a 2px card border.');
-  assert.equal(style.borderTopColor, 'rgb(245, 158, 11)', 'Use #f59e0b for the card border.');
+// Use the real iframe's computed styles; only selector/source lessons inspect CSSOM.
+function each(selector, check) {
+  const elements = Array.from(document.querySelectorAll(selector));
+  assert.equal(elements.length > 0, true, 'Keep the supplied ' + selector + ' elements.');
+  elements.forEach(element => check(getComputedStyle(element), element));
+}
+function valueFor(property, value, target) {
+  if (property === 'display') return value;
+  const probe = document.createElement('span');
+  probe.style.cssText = 'all: initial; position: absolute; visibility: hidden;';
+  if (/^border-.*-width$/.test(property)) probe.style.borderStyle = 'solid';
+  if (target) probe.style.fontSize = getComputedStyle(target).fontSize;
+  probe.style.setProperty(property, value);
+  document.body.append(probe);
+  try { return getComputedStyle(probe).getPropertyValue(property); }
+  finally { probe.remove(); }
+}
+function expectStyle(selector, property, value) {
+  each(selector, (style, element) => assert.equal(style.getPropertyValue(property), valueFor(property, value, element), 'Set ' + selector + ' ' + property + ' to ' + value + '.'));
+}
+
+test("Both cards have amber borders on every side", () => {
+  for (const side of ['top', 'right', 'bottom', 'left']) { expectStyle('.card', 'border-' + side + '-width', '2px'); expectStyle('.card', 'border-' + side + '-style', 'solid'); expectStyle('.card', 'border-' + side + '-color', '#f59e0b'); }
 });
 
-test('Round the card corners with a one-rem radius.', () => {
-  const rule = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || [])).find(rule => rule.selectorText === '.card' && rule.style.getPropertyValue('border-radius'));
-  assert.equal(rule?.style.getPropertyValue('border-radius'), '1rem', 'Set border-radius to 1rem on .card.');
+test("Every card corner is rounded", () => {
+  for (const corner of ['top-left', 'top-right', 'bottom-left', 'bottom-right']) expectStyle('.card', 'border-' + corner + '-radius', '1rem');
 });
 
-test('Add a visible box shadow to the cards.', () => {
-  const shadow = getComputedStyle(document.querySelector('.card')).boxShadow;
-  assert.notEqual(shadow, 'none', 'Set a box-shadow on .card.');
-  assert.match(shadow, /(?:8px|0\.5rem).*?(?:16px|1rem)/, 'Use a downward 0.5rem offset and 1rem blur.');
+test("Both cards have the specified soft downward shadow", () => {
+  expectStyle('.card', 'box-shadow', '0 0.5rem 1rem rgb(120 53 15 / 20%)');
 });

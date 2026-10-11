@@ -1,6 +1,8 @@
 test("Shows the full-session message as plain text", () => {
   const message = document.querySelector("#session-message");
   assert.exists(message, "Keep #session-message");
+  message.textContent = "Checking";
+  updateSessionMessage();
   assert.equal(message.textContent.trim(), "This session is full.", "Read data-session-state and show the full state");
   assert.equal(message.children.length, 0, "Write plain text, not HTML elements");
 });

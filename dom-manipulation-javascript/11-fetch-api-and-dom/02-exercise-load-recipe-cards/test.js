@@ -1,36 +1,37 @@
-test("click shows loading while fetch is pending", async () => {
-  const original = window.mockFetch;
-  let release, requested = false;
-  window.mockFetch = url => { requested = url === "/api/recipes"; return new Promise(resolve => { release = resolve; }); };
-  try {
-    document.querySelector("#load-recipes").click();
-    assert.text(document.querySelector("#recipe-status"), "Loading recipes…");
-    assert.equal(requested, true);
-  } finally {
-    if (release) release(new Response("[]", { status: 200 }));
-    await new Promise(resolve => setTimeout(resolve, 0));
-    window.mockFetch = original;
+const $ = selector => document.querySelector(selector);
+const response = data => new Response(JSON.stringify(data), {status: 200});
+const gate = () => { let resolve, reject; const promise = new Promise((yes, no) => {resolve=yes; reject=no;}); return {promise, resolve, reject}; };
+test("prepare one detached recipe item with literal text", () => {
+  for (const title of ["<img src=x onerror=alert(1)>", "Fresh noodles"]) {
+    const item = window.makeRecipeItem({title});
+    assert.equal(item.tagName, "LI"); assert.equal(item.parentNode, null);
+    assert.equal(item.textContent, title); assert.equal(item.children.length, 0);
   }
 });
-test("JSON titles render as literal text", async () => {
-  const original = window.mockFetch;
-  let complete;
-  window.mockFetch = url => { assert.equal(url, "/api/recipes"); return new Promise(resolve => { complete = resolve; }); };
-  try {
-    document.querySelector("#load-recipes").click();
-    assert.equal(document.querySelectorAll("#recipe-list > li").length, 0, "Wait for the response");
-    complete(new Response(JSON.stringify([{title: "Lemon rice"}, {title: "<img src=x> Garden soup"}]), {status: 200}));
-    await new Promise(resolve => setTimeout(resolve, 0));
-    const items = document.querySelectorAll("#recipe-list > li");
-    assert.equal(items.length, 2);
-    assert.text(items[0], "Lemon rice");
-    assert.text(items[1], "<img src=x> Garden soup");
-    assert.equal(document.querySelectorAll("#recipe-list img").length, 0);
-  } finally { window.mockFetch = original; }
+test("replace previous rows using the recipe items", () => {
+  $("#recipe-list").innerHTML = "<li>Old</li>";
+  window.renderRecipes([{title:"<b>Soup</b>"}, {title:"Rice"}]);
+  const rows = $("#recipe-list").children;
+  assert.equal(rows.length, 2); assert.text(rows[0], "<b>Soup</b>");
+  assert.text(rows[1], "Rice"); assert.equal(rows[0].children.length, 0);
+  window.renderRecipes([]); assert.equal($("#recipe-list").children.length, 0);
 });
-test("status reports completion after rendering", async () => {
-  document.querySelector("#load-recipes").click();
-  await new Promise(resolve => setTimeout(resolve, 0));
-  assert.equal(document.querySelectorAll("#recipe-list > li").length, 2);
-  assert.text(document.querySelector("#recipe-status"), "Recipes loaded.");
+test("await the request and parse its JSON array", async () => {
+  const original = window.mockFetch, g = gate(); let url, finished = false;
+  window.mockFetch = value => {url=value; return g.promise;};
+  let work;
+  try {
+    work = window.readRecipes().then(data => {finished=true; return data;});
+    await Promise.resolve(); assert.equal(url, "/api/recipes"); assert.equal(finished, false);
+    g.resolve(response([{title:"Changed fixture"}]));
+    const data = await work; assert.equal(data[0].title, "Changed fixture");
+  } finally {g.resolve(response([])); if(work) await work; window.mockFetch=original;}
+});
+test("show the loading message", () => {
+  $("#recipe-status").textContent = "Before";
+  window.showRecipeLoading(); assert.text($("#recipe-status"), "Loading recipes…");
+});
+test("announce completion", () => {
+  $("#recipe-status").textContent = "Loading recipes…";
+  window.showRecipeDone(); assert.text($("#recipe-status"), "Recipes loaded.");
 });

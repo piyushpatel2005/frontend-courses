@@ -10,5 +10,42 @@ window.mockFetch = async function mockFetch(url) {
   throw new Error("Unknown mock scenario");
 };
 
-// TODO: On #check-alerts click, report loading, fetch the selected mode,
-// distinguish response.ok failures from an empty array, and handle rejections.
+window.showAlertLoading = function() {
+  // TODO 1
+
+};
+window.renderAlerts = function(alerts) {
+  const list = document.querySelector("#alert-list");
+  list.replaceChildren();
+  // TODO 2
+
+};
+window.showEmptyAlerts = function() {
+  // TODO 3
+
+};
+window.checkAlertResponse = function(response) {
+  // TODO 4
+
+};
+window.showAlertFailure = function() {
+  // TODO 5
+
+};
+window.loadAlerts = async function() {
+  window.showAlertLoading();
+  try {
+    const mode = document.querySelector("#alert-mode").value;
+    const response = await window.mockFetch(`/api/alerts?mode=${encodeURIComponent(mode)}`);
+    window.checkAlertResponse(response);
+    const alerts = await response.json();
+    window.renderAlerts(alerts);
+    if (alerts.length === 0) window.showEmptyAlerts();
+    else document.querySelector("#alert-status").textContent = "Alerts loaded.";
+  } catch (error) {
+    window.showAlertFailure();
+  }
+};
+document.querySelector("#check-alerts").addEventListener("click", () => {
+  window.lastLoad = window.loadAlerts();
+});

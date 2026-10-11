@@ -8,31 +8,32 @@ validationRules: []
 hints:
   - "Store the function in a const variable."
   - "Return the greeting text from the function expression the same way you would from a normal function."
-summary: Practice function expressions with a focused Starline Awards programming mission.
+summary: "A welcome helper can be stored in a variable using the `function` keyword too. You saw an unnamed function returned from a closure; here you will assign one directly."
 seo_title: Function Expressions | Introduction to JavaScript
-seo_description: Learn function expressions through a focused JavaScript programming mission and console-based practice.
+seo_description: "A welcome helper can be stored in a variable using the `function` keyword too. You saw an unnamed function returned from a closure; here you will assign one directly."
 seo_keywords: javascript, function expressions, beginner javascript, programming practice
 ---
 
-# Function Expressions
+# Function expressions
 
-## Mission: Backstage Toolkit
+A welcome helper can be stored in a variable using the `function` keyword too. You saw an unnamed function returned from a closure; here you will assign one directly.
 
-A welcome helper can also be stored in a variable as a function expression. Call it from `script.js` and check the Console for the greeting.
-
-Not every function is declared with the function name() form. Function expressions are common in callbacks and assigned helpers, so beginners should practice that syntax too.
-
-## Example
-
-```javascript
+```javascript run
 const formatParcel = function (recipient, zone) {
-  return `${recipient} — zone ${zone}`;
+  return `${recipient} - zone ${zone}`;
 };
-
 console.log(formatParcel("Mina", "B"));
 ```
 
+This is a **function expression**: the function is the value on the right of `=`. `formatParcel` is the variable used to call it. As with an arrow assigned to `const`, initialize the variable before calling it.
+
+A declaration such as `function formatParcel(...) { ... }` names the function directly. Both forms can accept parameters and return values. The expression above uses braces, so it needs `return`; it does not have the arrow shorthand's automatic expression return.
+
+Run the parcel example. Then complete the supplied welcome expression for student names without changing the two jobs: return a string first, print a call's result afterward.
+
 ## Your Tasks
 
-1. Assign a function expression to `greetStudent` returning `Welcome, <name>!`.
-2. Log `Welcome, Maya!` from a call to that function.
+1. Complete the function expression assigned to `greetStudent` so it returns `Welcome, <name>!`.
+2. Log `Welcome, Maya!` by calling `greetStudent("Maya")`.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

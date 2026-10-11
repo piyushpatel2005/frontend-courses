@@ -19,10 +19,14 @@ hints:
 
 # Pseudo-elements: a note in the margin
 
-The Moonlit Book Cart puts a decorative opening quote before its featured reader note. The quote is presentation, not part of the note text in `index.html`.
+The Moonlit Book Cart adds a decorative opening quote to a reader note. The note itself stays in `index.html`; the decoration comes from CSS.
 
-In `style.css`, `.card:first-child::before` selects a generated piece *before the content* of the first card. `content: "“"` creates it; without `content`, `::before` has nothing to display. The gold `color` makes the new mark easy to spot. The second card stays unmarked.
+A **pseudo-class** such as `:first-child` chooses an existing element by a condition. A **pseudo-element** such as `::before` lets you style a piece associated with that element. Notice the two colons.
 
-**Checkpoint:** one gold opening quote appears on the first dark card, not on the second.
+![The first-child condition selects the first card, then before adds a decorative piece before that card's text.](pseudo-element-pieces.svg)
 
-Change the quote's `color` to another visible color and run Preview; restore `#fbbf24` before the exercise.
+Read `.card:first-child::before` in parts: find a card that is its parent's first element child, then style the generated piece before its content. `content: "“"` supplies the opening quote. Without `content`, this `::before` decoration is not generated. Its `color` styles the quote, not the whole card.
+
+Keep essential words, labels, and instructions in HTML. Generated content is not a dependable substitute for accessible text, and a decorative quote should not carry information that the note needs to make sense.
+
+Run the preview. Only the first card has a gold quote. In `style.css`, change `::before` to `::after` and run again: the mark moves after the note. Restore `::before`, then try changing its color. Restore `#fbbf24` before the exercise.

@@ -1,19 +1,11 @@
-test("Step 1: Countdown one: 1", () => {
-  assert.match(OUTPUT, /^Countdown\ one:\ 1$/m, "Log Countdown one: 1 as a complete Console line");
+test("Step 1: Countdowns", () => {
+  assert.match(OUTPUT, /^Countdowns:\ 3,2,1\ \|\ 1\ \|\ \[\]$/m, "Expected the complete Console line: Countdowns: 3,2,1 | 1 | []");
 });
 
-test("Step 2: Collatz one: 0", () => {
-  assert.match(OUTPUT, /^Collatz\ one:\ 0$/m, "Log Collatz one: 0 as a complete Console line");
+test("Step 2: Collatz steps", () => {
+  assert.match(OUTPUT, /^Collatz\ steps:\ 0,1,8$/m, "Expected the complete Console line: Collatz steps: 0,1,8");
 });
 
-test("Step 3: Countdown three: 3,2,1", () => {
-  assert.match(OUTPUT, /^Countdown\ three:\ 3,2,1$/m, "Log Countdown three: 3,2,1 as a complete Console line");
-});
-
-test("Step 4: Collatz six: 8", () => {
-  assert.match(OUTPUT, /^Collatz\ six:\ 8$/m, "Log Collatz six: 8 as a complete Console line");
-});
-
-test("Step 5: Countdown from 5: 5,4,3,2,1", () => {
-  assert.match(OUTPUT, /^Countdown\ from\ 5:\ 5,4,3,2,1$/m, "Log Countdown from 5: 5,4,3,2,1 as a complete Console line");
+test("Step 3: Countdown from 5", () => {
+  assert.match(OUTPUT, /^Countdown\ from\ 5:\ 5,4,3,2,1$/m, "Expected the complete Console line: Countdown from 5: 5,4,3,2,1");
 });

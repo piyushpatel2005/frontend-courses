@@ -1,1 +1,5 @@
-// Create the next book in JavaScript. Keep the existing HTML list item.
+function makeBook(title) {
+  // Task 1: add your code here.
+}
+// Task 2: add your code here.
+window.makeBook = makeBook;

@@ -17,33 +17,17 @@ hints:
 - insertBefore(newItem, closingItem) is called on the parent list.
 ---
 
-# Exercise: Order the Workshop Agenda
+# Put the workshop agenda in order
 
-The workshop agenda already lists a break and a closing session. Add an opening session first and a discussion immediately before the closing session. Keep the original items.
+The workshop agenda has Break and Closing already. Add Welcome at the beginning and Questions immediately before Closing. The existing list is setup, not something you need to recreate.
 
-## How it works
+Edit `script.js`. The supplied `agenda` variable refers to `#agenda`. Create each new `li`, give it plain text with `textContent`, then insert it at the requested position. The first insertion does not depend on the second.
 
-Look at this separate playlist example: `prepend` puts the intro before every song, while `insertBefore` uses the existing outro as an anchor. For your agenda, use the agenda list as the parent and its closing item as the anchor; inserting before the wrong parent produces a DOM error. Set each new label with `textContent`, just as in the earlier safe-text lesson.
-
-```javascript
-// Different example: a playlist, not your agenda.
-const intro = document.createElement("li");
-intro.textContent = "Intro track";
-playlist.prepend(intro);
-const interlude = document.createElement("li");
-interlude.textContent = "Interlude";
-playlist.insertBefore(interlude, document.querySelector("#outro"));
-```
-
-## Try the preview
-
-Run the preview and read the agenda in order: Welcome, Break, Questions, Closing. If Questions lands last, pass `#closing` as the second argument to `insertBefore`.
-
-## Remember
-
-Compare this with append: the parent is still `#agenda`, but the order now comes from *which insertion method* and, for `insertBefore`, which child you use as an anchor.
+In the trail demo, `insertBefore` used Sunday's entry as an anchor. Here use `#closing`, and call the method on its parent, `agenda`.
 
 ## Your Tasks
 
-1. Create an `li` with text `Welcome` and prepend it to `#agenda`.
-2. Create another `li` with text `Questions` and insert it immediately before `#closing` using `insertBefore`.
+1. Insert a new `li` labeled `Welcome` at the start of `#agenda` with `prepend`.
+2. Insert a new `li` labeled `Questions` immediately before `#closing` with `insertBefore`.
+
+After step 1, Run should show Welcome, Break, Closing. After step 2, it should show Welcome, Break, Questions, Closing. Submit after either step to check your progress. Leave the original two items intact.

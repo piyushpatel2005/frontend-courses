@@ -1,21 +1,36 @@
-test("ticket has a navy surface", () => {
-  const ticket = document.querySelector(".ticket");
-  assert.equal(getComputedStyle(ticket).backgroundColor, "rgb(23, 37, 84)", "Set .ticket background-color to #172554.");
+// Use the real iframe's computed styles; only selector/source lessons inspect CSSOM.
+function each(selector, check) {
+  const elements = Array.from(document.querySelectorAll(selector));
+  assert.equal(elements.length > 0, true, 'Keep the supplied ' + selector + ' elements.');
+  elements.forEach(element => check(getComputedStyle(element), element));
+}
+function valueFor(property, value, target) {
+  if (property === 'display') return value;
+  const probe = document.createElement('span');
+  probe.style.cssText = 'all: initial; position: absolute; visibility: hidden;';
+  if (/^border-.*-width$/.test(property)) probe.style.borderStyle = 'solid';
+  if (target) probe.style.fontSize = getComputedStyle(target).fontSize;
+  probe.style.setProperty(property, value);
+  document.body.append(probe);
+  try { return getComputedStyle(probe).getPropertyValue(property); }
+  finally { probe.remove(); }
+}
+function expectStyle(selector, property, value) {
+  each(selector, (style, element) => assert.equal(style.getPropertyValue(property), valueFor(property, value, element), 'Set ' + selector + ' ' + property + ' to ' + value + '.'));
+}
+
+test("Ticket has a navy surface", () => {
+  expectStyle('.ticket', 'background-color', '#172554');
 });
 
-test("heading is cream", () => {
-  const heading = document.querySelector("h1");
-  assert.equal(getComputedStyle(heading).color, "rgb(255, 247, 237)", "Set h1 color to #fff7ed.");
+test("Heading text is cream", () => {
+  expectStyle('h1', 'color', '#fff7ed');
 });
 
-test("entry badge has a coral background", () => {
-  const entry = document.querySelector(".entry");
-  const styles = getComputedStyle(entry);
-  assert.equal(styles.backgroundColor, "rgb(251, 113, 133)", "Set .entry background-color to #fb7185.");
+test("Entry badge has a coral surface", () => {
+  expectStyle('.entry', 'background-color', '#fb7185');
 });
 
-test("entry badge has readable navy text", () => {
-  const entry = document.querySelector(".entry");
-  const styles = getComputedStyle(entry);
-  assert.equal(styles.color, "rgb(23, 37, 84)", "Set .entry color to #172554.");
+test("Entry badge text is navy", () => {
+  expectStyle('.entry', 'color', '#172554');
 });

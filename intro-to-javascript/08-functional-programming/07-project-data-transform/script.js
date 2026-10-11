@@ -7,24 +7,16 @@ const inventory = [
   { id: 6, name: "Monitor",    category: "Electronics", price: 549,  stock: 6  }
 ];
 
-// TODO 1: inStockItems - items with stock > 0
 const inStockItems = [];
-
-// TODO 2: expensiveItems - names of items with price >= 300, sorted by price desc
 const expensiveItems = [];
+function totalValue(items) {  }
+function byCategory(items) {  }
 
-// TODO 3: totalValue(items) - sum of price * stock for all items
-function totalValue(items) {
 
-}
 
-// TODO 4: byCategory(items) - group items by category
-function byCategory(items) {
 
-}
-
+// Supplied checkpoints. Do not replace them with fixed answers.
 console.log(`CHECK stock: ${inStockItems.map(i => i.name).join(",")}`);
 console.log(`CHECK expensive: ${expensiveItems.join(",")}`);
-console.log(`CHECK value: ${totalValue(inventory)}`);
-console.log(`CHECK categories: Electronics=${byCategory(inventory)?.Electronics?.length} | Furniture=${byCategory(inventory)?.Furniture?.length}`);
-// Log the three-line human-readable report after completing the computations.
+console.log(`CHECK value: ${totalValue(inventory)} | empty: ${totalValue([])}`);
+console.log(`CHECK categories: ${byCategory(inventory)?.Electronics?.map(i => i.name).join(",")} | ${byCategory(inventory)?.Furniture?.map(i => i.name).join(",")}`);

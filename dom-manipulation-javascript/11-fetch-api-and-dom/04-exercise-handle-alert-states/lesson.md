@@ -13,32 +13,18 @@ seo_keywords: HTTP error, network error, loading state
 
 # Exercise: handle alert states
 
-A trail-alert board must say whether there are alerts or a request failed. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+The trail board must distinguish no alerts from a failed lookup. Its selector chooses fixed local scenarios; these are not current trail conditions.
 
-The previous library demo separated three outcomes: a nonempty array, an empty array, and a failed request. Here the selectable alert fixture also supports HTTP 503 and a rejected Promise. The values are deterministic local examples, not the current conditions on any trail.
+`loadAlerts()` already owns the request, JSON parsing, and `try/catch`. A thrown error skips the remaining `try` statements and reaches `catch`. The empty helper runs only after a successful empty array. Keep status messages separate from the loop that creates rows.
 
-An unrelated shipping-status viewer could start like this:
-
-```javascript
-async function checkShipment() {
-  message.textContent = "Checking…";
-  try {
-    const response = await mockFetch("/api/shipment");
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const events = await response.json();
-    message.textContent = events.length ? "Events found." : "No events yet.";
-  } catch (error) {
-    message.textContent = `Unable to check: ${error.message}`;
-  }
-}
-```
-
-For the alert board, choose a scenario and click **Check alerts**. Read the status before and after the asynchronous result. Build alert items with `textContent`; use the status to distinguish “no alerts” from “could not check.” `response.ok` is required even though the mock returns a Response, because a Response with 503 is still delivered successfully to JavaScript.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. On click, immediately show `Checking alerts…` and start `mockFetch` for the selected mode.
-2. For a successful nonempty response, await JSON and render each title as text-only `li` elements.
-3. For a successful empty response, clear earlier alerts and say `No alerts right now.`.
-4. Check `response.ok` before JSON; on an HTTP failure clear old alerts and say `Could not load alerts.`.
-5. Handle a rejected network request with the same cleared list and error status.
+1. Show `Checking alerts…` in `showAlertLoading()`.
+2. Complete `renderAlerts(alerts)` by appending one text-only `li` per title; clearing the list is supplied.
+3. Make `showEmptyAlerts()` announce `No alerts right now.`.
+4. Make `checkAlertResponse(response)` throw an Error when `response.ok` is false, before the supplied loader reads JSON.
+5. Make `showAlertFailure()` clear the list and announce `Could not load alerts.`. The supplied catch calls it for a rejected request or a thrown HTTP error.
+
+Try Alerts, Empty, HTTP error, and Network failure. A 503 Response is a delivered HTTP failure; a network rejection has no Response. Both end in the error state. The supplied loader announces `Alerts loaded.` after a nonempty success.

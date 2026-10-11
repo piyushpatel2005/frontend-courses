@@ -13,12 +13,16 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Supply labels: completed layout
+# Let supply cards move to another line
 
-Let supply cards move onto another line when space runs out. This completed preview shows the layout before you edit the next exercise.
+A flex container uses `nowrap` by default. Its items try to fit one line, often shrinking as the row gets narrower. `flex-wrap: wrap` on `.supply-row` lets the browser start another line instead.
 
-In `style.css`, `.supply-row` controls the section. flex-wrap: wrap allows another row. The flex shorthand on each card sets grow, shrink, and a 9rem starting width; compare the cards at narrow and wide preview widths.
+Wrapping and item sizing are separate decisions. This example puts `flex: 1 1 9rem` on `.card`, because `flex` describes each item rather than the container. The three values mean:
 
-**Checkpoint:** inspect the card positions in Preview and locate `flex-wrap: wrap` in the stylesheet.
+- `flex-grow: 1`: the card can take a share of spare room on its line. These cards have equal grow values, so they receive equal shares.
+- `flex-shrink: 1`: the card may shrink when a line is too small, subject to its content's minimum size.
+- `flex-basis: 9rem`: start the sizing calculation from a 9rem main-axis size. This is not a fixed final width.
 
-Change `flex-wrap` temporarily to `nowrap`, run Preview, and compare the positions. Restore `wrap` before moving to the exercise.
+The supplied cards use the default content-box sizing, so their padding is added outside that basis. The gaps also take space. That is why three cards may need another line even when three lots of 9rem seem to fit.
+
+Run Preview at a wide and a narrow width. Each line shares its own free space: a card alone on the last line grows across that line. Temporarily change `wrap` to `nowrap` and notice the cards squeeze onto one line. Restore `wrap`, then try a 6rem basis to see more cards fit. Restore `9rem` afterward.

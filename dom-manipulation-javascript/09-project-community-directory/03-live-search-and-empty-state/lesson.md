@@ -26,3 +26,5 @@ A bicycle-route index filters as someone types, without destroying any routes. I
 The `input` event fires on every edit. The handler trims and lowercases the query, compares it with each route’s `data-keywords`, then toggles `hidden`. Counting the visible routes gives the status message; zero also unhides the empty-state message. The CSS `[hidden]` rule ensures those cards stay out of the preview even though `.cards li` has display styling.
 
 Run it. Type `hill`, then an impossible route, then clear the search: all three original route nodes return. Change the query to uppercase to see why lowercasing both sides matters. The next exercise applies the same idea to member names *and* skills, retaining the selection code from step one.
+
+A blank or spaces-only query restores every route. The empty paragraph describes zero matches, not an empty source list: clearing the field is enough to recover the original routes.

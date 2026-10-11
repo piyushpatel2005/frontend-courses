@@ -15,35 +15,23 @@ hints:
   - "This is a completed demo. Run the preview, then read the matching code."
 ---
 
-# Heading Hierarchy Demo: H1 and H2
+# Heading hierarchy: a page outline
 
-## Mission
-
-Aboard the survey vessel Meridian, the crew is using Beacon Sight. The signal brief needs a title and two major mission sections that a rescuer can scan instantly.
-
-## What you'll see
-
-A completed signal brief with one main heading (`<h1>`) and two section headings (`<h2>`).
-
-## Read the code
+The Meridian signal brief has one page title and two sections. Run the completed demo and match its `<h1>` and `<h2>` tags to the headings in the preview.
 
 ```html
 <h1>Meridian's Signal Brief</h1>
 <h2>Power online: Beacon sight</h2>
-<p>the Meridian crew can now spot a rescue signal above the city skyline.</p>
+<p>The crew can spot a rescue signal above the city skyline.</p>
 <h2>Next mission</h2>
 ```
 
-`<h1>` names the whole page. Each `<h2>` starts a major section under that title.
+Use `<h1>` for this page's main heading and `<h2>` for each major section. HTML has six heading levels, `<h1>` through `<h6>`. Each higher number represents a deeper subsection, not a request for a particular font size.
 
-## Try the preview
+For example, a field guide might have `<h2>Forest</h2>`, then `<h3>Birds</h3>`, then `<h4>Owls</h4>`. These headings are siblings in the HTML source, but their levels express an outline. Do not put one heading element inside another.
 
-Run the page. The mission title is the largest heading; each system or mission section is a smaller, clearly separate heading.
+## Compare in the preview
 
-## Checkpoint
+In the editor, change the first `<h2>` to `<h3>` in both its opening and closing tags. Run again, observe the default size change, then restore it. Choose heading levels for their place in the outline; CSS can change their size later.
 
-Use the preview to connect each visible result to the HTML that created it. Try changing one `<h2>` to `<h3>`, rerun the preview to compare its size and place in the outline, then restore it.
-
-## Next
-
-Continue to **Exercise: Extend the Signal Brief**. You will recreate the same idea from a smaller starter file.
+The next exercise explores all six levels with a new signal. Real pages rarely need all six; use only the depth your content needs.

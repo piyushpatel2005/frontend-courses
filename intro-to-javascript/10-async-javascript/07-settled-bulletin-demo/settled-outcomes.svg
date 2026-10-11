@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="425" viewBox="0 0 900 425" role="img" aria-labelledby="title desc">
+<title id="title">All Outcomes Keep Their Input Positions</title><desc id="desc">Input sound fulfills, lights fulfills, signage rejects. allSettled retains all three statuses.</desc>
+<rect width="900" height="425" rx="16" fill="#fffbf5"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10Z" fill="#1e293b"/></marker></defs>
+<text x="450" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#1e293b">All Outcomes Keep Their Input Positions</text>
+<rect x="40" y="90" width="230" height="75" rx="12" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+<text x="155.0" y="134.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">sound</text>
+<rect x="335" y="90" width="230" height="75" rx="12" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+<text x="450.0" y="134.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">lights</text>
+<rect x="630" y="90" width="230" height="75" rx="12" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+<text x="745.0" y="134.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">signage</text>
+<rect x="40" y="230" width="230" height="100" rx="12" fill="#99f6e4" stroke="#1e293b" stroke-width="2"/>
+<text x="155.0" y="273.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">fulfilled</text>
+<text x="155.0" y="300.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">value: sound</text>
+<rect x="335" y="230" width="230" height="100" rx="12" fill="#99f6e4" stroke="#1e293b" stroke-width="2"/>
+<text x="450.0" y="273.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">fulfilled</text>
+<text x="450.0" y="300.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">value: lights</text>
+<rect x="630" y="230" width="230" height="100" rx="12" fill="#fed7aa" stroke="#1e293b" stroke-width="2"/>
+<text x="745.0" y="273.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">rejected</text>
+<text x="745.0" y="300.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">reason: Error</text>
+<path d="M155 165 L155 230" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M450 165 L450 230" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M745 165 L745 230" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="450" y="385" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#1e293b">Read value only for fulfilled outcomes; read reason for rejected outcomes.</text>
+</svg>

@@ -1,29 +1,78 @@
+// Step 1
+
 function add(a, b) { return a + b; }
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Add: ${add(3,4)},${add(-2,2)},${add(0,5)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
 function subtract(a, b) { return a - b; }
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Subtract: ${subtract(10,4)},${subtract(2,5)}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
 function multiply(a, b) { return a * b; }
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Multiply: ${multiply(3,5)},${multiply(0,8)},${multiply(-2,3)}`);
+} catch (error) {
+  console.log("Step 3 pending");
+}
+
+// Step 4
+
 function divide(a, b) {
   if (b === 0) return null;
   return a / b;
 }
 
-function calculate(a, op, b) {
-  switch (op) {
-    case "+": return add(a, b);
-    case "-": return subtract(a, b);
-    case "*": return multiply(a, b);
-    case "/": return divide(a, b);
-    default:  return null;
-  }
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Divide: ${divide(10,2)},${divide(8,0)},${divide(0,2)},${divide(3,2)}`);
+} catch (error) {
+  console.log("Step 4 pending");
 }
 
-const res = calculate(10, "+", 5);
-console.log(`10 + 5 = ${res}`);
+// Step 5
 
-const divResult = calculate(8, "/", 0);
-console.log(`8 / 0 = ${divResult === null ? "Error: Division by zero" : divResult}`);
+function calculate(a, op, b) {
+  if (op === "+") return add(a,b);
+  if (op === "-") return subtract(a,b);
+  if (op === "*") return multiply(a,b);
+  if (op === "/") return divide(a,b);
+  return null;
+}
 
-console.log(`Add 3,4: ${add(3,4)}`);
-console.log(`Subtract 10,4: ${subtract(10,4)}`);
-console.log(`Multiply 3,5: ${multiply(3,5)}`);
-console.log(`Divide cases: ${divide(10,2)},${divide(8,0)}`);
-console.log(`Calculate cases: ${calculate(10,"+",5)},${calculate(10,"-",3)},${calculate(6,"*",7)},${calculate(9,"/",3)},${calculate(8,"/",0)},${calculate(1,"%",1)}`);
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Calculate: ${calculate(10,"+",5)},${calculate(10,"-",3)},${calculate(6,"*",7)},${calculate(9,"/",3)},${calculate(8,"/",0)},${calculate(1,"%",1)}`);
+} catch (error) {
+  console.log("Step 5 pending");
+}
+
+// Step 6
+
+console.log(`10 + 5 = ${calculate(10,"+",5)}`);
+
+// Step 7
+
+const result = calculate(8,"/",0);
+if (result === null) console.log("8 / 0 = Error: Division by zero");
+else console.log(`8 / 0 = ${result}`);

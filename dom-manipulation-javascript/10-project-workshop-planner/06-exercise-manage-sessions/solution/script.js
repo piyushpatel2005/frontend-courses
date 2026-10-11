@@ -2,13 +2,20 @@ const sessions = [
   { title: "Screen printing basics", time: "09:00", track: "Art" },
   { title: "Repair café", time: "11:00", track: "Making" }
 ];
+window.workshopSessions = sessions; // Preview checks can try temporary data without changing the seed.
 const sessionList = document.querySelector("#sessions");
 const updateButton = document.querySelector("#update-session");
+function createSessionRow(session) {
+  const item = document.createElement("li");
+  item.dataset.title = session.title;
+  item.textContent = `${session.time} — ${session.title} (${session.track})`;
+  return item;
+}
 function renderSessions() {
   sessionList.replaceChildren();
   for (const session of sessions) {
-    const item = document.createElement("li");
-    item.textContent = `${session.time} — ${session.title} (${session.track})`;
+    const item = createSessionRow(session);
+    if (!item) continue;
     const remove = document.createElement("button");
     remove.type = "button";
     remove.className = "remove-session";
@@ -54,7 +61,7 @@ function filterSessions() {
   const term = query.value.trim().toLowerCase();
   let shown = 0;
   for (const item of sessionList.children) {
-    item.hidden = !item.firstChild.textContent.toLowerCase().includes(term);
+    item.hidden = !item.dataset.title.toLowerCase().includes(term);
     if (!item.hidden) shown += 1;
   }
   count.textContent = `${shown} sessions shown`;
@@ -68,6 +75,7 @@ sessionList.addEventListener("click", (event) => {
   if (index < 0) return;
   const removed = sessions.splice(index, 1)[0];
   renderSessions();
-  status.textContent = `Removed ${removed.title}. ${count.textContent}.`;
+  status.textContent = `Removed ${removed.title}.`;
+  query.focus();
 });
 renderSessions();

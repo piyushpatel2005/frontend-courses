@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "11\n6"
+    }
+  ]
+}

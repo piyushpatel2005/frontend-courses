@@ -5,9 +5,10 @@ order: 3
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Read, set, and remove attributes on a link without losing its accessible label.
+summary: Read a link destination, change its attributes, and remove an old marker.
 seo_title: Read and change link attributes | DOM Manipulation with JavaScript
-seo_description: Learn getAttribute, setAttribute, and removeAttribute through a runnable browser preview.
+seo_description: Read a link destination, change its attributes, and remove an old
+  marker.
 seo_keywords:
 - JavaScript DOM
 - getAttribute, setAttribute, and removeAttribute
@@ -15,30 +16,24 @@ seo_keywords:
 - demo
 ---
 
-# Read and change link attributes
+The trail-map link starts with `href="#"`. Change its destination, read back the result, and remove a marker that is no longer needed.
 
-A neighbourhood guide has a link that starts as a placeholder. Give the link a real destination and a meaningful accessible label, then remove a no-longer-needed marker.
-
-## What the code does
-
-`getAttribute(name)` returns the stored attribute string or `null` when absent. `setAttribute(name, value)` creates or replaces an attribute. `removeAttribute(name)` deletes it. An anchor needs a real `href`; its visible wording should identify the destination. `aria-label` is useful when the visible label is too short, but it should also name the destination clearly. Never replace a descriptive visible label with vague “click here.”
-
-In `script.js`, this is the important part of the already-working preview:
+An **attribute** is a named value on an HTML element. `getAttribute(name)` reads its stored string, or returns `null` if it is absent. `setAttribute(name, value)` writes it; `removeAttribute(name)` removes it entirely.
 
 ```javascript
 const trailLink = document.querySelector("#trail-link");
-const linkStatus = document.querySelector("#link-status");
 const previousDestination = trailLink.getAttribute("href");
-trailLink.setAttribute("href", "https://example.org/trails");
-trailLink.setAttribute("aria-label", "Explore the local trail map");
+trailLink.setAttribute(
+  "href", "https://example.org/trails"
+);
+trailLink.setAttribute(
+  "aria-label", "Explore the local trail map"
+);
 trailLink.removeAttribute("data-placeholder");
-linkStatus.textContent = `Link moved from ${previousDestination} to ${trailLink.getAttribute("href")}`;
 ```
 
-## Try it in the preview
+The completed script displays the old and new destinations below the link. `aria-label` supplies an accessible name, overriding the link text for assistive technology. Usually descriptive visible text is enough; when you add an accessible name, keep the visible wording in it so the names agree.
 
-The status reports the old `#` and new address. Inspect the link: its destination and `aria-label` changed; `data-placeholder` is gone. Change the final address, Run, then restore it. You do not need to navigate away.
+Attributes and JavaScript properties are related but not interchangeable. `link.getAttribute("href")` reads the stored address, while `link.href` can return an absolute address resolved by the browser. Later you will compare a checkbox's default attribute with its current property.
 
-Recall the three attribute actions: `getAttribute` reads (or returns `null`), `setAttribute` writes, and `removeAttribute` deletes.
-
-The next lesson gives you a different page to build from a starter.
+Run and read the status. The address uses `example.org` as an illustrative destination; this lesson does not need a working remote page. Change the path, Run to see the new status, then restore it. Do not follow the link.

@@ -18,16 +18,18 @@ hints:
   - An absolutely positioned child uses the nearest positioned ancestor.
 ---
 
-# Positioning: pickup pin
+# Attach a pin to the map card
 
-The seed swap map card needs a small “Today” pin that stays in its upper-right corner. The completed styles create a positioning context on the card and then place the pin inside it.
+The “Today” pin belongs in the library card's upper-right corner. Normal flow lays out elements in document order. Absolute positioning lets this small label leave that flow and sit over the card instead.
 
-## Read the anchor
+`.map-card { position: relative; }` keeps the card in its normal place while making it a reference for its absolutely positioned child. `.pickup-pin { position: absolute; }` removes the pin's reserved space. The text no longer moves down to make room for it.
 
-`.map-card` has `position: relative`, which makes it the reference box. `.pickup-pin` has `position: absolute` with `top` and `right` offsets, so it leaves normal flow and hugs that corner.
+`top: 12px` and `right: 12px` place the pin's edges 12px from the card's inner border edges. Here the card is the nearest positioned ancestor and supplies the pin's containing block. Without that reference, the pin could appear away from the card.
 
-**Checkpoint:** the orange pin appears over the upper-right edge of the map card.
+![A relative card supplies the reference for an absolute pin inset from its top and right inner border edges.](positioned-pickup-pin.svg)
 
-## Try it safely
+Absolute positioning can overlap text because it reserves no space. The card's padding keeps the pin clear of the main heading here. Use it for a small corner label, not as a replacement for page-layout tools.
 
-Change `.pickup-pin` `right` from `12px` to `48px`, preview the move, then restore `12px`. Continue to the exercise when the pin is back at the corner.
+## Move the pin
+
+Run. Change `right` from `12px` to `48px`, then Run again: the pin moves left, farther from the right edge. Restore `12px`. The heading does not move with it.

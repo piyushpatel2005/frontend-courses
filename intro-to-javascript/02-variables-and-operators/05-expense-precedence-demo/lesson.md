@@ -4,9 +4,9 @@ slug: expense-precedence-demo
 order: 5
 language: javascript
 lesson_type: interactive
-summary: Convert numeric text and group a per-unit fee before multiplying.
+summary: "Convert text prices and separate repeated charges from a one-time fee."
 seo_title: Group and Convert Expense Inputs | JavaScript Console Practice
-seo_description: Run a worked expense total with Number conversion, parentheses, and a one-time charge.
+seo_description: "Convert text prices and separate repeated charges from a one-time fee."
 seo_keywords: javascript expense total, Number conversion, operator precedence
 ---
 
@@ -32,4 +32,4 @@ console.log("nightly:", nightlyRate + cleaningPerNight);
 console.log("total:", total);
 ```
 
-The parentheses matter: without them, only cleaning is multiplied. In the next exercise, apply this model to a different expense report.
+The corrected block prints `nightly: 45` before `total: 93`, so you can check the per-night amount separately from the whole bill. The parentheses matter: without them, only cleaning is multiplied. The booking fee stays outside the grouped product because it is paid once. In the next exercise, apply this model to a different expense report.

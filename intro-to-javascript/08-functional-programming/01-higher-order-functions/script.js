@@ -1,6 +1,7 @@
 function makeMultiplier(multiplier) {
-  // Return a function that multiplies value by multiplier.
+  // Return a multiplying function.
 }
+// Add the standalone product here.
 
+// Supplied checkpoints. Do not replace them with fixed answers.
 console.log(`CHECK multiplier: ${makeMultiplier(3)?.(7)} | ${makeMultiplier(4)?.(5)}`);
-// Log the result of makeMultiplier(3)(7) on its own line.

@@ -52,8 +52,8 @@ async function loadDashboard() {
 
 globalThis.loadDashboard = loadDashboard;
 async function reportDashboard() {
-  const data = await loadDashboard();
+  const data = await globalThis.loadDashboard();
   console.log(`${data.userName} | posts: ${data.postCount} | unread: ${data.unreadCount}`);
 }
 globalThis.reportDashboard = reportDashboard;
-reportDashboard();
+globalThis.initialDashboard = reportDashboard().catch(error => console.log(`Work incomplete: ${error.message}`));

@@ -4,9 +4,9 @@ slug: library-checkout
 order: 10
 language: javascript
 lesson_type: coding
-summary: Build a small library checkout model with inheritance and private loan state.
+summary: "Build a library model using the equipment desk's pattern. `LibraryItem` owns the title and private loan status. `Book` adds an author and a description while inheriting the loan rules."
 seo_title: "Library Checkout OOP Project | Introduction to JavaScript"
-seo_description: Practice JavaScript classes, extends, super, and private fields in a console-only library project.
+seo_description: "Build a library model using the equipment desk's pattern. `LibraryItem` owns the title and private loan status. `Book` adds an author and a description while inheriting the loan rules."
 seo_keywords: javascript, oop project, inheritance, private fields, library checkout
 hints:
   - "Call super(title) before assigning the book author."
@@ -16,9 +16,11 @@ hints:
 
 # Project: Library Checkout
 
-The equipment desk demo showed guarded checkout behavior inherited by a specialized class. The private field still belongs to the base class and cannot be read directly by the child. Now build a library checkout system from scratch in `script.js`. Books record authors and describe their own availability. All results go to the Console, not a page element.
+Build a library model using the equipment desk's pattern. `LibraryItem` owns the title and private loan status. `Book` adds an author and a description while inheriting the loan rules.
 
-`LibraryItem` owns the private status; `Book` inherits checkout and return behavior. The checkpoints make it possible to inspect transitions after each operation. Do not expose the private field directly or write `book.#checkedOut` outside the class.
+The class structure and probes are supplied; complete one behavior at a time in `script.js`. `Book` cannot directly read `#checkedOut`, even though it inherits from `LibraryItem`. Read the inherited `available` getter instead. A new book is available, a successful checkout makes it unavailable, and a successful return restores availability.
+
+The description should work in either state and use the instance's title and author, not a fixed sentence. The probes follow both state transitions before asking for the final description.
 
 ## Worked example
 
@@ -35,16 +37,16 @@ lamp.switchOn();
 console.log(lamp.isOn); // true
 ```
 
+Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.
+
 ## Your Tasks
 
-1. Store the title in the `LibraryItem` constructor. The starter checks its title.
-2. Implement the `available` getter using the initial private `#checkedOut` state. The starter checks a new item.
-3. Store the author in `Book` while inheriting from `LibraryItem`. The starter checks the author.
-4. Implement `checkout()` to mark an available book on loan and return `true`. The starter checks the result and availability.
-5. Make a second checkout return `false` without changing availability. The starter checks the repeated call.
-6. Implement `returnItem()` to restore availability and return `true`. The starter checks the result.
-7. Make a repeated return yield `false`. The starter checks the repeated call.
-8. Implement `Book.describe()` to return `River Atlas by N. Vale — available` after the return. The starter logs it.
+1. Store `title` in the `LibraryItem` constructor.
+2. Return the opposite of private `#checkedOut` from the `available` getter.
+3. Store `author` in `Book` after the supplied `super(title)` call.
+4. Implement `checkout()` to return `false` if already on loan; otherwise mark the item on loan and return `true`.
+5. Implement `returnItem()` to return `false` if already available; otherwise restore availability and return `true`.
+6. Implement `Book.describe()` as `Title by Author — available` or `Title by Author — on loan`, using its public availability getter.
 
 ## Section complete
 

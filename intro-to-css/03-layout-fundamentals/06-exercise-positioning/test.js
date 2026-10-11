@@ -1,17 +1,36 @@
-test("map card is the positioning reference", () => {
-  assert.equal(getComputedStyle(document.querySelector(".map-card")).position, "relative", "Set .map-card to position: relative.");
+// Use the real iframe's computed styles; only selector/source lessons inspect CSSOM.
+function each(selector, check) {
+  const elements = Array.from(document.querySelectorAll(selector));
+  assert.equal(elements.length > 0, true, 'Keep the supplied ' + selector + ' elements.');
+  elements.forEach(element => check(getComputedStyle(element), element));
+}
+function valueFor(property, value, target) {
+  if (property === 'display') return value;
+  const probe = document.createElement('span');
+  probe.style.cssText = 'all: initial; position: absolute; visibility: hidden;';
+  if (/^border-.*-width$/.test(property)) probe.style.borderStyle = 'solid';
+  if (target) probe.style.fontSize = getComputedStyle(target).fontSize;
+  probe.style.setProperty(property, value);
+  document.body.append(probe);
+  try { return getComputedStyle(probe).getPropertyValue(property); }
+  finally { probe.remove(); }
+}
+function expectStyle(selector, property, value) {
+  each(selector, (style, element) => assert.equal(style.getPropertyValue(property), valueFor(property, value, element), 'Set ' + selector + ' ' + property + ' to ' + value + '.'));
+}
+
+test("Card provides a relative positioning reference", () => {
+  expectStyle('.map-card', 'position', 'relative');
 });
 
-test("pickup pin is absolutely positioned", () => {
-  assert.equal(getComputedStyle(document.querySelector(".pickup-pin")).position, "absolute", "Set .pickup-pin to position: absolute.");
+test("Pin uses absolute positioning", () => {
+  expectStyle('.pickup-pin', 'position', 'absolute');
 });
 
-test("pickup pin has a top offset", () => {
-  const style = getComputedStyle(document.querySelector(".pickup-pin"));
-  assert.equal(style.top, "12px", "Set .pickup-pin top to 12px.");
+test("Pin has its top offset", () => {
+  expectStyle('.pickup-pin', 'top', '12px');
 });
 
-test("pickup pin has a right offset", () => {
-  const style = getComputedStyle(document.querySelector(".pickup-pin"));
-  assert.equal(style.right, "12px", "Set .pickup-pin right to 12px.");
+test("Pin has its right offset", () => {
+  expectStyle('.pickup-pin', 'right', '12px');
 });

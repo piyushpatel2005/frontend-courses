@@ -1,16 +1,13 @@
-test("escaped comparisons", () => {
-  const html = document.body.innerHTML;
-  assert.equal(/5\s*&lt;\s*10\s*and\s*10\s*&gt;\s*5/i.test(html), true, "Write both comparisons with &lt; and &gt;");
+function notes() { return Array.from(document.querySelectorAll('body p')).map(p => p.textContent); }
+test("visible comparisons", () => {
+  assert.equal(notes().some(text => text.includes('5 < 10 and 10 > 5')), true, 'Display both comparisons in a paragraph');
 });
-
-test("copyright entity", () => {
-  assert.equal(/©.*all rights reserved/i.test(document.body.textContent), true, "Show a copyright line ending in All rights reserved");
+test("copyright line", () => {
+  assert.equal(notes().some(text => /©.*all rights reserved/i.test(text)), true, 'Add a copyright paragraph including All rights reserved');
 });
-
-test("escaped ampersand", () => {
-  assert.equal(document.body.innerHTML.includes("&amp;"), true, "Display a literal ampersand with &amp;");
+test("literal ampersand", () => {
+  assert.equal(notes().some(text => text.includes('&')), true, 'Display a literal ampersand in a paragraph');
 });
-
-test("non-breaking word space", () => {
-  assert.equal(/\S&nbsp;\S/.test(document.body.innerHTML), true, "Connect two words or a number and unit with &nbsp;");
+test("non-breaking space", () => {
+  assert.equal(notes().some(text => /\S\u00a0\S/.test(text)), true, 'Put a non-breaking space between words or a number and unit in a paragraph');
 });

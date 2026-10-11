@@ -1,7 +1,29 @@
-const queue = ['first', 'second'];
-// Add the third item here.
-try { console.log(`CHECK 1: ${queue.join(",")}`); } catch (error) { console.log("CHECK pending"); }
-let removedItem = '';
-// Remove the last item here.
-try { console.log(`CHECK 2: ${queue.join(",")} | ${removedItem}`); } catch (error) { console.log("CHECK pending"); }
-// Log the final summary yourself.
+const queue = ["first", "second"];
+
+// Step 1
+
+// Complete this step here.
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`After push: ${queue.join(",")}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+const removedItem = "";
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`After pop: ${queue.join(",")} | ${removedItem}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
+// Complete this step here.

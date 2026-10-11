@@ -13,15 +13,9 @@ hints:
   - "Use (byZone.get(scan.zone) ?? 0) + 1 to increment counts."
 ---
 
-# Exercise: Parcel Scan Feed
+# Parcel scan feed
 
-The workshop demo parsed JSON, counted visits by topic, and tracked unique email addresses. Now process a shipping desk's parcel scans. Multiple scans of one parcel count as multiple scans but only one unique tracking ID. Work in `script.js`; no network or page markup is needed.
-
-For example, a **library check-in feed** `'[{"shelf":"A","card":"C1"},{"shelf":"A","card":"C1"}]'` would produce a Map with `A → 2` visits and a Set containing one card. Your task instead uses `zone` and `tracking` fields from parcel scans.
-
-## Worked example
-
-A small visitor feed shows JSON parsing, counting by key, and tracking unique IDs:
+A shipping desk records parcel scans as JSON. A parcel scanned twice contributes two scans to its zone, but only one distinct tracking ID. Build a report that keeps those counts separate.
 
 ```javascript
 const visits = JSON.parse('[{"room":"East","badge":"B1"},{"room":"East","badge":"B1"}]');
@@ -34,15 +28,18 @@ for (const visit of visits) {
 console.log(byRoom.get("East"), badges.size); // 2 1
 ```
 
+Your feed uses `zone` and `tracking` instead of `room` and `badge`. It is valid JSON containing an array of records with those fields. You do not need to fetch data or handle malformed JSON in this exercise.
+
+Start each collection helper with an empty Map or Set. Then an empty array needs no special branch: the loop runs zero times and the helper returns the empty collection. The report's properties are named `byZone` and `uniqueTracking`.
+
+Edit `script.js`. The first three supplied probes use independent samples. You can finish parsing, counting, or deduplication before the summary helper works. Leave the probes in place. Run to inspect their output, then Submit.
+
 ## Your Tasks
 
-1. Write `parseScans(jsonText)` to parse JSON scan records into an array.
-2. Write `countByZone(scans)` to return a `Map` counting every scan by zone.
-3. Write `uniqueIds(scans)` to return a `Set` of tracking IDs.
-4. Write `summarizeScans(jsonText)` to use those helpers and return `{ byZone, uniqueTracking }`.
-5. Make `summarizeScans("[]")` return an empty Map and Set.
-6. Log `North: 2 | South: 2 | unique: 3` from `summarizeScans(scanFeed)` on its own Console line.
+1. Complete `parseScans(jsonText)` to parse the JSON text into an array of scan records.
+2. Complete `countByZone(scans)` to return a Map counting every scan by zone; return an empty Map for no scans.
+3. Complete `uniqueIds(scans)` to return a Set of tracking IDs; return an empty Set for no scans.
+4. Complete `summarizeScans(jsonText)` to use the helpers and return `{ byZone, uniqueTracking }`, including for `"[]"`.
+5. Log `North: 2 | South: 2 | unique: 3` from `summarizeScans(scanFeed)` on its own line.
 
-## Objects and built-ins complete
-
-You can now turn structured input into useful lookups and summaries. Take the section quiz, then work precisely with text.
+You have now turned structured text into a lookup and a distinct-ID count. Take the section quiz before moving on to strings.

@@ -1,7 +1,15 @@
-function greet(name) {
-  return `Hello, ${name}!`;
+// Step 1
+
+function greet(name) { return `Hello, ${name}!`; }
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Greeting: ${greet("Alice")} | ${greet("Bob")} | ${greet("")}`);
+} catch (error) {
+  console.log("Step 1 pending");
 }
 
-console.log(`${greet('Alice')} | ${greet('Bob')}`);
+// Step 2
 
-console.log(`Greeting: ${greet("Alice")}`);
+console.log(`${greet("Alice")} | ${greet("Bob")}`);

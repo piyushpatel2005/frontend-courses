@@ -17,37 +17,17 @@ hints:
 - Return for non-Enter keys before calling preventDefault.
 ---
 
-# Exercise: Search the Recipe Box
+# Search the recipe box
 
-The recipe box has a labeled search field and a normal Search button. Add a keyboard shortcut for Enter in the field; keep ordinary keys and Tab available.
+The recipe box provides a labeled field, Search button, and `showRecipe()` function. That function reads the current field value, trims it, and displays `Finding: ` followed by the term as text. Your job is to connect two ways of requesting it.
 
-## How it works
-
-The separate museum-search example only cancels Enter on the field and cancels the form’s submit event for button activation. The early return matters: if you call `preventDefault` for every key, you block normal typing and can interfere with navigation. The form listener also prevents an actual page navigation when someone uses its submit button. Keep the provided `role="status"` element for the result.
-
-```javascript
-// Different example: a museum catalogue, not your recipe box.
-function showArtwork() { output.textContent = "Find: " + query.value.trim(); }
-query.addEventListener("keydown", function (event) {
-  if (event.key !== "Enter") return;
-  event.preventDefault();
-  showArtwork();
-});
-museumForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  showArtwork();
-});
-```
-
-## Try the preview
-
-Type Bread and press Enter: the result should read Finding: Bread, without navigation. Press Tab afterward; focus should still move away from the field. Activating Search with mouse or keyboard should produce the same result.
-
-## Remember
-
-The earlier click and delegation lessons relied on native buttons. This shortcut adds behavior to a text field while preserving the browser’s other keyboard behaviors.
+Edit `script.js`. Each event path needs its own listener: `keydown` on the field and `submit` on the form. The first listener must ignore every key except Enter. Canceling all key defaults would break typing and Tab navigation.
 
 ## Your Tasks
 
-1. When `#recipe` receives Enter on `keydown`, prevent only that default, leave Tab and ordinary keys uncanceled, and set `#recipe-result` to `Finding: ` followed by the trimmed field value.
-2. Handle `#recipe-form` submit by preventing page navigation and showing the same trimmed result for button activation.
+1. On Enter `keydown` in `#recipe`, cancel that key's default and call the supplied `showRecipe()`. Leave other keys uncanceled.
+2. On `#recipe-form` submission, prevent navigation and call `showRecipe()`.
+
+After step 1, type `  Bread  ` and press Enter: the output should be Finding: Bread. After step 2, the Search button should work too. Run with a fresh preview between checks, then Submit.
+
+Test Tab from the field and Space on the focused button. The button's native activation already submits the form; do not attach another keyboard-click handler. This is a local demonstration, not a request to a recipe service.

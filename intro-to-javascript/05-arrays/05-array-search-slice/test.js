@@ -1,7 +1,7 @@
-test("slice selects the middle values", () => {
-  assert.match(OUTPUT, /^CHECK\ 1:\ \[2,3,4\]$/m, "Log CHECK 1: [2,3,4] as a separate checkpoint line");
+test("Step 1: Middle", () => {
+  assert.match(OUTPUT, new RegExp("^Middle:\\ \\[2,3,4\\]\\ \\|\\ Source:\\ \\[1,2,3,4,5\\]$", "m"), "Step 1: expected Middle: [2,3,4] | Source: [1,2,3,4,5]");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^\[2,3,4,10,11\]$/m, "Log the mission result with console.log()");
+test("Step 2: Combined", () => {
+  assert.match(OUTPUT, new RegExp("^Combined:\\ \\[2,3,4,10,11\\]\\ \\|\\ Middle:\\ \\[2,3,4\\]$", "m"), "Step 2: expected Combined: [2,3,4,10,11] | Middle: [2,3,4]");
 });

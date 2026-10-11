@@ -1,11 +1,11 @@
 test("Uppercase transformation", () => {
-  assert.match(OUTPUT, /^CHECK uppercase: HELLO WORLD$/m, "Use toUpperCase() on phrase");
+  assert.match(OUTPUT, /^CHECK 1: HELLO WORLD$/m, "Task 1: expected a separate output line: CHECK 1: HELLO WORLD");
 });
 
-test("Word membership check", () => {
-  assert.match(OUTPUT, /^CHECK includes: true$/m, "Use includes() to check phrase");
+test("Word membership", () => {
+  assert.match(OUTPUT, /^CHECK 2: boolean \| true$/m, "Task 2: expected a separate output line: CHECK 2: boolean | true");
 });
 
-test("Standalone combined result", () => {
-  assert.match(OUTPUT, /^HELLO WORLD \| true$/m, "Log the combined result on its own line");
+test("Separate combined result", () => {
+  assert.match(OUTPUT, /^HELLO WORLD \| true$/m, "Task 3: expected a separate output line: HELLO WORLD | true");
 });

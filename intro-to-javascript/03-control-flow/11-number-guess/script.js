@@ -1,7 +1,7 @@
-// Implement the search inside this function.
 function findGuess(secret, guesses) {
-  // Return the first match or "No match".
+  // Search for a match here.
+  return undefined; // Replace the no-match fallback.
 }
 
-// These probes run as you implement the functions above.
-console.log(`First guess: ${findGuess(2,[2])}`);
+console.log(`Matches: ${findGuess(2,[2])} | ${findGuess(7,[3,9,7,7])} | ${findGuess(4,[1,4])}`);
+console.log(`Missing: ${findGuess(7,[1,2,3])} | ${findGuess(7,[])}`);

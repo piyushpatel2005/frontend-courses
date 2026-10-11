@@ -16,27 +16,20 @@ seo_keywords:
 
 # Build an events dashboard
 
-Your community events page already has a list, status region, and Retry button. Its `dashboardFetch` is a declared offline fixture returning real `Response` objects, not a network call. Use the preceding trail demo as a model. The starter already fetches and parses JSON in `loadEntries()` and connects Retry; finish `render()` first, then add loading/error handling to `loadEntries()`.
+Build the community events dashboard using the trail demo as a guide. Keep its three supplied events unchanged; one title deliberately looks like HTML.
 
-Here is a **different** inventory-list pattern for safe DOM text. `replaceChildren()` clears old results before inserting new nodes:
+The loader already awaits the offline Response and its JSON body, calls the rendering/status helpers, and catches errors. Retry is connected too. Build one detached row first, then insert rows; reporting a count is a separate change. The fixture returns `{ items: [...] }`, so `data.items`, not `data`, is the array.
 
-```javascript
-const shelf = document.querySelector("#shelf");
-shelf.replaceChildren();
-for (const product of products) {
-  const row = document.createElement("li");
-  row.textContent = product.name;
-  shelf.append(row);
-}
-```
-
-For your dashboard, the starter reads `{ items }` from the fixture response; make one row per event. Before awaiting it, show Loading and clear old rows. A non-OK response must show an error with a visible Retry button. On success, show the count or an explicit empty message. Run the preview: the fixture includes a title with literal `<em>` characters; it must never create an `em` element.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. In `render(items)`, create safe text-only title and venue rows in `#entries` and announce the number found in `#status`. The request/JSON setup in `loadEntries()` is already supplied.
-2. Show `Loading entries…` as soon as a load starts, while its response Promise is pending.
-3. Check failed HTTP responses, show an error, and reveal Retry; clicking Retry starts a new load and hides the button after success.
-4. When the fixture returns zero items, clear prior rows and announce `No matching entries.`.
+1. Make `makeEventRow(item)` return a detached `li` with a `strong` title and a `span` containing ` — ` followed by its venue. Set both using `textContent`.
+2. Make `render(items)` replace `#entries` with one `makeEventRow` result per item; an empty array clears it.
+3. Make `showEventCount(items)` announce `<number> entries found.` in `#status`.
+4. Make `showDashboardLoading()` announce `Loading entries…` and clear outdated rows while the request is pending.
+5. Make `checkDashboardResponse(response)` throw when `response.ok` is false. The loader calls it before reading JSON.
+6. Make `showDashboardFailure()` clear outdated rows, announce `Could not load entries. Try again.`, and reveal Retry. The supplied Retry listener starts another load and hides the button.
+7. Make `showDashboardEmpty()` announce `No matching entries.`.
 
-A real endpoint belongs at the `dashboardFetch(API_URL)` call; use `fetch("https://your-cors-enabled-api.example/events")` there only when a service permits cross-origin browser requests via CORS and returns the documented `{ items }` shape. This exercise remains fully offline.
+Run with the normal fixture, then temporarily set `failNext: true` and Run again. Retry should recover. Set `items: []` to try an empty success, then restore all three events. These edits are experiments, not changes to carry into the next exercise.

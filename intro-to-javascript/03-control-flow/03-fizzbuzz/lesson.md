@@ -4,17 +4,17 @@ slug: fizzbuzz
 order: 3
 language: javascript
 lesson_type: coding
-summary: Solve a practical JavaScript programming challenge using the preceding worked demo.
+summary: "Return the FizzBuzz label for each rule with independent supplied probes."
 seo_title: "Challenge: FizzBuzz Announcer | Introduction to JavaScript"
-seo_description: Practice JavaScript with a focused, testable programming challenge.
+seo_description: "Return the FizzBuzz label for each rule with independent supplied probes."
 seo_keywords: javascript, coding challenge, programming practice
 hints:
-  - Start with the smallest function signature, then test one case at a time.
+  - Complete one branch in the supplied function, then check its labeled probe.
 ---
 
 # Challenge: FizzBuzz Announcer
 
-The preceding carton demo checked the combined case before the individual cases. Apply that branch order to one number at a time in `fizzBuzz(number)`. `%` returns the remainder, so `number % 15 === 0` detects a multiple of both 3 and 5. Use `return` to send a value back from the function, then log calls in `script.js`.
+The preceding carton demo checked the combined case before the individual cases. Apply that branch order to one number at a time in `fizzBuzz(number)`. `%` returns the remainder, so `number % 15 === 0` detects a multiple of both 3 and 5. Use `return` to send a value back from the function. The supplied logs display the calls in `script.js`.
 
 ## Worked example
 
@@ -28,13 +28,15 @@ function signal(value) {
 console.log(signal(8)); // Quad
 ```
 
+The inputs in this exercise are positive whole numbers. `=== 0` checks that the remainder is exactly zero. A `return` ends the call, so testing 3 before 15 would send 15 down the wrong path before the combined rule could run.
+
+The probes are supplied. Add one branch at a time and Run; the first completed line is `Both`, followed by `Threes`, `Fives`, and `Ordinary`. Leave the unfinished fallback as `undefined` until task 4. You do not need an array method or a loop to test these individual calls.
+
+Edit `script.js`, Run to inspect the supplied probes, and Submit to check the tasks.
+
 ## Your Tasks
 
-1. Implement `fizzBuzz(number)` to return `"FizzBuzz"` for multiples of 15, `"Fizz"` for multiples of 3, `"Buzz"` for multiples of 5, and the original number otherwise. The provided `Ordinary 2` probe should print `Ordinary 2: 2`.
-2. Log `Multiples: Fizz,Buzz,FizzBuzz` from calls with 3, 5, and 15.
-3. Log `Ordinary 7: 7` from `fizzBuzz(7)`.
-4. Log `FizzBuzz` on its own line from `fizzBuzz(15)`.
-
-## Checkpoint
-
-Run after each change; the Console should show each requested line on its own.
+1. Return `"FizzBuzz"` for multiples of 15 before checking the individual divisors. The `Both` probe should show `FizzBuzz,FizzBuzz`.
+2. Add the multiple-of-3 branch returning `"Fizz"`. The `Threes` probe should show `Fizz,Fizz`.
+3. Add the multiple-of-5 branch returning `"Buzz"`. The `Fives` probe should show `Buzz,Buzz`.
+4. Replace the fallback with the original `number`. The `Ordinary` probe should show `2,7`.

@@ -5,7 +5,7 @@ function fizzBuzz(number) {
   return number;
 }
 
-console.log(`Ordinary 2: ${fizzBuzz(2)}`);
-console.log(`Multiples: ${[3,5,15].map(fizzBuzz).join(",")}`);
-console.log(`Ordinary 7: ${fizzBuzz(7)}`);
-console.log(fizzBuzz(15));
+console.log(`Both: ${fizzBuzz(15)},${fizzBuzz(30)}`);
+console.log(`Threes: ${fizzBuzz(3)},${fizzBuzz(9)}`);
+console.log(`Fives: ${fizzBuzz(5)},${fizzBuzz(10)}`);
+console.log(`Ordinary: ${fizzBuzz(2)},${fizzBuzz(7)}`);

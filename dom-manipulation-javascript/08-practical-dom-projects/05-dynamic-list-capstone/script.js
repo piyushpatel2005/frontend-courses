@@ -30,4 +30,5 @@ tools.addEventListener("click", (event) => {
   const name = item.querySelector("span").textContent;
   item.remove();
   toolStatus.textContent = `Removed ${name}.`;
+  toolName.focus();
 });

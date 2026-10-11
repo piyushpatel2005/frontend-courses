@@ -9,45 +9,39 @@ hints:
   - "Every recursive function needs a base case that stops the recursion."
   - "For power, return 1 when exp is zero; otherwise multiply by power(base, exp - 1)."
   - "For flatten, visit each item; recurse into arrays and keep ordinary values."
-summary: Practice recursion with a focused Starline Awards programming mission.
+summary: "A recursive call asks the same function to solve a smaller input. The original call pauses until that smaller call returns. A stopping rule, or base case, must return without making another recursive call."
 seo_title: Recursion | Introduction to JavaScript
-seo_description: Learn recursion through a focused JavaScript programming mission and console-based practice.
+seo_description: "A recursive call asks the same function to solve a smaller input. The original call pauses until that smaller call returns. A stopping rule, or base case, must return without making another recursive call."
 seo_keywords: javascript, recursion, beginner javascript, programming practice
 ---
 
 # Recursion
 
-Some data nests inside more data. In `script.js`, write functions that solve a smaller version of the problem until they reach a stopping case; inspect the Console to check each result.
+A recursive call asks the same function to solve a smaller input. The original call pauses until that smaller call returns. A stopping rule, or base case, must return without making another recursive call.
 
-**Recursion** is when a function calls itself to solve a smaller version of the same problem. Every recursive solution needs:
+Start with the sum example below. `sum([2, 3])` waits for `2 + sum([3])`; that call waits for `3 + sum([])`. The empty array returns 0, then the waiting calls return 3 and 5. These unfinished calls occupy the call stack. Missing the base case, or failing to move toward it, keeps adding calls until the stack overflows.
 
-1. **Base case** — the simplest input that can be answered directly (stops the recursion).
-2. **Recursive case** — breaks the problem into a smaller sub-problem.
+For `power`, the supported exponents are nonnegative integers. Each recursive call reduces the exponent by one. For `flatten`, the input is a finite nested array without circular references. Visit each element; if `Array.isArray(item)` is true, flatten that smaller array, otherwise keep the plain value. `concat` returns a new array with the supplied values appended. An empty input has no elements to visit and returns `[]`.
 
-## A base case in a nested structure
 
-```javascript
-function countBoxes(box) {
-  if (!box.children) return 1;
-  return 1 + box.children.reduce((total, child) => total + countBoxes(child), 0);
-}
+![sum([2, 3]) waits for sum([3]), which waits for sum([]); returns unwind from 0 to 3 to 5.](recursive-sum-call-stack.svg)
 
-console.log(countBoxes({ children: [{}, { children: [{}] }] }));
-```
-
-The object with no `children` stops the calls; each parent counts itself and its children. For a simpler linear example, a sum removes one item at a time:
+## Trace a smaller input
 
 ```javascript
 function sum(arr) {
-    if (arr.length === 0) return 0;
-    return arr[0] + sum(arr.slice(1));
+  if (arr.length === 0) return 0;
+  return arr[0] + sum(arr.slice(1));
 }
+console.log(sum([2, 3])); // 5
 ```
 
-For `power(base, exp)`, stop at exponent `0`; otherwise multiply by the result for `exp - 1`. For `flatten(arr)`, walk each item: recurse only when that item is an array, and append plain values to the result. An empty array returns an empty result. These are the two distinct base cases you will need below.
+`slice(1)` returns a new array without the first item, so the input gets shorter on each call. Your power function reduces an exponent instead; your flatten function descends into nested arrays.
+
+Edit `script.js`, Run the checkpoints, then Submit after each task.
 
 ## Your Tasks
 
-1. Complete recursive `power(base, exp)` for nonnegative integer exponents; exponent zero returns 1.
-2. Complete recursive `flatten(arr)` to return a flat array, including for empty input.
-3. Log the standalone combined result `2^10 = 1024 | flatten: 1,2,3,4,5`.
+1. Implement recursive `power(base, exp)` for nonnegative integer exponents, returning 1 when `exp` is zero.
+2. Implement recursive `flatten(arr)` for finite nested arrays; an empty input returns `[]`.
+3. Log `2^10 = 1024 | flatten: 1,2,3,4,5` using calls to your functions.

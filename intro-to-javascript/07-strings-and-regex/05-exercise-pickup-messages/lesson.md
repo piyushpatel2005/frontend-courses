@@ -15,13 +15,7 @@ hints:
 
 # Format pantry pickup messages
 
-The previous demo built one library reminder. Now the pantry needs **one line per request**, with a quantity and a clean recipient name. Run the starter, then replace the unfinished functions to see the actual notices in the Console.
-
-Each request is an object with `name`, `item`, and `quantity`. Keep the supplied requests as data; your functions should also work for other requests.
-
-## Worked example
-
-A separate book reminder shows how to trim a name before interpolation:
+The pantry needs one notice per request. Each record has a `name`, an `item` description, and a `quantity`. Keep the records as data and build messages from them.
 
 ```javascript
 function bookReminder(name, title) {
@@ -30,8 +24,14 @@ function bookReminder(name, title) {
 console.log(bookReminder(" Eva ", "Field Notes")); // Hi Eva, Field Notes is ready.
 ```
 
+Your notice format is `Hi NAME, your QUANTITY ITEM are ready for pickup.` Trim only the name; preserve the supplied item description. Keep this wording for all supplied quantities; choosing singular or plural wording is outside this exercise.
+
+To format a list, `requests.map(...)` calls a function once per record and returns an array of messages. Inside the callback, read `request.name`, `request.item`, and `request.quantity`, and pass them to `formatPickup()`. Joining the messages with `"\n"` puts each on a separate line. Joining an empty array produces `""`.
+
+Edit `script.js`. Supplied checks use different records from the final list, so the functions must use their arguments. Leave the checks in place. Run after each helper, then Submit.
+
 ## Your Tasks
 
-1. Complete `formatPickup(name, item, quantity)` as a returned template-literal notice, trimming the name; do not log inside it. The supplied CHECK call uses Lee, meal kits, and 1.
-2. Complete `buildPickupList(requests)` by mapping through `formatPickup` and joining with newline; an empty list returns `""`.
-3. Log `buildPickupList(requests)` as a separate message with the two supplied notices on separate lines.
+1. Complete `formatPickup(name, item, quantity)` to return the notice in the stated format using a template literal and a trimmed name; do not log inside it.
+2. Complete `buildPickupList(requests)` by mapping each record through `formatPickup()` and joining with newlines; an empty list must return `""`.
+3. Log `buildPickupList(requests)` separately so the supplied Nia and Omar notices appear on consecutive lines.

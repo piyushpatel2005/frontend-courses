@@ -5,7 +5,7 @@ order: 7
 language: html
 summary: "A media query can change grid tracks when the available screen width becomes small."
 seo_title: "Responsive Grid Demo | Introduction to CSS"
-seo_description: "Learn a media query can change grid tracks when the available screen width becomes small in a completed CSS preview."
+seo_description: "Three columns fit a wide board, but each card gets cramped in a narrow preview. A **media query** applies a set of CSS rules only when a condition is true. This example checks the viewport, the area where the page is displayed. In this course, that is the preview frame's width, not necessarily the whole browser window."
 seo_keywords: [CSS, responsive-grid-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,20 +13,22 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Responsive Grid Demo
+# Switch the workshop board to one column
 
-## Mission
+Three columns fit a wide board, but each card gets cramped in a narrow preview. A **media query** applies a set of CSS rules only when a condition is true. This example checks the viewport, the area where the page is displayed. In this course, that is the preview frame's width, not necessarily the whole browser window.
 
-The workshop board must look spacious on a wide screen and readable on a phone.
+The ordinary `.responsive-grid` rule defines three columns. Later in `style.css`, this rule replaces that column definition when the viewport is at most 36rem wide:
 
-## What to notice
+```css
+@media (max-width: 36rem) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+  }
+}
+```
 
-The grid has three columns until the viewport is at most 36rem wide. The `@media` rule then overrides them with one column. Responsive Design will revisit media queries in depth. Find the selector, property, and value in `style.css` and compare the preview.
+The outer braces enclose the conditional rules; the inner braces enclose the declarations for `.responsive-grid`. `max-width` includes the boundary itself. In a media query, `rem` uses the browser's initial font size, usually 16px, so 36rem is normally 576px. Changing the page's root font size does not change this query's threshold.
 
-## Try the preview
+Both rules target the same class. On a narrow viewport both apply, and the later column declaration wins. Above the threshold, the media query no longer applies, leaving three columns. The display and gap declarations keep working at both sizes.
 
-Narrow the preview below 36rem; if it cannot resize, briefly change the query to 100rem, run Preview, then restore it.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
+Run Preview, then resize the preview across the threshold in both directions. Watch for one column on the narrow side and three on the wide side. If your preview cannot resize, temporarily use `100rem` to inspect the narrow-layout rule, then restore `36rem`; that experiment does not replace checking the actual breakpoint. The Responsive Design module will build on this first media query.

@@ -20,14 +20,18 @@ hints:
 
 # Advanced selectors: book cart sign
 
-The Moonlit Book Cart posts a tiny reading list outside after sunset. The finished sign needs three precise styles without adding extra classes to every element.
+The Moonlit Book Cart sign has a heading, a summary tucked inside a wrapper, and a sample link. You can target each part without giving every element a new class.
 
-## Read the targets
+## Follow the HTML relationships
 
-`.book-card p` reaches the summary paragraph even though it is nested inside a wrapper. `.book-card > h2` reaches only the direct title. `a[target="_blank"]` finds the “Read sample” link by an attribute it already has.
+A **child** sits one level inside its parent. A **descendant** can be several levels down. In `index.html`, the heading is a child of `.book-card`; the paragraph is inside `.summary`, so it is a descendant of the card but not its child.
 
-**Checkpoint:** the summary is slate blue, the title is larger, and the external link is underlined.
+![The card directly contains a heading and summary wrapper; the paragraph is inside the wrapper.](selector-relationships.svg)
 
-## Try it safely
+In `style.css`, `.book-card p` uses a space to reach paragraphs anywhere inside the card. `.book-card > h2` uses `>` to reach only direct child headings. The element on the right is the one being styled.
 
-Temporarily remove the space in `.book-card p`, preview the page, and observe that the nested summary loses its color. Restore the space before continuing to the exercise.
+`a[target="_blank"]` uses square brackets to match an attribute value. It selects links whose `target` is `_blank`, not every link. The underline is a visual style; the HTML attribute controls where the link opens.
+
+## Compare two selectors
+
+Run the preview. The nested summary is pale blue, the title is larger, and the sample link is gold and underlined. In `style.css`, change `.book-card p` to `.book-card > p` and run again. The paragraph loses its pale blue because its immediate parent is `.summary`. Restore the space before the next exercise.

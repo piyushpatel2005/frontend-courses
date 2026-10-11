@@ -1,4 +1,5 @@
 test("page has a Meridian signal heading", () => {
+  assert.equal(document.querySelectorAll("body h1").length, 1, "Use exactly one main heading");
   const h1 = document.querySelector("body h1");
   assert.exists(h1, "Add an <h1> element in the body");
   assert.match(h1.textContent, /meridian|signal/i, "Use Meridian or Signal in the heading");

@@ -13,13 +13,15 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Trip briefing
+# Center the briefing cards
 
-The preceding demo centered short and tall briefing cards along the cross axis. Recreate that alignment here. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
+This briefing lists the Meeting point, Route notes, and Return time. Like the demo, its middle card has extra vertical padding. The pale background marks the space available for alignment.
+
+Edit `.briefing-row` in `style.css`. Leave the supplied height and card padding in place so you can see the difference between stretching and centering.
 
 ## Your Tasks
 
-1. Set `.briefing-row` to `display: flex` so its cards share a row.
-2. Set `.briefing-row` to `align-items: center` to align their vertical centers.
+1. Set `.briefing-row` to `display: flex`.
+2. Set `.briefing-row` to `align-items: center`.
 
-**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.
+Run Preview after step 1: the cards share a row and stretch to the line's height. After step 2, the cards keep their different heights but share a vertical center. Submit after each step.

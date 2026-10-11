@@ -19,12 +19,28 @@ hints:
 
 # Kite festival signal demo
 
-**Mission:** Add gentle motion to the Kite Festival signal without making it distracting.
+Make the festival kite drift upward and back. Unlike a transition, which waits for a property to change, a keyframe animation can begin as soon as the page loads. The button is only a styled placeholder; it does not reserve a pass.
 
-The `.kite` uses the `drift` animation, which moves it between the positions in `@keyframes drift`. `2s` sets each trip’s duration; `infinite alternate` repeats it up and down. The button uses a separate `transition` to smooth its hover movement. The `prefers-reduced-motion` rule stops both effects when visitors request less motion. This CSS-only button does not reserve a pass.
+## Read the motion rules
+
+`@keyframes drift` names a sequence. `from` is its starting state and `to` is its ending state. Here `transform: translateY(0)` starts in the original position, while `translateY(-14px)` paints the kite 14 pixels higher. A negative Y value moves upward; this does not rearrange the surrounding layout.
+
+The `.kite` rule attaches the sequence with `animation: drift 2s ease-in-out infinite alternate`:
+
+- `drift` names the keyframes.
+- `2s` gives each trip a duration of two seconds.
+- `ease-in-out` slows the beginning and end of each trip.
+- `infinite` repeats the sequence until it is stopped.
+- `alternate` reverses every other trip, bringing the kite back down.
+
+![The kite travels from its original position to 14 pixels higher, then returns on the alternate trip.](kite-animation.svg)
+
+The button uses `transition: transform 160ms ease`. This smooths a transform change over 160 milliseconds. Hovering or keyboard-focusing the button applies `translateY(-2px)`; leaving that state returns it to its original position.
+
+## Respect less-motion settings
+
+`@media (prefers-reduced-motion: reduce)` applies when the visitor requests less motion. Unlike a width query, it checks a preference. Inside it, `animation: none` stops the kite, and `transition: none` removes the button's interpolation. We also reset the highlighted button's `transform` to `none`: disabling a transition alone would still leave an instant position change. The focus outline remains visible.
 
 ## Try the demo
 
-Change the ending keyframe from `-14px` to `-5px`, run Preview, and compare the kite’s travel. Restore it, then hover the button to see its smaller movement.
-
-**Checkpoint:** the preview already shows the finished kite festival signal demo interface. The next lesson asks you to recreate its key rules from a small starter.
+Change the ending keyframe from `-14px` to `-5px` in `style.css`, Run Preview, and watch the shorter travel. Restore it. Hover the button, then use Tab to inspect its keyboard highlight. Enable reduced motion in your system or browser's rendering tools and rerun: the kite and button should stay still. Restore your preferred setting afterward.

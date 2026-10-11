@@ -1,15 +1,15 @@
-test("latitude and longitude are destructured correctly", () => {
-  assert.match(OUTPUT, /^CHECK\ 1:\ 40\.7128\ \|\ \-74\.006$/m, "Log CHECK 1: 40.7128 | -74.006 as a separate checkpoint line");
+test("Step 1: Coordinates", () => {
+  assert.match(OUTPUT, new RegExp("^Coordinates:\\ 40\\.7128\\ \\|\\ \\-74\\.006$", "m"), "Step 1: expected Coordinates: 40.7128 | -74.006");
 });
 
-test("first and last stops are destructured", () => {
-  assert.match(OUTPUT, /^CHECK\ 2:\ Harbor\ \|\ Library$/m, "Log CHECK 2: Harbor | Library as a separate checkpoint line");
+test("Step 2: Stops", () => {
+  assert.match(OUTPUT, new RegExp("^Stops:\\ Harbor\\ \\|\\ Library$", "m"), "Step 2: expected Stops: Harbor | Library");
 });
 
-test("swapPair is defined and works", () => {
-  assert.match(OUTPUT, /^CHECK\ 3:\ 2,1\ \|\ b,a$/m, "Log CHECK 3: 2,1 | b,a as a separate checkpoint line");
+test("Step 3: Swaps", () => {
+  assert.match(OUTPUT, new RegExp("^Swaps:\\ 2,1\\ \\|\\ b,a$", "m"), "Step 3: expected Swaps: 2,1 | b,a");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^Harbor\ to\ Library\ \|\ lat:\ 40\.7128$/m, "Log the route and latitude with console.log()");
+test("Step 4: Harbor to Library | lat", () => {
+  assert.match(OUTPUT, new RegExp("^Harbor\\ to\\ Library\\ \\|\\ lat:\\ 40\\.7128$", "m"), "Step 4: expected Harbor to Library | lat: 40.7128");
 });

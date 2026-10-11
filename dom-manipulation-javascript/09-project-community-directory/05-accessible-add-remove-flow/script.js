@@ -5,7 +5,11 @@ const seedStatus = document.querySelector("#seed-status");
 seedForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const value = seedName.value.trim();
-  if (!value) { seedStatus.textContent = "Enter a seed variety."; return; }
+  if (!value) {
+    seedStatus.textContent = "Enter a seed variety.";
+    seedName.focus();
+    return;
+  }
   const row = document.createElement("li");
   const label = document.createElement("span");
   label.textContent = value;
@@ -16,6 +20,7 @@ seedForm.addEventListener("submit", (event) => {
   row.append(label, remove);
   seedList.append(row);
   seedForm.reset();
+  seedName.focus();
   seedStatus.textContent = `${value} added.`;
 });
 seedList.addEventListener("click", (event) => {
@@ -25,4 +30,5 @@ seedList.addEventListener("click", (event) => {
   const name = row.querySelector("span").textContent;
   row.remove();
   seedStatus.textContent = `${name} removed.`;
+  seedName.focus();
 });

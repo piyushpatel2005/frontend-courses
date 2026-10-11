@@ -5,4 +5,4 @@ function renderLights() {
   summary.textContent = lights.value;
 }
 lights.addEventListener("change", renderLights);
-lightsForm.addEventListener("reset", () => queueMicrotask(renderLights));
+lightsForm.addEventListener("reset", () => setTimeout(renderLights, 0));

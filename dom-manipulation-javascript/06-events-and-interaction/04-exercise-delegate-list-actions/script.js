@@ -1,5 +1,5 @@
 const pantry = document.querySelector("#pantry");
-// Add item is provided; write ONE delegated listener for the list below.
+// Add item is supplied. It does not register any Remove listener.
 document.querySelector("#add-item").addEventListener("click", function () {
   const item = document.createElement("li");
   item.append(document.createTextNode("Beans "));
@@ -12,3 +12,9 @@ document.querySelector("#add-item").addEventListener("click", function () {
   item.append(button);
   pantry.append(item);
 });
+
+function removePantryItem(event) {
+  // Task 1: add your code here.
+}
+// Task 2: add your code here.
+window.removePantryItem = removePantryItem;

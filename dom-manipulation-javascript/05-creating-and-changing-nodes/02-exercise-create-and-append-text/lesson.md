@@ -17,29 +17,17 @@ hints:
 - Set textContent before calling append on the list.
 ---
 
-# Exercise: Add a Reading List Item
+# Add a book to the reading list
 
-Use the garden demo as your model, but work on a library reading list. The starter already has a list and one book; your script will add a second book without editing the HTML list by hand.
+The library list already contains The Secret Garden. Your JavaScript will prepare a second book and then insert it. Leave the supplied HTML and CSS in place; edit `script.js`.
 
-## How it works
+The garden demo performed creation and insertion together. Here the supplied `makeBook(title)` function separates them so you can check the invisible step first. `return` hands the created element back to its caller; it does not insert it. For example, a menu helper could return a prepared `li` to whichever menu needs it.
 
-Notice the order in the example below: first make the node, then set its text, then connect it to the parent. A new `li` created in JavaScript does not appear just because you put it in a variable. `textContent` is the right choice for book titles, including titles containing `<` or `&`, because titles are data rather than markup.
-
-```javascript
-// Different example: a cafe menu, not your reading list.
-const dessert = document.createElement("li");
-dessert.textContent = "Pear tart";
-document.querySelector("#desserts").append(dessert);
-```
-
-## Try the preview
-
-After your changes, the preview should show The Secret Garden followed by The Hobbit. If nothing appears, check that you appended the node to `#books`, not to a variable that still holds `null`.
-
-## Remember
-
-Recall the garden board: `createElement` gives you a node, `textContent` fills it safely, and `append` places it. This exercise changes the setting and the data, not that three-step sequence.
+The supplied `window.makeBook = makeBook` makes the helper available to the checks. Leave that line in place. It stores the function reference without calling the function.
 
 ## Your Tasks
 
-1. Create an `li` with plain `textContent` of `The Hobbit`, then append it to `#books` after The Secret Garden. The new item appears only after insertion.
+1. Complete `makeBook(title)` so it returns a detached `li` whose `textContent` is the supplied title. A title such as `<em>River</em>` must remain plain text.
+2. Append `makeBook("The Hobbit")` to `#books`, after The Secret Garden.
+
+Run after each step. After step 1 the page still has one book, but Submit can check the returned element. After step 2, the preview should contain exactly two books in the requested order. Submit again to check insertion.

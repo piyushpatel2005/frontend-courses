@@ -5,7 +5,7 @@ function delay(ms, value) {
 }
 
 async function loadMessage() {
-  const msg = await delay(10, "Hello Async");
+  const msg = await globalThis.delay(10, "Hello Async");
   return msg.toUpperCase();
 }
 
@@ -15,12 +15,12 @@ async function safeDivide(a, b) {
 }
 
 async function reportBroadcast() {
-  const msg = await loadMessage();
-  const div = await safeDivide(10, 2);
+  const msg = await globalThis.loadMessage();
+  const div = await globalThis.safeDivide(10, 2);
   console.log(`${msg} | 10/2 = ${div}`);
 }
 globalThis.reportBroadcast = reportBroadcast;
-reportBroadcast();
 globalThis.delay = delay;
 globalThis.loadMessage = loadMessage;
 globalThis.safeDivide = safeDivide;
+globalThis.initialBroadcast = reportBroadcast().catch(error => console.log(`Broadcast incomplete: ${error.message}`));

@@ -1,10 +1,10 @@
 ---
-title: Kite festival signal exercise
+title: Garden festival signal exercise
 slug: exercise-css-animation
 order: 2
 language: html
-summary: Add gentle motion to the Kite Festival signal without making it distracting.
-seo_title: Kite festival signal exercise | Intro to CSS
+summary: Add gentle motion to the Garden Festival signal without making it distracting.
+seo_title: Garden festival signal exercise | Intro to CSS
 seo_description: Learn transitions and keyframe animation by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,15 +17,17 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Kite festival signal exercise
+# Garden festival signal exercise
 
-**Mission:** Give a garden festival banner a small drift without making motion mandatory.
+Attach the drift animation to a garden banner, then smooth its button interaction. The `.kite` class is reused for the banner symbol; this is a new festival page, not the earlier field-note project.
 
-The demo kite showed keyframes and hover transitions. The HTML now supplies a garden banner (still styled by `.kite`), and the starter supplies its keyframes and reduced-motion rule. Complete the two missing declarations in `style.css`.
+The starter supplies `@keyframes drift` and separate animation settings for duration, timing, repetition, and direction. These longhand properties are the individual parts of the demo's `animation` shorthand. Only `animation-name` is missing. The button's hover/focus transform, focus outline, and complete reduced-motion override are also supplied.
+
+Edit `style.css`, keeping your declarations in the normal rules above the reduced-motion query. A later override must remain able to stop the motion.
 
 ## Your Tasks
 
-1. Set `.kite` to use `animation-name: drift`; the other animation settings are supplied.
-2. Add `transition: transform 160ms ease` to the button.
+1. Add `animation-name: drift` to the normal `.kite` rule.
+2. Add `transition: transform 160ms ease` to the normal `button` rule.
 
-Run Preview to watch the banner and hover the button, then Submit. Motion stops for visitors who prefer reduced motion.
+Run Preview after each task. First watch the banner; then hover or Tab to the button. Submit to check your declarations. If reduced motion is enabled, the animation should stay off even when your answer is correct. Temporarily compare both preference settings if you can, then restore yours.

@@ -24,15 +24,16 @@ input {
   margin-bottom: .75rem;
 }
 input:focus {
-  outline: 3px solid #f4a261;
+  outline: 3px solid #9a3412;
   outline-offset: 2px;
 }
 button {
   display: block;
-  margin-top: .75rem;
   padding: .7rem;
   border: 0;
   border-radius: .4rem;
   background: #2a6f4e;
   color: white;
 }
+
+button:focus-visible { outline: 3px solid #1e40af; outline-offset: 2px; }

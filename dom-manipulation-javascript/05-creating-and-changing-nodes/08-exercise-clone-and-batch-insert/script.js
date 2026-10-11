@@ -1,12 +1,11 @@
 const list = document.querySelector("#exhibits");
 const original = list.querySelector(".exhibit");
-
 function makeExhibit(name) {
-  // Deep-clone the sample, change the copy's title, and return the detached copy.
+  // Task 1: add your code here.
 }
-
 function addExhibits() {
-  // Prepare both named copies in a DocumentFragment, then append the batch.
+  // Task 2: add your code here.
 }
-
 addExhibits();
+window.makeExhibit = makeExhibit;
+window.addExhibits = addExhibits;

@@ -56,7 +56,13 @@ modules:
 
 # DOM Manipulation with JavaScript
 
-An HTML page is not fixed once it loads. JavaScript can find elements, change their content or appearance, respond to people, and create new parts of the page. This course teaches those changes one small step at a time. You should know basic HTML and JavaScript variables, functions, and arrays; the first lessons review the browser concepts you need.
+An HTML page can change after it loads. A filter hides cards, a form adds a new entry, and a button reveals more details. In this course, you will build those behaviors with vanilla JavaScript: the browser's own DOM methods, without a framework or library.
+
+## Before you begin
+
+You should be comfortable with basic HTML and JavaScript variables, functions, conditions, arrays, and objects. Recognizing CSS selectors such as `#status` and `.card` will help. The lessons explain the DOM methods as they appear; the Fetch section also reviews the asynchronous steps it needs.
+
+You only need a desktop browser to begin. The opening lessons show how to open its developer Console, read a result or an error, and try a small DOM change on a blank practice tab. These experiments come before the course's editor lessons, so you can use the browser as a place to investigate rather than only follow instructions.
 
 ## What you will build
 
@@ -70,13 +76,23 @@ An HTML page is not fixed once it loads. JavaScript can find elements, change th
 
 ## How to use the course
 
-Each topic starts with a completed, runnable example. Read the explanation and inspect the `index.html`, `style.css`, and `script.js` tabs; run the browser preview and change one small thing to see what it does. The following exercise revisits the same idea in a different setting with a starter, tests, and a reference solution. Later sections bring earlier skills back in new combinations. Section quizzes check understanding after the worked examples and practice.
+Start with the Console orientation. Type the short commands on your own blank practice tab, not on a page containing personal information. Read what changed, then reload to start again. Do not paste unfamiliar code into developer tools or disable a browser's paste warning.
 
-The order matters: selectors come before updates, updates before node creation, events before form interactions, and all of those before the final projects. Start at the beginning if the DOM is new to you; revisiting a skill is part of the lesson, not a sign that you missed it.
+After that, each topic pairs a working demo with an exercise:
+
+- In a demo, read the relevant parts of `index.html`, `style.css`, and `script.js`. Run the preview and try the suggested small change.
+- In the following exercise, use the same idea with different data. Complete one numbered task, Run to inspect the result, then Submit to check it.
+- Use the browser Console to investigate values and errors. The course's Console panel displays messages from its preview; it is not the browser's command prompt. When using developer tools with a lesson preview, check which document you are inspecting.
+- Keep earlier working behavior when a project continues into its next exercise. The instructions identify separate demo examples and fresh starts.
+- Finish each section with its quiz before moving on.
+
+Selectors come before content updates and node creation. A small supplied click-handler example supports the first class toggles; the Events section then explains listeners, bubbling, and keyboard behavior before the form lessons. Projects combine those skills. Finally, the Fetch lessons introduce loading, errors, and outdated results before the dashboard project.
+
+The Fetch exercises use clearly labeled offline services for repeatable practice. You will learn the request/response pattern without depending on a live API or sending form data to a remote service.
 
 ## Sections
 
-1. DOM Foundations — browser document, tree, script loading, and first selectors.
+1. DOM Foundations — open the browser Console, run safe experiments, then explore the document tree, script loading, and first selectors.
 2. Finding and Traversing Elements — groups, relatives, scoped searches, and missing nodes.
 3. Text, HTML, and Attributes — safe content updates, links, and custom data.
 4. Classes, Styles, and Visibility — state-driven appearance and accessible disclosure.

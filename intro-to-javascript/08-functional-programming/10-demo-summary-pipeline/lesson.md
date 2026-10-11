@@ -4,15 +4,17 @@ slug: demo-summary-pipeline
 order: 10
 language: javascript
 lesson_type: interactive
-summary: Chain filter, map, and reduce to total minutes for completed bike rides.
+summary: "A bike-share report counts minutes only for completed rides. Track the type of value after each step: an array of ride objects, then an array of minute values, then one number."
 seo_title: "Map Filter Reduce Bike Ride Demo | Introduction to JavaScript"
-seo_description: Run a JavaScript data pipeline that selects completed bike rides and totals their durations.
+seo_description: "A bike-share report counts minutes only for completed rides. Track the type of value after each step: an array of ride objects, then an array of minute values, then one number."
 seo_keywords: [javascript map filter reduce, array pipeline, ride summary]
 ---
 
 # Count completed ride minutes
 
-A bike-share report must ignore cancelled rides. `filter` keeps completed rides, `map` turns each ride into minutes, and `reduce` totals those numbers, starting from `0` so an empty set is safe.
+A bike-share report counts minutes only for completed rides. Track the type of value after each step: an array of ride objects, then an array of minute values, then one number.
+
+The reduce callback receives the running total and the next duration. Returning their sum feeds the next call. Its initial `0` also makes an empty filtered array return zero rather than throwing.
 
 ```javascript run
 const rides = [
@@ -27,4 +29,4 @@ const minutes = rides
 console.log(`${minutes} completed minutes`);
 ```
 
-Run the example, then change both completed rides to cancelled and confirm it reports zero. In the next exercise, you will summarize delivered parcels using a different unit and return a reusable result rather than just logging a total.
+Run the example and confirm `35 completed minutes`. If both completed rides were cancelled, the filtered array would be empty and the initial reduce value would produce zero. In the next exercise, you will summarize delivered parcels using a different unit and return a reusable result rather than just logging a total.

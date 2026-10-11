@@ -1,20 +1,45 @@
-// TODO 1: isValidEmail(email)
+// Task 1: Basic email shape
+
 function isValidEmail(email) {
   return false;
 }
 
-// TODO 2: extractNumbers(text) - returns array of number strings
+// Supplied check 1: leave this code in place.
+
+try {
+  console.log("CHECK 1: " + (["alice@example.com","bob@domain.org","notanemail","@domain.com","a@b","a b@c.test","a@@b.test","a@b.test\n"].map(isValidEmail).join(",")));
+} catch (error) {
+  console.log("CHECK 1: pending");
+}
+
+// Task 2: Digit sequences and no-match inputs
+
 function extractNumbers(text) {
   return [];
 }
 
-// TODO 3: maskEmail(email) - hides all but first char of local part
+// Supplied check 2: leave this code in place.
+
+try {
+  console.log("CHECK 2: " + (`${extractNumbers("I have 3 cats and 12 dogs").join(",")} | ${extractNumbers("A007 B42").join(",")} | none:${Array.isArray(extractNumbers("none"))}/${extractNumbers("none").length} | empty:${extractNumbers("").length}`));
+} catch (error) {
+  console.log("CHECK 2: pending");
+}
+
+// Task 3: Mask local parts of different lengths
+
 function maskEmail(email) {
   return "";
 }
 
-// These supplied probes display the result of each function as you complete it.
-console.log(`CHECK email: ${["alice@example.com", "bob@domain.org", "notanemail", "@domain.com"].map(isValidEmail).join(" | ")}`);
-console.log(`CHECK numbers: ${extractNumbers("I have 3 cats and 12 dogs").join(",")} | none: ${extractNumbers("no numbers here").join(",")}`);
-console.log(`CHECK mask: ${maskEmail("alice@example.com")} | ${maskEmail("bob@domain.org")}`);
-// Log the final combined result after all three functions work.
+// Supplied check 3: leave this code in place.
+
+try {
+  console.log("CHECK 3: " + (["alice@example.com","bob@domain.org","a@b.test"].map(maskEmail).join(" | ")));
+} catch (error) {
+  console.log("CHECK 3: pending");
+}
+
+// Task 4: Separate regex summary
+
+// Log the combined result here.

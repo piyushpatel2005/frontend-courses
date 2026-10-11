@@ -1,7 +1,17 @@
-const seats = ['A', 'B', 'C', 'D', 'E'];
+const seats = ["A","B","C","D","E"];
+
+// Step 1
+
 const filledSeats = [];
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${JSON.stringify(filledSeats)}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Filled: ${JSON.stringify(filledSeats)} | Source: ${JSON.stringify(seats)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+// Complete this step here.

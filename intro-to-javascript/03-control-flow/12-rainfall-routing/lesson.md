@@ -4,9 +4,9 @@ slug: rainfall-routing
 order: 12
 language: javascript
 lesson_type: interactive
-summary: "Run a worked example of rainfall routing walkthrough before the practical exercise."
+summary: "Compare two rainfall thresholds while keeping the readings unchanged."
 seo_title: "Rainfall Routing Walkthrough | JavaScript Console Demo"
-seo_description: "Trace rainfall routing walkthrough step by step with runnable JavaScript console output."
+seo_description: "Compare two rainfall thresholds while keeping the readings unchanged."
 seo_keywords: [javascript, "rainfall routing", interactive example]
 ---
 
@@ -29,4 +29,20 @@ for (const mm of rainMm) {
 console.log(`Alert days: ${alertDays}`);
 ```
 
-Run it, then change the threshold from 15 to 20. Predict which day changes category before you run again. `alertDays` starts outside the loop so its value survives each iteration; the `if` chooses which message to log. In the next lesson, use this pattern on a different batch of values.
+The first block counts 18 and 23 as alert days. This second example raises the threshold to 20; predict which reading changes category:
+
+```javascript run
+const rainMm = [4, 18, 0, 23, 12];
+let alertDays = 0;
+for (const mm of rainMm) {
+  if (mm >= 20) {
+    alertDays += 1;
+    console.log(`Alert: ${mm} mm`);
+  } else {
+    console.log(`Normal: ${mm} mm`);
+  }
+}
+console.log(`Alert days: ${alertDays}`);
+```
+
+`alertDays` starts outside the loop so its value survives each iteration; the `if` chooses which message to log. In the next lesson, use this pattern on a different batch of values.

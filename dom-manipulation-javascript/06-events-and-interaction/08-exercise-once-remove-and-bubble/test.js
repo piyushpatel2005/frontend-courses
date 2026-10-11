@@ -1,35 +1,41 @@
-test("Welcome callback runs only once", () => {
-  const welcome = document.querySelector("#welcome");
-  welcome.click(); welcome.click(); welcome.click();
-  assert.equal(document.querySelector("#welcome-count").textContent, "Welcomes: 1", "A once listener should count only the first click");
-});
-test("Bell callback increments for each click", () => {
-  const bell = document.querySelector("#bell");
-  const output = document.querySelector("#bell-count");
-  const before = Number(output.textContent.split(": ")[1]);
-  bell.click(); bell.click();
-  assert.equal(output.textContent, "Bells: " + (before + 2), "Increment on both Bell clicks");
-});
-test("Mute removes the original bell callback", () => {
-  const bell = document.querySelector("#bell");
-  const output = document.querySelector("#bell-count");
-  const before = Number(output.textContent.split(": ")[1]);
+// Each test gets fresh controls and closure state, not a previous test's clicks.
+function freshWorkshop(check) {
+  const root = document.querySelector("main").cloneNode(true);
+  window.setupWorkshop(root);
+  try { check(root); } finally { root.remove(); }
+}
+test("Welcome runs once", () => freshWorkshop(root => {
+  const button = root.querySelector("#welcome");
+  button.click(); button.click(); button.click();
+  assert.equal(root.querySelector("#welcome-count").textContent, "Welcomes: 1");
+}));
+test("Bell runs exactly once per activation", () => freshWorkshop(root => {
+  const bell = root.querySelector("#bell");
   bell.click();
-  assert.equal(output.textContent, "Bells: " + (before + 1), "Bell must work before it can be muted");
-  const beforeMute = output.textContent;
-  document.querySelector("#mute").click();
+  assert.equal(root.querySelector("#bell-count").textContent, "Bells: 1");
+  bell.click();
+  assert.equal(root.querySelector("#bell-count").textContent, "Bells: 2");
+}));
+test("Mute removes the working Bell listener", () => freshWorkshop(root => {
+  const bell = root.querySelector("#bell");
+  bell.click();
+  assert.equal(root.querySelector("#bell-count").textContent, "Bells: 1", "Bell must work before muting");
+  root.querySelector("#mute").click();
   bell.click(); bell.click();
-  assert.equal(output.textContent, beforeMute, "Remove the named handler when muted");
-});
-test("Standard click reaches the parent", () => {
-  const output = document.querySelector("#actions");
-  output.textContent = "Actions: ";
-  document.querySelector("#standard").click();
-  assert.equal(output.textContent, "Actions: Standard Panel ", "Standard click should reach the parent panel");
-});
-test("Private click stops propagation", () => {
-  const output = document.querySelector("#actions");
-  output.textContent = "Actions: ";
-  document.querySelector("#private").click();
-  assert.equal(output.textContent, "Actions: Private ", "Private should not trigger the parent listener");
-});
+  assert.equal(root.querySelector("#bell-count").textContent, "Bells: 1");
+}));
+test("Standard reaches the panel once", () => freshWorkshop(root => {
+  root.querySelector("#standard").click();
+  assert.equal(root.querySelector("#actions").textContent.trim(), "Actions: Standard Panel");
+}));
+test("Private stops only its own click, without canceling its default", () => freshWorkshop(root => {
+  let reached = 0;
+  root.querySelector("#controls").addEventListener("click", () => reached++);
+  const privateClick = new MouseEvent("click", {bubbles: true, cancelable: true});
+  root.querySelector("#private").dispatchEvent(privateClick);
+  assert.equal(reached, 0, "Stop Private before the parent listener");
+  assert.equal(privateClick.defaultPrevented, false, "Propagation is not a default action");
+  assert.equal(root.querySelector("#actions").textContent.trim(), "Actions: Private");
+  root.querySelector("#standard").click();
+  assert.equal(reached, 1, "Standard should still bubble");
+}));

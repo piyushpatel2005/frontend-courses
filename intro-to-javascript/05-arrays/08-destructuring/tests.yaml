@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "3 7\nNorth South"
+    },
+    {
+      "index": 1,
+      "expected_output": "10 [20,30]\n12 0"
+    }
+  ]
+}

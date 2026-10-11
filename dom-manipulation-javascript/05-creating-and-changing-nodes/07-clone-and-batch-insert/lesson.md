@@ -15,30 +15,18 @@ seo_keywords:
 - batch DOM insertion
 ---
 
-# Clone a Card and Insert a Batch
+# Copy cards and insert a batch
 
-A seed swap board has one example plant card. Make two more cards with the same nested structure without writing a new HTML string for each one.
+The seed swap has a Thyme card with a nested name and note. Add Basil and Mint cards without moving the sample out of the list.
 
-## How it works
+`example.cloneNode(true)` creates a detached copy of the element and all its descendants. `cloneNode(false)` copies only the outer element, without its child elements or text. Query `.plant-name` **inside the copy** before changing its `textContent`; the name is a `strong` element in this example.
 
-`cloneNode(true)` copies an element *and its descendants*; `false` would copy only the outer element. Each clone is a separate node, so change its nested `.plant-name` span before attaching it. Avoid repeating `id` attributes in a copied subtree—this template uses classes instead. A `DocumentFragment` is a temporary holder, not a visible element: appending cards to it leaves the page unchanged until `#plants.append(fragment)` moves all its children into the real list. After insertion the fragment is empty; the browser did not add a wrapper around the cards. Clone nodes do not copy JavaScript listeners registered with `addEventListener`. The next section introduces a listener on a parent list that can handle buttons added later.
+A deep clone also copies attributes. Repeated IDs would no longer identify one element, so this sample uses classes. If your source contains IDs, remove or change them on the copy and update any matching label references before insertion. Listeners registered with `addEventListener` are not copied; you will meet listeners in the next section.
 
-```javascript
-const batch = document.createDocumentFragment();
-for (const name of ["Basil", "Mint"]) {
-  const copy = example.cloneNode(true);
-  copy.querySelector(".plant-name").textContent = name;
-  batch.append(copy);
-}
-list.append(batch);
-```
+`document.createDocumentFragment()` creates a detached holder for several nodes. Append the copies to it, then append the fragment to the real list. Its children move into the list in order. The fragment becomes empty; no wrapper element appears.
+
+![A fragment holds detached cards, then gives its children to the list.](fragment-children-move.svg)
 
 ## Try the preview
 
-Run the preview: Thyme stays first, then Basil and Mint appear with their own Seed packet labels. Change the text in one clone to confirm the others do not change. Notice there is no fragment element around them in the Elements tree.
-
-## Remember
-
-You used `createElement` to make one node and `append` to place it. A deep clone reuses existing *structure*, while a fragment lets you prepare multiple nodes before a single insertion.
-
-The following exercise applies these ideas to a different page.
+Run: Thyme, Basil, and Mint should each have a Seed packet note. Change only `"Mint"` in the array to `"Sage"` and rerun; the other cards should stay unchanged. Restore Mint before making exhibit cards.

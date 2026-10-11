@@ -1,11 +1,34 @@
-test('Name the drift animation on the banner.', () => {
-  const rule = Array.from(document.styleSheets).flatMap((sheet) => Array.from(sheet.cssRules || []))
-    .find((item) => item.selectorText === '.kite');
-  assert.exists(rule, 'Find the .kite rule.');
-  assert.equal(rule.style.getPropertyValue('animation-name').trim(), 'drift', 'Set animation-name: drift on .kite.');
+// Read authored base rules independently of the current preview width or motion preference.
+// Browser geometry and interaction are checked separately during course review.
+function declaration(selector, property, media) {
+  const rules = Array.from(document.querySelector('style[data-intercourses="user-css"]').sheet.cssRules);
+  let value = '';
+  function scan(items) {
+    for (const rule of items) {
+      if (rule.type === CSSRule.STYLE_RULE && rule.selectorText.split(',').map(s => s.trim()).includes(selector)) {
+        const next = rule.style.getPropertyValue(property).trim();
+        if (next) value = next;
+      }
+    }
+  }
+  if (media) {
+    const normalized = text => text.replace(/\s+/g, '').toLowerCase();
+    for (const rule of rules) {
+      if (rule.type === CSSRule.MEDIA_RULE && normalized(rule.conditionText) === normalized(media)) scan(rule.cssRules);
+    }
+  } else scan(rules);
+  return value;
+}
+function normalizedValue(property, value) {
+  const style = document.createElement('span').style;
+  style.setProperty(property, value);
+  return style.getPropertyValue(property).trim().replace(/([\d.]+)ms\b/g, (_, value) => `${Number(value) / 1000}s`);
+}
+
+test("Set .kite animation-name to drift in its normal rule.", () => {
+  assert.equal(normalizedValue("animation-name", declaration(".kite", "animation-name", null)), normalizedValue("animation-name", "drift"), "Set .kite animation-name to drift in its normal rule.");
 });
 
-test('Add a transform transition to the button.', () => {
-  const css = Array.from(document.styleSheets).flatMap((sheet) => Array.from(sheet.cssRules || [])).map((rule) => rule.cssText).join(' ');
-  assert.match(css, /button\s*\{[^}]*transition:\s*transform\s+160ms/i, 'Add a 160ms transform transition to the button.');
+test("Set button transition to transform 160ms ease in its normal rule.", () => {
+  assert.equal(normalizedValue("transition", declaration("button", "transition", null)), normalizedValue("transition", "transform 160ms ease"), "Set button transition to transform 160ms ease in its normal rule.");
 });

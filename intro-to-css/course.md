@@ -52,9 +52,20 @@ modules:
 
 # CSS
 
-CSS (Cascading Style Sheets) controls how HTML looks and lays out. You should already recognize basic HTML elements, classes, and links; you do not need to know any CSS yet. Each worked demo shows a finished page you can change safely. In the next exercise, you apply the same idea to a different page and check the result in the preview.
+CSS (Cascading Style Sheets) controls how an HTML page looks: its colors, text, spacing, and layout. You should already recognize basic HTML elements, classes, and links. You do not need to know any CSS yet.
 
-Start by styling individual elements and cards. Then combine selectors and spacing in a menu and form. After learning Flexbox and Grid, use them together in a page layout. Finish by adding motion where it helps and making designs fit smaller screens. The examples use different community projects so you can practice transferring a technique rather than copying one page throughout.
+Each topic starts with a working demo. Read its stylesheet, change one value, and use the preview to see what that value does. The following exercise gives you a different page so you can try the technique yourself. The HTML is supplied; edit `style.css` unless a task specifically asks you to change the markup.
+
+Start with individual elements and cards, then use selectors and spacing in a menu and form. Flexbox and Grid introduce ways to arrange several elements together. Later projects add motion and adapt layouts to smaller screens. Each project includes its own starting files, so you do not need to copy your work from an earlier lesson.
+
+## Working through an exercise
+
+1. Read the setup to see what is already supplied.
+2. Make the first numbered change, then press Run and look for its effect in the preview.
+3. Press Submit to check your work. You can check an unfinished exercise; completed tasks should earn their own checkmarks.
+4. Continue one task at a time. If a check fails, use its message to find the element or CSS property to revisit.
+
+A CSS rule can be valid without producing the result you intended. Compare the preview with the lesson's checkpoint, not just the test result. For responsive lessons, pay attention to the width of the preview area: it can be narrower than your browser window.
 
 ## What you will learn
 

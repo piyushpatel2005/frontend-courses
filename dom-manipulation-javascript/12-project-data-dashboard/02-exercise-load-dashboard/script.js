@@ -45,18 +45,47 @@ const list = document.querySelector("#entries");
 const status = document.querySelector("#status");
 const retry = document.querySelector("#retry");
 
-function render(items) {
-  list.replaceChildren();
-  // TODO: create safe li rows and announce the count or empty state.
-}
-async function loadEntries() {
-  // The request and JSON parsing are setup; complete render(items) first.
-  // Then add loading, HTTP/error feedback, and Retry behavior here.
+window.makeEventRow = function(item) {
+  // TODO 1
+return document.createElement("li");
+};
+window.render = function(items) {
+  // TODO 2
+
+};
+window.showEventCount = function(items) {
+  // TODO 3
+
+};
+window.showDashboardLoading = function() {
+  // TODO 4
+
+};
+window.checkDashboardResponse = function(response) {
+  // TODO 5
+
+};
+window.showDashboardFailure = function() {
+  // TODO 6
+
+};
+window.showDashboardEmpty = function() {
+  // TODO 7
+
+};
+window.loadEntries = async function() {
+  window.showDashboardLoading();
+  retry.hidden = true;
   try {
-    const response = await dashboardFetch(API_URL);
+    const response = await window.dashboardFetch(API_URL);
+    window.checkDashboardResponse(response);
     const data = await response.json();
-    render(data.items);
-  } catch (error) { /* TODO: show failure and reveal Retry */ }
-}
-retry.addEventListener("click", loadEntries);
-window.initialDashboardLoad = loadEntries();
+    window.render(data.items);
+    if (data.items.length) window.showEventCount(data.items);
+    else window.showDashboardEmpty();
+  } catch (error) {
+    window.showDashboardFailure();
+  }
+};
+retry.addEventListener("click", () => {window.lastLoad = window.loadEntries();});
+window.initialDashboardLoad = window.loadEntries();

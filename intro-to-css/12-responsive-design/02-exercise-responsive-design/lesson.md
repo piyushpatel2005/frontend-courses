@@ -18,7 +18,7 @@ lesson_type: coding
 
 The Harbor weather cards start in a grid, but they need an explicit one-column base and a wider layout. The HTML and the card styling are already supplied; edit only `style.css`.
 
-In the preceding garden forecast, a media query changed the grid's columns when the viewport grew. Here use a 42rem breakpoint instead. You can resize the preview to compare the two states.
+In the preceding garden forecast, a media query changed the grid's columns when the viewport grew. Here use a 42rem breakpoint instead. The preview iframe is the viewport being tested, not the width of the whole course window. At the common initial font size of 16px, 42rem is 672px. Compare 400px and 800px previews; the wider rule also applies at exactly 672px.
 
 ## Your Tasks
 

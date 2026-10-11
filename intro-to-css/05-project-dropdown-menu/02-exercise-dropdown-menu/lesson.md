@@ -19,12 +19,16 @@ hints:
 
 # Build a keyboard-friendly dropdown
 
-The demo used one hiding rule and two reveal states. In the supplied navigation, the Stalls button and two working in-page links are already present; only `style.css` needs editing. The menu is positioned and its links are styled for you.
+Finish the Lantern Market navigation from the demo. The button, in-page links, positioning, and keyboard focus rings are supplied. The links are visible in the starter; your first rule will hide them.
+
+Edit `style.css`. Put the hiding rule before the reveal rules so the open states can override it. The parent `.menu-item` contains both the trigger and links: use its hover state to keep the pointer route connected, and its `:focus-within` state to keep the keyboard route connected.
 
 ## Your Tasks
 
 1. Set `.submenu` to `display: none` so the links start hidden.
 2. On `.menu-item:hover .submenu`, set `display: block` to reveal the links on pointer hover.
-3. On `.menu-item:focus-within .submenu`, set `display: block` so focusing the Stalls button or either link keeps the menu open for keyboard navigation.
+3. On `.menu-item:focus-within .submenu`, set `display: block` so focus on the button or either link keeps the menu open.
 
-**Checkpoint:** Preview initially shows just the Stalls button. Hover reveals the links; tab to the button and then into the submenu to check the keyboard path. CSS-only menus have limitations on touch and do not offer Escape-to-close; a full disclosure widget needs JavaScript later.
+Run and Submit after each change. After task 1 the links stay hidden; task 2 adds the pointer route; task 3 adds the keyboard route. Move the pointer away, click blank preview space, and Tab to Stalls, then through both links. The open menu should stay visible until focus leaves it.
+
+This exercise covers CSS visibility states. It does not add click toggling, Escape-to-close, or a complete touch interaction.

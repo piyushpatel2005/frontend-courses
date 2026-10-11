@@ -25,5 +25,6 @@ list.addEventListener("click", (event) => {
   if (index < 0) return;
   holds.splice(index, 1);
   render();
+  query.focus();
 });
 render();

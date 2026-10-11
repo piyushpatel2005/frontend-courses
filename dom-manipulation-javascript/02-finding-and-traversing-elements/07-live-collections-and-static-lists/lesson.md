@@ -5,9 +5,10 @@ order: 7
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Watch a live HTMLCollection update after a new match is added while an earlier NodeList stays unchanged.
+summary: Watch a live collection change while an earlier static list keeps its membership.
 seo_title: Live HTMLCollection vs static NodeList | Beginner JavaScript DOM
-seo_description: Compare getElementsByClassName with querySelectorAll and safely iterate a snapshot before adding DOM elements.
+seo_description: Watch a live collection change while an earlier static list keeps
+  its membership.
 seo_keywords:
 - HTMLCollection live
 - NodeList static
@@ -15,7 +16,13 @@ seo_keywords:
 - safe DOM iteration
 ---
 
-The market board used `querySelectorAll` to capture a **static NodeList**. At a pond survey, `getElementsByClassName("sighting")` instead returns a **live HTMLCollection**: its membership changes as matching elements enter or leave the document. These two lists are taken before a new sighting is added.
+The pond survey starts with two sightings. The script takes two lists before adding a heron: one live collection and one static list.
+
+`getElementsByClassName("sighting")` takes a class name without a dot and returns a live HTMLCollection. `querySelectorAll(".sighting")` takes a CSS selector and returns a static NodeList. The live collection updates when elements start or stop matching that class. The static list keeps the elements matched by that query.
+
+![Both lists begin with two sightings; adding the heron changes the live count to three but leaves the static count at two](live-static-membership.svg)
+
+The supplied code uses a few node-creation calls to make the difference visible. `document.createElement("li")` makes a detached element; `className` assigns its class string, and `textContent` sets its label. `appendChild(next)` places it in the list. You will practice node creation in its own section later.
 
 ```javascript
 const live = document.getElementsByClassName("sighting");
@@ -24,12 +31,8 @@ const original = Array.from(live);
 original.forEach((entry) => {
   entry.textContent += " — checked";
 });
-const next = document.createElement("li");
-next.className = "sighting";
-next.textContent = "Heron — new";
-document.getElementById("sightings").appendChild(next);
-document.getElementById("live-count").textContent = live.length;
-document.getElementById("static-count").textContent = staticList.length;
 ```
 
-`createElement("li")` makes a new list item in memory; setting `className` and `textContent` prepares it, and `appendChild(next)` puts it in the list. Node creation gets a fuller treatment later; here it makes the two collection types visibly diverge. Run: the original two sightings gain **— checked**; the new heron stays **— new**. The live collection now contains three, but the earlier static NodeList still contains two. This is a difference in *membership*, not whether edits to existing nodes are visible: both lists still refer to the original elements. We convert the live collection to an array **before** iterating so adding matching nodes cannot extend the loop unexpectedly. Unlike a NodeList, an HTMLCollection does not have `forEach` directly. Try changing `next.className` to `"other"` and run again; the live count then stays two. Restore it for the next exercise.
+`Array.from(live)` copies the current element references into an array. That fixes the membership for this loop and gives you `forEach`, which HTMLCollection does not provide. Both lists still refer to real nodes, not copies of their text.
+
+Run the complete script. Frog and Dragonfly gain checked labels. Heron says new. The live count is 3 and the earlier static count is 2. Change the new element's `className` to `"other"` and Run again: the heron is still in the page, but it no longer matches the live collection, so that count stays 2. Restore `"sighting"` afterward.

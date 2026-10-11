@@ -37,13 +37,13 @@ Use `<div>` when a whole block belongs together. It begins on a new line and can
 
 | Type | Element | Behaviour |
 |------|---------|-----------|
-| Block | `<div>` | Takes full width, starts on a new line, can contain any content |
+| Block | `<div>` | Takes full width, starts on a new line, can group headings, paragraphs, and other blocks |
 | Inline | `<span>` | Takes only as wide as its content, sits within a line of text |
 
 ```html
 <div class="card">
-    <h2>Mint seeds</h2>
-    <p>Good for a <span class="highlight">sunny</span> windowsill.</p>
+    <h2>Workshop notebook</h2>
+    <p>Includes <span class="highlight">blank</span> pages for sketches.</p>
 </div>
 ```
 
@@ -51,12 +51,12 @@ The `div` keeps the item information together. The `span` stays inside the sente
 
 ## Reusable hooks
 
-A generic container has no appearance or meaning on its own. Add a `class` when several elements need the same treatment; use an `id` only for one unique element.
+A generic container does not name a particular kind of content. A div still has block layout by default, while a span stays inline; neither creates a bordered card or highlight by itself. Add a `class` when several elements need the same treatment; use an `id` only for one unique element.
 
 ```html
 <div id="swap-list">
-    <div class="card">Mint seeds</div>
-    <div class="card">Terracotta planter</div>
+    <div class="card">Workshop notebook</div>
+    <div class="card">Pencil case</div>
 </div>
 ```
 
@@ -66,10 +66,14 @@ A generic container has no appearance or meaning on its own. Add a `class` when 
 
 Run the page. Each card should start on its own line, while the span stays within its paragraph. Without CSS, the marked word will not look different yet. If everything runs together, check that each card is wrapped in its own opening and closing `<div>`.
 
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+
+In the tasks, `.card` is shorthand for an element with `class="card"`; the dot belongs to CSS selector notation, not the HTML attribute value. The worked example shows stationery. Build your own seed-swap items below.
+
 ## Your Tasks
 
-1. Create a `<div class="container">` that wraps all of the page content.
-2. Inside, add at least two `<div class="card">` elements.
+1. Add one `<div class="container">` directly inside `<body>` to hold your cards.
+2. Directly inside it, add at least two `<div class="card">` elements.
 3. Add a non-empty `<h2>` naming the item in each `.card`.
 4. Add a non-empty `<p>` describing the item in each `.card`.
 5. In one paragraph, wrap a key word in `<span class="highlight">` for future styling.

@@ -19,5 +19,39 @@ window.mockFetch = function mockFetch(url, options = {}) {
   });
 };
 
-// TODO: On each route click, abort the previous request and start a new one.
-// Pass { signal } to mockFetch, render only the newest route, and ignore AbortError.
+let routeController;
+window.beginRoute = function() {
+  // TODO 2
+
+  routeController = new AbortController();
+  return routeController.signal;
+};
+window.showRouteLoading = function() {
+  // TODO 1
+
+};
+window.showRouteResult = function(data, signal) {
+  // TODO 3
+
+};
+window.showRouteError = function(error, signal) {
+  // TODO 4
+document.querySelector("#route-status").textContent = "Lookup failed.";
+};
+window.lookUpRoute = async function(route) {
+  const signal = window.beginRoute();
+  window.showRouteLoading();
+  try {
+    const response = await window.mockFetch(`/api/routes?route=${encodeURIComponent(route)}`, {signal});
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    window.showRouteResult(data, signal);
+  } catch (error) {
+    window.showRouteError(error, signal);
+  }
+};
+for (const [id, route] of [["slow-route", "Slow pier"], ["fast-route", "Fast pier"]]) {
+  document.querySelector(`#${id}`).addEventListener("click", () => {
+    window.lastLoad = window.lookUpRoute(route);
+  });
+}

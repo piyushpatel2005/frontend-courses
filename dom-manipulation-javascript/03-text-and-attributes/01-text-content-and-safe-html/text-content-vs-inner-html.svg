@@ -1,27 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="740" height="250" viewBox="0 0 740 250" role="img" aria-labelledby="title desc">
-<title id="title">Text content keeps visitor input as text</title>
-<desc id="desc">A visitor string containing angle brackets flows through textContent into a paragraph showing literal brackets; innerHTML instead parses the same input as markup and is unsafe for untrusted data.</desc>
-<rect width="740" height="250" rx="18" fill="#fcfaf4"/>
-<text x="28" y="35" fill="#25334a" font-size="23" font-family="system-ui">One string, two different interpretations</text>
-<path d="M32 71 Q28 68 36 67 L183 69 Q190 72 186 76 L187 129 Q183 134 176 132 L36 133 Q30 131 32 124 Z" fill="#fff3bf" stroke="#344765" stroke-width="2.5"/>
-<text x="46" y="94" fill="#263751" font-size="17" font-family="system-ui">visitor input</text>
-<text x="46" y="118" fill="#263751" font-size="16" font-family="monospace">&lt;clouds&gt;</text>
-<path d="M188 95 L273 95" stroke="#324866" stroke-width="3" fill="none"/>
-<path d="M273 95 L262 89 L262 101 Z" fill="#324866"/>
-<path d="M275 67 Q271 65 280 65 L440 67 Q446 69 443 75 L443 117 Q441 122 435 122 L280 124 Q273 120 275 115 Z" fill="#d5f5e1" stroke="#344765" stroke-width="2.5"/>
-<text x="292" y="100" fill="#263751" font-size="17" font-family="monospace">textContent</text>
-<path d="M444 95 L511 95" stroke="#324866" stroke-width="3" fill="none"/>
-<path d="M511 95 L500 89 L500 101 Z" fill="#324866"/>
-<path d="M513 67 Q510 65 518 65 L702 67 Q707 70 705 75 L705 123 Q704 130 697 130 L518 130 Q513 128 513 122 Z" fill="#d5f5e1" stroke="#344765" stroke-width="2.5"/>
-<text x="527" y="95" fill="#263751" font-size="17" font-family="system-ui">literal &lt;clouds&gt;</text>
-<text x="527" y="118" fill="#305c42" font-size="14" font-family="system-ui">no new HTML element</text>
-<path d="M120 134 L120 197 L274 197" stroke="#9a4250" stroke-width="2.5" stroke-dasharray="8 6" fill="none"/>
-<path d="M274 197 L263 191 L263 203 Z" fill="#9a4250"/>
-<path d="M275 165 Q272 163 280 163 L440 165 Q446 169 443 174 L443 215 Q439 220 434 220 L280 220 Q275 217 275 212 Z" fill="#ffe3dc" stroke="#9a4250" stroke-width="2.5"/>
-<text x="292" y="197" fill="#6b2833" font-size="17" font-family="monospace">innerHTML</text>
-<path d="M444 192 L511 192" stroke="#9a4250" stroke-width="3" fill="none"/>
-<path d="M511 192 L500 186 L500 198 Z" fill="#9a4250"/>
-<path d="M513 165 Q510 163 518 163 L702 165 Q707 169 705 174 L705 215 Q704 220 697 220 L518 220 Q513 217 513 211 Z" fill="#ffe3dc" stroke="#9a4250" stroke-width="2.5"/>
-<text x="527" y="192" fill="#6b2833" font-size="17" font-family="system-ui">parsed as markup</text>
-<text x="527" y="212" fill="#6b2833" font-size="14" font-family="system-ui">not for visitor input</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="425" viewBox="0 0 800 425" role="img" aria-labelledby="title desc">
+<title id="title">Text Or Markup?</title><desc id="desc">The illustrative strong hello string remains literal under textContent but becomes a strong element under innerHTML.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#1e293b" stroke-width="1.5"/></marker></defs>
+<rect width="800" height="425" rx="16" fill="#fcfaf5"/>
+<g font-family="system-ui, sans-serif" fill="#1e293b" text-anchor="middle">
+<text x="400.0" y="38" font-size="24" font-weight="700">Text Or Markup?</text>
+<text x="400" y="78" font-size="18">Example input: &lt;strong&gt;hello&lt;/strong&gt;</text><rect x="40" y="120" width="300" height="85" rx="10" fill="#ccfbf1" stroke="#1e293b" stroke-width="2"/><text x="190.0" y="148.5" dominant-baseline="middle" font-size="18">textContent</text><text x="190.0" y="176.5" dominant-baseline="middle" font-size="18">writes plain text</text><path d="M340 162.5 L450 162.5" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/><rect x="450" y="120" width="310" height="85" rx="10" fill="#ccfbf1" stroke="#1e293b" stroke-width="2"/><text x="605.0" y="148.5" dominant-baseline="middle" font-size="18">&lt;strong&gt;hello&lt;/strong&gt;</text><text x="605.0" y="176.5" dominant-baseline="middle" font-size="18">tags stay visible</text><rect x="40" y="260" width="300" height="85" rx="10" fill="#ffedd5" stroke="#1e293b" stroke-width="2"/><text x="190.0" y="288.5" dominant-baseline="middle" font-size="18">innerHTML</text><text x="190.0" y="316.5" dominant-baseline="middle" font-size="18">parses markup</text><path d="M340 302.5 L450 302.5" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/><rect x="450" y="260" width="310" height="85" rx="10" fill="#ffedd5" stroke="#1e293b" stroke-width="2"/><text x="605.0" y="288.5" dominant-baseline="middle" font-size="18">hello inside a strong element</text><text x="605.0" y="316.5" dominant-baseline="middle" font-size="18">tags become structure</text><text x="400" y="392" font-size="18">Use textContent for visitor input and remote data.</text></g></svg>

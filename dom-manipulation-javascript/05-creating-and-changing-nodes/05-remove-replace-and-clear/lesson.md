@@ -15,28 +15,24 @@ seo_keywords:
 - replaceChildren safe clearing
 ---
 
-# Remove, Replace, and Clear Safely
+# Remove, replace, or empty
 
-A community notice board has an expired item, an outdated item, and a scratch list that needs to start empty. These are three distinct changes, not one string rewrite.
+The community notice board has three different problems: an expired announcement, an incorrect market day, and scratch notes that are no longer needed. Each calls for a different-sized change.
 
-## How it works
-
-`element.remove()` detaches the selected element. `oldElement.replaceWith(newElement)` swaps a *node* into exactly that spot. `parent.replaceChildren()` with no arguments removes all its children; use it when you intend to empty a whole list. Do not use `innerHTML` just to clear a container, and never build HTML strings from user text. `textContent` keeps the replacement label as data rather than executable markup.
+- `element.remove()` detaches that element from its parent.
+- `oldElement.replaceWith(newElement)` puts a replacement in the old element's position. Its neighbors stay where they were.
+- `parent.replaceChildren()` with no arguments removes every child while keeping the parent itself. With node arguments, it replaces the children with those nodes.
 
 ```javascript
-document.querySelector("#expired").remove();
 const current = document.createElement("li");
 current.textContent = "Market on Friday";
 document.querySelector("#outdated").replaceWith(current);
-document.querySelector("#scratch").replaceChildren();
 ```
+
+Use `textContent` for the replacement label. There is no need to construct HTML strings for this cleanup. A removed node can still exist in a variable; removing it does not erase the JavaScript reference.
 
 ## Try the preview
 
-Run the preview: the expired item is gone, Market on Friday occupies the outdated item’s place, and the scratch list is empty. Temporarily add a child to `#scratch` in HTML, rerun, and watch it disappear.
+Run the finished example. Old meeting should disappear, Market on Friday should replace Market on Tuesday, and Scratch notes should have no items. Volunteer picnic must remain.
 
-## Remember
-
-You have made and positioned nodes; now you can remove them. Replacing a single child preserves its neighbours, whereas clearing a parent removes every child.
-
-The following exercise uses the same idea in a different setting.
+Temporarily add another `li` inside `#scratch` in the HTML and run again. Both scratch items disappear, but the list stays. Restore the markup before refreshing the museum display.

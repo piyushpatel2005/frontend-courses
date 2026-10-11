@@ -9,17 +9,19 @@ hints:
   - "Use `extends` to inherit: `class Child extends Parent {}`"
   - "Call `super(args)` inside the child constructor before using `this`."
   - "Override a parent method by defining it again in the child class."
-summary: Practice inheritance with a focused Starline Awards programming mission.
+summary: "Give circles and rectangles a shared color property while letting each calculate its own area. The notice demo showed how a child constructor initializes the inherited part with `super`."
 seo_title: Inheritance | Introduction to JavaScript
-seo_description: Learn inheritance through a focused JavaScript programming mission and console-based practice.
+seo_description: "Give circles and rectangles a shared color property while letting each calculate its own area. The notice demo showed how a child constructor initializes the inherited part with `super`."
 seo_keywords: javascript, inheritance, beginner javascript, programming practice
 ---
 
 # Inheritance
 
-The preceding notice demo inherited a label and specialized its description. In `script.js`, give shapes shared color behavior while each subtype computes its own area; inspect the Console results.
+Give circles and rectangles a shared color property while letting each calculate its own area. The notice demo showed how a child constructor initializes the inherited part with `super`.
 
-Inheritance lets a child class reuse and extend the behavior of a parent class.
+Store dimensions on each instance, not in fixed output strings. Circle area is `Math.PI * radius ** 2`. To return a number rounded to two decimal places, multiply by 100, round with `Math.round`, then divide by 100. Rectangle area is width times height.
+
+The `Dog` example below has no constructor of its own; JavaScript supplies a derived constructor that forwards arguments to the parent. If you write your own derived constructor, as the exercise does, you must call `super` yourself before accessing `this`. The supplied `tryCreate` helper catches errors from unfinished constructors so the Shape task can be checked first. Its `?.` probes display missing values rather than stopping the script.
 
 ## Basic inheritance
 
@@ -57,6 +59,8 @@ dog.toString();  // "Animal(Rex)" — inherited from Animal
 
 ## Calling the parent with `super`
 
+This snippet continues with the `Animal` class above.
+
 ```javascript
 class TaggedAnimal extends Animal {
     constructor(name, tag) {
@@ -70,20 +74,23 @@ console.log(new TaggedAnimal("Rex", 5).toString()); // Animal(Rex) #5
 
 ## `instanceof` check
 
+These expressions use the same `dog`, `Dog`, `Animal`, and `Cat` from the first example. The comments show returned values; an expression alone does not print a Console line.
+
 ```javascript
 dog instanceof Dog;     // true
 dog instanceof Animal;  // true — Dog IS an Animal
 dog instanceof Cat;     // false
 ```
 
+Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.
+
 ## Your Tasks
 
-1. Store the default color `black` in the `Shape` constructor. The starter logs the color.
-2. Initialize `Circle` with a radius and inherited color using `super(color)`; the starter checks that it inherits `Shape`.
-3. Implement `Circle.area()` rounded to two decimal places; the starter checks radius 5.
-4. Implement `Circle.toString()` to return `Circle(radius: 5, color: red, area: 78.54)`; the starter logs it.
-5. Initialize `Rectangle` with width, height, and inherited color; the starter checks that it inherits `Shape`.
-6. Implement `Rectangle.area()` as width times height; the starter checks 4 by 6.
-7. Implement `Rectangle.toString()` to return `Rectangle(4×6, color: blue, area: 24)`; the starter logs it.
-8. Log both descriptions as `mission result: Circle(radius: 5, color: red, area: 78.54) | Rectangle(4×6, color: blue, area: 24)`.
-
+1. Store the supplied `color` in `Shape`; the default is `"black"`.
+2. Initialize `Circle` by calling `super(color)` before storing `radius`.
+3. Return the circle area rounded to two decimal places from `area()`.
+4. Return `Circle(radius: R, color: C, area: A)` from `toString()` using the instance values and its area method.
+5. Initialize `Rectangle` by calling `super(color)` before storing `width` and `height`.
+6. Return width times height from `Rectangle.area()`.
+7. Return `Rectangle(W×H, color: C, area: A)` from its `toString()` using instance values.
+8. Log the two descriptions, joined by ` | ` and prefixed with `mission result: `.

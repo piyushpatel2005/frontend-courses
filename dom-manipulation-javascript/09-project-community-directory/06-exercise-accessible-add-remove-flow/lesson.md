@@ -28,7 +28,8 @@ Here is a smaller example from a different project: a reading log can create a t
 ```javascript
 const entry = document.createElement("li");
 const title = document.createElement("span");
-title.textContent = document.querySelector("#book-title").value;
+title.textContent =
+  document.querySelector("#book-title").value;
 entry.append(title);
 const remove = document.createElement("button");
 remove.type = "button";
@@ -37,26 +38,34 @@ remove.textContent = "Remove";
 entry.append(remove);
 document.querySelector("#reading-log").append(entry);
 
-document.querySelector("#reading-log").addEventListener("click", (event) => {
-  if (event.target.matches("button.remove-book")) {
-    event.target.closest("li").remove();
-  }
-});
+document.querySelector("#reading-log")
+  .addEventListener("click", (event) => {
+    const button =
+      event.target.closest("button.remove-book");
+    if (button && event.currentTarget.contains(button)) {
+      button.closest("li").remove();
+    }
+  });
 ```
 
 Your directory needs this safe creation and parent-listener pattern plus buttons, selection details, form feedback, and the existing search. If a selected card disappears, clear its details rather than describing someone who is no longer there.
 
-The starter already includes the labelled form and original Remove buttons. Its delegated View listener also works on newly created cards; leave those in place while you build the add and remove flow.
+The starter already includes the labelled form and original Remove buttons. Its delegated View listener also works on newly created cards; leave those in place. `createMemberCard` prepares a node without inserting it, so you can test that helper before wiring submission. Edit `script.js`, Run to inspect each change, then Submit. The reference resets the form and focuses the name field after a successful addition; this convenience does not reset the active search.
+
+This directory permits matching names, because two neighbors may share a name. Each submission creates a separate card; removal acts on the clicked card, not the first matching name. A filter stays active after additions, so a new member may be present but hidden.
 
 ## Your Tasks
 
 1. Prevent default navigation whenever `#member-form` is submitted.
 2. Reject a blank or whitespace-only name or skill with feedback and no new card.
-3. On valid submission, create a card with safe literal name and skill text, a View button, and a named Remove button.
-4. Announce the new member in `#form-status` after adding the card.
-5. Delegate Remove clicks on `#members` for both original and newly inserted cards.
-6. Announce the removed member in `#form-status`.
-7. If the removed member was selected, restore the default name and skill details.
-8. After removal, refresh the search result count and empty state for the current query.
+3. Complete `createMemberCard(name, skill)` to return one detached card with literal name and skill text, matching data attributes, a View button, and a named Remove button.
+4. On valid submission, append the card returned by your helper to `#members`.
+5. Reapply the current search after an addition so the new card’s visibility, result count, and empty state agree.
+6. Announce the new member in `#form-status` after adding the card.
+7. Delegate Remove clicks on `#members` for both original and future cards, including clicks inside a button.
+8. Announce the removed member in `#form-status`.
+9. If the removed member was selected, restore the default name and skill details. Removing another member must keep the current details.
+10. After removal, refresh the result count and empty state for the current query.
+11. After removal, focus `#member-search` so keyboard users can continue.
 
 Try adding `<em>Ada</em>` with the skill “Painting.” Search for `painting`, view the new card, remove it, then clear the search. The markup remains literal, the detail resets, and the original cards return. Your directory now supports selection, search, additions, and removal.

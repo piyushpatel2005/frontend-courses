@@ -39,4 +39,4 @@ async function reportDashboard() {
   // Await the dashboard, then log its summary.
 }
 globalThis.reportDashboard = reportDashboard;
-reportDashboard();
+globalThis.initialDashboard = reportDashboard().catch(error => console.log(`Work incomplete: ${error.message}`));

@@ -4,9 +4,9 @@ slug: tally-with-const-and-let
 order: 7
 language: javascript
 lesson_type: interactive
-summary: Keep a fixed award constant while updating a running score.
+summary: "Trace a running tally as two additions and one correction change its value."
 seo_title: Track a Changing Points Tally | JavaScript Console Practice
-seo_description: Run a JavaScript points tally using const for the rule and let for a changing balance.
+seo_description: "Trace a running tally as two additions and one correction change its value."
 seo_keywords: javascript const let, running tally, compound assignment
 ---
 
@@ -24,7 +24,9 @@ tally += pointsPerShift;
 console.log("after second shift:", tally);
 ```
 
-`+=` changes the `let` binding; `const pointsPerShift` stays 6. A correction can subtract from the current tally:
+After each update, the next statement reads the new tally. The two additions therefore build on each other; they do not each start from 10. `+=` changes the `let` binding, while `const pointsPerShift` stays 6.
+
+The second block starts a fresh example at 10 and repeats both additions before a correction. `tally -= 2` means `tally = tally - 2`:
 
 ```javascript run
 const pointsPerShift = 6;

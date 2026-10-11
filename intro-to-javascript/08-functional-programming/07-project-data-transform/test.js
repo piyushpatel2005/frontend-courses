@@ -1,27 +1,27 @@
-test("Positive-stock items", () => {
-  assert.match(OUTPUT, /^CHECK stock: Laptop,Desk Chair,Bookshelf,Webcam,Monitor$/m, "Expected this standalone Console line: CHECK stock: Laptop,Desk Chair,Bookshelf,Webcam,Monitor");
+test("Positive stock", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK stock: Laptop,Desk Chair,Bookshelf,Webcam,Monitor"), true, "Expected checkpoint: CHECK stock: Laptop,Desk Chair,Bookshelf,Webcam,Monitor");
 });
 
 test("Expensive sorted names", () => {
-  assert.match(OUTPUT, /^CHECK expensive: Laptop,Monitor$/m, "Expected this standalone Console line: CHECK expensive: Laptop,Monitor");
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK expensive: Laptop,Monitor"), true, "Expected checkpoint: CHECK expensive: Laptop,Monitor");
 });
 
-test("Inventory total value", () => {
-  assert.match(OUTPUT, /^CHECK value: 24914$/m, "Expected this standalone Console line: CHECK value: 24914");
+test("Inventory value", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK value: 24914 | empty: 0"), true, "Expected checkpoint: CHECK value: 24914 | empty: 0");
 });
 
-test("Category grouping", () => {
-  assert.match(OUTPUT, /^CHECK categories: Electronics=4 \| Furniture=2$/m, "Expected this standalone Console line: CHECK categories: Electronics=4 | Furniture=2");
+test("Grouped records", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK categories: Laptop,Headphones,Webcam,Monitor | Desk Chair,Bookshelf"), true, "Expected checkpoint: CHECK categories: Laptop,Headphones,Webcam,Monitor | Desk Chair,Bookshelf");
 });
 
-test("Standalone stock count", () => {
-  assert.match(OUTPUT, /^5 items in stock$/m, "Expected this standalone Console line: 5 items in stock");
+test("Stock summary", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("5 items in stock"), true, "Expected checkpoint: 5 items in stock");
 });
 
-test("Standalone top products", () => {
-  assert.match(OUTPUT, /^Top products: Laptop, Monitor$/m, "Expected this standalone Console line: Top products: Laptop, Monitor");
+test("Products summary", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("Top products: Laptop, Monitor"), true, "Expected checkpoint: Top products: Laptop, Monitor");
 });
 
-test("Standalone inventory value", () => {
-  assert.match(OUTPUT, /^Total value: \$24,914$/m, "Expected this standalone Console line: Total value: $24,914");
+test("Value summary", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("Total value: $24,914"), true, "Expected checkpoint: Total value: $24,914");
 });

@@ -12,32 +12,24 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# Apply CSS Demo: Three Sources
+# Where CSS can live
 
-## Mission
+The museum inherited a page with CSS in three places. Each source has a different job here so you can find it easily. All three use the same property-and-value syntax.
 
-The museum team inherited a card with three CSS sources. Run the example to see the scope of each source before choosing one in the exercise.
+## Inside an element
 
-## What you'll see
+In `index.html`, the heading has `style="color: #7a1fa2;"`. This is **inline CSS**: declarations go directly in the element's `style` attribute. No selector or braces are needed because that element is already the target.
 
-An exhibit card with a locally colored heading, an internal paragraph-size rule, and an external page background.
+## In the document head
 
-## Read the code
+The `<style>` element in `<head>` contains `p { font-size: 18px; }`. This is **internal CSS**. It uses a selector and can style matching elements throughout this document. `font-size` sets the text size; `px` means CSS pixels.
 
-```html
-<h1 style="color: #7a1fa2;">Three CSS Sources</h1>
-<style>p { font-size: 18px; }</style>
-<link rel="stylesheet" href="style.css">
-```
+## In a separate file
 
-## Try the preview
+The `body` background rule lives in `style.css`. The head contains `<link rel="stylesheet" href="style.css">` to connect that **external stylesheet**. `rel` identifies a stylesheet and `href` names its location. Several HTML pages can link to the same CSS file.
 
-Run the completed page. Change the inline heading color, then the `p` font size in the internal `<style>` block, then the `body` background in `style.css`. Notice which part of the page each source controls; restore the original values before continuing.
+The course preview loads the stylesheet tab automatically, so removing the link here does not demonstrate a missing-link failure. A standalone HTML page still needs the connection.
 
-## Checkpoint
+## Compare the sources
 
-The heading's `style` attribute affects that element, the `<style>` rule targets paragraphs in this page, and the linked `style.css` sets the body background. This demo is already complete.
-
-## Next
-
-Continue to **Exercise: Apply CSS Three Ways** and reproduce the idea from a starter file.
+Run: the heading is purple, the paragraph is 18px, and the page is pale blue. Change the internal `font-size` to `24px` and Run again. Only the paragraph should grow. Restore `18px` before the exercise.

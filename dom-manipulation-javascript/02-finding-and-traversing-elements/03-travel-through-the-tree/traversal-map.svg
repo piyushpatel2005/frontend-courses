@@ -1,19 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 415" role="img" aria-labelledby="title desc">
-<title id="title">Routes around a book card's DOM</title>
-<desc id="desc">An article contains a heading and a featured span. From the span parentElement and closest article reach the card; children zero of the card reaches the heading.</desc>
-<rect width="790" height="415" rx="20" fill="#fcfaf5"/>
-<text x="36" y="43" font-family="system-ui" font-size="23" font-weight="700" fill="#273445">From a label, navigate its family</text>
-<rect x="248" y="83" width="325" height="272" rx="18" fill="#e9f3f1" stroke="#244c64" stroke-width="3" transform="rotate(-.3 410 219)"/>
-<text x="267" y="117" font-family="system-ui" font-size="20" font-weight="700" fill="#244c64">&lt;article&gt;  card</text>
-<rect x="285" y="143" width="250" height="62" rx="12" fill="#fff3bf" stroke="#244c64" stroke-width="2.5"/>
-<text x="410" y="181" text-anchor="middle" font-family="system-ui" font-size="19" fill="#243447">&lt;h2&gt; River atlas</text>
-<rect x="285" y="265" width="250" height="62" rx="12" fill="#a5d8ff" stroke="#244c64" stroke-width="2.5"/>
-<text x="410" y="303" text-anchor="middle" font-family="system-ui" font-size="19" fill="#243447">&lt;span&gt; Staff pick</text>
-<path d="M285 280 L254 237" stroke="#244c64" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M249 230 l2 13 10 -7z" fill="#244c64"/>
-<path d="M543 297 C609 292 622 205 570 132" stroke="#168052" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M568 127 l-2 14 12 -6z" fill="#168052"/>
-<text x="37" y="173" font-family="system-ui" font-size="18" fill="#244c64">card.children[0]</text><path d="M210 167 L279 167" stroke="#244c64" stroke-width="2.5"/><path d="M282 167 l-10 -6 v12z" fill="#244c64"/>
-<text x="37" y="300" font-family="system-ui" font-size="18" fill="#244c64">start at .featured</text><path d="M216 295 L279 295" stroke="#244c64" stroke-width="2.5"/><path d="M282 295 l-10 -6 v12z" fill="#244c64"/>
-<text x="586" y="209" font-family="system-ui" font-size="18" fill="#168052">closest('article')</text>
-<text x="300" y="244" font-family="system-ui" font-size="17" fill="#244c64">parentElement ↑</text>
-<text x="36" y="391" font-family="system-ui" font-size="16" fill="#435766">Both routes reach article here; a wrapper would change parentElement.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="440" viewBox="0 0 800 440" role="img" aria-labelledby="title desc">
+<title id="title">Routes Around A Book Card</title><desc id="desc">Three example routes: featured span parentElement reaches article; featured span closest article reaches article; article children zero reaches the heading.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10" fill="none" stroke="#1e293b" stroke-width="1.5"/></marker></defs>
+<rect width="800" height="440" rx="16" fill="#fcfaf5"/>
+<g font-family="system-ui, sans-serif" fill="#1e293b" text-anchor="middle">
+<text x="400.0" y="38" font-size="24" font-weight="700">Routes Around A Book Card</text>
+<rect x="35" y="85" width="430" height="75" rx="10" fill="#dbeafe" stroke="#1e293b" stroke-width="2"/><text x="250.0" y="108.5" dominant-baseline="middle" font-size="18">Start at span.featured</text><text x="250.0" y="136.5" dominant-baseline="middle" font-size="18">label.parentElement</text><path d="M465 122.5 L540 122.5" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/><rect x="540" y="85" width="225" height="75" rx="10" fill="#ccfbf1" stroke="#1e293b" stroke-width="2"/><text x="652.5" y="122.5" dominant-baseline="middle" font-size="18">article.card</text><rect x="35" y="190" width="430" height="75" rx="10" fill="#dbeafe" stroke="#1e293b" stroke-width="2"/><text x="250.0" y="213.5" dominant-baseline="middle" font-size="18">Start at span.featured</text><text x="250.0" y="241.5" dominant-baseline="middle" font-size="18">label.closest(&quot;article&quot;)</text><path d="M465 227.5 L540 227.5" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/><rect x="540" y="190" width="225" height="75" rx="10" fill="#ccfbf1" stroke="#1e293b" stroke-width="2"/><text x="652.5" y="227.5" dominant-baseline="middle" font-size="18">article.card</text><rect x="35" y="295" width="430" height="75" rx="10" fill="#ccfbf1" stroke="#1e293b" stroke-width="2"/><text x="250.0" y="318.5" dominant-baseline="middle" font-size="18">Start at article.card</text><text x="250.0" y="346.5" dominant-baseline="middle" font-size="18">card.children[0]</text><path d="M465 332.5 L540 332.5" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/><rect x="540" y="295" width="225" height="75" rx="10" fill="#ffedd5" stroke="#1e293b" stroke-width="2"/><text x="652.5" y="318.5" dominant-baseline="middle" font-size="18">h2</text><text x="652.5" y="346.5" dominant-baseline="middle" font-size="18">River atlas</text><text x="400" y="410" font-size="18">The span and heading are direct children of the article in this example.</text></g></svg>

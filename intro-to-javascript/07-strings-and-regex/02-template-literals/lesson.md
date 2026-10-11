@@ -13,9 +13,9 @@ hints:
   - "A newline inside backticks remains a newline in the returned string."
 ---
 
-# Template Literals
+# Template literals
 
-The awards desk needs a compact two-line sign for each guest. Instead of concatenating pieces with `+`, put expressions inside `${...}` in a backtick string. Run `script.js` and check the Console.
+Build a two-line guest sign from a name and a seat. Backticks create a **template literal**; `${expression}` inserts the value of an expression into its text. Ordinary single or double quotes do not perform that substitution.
 
 ```javascript
 function trailSign(place, distance) {
@@ -27,11 +27,13 @@ console.log(trailSign("Cove", 3));
 // Distance: 3 km
 ```
 
-The newline between the two lines stays in the string. A template literal can also hold a calculation, such as `${distance * 2}`. The next lesson introduces regular expressions; none are needed here.
+The newline inside the backticks stays in the string. You can also write `\n` for a newline. An expression can be a calculation such as `${distance * 2}`, or a method call such as `${name.trim()}`.
+
+`trim()` returns a string without surrounding whitespace. It keeps spaces inside the name: `"  Jo Lee  ".trim()` becomes `"Jo Lee"`. Trim before inserting the name so accidental edge spaces do not appear on the sign.
+
+Edit `script.js`. The check displays the helper's two lines with a pipe between them so they are easy to inspect. Leave that supplied check in place. Run after implementing the helper, then Submit.
 
 ## Your Tasks
 
-1. Complete `guestSign(name, seat)` with a template literal that trims the name and returns a two-line sign; the supplied CHECK call tries Lee in C4.
-2. Log `guestSign(guest, seat)` as its own two-line Console message.
-
-Run the completed script: the two-line sign should be readable as a single Console message.
+1. Complete `guestSign(name, seat)` with a template literal returning `Guest: ` followed by the trimmed name, a newline, and `Seat: ` followed by the seat.
+2. Log `guestSign(guest, seat)` separately. The supplied values should produce `Guest: Nia` and `Seat: B12` on consecutive lines.

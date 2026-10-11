@@ -1,8 +1,15 @@
+// Step 1
+
 const colors = [];
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${JSON.stringify(colors)}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Colors: ${JSON.stringify(colors)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
 
-// Log the final result yourself.
+// Step 2
+
+// Complete this step here.

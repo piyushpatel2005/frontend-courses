@@ -17,15 +17,19 @@ hints:
   - Keep each declaration inside the selector named in the task.
 ---
 
-# Color Palette Exercise
+# Color the market ticket
 
-The preceding demo used a dark surface, bright heading, and focused accent. Now give this small ticket the same clear hierarchy.
+The flyer demo used different colors for surfaces and text. Apply that distinction to this smaller Lantern Lane ticket. Its layout and supporting text are supplied; edit the color rules in `style.css`.
 
-The starter already supplies the ticket's size and placement. Run the preview after each color change. A completed ticket has a navy surface, a cream title, and a coral badge with dark, readable lettering.
+Use `background-color` for the ticket and badge surfaces. Use `color` for the heading and badge lettering. Changing a surface does not automatically choose readable text for it.
 
 ## Your Tasks
 
 1. Set `.ticket` to a `#172554` background color.
 2. Set the `h1` text color to `#fff7ed`.
 3. Set `.entry` to a `#fb7185` background color.
-4. Set `.entry` text color to `#172554` so the badge label remains readable.
+4. Set `.entry` text color to `#172554`.
+
+## Check the contrast
+
+Run after each change, then Submit. The finished ticket should have a navy panel, cream heading, and coral badge with navy lettering. The supplied supporting text should remain readable too; recoloring it is not an extra task.

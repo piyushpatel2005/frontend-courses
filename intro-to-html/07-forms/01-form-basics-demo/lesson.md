@@ -32,7 +32,9 @@ A completed relay intake form with labels connected to text, email, and password
 <input type="text" id="crew-contact" name="crew-contact" required />
 ```
 
-The label’s `for` value matches the input’s `id`, so clicking the label focuses the right field.
+The label’s `for` value matches the input’s unique `id`, so clicking the label focuses the right field. `id` connects the label; `name` identifies the answer when a form is submitted. For example, `name="crew-contact"` gives that answer the key `crew-contact`.
+
+`<form>` groups the answers. Its `action` is the destination and `method="post"` puts answers in the request body; neither creates a receiving service. A password input masks what you type, but does not encrypt it. Use made-up practice values here. `required` makes the browser ask for a value before submission.
 
 ## Try the preview
 
@@ -40,7 +42,7 @@ Run the page and click each label. The matching field receives focus. The button
 
 ## Checkpoint
 
-Use the preview to connect each visible result to the HTML that created it. This is a completed demonstration, so you do not need to edit the code.
+Notice that each visible label names a different field. As an optional experiment, change the Crew contact label text, Run, and click it again: the connection still works because `for` and `id` have not changed. Restore the text before moving on. Do not submit real details.
 
 ## Next
 

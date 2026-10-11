@@ -16,32 +16,17 @@ hints:
 - Inside the listener, use event.target.closest("button[data-remove]") and verify the button belongs to event.currentTarget.
 ---
 
-# Exercise: Delegate Pantry Actions
+# Delegate pantry removal
 
-A pantry list can add rows after the page loads. Add one click listener to the stable list so both the initial and newly created Remove buttons work.
+The pantry starts with Rice. The supplied Add item button builds a Beans row, but neither row's Remove button has a handler yet.
 
-## How it works
+First complete the supplied `removePantryItem(event)` function. It receives a clicked `target` and the list as `currentTarget`. Use `closest("button[data-remove]")` to handle clicks on nested labels, then check containment before removing the button's closest `li`. An early `return` leaves unrelated clicks alone.
 
-The separate ticket-list example listens on its parent; the nested badge can be the click target, so `closest` walks up to its button. During this callback `event.currentTarget` is the ticket list, whereas `event.target` may be the badge itself. Do not remove a row for clicks on plain list text. Keep the Add item button’s provided listener; it creates a new row without attaching another Remove listener.
-
-```javascript
-// Different example: tickets, not your pantry.
-tickets.addEventListener("click", function (event) {
-  const button = event.target.closest("button[data-dismiss]");
-  if (!button || !event.currentTarget.contains(button)) return;
-  button.closest("li").remove();
-});
-```
-
-## Try the preview
-
-Run the preview. Remove Rice, then add a new item and remove that one too. If the new row cannot be removed, the listener may have been attached to the original Remove button rather than to `#pantry`.
-
-## Remember
-
-Click listeners came first; delegation builds on them. The listener is on the parent, so adding children does not require adding more listeners.
+Next register that function on the pantry list. The supplied `window.removePantryItem` reference is only for calling the helper independently; it does not register a listener.
 
 ## Your Tasks
 
-1. Listen for clicks on `#pantry`; remove the clicked row only when the click originates inside its `button[data-remove]`, including the nested span.
-2. Make the same parent listener remove a Beans row created by the provided Add item button, without wiring a separate Remove listener to that new row.
+1. Complete `removePantryItem(event)` to remove the matching button's row only when the button is inside `event.currentTarget`. Ignore ordinary row clicks and buttons outside that list.
+2. Register that handler once for clicks on `#pantry`, so existing and later-added buttons work through the same listener.
+
+Edit `script.js`, then Run. Step 1 alone does not make the buttons work, but Submit can check the handler directly. After step 2, remove Rice, add Beans, and remove Beans by clicking its nested label. Clicking plain row text must still do nothing.

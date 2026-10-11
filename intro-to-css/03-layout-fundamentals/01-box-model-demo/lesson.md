@@ -18,20 +18,24 @@ hints:
   - Padding is inside the border; margin is outside it.
 ---
 
-# Box model: seed packet card
+# See the layers of a seed packet
 
-The market flyer is complete. For this module, a separate **Riverside Seed Swap** needs practical layout. Its packet card gets breathing room, an edge, and space from its neighbor.
+This module styles a Riverside Seed Swap card. Its text, inner spacing, outline, and outer spacing are different parts of the CSS **box model**.
 
-## Read the finished card
+The content is the text itself. `padding: 20px` adds space around it inside the border. `border: 4px solid #3c6e47` draws the green edge. `margin: 24px 0` sets 24px above and below the packet and zero at the left and right. Two margin values read “vertical, horizontal.”
 
-In `style.css`, the `.packet` rule has three layers: `padding` keeps the words away from the edge, `border` draws the edge, and `margin` separates the packet from the page. The `box-sizing` rule makes the declared width include padding and border.
+![Nested content, padding, border, and margin layers, with a border-box width example.](seed-packet-box-model.svg)
 
-**Checkpoint:** the preview shows a cream packet with a green outline and clear space around it.
+The supplied `*` selector matches every element. Its `box-sizing: border-box` makes the declared width include padding and border. Without it, the usual `content-box` width covers only content, so padding and border add to that width. Margin stays outside either width.
 
-## Try it safely
+The space in `.packet h1` and `.packet p` selects headings and paragraphs inside the packet. Those supplied rules remove the heading's top margin and paragraph's bottom margin so you can see the packet padding clearly.
 
-Change `.packet` `padding` from `20px` to `36px`, preview the page, and notice that the content moves farther from the border. Restore `20px` when you are done, then continue to the exercise.
+Here `.packet` uses `width: 100%` to fill its parent. On a wide preview the parent is capped at 420px; the diagram uses that size. Narrower previews can make it smaller. Adjacent vertical margins can collapse together rather than add, so not every visible gap is a sum of margins.
+
+## Move the inner edge
+
+Run. Change the packet's padding to `36px`, then Run again. The text moves inward while the border-box width stays the same. Restore `20px` before the exercise.
 
 ## Learn more
 
-MDN’s official guide goes deeper into content, padding, borders, margins, and how sizing is calculated. Read [MDN’s reference for the CSS box model](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction_to_the_CSS_box_model) when you want to go further.
+MDN's [box-model guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model) describes these layers in more detail.

@@ -29,7 +29,7 @@ The neighborhood skills map is collecting profiles for people who can help at co
 
 ## What you'll build
 
-A single card with a name, a role, an accessible profile image, and a contact list that uses inline labels and values.
+A single card with a name, a role, a profile image, and a contact list. This is a new page, separate from the repair-café profile. Edit `index.html`; build one piece at a time, Run to inspect it, then Submit to check your tasks. A `div` groups the content but does not draw a border by itself.
 
 ## Build the card in layers
 
@@ -62,10 +62,10 @@ Run the page. You should see one card containing a name, a role, an image, and a
 1. Create an outer `<div class="card">` for the contributor.
 2. Add the contributor’s name in an `<h1>` inside the card.
 3. Add their role in a paragraph inside the card.
-4. Add a profile `<img>` with a working `src` and descriptive `alt` inside the card.
-5. Inside the card, add a nested `<div class="contact">` with a `<ul>` containing at least two contact items.
-6. In two contact items, use separate `<span>` elements for a non-empty label and value.
+4. Add a profile `<img>` with a non-empty `src` and descriptive `alt` inside the card.
+5. Inside the card, add a nested `<div class="contact">` with a `<ul>` containing Email and Phone contact items.
+6. In the Email and Phone items, use separate `<span>` elements for a non-empty label and value.
 
 ## Payoff
 
-The map now has a clear contributor card that is ready for real contact links.
+Next you will add links to this card. The following starter includes Riya’s completed reference card; if you chose another contributor, copy your finished card into that starter before adding the links. The checks inspect the image attributes, not whether a remote image service is available. For a practice portrait, you can use `https://placehold.co/160x160/png?text=Profile`, or another image you are allowed to use.

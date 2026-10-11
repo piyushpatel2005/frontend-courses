@@ -19,11 +19,15 @@ hints:
 
 # Finish the seed request card
 
-The demo used block layout to stack controls and a focus pseudo-class for keyboard feedback. The starter already has the associated label, stacked controls, and a responsive-width email input; do not change the HTML. Add just the spacing and focus feedback in `style.css`.
+The garden's seed-request form already has a visible label, stacked controls, and an email field that fits the card. Add the two missing details in `style.css`; leave the HTML unchanged.
+
+The demo used a bottom margin to separate the input from the button. It also used `:focus` to show where typing will go. These are independent changes, so you can check the spacing before adding the outline.
 
 ## Your Tasks
 
-1. Add `margin-bottom: .75rem` to `input` to give the button breathing room.
-2. Add `outline: 3px solid #f4a261` on `input:focus` so keyboard users can see the focused field.
+1. Add `margin-bottom: .75rem` to `input` to separate it from the button.
+2. Add `outline: 3px solid #9a3412` on `input:focus` to mark the focused field.
 
-**Checkpoint:** Preview shows a gap below the email box, and tabbing to the input gives it an orange outline. This is a visual form only; submitting does not send data.
+Run after each change, then Submit. To check focus, click the Reply email label or click blank preview space and press Tab. A dark-orange ring should surround the input. Tab to the button to see the field ring disappear and the supplied button ring appear.
+
+The label and keyboard path matter as much as the spacing. This is a visual form only; no service receives the request.

@@ -5,10 +5,9 @@ order: 2
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Select every trail stop and update each one using forEach.
+summary: Append a label to every trail stop without changing its name.
 seo_title: 'Exercise: label every trail stop | Beginner JavaScript DOM'
-seo_description: Select every trail stop and update each one using forEach. Practice
-  in a live JavaScript DOM preview.
+seo_description: Append a label to every trail stop without changing its name.
 seo_keywords:
 - JavaScript DOM
 - querySelectorAll exercise
@@ -16,19 +15,12 @@ seo_keywords:
 - DOM list
 ---
 
-The market demo selected *all* `.stall` elements and used `forEach` to update each one. Your trail page has three `.stop` list items. Each should gain the suffix ** — marked**. The CSS already styles the list; your job is in `script.js`.
+Label each stop on the creek trail. The market demo used a NodeList and a callback to update several elements; use the same approach with the `.stop` items in this page.
 
-The same shape works on a different page, a craft fair:
+Edit `script.js`. The HTML and list styling are supplied. Keep each existing name and append the suffix, including its leading space. `stop.textContent += " — marked"` describes the change to one stop; place that change inside the callback so it reaches every match.
 
-```javascript
-const booths = document.querySelectorAll(".booth");
-booths.forEach((booth) => {
-  booth.textContent += " — checked in";
-});
-```
-
-The selector produces a NodeList; each callback receives one element. Do not write to the NodeList as if it were one element, and do not use `querySelector`, which would change only the first stop. Run to see three marked stops, then Submit.
+Run to check Old mill, Stone crossing, and Lookout, then Submit. A change to only the first stop is not enough.
 
 ## Your Tasks
 
-1. Use `querySelectorAll(".stop")` and `forEach` to append ` — marked` to the text of each of the three trail stops.
+1. Use `querySelectorAll(".stop")` and `forEach` to append ` — marked` to every trail stop.

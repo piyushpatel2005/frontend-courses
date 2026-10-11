@@ -3,9 +3,9 @@ title: "Input Types Demo: Build a Mission Profile"
 slug: input-types-demo
 order: 3
 language: html
-summary: See how different input types give The crew’s mission profile the right browser controls.
+summary: See how different input types give the crew’s mission profile the right browser controls.
 seo_title: "Input Types Demo: Build a Mission Profile | Introduction to HTML"
-seo_description: See how different input types give The crew’s mission profile the right browser controls.
+seo_description: See how different input types give the crew’s mission profile the right browser controls.
 seo_keywords:
   - HTML demo
   - HTML preview
@@ -33,7 +33,7 @@ A completed form that shows text, email, number, date, and color inputs side by 
 <input type="color" value="#5b7cfa" />
 ```
 
-The `type` tells the browser what kind of value belongs in the field.
+The `type` tells the browser what kind of value belongs in the field. Here, `min="1"` and `max="100"` bound the energy level; `step="1"` requests whole-number increments. These constraints do not make an empty field invalid unless it is also `required`. Date and color picker appearance depends on the browser.
 
 ## Try the preview
 
@@ -41,7 +41,7 @@ Run the demo. Number fields have number controls, date fields offer a date picke
 
 ## Checkpoint
 
-Use the preview to connect each visible result to the HTML that created it. This is a completed demonstration, so you do not need to edit the code.
+Change the color in the picker and choose a date. For a small code experiment, change the number field’s `max` to `10`, Run, and try `11`; restore `100` afterward. This demo has no saving service. Do not submit personal information.
 
 ## Next
 

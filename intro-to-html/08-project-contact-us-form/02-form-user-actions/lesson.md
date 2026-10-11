@@ -27,7 +27,7 @@ The Riverlight Community Hall contact form can now collect a message. Add the ch
 
 A contact form extended with checkbox interests, an optional phone number, a radio-button group for a single reply method, required consent, and the existing submit button — all properly labeled.
 
-The starter carries forward the completed Name, Email, Topic, Message, and submit controls. Add the choices before the button; do not rebuild the previous form.
+The starter carries forward the completed Name, Email, Topic, Message, and submit controls. Add the choices before the button in `index.html`; do not rebuild the previous form. These existing fields are setup, not new task credit.
 
 ## One idea: names define a radio group
 
@@ -43,7 +43,7 @@ Checkboxes allow several independent answers. Add an optional phone field so a v
 </fieldset>
 ```
 
-Use a separate checkbox for consent and add `required` when it must be accepted before sending. Every checkbox and radio needs visible label text, just like a text field.
+Use a separate checkbox for consent and add `required` when it must be accepted before sending. Leave it unchecked so the visitor makes the choice. Every checkbox and radio needs visible label text, just like a text field. Give the choices non-empty `name` and `value` attributes; unchecked checkboxes are not included in submitted form data.
 
 ## Checkpoint
 
@@ -51,13 +51,15 @@ Run the form. You should be able to select several interests but only one reply 
 
 ## Your Tasks
 
-1. Add two interest checkboxes inside the form for room booking and volunteering.
-2. Add an optional phone input (`type="tel"`) with a `name` and visible connected label, so a visitor can request a call.
-3. Add two radio buttons for one preferred reply method: email or phone.
+1. Add two optional interest checkboxes with `name="interests"` and values `booking` and `volunteering`.
+2. Add an optional phone input (`type="tel"`) with a non-empty `name` and visible connected label.
+3. Add two reply-method radio buttons with values `email` and `phone`.
 4. Give both reply-method radios the same non-empty `name` so only one stays selected.
-5. Add a separate required consent checkbox inside the form.
-6. Give every new checkbox and radio a visible label, either wrapping the control or connected with `for` and `id`.
+5. Add a separate required consent checkbox with `name="consent"` and `value="yes"`; leave it unchecked.
+6. Give both interest checkboxes visible labels, wrapping each input or using matching `for` and `id`.
+7. Give both reply-method radios visible labels in the same way.
+8. Give the consent checkbox a visible label explaining agreement to be contacted.
 
 ## Payoff
 
-The contact form now collects the routing details the hall needs while keeping each choice understandable.
+Submit to check the new choices. This completes the contact page’s HTML; it does not configure delivery or store consent. In the next module, you will use the hall setting again to study media rather than keep extending this form.

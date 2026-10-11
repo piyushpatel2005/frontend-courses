@@ -16,11 +16,11 @@ hints: []
 
 ## Mission
 
-The walking club is sharing its route page with new members. The page itself stays the same, but its hidden metadata decides whether a phone displays it correctly and whether a shared link has a useful title and summary. Read the head as a small briefing for browsers and services.
+The walking club is sharing its route page with new members. The visible page stays the same. Metadata helps phone browsers size it and gives sharing services a title and summary to use. Those services decide what to display, so metadata is a suggestion rather than a guaranteed preview.
 
-## What you'll build
+## What to look for
 
-A concise reference of meta tags that handle encoding, viewport, search description, social sharing (Open Graph), author, and crawl instructions.
+This is a reading lesson, not an editor exercise. Use it as a reference for meta tags that handle encoding, viewport, search description, social sharing (Open Graph), author, and crawl instructions.
 
 You already set the route page’s title, viewport, and description. Here are other metadata fields you might meet when sharing it.
 
@@ -61,7 +61,7 @@ Open Graph properties supply the title, description, image, and URL that many so
 
 ## Choose crawl instructions carefully
 
-The `robots` tag communicates whether search engines may index a page and follow its links. `index, follow` is the usual default; use `noindex, nofollow` only when a page should stay out of search results.
+The `robots` tag gives instructions to cooperating search crawlers. `index, follow` is the usual default. `noindex` asks them not to list the page; `nofollow` separately asks them not to follow its links. Neither protects private content: anyone who can access the URL can still read the page.
 
 ```html
 <meta name="robots" content="index, follow" />
@@ -88,7 +88,7 @@ Imagine sharing the route URL in a group chat. The Open Graph title and descript
 | `og:*` | Social media sharing |
 | `robots` | Search engine crawl instructions |
 
-The route page now has a clear hidden briefing: browsers can render it, search tools can describe it, and shared links can identify it.
+The example.com URLs are illustrative. A published sharing image needs a real, reachable image URL. Before moving on, find the tag that supplies a search summary and the property that supplies a social title; they use different attribute names (`name` and `property`).
 
 ## Learn more
 

@@ -1,5 +1,6 @@
 // OFFLINE MOCK: emulate HTTP responses and a network rejection.
 window.mockFetch = async function mockFetch(url) {
+  await new Promise(resolve => setTimeout(resolve, 150));
   const mode = new URL(url, "https://preview.invalid").searchParams.get("mode");
   if (mode === "offline") throw new TypeError("Simulated network unavailable");
   if (mode === "http") return new Response("Unavailable", { status: 503 });

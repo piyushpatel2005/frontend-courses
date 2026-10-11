@@ -5,9 +5,9 @@ order: 5
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Read a data-* value with dataset and choose a safe text message from it.
+summary: Read a data attribute to choose the garden availability message.
 seo_title: Data attributes and conditional text | DOM Manipulation with JavaScript
-seo_description: Learn dataset and conditional content through a runnable browser preview.
+seo_description: Read a data attribute to choose the garden availability message.
 seo_keywords:
 - JavaScript DOM
 - dataset and conditional content
@@ -15,30 +15,23 @@ seo_keywords:
 - demo
 ---
 
-# Data attributes and conditional text
+The garden card stores its availability in `data-status`. Read that value to choose the message inside the card.
 
-A notice card carries a small bit of state in `data-status`. Read it in JavaScript to choose the message shown on the page.
-
-## What the code does
-
-An HTML `data-status` attribute appears as `element.dataset.status`, a string. For multiword names, `data-session-state` becomes `dataset.sessionState`. A condition can compare that string and write one of two messages with `textContent`. `dataset` is for page metadata, not a secret store or a substitute for validated application data.
-
-In `script.js`, this is the important part of the already-working preview:
+`data-*` attributes hold small pieces of page metadata. JavaScript exposes them through `dataset`: `data-status` becomes `dataset.status`, and `data-session-state` becomes `dataset.sessionState`. Values are strings, so compare with `"open"`, not `true`. Writing a dataset property updates the corresponding attribute too.
 
 ```javascript
 const gardenCard = document.querySelector("#garden-card");
-const gardenMessage = document.querySelector("#garden-message");
+const gardenMessage =
+  document.querySelector("#garden-message");
 if (gardenCard.dataset.status === "open") {
-  gardenMessage.textContent = "Garden visits are open today.";
+  gardenMessage.textContent =
+    "Garden visits are open today.";
 } else {
-  gardenMessage.textContent = "Garden visits are closed today.";
+  gardenMessage.textContent =
+    "Garden visits are closed today.";
 }
 ```
 
-## Try it in the preview
+Run: the message says visits are open. Change `data-status` in `index.html` to `closed` and Run again to see the other branch. Restore `open` afterward. The script reads the attribute when it runs; changing metadata alone does not automatically rerun this condition.
 
-The preview reports that visits are open. Change `data-status` in `index.html` to `closed` and Run: the other branch appears. Restore `open` to see the first branch again.
-
-Which JavaScript name corresponds to `data-session-state`? `dataset.sessionState`. Recall that dataset values are strings, so compare with `"open"`, not a boolean.
-
-The next lesson gives you a different page to build from a starter.
+Page metadata is visible to anyone who inspects the page. Do not put secrets in it. In the next exercise, a supplied function lets you repeat the update after the value changes.

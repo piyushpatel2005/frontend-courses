@@ -1,15 +1,15 @@
-test("songDurations is a Map with both songs", () => {
-  assert.match(OUTPUT, /^CHECK\ 1:\ 203\ \|\ 187$/m, "Log CHECK 1: 203 | 187 as a separate checkpoint line");
+test("Song duration Map", () => {
+  assert.match(OUTPUT, /^CHECK 1: true \| 2 \| 203 \| 187$/m, "Task 1: expected a separate output line: CHECK 1: true | 2 | 203 | 187");
 });
 
-test("featuredArtists is a unique Set", () => {
-  assert.match(OUTPUT, /^CHECK\ 2:\ 2\ \|\ true\ \|\ true$/m, "Log CHECK 2: 2 | true | true as a separate checkpoint line");
+test("Unique artist Set", () => {
+  assert.match(OUTPUT, /^CHECK 2: true \| 2 \| true \| true$/m, "Task 2: expected a separate output line: CHECK 2: true | 2 | true | true");
 });
 
-test("playlistSummary reads the Map and Set", () => {
-  assert.match(OUTPUT, /^CHECK\ 3:\ 203\ \|\ 2$/m, "Log CHECK 3: 203 | 2 as a separate checkpoint line");
+test("Summary uses its arguments", () => {
+  assert.match(OUTPUT, /^CHECK 3: 203 \| 2 \/ 99 \| 1$/m, "Task 3: expected a separate output line: CHECK 3: 203 | 2 / 99 | 1");
 });
 
-test("logs the playlist summary", () => {
-  assert.match(OUTPUT, /^203 \| 2$/m, "Log the playlist summary on its own line");
+test("Separate playlist summary", () => {
+  assert.match(OUTPUT, /^203 \| 2$/m, "Task 4: expected a separate output line: 203 | 2");
 });

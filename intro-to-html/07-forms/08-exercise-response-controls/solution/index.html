@@ -1,1 +1,28 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><title>Rescue Dispatch</title></head><body><h1>Rescue Dispatch</h1><form><label for="brief">Incident notes</label><textarea id="brief" rows="4"></textarea><label for="role">Urgency</label><select id="role"><option value="routine">Routine</option><option value="urgent" selected>Urgent</option><option value="critical">Critical</option><option value="follow-up">Follow-up</option></select><label for="base">Rendezvous point</label><input id="base" list="bases" /><datalist id="bases"><option value="West Gate"><option value="Central Dock"><option value="East Landing"></datalist></form></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rescue Dispatch</title>
+  </head>
+  <body>
+    <h1>Rescue Dispatch</h1>
+    <form>
+      <label for="brief">Incident notes</label>
+      <textarea name="brief" id="brief" rows="4"></textarea>
+      <label for="role">Urgency</label>
+      <select name="role" id="role">
+        <option value="routine">Routine</option>
+        <option value="urgent" selected>Urgent</option>
+        <option value="critical">Critical</option>
+        <option value="follow-up">Follow-up</option>
+      </select>
+      <label for="base">Rendezvous point</label>
+      <input name="base" id="base" list="bases" />
+      <datalist id="bases">
+        <option value="West Gate"></option>
+        <option value="Central Dock"></option>
+        <option value="East Landing"></option>
+      </datalist>
+    </form>
+  </body>
+</html>

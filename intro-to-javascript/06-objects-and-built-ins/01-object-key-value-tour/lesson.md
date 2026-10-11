@@ -10,23 +10,9 @@ seo_description: Learn how JavaScript objects pair property keys with values thr
 seo_keywords: javascript objects, key value pairs, object properties, beginner javascript
 ---
 
-# Object Key-Value Pairs
+# Object key-value pairs
 
-## Mission: Artist Profile Lab
-
-The Starline Awards team needs a compact profile for a producer. An object keeps related facts together without relying on the position of each value.
-
-An object uses a **key** on the left and its **value** on the right:
-
-```javascript
-const person = {
-  name: "Mina",
-  role: "Producer",
-  city: "Seoul"
-};
-```
-
-Here, `name`, `role`, and `city` are keys. Their paired values are strings. A colon connects each key to its value, and commas separate the pairs.
+A producer profile needs a name, a role, and a city. An array could hold all three, but you would have to remember which position means what. An object gives each value a name.
 
 ```javascript run
 const person = {
@@ -34,10 +20,13 @@ const person = {
   role: "Producer",
   city: "Seoul"
 };
-
 console.log(`${person.name} is a ${person.role} from ${person.city}.`);
 ```
 
-## Checkpoint
+The braces enclose the object. Each **property** pairs a key on the left of `:` with a value on the right; commas separate properties. Here all three values are strings, but an object can also hold numbers, booleans, arrays, or other objects.
 
-Run the code. Dot notation, such as `person.name`, reads the value paired with the `name` key. The next lesson uses the same structure for a different problem: a student course record.
+`person.name` reads the property whose key is `name`. It produces `"Mina"`, not the word `"name"`. A missing property, such as `person.age`, produces `undefined`.
+
+The backticks build a message: `${person.name}` inserts that property's value into the text. The strings section explains this output style in more detail.
+
+Run the example and locate each property in the resulting sentence. In the next lesson, you will create a student record and change one of its values.

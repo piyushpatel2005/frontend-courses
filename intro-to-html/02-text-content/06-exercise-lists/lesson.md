@@ -1,11 +1,11 @@
 ---
-title: "Exercise: Build a Crew member Loadout"
+title: "Exercise: Build a Crew Member Loadout"
 slug: exercise-lists
 order: 6
 language: html
-summary: Practice ordered, unordered, and description lists in the Meridian crew’s rescue loadout.
+summary: Practice ordered, unordered, and description lists in a Meridian river-survey loadout.
 seo_title: "HTML Lists: Ordered, Unordered, and Description Lists | Introduction to HTML"
-seo_description: Learn how to build ordered, unordered, description, and nested lists with HTML list elements.
+seo_description: Build a numbered departure sequence, a bulleted survey kit, and a two-term glossary with HTML list elements.
 seo_keywords:
   - HTML lists
   - ordered list
@@ -24,11 +24,11 @@ hints:
 
 ## Mission
 
-The Meridian crew is packing for a night rescue. The launch sequence must be numbered, the rescue kit needs bullets, and two mission terms need short explanations.
+A crew member is preparing a daytime river survey, rather than the demo's night rescue. Write a numbered departure sequence, a bulleted kit list, and definitions for two survey terms. Choose your own details for each list.
 
 ## What you'll build
 
-A page with three list types: numbered launch steps, a bulleted rescue kit, and a glossary pairing mission terms with their meanings.
+A page with three list types: numbered departure steps, a bulleted survey kit, and a glossary pairing mission terms with their meanings.
 
 ## Choose a list by its job
 
@@ -48,18 +48,20 @@ For a different brief, a supply list could look like this:
 
 ## Checkpoint
 
-Preview the page. The setup steps should be numbered, the supplies should have bullets, and each term in the description list should sit next to its explanation. If the sequence is not numbered, inspect the outer list tag first.
+Preview the page. The setup steps should be numbered, the supplies should have bullets, and each term in the description list should be followed by its explanation. If the sequence is not numbered, inspect the outer list tag first.
+
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
 
 ## Your Tasks
 
 Build a page that uses all three list types:
 
 1. Add an `<ol>` to the page.
-2. Inside your `<ol>`, add at least **3 `<li>`** steps.
+2. Inside your `<ol>`, add at least **3 non-empty `<li>`** steps.
 3. Add a `<ul>` to the page.
-4. Inside your `<ul>`, add at least **3 `<li>`** items.
+4. Inside your `<ul>`, add at least **3 non-empty `<li>`** items.
 5. Add a `<dl>` to the page.
-6. Inside your `<dl>`, add at least **2 `<dt>`** terms, each followed by a matching `<dd>` definition.
+6. Inside your `<dl>`, add at least **2 non-empty `<dt>`** terms, each followed by a matching `<dd>` definition.
 
 ## Payoff
 

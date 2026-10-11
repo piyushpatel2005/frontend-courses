@@ -18,3 +18,8 @@ th, td {
 th {
   background: #dff3e4;
 }
+
+.table-wrap:focus-visible {
+  outline: 3px solid #075985;
+  outline-offset: 4px;
+}

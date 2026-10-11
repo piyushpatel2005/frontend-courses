@@ -13,12 +13,14 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Trip briefing: completed layout
+# Line up cards of different heights
 
-Line up a short status card beside a taller weather card. This completed preview shows the layout before you edit the next exercise.
+The weather card has extra top and bottom padding, so it is taller than its neighbors. In `style.css`, `.card:nth-child(2)` selects that second card; `padding-block` sets its top and bottom padding in this page's writing direction.
 
-In `style.css`, `.briefing-row` controls the section. With a horizontal main axis, the cross axis runs top to bottom. align-items: center puts the cards’ vertical centers on the same line instead of stretching them.
+The `.briefing-row` is a flex row. Its main axis runs horizontally, so its cross axis runs vertically. `align-items: center` centers each card within the flex line, giving their vertical midpoints the same height. It aligns the boxes, not the text inside them.
 
-**Checkpoint:** inspect the card positions in Preview and locate `align-items: center` in the stylesheet.
+The supplied `overflow-wrap: anywhere` lets long words break when the preview is narrow, so the cards can shrink without pushing the whole page sideways.
 
-Change `align-items` temporarily to `flex-start`, run Preview, and compare the positions. Restore `center` before moving to the exercise.
+The pale green row has `min-height: 10rem`, leaving room above and below the cards. Without extra room, a change in alignment can be hard to see. The default alignment would stretch auto-height cards across the line instead.
+
+Run Preview. Change `align-items` to `flex-start`: the top edges now line up. Try `flex-end` to line up the bottom edges, then restore `center`. If you later use `flex-direction: column`, remember that `align-items` will work horizontally instead.

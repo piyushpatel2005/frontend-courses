@@ -8,29 +8,36 @@ validationRules: []
 hints:
   - "Use forEach() to push formatted labels into an existing array."
   - "Use map() to create a new doubled array in one expression."
-summary: Practice array iteration methods with a focused Starline Awards programming mission.
+summary: "You can pass a function to an array method. That passed function is a callback; the method calls it for each item and supplies the item as its argument."
 seo_title: Array Iteration Methods | Introduction to JavaScript
-seo_description: Learn array iteration methods through a focused JavaScript programming mission and console-based practice.
+seo_description: "You can pass a function to an array method. That passed function is a callback; the method calls it for each item and supplies the item as its argument."
 seo_keywords: javascript, array iteration methods, beginner javascript, programming practice
 ---
 
-# Array Iteration Methods
+# Array iteration methods
 
-## Mission: Setlist Vault
+You can pass a function to an array method. That passed function is a **callback**; the method calls it for each item and supplies the item as its argument.
 
-To label every setlist item, compare a loop that acts on each item with a method that builds a new array. Run both checkpoints in the Console.
-
-Iteration methods let you work with every item in an array. This lesson pairs forEach() and map() so learners can compare a side-effect loop with a transformation method.
-
-## Example
-
-```javascript
+```javascript run
 const books = ["Dune", "Kindred", "Beloved"];
-const labels = books.map((book) => `Read: ${book}`);
-console.log(labels);
+const notes = [];
+books.forEach(book => {
+  notes.push(`Read: ${book}`);
+});
+const labels = books.map(book => `Shelf: ${book}`);
+console.log(notes.join(" | "));
+console.log(labels.join(" | "));
 ```
 
-## Your Task
+`forEach()` performs an action for each item. Here the action pushes a note into an existing array; the method itself returns `undefined`.
 
-1. Use forEach() on [1, 2, 3] to build labels with Number: 1, Number: 2, and Number: 3.
-2. Use `map()` to create `doubledNumbers`, producing `Number: 1, Number: 2, Number: 3 | [2,4,6]` in the supplied probe.
+`map()` collects each callback's returned value into a new array of the same length. Its callback may also receive the index as a second parameter: `(item, index) => ...`. If you use a braced callback body, remember `return` or the mapped entries become `undefined`.
+
+Run the book example. Neither method automatically changes the source array, although a callback can mutate shared data if you write it to do so. In your number exercise, keep the source unchanged.
+
+## Your Tasks
+
+1. Use `numbers.forEach()` to push `Number: <value>` into `labels` for each number.
+2. Set `doubledNumbers` to a `numbers.map()` call that returns each number multiplied by two.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

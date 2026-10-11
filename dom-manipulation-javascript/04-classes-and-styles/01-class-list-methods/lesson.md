@@ -5,9 +5,9 @@ order: 1
 language: javascript
 runtime: srcdoc
 lesson_type: coding
-summary: Apply and clear a CSS class, then check its current state with contains.
+summary: Add and remove a highlight class with a supplied click callback.
 seo_title: Add, remove, and check classes | DOM Manipulation with JavaScript
-seo_description: Learn classList.add, remove, and contains through a runnable browser preview.
+seo_description: Add and remove a highlight class with a supplied click callback.
 seo_keywords:
 - JavaScript DOM
 - classList.add, remove, and contains
@@ -15,33 +15,23 @@ seo_keywords:
 - demo
 ---
 
-# Add, remove, and check classes
+The programme card needs a highlight that can be switched on and off. Keep the styling in CSS and change only the relevant class from JavaScript.
 
-A programme card needs a quick highlight control. Instead of rewriting the whole `class` string, add and remove just the highlight class.
+`classList.add("active")` adds a class while preserving the others. `remove("active")` removes only that class. `contains("active")` asks whether it is present and returns a boolean. Pass the class name without a dot; the dot belongs in CSS selectors, not in these method arguments.
 
-## What the code does
+## Run this code when the button is clicked
 
-`classList.add("active")` adds a class without removing existing classes. `classList.remove("active")` removes only that class. `classList.contains("active")` returns a boolean so your code can report the current state. CSS defines what `.active` looks like; JavaScript only chooses whether the element has it. As with the checkbox in the previous section, `addEventListener("click", () => { ... })` waits for a button click before running the code inside. The events section will unpack this pattern further; for now, use it to see the class changes.
-
-In `script.js`, this is the important part of the already-working preview:
+The checkbox demo passed a named function to `addEventListener`. Here the callback is an arrow function written in place:
 
 ```javascript
-const programme = document.querySelector("#programme");
-const programmeStatus = document.querySelector("#programme-status");
-document.querySelector("#mark-programme").addEventListener("click", () => {
-  programme.classList.add("active");
-  programmeStatus.textContent = `Marked: ${programme.classList.contains("active")}`;
-});
-document.querySelector("#clear-programme").addEventListener("click", () => {
-  programme.classList.remove("active");
-  programmeStatus.textContent = `Marked: ${programme.classList.contains("active")}`;
-});
+document.querySelector("#mark-programme")
+  .addEventListener("click", () => {
+    programme.classList.add("active");
+  });
 ```
 
-## Try it in the preview
+The selector finds the button. `"click"` names the event. `() => { ... }` defines the function the browser should run for each click; it does not run the body when the listener is registered. The empty parentheses mean this callback does not name any parameters. A native button also produces a click when activated from the keyboard.
 
-Click Mark: the programme turns green and the status says `true`. Click Clear: the green highlight disappears and the status says `false`. The original `note` class remains in both states.
+The completed script has a second listener to clear the class and a status line that reports `contains("active")`. Its template string inserts that boolean as text. The supplied `aria-live="polite"` status lets assistive technology announce updates without interrupting the current announcement.
 
-Which method answers a yes/no question about a class? `contains`. Which two methods change it? `add` and `remove`.
-
-The next lesson gives you a different page to build from a starter.
+Run, click Mark, then Clear. The highlight changes, the status changes from true to false, and the original `note` class remains. Change the programme's words in HTML and Run again; the same behavior still works. Restore them afterward. The following exercise supplies the empty callbacks so you can focus on class changes.

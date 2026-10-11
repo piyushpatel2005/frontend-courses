@@ -17,34 +17,18 @@ seo_keywords:
 
 # Validate a library request
 
-A library holds books for readers. Give its request form a blank-field message and a successful confirmation without sending the browser away. In the preceding demo, you saw the complete behavior before having to build it yourself.
+The library request preview needs separate feedback for blank and valid book titles. It does not send or reserve anything. The form, label, live status, and description connection are supplied.
 
-## Transfer the pattern
+Edit the marked parts of `script.js`. The existing submit listener reads a trimmed `title` and returns from the blank branch. That structure lets you add one outcome at a time without wiring more listeners.
 
-The previous preview reacted on every edit. A request is different: it should confirm only when the visitor submits, whether by button or by pressing Enter in the field.
-
-The form’s `submit` event also fires when a user presses Enter. Call `event.preventDefault()` to stop navigation, then inspect `.value.trim()`; show an error in a visible status region and associate it with the field through `aria-describedby`. Focus the invalid field so the person can correct it.
-
-For a different form, validation can stay in one `submit` handler:
-
-```javascript
-const signup = document.querySelector("#newsletter");
-const email = document.querySelector("#email");
-const notice = document.querySelector("#notice");
-signup.addEventListener("submit", (event) => {
-  event.preventDefault();
-  notice.textContent = email.value.trim() ? "Subscribed!" : "Enter an email.";
-});
-```
-
-That example is deliberately small: your library request also needs a connected error description, focus on failure, and clearing the invalid state after correction.
-
-Run the starter first to see what is present and what still does nothing. Edit `script.js` and, if needed, the markup; use the Preview for a visible check before Submit. The checks exercise actions and state changes, not just the initial markup.
+Use `setAttribute("aria-invalid", "true")` to expose a field error, `.focus()` to put keyboard focus on that field, and `removeAttribute("aria-invalid")` after correction. Write messages with `textContent`, including titles that look like markup.
 
 ## Your Tasks
 
-1. Prevent the default navigation when `#request` is submitted, whether its title is blank or filled in.
-2. For an empty or whitespace-only title, mark `#book` invalid, focus it, and explain the missing title in `#request-status`.
-3. For a valid title, remove the invalid state and confirm the trimmed title in the status region.
+1. Prevent the form's default action on every submission.
+2. In the blank-title branch, set the status to `Enter a book title before requesting a hold.`
+3. In that same blank branch, mark `#book` invalid and focus it so the error can be corrected.
+4. For a valid title, display `Hold requested for TITLE.` with the trimmed title replacing `TITLE` as literal text.
+5. In the valid branch, remove the field's `aria-invalid` attribute.
 
-Try submitting spaces, then a real book title. If the page reloads, check `preventDefault()`; if the message stays an error, make sure you remove the invalid state after a successful submit.
+Run and Submit after each step. Try spaces, then `  River Atlas  `, then `<em>Reed</em>`. A correction should replace the error message and remove the invalid state; it must not create an `em` element.

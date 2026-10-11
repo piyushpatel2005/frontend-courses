@@ -16,18 +16,27 @@ seo_keywords:
 
 # Retry requests without stale results
 
-Search can create overlapping requests. In the trail demo, set the fixture delay high, submit one term, then change the term and submit again. Only the latest request should be allowed to paint the list. Press Retry after deliberately setting `failNext: true` to see the failed-request path too.
+Set the trail fixture's delay to `800` and Run. Search for `Cedar`, then quickly search for `River`. Only River lookout should be allowed to replace the list. Reset the delay after trying it.
 
-The code uses two complementary guards. `AbortController` cancels a prior request when the mock supports a signal; `latestRequest` also checks identity after `response.json()`, so even a response that arrives late cannot overwrite newer results. The mock delays and failures are controllable in `window.dashboardFixture`, but it never uses the network.
+The demo uses cancellation and a request number. Cancellation asks the earlier request to stop. The number protects later work too: if an old operation finishes anyway, it must not render or report an error over the new one.
 
 ```javascript
 controller?.abort();
 controller = new AbortController();
 const request = ++latestRequest;
-const response = await dashboardFetch(requestURL(), { signal: controller.signal });
-if (!response.ok) throw new Error(`HTTP ${response.status}`);
+const response = await dashboardFetch(requestURL(), {
+  signal: controller.signal
+});
+if (!response.ok)
+  throw new Error(`HTTP ${response.status}`);
 const data = await response.json();
 if (request !== latestRequest) return;
 ```
 
-An abort is expected during rapid searching: ignore its `AbortError` rather than displaying a failure. Ordinary errors should announce the problem and reveal Retry; the button reruns the current query. Real fetch uses the same `{ signal }` option, subject to the remote API's CORS policy. Inspect that control flow before finishing your event dashboard.
+`++latestRequest` increases the shared counter and gives this call its own number. After JSON parsing, equality means no newer load has started. The `catch` block checks the number too, then ignores `AbortError`. A current network or HTTP failure still shows the error message and Retry.
+
+![Only the newest request may update the dashboard](latest-request-guard.svg)
+
+To try recovery, set `failNext: true` and Run again. Click Retry after the error: it should rerun the current query and hide the button while pending. All failures and delays are local fixture behavior, not measurements of a real service.
+
+Your final exercise keeps the community-event data, helpers, and search from the previous stage. Add the guards without changing those completed parts.

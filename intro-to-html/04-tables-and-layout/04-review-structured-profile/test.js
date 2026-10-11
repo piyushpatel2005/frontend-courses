@@ -1,6 +1,7 @@
 test("profile has one main region", () => {
-  assert.count("body main#profile", 1, 'Add one <main id="profile"> element');
-  assert.count("body main", 1, "Keep one main region on the page");
+  assert.exists(document.querySelector("body main#profile"), 'Add <main id="profile">');
+  assert.equal(document.querySelectorAll("body main").length, 1, "Keep exactly one main region");
+  assert.equal(document.querySelectorAll('[id="profile"]').length, 1, "Use the profile ID only once");
 });
 
 test("profile names a volunteer", () => {

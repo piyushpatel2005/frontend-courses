@@ -13,34 +13,17 @@ seo_keywords: abort fetch, latest response, JavaScript exercise
 
 # Exercise: keep the latest result
 
-A ferry board has two routes; only the most recent selection should win. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+The ferry board already connects each button to an async request. Finish the four state helpers so a slow old selection cannot replace a newer one. All routes come from the local timed fixture; this is not a ferry timetable.
 
-The previous district lookup canceled a slow old request. Now a ferry board must do the same for two route buttons. The supplied `mockFetch(url, { signal })` records a local request, waits for a predictable timer, and rejects with `AbortError` if canceled. It never contacts a ferry service.
+`beginRoute()` creates and returns a fresh signal on every click. Add cancellation before that creation. Keep a local signal for each operation: checking a shared controller after `await` could inspect the newer request instead of the one that just finished. The rendering helper receives the correct signal.
 
-For an unrelated temperature display the pattern is:
-
-```javascript
-let currentController;
-async function checkWeather(city) {
-  currentController?.abort();
-  currentController = new AbortController();
-  try {
-    const response = await mockFetch(`/api/weather?city=${encodeURIComponent(city)}`, {
-      signal: currentController.signal
-    });
-    const data = await response.json();
-    label.textContent = data.summary;
-  } catch (error) {
-    if (error.name !== "AbortError") label.textContent = "Lookup failed.";
-  }
-}
-```
-
-In the ferry board, click **Slow pier** and immediately **Fast pier**. The board should end on Fast even when the slow timer has elapsed. `AbortError` is not a service outage; don't replace the newer loading or ready message with an error from the canceled request. Run the preview, then Submit for checks that exercise both cancellation and the final DOM state.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. Wire both route buttons to start `mockFetch` for their route and immediately announce `Loading route…`.
-2. On a newer click, abort the previous request with `AbortController` and pass each request its controller’s `signal`.
-3. Render only the latest route name as literal text and report `Route ready.` after its response arrives.
-4. Ignore an old request’s `AbortError` so it never replaces the newest route’s ready status with an error.
+1. Make `showRouteLoading()` announce `Loading route…`.
+2. In `beginRoute()`, abort the previous controller before replacing it. The supplied loader passes the returned signal to `mockFetch`.
+3. Make `showRouteResult(data, signal)` leave the DOM untouched when `signal.aborted`; otherwise show `data.name` as literal text and announce `Route ready.`.
+4. Make `showRouteError(error, signal)` ignore `AbortError` and any error from an aborted signal; retain `Lookup failed.` for a genuine current failure.
+
+Click Slow pier and then Fast pier before the first result returns. Fast pier should remain. The signal check after JSON is useful even if a fetch-shaped dependency finishes despite cancellation.

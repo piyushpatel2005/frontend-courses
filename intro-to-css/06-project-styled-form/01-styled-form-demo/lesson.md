@@ -19,10 +19,16 @@ hints:
 
 # Seed request form demo
 
-A community garden volunteer needs a short reply form that is easy to read and navigate. The finished card places a label above the email input, leaves space before the button, and highlights the field when it has focus.
+A community garden volunteer needs a reply address for seed requests. This completed card puts the label above the field and shows which control has keyboard focus.
 
-The HTML already connects `label for="email"` to `input id="email"`. In `style.css`, the label and input use `display: block` to sit on separate lines; the input has `width: 100%` with `box-sizing: border-box` so its border fits inside the card. The input's bottom margin separates it from the button. When you tab into the input, `input:focus` adds an orange outline. This uses the block layout taught earlier—not Grid, which comes after Flexbox.
+The HTML connects `label for="email"` to `input id="email"`. Click Contact email: focus moves to the field. A placeholder is only a typing example, so it does not replace that visible label.
 
-**Checkpoint:** the email field fills the card width, the button sits below it, and tabbing into the field shows an orange ring.
+In `style.css`, `display: block` puts the label and input on separate lines. The input uses `width: 100%` and `box-sizing: border-box`, which keeps its padding and border within that width. Its bottom margin creates the gap before the button.
 
-Change the input's `margin-bottom` to `2rem`, run Preview and observe the added space; restore `.75rem` before the exercise. The submit button is only a visual example; no server handles the request.
+## Inspect space and focus
+
+Run the preview. In `style.css`, change the input's `margin-bottom` from `.75rem` to `2rem`, then run again. The larger gap should be easy to see. Restore `.75rem`.
+
+Click blank preview space and press Tab to reach the email input. `input:focus` draws a dark-orange outline outside the field; `outline-offset: 2px` leaves a small gap between the outline and border. An outline does not push the nearby controls away. Tab again to the button and check its supplied focus ring.
+
+The form is a visual example. There is no service to receive requests, so you do not need to press Send request. The next exercise leaves the layout in place and asks you to add spacing and field feedback.

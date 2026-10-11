@@ -14,22 +14,25 @@ seo_keywords:
 - select summary DOM
 ---
 
-# Keep a selection in sync on change and reset
+# Keep the display in sync after reset
 
-A market stall preference card shows the selected pickup window and returns to its default after Reset.
+The market pickup card shows Morning or Evening next to its select. Choosing a value and restoring the default are two different event paths to the same display function.
 
-## Read the running example
+For a select, `change` reports a committed choice. Text inputs also have `change`, usually when an edited value is committed by leaving the field; use `input` when you need each edit instead. The select's `.value` gives the chosen option's value.
 
-Your earlier event handlers responded after one action. This form has two routes to the same display—choosing a new option and restoring defaults—so both must update the summary.
+A form's `reset` event happens **before** its controls return to their defaults. The `selected` attribute in this markup defines Morning as the initial choice. Resetting a form does not automatically update a separate paragraph or fire `change` for each control.
 
-`change` fires when a committed selection changes, unlike the per-keystroke `input` event. A `reset` event arrives before the browser restores form values. Schedule the UI update in a microtask with `queueMicrotask` so the preview reads the restored default, or explicitly use the control’s `defaultValue` inside the reset handler.
+```javascript
+windowChoice.addEventListener("change", renderPickup);
+pickupForm.addEventListener("reset", () => {
+  setTimeout(renderPickup, 0);
+});
+```
 
-Open `index.html` to locate the labelled control and output. In `script.js`, notice the selectors point to those IDs, then follow the event from the control to the updated page. `style.css` only changes presentation; it does not cause the behavior. This example is finished already so you can run it before writing the next exercise.
+`setTimeout(callback, 0)` schedules a later task; it does not run the callback immediately or guarantee an exact delay. Here that gives the browser time to finish its native reset before `renderPickup` reads the select. Pass the function reference without parentheses.
 
-## Try it in the preview
+![Reset restores the select before a later task reads it for the summary.](change-reset-state-flow.svg)
 
-Choose Evening and watch the summary. Press Reset: both select and summary should say Morning. Trace the two paths into one `render` function so they cannot disagree.
+## Try the preview
 
-Nothing in this demo is graded. The following exercise asks you to build the same *idea* for a different situation; come back here if the event or state change feels hard to trace.
-
-![Sketch of a select changing its summary and Reset returning both to the default](change-reset-state-flow.svg "Change and reset keep the select and summary synchronized")
+Run, choose Evening, then activate Reset choice. Both the control and summary should return to Morning. Repeat with keyboard focus on the reset button. The display should not remain Evening.

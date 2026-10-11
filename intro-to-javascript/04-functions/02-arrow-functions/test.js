@@ -1,27 +1,15 @@
-test("Checkpoint 1: Square one: 1", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Square\\ one:\\ 1(?:\\n|$)"), "Log this result from your function calls");
+test("Step 1: Squares", () => {
+  assert.match(OUTPUT, new RegExp("^Squares:\\ 25,9,0$", "m"), "Step 1: expected Squares: 25,9,0");
 });
 
-test("Checkpoint 2: Squares: 25,9,0", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Squares:\\ 25,9,0(?:\\n|$)"), "Log this result from your function calls");
+test("Step 2: Celsius", () => {
+  assert.match(OUTPUT, new RegExp("^Celsius:\\ 0,36\\.7,100,\\-40$", "m"), "Step 2: expected Celsius: 0,36.7,100,-40");
 });
 
-test("Checkpoint 3: Freezing: 0", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Freezing:\\ 0(?:\\n|$)"), "Log this result from your function calls");
+test("Step 3: Parity", () => {
+  assert.match(OUTPUT, new RegExp("^Parity:\\ true,true,false,true$", "m"), "Step 3: expected Parity: true,true,false,true");
 });
 
-test("Checkpoint 4: Celsius: 36.7,100", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Celsius:\\ 36\\.7,100(?:\\n|$)"), "Log this result from your function calls");
-});
-
-test("Checkpoint 5: Even zero: true", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Even\\ zero:\\ true(?:\\n|$)"), "Log this result from your function calls");
-});
-
-test("Checkpoint 6: Parity: true,false", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Parity:\\ true,false(?:\\n|$)"), "Log this result from your function calls");
-});
-
-test("Checkpoint 7: 5\u00b2 = 25 | 98\u00b0F = 36.7\u00b0C | 4 is even: true", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)5\u00b2\\ =\\ 25\\ \\|\\ 98\u00b0F\\ =\\ 36\\.7\u00b0C\\ \\|\\ 4\\ is\\ even:\\ true(?:\\n|$)"), "Log this result from your function calls");
+test("Step 4: 5\u00b2 = 25 | 98\u00b0F = 36.7\u00b0C | 4 is even", () => {
+  assert.match(OUTPUT, new RegExp("^5\u00b2\\ =\\ 25\\ \\|\\ 98\u00b0F\\ =\\ 36\\.7\u00b0C\\ \\|\\ 4\\ is\\ even:\\ true$", "m"), "Step 4: expected 5\u00b2 = 25 | 98\u00b0F = 36.7\u00b0C | 4 is even: true");
 });

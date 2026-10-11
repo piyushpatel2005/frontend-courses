@@ -14,31 +14,27 @@ seo_keywords:
 - node placement
 ---
 
-# Place Nodes Before and Between
+# Choose a node's position
 
-A trail notice board needs its most urgent update first and a reminder between two older entries. Appending everything at the end would hide that order.
+The trail board needs an urgent notice first and a reminder before Sunday's walk. You already know how to create a labeled element; now choose where it belongs.
 
-## How it works
-
-`prepend(node)` puts a node at the start of a parent. For a specific slot, `parent.insertBefore(newNode, existingChild)` puts the new node directly before that child. The second argument must be a child of that same parent; `null` instead would mean append. Both methods move an existing node if it is already attached elsewhere—neither creates a copy. The diagram shows the insertion point.
+`parent.prepend(node)` inserts at the beginning. `parent.insertBefore(node, referenceChild)` inserts directly before a particular child of that parent. Passing `null` instead of a reference child puts the new node at the end. A reference from a different parent causes an error.
 
 ```javascript
-const urgent = document.createElement("li");
-urgent.textContent = "Bridge inspection today";
-board.prepend(urgent);
+const board = document.querySelector("#notices");
 const reminder = document.createElement("li");
 reminder.textContent = "Bring water";
-board.insertBefore(reminder, document.querySelector("#sunday"));
+board.insertBefore(
+  reminder, document.querySelector("#sunday")
+);
 ```
 
-![Sketch showing a newly created list item moving into a parent list before an existing item.](./node-placement-map.svg)
+Like `append`, these methods move an existing node rather than copying it. They also preserve the surrounding items.
+
+![The parent inserts a new item before an existing child.](node-placement-map.svg)
 
 ## Try the preview
 
-Run the preview and read top to bottom: Bridge inspection today, Saturday walk, Bring water, Sunday walk. Try placing the reminder before `#saturday` to see how the reference child controls the slot, then restore it.
+Run the finished script. Read the list from top to bottom: Bridge inspection today, Saturday walk, Bring water, Sunday walk.
 
-## Remember
-
-Last time you appended a node to the end of a parent. These methods use the same created node but let the intended reading order decide its position.
-
-The following exercise uses the same idea in a different setting.
+Change the reminder's reference from `#sunday` to `#saturday`, then run again. Only the reminder's position should change. Restore the reference before ordering the workshop agenda.

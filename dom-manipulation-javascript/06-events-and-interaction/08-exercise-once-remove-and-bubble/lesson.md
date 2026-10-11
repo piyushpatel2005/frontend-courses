@@ -17,34 +17,18 @@ hints:
 - Use the same function name when adding and removing the Bell listener. Stop propagation only on Private.
 ---
 
-# Exercise: Control Workshop Notifications
+# Control workshop notifications
 
-A workshop has a one-time welcome, a bell that can be muted, and a control panel with standard and private actions. Give each control the precise click behavior it needs.
+The workshop has a welcome, a bell, and a panel with Standard and Private actions. The supplied `setupWorkshop(root)` selects controls within the workshop's `main` element. The call below it sets up the visible page once.
 
-## How it works
-
-The museum demo used a named `ring` callback for removal; here is a **different** bus-stop example showing the same lifecycle. The named function passed to removal must be the exact function originally registered. For nested controls, clicks travel from the button to its panel unless that button explicitly stops propagation. Do not stop propagation on the panel itself or on every button, and keep the provided native buttons instead of adding keyboard handlers to noninteractive elements.
-
-```javascript
-// Different example: a bus-stop notice, not the workshop.
-notice.addEventListener("click", announce, { once: true });
-alarm.addEventListener("click", soundAlarm);
-mute.addEventListener("click", () => alarm.removeEventListener("click", soundAlarm));
-privateButton.addEventListener("click", event => event.stopPropagation());
-```
-
-## Try the preview
-
-Run the preview: Welcome increments only once. Bell increments until Muting stops it. Standard writes Standard Panel, but Private writes Private without Panel. Try Tab and Enter on the buttons to confirm native activation is still intact.
-
-## Remember
-
-The earlier event-target lesson used bubbling to *receive* a child click on a parent. This exercise lets one private child stop that route while leaving standard clicks free to bubble.
+All your edits go inside that function in `script.js`. The counters, named `ringBell` handler, and child label updates are supplied. `root.querySelector` works like `document.querySelector`, but searches only inside `root`. Submit can call the same setup function on fresh controls, so each check starts with its own listeners and counters.
 
 ## Your Tasks
 
-1. Add a click listener to `#welcome` with `{ once: true }` so `#welcome-count` changes from `Welcomes: 0` to `Welcomes: 1` on the first click and never counts higher.
-2. Register a named Bell click handler that increments `#bell-count` on each click.
-3. Clicking `#mute` must remove that same Bell handler so later Bell clicks no longer increment the count.
-4. Let `#standard` clicks write `Standard Panel` to `#actions` by bubbling to `#controls`.
-5. Make `#private` write `Private` without adding `Panel` by stopping only that child click’s propagation.
+1. Register a Welcome click listener with `{ once: true }` that increments `welcomes` and displays `Welcomes: ` plus that count in `#welcome-count`.
+2. Register the supplied `ringBell` as the Bell click listener.
+3. Make a Mute click remove that same Bell listener.
+4. Register a click listener on `#controls` that appends `Panel ` to the supplied `output` text. Standard's own label update is already supplied.
+5. Add a Private click listener that calls `stopPropagation()`, without calling `preventDefault()`. Its label update is supplied too.
+
+Run and try each control after its step. Standard should produce Actions: Standard Panel; Private should produce Actions: Private. Run again to reset the log and reattach listeners. Submit checks each task with fresh controls, rather than relying on clicks from a previous check.

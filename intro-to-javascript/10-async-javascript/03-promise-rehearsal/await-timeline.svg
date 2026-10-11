@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="440" viewBox="0 0 900 440" role="img" aria-labelledby="title desc">
+<title id="title">Await Pauses This Function</title><desc id="desc">readCue waits while its caller continues. When the timer fulfills the Promise readCue resumes.</desc>
+<rect width="900" height="440" rx="16" fill="#fffbf5"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10Z" fill="#1e293b"/></marker></defs>
+<text x="450" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#1e293b">Await Pauses This Function</text>
+<rect x="40" y="95" width="230" height="100" rx="12" fill="#bfdbfe" stroke="#1e293b" stroke-width="2"/>
+<text x="155.0" y="138.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">readCue starts</text>
+<text x="155.0" y="165.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">await waitForCue()</text>
+<rect x="335" y="95" width="230" height="100" rx="12" fill="#fed7aa" stroke="#1e293b" stroke-width="2"/>
+<text x="450.0" y="138.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Caller continues</text>
+<text x="450.0" y="165.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Rehearsal requested</text>
+<rect x="630" y="95" width="230" height="100" rx="12" fill="#99f6e4" stroke="#1e293b" stroke-width="2"/>
+<text x="745.0" y="138.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Timer fires</text>
+<text x="745.0" y="165.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">resolve(cue)</text>
+<rect x="630" y="250" width="230" height="100" rx="12" fill="#ddd6fe" stroke="#1e293b" stroke-width="2"/>
+<text x="745.0" y="293.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">readCue resumes</text>
+<text x="745.0" y="320.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Return uppercase</text>
+<rect x="335" y="250" width="230" height="100" rx="12" fill="#99f6e4" stroke="#1e293b" stroke-width="2"/>
+<text x="450.0" y="293.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">.then() runs</text>
+<text x="450.0" y="320.5" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#1e293b">Log SOUND CHECK</text>
+<path d="M270 145 L335 145" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M565 145 L630 145" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M745 195 L745 250" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<path d="M630 300 L565 300" fill="none" stroke="#1e293b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="450" y="400" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" fill="#1e293b">Waiting allows other work to run; it does not create a JavaScript thread.</text>
+</svg>

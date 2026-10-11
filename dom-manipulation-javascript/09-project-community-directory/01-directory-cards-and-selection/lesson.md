@@ -24,4 +24,8 @@ A tool-lending shelf lets visitors inspect one tool at a time. This finished exa
 
 Open all three tabs, then run the preview. The static `<li>` elements carry `data-tool` and `data-note`; each has a native button. The listener on `#tools` uses `closest("button")` to identify a click, finds that button’s card, removes the old `selected` class, and uses `textContent` to update the detail area. CSS makes the selected border visible. The event’s target can be a descendant of a button, so the containment check keeps clicks inside this list.
 
-Select the saw, then the drill. The heading in the details and the outlined card should agree. Try changing the drill’s `data-note` and running again. The following exercise transfers the pattern to people and skills, not tools and loan notes.
+Select the saw, then the drill. The tool name in the details and the outlined card should agree. Try changing the drill’s `data-note` and running again. The following exercise transfers the pattern to people and skills, not tools and loan notes.
+
+The `dataset` property reads a `data-` attribute as a string: `data-tool` becomes `item.dataset.tool`. The button remains focused after a selection; only the details and selected border change.
+
+![A click inside a button identifies its card. The card dataset supplies safe text for the detail panel.](card-selection-data-flow.svg)

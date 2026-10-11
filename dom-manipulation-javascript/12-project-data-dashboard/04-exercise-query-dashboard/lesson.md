@@ -16,24 +16,16 @@ seo_keywords:
 
 # Add event search to the dashboard
 
-Keep the event dashboard from the first exercise and connect the already-labelled search field. The preceding trail demo shows how to prevent form navigation and send an encoded `q` parameter; the event fixture already knows how to read it. Your starter retains the working load/error/empty states so you can focus on search.
+Your previous dashboard is carried forward, including the same events and completed rendering, status, and Retry helpers. Only search is unfinished. The label, input, and form are supplied in HTML.
 
-For a separate library catalogue, the browser might prepare its query like this:
+Make `requestURL()` return a URL first. Then use that value in the loader. Finally connect form submission to a fresh load. Filtering happens inside the offline fixture; do not add another filter to `render()` or rebuild the existing empty-state code.
 
-```javascript
-const params = new URLSearchParams();
-params.set("q", titleField.value.trim());
-const url = `/catalogue?${params}`;
-```
-
-Use the `#search-form` and `#search` controls already in `index.html`. Make a function that returns `API_URL` when the field is empty, or `API_URL` plus an encoded `q` query when nonempty. Pass that URL into the existing `dashboardFetch` call. Submit the form without navigating, and reuse `loadEntries()` so Loading and empty feedback remain visible. Search for `Repair`, then a missing title, then clear the field.
+Edit `script.js`, Run to inspect the preview, then Submit to check your work. The HTML, styles, offline fixture, and event/request plumbing are supplied. Functions assigned to `window` can also be called independently by the checks.
 
 ## Your Tasks
 
-1. Prevent `#search-form` submission from navigating and start a fresh dashboard load. The labelled input and existing loader are supplied.
-2. Use `URLSearchParams` to encode the trimmed search as `q` in the request URL so reserved characters such as `&` reach the mock intact.
-3. Show only the event rows matching the current search.
-4. For a search with no matches, clear earlier rows and announce `No matching entries.`.
-5. For a blank search, restore the full event list.
+1. Complete `requestURL()`: trim the search value, encode a nonempty value as `q` with `URLSearchParams`, and return `API_URL` without a query for blank input.
+2. Change the request in `loadEntries()` to use `window.requestURL()` instead of the fixed `API_URL`.
+3. In the supplied form listener, prevent navigation and assign the new `window.loadEntries()` Promise to `window.lastLoad`.
 
-The fixture is still offline. A deployed fetch replacement needs a CORS-enabled endpoint that understands the same query parameter and JSON shape.
+Search `Repair`, then `missing`, then submit a blank field. The existing loader should show one row, no rows with an empty message, and all three rows respectively. The trail demos use different data intentionally; keep the event fixture across exercise stages.

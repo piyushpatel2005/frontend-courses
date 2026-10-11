@@ -1,15 +1,11 @@
-test("Checkpoint 1: First spend: 15", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)First\\ spend:\\ 15(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 1: Successive", () => {
+  assert.match(OUTPUT, new RegExp("^Successive:\\ 17,10,0$", "m"), "Step 1: expected Successive: 17,10,0");
 });
 
-test("Checkpoint 2: Successive: 17,10", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Successive:\\ 17,10(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 2: Overdraw", () => {
+  assert.match(OUTPUT, new RegExp("^Overdraw:\\ null,6,0,null$", "m"), "Step 2: expected Overdraw: null,6,0,null");
 });
 
-test("Checkpoint 3: Overdraw: null,6", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Overdraw:\\ null,6(?:\\n|$)"), "Log the expected result from your function calls");
-});
-
-test("Checkpoint 4: Independent: 8,19", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Independent:\\ 8,19(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 3: Independent", () => {
+  assert.match(OUTPUT, new RegExp("^Independent:\\ 8,19$", "m"), "Step 3: expected Independent: 8,19");
 });

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="280" viewBox="0 0 840 280" role="img" aria-labelledby="title desc">
+<title id="title">Update State, Then Rebuild the View</title><desc id="desc">A button changes a booking object. Painting empties the list and creates safe text rows from the current array.</desc>
+<rect width="840" height="280" rx="18" fill="#fffdf6"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#253e67"/></marker></defs>
+<text x="420" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" fill="#24334b">Update State, Then Rebuild the View</text>
+<rect x="30" y="72" width="220" height="110" rx="12" fill="#a5d8ff" stroke="#253e67" stroke-width="2"/>
+<text x="140" y="109" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#142c45">Update Button</text>
+<text x="140" y="137" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#142c45">Change bookings[0]</text>
+<path d="M250 127 H310" stroke="#253e67" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="310" y="72" width="220" height="110" rx="12" fill="#fff3bf" stroke="#253e67" stroke-width="2"/>
+<text x="420" y="109" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#142c45">bookings Array</text>
+<text x="420" y="137" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#142c45">The current data</text>
+<path d="M530 127 H590" stroke="#253e67" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="590" y="72" width="220" height="110" rx="12" fill="#b2f2bb" stroke="#253e67" stroke-width="2"/>
+<text x="700" y="109" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#142c45">paint()</text>
+<text x="700" y="137" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#142c45">Replace + append rows</text>
+<text x="420" y="250" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#24334b">Clearing the DOM does not clear the array.</text>
+</svg>

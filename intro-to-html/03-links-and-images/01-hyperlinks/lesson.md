@@ -29,7 +29,7 @@ Build the navigation strip for a neighborhood repair café page. Visitors should
 
 A repair-café navigation strip with an external link opening in a new tab and an in-page anchor link to the about section.
 
-The `<a>` (anchor) tag connects pages and makes the web navigable.
+The `<a>` (anchor) tag makes a link. We will put the links in a `<nav>`, which groups navigation, and the about content in a `<section>`, which groups a topic. You will learn more about these page regions later; for now, both use opening and closing tags around their contents.
 
 ## Basic link syntax
 
@@ -64,11 +64,11 @@ Use an internal link for a page on the same website:
 <a href="../index.html">Home</a>
 ```
 
-A relative path depends on where the current file sits in the folder structure.
+A relative path depends on where the current file sits in the folder structure. These filenames illustrate a multi-page site; `about.html` is not supplied in this exercise, so do not expect that example path to load in the preview. `example.com` is an example address, not a repair-café resource.
 
 ### Opening links in a new tab
 
-Add `target="_blank"` to open a link in a new tab. Pair it with `rel="noopener noreferrer"` for security:
+Add `target="_blank"` to open a link in a new tab. In this exercise, pair it with `rel="noopener noreferrer"`: `noopener` prevents access to the opening page through `window.opener`, and `noreferrer` omits the referring page address. Use a label that warns readers about the new tab:
 
 ```html
 <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google (new tab)</a>
@@ -90,15 +90,17 @@ This is how "Back to top" links and table-of-contents navigation work.
 
 ## Checkpoint
 
-Preview the page and use both links. The external resource should open in a new tab; the `#about` link should move to the section with that exact `id`. If the jump does nothing, compare the `href` after `#` with the section's `id`.
+Preview the page and inspect both link labels. Test the `#about` link after adding its target; on a short page, the whole section may already be visible, so there may be no noticeable scroll. Compare the `href` after `#` with the section's `id`. You do not need to open Wikipedia to pass; the checks inspect the link attributes without contacting another site.
+
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
 
 ## Your Tasks
 
-The starter has a heading and comments marking where the navigation and about section belong.
+The starter supplies a heading and an empty `<nav>`. Add the links inside that nav, then the about section after it.
 
-1. Add an external link (`<a href="https://www.wikipedia.org">`) in a `<nav>`.
+1. Inside the supplied `<nav>`, add a link to `https://www.wikipedia.org` with readable link text.
 2. Make that same external link open in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
-3. Add an anchor link `<a href="#about">` in the nav.
+3. Add a second link in the nav with `href="#about"` and readable link text.
 4. Add a `<section id="about">` below the nav.
 5. Inside that section, add an `<h2>` naming it.
 6. Add a `<p>` describing the repair café inside the section.

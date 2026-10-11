@@ -1,7 +1,7 @@
-test("Three callback invocations", () => {
-  assert.match(OUTPUT, /^CHECK callbacks: run,run,run$/m, "Expected this standalone Console line: CHECK callbacks: run,run,run");
+test("Three invocations", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK callbacks: run,run,run"), true, "Expected checkpoint: CHECK callbacks: run,run,run");
 });
 
-test("Standalone run values", () => {
-  assert.match(OUTPUT, /^run,run,run$/m, "Expected this standalone Console line: run,run,run");
+test("Standalone runs", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("run,run,run"), true, "Expected checkpoint: run,run,run");
 });

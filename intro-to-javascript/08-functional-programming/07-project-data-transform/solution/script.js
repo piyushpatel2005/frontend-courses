@@ -7,28 +7,20 @@ const inventory = [
   { id: 6, name: "Monitor",    category: "Electronics", price: 549,  stock: 6  }
 ];
 
-const inStockItems = inventory.filter(i => i.stock > 0);
-const expensiveItems = inventory
-  .filter(i => i.price >= 300)
-  .sort((a, b) => b.price - a.price)
-  .map(i => i.name);
-
-function totalValue(items) {
-  return items.reduce((sum, i) => sum + i.price * i.stock, 0);
-}
-
-function byCategory(items) {
-  return items.reduce((acc, item) => {
-    if (!acc[item.category]) acc[item.category] = [];
-    acc[item.category].push(item);
-    return acc;
-  }, {});
-}
-
-console.log(`CHECK stock: ${inStockItems.map(i => i.name).join(",")}`);
-console.log(`CHECK expensive: ${expensiveItems.join(",")}`);
-console.log(`CHECK value: ${totalValue(inventory)}`);
-console.log(`CHECK categories: Electronics=${byCategory(inventory).Electronics.length} | Furniture=${byCategory(inventory).Furniture.length}`);
+const inStockItems = inventory.filter(item => item.stock > 0);
+const expensiveItems = inventory.filter(item => item.price >= 300).sort((a,b) => b.price-a.price).map(item => item.name);
+function totalValue(items) { return items.reduce((sum,item) => sum + item.price * item.stock, 0); }
+function byCategory(items) { return items.reduce((groups,item) => {
+  if (!groups[item.category]) groups[item.category] = [];
+  groups[item.category].push(item);
+  return groups;
+}, {}); }
 console.log(`${inStockItems.length} items in stock`);
 console.log(`Top products: ${expensiveItems.join(", ")}`);
-console.log(`Total value: $${totalValue(inventory).toLocaleString()}`);
+console.log(`Total value: $${totalValue(inventory).toLocaleString("en-US")}`);
+
+// Supplied checkpoints. Do not replace them with fixed answers.
+console.log(`CHECK stock: ${inStockItems.map(i => i.name).join(",")}`);
+console.log(`CHECK expensive: ${expensiveItems.join(",")}`);
+console.log(`CHECK value: ${totalValue(inventory)} | empty: ${totalValue([])}`);
+console.log(`CHECK categories: ${byCategory(inventory)?.Electronics?.map(i => i.name).join(",")} | ${byCategory(inventory)?.Furniture?.map(i => i.name).join(",")}`);

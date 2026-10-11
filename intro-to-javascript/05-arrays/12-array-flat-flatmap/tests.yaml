@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "[\"paper\",\"pens\",\"tape\"]\n[[\"morning\",\"workshop\"],[\"evening\",\"lab\"]]\n[\"morning\",\"workshop\",\"evening\",\"lab\"]"
+    }
+  ]
+}

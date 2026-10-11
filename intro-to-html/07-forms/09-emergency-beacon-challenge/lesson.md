@@ -20,7 +20,7 @@ hints:
 
 ## Mission
 
-The crew has enough control to request backup. Create the smallest useful emergency beacon: it needs a destination, a reliable contact method, and a single response channel.
+Combine the form patterns in one small page for the Meridian crew: a practice destination, a contact email, and one response channel. This is a markup exercise, not an emergency service. Never use it to request real help.
 
 ## What you'll build
 
@@ -28,9 +28,9 @@ A concise emergency-beacon form with an action, connected email label, two group
 
 ## Your Tasks
 
-1. Add a form with a non-empty illustrative `action` value (there is no live endpoint in the preview).
-2. Add an email input with an `id` and a label whose `for` matches it.
-3. Add at least two labeled radio inputs sharing a non-empty `name` for the response channel.
+1. Add a form with an illustrative action path such as `/emergency-beacon` or an HTTPS URL. There is no live endpoint in the preview.
+2. Inside the form, add an email input with a non-empty `name`, unique `id`, and a visible label whose `for` matches it.
+3. Inside the form, add at least two labeled radio inputs sharing a non-empty `name`, with distinct non-empty `value` attributes for the response channels.
 4. Add a submit button inside the form.
 
 ## Checkpoint
@@ -39,4 +39,4 @@ Click the email label and choose a response channel. The label should focus the 
 
 ## Payoff
 
-The crew can now send a focused backup request using the form controls earned in this section.
+Edit `index.html`, Run to try the labels and radio choices, then Submit to check the structure. Nothing here delivers a backup request; checking the markup does not contact a server.

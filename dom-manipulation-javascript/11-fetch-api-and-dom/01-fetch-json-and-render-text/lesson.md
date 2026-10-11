@@ -13,36 +13,37 @@ seo_keywords: fetch JSON JavaScript, response.json, textContent
 
 # Fetch JSON and render safe text
 
-A noticeboard needs one featured item from a data service. The preview is intentionally powered by an **explicit in-page mock fetch**, so it works offline and never claims to show live data.
+Click Load notice to put a service-style title on the noticeboard. The title contains `<img>` characters on purpose: the page should print them, not create an image. This preview uses `mockFetch`, an explicitly named offline fixture. No request leaves the page.
 
-`fetch(url)` returns a **Promise** for a `Response`; it does not return JSON immediately. `await` pauses the async function until the response arrives, and `await response.json()` parses the body into JavaScript data. Here `mockFetch` returns a real `Response` built from a fixed in-page fixture, so the preview is repeatable offline. It is **not live network data**. Read the `mockFetch` definition before the call site: replacing only the fetch-shaped function is what makes this demo portable.
+## The async code you need here
 
-The display uses `textContent`, never `innerHTML`, for a title from data. Even if a server returned `<img ...>`, the browser would print those characters instead of creating an element. Keep fixed markup in HTML, and fill its text from data. An async function returns a Promise too; the click handler starts it without freezing the page.
+A Promise represents a result that is not available yet. It starts pending, then either fulfills with a value or rejects with an error. Calling `fetch(url)` gives you a Promise, not the data itself.
+
+Put `async` before a function so you can use `await` inside it. `await` pauses that function until a Promise settles; it does not freeze the page. If the Promise rejects, `await` throws an error. An async function also returns a Promise, so its caller can await completion.
+
+A fulfilled fetch gives you a `Response` with a status and a body. `response.json()` reads that body and parses JSON text into a JavaScript value. It returns another Promise, so there are two waits:
 
 ```javascript
 async function showNotice() {
-  const response = await mockFetch("/api/notice"); // offline fixture here
+  const response = await mockFetch("/api/notice");
   const notice = await response.json();
-  document.querySelector("#notice").textContent = notice.title;
+  document.querySelector("#notice").textContent =
+    notice.title;
 }
 ```
 
-Run the preview and click **Load notice**. You should see the literal angle brackets in the title, not a new image. Try changing the fixed title in `mockFetch` and run again. The next lesson lets you build the same flow for a different kind of data.
+The mock constructs a real browser `Response` from a fixed object using `JSON.stringify`. You do not need to write a Promise constructor yet; the fixture supplies that machinery. In the exercise, you will await the response and use the resulting array.
 
-On a real site, the browser's built-in `fetch()` makes the network request instead of the local mock:
+![Two waits between a request and literal DOM text](fetch-response-dom-flow.svg)
 
-```javascript
-// Illustrative real-network pattern; this example URL is not a working API.
-const response = await fetch("https://api.example.com/notices");
-if (!response.ok) throw new Error(`HTTP ${response.status}`);
-const notice = await response.json();
-document.querySelector("#notice").textContent = notice.title;
-```
+Run, click Load notice, then change the fixture's title and Run again. The new title should appear only after clicking the button. Restore the fixture before moving on.
 
-The server must allow your page's origin via CORS; a `srcdoc` sandbox or offline browser may block external requests. Unlike the in-page fixture, real calls can also reject or return no results. We handle those states in the next pair.
+## The network version
 
-![Request to response to safe DOM text flow](fetch-response-dom-flow.svg)
+On a deployed page, the corresponding call is `await fetch("/api/notice")` when that same-origin endpoint exists. Check `response.ok` before reading its body: an HTTP 404 or 503 still fulfills with a Response, while a network failure rejects. The next demo adds the error handler.
+
+For an API on another origin, the server must grant your page access through CORS (Cross-Origin Resource Sharing). This browser rule limits which cross-origin responses JavaScript can read; it is not something a query string can bypass. The offline mock does not test connectivity or CORS.
 
 ## Learn more
 
-MDN's [Using the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) explains the network version and response parsing.
+MDN's [Using the Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) explains requests, response bodies, and errors.
