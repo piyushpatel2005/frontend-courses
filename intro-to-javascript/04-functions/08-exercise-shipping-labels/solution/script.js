@@ -1,14 +1,42 @@
-function shippingFee(weight) {
-  if (weight <= 2) return 4;
-  return 7;
+// Step 1
+
+function shippingFee(weight) { if (weight <= 2) return 4; return 7; }
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Base fees: ${shippingFee(1)},${shippingFee(2)},${shippingFee(2.5)}`);
+} catch (error) {
+  console.log("Step 1 pending");
 }
+
+// Step 2
 
 function shippingLabel(code, weight, service = "regular") {
-  const extra = service === "express" ? 3 : 0;
-  return `${code}: ${service} $${shippingFee(weight) + extra}`;
+  const fee = shippingFee(weight) + expressExtra(service);
+  return `${code}: ${service} $${fee}`;
 }
 
-console.log(`Base fees: ${shippingFee(2)},${shippingFee(3)}`);
-console.log(`Default label: ${shippingLabel("PK-1", 1)}`);
-console.log(`Express label: ${shippingLabel("PK-7", 3, "express")}`);
-console.log(`Regular label: ${shippingLabel("PK-8", 3, "regular")}`);
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Regular: ${shippingLabel("PK-1",1)} | ${shippingLabel("PK-8",3,"regular")}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
+function expressExtra(service) { if (service === "express") return 3; return 0; }
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Express: ${shippingLabel("PK-7",3,"express")} | ${shippingLabel("PK-2",1,"express")}`);
+} catch (error) {
+  console.log("Step 3 pending");
+}
+
+// Step 4
+
+console.log(`Regular label: ${shippingLabel("PK-8",3,"regular")}`);

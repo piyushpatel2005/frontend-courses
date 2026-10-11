@@ -1,19 +1,42 @@
-// TODO 1: Destructure coords into latitude and longitude
-const coords = [40.7128, -74.0060];
-// const [latitude, longitude] = ...
+const coords = [40.7128,-74.0060];
+const stops = ["Harbor","Museum","Library"];
 
-// TODO 2: Destructure the first and third stops (skip the middle).
-const stops = ["Harbor", "Museum", "Library"];
+// Step 1
 
-// TODO 3: swapPair([a, b]) returns [b, a]
-function swapPair(pair) {
+// Complete this step here.
 
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Coordinates: ${latitude} | ${longitude}`);
+} catch (error) {
+  console.log("Step 1 pending");
 }
 
-// TODO 4: Log the route and latitude.
-console.log("");
+// Step 2
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${latitude} | ${longitude}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: ${firstStop} | ${lastStop}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${swapPair([1,2]).join(",")} | ${swapPair(["a","b"]).join(",")}`); } catch (error) { console.log("CHECK pending"); }
+// Complete this step here.
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Stops: ${firstStop} | ${lastStop}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
+function swapPair(pair) {}
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Swaps: ${String(swapPair([1,2]))} | ${String(swapPair(["a","b"]))}`);
+} catch (error) {
+  console.log("Step 3 pending");
+}
+
+// Step 4
+
+// Complete this step here.

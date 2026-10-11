@@ -1,10 +1,29 @@
+// Step 1
+
 const siteName = "";
 
-function buildLabel() {
-  // Create a local sectionName and return the combined text.
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Site: ${siteName}`);
+} catch (error) {
+  console.log("Step 1 pending");
 }
 
-console.log("");
+// Step 2
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`Label: ${buildLabel()}`); } catch (error) { console.log("CHECK pending"); }
+function buildLabel() {
+  // Build the label here.
+}
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Label: ${buildLabel()}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
+// Complete this step here.

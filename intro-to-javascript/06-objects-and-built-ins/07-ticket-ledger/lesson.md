@@ -13,23 +13,24 @@ hints:
   - "Convert a small BigInt count before multiplying it by a Number price."
 ---
 
-# Ticket Ledger
+# Ticket ledger
 
-The walkthrough parsed a score and compared large ticket IDs. Now build a separate ledger that stores one large identifier and calculates a normal currency total.
-
-## Worked example
-
-BigInt identifies large whole numbers; convert it before combining it with ordinary decimal arithmetic:
+Keep a large ticket identifier exact while calculating the price of a small group of tickets. The ID is a BigInt; the decimal price is a Number. They serve different purposes and should not be multiplied together.
 
 ```javascript
 const crateId = 9007199254740995n;
 const unitPrice = Number("7.50");
-console.log(typeof crateId, 2 * unitPrice); // bigint 15
+const crateCount = 2n;
+console.log(typeof crateId, Number(crateCount) * unitPrice); // bigint 15
 ```
+
+`Number(crateCount)` is safe here because the count is small. This exercise supplies only small, nonnegative whole counts. Do not generalize this conversion to a very large identifier. The sample prices are chosen for a simple arithmetic exercise; ordinary Number arithmetic is not a general solution for exact financial calculations.
+
+Edit `script.js`. Leave the supplied checks in place, Run to see each checkpoint, and Submit when ready. Printing a BigInt inside `${...}` shows its digits without the source-code `n` suffix.
 
 ## Your Tasks
 
-1. Create `ticketId` with the BigInt value `9007199254740993n`.
-2. Create `ticketPrice` by converting the text `"19.50"` with `Number()`.
-3. Define `calculateTotal(ticketCount, price)` so `calculateTotal(3n, 19.5)` returns `58.5`.
-4. Log `Ticket 9007199254740993 | Total: 58.5` on its own Console line.
+1. Set `ticketId` to the BigInt value `9007199254740993n`.
+2. Set `ticketPrice` by converting the text `"19.50"` with `Number()`.
+3. Complete `calculateTotal(ticketCount, price)` by converting the small BigInt count to Number and multiplying by the supplied price.
+4. Log `Ticket 9007199254740993 | Total: 58.5` on its own line, using `ticketId` and `calculateTotal(3n, ticketPrice)`.

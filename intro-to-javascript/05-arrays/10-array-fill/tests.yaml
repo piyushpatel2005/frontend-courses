@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "[\"open\",\"open\",\"open\",\"closed\",\"closed\"]\n[\"open\",\"open\",\"open\",\"open\",\"open\"]"
+    }
+  ]
+}

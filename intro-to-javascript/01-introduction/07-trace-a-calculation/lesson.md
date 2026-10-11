@@ -4,15 +4,17 @@ slug: trace-a-calculation
 order: 7
 language: javascript
 lesson_type: interactive
-summary: Trace intermediate numbers to find a parenthesis bug.
+summary: "Trace why grouping a one-time fee changes an invoice total."
 seo_title: Trace a Faulty Calculation | JavaScript Console Practice
-seo_description: Debug a JavaScript total by printing intermediate values and correcting arithmetic grouping.
+seo_description: "Trace why grouping a one-time fee changes an invoice total."
 seo_keywords: javascript calculation debugging, console trace, parentheses
 ---
 
 # Trace a Faulty Calculation
 
 A rehearsal invoice charges for two sessions and one fixed setup fee. The wrong expression multiplies the fee too. Log the parts so you can see where the discrepancy starts.
+
+![Two invoice expressions showing whether the fixed fee is charged once or twice.](calculation-order.svg)
 
 ```javascript run
 const sessionCost = 15;
@@ -24,7 +26,9 @@ console.log("setup:", setupFee);
 console.log("faulty:", faultyTotal);
 ```
 
-The sessions cost 30, so a one-time fee of 4 should produce 34, not 38. Fix the **grouping**, not the input:
+Parentheses tell JavaScript to evaluate the enclosed addition first. The faulty expression adds the setup fee to each session, then charges that combined amount twice. The sessions cost 30, so one setup fee of 4 should produce 34, not 38.
+
+In the corrected example, multiplication happens before addition. Run the second block and compare its total with the first; these are two separate examples, so each declares its own inputs:
 
 ```javascript run
 const sessionCost = 15;

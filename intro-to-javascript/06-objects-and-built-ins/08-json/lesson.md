@@ -6,60 +6,50 @@ language: javascript
 lesson_type: coding
 validationRules: []
 hints:
-  - "Use `JSON.stringify(obj)` to convert an object to a JSON string."
-  - "Use `JSON.parse(str)` to convert a JSON string back to an object."
-  - "JSON.stringify accepts a second argument (replacer) and third (indent spaces)."
-summary: Practice json with a focused Starline Awards programming mission.
+  - "JSON.stringify(user) returns text; JSON.parse(apiResponse) reads text."
+  - "Complete deepClone before changing the supplied cloned object."
+summary: "Serialize and parse JSON-safe data, then update an independent nested copy."
 seo_title: JSON | Introduction to JavaScript
-seo_description: Learn json through a focused JavaScript programming mission and console-based practice.
+seo_description: "Practice JSON.stringify, JSON.parse, and the limits of copying JSON-safe JavaScript objects."
 seo_keywords: javascript, json, beginner javascript, programming practice
 ---
 
 # JSON
 
-## Mission: Artist Profile Lab
+An object in a running program is not the same as a text message containing its data. JSON (JavaScript Object Notation) is a text format that lets programs exchange structured values.
 
-The artist profile may need to travel as text between programs. Turn an object into JSON text, parse a response, and compare a copy with its original in the Console.
+JSON object keys and string values use double quotes. Values may be strings, numbers, booleans, `null`, arrays, or objects. Comments, functions, and `undefined` are not JSON values.
 
-**JSON** (JavaScript Object Notation) is the standard format for exchanging data between systems — APIs, config files, local storage. It looks like a JavaScript object literal but with stricter rules.
-
-## JSON rules
-
-- All **keys** must be quoted with double quotes.
-- Values can be: string, number, boolean, null, array, or object.
-- No functions, `undefined`, or comments.
-
-```json
-{
-    "name": "Alice",
-    "age": 30,
-    "skills": ["JavaScript", "HTML"],
-    "address": { "city": "London" }
-}
-```
-
-## `JSON.stringify()` — object → string
+## Turn values into text and back
 
 ```javascript
 const recipe = { dish: "Soup", servings: 4 };
 const recipeText = JSON.stringify(recipe);
-const weather = JSON.parse("{\"condition\":\"clear\",\"temp\":19}");
-console.log(recipeText, weather.condition);
+// {"dish":"Soup","servings":4}
+console.log(recipeText);
+const restoredRecipe = JSON.parse(recipeText);
+// 4
+console.log(restoredRecipe.servings);
 ```
 
-## `JSON.parse()` — string → object
+`JSON.stringify()` produces a string. `JSON.parse()` reads a JSON string and produces the represented value, which could be an object, array, or a simpler value. Invalid JSON causes an error; the exercise supplies valid JSON, so you do not need error handling yet.
 
-```javascript
-const data = '{"name":"Bob","score":95}';
-const obj = JSON.parse(data);
-console.log(obj.name);  // "Bob"
-console.log(obj.score); // 95
-```
+The diagram follows a smaller object with just a `servings` property.
 
-## Your Task
+![JSON-safe data becomes text through stringify, then a separate object through parse.](json-copy-boundary.svg)
 
-1. Given the object `user = { name: "Sam", level: 5, active: true }`, serialize it to a JSON string and store in `userJson`.
-2. Parse the string `apiResponse = '{"status":"ok","count":42}'` and store the result in `parsed`.
-3. Write `deepClone(obj)` using `JSON.parse(JSON.stringify(obj))` for JSON-safe data only; functions, `undefined`, `Date`, and `BigInt` are not preserved.
-4. Set only the copy’s `nested.b` to `99`, leaving the original unchanged.
-5. Log `Sam is level 5 | status: ok, count: 42` on its own Console line.
+## A separate copy
+
+Assigning `const other = recipe` gives the same object another name. A change through either name affects that one object. Parsing serialized JSON-safe data instead creates a separate object, including separate nested objects.
+
+This is a deliberately limited copying exercise. JSON drops object properties whose values are functions or `undefined`; a Date becomes text, and serializing a BigInt throws by default. Circular references also fail. Do not treat this helper as a universal clone function.
+
+Edit `script.js`. The starter supplies the original nested object, calls your clone helper, and prints checks before and after your copy-only edit. Keep those checks. Run to inspect the values, then Submit.
+
+## Your Tasks
+
+1. Serialize the supplied `user` object into `userJson` with `JSON.stringify()`.
+2. Parse the supplied `apiResponse` string into `parsed` with `JSON.parse()`.
+3. Complete `deepClone(obj)` with a JSON round trip for JSON-safe data. The supplied call stores its result in `cloned`.
+4. Set only `cloned.nested.b` to `99`, leaving `original.nested.b` at `2`.
+5. Log `Sam is level 5 | status: ok, count: 42` on its own line using `user` and `parsed`.

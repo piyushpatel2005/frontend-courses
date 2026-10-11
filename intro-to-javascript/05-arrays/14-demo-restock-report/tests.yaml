@@ -1,3 +1,8 @@
-blocks:
-  - index: 0
-    expected_output: "Balcony, East | 5"
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Balcony, East | 5\n[[\"East\",4],[\"West\",8],[\"Balcony\",1]]"
+    }
+  ]
+}

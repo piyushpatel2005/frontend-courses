@@ -1,15 +1,19 @@
-test("Engineering names", () => {
-  assert.match(OUTPUT, /^CHECK names: Alice,Carol,Eve$/m, "Expected this standalone Console line: CHECK names: Alice,Carol,Eve");
+test("Select Engineering", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK engineers: Alice,Carol,Eve"), true, "Expected checkpoint: CHECK engineers: Alice,Carol,Eve");
 });
 
-test("Average Engineering salary", () => {
-  assert.match(OUTPUT, /^CHECK average: 107667$/m, "Expected this standalone Console line: CHECK average: 107667");
+test("Extract names", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK names: Alice,Carol,Eve"), true, "Expected checkpoint: CHECK names: Alice,Carol,Eve");
 });
 
-test("Salary report", () => {
-  assert.match(OUTPUT, /^CHECK report: Alice: \$95,000 \| Bob: \$72,000 \| count: 5$/m, "Expected this standalone Console line: CHECK report: Alice: $95,000 | Bob: $72,000 | count: 5");
+test("Average salaries", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK average: 107667"), true, "Expected checkpoint: CHECK average: 107667");
 });
 
-test("Standalone Engineering summary", () => {
-  assert.match(OUTPUT, /^Engineers: Alice,Carol,Eve \| Avg salary: \$107,667$/m, "Expected this standalone Console line: Engineers: Alice,Carol,Eve | Avg salary: $107,667");
+test("Format all salaries", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK report: Alice: $95,000 | Bob: $72,000 | Carol: $108,000 | Dave: $68,000 | Eve: $120,000"), true, "Expected checkpoint: CHECK report: Alice: $95,000 | Bob: $72,000 | Carol: $108,000 | Dave: $68,000 | Eve: $120,000");
+});
+
+test("Standalone summary", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("Engineers: Alice,Carol,Eve | Avg salary: $107,667"), true, "Expected checkpoint: Engineers: Alice,Carol,Eve | Avg salary: $107,667");
 });

@@ -1,8 +1,17 @@
+// Step 1
+
 const greetStudent = function (name) {
-  // Return the welcome message.
+  // Return a welcome message.
 };
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`Welcome test: ${greetStudent("Maya")}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Welcome test: ${greetStudent("Maya")} | ${greetStudent("Luis")}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+// Complete this step here.

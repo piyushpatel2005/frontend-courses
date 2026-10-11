@@ -10,14 +10,16 @@ function countdown(n) {
 function collatz(n) {
   let steps = 0;
   while (n !== 1) {
-    n = n % 2 === 0 ? n / 2 : 3 * n + 1;
+    if (n % 2 === 0) {
+      n = n / 2;
+    } else {
+      n = 3 * n + 1;
+    }
     steps++;
   }
   return steps;
 }
 
-console.log(`Countdown one: ${countdown(1)}`);
-console.log(`Collatz one: ${collatz(1)}`);
-console.log(`Countdown three: ${countdown(3)}`);
-console.log(`Collatz six: ${collatz(6)}`);
+console.log(`Countdowns: ${countdown(3)} | ${countdown(1)} | [${countdown(0)}]`);
+console.log(`Collatz steps: ${collatz(1)},${collatz(2)},${collatz(6)}`);
 console.log(`Countdown from 5: ${countdown(5)}`);

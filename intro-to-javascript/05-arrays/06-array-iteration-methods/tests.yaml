@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Read: Dune | Read: Kindred | Read: Beloved\nShelf: Dune | Shelf: Kindred | Shelf: Beloved"
+    }
+  ]
+}

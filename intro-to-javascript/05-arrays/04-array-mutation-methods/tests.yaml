@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "fern,ivy,orchid\norchid fern,ivy"
+    }
+  ]
+}

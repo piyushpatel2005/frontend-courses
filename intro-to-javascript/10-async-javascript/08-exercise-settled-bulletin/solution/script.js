@@ -19,8 +19,8 @@ async function compileFeeds(names) {
 }
 globalThis.compileFeeds = compileFeeds;
 async function reportFeeds() {
-  const report = await compileFeeds(["stage", "press", "voting"]);
+  const report = await globalThis.compileFeeds(["stage", "press", "voting"]);
   console.log(`Headlines: ${report.headlines.join(", ")} | failed: ${report.failed.join(", ")}`);
 }
 globalThis.reportFeeds = reportFeeds;
-reportFeeds();
+globalThis.initialFeeds = reportFeeds().catch(error => console.log(`Work incomplete: ${error.message}`));

@@ -1,68 +1,89 @@
-test("loadDashboard requests the user first", async () => {
-  assert.equal(globalThis.loadDashboard?.constructor.name, "AsyncFunction", "Define an async function");
-  const original = globalThis.fetchUser;
+test("awaits the user before dependent lookups", async () => {
+  await globalThis.initialDashboard;
+  const saved = [globalThis.fetchUser, globalThis.fetchPosts, globalThis.fetchNotifications];
+  let release; const gate = new Promise(resolve => { release = resolve; });
+  const started = []; let pending;
   try {
-    globalThis.fetchUser = async () => ({ id: 42, name: "Guest" });
-    const data = await globalThis.loadDashboard();
-    assert.equal(data.userName, "Guest", "Use the fetched user");
-  } finally { globalThis.fetchUser = original; }
-});
-test("starts both dependent requests together", async () => {
-  const posts = globalThis.fetchPosts;
-  const notifications = globalThis.fetchNotifications;
-  const user = globalThis.fetchUser;
-  const started = [];
-  let release;
-  const gate = new Promise(resolve => { release = resolve; });
-  try {
-    globalThis.fetchUser = async () => ({ id: 42, name: "Guest" });
-    globalThis.fetchPosts = async id => { started.push(`posts:${id}`); await gate; return []; };
-    globalThis.fetchNotifications = async id => { started.push(`notifications:${id}`); await gate; return []; };
-    const pending = globalThis.loadDashboard();
-    await Promise.resolve();
-    await Promise.resolve();
-    assert.equal(started.join(" | "), "posts:42 | notifications:42", "Start both requests with the fetched ID before either completes");
-    release();
-    await pending;
+    globalThis.fetchUser = () => { started.push("user"); return gate; };
+    globalThis.fetchPosts = async () => { started.push("posts"); return []; };
+    globalThis.fetchNotifications = async () => { started.push("notifications"); return []; };
+    pending = globalThis.loadDashboard();
+    let settled = false;
+    Promise.resolve(pending).then(() => { settled = true; }, () => { settled = true; });
+    for (let i = 0; i < 8; i++) await Promise.resolve();
+    assert.equal(started.join(","), "user", "Request only the user while it is pending");
+    assert.equal(settled, false, "Await the user before completing loadDashboard");
   } finally {
-    release();
-    globalThis.fetchUser = user;
-    globalThis.fetchPosts = posts;
-    globalThis.fetchNotifications = notifications;
+    release({ id: 42, name: "Guest" });
+    await Promise.resolve(pending).catch(() => {});
+    [globalThis.fetchUser, globalThis.fetchPosts, globalThis.fetchNotifications] = saved;
   }
 });
-test("counts posts and unread notifications", async () => {
-  const data = await globalThis.loadDashboard();
-  assert.equal(data.userName, "Alex", "Use the fetched user's name");
-  assert.equal(data.postCount, 3, "Count fetched posts");
-  assert.equal(data.unreadCount, 2, "Count only unread notifications");
-});
-test("dashboard falls back on a rejected request", async () => {
-  const originalUser = globalThis.fetchUser;
-  const originalPosts = globalThis.fetchPosts;
-  const originalNotifications = globalThis.fetchNotifications;
-  const fallback = JSON.stringify({ userName: "Unknown", postCount: 0, unreadCount: 0 });
+test("starts both dependent requests before awaiting either", async () => {
+  await globalThis.initialDashboard;
+  const saved = [globalThis.fetchUser, globalThis.fetchPosts, globalThis.fetchNotifications];
+  const started = []; let releasePosts, releaseNotifications;
+  const postsGate = new Promise(resolve => { releasePosts = resolve; });
+  const notificationsGate = new Promise(resolve => { releaseNotifications = resolve; }); let pending;
   try {
-    globalThis.fetchUser = async () => { throw new Error("User unavailable"); };
-    assert.equal(JSON.stringify(await globalThis.loadDashboard()), fallback, "Handle a failed user request");
-    globalThis.fetchUser = originalUser;
-    globalThis.fetchPosts = async () => { throw new Error("Posts unavailable"); };
-    assert.equal(JSON.stringify(await globalThis.loadDashboard()), fallback, "Handle a failed posts request");
-    globalThis.fetchPosts = originalPosts;
-    globalThis.fetchNotifications = async () => { throw new Error("Notifications unavailable"); };
-    assert.equal(JSON.stringify(await globalThis.loadDashboard()), fallback, "Handle a failed notifications request");
+    globalThis.fetchUser = async () => ({ id: 42, name: "Guest" });
+    globalThis.fetchPosts = id => { started.push(`posts:${id}`); return postsGate.then(() => []); };
+    globalThis.fetchNotifications = id => { started.push(`notifications:${id}`); return notificationsGate.then(() => []); };
+    pending = globalThis.loadDashboard();
+    let settled = false;
+    Promise.resolve(pending).then(() => { settled = true; }, () => { settled = true; });
+    for (let i = 0; i < 8; i++) await Promise.resolve();
+    assert.equal(started.length, 2, "Start each dependent lookup once");
+    assert.equal(started.includes("posts:42") && started.includes("notifications:42"), true, "Use the fetched ID for both lookups");
+    assert.equal(settled, false, "Wait for both pending results");
+    releasePosts();
+    for (let i = 0; i < 12; i++) await Promise.resolve();
+    assert.equal(settled, false, "Do not finish while notifications are still pending");
   } finally {
-    globalThis.fetchUser = originalUser;
-    globalThis.fetchPosts = originalPosts;
-    globalThis.fetchNotifications = originalNotifications;
+    releasePosts(); releaseNotifications(); await Promise.resolve(pending).catch(() => {});
+    [globalThis.fetchUser, globalThis.fetchPosts, globalThis.fetchNotifications] = saved;
   }
 });
-test("logs the awaited dashboard", async () => {
-  const lines = [];
-  const original = console.log;
-  console.log = (...args) => { lines.push(args.join(" ")); original(...args); };
+test("summarizes varied and empty activity", async () => {
+  await globalThis.initialDashboard;
+  const saved = [globalThis.fetchUser, globalThis.fetchPosts, globalThis.fetchNotifications];
   try {
+    for (const [name, posts, notifications, unread] of [["Mira", [{}, {}], [{read:true},{read:false}], 1], ["Empty", [], [], 0], ["Read", [{}], [{read:true}], 0]]) {
+      globalThis.fetchUser = async () => ({id:9, name});
+      globalThis.fetchPosts = async () => posts;
+      globalThis.fetchNotifications = async () => notifications;
+      const data = await globalThis.loadDashboard();
+      assert.equal(data?.userName, name, "Use the fetched name");
+      assert.equal(data?.postCount, posts.length, "Count all posts");
+      assert.equal(data?.unreadCount, unread, "Count only unread notifications");
+    }
+  } finally { [globalThis.fetchUser, globalThis.fetchPosts, globalThis.fetchNotifications] = saved; }
+});
+test("returns the fallback for each rejected fixture", async () => {
+  await globalThis.initialDashboard;
+  const keys = ["fetchUser", "fetchPosts", "fetchNotifications"];
+  const saved = keys.map(key => globalThis[key]);
+  try {
+    for (const failed of keys) {
+      globalThis.fetchUser = async () => ({id:2, name:"Mira"});
+      globalThis.fetchPosts = async () => [];
+      globalThis.fetchNotifications = async () => [];
+      globalThis[failed] = async () => { throw new Error("Offline"); };
+      const data = await globalThis.loadDashboard();
+      assert.equal(data?.userName, "Unknown", "Catch a rejection from " + failed);
+      assert.equal(data?.postCount, 0); assert.equal(data?.unreadCount, 0);
+    }
+  } finally { keys.forEach((key, i) => { globalThis[key] = saved[i]; }); }
+});
+test("reports the returned dashboard fields", async () => {
+  await globalThis.initialDashboard;
+  const saved = globalThis.loadDashboard; const log = console.log; const lines = [];
+  try {
+    console.log = (...args) => lines.push(args.join(" "));
+    globalThis.loadDashboard = async () => ({userName:"Alex",postCount:3,unreadCount:2});
     await globalThis.reportDashboard();
-    assert.includes(lines.join("\n"), "Alex | posts: 3 | unread: 2", "Log the loaded dashboard");
-  } finally { console.log = original; }
+    globalThis.loadDashboard = async () => ({userName:"Mira",postCount:0,unreadCount:1});
+    await globalThis.reportDashboard();
+    assert.equal(lines.join("\n"), "Alex | posts: 3 | unread: 2\nMira | posts: 0 | unread: 1", "Log the loaded values, not a fixed summary");
+  } finally { globalThis.loadDashboard = saved; console.log = log; }
 });

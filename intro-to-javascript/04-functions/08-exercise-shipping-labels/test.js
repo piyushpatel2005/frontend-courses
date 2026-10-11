@@ -1,15 +1,15 @@
-test("Checkpoint 1: Base fees: 4,7", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Base\\ fees:\\ 4,7(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 1: Base fees", () => {
+  assert.match(OUTPUT, new RegExp("^Base\\ fees:\\ 4,4,7$", "m"), "Step 1: expected Base fees: 4,4,7");
 });
 
-test("Checkpoint 2: Default label: PK-1: regular $4", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Default\\ label:\\ PK\\-1:\\ regular\\ \\$4(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 2: Regular", () => {
+  assert.match(OUTPUT, new RegExp("^Regular:\\ PK\\-1:\\ regular\\ \\$4\\ \\|\\ PK\\-8:\\ regular\\ \\$7$", "m"), "Step 2: expected Regular: PK-1: regular $4 | PK-8: regular $7");
 });
 
-test("Checkpoint 3: Express label: PK-7: express $10", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Express\\ label:\\ PK\\-7:\\ express\\ \\$10(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 3: Express", () => {
+  assert.match(OUTPUT, new RegExp("^Express:\\ PK\\-7:\\ express\\ \\$10\\ \\|\\ PK\\-2:\\ express\\ \\$7$", "m"), "Step 3: expected Express: PK-7: express $10 | PK-2: express $7");
 });
 
-test("Checkpoint 4: Regular label: PK-8: regular $7", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Regular\\ label:\\ PK\\-8:\\ regular\\ \\$7(?:\\n|$)"), "Log the expected result from your function calls");
+test("Step 4: Regular label", () => {
+  assert.match(OUTPUT, new RegExp("^Regular\\ label:\\ PK\\-8:\\ regular\\ \\$7$", "m"), "Step 4: expected Regular label: PK-8: regular $7");
 });

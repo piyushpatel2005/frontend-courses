@@ -1,14 +1,15 @@
-test("ticketId stores an exact BigInt", () => {
-  assert.match(OUTPUT, /^CHECK 1: bigint \| 9007199254740993$/m, "Log CHECK 1 from ticketId");
-});
-test("ticketPrice converts text to a Number", () => {
-  assert.match(OUTPUT, /^CHECK 2: 19\.5$/m, "Log CHECK 2 from ticketPrice");
+test("Exact BigInt identifier", () => {
+  assert.match(OUTPUT, /^CHECK 1: bigint \| 9007199254740993$/m, "Task 1: expected a separate output line: CHECK 1: bigint | 9007199254740993");
 });
 
-test("calculateTotal converts the ticket count deliberately", () => {
-  assert.match(OUTPUT, /^CHECK 3: 58\.5$/m, "Log CHECK 3 from calculateTotal");
+test("Converted numeric price", () => {
+  assert.match(OUTPUT, /^CHECK 2: number \| 19\.5$/m, "Task 2: expected a separate output line: CHECK 2: number | 19.5");
 });
 
-test("logs the ticket ledger", () => {
-  assert.match(OUTPUT, /^Ticket 9007199254740993 \| Total: 58\.5$/m, "Log the ledger on its own line");
+test("Total for small BigInt counts", () => {
+  assert.match(OUTPUT, /^CHECK 3: 58\.5 \| 15 \| 0$/m, "Task 3: expected a separate output line: CHECK 3: 58.5 | 15 | 0");
+});
+
+test("Separate ticket ledger", () => {
+  assert.match(OUTPUT, /^Ticket 9007199254740993 \| Total: 58\.5$/m, "Task 4: expected a separate output line: Ticket 9007199254740993 | Total: 58.5");
 });

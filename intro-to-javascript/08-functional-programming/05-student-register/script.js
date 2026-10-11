@@ -1,11 +1,10 @@
-// Replace the empty array with the three records shown in the task.
 const students = [];
-
 function activeRegister(records) {
-  // Filter active records and map them to "Name: Course" entries.
   return [];
 }
+// Log the register here.
 
-console.log(`CHECK students: ${students.map(s => s.name).join(",")} | active: ${students.map(s => s.active).join(",")}`);
+// Supplied checkpoints. Do not replace them with fixed answers.
+console.log(`CHECK students: ${students.map(s => `${s.name},${s.course},${s.active}`).join(" | ")}`);
 console.log(`CHECK register: ${activeRegister(students).join(" | ")}`);
-// Log the register on its own line.
+console.log(`CHECK other register: ${activeRegister([{name:"Jo",course:"Art",active:true},{name:"Kai",course:"Music",active:false}]).join(" | ")}`);

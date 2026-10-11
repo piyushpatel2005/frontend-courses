@@ -1,11 +1,25 @@
-const baseNumbers = [1, 2, 3, 4, 5];
+const baseNumbers = [1,2,3,4,5];
+
+// Step 1
+
 const middleNumbers = [];
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Middle: ${JSON.stringify(middleNumbers)} | Source: ${JSON.stringify(baseNumbers)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
 const combinedNumbers = [];
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${JSON.stringify(middleNumbers)}`); } catch (error) { console.log("CHECK pending"); }
-
-// Supplied final-result probe.
-try { console.log(JSON.stringify(combinedNumbers)); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Combined: ${JSON.stringify(combinedNumbers)} | Middle: ${JSON.stringify(middleNumbers)}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}

@@ -4,9 +4,9 @@ slug: exercise-expense-total
 order: 6
 language: javascript
 lesson_type: coding
-summary: Convert text prices and calculate grouped per-person costs.
+summary: "Calculate an event bill from converted per-guest costs and a service fee."
 seo_title: Calculate the Event Expense Total | JavaScript Coding Exercise
-seo_description: Compute a grouped event expense from numeric strings and a one-time fee without string concatenation.
+seo_description: "Calculate an event bill from converted per-guest costs and a service fee."
 seo_keywords: javascript expense exercise, Number strings, arithmetic precedence
 hints:
   - Inspect the intermediate values in the Console before changing the final line.
@@ -25,6 +25,12 @@ const kits = 4;
 const delivery = Number("5");
 console.log((pens + folders) * kits + delivery); // 25
 ```
+
+All raw inputs and the guest count are supplied. Keep them unchanged and replace the numeric placeholders below them. Convert one field at a time; each probe reports both the value and `number`, so a quoted answer will not look like a completed conversion.
+
+The per-guest line is a subtotal, not the full invoice. Check it before including the guest count and service fee. The fee belongs outside the multiplication.
+
+Edit `script.js`, Run to inspect each checkpoint, then Submit to check the completed tasks. The supplied probes do not need rewriting.
 
 ## Your Tasks
 

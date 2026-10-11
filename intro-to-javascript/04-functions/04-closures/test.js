@@ -1,7 +1,7 @@
-test("Checkpoint 1: Counter calls: 1,2", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Counter\\ calls:\\ 1,2(?:\\n|$)"), "Log this result from your function calls");
+test("Step 1: Counter calls", () => {
+  assert.match(OUTPUT, new RegExp("^Counter\\ calls:\\ 1,2,1,3$", "m"), "Step 1: expected Counter calls: 1,2,1,3");
 });
 
-test("Checkpoint 2: 1 | 2 | 3", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)1\\ \\|\\ 2\\ \\|\\ 3(?:\\n|$)"), "Log this result from your function calls");
+test("Step 2: 1 | 2 | 3", () => {
+  assert.match(OUTPUT, new RegExp("^1\\ \\|\\ 2\\ \\|\\ 3$", "m"), "Step 2: expected 1 | 2 | 3");
 });

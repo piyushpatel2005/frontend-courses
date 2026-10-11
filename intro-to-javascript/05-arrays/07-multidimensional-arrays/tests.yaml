@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "B1,B2\nB1\nA1\nA2\nB1\nB2"
+    }
+  ]
+}

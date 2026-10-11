@@ -1,11 +1,11 @@
-test("Normalize shelf labels", () => {
-  assert.match(OUTPUT, /^CHECK normalized: B\-07 \| C\-12$/m, "Expected this standalone Console line: CHECK normalized: B-07 | C-12");
+test("Trim and uppercase labels", () => {
+  assert.match(OUTPUT, /^CHECK 1: B-07 \| C-12 \| B -07$/m, "Task 1: expected a separate output line: CHECK 1: B-07 | C-12 | B -07");
 });
 
-test("Validate allowed rows and bays", () => {
-  assert.match(OUTPUT, /^CHECK valid: true,true,true \| invalid: false,false,false,false,false,false$/m, "Expected this standalone Console line: CHECK valid: true,true,true | invalid: false,false,false,false,false,false");
+test("Rows, bay boundaries, and whole input", () => {
+  assert.match(OUTPUT, /^CHECK 2: true,true,true,true \| false,false,false,false,false,false,false,false$/m, "Task 2: expected a separate output line: CHECK 2: true,true,true,true | false,false,false,false,false,false,false,false");
 });
 
-test("Standalone label comparison", () => {
-  assert.match(OUTPUT, /^B\-07: true \| D\-07: false$/m, "Expected this standalone Console line: B-07: true | D-07: false");
+test("Separate label comparison", () => {
+  assert.match(OUTPUT, /^B-07: true \| D-07: false$/m, "Task 3: expected a separate output line: B-07: true | D-07: false");
 });

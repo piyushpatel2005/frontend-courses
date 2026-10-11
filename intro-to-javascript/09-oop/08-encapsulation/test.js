@@ -1,32 +1,27 @@
-test('Stack initializes its private items', () => {
-  assert.includes(OUTPUT, 'stack initialized: true', 'Initialize the private array before using it');
+test("Initialize private array", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK initialized: true"), true, "Expected checkpoint: CHECK initialized: true");
 });
 
-test('size counts an empty stack', () => {
-  assert.includes(OUTPUT, 'empty size: 0', 'Count the items in an empty stack');
+test("Read size", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK size: 0"), true, "Expected checkpoint: CHECK size: 0");
 });
 
-test('push adds items', () => {
-  assert.includes(OUTPUT, 'push size: 2', "Expected the labeled Console checkpoint: push size: 2");
+test("Push items", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK push: 2"), true, "Expected checkpoint: CHECK push: 2");
 });
 
-test('pop and size', () => {
-  assert.includes(OUTPUT, 'popped: 20, size: 1', "Expected the labeled Console checkpoint: popped: 20, size: 1");
+test("Pop and empty rule", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK pop: 20 | remaining: 1 | empty: undefined"), true, "Expected checkpoint: CHECK pop: 20 | remaining: 1 | empty: undefined");
 });
 
-test('empty pop', () => {
-  assert.includes(OUTPUT, 'empty pop: undefined', "Expected the labeled Console checkpoint: empty pop: undefined");
+test("Peek without removal", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK peek: 15 | size: 2 | empty: undefined"), true, "Expected checkpoint: CHECK peek: 15 | size: 2 | empty: undefined");
 });
 
-test('peek without removing', () => {
-  assert.includes(OUTPUT, 'peek: 15, size: 2', "Expected the labeled Console checkpoint: peek: 15, size: 2");
+test("Empty states", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK empty: true,false"), true, "Expected checkpoint: CHECK empty: true,false");
 });
 
-test('isEmpty states', () => {
-  assert.includes(OUTPUT, 'empty states: true, false', "Expected the labeled Console checkpoint: empty states: true, false");
+test("Stack summary", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("Stack size: 2 | top: 20"), true, "Expected checkpoint: Stack size: 2 | top: 20");
 });
-
-test('mission result', () => {
-  assert.includes(OUTPUT, 'Stack size: 2 | top: 20', "Expected the labeled Console checkpoint: Stack size: 2 | top: 20");
-});
-

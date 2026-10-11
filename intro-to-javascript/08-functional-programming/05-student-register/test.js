@@ -1,11 +1,12 @@
-test("Three student records", () => {
-  assert.match(OUTPUT, /^CHECK students: Ari,Bea,Chen \| active: true,false,true$/m, "Expected this standalone Console line: CHECK students: Ari,Bea,Chen | active: true,false,true");
+test("Student records", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK students: Ari,JavaScript,true | Bea,CSS,false | Chen,JavaScript,true"), true, "Expected checkpoint: CHECK students: Ari,JavaScript,true | Bea,CSS,false | Chen,JavaScript,true");
 });
 
-test("Active register transformation", () => {
-  assert.match(OUTPUT, /^CHECK register: Ari: JavaScript \| Chen: JavaScript$/m, "Expected this standalone Console line: CHECK register: Ari: JavaScript | Chen: JavaScript");
+test("Reusable active register", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK register: Ari: JavaScript | Chen: JavaScript"), true, "Expected checkpoint: CHECK register: Ari: JavaScript | Chen: JavaScript");
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK other register: Jo: Art"), true, "Expected checkpoint: CHECK other register: Jo: Art");
 });
 
-test("Standalone student register", () => {
-  assert.match(OUTPUT, /^Ari: JavaScript \| Chen: JavaScript$/m, "Expected this standalone Console line: Ari: JavaScript | Chen: JavaScript");
+test("Standalone register", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("Ari: JavaScript | Chen: JavaScript"), true, "Expected checkpoint: Ari: JavaScript | Chen: JavaScript");
 });

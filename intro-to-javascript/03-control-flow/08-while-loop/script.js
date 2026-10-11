@@ -1,13 +1,11 @@
-// TODO 1: Implement countdown(n) using a while loop
 function countdown(n) {
-
+  // Build the countdown here.
 }
 
-// TODO 2: Implement collatz(n)
 function collatz(n) {
-
+  // Count the changes here.
 }
 
-// These probes run as you implement the functions above.
-console.log(`Countdown one: ${countdown(1)}`);
-console.log(`Collatz one: ${collatz(1)}`);
+console.log(`Countdowns: ${countdown(3)} | ${countdown(1)} | [${countdown(0)}]`);
+console.log(`Collatz steps: ${collatz(1)},${collatz(2)},${collatz(6)}`);
+// Add the countdown-from-5 message here.

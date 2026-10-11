@@ -1,26 +1,45 @@
-const student = {
-  firstName: "Jordan",
-  lastName: "Lee",
-  scores: [88, 92, 79, 95, 85]
-};
+const student = { firstName: "Jordan", lastName: "Lee", scores: [88, 92, 79, 95, 85] };
 
-// TODO 1: Destructure firstName and lastName from student
-// const { firstName, lastName } = ...
+// Task 1: Destructured names
 
-// TODO 2: fullName(student) returns "Jordan Lee"
+// Destructure firstName and lastName here.
+
+// Supplied check 1: leave this code in place.
+
+try {
+  console.log("CHECK 1: " + (`${firstName} | ${lastName}`));
+} catch (error) {
+  console.log("CHECK 1: pending");
+}
+
+// Task 2: Full name for different records
+
 function fullName(s) {
-
+  // Return the full name.
 }
 
-// TODO 3: averageScore(student) returns average rounded to 1 decimal
+// Supplied check 2: leave this code in place.
+
+try {
+  console.log("CHECK 2: " + (`${fullName(student)} | ${fullName({firstName:"Ari",lastName:"Chen"})}`));
+} catch (error) {
+  console.log("CHECK 2: pending");
+}
+
+// Task 3: Average and one-decimal rounding
+
 function averageScore(s) {
-
+  // Return the rounded mean.
 }
 
-// TODO 4: Display "Jordan Lee — avg: 87.8"
-console.log("");
+// Supplied check 3: leave this code in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${firstName} | ${lastName}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: ${fullName(student)}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${averageScore(student)}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log("CHECK 3: " + (`${averageScore(student)} | ${averageScore({scores:[1,2,2]})} | ${averageScore({scores:[0]})}`));
+} catch (error) {
+  console.log("CHECK 3: pending");
+}
+
+// Task 4: Separate student average
+
+// Log the final average here.

@@ -1,7 +1,29 @@
-const phrase = 'hello world';
-const upperPhrase = '';
+const phrase = "hello world";
+
+// Task 1: Uppercase transformation
+
+const upperPhrase = "";
+
+// Supplied check 1: leave this code in place.
+
+try {
+  console.log("CHECK 1: " + (upperPhrase));
+} catch (error) {
+  console.log("CHECK 1: pending");
+}
+
+// Task 2: Word membership
+
 const hasWorld = false;
 
-console.log(`CHECK uppercase: ${upperPhrase}`);
-console.log(`CHECK includes: ${hasWorld}`);
-// Log the combined result as a separate line.
+// Supplied check 2: leave this code in place.
+
+try {
+  console.log("CHECK 2: " + (`${typeof hasWorld} | ${hasWorld}`));
+} catch (error) {
+  console.log("CHECK 2: pending");
+}
+
+// Task 3: Separate combined result
+
+// Log both values here.

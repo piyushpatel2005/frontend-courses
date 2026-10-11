@@ -1,4 +1,12 @@
-blocks:
-  - index: 0
-    expected_output: |
-      Average: 83.66666666666667
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Average: 80"
+    },
+    {
+      "index": 1,
+      "expected_output": "Average: 80"
+    }
+  ]
+}

@@ -9,50 +9,35 @@ hints:
   - "Access elements with two indices: `matrix[row][col]`."
   - "Use nested for loops to iterate all rows and columns."
   - "The diagonal elements have the same row and column index: `matrix[i][i]`."
-summary: Practice multidimensional arrays with a focused Starline Awards programming mission.
+summary: "A seating chart has rows and columns. An array can contain other arrays; `matrix[row][column]` reads the outer row first, then a value inside that row."
 seo_title: Multidimensional Arrays | Introduction to JavaScript
-seo_description: Learn multidimensional arrays through a focused JavaScript programming mission and console-based practice.
+seo_description: "A seating chart has rows and columns. An array can contain other arrays; `matrix[row][column]` reads the outer row first, then a value inside that row."
 seo_keywords: javascript, multidimensional arrays, beginner javascript, programming practice
 ---
 
-# Multidimensional Arrays
+# Multidimensional arrays
 
-## Mission: Setlist Vault
+A seating chart has rows and columns. An array can contain other arrays; `matrix[row][column]` reads the outer row first, then a value inside that row.
 
-A seating chart has rows and columns, not just one list. Read nested arrays and total their values in `script.js`; check the Console.
-
-A **multidimensional array** is an array of arrays. The most common use is a **2D array** (matrix) to represent tabular data.
-
-## Creating a 2D array
-
-```javascript
+```javascript run
 const seats = [["A1", "A2"], ["B1", "B2"]];
+console.log(seats[1]);
 console.log(seats[1][0]);
-```
-
-## Accessing elements
-
-The first index chooses a row and the second chooses a column:
-
-```javascript
-const matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-matrix[0][0]; // 1 — row 0, col 0
-matrix[1][2]; // 6 — row 1, col 2
-matrix[2][1]; // 8 — row 2, col 1
-```
-
-## Iterating with nested loops
-
-```javascript
-for (let row = 0; row < matrix.length; row++) {
-    for (let col = 0; col < matrix[row].length; col++) {
-        console.log(matrix[row][col]);
-    }
+for (const row of seats) {
+  for (const seat of row) console.log(seat);
 }
 ```
 
-## Your Task
+Run the block. The first line is the second row; the next line selects its first seat. The outer loop visits rows and the inner loop visits each row's values. Rows need not have equal lengths, so using each row's own values avoids assuming a rectangular shape.
 
-1. Write `matrixSum(matrix)` to sum **all** values, even when given a different-sized grid.
-2. Write `diagonal(matrix)` to return the **main diagonal** (top-left to bottom-right).
-3. Log `Sum: 45 | Diagonal: 1,5,9` on its own line in the Console.
+For a square grid, the **main diagonal** runs from top left to bottom right. Its row and column indices match: `[0][0]`, `[1][1]`, and so on. Build a result array and push one diagonal value per row. An empty grid contributes no values and should return an empty diagonal.
+
+Your sum helper accepts any array of numeric rows; the diagonal helper receives square grids only.
+
+## Your Tasks
+
+1. Implement `matrixSum(matrix)` with nested loops to total every number, including in different-sized or empty grids.
+2. Implement `diagonal(matrix)` to return the main diagonal of a square grid: take `matrix[i][i]` for each row index.
+3. Log `Sum: 45 | Diagonal: 1,5,9` using both helpers with `grid`.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

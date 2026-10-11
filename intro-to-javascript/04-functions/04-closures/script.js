@@ -1,8 +1,19 @@
+// Step 1
+
 function makeCounter() {
-  // Return an inner function that remembers count.
+  // Return a function with its own remembered count.
 }
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`Counter calls: ${(() => { const c = makeCounter(); return `${c()},${c()}`; })()}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  const first = makeCounter();
+  const second = makeCounter();
+  console.log(`Counter calls: ${first()},${first()},${second()},${first()}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+// Complete this step here.

@@ -1,7 +1,7 @@
-test("Checkpoint 1: Welcome test: Welcome, Maya!", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Welcome\\ test:\\ Welcome,\\ Maya!(?:\\n|$)"), "Log this result from your function calls");
+test("Step 1: Welcome test", () => {
+  assert.match(OUTPUT, new RegExp("^Welcome\\ test:\\ Welcome,\\ Maya!\\ \\|\\ Welcome,\\ Luis!$", "m"), "Step 1: expected Welcome test: Welcome, Maya! | Welcome, Luis!");
 });
 
-test("Checkpoint 2: Welcome, Maya!", () => {
-  assert.match(OUTPUT, new RegExp("(?:^|\\n)Welcome,\\ Maya!(?:\\n|$)"), "Log this result from your function calls");
+test("Step 2: Welcome, Maya!", () => {
+  assert.match(OUTPUT, new RegExp("^Welcome,\\ Maya!$", "m"), "Step 2: expected Welcome, Maya!");
 });

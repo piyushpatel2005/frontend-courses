@@ -1,37 +1,24 @@
 class Stack {
   #items = [];
   get initialized() { return Array.isArray(this.#items); }
-
+  get size() { return this.#items.length; }
   push(item) { this.#items.push(item); }
   pop() { return this.#items.pop(); }
   peek() { return this.#items[this.#items.length - 1]; }
-  get size() { return this.#items.length; }
   get isEmpty() { return this.#items.length === 0; }
 }
-
-// Each checkpoint follows the corresponding task.
-console.log(`stack initialized: ${new Stack().initialized}`);
-console.log(`empty size: ${new Stack().size}`);
-const pushCheck = new Stack();
-pushCheck.push(10);
-pushCheck.push(20);
-console.log(`push size: ${pushCheck.size}`);
-const popCheck = new Stack();
-popCheck.push(10);
-popCheck.push(20);
-console.log(`popped: ${popCheck.pop()}, size: ${popCheck.size}`);
-console.log(`empty pop: ${new Stack().pop()}`);
-const peekCheck = new Stack();
-peekCheck.push(5);
-peekCheck.push(15);
-console.log(`peek: ${peekCheck.peek()}, size: ${peekCheck.size}`);
-const emptyCheck = new Stack();
-const wasEmpty = emptyCheck.isEmpty;
-emptyCheck.push(1);
-console.log(`empty states: ${wasEmpty}, ${emptyCheck.isEmpty}`);
+// Supplied setup for the final output.
 const stack = new Stack();
-stack.push(10);
-stack.push(20);
-stack.push(30);
-stack.pop();
+stack.push(10); stack.push(20);
 console.log(`Stack size: ${stack.size} | top: ${stack.peek()}`);
+
+// Supplied checkpoints. Do not replace them with fixed answers.
+console.log(`CHECK initialized: ${new Stack().initialized}`);
+console.log(`CHECK size: ${new Stack().size}`);
+const pushed = new Stack(); pushed.push(10); pushed.push(20);
+console.log(`CHECK push: ${pushed.size}`);
+console.log(`CHECK pop: ${pushed.pop()} | remaining: ${pushed.size} | empty: ${new Stack().pop()}`);
+const peeked = new Stack(); peeked.push(5); peeked.push(15);
+console.log(`CHECK peek: ${peeked.peek()} | size: ${peeked.size} | empty: ${new Stack().peek()}`);
+const empty = new Stack(); const before = empty.isEmpty; empty.push(1);
+console.log(`CHECK empty: ${before},${empty.isEmpty}`);

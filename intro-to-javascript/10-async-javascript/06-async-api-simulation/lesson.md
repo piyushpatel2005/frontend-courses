@@ -11,26 +11,22 @@ seo_description: Combine offline user, post, and notification requests with Prom
 seo_keywords: javascript, async, api, simulation, asynchronous programming
 ---
 
-# Exercise: Async API Simulation
+# Exercise: An offline activity dashboard
 
-The preceding demo loaded a rehearsal schedule from offline functions. `fetchUser`, `fetchPosts`, and `fetchNotifications` here are **local fixtures**, not HTTP calls. Fetch the user first; its ID lets you request posts and notifications concurrently.
+Apply the rehearsal's dependency pattern to a user's activity summary. `fetchUser`, `fetchPosts`, and `fetchNotifications` are supplied local fixtures. Despite their names, they make no HTTP requests.
 
-```javascript
-async function loadRoute() {
-  const parcel = await getParcel();
-  const [driver, depot] = await Promise.all([
-    getDriver(parcel.routeId), getDepot(parcel.routeId)
-  ]);
-  return { driver, depot };
-}
-```
+Wait for the user first, because both later calls need its ID. Posts and notifications do not depend on each other, so start both before waiting for their combined result. Count unread notifications with `filter(notification => !notification.read).length`.
 
-The parcel lookup provides the ID first. The other two calls begin together. `Promise.all` rejects if either request fails; wrap the calls in `try`/`catch` for your dashboard's fallback. All three fixture functions are supplied in `script.js`.
+Keep the supplied `globalThis` assignments. Call fixtures through `globalThis.fetchUser`, `globalThis.fetchPosts`, and `globalThis.fetchNotifications` so each check can provide different users and pending results. The report should call `globalThis.loadDashboard()` for the same reason.
 
 ## Your Tasks
 
-1. Define async `loadDashboard()` and await `fetchUser()` before requesting data tied to its ID.
-2. Launch the user’s posts and notifications together with `Promise.all`, passing the fetched ID to both.
-3. Return `{ userName, postCount, unreadCount }`, counting only unread notifications.
-4. On any rejection, return `{ userName: "Unknown", postCount: 0, unreadCount: 0 }`.
-5. Implement `reportDashboard()` to log `Alex | posts: 3 | unread: 2` from the loaded dashboard. The starter calls it on startup.
+1. In async `loadDashboard()`, await `globalThis.fetchUser()` before starting any dependent lookup.
+2. Use `Promise.all` to await posts and notifications together, passing the fetched user's ID to both fixture calls.
+3. Return `{ userName, postCount, unreadCount }` using the user's name, all posts, and only unread notifications.
+4. Wrap the loading work in `try`/`catch` so any rejected fixture returns `{ userName: "Unknown", postCount: 0, unreadCount: 0 }`.
+5. Implement `reportDashboard()` to await `globalThis.loadDashboard()` and log its fields as `Alex | posts: 3 | unread: 2` for the supplied data.
+
+Edit `script.js`, **Run**, then **Submit**. The startup call is already supplied. Until you write the reporter the Console stays quiet, but Submit checks each loading milestone. A caught startup error while you are partway through does not mean your earlier tasks failed.
+
+The fallback deliberately discards partial results. The next pair changes that policy: one failed provider should not hide successful providers.

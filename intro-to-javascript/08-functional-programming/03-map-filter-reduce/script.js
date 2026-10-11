@@ -6,17 +6,14 @@ const employees = [
   { name: "Eve",    dept: "Engineering", salary: 120000 }
 ];
 
-// TODO 1: engineeringNames - array of names in Engineering dept
+const engineers = [];
 const engineeringNames = [];
-
-// TODO 2: avgEngineerSalary - rounded average salary of Engineering employees
 const avgEngineerSalary = 0;
-
-// TODO 3: salaryReport - array of "Name: $salary" strings for all employees
 const salaryReport = [];
+// Log the summary here.
 
-// The probes below show each derived result as you complete it.
+// Supplied checkpoints. Do not replace them with fixed answers.
+console.log(`CHECK engineers: ${engineers.map(e => e.name).join(",")}`);
 console.log(`CHECK names: ${engineeringNames.join(",")}`);
 console.log(`CHECK average: ${avgEngineerSalary}`);
-console.log(`CHECK report: ${salaryReport[0]} | ${salaryReport[1]} | count: ${salaryReport.length}`);
-// Log the summary from engineeringNames and avgEngineerSalary separately.
+console.log(`CHECK report: ${salaryReport.join(" | ")}`);

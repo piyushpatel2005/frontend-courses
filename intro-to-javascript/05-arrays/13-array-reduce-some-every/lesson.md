@@ -8,35 +8,42 @@ validationRules: []
 hints:
   - "Use reduce() to total the numbers into one value."
   - "Use some() and every() to answer yes-or-no questions about the array."
-summary: Practice array reduce, some, and every with a focused Starline Awards programming mission.
+summary: "The crew needs a total and two yes-or-no answers. These methods summarize a list rather than building a same-length transformed list."
 seo_title: Array Reduce, Some, and Every | Introduction to JavaScript
-seo_description: Learn array reduce, some, and every through a focused JavaScript programming mission and console-based practice.
+seo_description: "The crew needs a total and two yes-or-no answers. These methods summarize a list rather than building a same-length transformed list."
 seo_keywords: javascript, array reduce, some, and every, beginner javascript, programming practice
 ---
 
-# Array Reduce, Some, and Every
+# Array reduce, some, and every
 
-## Mission: Setlist Vault
+The crew needs a total and two yes-or-no answers. These methods summarize a list rather than building a same-length transformed list.
 
-The crew needs three quick summaries of its numbers: a total, whether any match a condition, and whether all match one. Use `reduce()`, `some()`, and `every()` in `script.js`.
-
-Some array methods return one combined answer instead of a new array. This lesson uses reduce(), some(), and every() together to show three different kinds of summary.
-
-## Example
-
-```javascript
+```javascript run
 const waterUse = [18, 22, 15];
-const totalUse = waterUse.reduce((sum, value) => sum + value, 0);
-const hasLowTank = waterUse.some((value) => value < 16);
-const allValid = waterUse.every((value) => value >= 0);
+const totalUse = waterUse.reduce(
+  (sum, value) => sum + value,
+  0
+);
+const hasLowTank = waterUse.some(
+  value => value < 16
+);
+const allValid = waterUse.every(
+  value => value >= 0
+);
 console.log(totalUse, hasLowTank, allValid);
 ```
 
-## Your Task
+In `reduce(callback, 0)`, zero is the initial accumulated result. The callback receives that result and the next item; its return becomes the next accumulated result. Above, `sum` moves through 0, 18, 40, and 55. Supplying an initial value also makes an empty sum return zero.
 
-1. Create `total` with `reduce()` on `[5, 10, 15]`.
-2. Create `hasAdult` with `some()` for an age of at least 18 in `[12, 17, 21]`.
-3. Create `allPositive` with `every()` for values above zero in `[1, 2, 3]`.
-4. Log `30 | true | true` on its own line in the Console.
+`some()` returns true as soon as one item passes its condition. `every()` returns false as soon as one item fails. For an empty array, `some()` is false and `every()` is true: there is no matching item and no failing item.
 
-Next, combine those array methods into a restock report before the section quiz.
+Run the example. For the editor, "adult" includes 18, while "positive" excludes zero. Write those boundaries explicitly in your callbacks. Next you will combine array methods into a restock report.
+
+## Your Tasks
+
+1. Set `total` using `[5, 10, 15].reduce()`, starting from 0 and adding each number.
+2. Set `hasAdult` using `[12, 17, 21].some()` to check for an age of at least 18.
+3. Set `allPositive` using `[1, 2, 3].every()` to check that each number is above zero.
+4. Log `30 | true | true` using `total`, `hasAdult`, and `allPositive`.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

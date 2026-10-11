@@ -1,7 +1,26 @@
-const nested = [[1, 2], [3, 4]];
+const nested = [[1,2],[3,4]];
+const phrases = ["hello world","js"];
+
+// Step 1
+
 const flatNumbers = nested.flat();
-const splitWords = ['hello world', 'js'].flatMap((item) => item.split(' '));
 
-console.log(`CHECK 1: ${JSON.stringify(flatNumbers)}`);
+// Supplied probe: leave this in place.
 
-console.log(`${JSON.stringify(flatNumbers)} | ${JSON.stringify(splitWords)}`);
+try {
+  console.log(`Flat: ${JSON.stringify(flatNumbers)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+const splitWords = phrases.flatMap(phrase => phrase.split(" "));
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Words: ${JSON.stringify(splitWords)}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}

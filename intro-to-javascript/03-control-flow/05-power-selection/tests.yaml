@@ -1,4 +1,7 @@
 blocks:
-  - index: 0
-    expected_output: |
-      Use the garden gate
+- index: 0
+  expected_output: 'Use the garden gate
+
+    '
+- index: 1
+  expected_output: Ask at reception

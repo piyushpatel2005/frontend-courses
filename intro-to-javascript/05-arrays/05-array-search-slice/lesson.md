@@ -8,29 +8,32 @@ validationRules: []
 hints:
   - "Use slice(1, 4) to get the middle three values from a five-item array."
   - "Use concat() to join the sliced array with [10, 11]."
-summary: Practice copying a range and combining arrays with slice and concat.
+summary: "A schedule may need a short middle segment followed by extra entries. `slice(start, end)` copies a range: it includes the start index and stops before the end index."
 seo_title: Array Slice and Concat | Introduction to JavaScript
-seo_description: Copy an array range with slice and combine it with new values using concat.
+seo_description: "A schedule may need a short middle segment followed by extra entries. `slice(start, end)` copies a range: it includes the start index and stops before the end index."
 seo_keywords: javascript, array slice, array concat, beginner javascript
 ---
 
-# Array Slice and Concat
+# Array slice and concat
 
-## Mission: Setlist Vault
+A schedule may need a short middle segment followed by extra entries. `slice(start, end)` copies a range: it includes the start index and stops before the end index.
 
-A schedule sometimes needs a short middle segment, then a few extra entries. Use `slice()` and `concat()` without changing the source array; inspect the result in the Console.
-
-Unlike `push()` and `pop()`, `slice(start, end)` returns a new array without changing the original. It includes `start` but excludes `end`; `concat()` also returns a new array. Here you will use both.
-
-## Example
-
-```javascript
+```javascript run
 const temperatures = [12, 14, 15, 17, 16, 13, 11];
 const warmStretch = temperatures.slice(2, 5);
-console.log(warmStretch);
+const extended = warmStretch.concat([18, 19]);
+console.log(JSON.stringify(warmStretch));
+console.log(JSON.stringify(extended));
+console.log(JSON.stringify(temperatures));
 ```
 
-## Your Task
+Run the block. Indices 2, 3, and 4 give `[15,17,16]`; index 5 is excluded. `concat()` returns a new array with the additional values. Neither operation changes its source.
 
-1. Create middleNumbers by slicing [1, 2, 3, 4, 5] so it contains [2, 3, 4].
-2. Create `combinedNumbers` by concatenating `[10, 11]` to `middleNumbers`, producing `[2,3,4,10,11]` in the supplied probe.
+Calling `slice()` with no arguments copies the whole array. It is a **shallow copy**: it creates a new outer array, but any nested arrays remain shared. That distinction will matter when you work with pairs later. For these number lists, a copy gives you independent positions to replace.
+
+## Your Tasks
+
+1. Set `middleNumbers` to `baseNumbers.slice(1, 4)` to copy `[2,3,4]` without changing `baseNumbers`.
+2. Set `combinedNumbers` to `middleNumbers.concat([10, 11])`, preserving the middle array.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

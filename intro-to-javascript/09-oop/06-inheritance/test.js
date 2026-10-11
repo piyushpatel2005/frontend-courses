@@ -1,32 +1,31 @@
-test('Shape stores its default color', () => {
-  assert.includes(OUTPUT, 'shape color: black', 'Log the default Shape color');
+test("Default color", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK color: black"), true, "Expected checkpoint: CHECK color: black");
 });
 
-test('Circle inherits Shape', () => {
-  assert.includes(OUTPUT, 'circle inherits Shape: true', "Expected the labeled Console checkpoint: circle inherits Shape: true");
+test("Circle initialization", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK circle: 5,red,true"), true, "Expected checkpoint: CHECK circle: 5,red,true");
 });
 
-test('circle area', () => {
-  assert.includes(OUTPUT, 'circle area: 78.54', "Expected the labeled Console checkpoint: circle area: 78.54");
+test("Circle areas", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK circle area: 78.54 | 12.57"), true, "Expected checkpoint: CHECK circle area: 78.54 | 12.57");
 });
 
-test('circle description', () => {
-  assert.includes(OUTPUT, 'circle description: Circle(radius: 5, color: red, area: 78.54)', "Expected the labeled Console checkpoint: circle description: Circle(radius: 5, color: red, area: 78.54)");
+test("Circle description", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK circle description: Circle(radius: 5, color: red, area: 78.54)"), true, "Expected checkpoint: CHECK circle description: Circle(radius: 5, color: red, area: 78.54)");
 });
 
-test('Rectangle inherits Shape', () => {
-  assert.includes(OUTPUT, 'rectangle inherits Shape: true', "Expected the labeled Console checkpoint: rectangle inherits Shape: true");
+test("Rectangle initialization", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK rectangle: 4,6,blue,true"), true, "Expected checkpoint: CHECK rectangle: 4,6,blue,true");
 });
 
-test('rectangle area', () => {
-  assert.includes(OUTPUT, 'rectangle area: 24', "Expected the labeled Console checkpoint: rectangle area: 24");
+test("Rectangle areas", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK rectangle area: 24 | 6"), true, "Expected checkpoint: CHECK rectangle area: 24 | 6");
 });
 
-test('rectangle description', () => {
-  assert.includes(OUTPUT, 'rectangle description: Rectangle(4×6, color: blue, area: 24)', "Expected the labeled Console checkpoint: rectangle description: Rectangle(4×6, color: blue, area: 24)");
+test("Rectangle description", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK rectangle description: Rectangle(4\u00d76, color: blue, area: 24)"), true, "Expected checkpoint: CHECK rectangle description: Rectangle(4\u00d76, color: blue, area: 24)");
 });
 
-test('mission result', () => {
-  assert.match(OUTPUT, /^mission result: Circle\(radius: 5, color: red, area: 78\.54\) \| Rectangle\(4×6, color: blue, area: 24\)$/m, 'Log the combined mission result on its own line');
+test("Shape summary", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("mission result: Circle(radius: 5, color: red, area: 78.54) | Rectangle(4\u00d76, color: blue, area: 24)"), true, "Expected checkpoint: mission result: Circle(radius: 5, color: red, area: 78.54) | Rectangle(4\u00d76, color: blue, area: 24)");
 });
-

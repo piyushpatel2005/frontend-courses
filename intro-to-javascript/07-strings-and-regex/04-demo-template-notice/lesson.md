@@ -12,14 +12,15 @@ seo_keywords: [javascript template literals, string interpolation, reminder mess
 
 # Build a library reminder
 
-A library needs a short reminder for a book on hold. A template literal puts each value in its place without joining fragments with `+`.
+A library has a reader, a book title, and a pickup deadline. Put those inputs into one message without joining text fragments with `+`.
 
 ```javascript run
 function holdReminder(reader, book, deadline) {
   return `Hi ${reader.trim()}, ${book} is ready. Pick it up by ${deadline}.`;
 }
-
 console.log(holdReminder(" Maya ", "Field Guide", "Friday"));
 ```
 
-Run this once. Notice that `trim()` removes the extra space in the reader's name *before* interpolation; the book and deadline remain separate inputs. Try another name and deadline, then move to the pantry pickup exercise, where you will format an entire list of messages.
+Before running, locate the three substitutions. Only the reader's name calls `trim()`; the book title and deadline are inserted as provided.
+
+Run and check that the output begins `Hi Maya,` rather than keeping the spaces around the supplied name. The function returns the message; the outer `console.log()` displays it. Keeping those jobs separate lets you use the returned string in a longer list, which you will do in the pantry exercise next.

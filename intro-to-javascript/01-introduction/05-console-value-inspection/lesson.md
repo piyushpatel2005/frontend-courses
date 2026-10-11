@@ -4,9 +4,9 @@ slug: console-value-inspection
 order: 5
 language: javascript
 lesson_type: interactive
-summary: Inspect the type and value of each field in a console log.
+summary: "Compare the value and type of text and numeric check-in fields."
 seo_title: Inspect Values in the Console | JavaScript Console Practice
-seo_description: Use console.log and typeof to inspect different JavaScript values before computing with them.
+seo_description: "Compare the value and type of text and numeric check-in fields."
 seo_keywords: javascript console inspection, typeof values, debugging input
 ---
 
@@ -33,4 +33,4 @@ console.log("verified:", verifiedCount, typeof verifiedCount);
 console.log("same type:", typeof scannedCount === typeof verifiedCount);
 ```
 
-The last line is `false`. You have not changed either value; you have diagnosed the mismatch. In the next exercise you will inspect a different set of check-in fields before reporting them.
+The `===` operator asks whether two values are exactly equal without converting their types. Here it compares the two type labels, `"string"` and `"number"`, rather than adding the counts. The last line is `false`. You have not changed either value; you have diagnosed the mismatch. In the next exercise you will inspect a different set of check-in fields before reporting them.

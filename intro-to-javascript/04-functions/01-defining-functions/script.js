@@ -1,10 +1,17 @@
+// Step 1
+
 function greet(name) {
-  // Return a greeting string.
+  // Return the greeting.
 }
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`Greeting: ${greet("Alice")}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Greeting: ${greet("Alice")} | ${greet("Bob")} | ${greet("")}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
 
-// Log the final result yourself.
+// Step 2
+
+// Complete this step here.

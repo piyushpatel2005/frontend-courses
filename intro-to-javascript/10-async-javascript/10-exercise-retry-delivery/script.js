@@ -8,7 +8,6 @@ function createScoreApi(failures) {
   api.calls = () => calls;
   return api;
 }
-globalThis.createScoreApi = createScoreApi;
 async function deliverScore(api, score, maxAttempts) {
   // Retry sequentially, returning the first successful result.
 }
@@ -17,4 +16,4 @@ async function reportDelivery() {
   // Retry twice and log the successful score upload.
 }
 globalThis.reportDelivery = reportDelivery;
-reportDelivery();
+globalThis.initialDelivery = reportDelivery().catch(error => console.log(`Work incomplete: ${error.message}`));

@@ -1,11 +1,26 @@
-const numbers = [1, 2, 3];
+const numbers = [1,2,3];
 const labels = [];
+
+// Step 1
+
+// Complete this step here.
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Labels: ${labels.join(", ")}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
 const doubledNumbers = [];
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${labels.join(", ")}`); } catch (error) { console.log("CHECK pending"); }
-
-// Supplied final-result probe.
-try { console.log(`${labels.join(", ")} | ${JSON.stringify(doubledNumbers)}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Doubled: ${JSON.stringify(doubledNumbers)} | Source: ${JSON.stringify(numbers)}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}

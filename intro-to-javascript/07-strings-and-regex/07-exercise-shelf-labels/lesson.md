@@ -15,13 +15,9 @@ hints:
 
 # Check storage shelf labels
 
-The time-slot demo matched a full input, not just a valid substring. Here a storage clerk enters labels such as `B-07`; allow surrounding spaces and lowercase letters, but reject a nonexistent row or bay.
+A storage clerk enters a label such as `b-07` with accidental spaces around it. Normalize that input first, then check whether its row and bay fall inside the allowed ranges.
 
-A valid normalized label has row `A`, `B`, or `C`, a hyphen, then a two-digit bay from `01` through `12`. This is a format check, not a lookup of shelves currently in use.
-
-## Worked example
-
-An anchored pattern for an unrelated ticket code validates the *whole* string:
+A normalized label has row `A`, `B`, or `C`, a hyphen, and a two-digit bay from `01` through `12`. This checks the format; it does not look up which shelves are currently in use.
 
 ```javascript
 const ticket = /^[A-Z]{2}-[0-9]{2}$/;
@@ -29,12 +25,16 @@ console.log(ticket.test("AB-07")); // true
 console.log(ticket.test("xAB-07")); // false
 ```
 
+For your pattern, `[A-C]` limits the row. `(0[1-9]|1[0-2])` allows either `01` through `09`, or `10` through `12`. Keep `^` and `$` so extra characters cannot pass. Do not use `g` for these repeated yes/no checks: global regexes remember a search position, which can make repeated `test()` calls surprising.
+
+`input.trim().toUpperCase()` applies one method to the result of the other. It removes surrounding whitespace and normalizes case, but it does not remove spaces inside a label. `"B -07"` should still fail.
+
+Edit `script.js` and keep the supplied checks. They include both permitted endpoints and values just outside the range. Run after each helper, then Submit.
+
 ## Your Tasks
 
-1. Complete `normalizeShelfLabel(input)` by trimming and uppercasing input.
-2. Complete `isValidShelfLabel(input)` by testing the normalized whole string: rows A–C and bays 01–12 only.
-3. Log a standalone comparison for `" b-07 "` and `"D-07"`: `B-07: true | D-07: false`.
+1. Complete `normalizeShelfLabel(input)` by trimming and uppercasing the input string.
+2. Complete `isValidShelfLabel(input)` by testing the normalized whole string for rows A–C and bays 01–12 only.
+3. Log a separate comparison for `" b-07 "` and `"D-07"`: `B-07: true | D-07: false`.
 
-## Strings and regex complete
-
-You can now turn loosely entered text into validated labels. Take the section quiz before moving on to functional programming.
+You can now format messages and check precisely defined text inputs. Take the section quiz before moving on to functional programming.

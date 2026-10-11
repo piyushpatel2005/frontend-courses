@@ -1,36 +1,23 @@
-test('constructor stores the owner', () => {
-  assert.includes(OUTPUT, 'account owner: Alice', 'Log the owner from the new account');
+test("Initialize account", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK constructor: Alice,100 | default: 0"), true, "Expected checkpoint: CHECK constructor: Alice,100 | default: 0");
 });
 
-test('balance getter reads the starting balance', () => {
-  assert.includes(OUTPUT, 'initial balance: 100', 'Log the initial balance');
+test("Read balance", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK balance: 100"), true, "Expected checkpoint: CHECK balance: 100");
 });
 
-test('positive deposits', () => {
-  assert.includes(OUTPUT, 'deposit balance: 50', "Expected the labeled Console checkpoint: deposit balance: 50");
+test("Deposit rule", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK deposit: 50"), true, "Expected checkpoint: CHECK deposit: 50");
 });
 
-test('negative deposits ignored', () => {
-  assert.includes(OUTPUT, 'negative deposit balance: 100', "Expected the labeled Console checkpoint: negative deposit balance: 100");
+test("Withdrawal rule", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK withdraw: true,false,false,false,true | balance: 0"), true, "Expected checkpoint: CHECK withdraw: true,false,false,false,true | balance: 0");
 });
 
-test('successful withdrawal', () => {
-  assert.includes(OUTPUT, 'withdraw success: true, balance: 70', "Expected the labeled Console checkpoint: withdraw success: true, balance: 70");
+test("Describe accounts", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("CHECK description: BankAccount(owner: Alice, balance: $120) | BankAccount(owner: Jo, balance: $20)"), true, "Expected checkpoint: CHECK description: BankAccount(owner: Alice, balance: $120) | BankAccount(owner: Jo, balance: $20)");
 });
 
-test('insufficient funds', () => {
-  assert.includes(OUTPUT, 'withdraw denied: false, balance: 50', 'Deny an overdraw without changing the balance');
+test("Standalone account", () => {
+  assert.equal(OUTPUT.split(/\r?\n/).includes("mission result: BankAccount(owner: Alice, balance: $120)"), true, "Expected checkpoint: mission result: BankAccount(owner: Alice, balance: $120)");
 });
-
-test('nonpositive withdrawal', () => {
-  assert.includes(OUTPUT, 'invalid withdrawal: false, balance: 50', 'Reject a negative withdrawal without changing the balance');
-});
-
-test('formatted account description', () => {
-  assert.match(OUTPUT, /^account description: BankAccount\(owner: Alice, balance: \$120\)$/m, 'Log the formatted account description on its own line');
-});
-
-test('mission result logged', () => {
-  assert.match(OUTPUT, /^mission result: BankAccount\(owner: Alice, balance: \$120\)$/m, 'Log the mission result on its own line');
-});
-

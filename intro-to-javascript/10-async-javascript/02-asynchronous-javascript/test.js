@@ -1,19 +1,27 @@
-test("callback resolves with actual execution order", async () => {
-  assert.equal(typeof globalThis.runBroadcast, "function", "Define runBroadcast");
-  let settled = false;
-  const pending = globalThis.runBroadcast().then(order => { settled = true; return order; });
-  await Promise.resolve();
-  await Promise.resolve();
-  assert.equal(settled, false, "Resolve in a timer, not synchronously or in a microtask");
-  const order = await pending;
-  assert.equal(order.join(" | "), "Start | End | Delayed", "Push Delayed in the timer callback");
-});
-test("callback logs the completed order", async () => {
-  const lines = [];
-  const original = console.log;
-  console.log = (...args) => { lines.push(args.join(" ")); original(...args); };
+test("schedules the delayed entry before finishing", async () => {
+  const original = globalThis.setTimeout;
+  const scheduled = [];
   try {
-    await globalThis.runBroadcast();
-    assert.includes(lines.join("\n"), "Start | End | Delayed", "Log inside the callback");
+    globalThis.setTimeout = (callback, ms) => { scheduled.push({ callback, ms }); return 1; };
+    const order = ["Opening"];
+    let calls = 0;
+    globalThis.scheduleDelayed(order, () => { calls++; assert.equal(order.join("|"), "Opening|Closing|Delayed"); });
+    assert.equal(order.join("|"), "Opening", "Do not append Delayed immediately");
+    assert.equal(calls, 0, "Do not finish before the timer fires");
+    assert.equal(scheduled.length, 1, "Schedule one timer");
+    assert.equal(scheduled[0].ms, 0, "Use a zero-delay timer");
+    order.push("Closing");
+    scheduled[0].callback();
+    assert.equal(calls, 1, "Call finish once, after appending Delayed");
+  } finally { globalThis.setTimeout = original; }
+});
+test("logs the supplied broadcast order", () => {
+  const original = console.log;
+  const lines = [];
+  try {
+    console.log = (...args) => lines.push(args.join(" "));
+    globalThis.logBroadcast(["Start", "End", "Delayed"]);
+    globalThis.logBroadcast(["News", "Weather"]);
+    assert.equal(lines.join("\n"), "Start | End | Delayed\nNews | Weather", "Join and log the supplied array");
   } finally { console.log = original; }
 });

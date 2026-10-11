@@ -1,7 +1,11 @@
-// TODO: Implement getDayType(day)
 function getDayType(day) {
-
+  switch (day) {
+    // Add weekend cases here.
+    // Add weekday cases here.
+    default: return undefined;
+  }
 }
 
-// These probes run as you implement the functions above.
-console.log(`Sunday: ${getDayType("Sunday")}`);
+console.log(`Weekends: ${getDayType("Saturday")},${getDayType("Sunday")}`);
+console.log(`Weekdays: ${getDayType("Monday")},${getDayType("Tuesday")},${getDayType("Wednesday")},${getDayType("Thursday")},${getDayType("Friday")}`);
+console.log(`Unknown names: ${getDayType("Holiday")},${getDayType("saturday")}`);

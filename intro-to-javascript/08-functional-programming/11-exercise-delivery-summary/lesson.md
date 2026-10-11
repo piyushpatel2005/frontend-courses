@@ -4,9 +4,9 @@ slug: exercise-delivery-summary
 order: 11
 language: javascript
 lesson_type: coding
-summary: Compose filter, map, and reduce into a reusable delivered-parcel summary.
+summary: "The ride demo produced one total. The parcel desk needs a count and a weight total, so you will build the summary in small steps before formatting it."
 seo_title: "Delivery Summary Map Filter Reduce Exercise | Introduction to JavaScript"
-seo_description: Build a JavaScript parcel summary that filters delivered records, maps grams to kilograms, and reduces to a total.
+seo_description: "The ride demo produced one total. The parcel desk needs a count and a weight total, so you will build the summary in small steps before formatting it."
 seo_keywords: [javascript array pipeline exercise, filter map reduce, delivery report]
 hints:
   - "Filter for delivered records; map each weightGrams to kilograms by dividing by 1000."
@@ -15,9 +15,9 @@ hints:
 
 # Prepare a delivery summary
 
-The bike-ride demo produced a single total. A parcel desk needs a reusable report of **count and kilograms delivered**, ignoring parcels that are still in transit.
+The ride demo produced one total. The parcel desk needs a count and a weight total, so you will build the summary in small steps before formatting it.
 
-`summaryFor(deliveries)` must return `{ count, totalKg }` without changing the input array. Use `filter`, `map`, and `reduce` to compose the calculation. `formatSummary(summary)` turns that result into one Console-friendly sentence.
+Filter for `status === "delivered"`, then map `weightGrams` to kilograms by dividing by 1000. Reduce those kilograms from 0. Keep the input records unchanged. After those helpers work, connect them in `summaryFor` and return `{ count, totalKg }`; the braces create an object with two named results.
 
 ## Worked example
 
@@ -31,11 +31,16 @@ const minutes = readings.filter(item => item.active)
 console.log(minutes); // 20
 ```
 
+Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.
+
 ## Your Tasks
 
-1. Complete `summaryFor(deliveries)` with `filter`, `map`, and `reduce` (initial sum 0) to count delivered parcels and total their kilograms; empty input yields `{ count: 0, totalKg: 0 }`.
-2. Complete `formatSummary(summary)` to return a sentence using the supplied `count` and `totalKg` fields.
-3. Log `formatSummary(summaryFor(deliveries))` on its own line.
+1. Use `filter` in `deliveredOnly(deliveries)` to return only delivered records without changing the input.
+2. Use `map` in `weightsInKg(deliveries)` to return their weights in kilograms.
+3. Use `reduce` in `sumWeights(weights)` to total the numbers, starting from 0.
+4. Compose the three helpers in `summaryFor(deliveries)` to return `{ count, totalKg }`, with zeros for empty input.
+5. Return `Delivered COUNT parcels weighing WEIGHT kg` from `formatSummary(summary)`, inserting its `count` and `totalKg`.
+6. Log `formatSummary(summaryFor(deliveries))` on its own line.
 
 ## Functional programming complete
 

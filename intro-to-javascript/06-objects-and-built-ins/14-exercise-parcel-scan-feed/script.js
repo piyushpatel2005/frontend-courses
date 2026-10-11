@@ -1,28 +1,61 @@
 const scanFeed = '[{"zone":"North","tracking":"P1"},{"zone":"South","tracking":"P2"},{"zone":"North","tracking":"P1"},{"zone":"South","tracking":"P3"}]';
 
+// Task 1: Parse JSON scan arrays
+
 function parseScans(jsonText) {
   // Parse the JSON feed.
 }
 
-function countByZone(scans) {
-  // Return a Map counting scans per zone.
+// Supplied check 1: leave this code in place.
+
+try {
+  console.log("CHECK 1: " + ((() => { const scans=parseScans('[{"zone":"Dock","tracking":"T1"}]'); return `${Array.isArray(scans)} | ${scans[0].zone},${scans[0].tracking} | empty:${parseScans("[]").length}`; })()));
+} catch (error) {
+  console.log("CHECK 1: pending");
 }
+
+// Task 2: Count every scan in a Map
+
+function countByZone(scans) {
+  // Count scans in a new Map.
+}
+
+// Supplied check 2: leave this code in place.
+
+try {
+  console.log("CHECK 2: " + ((() => { const counts=countByZone([{zone:"Dock",tracking:"T1"},{zone:"Dock",tracking:"T1"},{zone:"Gate",tracking:"T2"}]); const empty=countByZone([]); return `${counts instanceof Map} | Dock=${counts.get("Dock")} Gate=${counts.get("Gate")} | empty:${empty instanceof Map}/${empty.size}`; })()));
+} catch (error) {
+  console.log("CHECK 2: pending");
+}
+
+// Task 3: Distinct tracking IDs in a Set
 
 function uniqueIds(scans) {
-  // Return a Set of tracking IDs.
+  // Add tracking IDs to a new Set.
 }
+
+// Supplied check 3: leave this code in place.
+
+try {
+  console.log("CHECK 3: " + ((() => { const ids=uniqueIds([{zone:"Dock",tracking:"T1"},{zone:"Dock",tracking:"T1"},{zone:"Gate",tracking:"T2"}]); const empty=uniqueIds([]); return `${ids instanceof Set} | ${[...ids].join(",")} | empty:${empty instanceof Set}/${empty.size}`; })()));
+} catch (error) {
+  console.log("CHECK 3: pending");
+}
+
+// Task 4: Summary combines helpers including empty data
 
 function summarizeScans(jsonText) {
-  // Return { byZone, uniqueTracking } from the helpers.
+  // Return { byZone, uniqueTracking }.
 }
 
-// Log checkpoints, then the report for scanFeed.
+// Supplied check 4: leave this code in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${Object.values(parseScans('[{"zone":"Dock","tracking":"T1"}]')[0]).join(",")}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: Dock=${countByZone([{zone:"Dock",tracking:"T1"},{zone:"Dock",tracking:"T1"},{zone:"Gate",tracking:"T2"}]).get("Dock")} Gate=${countByZone([{zone:"Dock",tracking:"T1"},{zone:"Dock",tracking:"T1"},{zone:"Gate",tracking:"T2"}]).get("Gate")}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${[...uniqueIds([{zone:"Dock",tracking:"T1"},{zone:"Dock",tracking:"T1"},{zone:"Gate",tracking:"T2"}])].join(",")}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 4: ${(() => { const p=summarizeScans('[{"zone":"Dock","tracking":"T1"},{"zone":"Dock","tracking":"T1"},{"zone":"Gate","tracking":"T2"}]'); return `Dock=${p.byZone.get("Dock")} | unique=${p.uniqueTracking.size}`; })()}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 5: ${(() => { const p=summarizeScans("[]"); return `empty=${p.byZone.size}/${p.uniqueTracking.size}`; })()}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log("CHECK 4: " + ((() => { const report=summarizeScans('[{"zone":"Dock","tracking":"T1"},{"zone":"Dock","tracking":"T1"}]'); const empty=summarizeScans("[]"); return `Dock=${report.byZone.get("Dock")} | unique=${report.uniqueTracking.size} | empty:${empty.byZone instanceof Map}/${empty.uniqueTracking instanceof Set}/${empty.byZone.size}/${empty.uniqueTracking.size}`; })()));
+} catch (error) {
+  console.log("CHECK 4: pending");
+}
 
-// Log the final result yourself.
+// Task 5: Separate parcel report
+
+// Log the report for scanFeed here.

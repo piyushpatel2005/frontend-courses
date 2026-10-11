@@ -1,6 +1,17 @@
-const seats = ['A', 'B', 'C', 'D', 'E'];
-const filledSeats = [...seats].fill('X', 1, 4);
+const seats = ["A","B","C","D","E"];
 
-console.log(`CHECK 1: ${JSON.stringify(filledSeats)}`);
+// Step 1
+
+const filledSeats = seats.slice().fill("X",1,4);
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Filled: ${JSON.stringify(filledSeats)} | Source: ${JSON.stringify(seats)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
 
 console.log(JSON.stringify(filledSeats));

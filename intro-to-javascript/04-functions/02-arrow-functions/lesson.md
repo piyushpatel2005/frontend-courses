@@ -9,54 +9,36 @@ hints:
   - "Arrow function: `const fn = (params) => expression;`"
   - "Omit `{}` and `return` for single-expression arrow functions."
   - "Arrow functions with one parameter don't need parentheses: `n => n * 2`."
-summary: Practice arrow functions with a focused Starline Awards programming mission.
+summary: "The backstage desk needs three small calculations. An arrow function is a function value you can assign to a variable and call by that variable's name."
 seo_title: Arrow Functions | Introduction to JavaScript
-seo_description: Learn arrow functions through a focused JavaScript programming mission and console-based practice.
+seo_description: "The backstage desk needs three small calculations. An arrow function is a function value you can assign to a variable and call by that variable's name."
 seo_keywords: javascript, arrow functions, beginner javascript, programming practice
 ---
 
-# Arrow Functions
+# Arrow functions
 
-## Mission: Backstage Toolkit
+The backstage desk needs three small calculations. An arrow function is a function value you can assign to a variable and call by that variable's name.
 
-A backstage calculation can be written as an arrow function instead of a function declaration. Try three short calculations in `script.js` and check their results in the Console.
-
-An arrow function is another way to store a function in a variable. For a single expression, the expression's value is returned automatically. You will meet function expressions and callbacks in more detail later; for now, compare this with the function declaration you just used.
-
-## Syntax variations
-
-```javascript
-// Function declaration from the previous lesson
-function traditionalAdd(a, b) { return a + b; }
-
-// Arrow function — same result, stored in a variable
-const add = (a, b) => a + b;
-
-// Single parameter — parentheses optional
-const double = n => n * 2;
-
-// No parameters — empty parentheses required
-const greet = () => "Hello!";
-
-// Multi-line body — needs {} and explicit return
-const classify = n => {
-    if (n > 0) return "positive";
-    if (n < 0) return "negative";
-    return "zero";
-};
-console.log(add(2, 3), double(4)); // 5 8
+```javascript run
+const triple = (n) => n * 3;
+const ticketTotal = (price, count) => price * count;
+console.log(triple(4));
+console.log(ticketTotal(7, 2));
 ```
 
-For this exercise, use an arrow function for each calculation. Arrow functions also differ in how they handle `this` and constructors; those details matter later when you learn objects and classes.
+The parameters go before `=>`; the expression after it supplies the return value. Parentheses are optional for one parameter, but required for zero or several. Define the variable before calling it.
 
-For temperature conversion, `Math.round(value * 10) / 10` rounds to one decimal place: scaling by ten makes the first decimal a whole number before rounding. You will explore `Math` in the built-ins module.
+Braces change the rule: a body such as `n => { return n * 3; }` needs an explicit `return`. Writing `n => { n * 3; }` returns `undefined`.
+
+For the temperature helper, `Math.round(x)` rounds a number to its nearest integer. `Math.round(value * 10) / 10` therefore rounds to one decimal place. This is the only `Math` tool needed here; the built-ins section covers more. For parity, `% 2` is the remainder after division by two, so a remainder of zero means even.
+
+Run the example, then use the same return pattern for your different calculations. Use an expression body for the arithmetic helpers, or a braced body with `return`.
 
 ## Your Tasks
 
-1. Declare `square` as an arrow function.
-2. Return `n * n` from `square(n)`.
-3. Declare `celsius` as an arrow function.
-4. Convert Fahrenheit with `(f - 32) * 5 / 9`, rounded to one decimal via `Math.round(value * 10) / 10`.
-5. Declare `isEven` as an arrow function.
-6. Return boolean parity from `isEven`.
-7. Log `5² = 25 | 98°F = 36.7°C | 4 is even: true` using all three functions.
+1. Replace `null` in `square` with an arrow function that returns its number multiplied by itself.
+2. Replace `null` in `celsius` with an arrow function that converts Fahrenheit using `(f - 32) * 5 / 9`, rounded to one decimal place.
+3. Replace `null` in `isEven` with an arrow function returning whether `n % 2 === 0`.
+4. Log `5² = 25 | 98°F = 36.7°C | 4 is even: true` using the three functions.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

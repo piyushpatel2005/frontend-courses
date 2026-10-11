@@ -1,9 +1,41 @@
+// Task 1: Exact BigInt identifier
+
 const ticketId = 0n;
+
+// Supplied check 1: leave this code in place.
+
+try {
+  console.log("CHECK 1: " + (`${typeof ticketId} | ${ticketId}`));
+} catch (error) {
+  console.log("CHECK 1: pending");
+}
+
+// Task 2: Converted numeric price
+
 const ticketPrice = 0;
 
-// Define calculateTotal and log the ledger summary.
+// Supplied check 2: leave this code in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${typeof ticketId} | ${ticketId}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: ${ticketPrice}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${calculateTotal(3n,19.5)}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log("CHECK 2: " + (`${typeof ticketPrice} | ${ticketPrice}`));
+} catch (error) {
+  console.log("CHECK 2: pending");
+}
+
+// Task 3: Total for small BigInt counts
+
+function calculateTotal(ticketCount, price) {
+  // Convert the count and multiply.
+}
+
+// Supplied check 3: leave this code in place.
+
+try {
+  console.log("CHECK 3: " + (`${calculateTotal(3n,19.5)} | ${calculateTotal(2n,7.5)} | ${calculateTotal(0n,19.5)}`));
+} catch (error) {
+  console.log("CHECK 3: pending");
+}
+
+// Task 4: Separate ticket ledger
+
+// Log the ledger here.

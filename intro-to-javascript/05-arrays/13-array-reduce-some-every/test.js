@@ -1,13 +1,15 @@
-test("reduce sums the values", () => {
-  assert.match(OUTPUT, /^CHECK 1: 30$/m, "Log CHECK 1 from reduce");
-});
-test("some finds an adult", () => {
-  assert.match(OUTPUT, /^CHECK 2: true$/m, "Log CHECK 2 from some");
-});
-test("every confirms positive values", () => {
-  assert.match(OUTPUT, /^CHECK 3: true$/m, "Log CHECK 3 from every");
+test("Step 1: Total", () => {
+  assert.match(OUTPUT, new RegExp("^Total:\\ 30$", "m"), "Step 1: expected Total: 30");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^30 \| true \| true$/m, "Log the three results on their own line");
+test("Step 2: Adult", () => {
+  assert.match(OUTPUT, new RegExp("^Adult:\\ true$", "m"), "Step 2: expected Adult: true");
+});
+
+test("Step 3: Positive", () => {
+  assert.match(OUTPUT, new RegExp("^Positive:\\ true$", "m"), "Step 3: expected Positive: true");
+});
+
+test("Step 4: 30 | true | true", () => {
+  assert.match(OUTPUT, new RegExp("^30\\ \\|\\ true\\ \\|\\ true$", "m"), "Step 4: expected 30 | true | true");
 });

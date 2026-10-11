@@ -1,13 +1,11 @@
-// TODO 1: Implement firstNegative(numbers) using break
 function firstNegative(numbers) {
-
+  // Find the first negative here.
 }
 
-// TODO 2: Implement positiveOnly(numbers) using continue
 function positiveOnly(numbers) {
-
+  // Collect positive values here.
 }
 
-// These probes run as you implement the functions above.
-console.log(`First from -5,3: ${firstNegative([-5,3])}`);
-console.log(`Positive one: ${positiveOnly([0,-1,5])}`);
+console.log(`First cases: ${firstNegative([3,8,-2,-1])},${firstNegative([1,2,3])},${firstNegative([])}`);
+console.log(`Positive cases: ${positiveOnly([-5,3,0,-2,8,-1])} | [${positiveOnly([-1,-2])}] | [${positiveOnly([])}]`);
+// Add a combined report for [-5,3,-2,8,-1] here.

@@ -14,32 +14,24 @@ seo_keywords:
 - async programming
 ---
 
-# Project: Reliable Score Delivery
+# Project: Reliable score delivery
 
-The preceding demo retried a courier once. Here the score service is a **local deterministic fake API**: `createScoreApi(failures)` returns a function that rejects a chosen number of times before accepting a score. It never sends a request.
+Save a score through a local service that may reject several attempts. `createScoreApi(failures)` returns a fresh offline fixture: it rejects the chosen number of calls, then fulfills with `{ score, attempts }`. Its `calls()` method lets you inspect how often it ran. It never sends a request.
 
-## Worked example
+Reuse the demo's sequential loop. `maxAttempts` counts every call, including the first. Return immediately after success. Use `return await api(score)` inside `try` so a rejection reaches your `catch` before you decide whether another attempt is allowed.
 
-A separate retry loop stops once a local operation succeeds:
-
-```javascript
-async function repeatUntilReady(action, limit) {
-  for (let attempt = 1; attempt <= limit; attempt++) {
-    try { return await action(); }
-    catch (error) { if (attempt === limit) throw error; }
-  }
-}
-// An action that rejects once then succeeds would be called twice.
-```
+Keep the supplied `globalThis` assignments. The reporter calls `globalThis.deliverScore` so its check can provide a result without depending on earlier tasks.
 
 ## Your Tasks
 
-1. Write async `deliverScore(api, score, maxAttempts)` to return `api(score)`’s result on success. Assume a whole-number attempt budget.
-2. Retry rejected calls sequentially, stopping at the first success or after `maxAttempts` calls.
-3. After all attempts fail, throw the last original error without calling the API again.
-4. Reject a zero attempt budget with `Error("No attempts allowed")` without calling the API.
-5. Implement `reportDelivery()` with `createScoreApi(2)`, score `87`, and three attempts. Log `Score 87 saved after 3 attempts`. The starter calls it.
+1. In async `deliverScore(api, score, maxAttempts)`, return the API's fulfilled result unchanged on the first successful call.
+2. Retry rejected calls one at a time, stopping as soon as a call succeeds and never exceeding `maxAttempts` calls.
+3. If every allowed call fails, reject with the last original error object.
+4. Reject an invalid budget with `Error("No attempts allowed")` before calling the API. A valid budget is a positive integer; use `Number.isInteger(maxAttempts)` and a positive-value check.
+5. Implement `reportDelivery()` using `createScoreApi(2)`, score `87`, and three total attempts. Await `globalThis.deliverScore(...)`, then log the returned fields as `Score 87 saved after 3 attempts`.
+
+Edit `script.js`, **Run**, then **Submit**. The supplied startup call handles a rejection while you work. For task 2 you can temporarily leave the exhausted path without a final throw; task 3 adds that behavior. The tests check each milestone separately.
 
 ## Broadcast complete
 
-You can coordinate dependent requests, preserve partial results, and stop retries safely. The quiz checks these decisions.
+You have scheduled delayed work, awaited dependent results, kept partial successes, and limited retries. All services in this section were offline fixtures. The quiz asks when to choose each pattern.

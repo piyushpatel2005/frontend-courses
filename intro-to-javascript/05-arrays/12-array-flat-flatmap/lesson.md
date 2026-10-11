@@ -8,30 +8,43 @@ validationRules: []
 hints:
   - "Use flat() to collapse one level of nested arrays."
   - "Use flatMap() with split(' ') to turn phrases into words."
-summary: Practice array flat and flatmap with a focused Starline Awards programming mission.
+summary: "Some setlist data arrives in groups. `flat()` returns a new array with one level of nested arrays removed. `flatMap()` first transforms each item, then flattens the results by one level."
 seo_title: Array Flat and FlatMap | Introduction to JavaScript
-seo_description: Learn array flat and flatmap through a focused JavaScript programming mission and console-based practice.
+seo_description: "Some setlist data arrives in groups. `flat()` returns a new array with one level of nested arrays removed. `flatMap()` first transforms each item, then flattens the results by one level."
 seo_keywords: javascript, array flat and flatmap, beginner javascript, programming practice
 ---
 
-# Array Flat and FlatMap
+# Array flat and flatMap
 
-## Mission: Setlist Vault
+Some setlist data arrives in groups. `flat()` returns a new array with one level of nested arrays removed. `flatMap()` first transforms each item, then flattens the results by one level.
 
-A list of grouped items needs flattening, while a list of phrases needs splitting into words. Run `flat()` and `flatMap()` in `script.js` and compare the Console results.
-
-Some arrays contain arrays, and sometimes each string needs to turn into multiple pieces. flat() and flatMap() help with those two related problems.
-
-## Example
-
-```javascript
-const supplyBins = [["paper", "pens"], ["tape"]];
-const sessions = ["morning workshop", "evening lab"];
-console.log(supplyBins.flat());
-console.log(sessions.flatMap((session) => session.split(" ")));
+```javascript run
+const supplyBins = [
+  ["paper", "pens"],
+  ["tape"]
+];
+const sessions = [
+  "morning workshop",
+  "evening lab"
+];
+const groupedWords = sessions.map(
+  session => session.split(" ")
+);
+const words = sessions.flatMap(
+  session => session.split(" ")
+);
+console.log(JSON.stringify(supplyBins.flat()));
+console.log(JSON.stringify(groupedWords));
+console.log(JSON.stringify(words));
 ```
 
-## Your Task
+`split(" ")` is a string method: it cuts the string at each space and returns the pieces as an array. That gives `map()` an array for each phrase. `flatMap()` collects those pieces into one word list instead.
 
-1. Create flatNumbers from [[1, 2], [3, 4]] using flat().
-2. Create `splitWords` by using `flatMap()` to split `["hello world", "js"]` on spaces; the supplied probe prints both arrays.
+Run the example and compare the nested middle line with the flat last line. These methods leave the original outer arrays unchanged, but do not deep-copy nested data. Use phrases with single spaces in this exercise; text cleanup belongs in the strings section.
+
+## Your Tasks
+
+1. Set `flatNumbers` to `nested.flat()` to remove one level of nesting.
+2. Set `splitWords` using `phrases.flatMap()` and `phrase.split(" ")` to collect the words.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

@@ -8,27 +8,20 @@ lesson_type: coding
 summary: Schedule a callback that records broadcast cues in actual execution order.
 seo_title: 'Exercise: Asynchronous JavaScript | Introduction to JavaScript'
 seo_description: Schedule a callback that records broadcast cues in actual execution order.
-seo_keywords: javascript, asynchronous, javascript, asynchronous programming
+seo_keywords: javascript, callbacks, timers, asynchronous programming
 ---
 
-# Exercise: Asynchronous JavaScript
+# Exercise: Schedule a broadcast cue
 
-The preceding demo showed the timer cue after the immediate cue. Build a separate broadcast sequence. `setTimeout(callback, 0)` schedules work; it cannot interrupt the current script. Return a `Promise` so callers can wait for the timer: `new Promise(resolve => { ...; resolve(value); })` creates a value that completes when `resolve` is called. The next demo unpacks Promises and `await` further. This script-only offline preview captures delayed Console logs without a DOM task or network.
+Record a broadcast's opening and closing cues before its delayed announcement. The previous demo showed the same timing rule with different stage cues.
 
-## Worked example
+The starter supplies a `Promise`, a completion value that callers can wait for. Its `resolve(messageOrder)` line hands back the finished array. Keep that wrapper for now; the next demo explains Promise states. Your changes belong in `scheduleDelayed` and `logBroadcast`, not in the supplied runner.
 
-A separate event schedule demonstrates why immediate code finishes before a timer:
-
-```javascript
-const cues = ["Open"];
-setTimeout(() => {
-  cues.push("Bell");
-  console.log(cues.join(" → ")); // Open → Close → Bell
-}, 0);
-cues.push("Close");
-```
+`scheduleDelayed(messageOrder, finish)` receives an array and a callback. Register a zero-delay timer. Inside the timer, append `Delayed` to the array, then call `finish()`. The supplied runner appends `End` as soon as your scheduling function returns.
 
 ## Your Tasks
 
-1. Return a Promise from `runBroadcast()`. After synchronous `Start` and `End`, append `Delayed` in a zero-delay timer and resolve with the array.
-2. Inside that callback, log `Start | End | Delayed` with `console.log()`.
+1. Implement `scheduleDelayed(messageOrder, finish)` so it appends `Delayed` in a zero-delay timer, then calls `finish()` exactly once.
+2. Implement `logBroadcast(order)` to log the supplied array using the separator `" | "` (a pipe with a space on each side).
+
+Edit `script.js`, press **Run**, then **Submit**. The unfinished starter stays quiet. After task 1 it still stays quiet; after task 2 the Console shows `Start | End | Delayed`. The checks can assess the timer and the logger separately.

@@ -1,23 +1,47 @@
 const shiftSlots = { checkIn: 2, usher: 5, cleanup: 1 };
 
+// Task 1: Lookup includes zero and missing keys
+
 function readAvailability(slots, requested) {
-  // Return the requested count or null when absent.
+  // Return the count or null.
 }
+
+// Supplied check 1: leave this code in place.
+
+try {
+  console.log("CHECK 1: " + (`${readAvailability({morning:0,evening:4},"morning")} | ${readAvailability({morning:0,evening:4},"evening")} | ${readAvailability({},"missing")} | ${readAvailability({},"toString")}`));
+} catch (error) {
+  console.log("CHECK 1: pending");
+}
+
+// Task 2: Below-minimum names in entry order
 
 function lowShiftNames(slots, minimum) {
-  // Return the names of shifts below the minimum.
+  // Return the low-count names.
 }
+
+// Supplied check 2: leave this code in place.
+
+try {
+  console.log("CHECK 2: " + (`${lowShiftNames({morning:0,evening:4,night:1},2).join(",")} | boundary:${lowShiftNames({a:2,b:1},2).join(",")} | empty:${lowShiftNames({},2).length}`));
+} catch (error) {
+  console.log("CHECK 2: pending");
+}
+
+// Task 3: Combined audit leaves its input unchanged
 
 function auditShifts(slots, requested, minimum) {
-  // Combine the helpers in { available, needsHelp }.
+  // Return { available, needsHelp } without changing slots.
 }
 
-// Log checkpoints, then the audit for checkIn and a minimum of 3.
+// Supplied check 3: leave this code in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${readAvailability({morning:0,evening:4,night:1},"morning")} | ${readAvailability({morning:0,evening:4,night:1},"missing")}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: ${lowShiftNames({morning:0,evening:4,night:1},2).join(",")}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${(() => { const a=auditShifts({morning:0,evening:4,night:1},"morning",2); return `${a.available} | ${a.needsHelp.join(",")}`; })()}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 4: unchanged:${(() => { const s={morning:0,evening:4,night:1}, before=JSON.stringify(s); const result=auditShifts(s,"missing",2); return result && result.available===null && Array.isArray(result.needsHelp) && result.needsHelp.join(",")==="morning,night" && JSON.stringify(s)===before; })()}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log("CHECK 3: " + ((() => { const sample={morning:0,evening:4,night:1}; const before=JSON.stringify(sample); const found=auditShifts(sample,"morning",2); const absent=auditShifts(sample,"missing",2); return `${found.available} | ${found.needsHelp.join(",")} | missing:${absent.available} | unchanged:${JSON.stringify(sample)===before}`; })()));
+} catch (error) {
+  console.log("CHECK 3: pending");
+}
 
-// Log the final result yourself.
+// Task 4: Separate shift report
+
+// Log the report for shiftSlots here.

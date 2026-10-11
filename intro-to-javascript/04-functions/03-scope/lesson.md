@@ -6,36 +6,38 @@ language: javascript
 lesson_type: coding
 validationRules: []
 hints:
-  - "Use the global siteName inside your function."
+  - "Use the outer siteName inside your function."
   - "Create a local sectionName inside the function and return a combined string."
-summary: Practice scope with a focused Starline Awards programming mission.
+summary: "A backstage label needs a shared site name and a section name used only while building the label. Scope is the part of your program where a variable name is available."
 seo_title: Scope | Introduction to JavaScript
-seo_description: Learn scope through a focused JavaScript programming mission and console-based practice.
+seo_description: "A backstage label needs a shared site name and a section name used only while building the label. Scope is the part of your program where a variable name is available."
 seo_keywords: javascript, scope, beginner javascript, programming practice
 ---
 
 # Scope
 
-## Mission: Backstage Toolkit
+A backstage label needs a shared site name and a section name used only while building the label. **Scope** is the part of your program where a variable name is available.
 
-The backstage label uses a shared site name and a section name that only exists inside the label function. Run `script.js` and inspect both labels in the Console.
-
-Scope decides where a variable can be used. This lesson shows one global value, one local value, and a function that combines them into a single label.
-
-## Example
-
-```javascript
+```javascript run
 const gardenName = "East Garden";
-
 function describePlot() {
   const plotName = "Herbs";
   return `${gardenName}: ${plotName}`;
 }
-
 console.log(describePlot());
+console.log(gardenName);
 ```
+
+The function can read `gardenName` from its surrounding scope. Its local `plotName` exists inside the function; trying to log `plotName` outside it would produce a `ReferenceError`. Returning the label gives the caller a value, not access to the local variable itself.
+
+A `let` or `const` declared inside an `if` or loop block also stays inside that block. Here, keep `siteName` outside `buildLabel` and `sectionName` inside it. The probes check their observable results, not where you typed the declarations.
+
+Run the example and notice that only the shared name gets its own outside log.
 
 ## Your Tasks
 
-1. Declare global `siteName` as `"Frontend Lab"`; in `buildLabel()` create local `sectionName` as `"Variables"`, return their joined label.
-2. Log `Frontend Lab - Variables` from `buildLabel()`.
+1. Set the outer `siteName` to `"Frontend Lab"`.
+2. Complete `buildLabel()`: declare local `sectionName = "Variables"` and return `${siteName} - ${sectionName}`.
+3. Log the returned value of `buildLabel()` on its own line.
+
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

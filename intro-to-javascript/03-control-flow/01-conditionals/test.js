@@ -1,15 +1,19 @@
-test("Step 1: Grade 95: A", () => {
-  assert.match(OUTPUT, /^Grade\ 95:\ A$/m, "Log Grade 95: A as a complete Console line");
+test("Step 1: A range", () => {
+  assert.match(OUTPUT, /^A\ range:\ A,A$/m, "Expected the complete Console line: A range: A,A");
 });
 
-test("Step 2: Grade set: A,B,C,D,F", () => {
-  assert.match(OUTPUT, /^Grade\ set:\ A,B,C,D,F$/m, "Log Grade set: A,B,C,D,F as a complete Console line");
+test("Step 2: B range", () => {
+  assert.match(OUTPUT, /^B\ range:\ B,B$/m, "Expected the complete Console line: B range: B,B");
 });
 
-test("Step 3: Grade boundaries: A,B,D", () => {
-  assert.match(OUTPUT, /^Grade\ boundaries:\ A,B,D$/m, "Log Grade boundaries: A,B,D as a complete Console line");
+test("Step 3: C range", () => {
+  assert.match(OUTPUT, /^C\ range:\ C,C$/m, "Expected the complete Console line: C range: C,C");
 });
 
-test("Step 4: Grade: B", () => {
-  assert.match(OUTPUT, /^Grade:\ B$/m, "Log Grade: B as a complete Console line");
+test("Step 4: D range", () => {
+  assert.match(OUTPUT, /^D\ range:\ D,D$/m, "Expected the complete Console line: D range: D,D");
+});
+
+test("Step 5: F range", () => {
+  assert.match(OUTPUT, /^F\ range:\ F,F$/m, "Expected the complete Console line: F range: F,F");
 });

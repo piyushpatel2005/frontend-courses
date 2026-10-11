@@ -1,6 +1,39 @@
-// Create scores, courseAverage, and topScore here.
+// Step 1
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${JSON.stringify(scores)}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 2: ${courseAverage([84,91,76])}`); } catch (error) { console.log("CHECK pending"); }
-try { console.log(`CHECK 3: ${topScore([3,8,4])}`); } catch (error) { console.log("CHECK pending"); }
+// Complete this step here.
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Scores: ${JSON.stringify(scores)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+function courseAverage(values) {}
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Averages: ${courseAverage([84,91,76])},${courseAverage([2,4])},${courseAverage([7])}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}
+
+// Step 3
+
+function topScore(values) {}
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Tops: ${topScore([3,8,4])},${topScore([-5,-2,-9])},${topScore([7])}`);
+} catch (error) {
+  console.log("Step 3 pending");
+}
+
+// Step 4
+
+// Complete this step here.

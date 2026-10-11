@@ -38,9 +38,15 @@ modules:
     sort_order: 10
 ---
 
-# JavaScript: From First Values to Reliable Programs
+# JavaScript: from your first value to a working program
 
-JavaScript runs in the browser and can make a page respond to people. Here you will learn the language itself first: calculate values, choose what happens next, organize data, and coordinate work that finishes later. The built-in editor lets you run each example without installing anything.
+A total changes when you add an item. A booking is accepted only when a seat is available. A delivery update arrives after the rest of the program has started. These are the kinds of problems you will solve with JavaScript here.
+
+You will start by printing a value, then learn to make decisions, repeat work, organize data, and handle results that arrive later. You can use the built-in editor without installing anything.
+
+## Before you begin
+
+You do not need previous programming experience. Familiarity with a basic HTML page helps with the opening example, but the course explains the connection to `script.js`. After that, most work happens in a JavaScript file and the Console. You do not need to know CSS or a JavaScript framework.
 
 ## What you will learn
 
@@ -70,7 +76,15 @@ JavaScript runs in the browser and can make a page respond to people. Here you w
 
 ## How to work through the lessons
 
-Start with a tiny connection between an HTML page and `script.js`. After that first lesson, write JavaScript in `script.js` and check its output in the Console; this course does not ask you to edit page elements. Each section starts with a concrete problem, shows a runnable example, and lets you use the idea in a different exercise. The situations change—from a scoreboard to reservations, records, and deliveries—but the same language skills carry forward. Work through each section in order: later tasks reuse earlier ideas. The asynchronous section uses an offline preview to capture delayed Console output; its sample services do not make network requests.
+The opening lessons connect an HTML page to `script.js`. Later exercises focus on JavaScript and its Console output rather than changing page elements.
+
+- Read the explanation, then run the example and compare its output with the description.
+- Try the suggested small change. Predict what will happen before you run it again.
+- In an exercise, complete one numbered task at a time. Run your code to inspect the result, then Submit to check your work.
+- Read an error from its first relevant line. Check the named variable, punctuation, and the value you passed before changing several things at once.
+- Work through the modules in order. Later exercises reuse earlier ideas with different data; a new scenario is a chance to apply what you already know.
+
+The asynchronous module uses an offline preview that captures delayed Console output. Its sample services do not contact real websites. Some of the later topics, such as closures and Promises, take more than one read; keep the example open while tracing what happens.
 
 ## Intentionally later
 

@@ -4,9 +4,9 @@ slug: exercise-inspect-queue
 order: 6
 language: javascript
 lesson_type: coding
-summary: Audit incoming queue fields and report their actual types.
+summary: "Report the types of supplied queue, seat, and gate fields without changing them."
 seo_title: Inspect the Queue Report | JavaScript Coding Exercise
-seo_description: Write a console audit that distinguishes a text count from numeric attendance and a boolean gate flag.
+seo_description: "Report the types of supplied queue, seat, and gate fields without changing them."
 seo_keywords: javascript typeof exercise, console audit, queue data
 hints:
   - Inspect the intermediate values in the Console before changing the final line.
@@ -22,6 +22,12 @@ A different venue might inspect a flag like this:
 const lightsOn = false;
 console.log("lights:", lightsOn, typeof lightsOn); // lights: false boolean
 ```
+
+The three source fields are already supplied at the top of `script.js`. Do not remove the quotes from `queueCount`: the point is to report what arrived, not repair it yet. Fill the empty type results below the fields. The supplied logs will keep each value paired with its type.
+
+After the first change, only the queue line should contain a type label; the seat and gate lines can remain unfinished.
+
+Edit `script.js`, Run to inspect each checkpoint, then Submit to check the completed tasks. The supplied probes do not need rewriting.
 
 ## Your Tasks
 

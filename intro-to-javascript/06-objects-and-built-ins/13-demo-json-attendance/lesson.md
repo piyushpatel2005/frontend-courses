@@ -10,9 +10,9 @@ seo_description: Run a JSON ingestion example that groups workshop entries in a 
 seo_keywords: javascript json parse, map grouping, set deduplication
 ---
 
-# Demo: Workshop Attendance Feed
+# Workshop attendance feed
 
-A workshop sends its attendance as a JSON string. After parsing it into an array of records, group visits by topic while counting each email address only once.
+A workshop records every visit, including repeat visits by the same attendee. Count visits by topic with a Map, and keep distinct email addresses in a Set. These answer different questions.
 
 ```javascript run
 const attendanceText = '[{"topic":"Audio","email":"a@example.test"},{"topic":"Lights","email":"b@example.test"},{"topic":"Audio","email":"a@example.test"}]';
@@ -26,8 +26,10 @@ for (const visit of visits) {
 console.log(`${visitsByTopic.get("Audio")} visits | ${attendeeEmails.size} people`);
 ```
 
-JSON is a string until `JSON.parse()` produces an array you can iterate. A `Map` stores a count for each topic; `?? 0` means “use zero only if the lookup returns `null` or `undefined`,” so it supplies the starting count for a new key. A `Set` stores distinct emails. Three visits therefore represent only two people.
+The feed starts as text. `JSON.parse()` produces an array of ordinary objects; it does not create a Map or Set for you.
 
-## Checkpoint
+For each visit, `get()` reads the previous topic count. A new topic returns `undefined`; `?? 0` supplies zero when a value is `null` or `undefined`. Add one and store the count with `set()`. Meanwhile, `add()` keeps the email only once even if it appears again.
 
-Run the example, then inspect which step counts visits and which deduplicates people. The exercise applies the same pipeline to parcel scans rather than attendance.
+Run the example and trace the second Audio visit. It increases Audio's count to two but does not add another email. The two email addresses stand in for two people in this sample; real attendance data may need a separate person ID.
+
+An empty visit array would skip the loop, leaving both collections empty. Use the same behavior in the parcel scan exercise next.

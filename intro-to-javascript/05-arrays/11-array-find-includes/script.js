@@ -1,11 +1,25 @@
-const prices = [15, 40, 75, 20];
-let firstLargePrice = 0;
-let hasForty = false;
+const prices = [15,40,75,20];
 
-console.log("");
+// Step 1
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${firstLargePrice}`); } catch (error) { console.log("CHECK pending"); }
+const firstLargePrice = undefined;
 
-// Supplied final-result probe.
-try { console.log(`${firstLargePrice} | ${hasForty}`); } catch (error) { console.log("CHECK pending"); }
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`First above 50: ${firstLargePrice}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
+const hasForty = false;
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Has forty: ${hasForty}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}

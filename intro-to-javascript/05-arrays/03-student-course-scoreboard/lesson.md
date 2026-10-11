@@ -4,36 +4,40 @@ slug: student-course-scoreboard
 order: 3
 language: javascript
 lesson_type: coding
-summary: Solve a practical JavaScript programming challenge using the preceding worked demo.
+summary: "Turn a course's scores into an average and a highest score. Your helpers should use the array passed to them, not always read the outer `scores` array."
 seo_title: "Challenge: Student Course Scoreboard | Introduction to JavaScript"
-seo_description: Practice JavaScript with a focused, testable programming challenge.
+seo_description: "Turn a course's scores into an average and a highest score. Your helpers should use the array passed to them, not always read the outer `scores` array."
 seo_keywords: javascript, coding challenge, programming practice
 hints:
-  - Start with the smallest function signature, then test one case at a time.
+  - Start the maximum at the first array value, not at zero.
 ---
 
-# Challenge: Student Course Scoreboard
+# Challenge: student course scoreboard
 
-You have seen the pattern in the demo. Now write the program yourself in `script.js`. Keep the focus on values, conditions, loops, arrays, or functions—not page elements.
+Turn a course's scores into an average and a highest score. Your helpers should use the array passed to them, not always read the outer `scores` array.
 
-## Worked example
+For a different collection, this loop keeps the longest route seen so far:
 
-For a different collection, read every value rather than hard-coding a position:
-
-```javascript
-const miles = [2, 4, 6];
-let total = 0;
-for (const mile of miles) total += mile;
-console.log(total / miles.length); // 4
+```javascript run
+const miles = [2, 6, 4];
+let longest = miles[0];
+for (const mile of miles) {
+  if (mile > longest) longest = mile;
+}
+console.log(longest);
 ```
+
+Starting from the first value makes the pattern work even for all-negative numbers. Starting from zero would invent a maximum that might not be in the list.
+
+For the average, start a total at zero, add each value with `for...of`, then divide by `values.length`. Both helpers receive nonempty numeric arrays in this lesson, so there is always a first value and a nonzero length. Leave empty-list policy for a program that needs one.
+
+Run the route example, then build your score helpers. The probes include shorter lists and negative values to catch assumptions about the demonstration's data.
 
 ## Your Tasks
 
-1. Create a `scores` array containing `84`, `91`, and `76`.
-2. Define `courseAverage(scores)` to return the average of all values.
-3. Define `topScore(scores)` to return the largest value.
-4. Log `Average: 83.66666666666667 | Top: 91`.
+1. Create `scores` containing `84`, `91`, and `76`.
+2. Implement `courseAverage(values)` for a nonempty array: total every value, then divide by the array length.
+3. Implement `topScore(values)` for a nonempty array. Start with its first value and keep the largest value seen.
+4. Log `Average: 83.66666666666667 | Top: 91` using both helpers with `scores`.
 
-## Checkpoint
-
-Run your code after each small change. The Console should show one clear summary once all checks pass.
+Edit `script.js`, then Run after each step. The supplied probes show the values being checked; leave them in place. Submit checks the numbered tasks in order. You do not need to write extra checkpoint logs.

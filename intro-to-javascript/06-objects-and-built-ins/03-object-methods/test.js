@@ -1,15 +1,15 @@
-test("firstName and lastName are destructured", () => {
-  assert.match(OUTPUT, /^CHECK\ 1:\ Jordan\ \|\ Lee$/m, "Log CHECK 1: Jordan | Lee as a separate checkpoint line");
+test("Destructured names", () => {
+  assert.match(OUTPUT, /^CHECK 1: Jordan \| Lee$/m, "Task 1: expected a separate output line: CHECK 1: Jordan | Lee");
 });
 
-test("fullName returns combined name", () => {
-  assert.match(OUTPUT, /^CHECK\ 2:\ Jordan\ Lee$/m, "Log CHECK 2: Jordan Lee as a separate checkpoint line");
+test("Full name for different records", () => {
+  assert.match(OUTPUT, /^CHECK 2: Jordan Lee \| Ari Chen$/m, "Task 2: expected a separate output line: CHECK 2: Jordan Lee | Ari Chen");
 });
 
-test("averageScore returns correct average", () => {
-  assert.match(OUTPUT, /^CHECK\ 3:\ 87\.8$/m, "Log CHECK 3: 87.8 as a separate checkpoint line");
+test("Average and one-decimal rounding", () => {
+  assert.match(OUTPUT, /^CHECK 3: 87\.8 \| 1\.7 \| 0$/m, "Task 3: expected a separate output line: CHECK 3: 87.8 | 1.7 | 0");
 });
 
-test("logs the mission result", () => {
-  assert.match(OUTPUT, /^Jordan\ Lee\ —\ avg:\ 87\.8$/m, "Log the mission result with console.log()");
+test("Separate student average", () => {
+  assert.match(OUTPUT, /^Jordan Lee — avg: 87\.8$/m, "Task 4: expected a separate output line: Jordan Lee \u2014 avg: 87.8");
 });

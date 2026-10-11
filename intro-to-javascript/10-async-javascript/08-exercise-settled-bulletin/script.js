@@ -15,4 +15,4 @@ async function reportFeeds() {
   // Await a report and log the headline and failed provider names.
 }
 globalThis.reportFeeds = reportFeeds;
-reportFeeds();
+globalThis.initialFeeds = reportFeeds().catch(error => console.log(`Work incomplete: ${error.message}`));

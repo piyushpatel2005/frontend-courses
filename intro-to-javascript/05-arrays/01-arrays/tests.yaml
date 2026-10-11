@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Harbor\n3\nLibrary"
+    }
+  ]
+}

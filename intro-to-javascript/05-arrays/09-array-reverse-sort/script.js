@@ -1,11 +1,25 @@
-const numbers = [3, 1, 4, 2];
+const numbers = [3,1,4,2];
+
+// Step 1
+
 const sortedNumbers = [];
+
+// Supplied probe: leave this in place.
+
+try {
+  console.log(`Sorted: ${JSON.stringify(sortedNumbers)} | Source: ${JSON.stringify(numbers)}`);
+} catch (error) {
+  console.log("Step 1 pending");
+}
+
+// Step 2
+
 const reversedNumbers = [];
 
-console.log("");
+// Supplied probe: leave this in place.
 
-// Supplied Console probes; implement the tasks above to make each checkpoint pass.
-try { console.log(`CHECK 1: ${JSON.stringify(sortedNumbers)}`); } catch (error) { console.log("CHECK pending"); }
-
-// Supplied final-result probe.
-try { console.log(`${JSON.stringify(sortedNumbers)} | ${JSON.stringify(reversedNumbers)}`); } catch (error) { console.log("CHECK pending"); }
+try {
+  console.log(`Reversed: ${JSON.stringify(reversedNumbers)} | Sorted: ${JSON.stringify(sortedNumbers)}`);
+} catch (error) {
+  console.log("Step 2 pending");
+}

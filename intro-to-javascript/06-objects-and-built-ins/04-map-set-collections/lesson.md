@@ -10,9 +10,13 @@ seo_description: Run a focused JavaScript walkthrough of Map key-value entries a
 seo_keywords: javascript map, javascript set, keyed collections, unique values
 ---
 
-# Map and Set Collections
+# Map and Set collections
 
-A plain object is useful for a fixed profile. Use a **Map** when the important operation is looking up a value by a key, and use a **Set** when each value should appear only once.
+A profile object names fixed facts about one person. A `Map` is useful for a growing lookup table, such as a badge color for each role. A `Set` keeps distinct values, such as the cities on a tour. Map keys can also be numbers or objects; these examples use string keys.
+
+![A Map pairs each role with a badge color; a Set keeps Seoul and Lisbon once each.](map-set-roles.svg)
+
+`new Map(...)` creates a collection from an array of `[key, value]` pairs. The outer array holds the entries; each inner array contains one key and its value. `new Set(...)` takes a list of values and keeps duplicates only once.
 
 ```javascript run
 const badgeByRole = new Map([
@@ -20,15 +24,16 @@ const badgeByRole = new Map([
   ["producer", "silver"]
 ]);
 const citiesOnTour = new Set(["Seoul", "Lisbon", "Seoul"]);
-
 console.log(badgeByRole.get("producer"));
 console.log(citiesOnTour.size);
 ```
 
-## Checkpoint
+Run the example: `get("producer")` reads `"silver"`, while `.size` counts two distinct cities. Size is a property, so it has no parentheses. `.has(value)` on a Set reports whether the value is present.
 
-The Map stores explicit key-value entries. The Set kept only two cities even though `"Seoul"` appeared twice. The next lesson uses these collections for a different task: a playlist lookup and artist roster.
+To add data later, use `badgeByRole.set("guest", "blue")` or `citiesOnTour.add("Lima")`. Setting an existing Map key replaces its value; adding an existing Set value leaves its size unchanged. A missing Map key returns `undefined`. Both collections retain insertion order.
+
+The next exercise changes the data to songs and artists. Notice that Map keys are unique too: a song title can have one current duration.
 
 ## Learn more
 
-MDN's references for [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) and [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) explain their methods and iteration behavior.
+MDN's [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) and [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) references list the available methods.

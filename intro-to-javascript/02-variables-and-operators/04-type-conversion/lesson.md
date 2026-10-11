@@ -9,60 +9,48 @@ hints:
   - "Use `Number()` to convert a string to a number."
   - "Use `String()` or template literals to convert a number to a string."
   - "Use `Boolean()` to convert any value to true/false."
-summary: Practice type conversion with a focused Starline Awards programming mission.
+summary: "Convert a text price into a number before calculating and formatting a total."
 seo_title: Type Conversion | Introduction to JavaScript
-seo_description: Learn type conversion through a focused JavaScript programming mission and console-based practice.
+seo_description: "Convert a text price into a number before calculating and formatting a total."
 seo_keywords: javascript, type conversion, beginner javascript, programming practice
 ---
 
 # Type Conversion
 
-## Mission: Scoreboard Engine
+A price arrives as text. Convert it into a number before calculating the order total, then format the result as a message.
 
-A price arrives as text. Convert it before multiplying by the quantity so the total remains a number.
+## Convert deliberately
 
-Sometimes you need to change a value from one type to another. JavaScript supports both **explicit** (manual) and **implicit** (automatic) type conversion.
-
-## Explicit conversion
-
-| Conversion | Method | Example | Result |
-|-----------|--------|---------|--------|
-| To number | `Number()` | `Number("42")` | `42` |
-| | `parseInt()` | `parseInt("3.9")` | `3` |
-| | `parseFloat()` | `parseFloat("3.9")` | `3.9` |
-| | Unary `+` | `+"42"` | `42` |
-| To string | `String()` | `String(42)` | `"42"` |
-| | `.toString()` | `(42).toString()` | `"42"` |
-| To boolean | `Boolean()` | `Boolean(0)` | `false` |
+`Number("42")` returns the number `42`. It does not change the original string; store the returned value under a new name. `typeof` lets you check the difference even when the Console prints the same digits.
 
 ```javascript
-Number("100")   // 100
-Number("")      // 0
-Number("abc")   // NaN
-Number(true)    // 1
-Number(false)   // 0
-Number(null)    // 0
-
-Boolean(0)        // false
-Boolean("")       // false
-Boolean(null)     // false
-Boolean("hello")  // true
-Boolean(1)        // true
+const deliveryText = "8";
+const delivery = Number(deliveryText);
+console.log(deliveryText, typeof deliveryText); // 8 string
+console.log(delivery, typeof delivery); // 8 number
+console.log(delivery + 2); // 10
 ```
 
-## Implicit conversion (coercion)
+`String(42)` goes the other way and returns `"42"`. A template literal also turns inserted values into text for display. Keep the calculation numeric until you need that final message.
 
-JavaScript automatically converts types in certain contexts — sometimes in surprising ways:
+`Boolean(0)` and `Boolean("")` return `false`; `Boolean(1)` and `Boolean("hello")` return `true`. Boolean conversion asks whether a value is truthy, not what its text means: even `Boolean("false")` is `true` because that string is not empty.
+
+## Watch what `+` receives
+
+With two numbers, `+` adds. With a string operand, it joins text instead:
 
 ```javascript
-"5" + 3      // "53"  — 3 converted to string
-"5" - 3      // 2     — "5" converted to number
-"5" * "3"    // 15    — both converted to numbers
-true + 1     // 2     — true → 1
-false + 1    // 1     — false → 0
-null + 1     // 1     — null → 0
-undefined + 1 // NaN
+console.log("8" + 2);         // 82
+console.log(Number("8") + 2); // 10
 ```
+
+Other arithmetic operators can convert strings automatically: `"8" * 2` produces `16`. That automatic conversion is called coercion. Use explicit `Number()` here so the code says what kind of value the calculation expects; getting a numeric product alone does not prove you converted the input yourself.
+
+Not all text is a usable number. `Number("abc")` gives `NaN` (“not a number”), while an empty string converts to 0. This exercise supplies valid numeric text. Checking unknown input is a separate job.
+
+The starter has a checkpoint after every placeholder. Complete the conversion before calculating the total, and keep the dollar sign in the final display string rather than in the numeric price.
+
+Edit `script.js`, Run to inspect each checkpoint, then Submit to check the completed tasks. The supplied probes do not need rewriting.
 
 ## Your Task
 

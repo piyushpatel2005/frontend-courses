@@ -8,36 +8,38 @@ validationRules: []
 hints:
   - "Use toUpperCase() to create the uppercase version."
   - "Use includes() to check whether the original string contains world."
-summary: Practice string methods with a focused Starline Awards programming mission.
+summary: "Transform string case and test whether the original text contains a word."
 seo_title: String Methods | Introduction to JavaScript
-seo_description: Learn string methods through a focused JavaScript programming mission and console-based practice.
+seo_description: "Use JavaScript toUpperCase and includes without changing the original string, and read slice boundaries."
 seo_keywords: javascript, string methods, beginner javascript, programming practice
 ---
 
-# String Methods
+# String methods
 
-## Mission: Lyrics Studio
-
-The awards desk needs a readable caption and a quick check for a word in the original text. Work in `script.js` and inspect the Console; there are no page elements to edit.
-
-Strings are values with built-in helper methods. This lesson keeps the practice focused on one transformation and one membership check.
-
-## See string slicing as positions
-
-![Diagram showing `STARLINE`.slice(1, 5) selecting positions 1 through 4 and stopping before 5.](string-slice-positions.svg)
-
-A string has numbered character positions starting at `0`. `slice(start, end)` includes the character at `start` and stops before `end`.
+Prepare an uppercase caption and check whether the original text contains a particular word. String methods return results without changing the original string.
 
 ```javascript
 const trailName = "river loop";
+// RIVER LOOP
 console.log(trailName.toUpperCase());
+// true
 console.log(trailName.includes("loop"));
+// river loop
+console.log(trailName);
 ```
 
-`slice()` also returns a new string; it does not change the original. Try `"STARLINE".slice(1, 5)` in the Console to check the diagram. The task below practices two other methods.
+`toUpperCase()` returns new text. `includes()` returns a boolean and is case-sensitive: `"river loop".includes("Loop")` is false. Store each result if you want to use it again.
+
+## Read positions with slice
+
+![STARLINE positions zero through seven, with slice(1, 5) selecting TARL and excluding position five.](string-slice-positions.svg)
+
+Positions start at `0`. `slice(start, end)` includes the position at `start` and stops before `end`. `"STARLINE".slice(1, 5)` returns `"TARL"`; the original string is unchanged. Indexing, such as `text[0]`, reads one position. These examples use ordinary Latin letters; some emoji and other Unicode characters occupy more than one JavaScript string position.
+
+Edit `script.js`. Replace the placeholder values but keep the two supplied checks. Run to inspect both results, then Submit.
 
 ## Your Tasks
 
-1. Compute `upperPhrase` from `phrase` with `toUpperCase()`; inspect the supplied uppercase checkpoint.
-2. Compute `hasWorld` from `phrase` with `includes("world")`; inspect the supplied membership checkpoint.
-3. Log a separate `HELLO WORLD | true` line using the computed values.
+1. Set `upperPhrase` from `phrase` with `toUpperCase()`.
+2. Set `hasWorld` from `phrase` with `includes("world")`.
+3. Log `HELLO WORLD | true` on a separate line using the computed values.

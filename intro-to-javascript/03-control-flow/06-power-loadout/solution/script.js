@@ -8,6 +8,6 @@ function choosePower(item) {
 }
 
 console.log(`Sword: ${choosePower("sword")}`);
-console.log(`Loadout: ${["sword","gun","shield"].map(choosePower).join(",")}`);
-console.log(`Pencil: ${choosePower("pencil")}`);
-console.log(choosePower("shield"));
+console.log(`Gun: ${choosePower("gun")}`);
+console.log(`Shield: ${choosePower("shield")}`);
+console.log(`Other props: ${choosePower("pencil")},${choosePower("Sword")}`);
