@@ -22,7 +22,8 @@ button {
   color: white;
   transition: transform 160ms ease;
 }
-button:hover {
+button:hover,
+button:focus-visible {
   transform: translateY(-2px);
 }
 @keyframes drift {
@@ -37,4 +38,10 @@ button:hover {
 @media (prefers-reduced-motion: reduce) {
   .kite { animation: none; }
   button { transition: none; }
+  button:hover, button:focus-visible { transform: none; }
+}
+
+button:focus-visible {
+  outline: 3px solid #183153;
+  outline-offset: 4px;
 }

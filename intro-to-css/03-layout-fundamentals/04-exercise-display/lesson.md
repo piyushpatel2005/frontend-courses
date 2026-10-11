@@ -19,14 +19,18 @@ hints:
   - "`display: none` removes the helper from the layout."
 ---
 
-# Arrange swap table labels
+# Arrange the vegetable labels
 
-Use the completed display demo as your reference. Here the labels are `<span>` elements (inline by default), while the trading note is also a `<span>`; set its display explicitly so it gets a full row. Hide only the organizer-only helper, not any essential instructions.
+The demo used paragraphs for its labels. This vegetable table uses spans for the labels and trading note, so they begin as inline content. Their visual styling is supplied; add only the display rules in `style.css`.
 
-**Checkpoint:** previewing your styles should show two labels side by side and no helper text.
+The two labels need their own boxes while sharing a row. The note needs a new line. Only the organizer helper should disappear.
 
 ## Your Tasks
 
-1. Set `.tag` to `display: inline-block;` so category labels can share a row.
-2. Set `.swap-note` to `display: block;` so the note occupies a full row.
-3. Set `.hidden-helper` to `display: none;` so the organizer helper is hidden.
+1. Set `.tag` to `display: inline-block;`.
+2. Set `.swap-note` to `display: block;`.
+3. Set `.hidden-helper` to `display: none;`.
+
+## Inspect the arrangement
+
+Run after each task. At a wide enough preview size, both labels should sit side by side; the note should begin below them. After the last task the helper should occupy no space. Submit checks every label, not just the first one.

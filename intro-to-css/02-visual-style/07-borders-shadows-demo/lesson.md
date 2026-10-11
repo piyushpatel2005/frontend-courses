@@ -17,24 +17,22 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Borders and Shadows Demo
+# Give vendor cards an edge
 
-## Mission
+The night-market cards already sit in a supplied two-column layout. Their borders and shadows make each boundary visible without changing the text.
 
-The night-market vendor cards need clear edges and enough depth to stand apart from the page.
+`border: 2px solid #f59e0b` is a shorthand: it sets the width, line style, and color of all four edges. `border-radius: 1rem` rounds all four corners. A `rem` is based on the root element's font size; with this page's default 16px root text, `1rem` is 16px.
 
-## What to notice
+```css
+box-shadow: 0 0.5rem 1rem rgb(120 53 15 / 20%);
+```
 
-In `.card`, `border: 2px solid #f59e0b` draws an amber edge; `border-radius: 1rem` rounds its corners; and `box-shadow: 0 0.5rem 1rem rgb(120 53 15 / 20%)` puts a soft shadow below. The two-column layout is supplied here; Grid is taught later.
+Read the shadow values in order: no horizontal offset, a half-rem downward offset, a one-rem blur, then brown at 20% opacity. The shadow is painted outside the card without reserving extra layout space. The border does take space in the box.
 
-## Try the preview
+## Compare corners and shadows
 
-Change `.card`'s `border-radius` from `1rem` to `0`, run the preview, and notice the square corners. Restore `1rem` before the exercise.
-
-## Checkpoint
-
-Both vendor cards have an amber border, rounded corners, and a soft shadow. The following exercise asks you to recreate these on a different pair of cards.
+Run. Change `border-radius` to `0` to see square corners, then restore `1rem`. Temporarily set `box-shadow: none` and compare, then restore the declaration above. Leave the supplied Grid layout alone; its rules come later in the course.
 
 ## Learn more
 
-MDN’s official documentation explains shadow offsets, blur, spread, inset shadows, and multiple shadows. Read [MDN’s reference for the `box-shadow` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow) when you want to go further.
+MDN's [box-shadow reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-shadow) explains offsets, blur, and optional spread values.

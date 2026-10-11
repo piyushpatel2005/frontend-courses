@@ -21,6 +21,16 @@ button {
   background: var(--ink);
   /* Add transition. */
 }
-button:hover {
+button:hover,
+button:focus-visible {
   background: var(--accent);
+}
+
+button:focus-visible {
+  outline: 3px solid #183153;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button { transition: none; }
 }

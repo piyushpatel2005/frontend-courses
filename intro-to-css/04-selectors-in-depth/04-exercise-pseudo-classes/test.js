@@ -1,16 +1,33 @@
-test("hover state darkens the reserve button", () => {
-  const rules = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []));
-  assert.equal(rules.some(rule => rule.selectorText === '.reserve-button:hover' && ['#d97706', 'rgb(217, 119, 6)'].includes(rule.style.getPropertyValue('background-color') || rule.style.getPropertyValue('background'))), true, 'Use .reserve-button:hover with background-color: #d97706.');
+// CSSOM checks confirm the selector technique; computed styles check its result.
+function rulesFor(selector) {
+  const normalize = value => value.replace(/\s*>\s*/g, '>').replace(/['"]/g, '').trim();
+  return Array.from(document.styleSheets).flatMap(sheet => {
+    try { return Array.from(sheet.cssRules); } catch { return []; }
+  }).filter(rule => rule.selectorText?.split(',').some(part => normalize(part) === normalize(selector)));
+}
+function uses(selector, property) {
+  return rulesFor(selector).some(rule => rule.style.getPropertyValue(property));
+}
+test('Hover rule darkens the reserve button', () => {
+  const rules = rulesFor('.reserve-button:hover');
+  assert.equal(rules.some(rule => rule.style.backgroundColor === 'rgb(217, 119, 6)'), true, 'Set .reserve-button:hover background-color to #d97706.');
 });
-
-test("first reading-list item is bold", () => {
-  assert.equal(getComputedStyle(document.querySelector(".reading-list li")).fontWeight, "700", "Use .reading-list li:first-child with font-weight: 700.");
+test('Only the first reading-list item is bold', () => {
+  assert.equal(uses('.reading-list li:first-child', 'font-weight'), true, 'Use :first-child to target the first item.');
+  const items = document.querySelectorAll('.reading-list li');
+  assert.equal(getComputedStyle(items[0]).fontWeight, '700', 'Make the first item bold.');
+  assert.equal(Number(getComputedStyle(items[1]).fontWeight) < 700, true, 'Leave the second item at its normal weight.');
 });
-
-test("focused email field has a cyan outline", () => {
+test('Focused email field has a cyan outline', () => {
   const email = document.querySelector('.email');
-  email.focus();
-  assert.equal(document.activeElement, email, 'The email field must be focusable.');
-  const rules = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []));
-  assert.equal(rules.some(rule => rule.selectorText === '.email:focus' && ['3px solid #67e8f9', '3px solid rgb(103, 232, 249)'].includes(rule.style.getPropertyValue('outline'))), true, 'Use .email:focus with outline: 3px solid #67e8f9.');
+  const previous = document.activeElement;
+  try {
+    email.focus();
+    assert.equal(document.activeElement, email, 'The email field must receive focus.');
+    assert.equal(uses('.email:focus', 'outline') || uses('.email:focus', 'outline-color'), true, 'Style the email focus state.');
+    const style = getComputedStyle(email);
+    assert.equal(style.outlineWidth, '3px', 'Use a 3px focus outline.');
+    assert.equal(style.outlineStyle, 'solid', 'Use a solid focus outline.');
+    assert.equal(style.outlineColor, 'rgb(103, 232, 249)', 'Use #67e8f9 for the focus outline.');
+  } finally { email.blur(); if (previous !== document.body) previous?.focus(); }
 });

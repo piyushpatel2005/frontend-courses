@@ -5,7 +5,7 @@ order: 6
 language: html
 summary: "`grid-column` lets an item occupy selected grid tracks."
 seo_title: "Exercise: Grid Placement | Introduction to CSS"
-seo_description: "Practice `grid-column` lets an item occupy selected grid tracks with a tested CSS exercise."
+seo_description: "The Featured workshop demo placed one card across both columns. Here the Opening talk should take the full width, with Crafts and Games side by side below it."
 seo_keywords: [CSS, exercise-grid-placement, layout, CSS exercise]
 lesson_type: coding
 hints:
@@ -13,18 +13,14 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Grid Placement
+# Give the opening talk a full row
 
-## Mission
+The Featured workshop demo placed one card across both columns. Here the Opening talk should take the full width, with Crafts and Games side by side below it.
 
-Make the opening talk span the board.
-
-The preceding demo showed the same technique on different cards. The HTML supplies the cards; edit `style.css` for the requested change.
+The two-column grid, gaps, and orange highlight are supplied. Edit the existing `.card:first-child` rule in `style.css`; `:first-child` picks the first card among its siblings.
 
 ## Your Tasks
 
-1. Make the first `.feature-grid` card span from grid line `1` to `-1`.
+1. Set the first card's `grid-column` to `1 / -1`, from the first to the last explicit column line.
 
-## Checkpoint
-
-Run Preview to see the change, then Submit.
+Run Preview. Opening talk should cover both tracks and the space between them, while the next two cards fill the row below. Submit to check the placement. Setting a large width alone would not reserve those grid cells.

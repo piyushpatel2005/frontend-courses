@@ -1,11 +1,34 @@
-test('Allow the table wrapper to scroll horizontally.', () => {
-  const wrap = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules))
-    .find(rule => rule.selectorText === '.table-wrap');
-  assert.equal(wrap?.style.getPropertyValue('overflow-x').trim(), 'auto', 'Set .table-wrap overflow-x to auto.');
+// Read authored base rules independently of the current preview width or motion preference.
+// Browser geometry and interaction are checked separately during course review.
+function declaration(selector, property, media) {
+  const rules = Array.from(document.querySelector('style[data-intercourses="user-css"]').sheet.cssRules);
+  let value = '';
+  function scan(items) {
+    for (const rule of items) {
+      if (rule.type === CSSRule.STYLE_RULE && rule.selectorText.split(',').map(s => s.trim()).includes(selector)) {
+        const next = rule.style.getPropertyValue(property).trim();
+        if (next) value = next;
+      }
+    }
+  }
+  if (media) {
+    const normalized = text => text.replace(/\s+/g, '').toLowerCase();
+    for (const rule of rules) {
+      if (rule.type === CSSRule.MEDIA_RULE && normalized(rule.conditionText) === normalized(media)) scan(rule.cssRules);
+    }
+  } else scan(rules);
+  return value;
+}
+function normalizedValue(property, value) {
+  const style = document.createElement('span').style;
+  style.setProperty(property, value);
+  return style.getPropertyValue(property).trim();
+}
+
+test("Set .table-wrap overflow-x to auto in its normal rule.", () => {
+  assert.equal(normalizedValue("overflow-x", declaration(".table-wrap", "overflow-x", null)), normalizedValue("overflow-x", "auto"), "Set .table-wrap overflow-x to auto in its normal rule.");
 });
 
-test('Keep checkout columns at least 32rem wide.', () => {
-  const table = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules))
-    .find(rule => rule.selectorText === 'table');
-  assert.equal(table?.style.getPropertyValue('min-width').trim(), '32rem', 'Set table min-width to 32rem.');
+test("Set table min-width to 32rem in its normal rule.", () => {
+  assert.equal(normalizedValue("min-width", declaration("table", "min-width", null)), normalizedValue("min-width", "32rem"), "Set table min-width to 32rem in its normal rule.");
 });

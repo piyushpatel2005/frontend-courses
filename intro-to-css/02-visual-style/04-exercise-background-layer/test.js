@@ -1,15 +1,32 @@
-test("announcement has a violet fallback background", () => {
-  const announcement = document.querySelector(".announcement");
-  assert.equal(getComputedStyle(announcement).backgroundColor, "rgb(124, 58, 237)", "Set .announcement background-color to #7c3aed.");
+// Use the real iframe's computed styles; only selector/source lessons inspect CSSOM.
+function each(selector, check) {
+  const elements = Array.from(document.querySelectorAll(selector));
+  assert.equal(elements.length > 0, true, 'Keep the supplied ' + selector + ' elements.');
+  elements.forEach(element => check(getComputedStyle(element), element));
+}
+function valueFor(property, value, target) {
+  if (property === 'display') return value;
+  const probe = document.createElement('span');
+  probe.style.cssText = 'all: initial; position: absolute; visibility: hidden;';
+  if (/^border-.*-width$/.test(property)) probe.style.borderStyle = 'solid';
+  if (target) probe.style.fontSize = getComputedStyle(target).fontSize;
+  probe.style.setProperty(property, value);
+  document.body.append(probe);
+  try { return getComputedStyle(probe).getPropertyValue(property); }
+  finally { probe.remove(); }
+}
+function expectStyle(selector, property, value) {
+  each(selector, (style, element) => assert.equal(style.getPropertyValue(property), valueFor(property, value, element), 'Set ' + selector + ' ' + property + ' to ' + value + '.'));
+}
+
+test("Announcement has a violet fallback", () => {
+  expectStyle('.announcement', 'background-color', '#7c3aed');
 });
 
-test("announcement uses the requested diagonal gradient", () => {
-  const rules = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []));
-  const image = rules.filter(rule => rule.selectorText === ".announcement").map(rule => rule.style.getPropertyValue("background-image")).find(Boolean) || "";
-  assert.match(image.replaceAll(" ", ""), /linear-gradient\(135deg,(?:#7c3aed|rgb\(124,58,237\)),(?:#ec4899|rgb\(236,72,153\))\)/i, "Add linear-gradient(135deg, #7c3aed, #ec4899) as the background image.");
+test("Announcement has the diagonal violet-to-pink gradient", () => {
+  expectStyle('.announcement', 'background-image', 'linear-gradient(135deg, #7c3aed, #ec4899)');
 });
 
-test("announcement text is white", () => {
-  const announcement = document.querySelector(".announcement");
-  assert.equal(getComputedStyle(announcement).color, "rgb(255, 255, 255)", "Set .announcement color to white.");
+test("Announcement text is white", () => {
+  expectStyle('.announcement', 'color', 'white');
 });

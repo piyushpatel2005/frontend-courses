@@ -21,14 +21,16 @@ hints:
 
 # Space a seed packet
 
-The demo showed one completed Riverside Seed Swap packet. This listing has the same content but no packet spacing yet.
+The demo showed a sunflower packet. This basil listing already has a cream background and supplied width. Edit `.packet` in `style.css` to add its missing box-model layers.
 
-Add the three box-model layers in `style.css`. **Checkpoint:** the cream card should gain an inner buffer, a green edge, and space above and below it.
+Padding goes inside the border; margin goes outside it. The supplied `border-box` setting keeps padding and border inside the declared width. Leave the HTML and page layout in place.
 
 ## Your Tasks
 
-1. Add `padding: 20px;` to `.packet` so its text sits away from the edge.
-2. Add `border: 4px solid #3c6e47;` to `.packet` to draw the packet outline.
-3. Add `margin: 24px 0;` to `.packet` to separate it from nearby content.
+1. Add `padding: 20px;` to `.packet`.
+2. Add `border: 4px solid #3c6e47;` to `.packet`.
+3. Add `margin: 24px 0;` to `.packet`.
 
-When all three checks pass, the listing reads as a distinct seed packet.
+## Check inside and outside
+
+Run after the padding task and look for space between the text and the cream edge. The border task makes that edge green on every side. The margin task sets outer space above and below, with no horizontal margin. Submit after each change to check the layers separately.

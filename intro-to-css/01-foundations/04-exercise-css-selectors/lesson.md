@@ -13,15 +13,11 @@ hints:
   - "A class selector starts with a dot; an ID selector starts with #."
 ---
 
-# Exercise: Target Exhibit Details
+# Style the Sea Star notes
 
-## Mission
+The Moon Jelly demo used `p`, `.note`, and `#specimen-title`. This card has different class and ID names. Read `index.html` to find `class="care-tip"` and `id="sea-star-title"`, then add your rules in `style.css`.
 
-The demo styled a Moon Jelly card. This new Sea Star card uses the same three selector types, but its class and ID have different names. Look at `index.html` before writing the rules.
-
-## What you'll build
-
-A readable specimen card with an element rule, class rule, and ID rule.
+Use an element selector for both paragraphs, a class selector for the care tip, and an ID selector for the heading. You do not need to change the HTML or add padding.
 
 ## Your Tasks
 
@@ -29,10 +25,6 @@ A readable specimen card with an element rule, class rule, and ID rule.
 2. Set `background-color: #fff4cc;` in a `.care-tip` rule.
 3. Set `color: #7a1fa2;` in a `#sea-star-title` rule.
 
-## Checkpoint
+## Check the scope
 
-Run the page. The two-line paragraph gains breathing room between lines; only the care tip gets a background, and only the title changes color.
-
-## Payoff
-
-You can now choose whether a style applies to a tag, a reusable class, or one unique ID.
+Run after each change. Both paragraphs should have the requested line spacing; only the care tip should gain a yellow background. The heading should turn purple without recoloring the paragraphs. Submit to check each rule.

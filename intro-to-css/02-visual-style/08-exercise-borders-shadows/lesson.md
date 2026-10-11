@@ -17,22 +17,20 @@ hints:
   - Run Preview before submitting your tests.
 ---
 
-# Exercise: Borders and Shadows
+# Finish the craft-vendor cards
 
-## Mission
+The demo framed food-vendor cards. These craft cards already have their layout, padding, and backgrounds. Give both the same edge treatment by editing `.card` in `style.css`; leave the HTML unchanged.
 
-The demo styled food vendors. This starter shows two craft vendors with a supplied two-column layout and padding; give their cards an edge, soft corners, and a subtle shadow without changing the HTML.
+A border outlines the box, a radius changes its corners, and a shadow paints outside it. Each task changes one of those features.
 
 ## Your Tasks
 
 1. Set a `2px solid #f59e0b` border on `.card`.
-2. Set `.card` `border-radius` to `1rem`.
-3. Set `.card` `box-shadow` to `0 0.5rem 1rem rgb(120 53 15 / 20%)` for a soft shadow below the cards.
+2. Set `.card`'s `border-radius` to `1rem`.
+3. Set `.card`'s `box-shadow` to `0 0.5rem 1rem rgb(120 53 15 / 20%)`.
 
-## Checkpoint
+## Check both cards
 
-Run the preview: the cards should have amber edges, rounded corners, and a shadow below each card.
+Run and Submit after each task. Both cards should gain an amber edge, rounded corners, then a soft brown shadow below. Keep the shadow's first offset at zero so it falls downward rather than sideways.
 
-## Payoff
-
-You can now distinguish a card from its background using three different CSS properties.
+After the visual-style quiz, you will look more closely at the space inside and outside a card.

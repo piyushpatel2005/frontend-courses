@@ -13,17 +13,18 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Trail kit: completed layout
+# Put the trail kit in a row
 
-The demo places three trail-kit cards in a horizontal row. Compare that row with a column before building the vertical version in the next exercise. This completed preview shows the layout before you edit the next exercise.
+Without a layout rule, the three cards would be ordinary block elements stacked one below another. `display: flex` on `.kit-row` changes how that section arranges its direct children: Map, Snacks, and First aid become **flex items**. Put the layout rule on their parent, not on each card.
 
-In `style.css`, `.kit-row` controls the section. `display: flex` turns the kit section into a flex container. The main axis follows `flex-direction: row` from left to right; column would stack the items from top to bottom.
-![Diagram of the main and cross axes of a horizontal flex container.](assets/flex-axes.svg)
+Flexbox works along two directions, called axes. The **main axis** follows `flex-direction`. With `row`, these English, left-to-right cards run across the page. With `column`, they run down the page. The **cross axis** is perpendicular to the main axis, so it changes too. “Main” does not always mean horizontal.
 
+![Row has a horizontal main axis; column has a vertical main axis. Both examples show the three trail-kit cards.](flex-axes.svg)
 
-**Checkpoint:** inspect the card positions in Preview and locate `flex-direction: row` in the stylesheet.
+In `style.css`, `gap: 1rem` leaves space between the cards. A `rem` is based on the root element's font size; with the usual 16px default, this gap is 16px. Unlike padding, it does not create space inside a card.
 
-Change `flex-direction` temporarily to `column`, run Preview, and compare the positions. Restore `row` before moving to the exercise.
+Run Preview. Find `.kit-row`, change `flex-direction: row` to `column`, and run it again. The order stays Map, Snacks, First aid, but the main axis now points down. The cards stretch across the available width because that is the default cross-axis alignment. Restore `row` before the exercise.
+
 ## Learn more
 
-See [MDN’s guide to CSS flexible box layout](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout) for more examples.
+[MDN's Flexbox guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout) is a useful reference when you want to compare the alignment options.

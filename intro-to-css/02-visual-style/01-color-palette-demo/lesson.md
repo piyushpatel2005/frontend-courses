@@ -16,24 +16,20 @@ hints:
   - Find the selector that matches the part of the flyer you want to recolor.
 ---
 
-# Color Palette Demo
+# Give the market flyer a color palette
 
-The Tideglass exhibits are behind you; this module styles a separate **Lantern Lane Night Market** flyer. Its small palette makes the title, details, and callout easy to scan.
+This module moves from museum notes to a Lantern Lane Night Market flyer. The panel needs light text, a dark surface, and a small accent visitors can spot quickly.
 
-The demo already supplies sizing and centering rules. You will learn layout later; for now, focus on the color declarations.
+In `.flyer`, `background-color: #172554` paints the panel navy. `color: #fff7ed` sets cream text that its children inherit unless they have their own color rule. The `.badge` rule gives “Free entry” a coral background and navy text. Background and text colors are separate choices.
 
-In `style.css`, notice the selector, property, and value in rules such as `.flyer { background-color: #172554; }`. The selector chooses the flyer, `background-color` chooses what to paint, and `#172554` is the deep-blue value.
+A hex color starts with `#`. In a six-digit code, the pairs describe red, green, and blue amounts. You can also use named colors such as `navy`, or `rgb()` values. The tasks give exact colors so you can compare your result.
 
-## Visible checkpoint
+The sizing and centering rules are supplied. You will learn Grid and the sizing functions later; leave those rules alone here.
 
-Run the preview. The cream title should stand out from the blue panel, while the coral badge should be the first small detail your eye finds.
+## Try a different emphasis
 
-## Try it safely
-
-Change the `.badge` `background-color` value to another valid color, run the preview, and observe how the emphasis changes. Restore `#fb7185` before continuing to the exercise.
-
-Next, rebuild a smaller palette yourself in **Color Palette Exercise**.
+Run and find the cream title, pale-blue details, and coral badge. Change only the badge's `background-color` to `white`, then Run again. Its words stay navy while its surface changes. Restore `#fb7185` before the ticket exercise.
 
 ## Learn more
 
-MDN’s official documentation shows the many valid ways to set text color, including named colors, hex values, `rgb()`, and `hsl()`. Read [MDN’s reference for the `color` CSS property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color) when you want to go further.
+MDN's [color property reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color) explains the available color formats.

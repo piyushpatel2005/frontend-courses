@@ -20,14 +20,14 @@ hints:
 
 # Pseudo-classes: night cart states
 
-The Moonlit Book Cart needs feedback for a reader’s pointer, keyboard focus, and first recommendation. This completed panel styles those moments with pseudo-classes.
+A reader needs to see which control will respond to the keyboard. This reservation panel uses **pseudo-classes**: a colon followed by a condition, such as `:focus`. They select an existing element in a particular state or position; they do not create another element.
 
-## Read the changing states
+`.reserve-button:hover` matches while a pointer rests on the button. `.email:focus` matches while the email field receives keyboard input. `.reading-list li:first-child` matches a list item that is its parent's first element child. That last condition comes from the HTML order, not from moving the pointer.
 
-`.reserve-button:hover` changes when a pointer rests on the button. `.reading-list li:first-child` makes only the first recommendation bold. `.email:focus` adds a visible outline when the field receives focus.
+## Find focus without a mouse
 
-**Checkpoint:** hover the button, click in the email field, and notice the first title is already bold.
+Run the preview, click a blank area inside it, and press Tab until the email field receives focus. The cyan outline shows where you would type. Press Tab again to reach Reserve, then Shift+Tab to go back. Keep the pointer away from the button while checking the keyboard path so hover does not disguise a missing focus style.
 
-## Try it safely
+The supplied `.reserve-button:focus-visible` rule keeps a visible ring on the button when keyboard navigation needs one. Unlike `:focus`, `:focus-visible` lets the browser decide when to show that ring. Do not remove an outline without providing a visible replacement.
 
-Change the hover background to `#7c3aed`, preview it while hovering the button, then restore `#d97706`. Click the email field once more to observe the focus outline before starting the exercise.
+Hover over Reserve to see its amber background darken. In `style.css`, temporarily change the hover background to `#b45309`, run, and compare the two states. Restore `#d97706`. The first recommendation stays bold throughout because its position has not changed.

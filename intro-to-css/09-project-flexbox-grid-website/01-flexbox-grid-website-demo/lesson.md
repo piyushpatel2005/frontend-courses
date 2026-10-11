@@ -19,12 +19,14 @@ hints:
 
 # River radio schedule demo
 
-**Mission:** Combine flexbox and grid for a one-page River Radio schedule.
+River Radio needs a title and listening button above its daily shows. This is a new page, not the completed workshop grid from the previous module. It reuses your Flexbox and Grid skills; it does not inherit that page's media query.
 
-`.schedule-head` uses Flexbox to place the title and button at opposite ends of a row (`justify-content: space-between`). `.show-grid` uses Grid for three equal show columns (`repeat(3, 1fr)`). Flexbox handles the single row; Grid handles the card tracks.
+In `style.css`, `.schedule-head` is the flex container. `display: flex` puts its two children in a row. `justify-content: space-between` pushes them to opposite ends, and `align-items: center` aligns them vertically. The button is a visual placeholder; it does not play audio.
+
+The separate `.show-grid` container uses `display: grid`. `grid-template-columns: repeat(3, 1fr)` creates three equal tracks, and `gap: 1rem` separates them. Use Flexbox for the header row and Grid for the show columns; they do not need to share a container.
 
 ## Try the demo
 
-Change `.show-grid` to two columns and see the last show wrap. Restore three columns. Then remove `display: flex` from `.schedule-head` and notice the button drop below the title; restore it before continuing.
+Run Preview. Change only `repeat(3, 1fr)` to `repeat(2, 1fr)` in `style.css` and run again. The third show should move to the next row while the header stays unchanged. Restore three columns before continuing.
 
-**Checkpoint:** the preview already shows the finished river radio schedule demo interface. The next lesson asks you to recreate its key rules from a small starter.
+This example deliberately keeps three columns at every width. The responsive design module will show how to change a layout when those columns become cramped.

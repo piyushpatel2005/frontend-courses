@@ -17,23 +17,15 @@ hints:
   - Run Preview before submitting your tests.
 ---
 
-# Exercise: Rotate a Field Note
+# Exercise: rotate a field note
 
-## Mission
+Tilt the pinned creek-walk note without moving the adjacent oak survey. The preceding demo showed how `rotate()` changes the painted card and how `transform-origin` chooses its pivot.
 
-Give the pinned field note a small hand-placed angle without disturbing the adjacent note.
-
-The HTML and starter stylesheet supply the two cards and their shared styling; add the two missing declarations to `.tilted`.
+The HTML and CSS already supply two cards and their Flexbox row. Add the missing declarations inside `.tilted` in `style.css`.
 
 ## Your Tasks
 
-1. Rotate `.tilted` by `-3deg`.
-2. Set `.tilted` `transform-origin` to `left center` so it pivots around the left edge.
+1. Set `.tilted` to `transform: rotate(-3deg)`.
+2. Set `.tilted` to `transform-origin: left center`.
 
-## Checkpoint
-
-Run Preview: the pinned card should tilt while its neighbor stays put.
-
-## Payoff
-
-You now have another focused CSS tool for making interfaces easier to use.
+Run Preview after the first task to see rotation around the default center. After the second, inspect the left-edge pivot. The oak survey should stay in the same place throughout. Submit to check each change.

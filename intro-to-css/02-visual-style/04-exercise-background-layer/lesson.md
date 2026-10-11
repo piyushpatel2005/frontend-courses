@@ -17,14 +17,18 @@ hints:
   - A gradient needs its angle followed by its color stops.
 ---
 
-# Background Layer Exercise
+# Add the announcement background
 
-The demo showed a gradient as a background layer. Build a compact announcement panel with the same technique.
+The welcome-panel demo blended violet into pink. This smaller announcement needs that kind of background behind a different message. Its spacing and the dark backing behind its text are supplied. Add the missing declarations in `style.css`.
 
-Run the preview when you finish. The panel should have a violet fallback, a diagonal violet-to-pink gradient, and readable white text.
+The solid color is a fallback beneath the gradient. Adding the opaque gradient will cover that fallback rather than remove it.
 
 ## Your Tasks
 
 1. Set `.announcement` to a `#7c3aed` background color.
-2. Add `linear-gradient(135deg, #7c3aed, #ec4899)` as `.announcement`’s background image.
+2. Set `.announcement`'s `background-image` to `linear-gradient(135deg, #7c3aed, #ec4899)`.
 3. Set `.announcement` text color to `white`.
+
+## Inspect both layers
+
+Run after the first task to see solid violet, then after the second to see the diagonal blend. After the third, the message should be white against its supplied dark backing. Submit checks each declaration, including the fallback that is no longer visible.

@@ -1,10 +1,10 @@
 ---
-title: River radio schedule exercise
+title: Harbor radio schedule exercise
 slug: exercise-flexbox-grid-website
 order: 2
 language: html
-summary: Combine flexbox and grid for a one-page River Radio schedule.
-seo_title: River radio schedule exercise | Intro to CSS
+summary: Combine flexbox and grid for a one-page Harbor Radio schedule.
+seo_title: Harbor radio schedule exercise | Intro to CSS
 seo_description: Learn using flexbox for controls and grid for cards by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,15 +17,15 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# River radio schedule exercise
+# Harbor radio schedule exercise
 
-**Mission:** Combine flexbox and grid for a one-page River Radio schedule.
+Arrange Harbor Radio's heading and shows using the two layout tools from the River Radio demo. This is a fresh lineup, not an extension of the previous workshop page.
 
-The demo used a different radio lineup. The HTML already supplies this show list, and the stylesheet supplies spacing and card styling. Add only the missing layout declarations in `style.css`.
+The HTML supplies the title, placeholder button, and three shows. The CSS supplies colors, spacing, the header's alignment settings, and `display: grid` for the shows. Edit only `style.css`.
 
 ## Your Tasks
 
-1. Use flexbox to separate the heading and button in `.schedule-head`.
-2. Set `.show-grid` to three equal columns with `repeat(3, 1fr)`; its grid display is supplied.
+1. Add `display: flex` to `.schedule-head` to place the heading and button in a row.
+2. Set `.show-grid` to three equal columns with `grid-template-columns: repeat(3, 1fr)`.
 
-Run Preview after each change, then submit when both visible outcomes match the demo.
+Run Preview after each change. After the first task, the header should be a row but the shows still stack. After the second, all three shows should share a row. Submit to check your work.

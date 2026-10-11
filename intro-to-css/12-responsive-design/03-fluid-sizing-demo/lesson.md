@@ -18,7 +18,19 @@ seo_keywords:
 
 A breakpoint can flip a grid at a chosen width. This park forecast instead lets available space determine the layout between sizes.
 
-In `style.css`, `.page-shell` uses `width: min(90%, 46rem)`: it takes the smaller of 90% of its container or 46rem, keeping a margin on narrow screens and a readable limit on wide ones. `.bulletin` uses `repeat(auto-fit, minmax(12rem, 1fr))`. Each card column needs at least 12rem; when there is room, the columns expand and another card fits beside the first. `gap` keeps them apart. `.card` uses `clamp(.75rem, 2vw, 1.5rem)` for padding: the middle value follows viewport width but never goes below or above the limits. These are three independent sizing decisions; no media query is needed here.
+In `style.css`, `.page-shell` uses `width: min(90%, 46rem)`. `min()` chooses the smaller value, so the page takes 90% of its container until it reaches the 46rem cap.
+
+`.bulletin` uses `repeat(auto-fit, minmax(12rem, 1fr))` for its columns. A column needs at least 12rem. When two columns and their gap fit, the cards share a row instead of stacking.
+
+The third decision belongs to `.card`: `padding: clamp(.75rem, 2vw, 1.5rem)` makes the inside spacing grow with the viewport, within limits. These rules control page width, column width, and padding separately. None needs a media query.
+
+## Read the units and limits
+
+`rem` follows the root font size: with a 16px root, `12rem` is 192px. A percentage width such as `90%` follows the containing block. `vw` instead follows the preview viewport: `1vw` is one hundredth of its width. Those are different reference sizes.
+
+Read `clamp(minimum, preferred, maximum)` from left to right. Here padding follows `2vw` only while that value sits between `.75rem` and `1.5rem`; outside the range it stays at the nearest bound.
+
+In `repeat(auto-fit, minmax(12rem, 1fr))`, `auto-fit` fits as many tracks as the container can hold and collapses unused ones. `minmax()` gives each track its lower and upper limits; `1fr` shares the remaining space. If the container becomes narrower than even one 12rem track, that minimum can still cause overflow. Fluid sizing is not a promise that any content fits any width.
 
 ## Try the demo
 

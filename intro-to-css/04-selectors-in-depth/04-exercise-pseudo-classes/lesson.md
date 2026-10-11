@@ -21,12 +21,14 @@ hints:
 
 # Style night cart states
 
-The pseudo-classes demo gave a book-cart reservation panel visible feedback. Recreate those state styles so readers can spot the first pick, a hovered button, and a focused field.
+Tonight's reservation panel needs three small improvements. The demo showed the selectors; here you will write them for the supplied book list and email field. Edit `style.css`, leaving the HTML and the supplied button focus ring in place.
 
-**Checkpoint:** the first book title is bold; hovering the button darkens it; clicking the email field draws a cyan outline.
+Hover and focus are different conditions. A pointer can hover over a button while the keyboard focus is somewhere else. The email outline should appear when you click the field or reach it with Tab, not only when you point at it.
 
 ## Your Tasks
 
 1. Use `.reserve-button:hover` to set the button background color to `#d97706`.
 2. Use `.reading-list li:first-child` to set the first reading-list item `font-weight` to `700`.
 3. Use `.email:focus` to set the email field outline to `3px solid #67e8f9`.
+
+Run to inspect each change, then Submit. Only the first book should become bold. To check the last task, click blank space in the preview and press Tab to reach the email field. Move focus to Reserve and check that the email outline disappears.

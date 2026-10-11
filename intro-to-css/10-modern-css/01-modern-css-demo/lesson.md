@@ -19,12 +19,14 @@ hints:
 
 # Field note color system demo
 
-**Mission:** Use reusable CSS values to give a field-note card a stable color system.
+The bluebird note repeats an accent color on its border and button. A CSS custom property lets you name that color once and reuse it.
 
-The `:root` rule defines reusable colors: `--ink`, `--accent`, and `--paper`. `var(--accent)` colors the note border and button hover. `transition: background-color 180ms ease` smooths that hover change; the button does not save data in this CSS-only demo.
+`:root` selects the document's root element. A custom property starts with two hyphens: `--accent: #e76f51`. Other rules read it with `var(--accent)`. The supplied `--ink` and `--paper` names work the same way. These properties inherit into the page's children, so the border and button can share them.
+
+The button's `transition: background-color 180ms ease` describes a change: `background-color` is the property to animate, `180ms` is the duration (milliseconds), and `ease` changes the pace rather than keeping a constant speed. Put the transition on the normal button rule so it works both when entering and leaving the highlighted state.
+
+`button:hover` highlights the button under a pointer. `button:focus-visible` gives keyboard users the same color change and a visible outline. The button does not save a note; this lesson only styles it.
 
 ## Try the demo
 
-Change `--accent` and run Preview to see both uses update. Restore the color, then hover the button to see the transition.
-
-**Checkpoint:** the preview already shows the finished field note color system demo interface. The next lesson asks you to recreate its key rules from a small starter.
+Change `--accent` in `style.css`, then Run Preview. Both the border and highlighted button should use the new color. Restore it. Hover the button, then use Tab to focus it and compare the highlight. The supplied reduced-motion query removes the transition when a visitor requests less motion; the next module explains that query in detail.

@@ -13,14 +13,16 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Expedition header
+# Arrange the expedition header
 
-The preceding demo separated the expedition title and action links. Recreate its horizontal alignment. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
+Use the demo's two-group layout for a Day walk header with Route and Checklist links. The title and link group are already separate direct children of `.nav-row`; the inner links and their styling are supplied.
+
+Edit only the outer `.nav-row` rule in `style.css`. Each step adds one part of the layout.
 
 ## Your Tasks
 
-1. Set `.nav-row` to `display: flex` to line up the title and links.
-2. Set `.nav-row` to `justify-content: space-between` to push the groups to opposite ends.
-3. Set `.nav-row` to `align-items: center` to align their vertical centers.
+1. Set `.nav-row` to `display: flex`.
+2. Set `.nav-row` to `justify-content: space-between`.
+3. Set `.nav-row` to `align-items: center`.
 
-**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.
+Run Preview and Submit after each step. First the groups share a row; then they move apart; finally their vertical centers line up. Narrow the preview to see the spare room decrease while the supplied gap remains.

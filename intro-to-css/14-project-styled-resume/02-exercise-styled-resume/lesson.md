@@ -25,4 +25,6 @@ The preceding profile demo used a different width cap and heading range. Transfe
 1. Set `.maker-profile` to `max-width: 42rem` so the sheet remains readable on a wide display.
 2. Set the `h1` `font-size` to `clamp(2.2rem, 8vw, 4.5rem)` so the name scales between its lower and upper limits.
 
-Preview at a narrow and wide width. The selected work, skills, and availability stay in a readable column while the name has room to grow. You have finished the course with a profile sheet you can adapt to show your own work and a responsive layout that combines spacing, typography, and fluid sizing.
+Run Preview at about 360px and 1000px wide, then Submit. `8vw` follows that preview viewport; it does not follow `.maker-profile` once the sheet reaches its width cap. The supplied `box-sizing: border-box` keeps the sheet padding inside its capped width.
+
+The work, skills, and availability should stay in a readable column while the name has room to grow. After the checks pass, try replacing the sample content with your own work. Keep the same selectors so the layout rules still apply.

@@ -19,10 +19,20 @@ hints:
 
 # Lantern Market dropdown demo
 
-A visitor needs to find the tea and paper stalls without cluttering the navigation. This finished menu starts with its links hidden, then reveals them to a pointer **or** a keyboard user.
+The market directory has two stall links. This finished CSS example hides them until a visitor points at Stalls or moves keyboard focus into the menu.
 
-In `style.css`, `.menu-item` is `position: relative`, so the absolutely positioned `.submenu` sits below the Stalls button. `display: none` hides the submenu initially. The `:hover` rule reveals it when the pointer is over the menu; `:focus-within` reveals it whenever the button or one of its links has keyboard focus. The links are `display: block`, so they stack without Flexbox or Grid (both come later). The blue `:focus-visible` outline makes the focused control easy to find.
+## Keep the links reachable
 
-**Checkpoint:** hover over Stalls to see the links; move away, then press Tab until Stalls is focused and use Tab again to reach Tea counter. The submenu stays visible while focus is inside it. This is a small CSS-only example: it does not implement click-to-toggle, Escape-to-close, or touch-menu behavior.
+`.menu-item:hover .submenu` matches the submenu while the pointer is over its parent, including the open submenu itself. Targeting only the button's hover state would make it hard to move down to a link.
 
-Change `.submenu` background temporarily, run Preview and check the open menu; restore `#f7c948` before the exercise.
+`:focus-within` is broader than `:focus`: it matches an element when that element **or any descendant** has focus. `.menu-item:focus-within .submenu` therefore keeps the links visible as you Tab from Stalls into the submenu. A comma between these two selectors lets them share `display: block`.
+
+![Either pointer hover or focus inside the menu keeps it open; it closes when both conditions are absent.](menu-interaction-states.svg)
+
+The starter layout uses `position: relative` on the parent and `position: absolute` on the submenu. `top: 100%` places the submenu below the parent's height; there is no gap for the pointer to cross. The links use `display: block` to stack. The supplied `:focus-visible` outline marks the control reached by keyboard.
+
+## Try both routes
+
+Run, hover over Stalls, and move down onto Coffee counter. The menu should stay open. Move to blank space to close it. Click a blank part of the preview, then press Tab to reach the brand link and Stalls. Tab through both stall links; Shift+Tab moves back. The menu closes after focus leaves it, provided the pointer is also outside.
+
+Change `.submenu` background in `style.css`, run, and inspect the open menu. Restore `#f7c948` before continuing. This is practice with CSS states, not a complete production navigation widget: click-to-toggle, Escape-to-close, and reliable touch interaction need a fuller disclosure design. Do not treat this example as an accessibility-compliance claim.

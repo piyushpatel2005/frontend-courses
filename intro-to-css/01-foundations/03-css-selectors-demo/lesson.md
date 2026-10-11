@@ -12,17 +12,9 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# CSS Selectors Demo: Target Exhibit Details
+# Choose which elements change
 
-## Mission
-
-The museum card has three kinds of content: ordinary notes, a caution note, and one specimen title. The completed rules target each with a different selector.
-
-## What you'll see
-
-A specimen card where the two-line paragraph has comfortable line spacing, the caution note has a highlight, and the title has a distinct color.
-
-## Read the code
+The Moon Jelly card has two paragraphs, but only one is a care note. A selector lets you choose how widely a rule applies. Look at the tags and attributes in `index.html` before opening `style.css`.
 
 ```css
 p { line-height: 1.6; }
@@ -30,14 +22,12 @@ p { line-height: 1.6; }
 #specimen-title { color: #7a1fa2; }
 ```
 
-## Try the preview
+`p` is an element selector: it matches both paragraphs. `line-height` sets the height of each text line. A unitless `1.6` makes it 1.6 times the element's font size, separating the lines in the longer paragraph.
 
-Run the completed page. Then change `#specimen-title` from `#7a1fa2` to another color in `style.css`; only the title should change. Restore the original color before continuing.
+`.note` is a class selector. The dot means “match elements whose class list includes the name note”; the HTML uses `class="note"`, without a dot. Classes can be reused. Here the class rule paints only the care note yellow. Its supplied `padding` adds space around the words inside that background.
 
-## Checkpoint
+`#specimen-title` is an ID selector. It matches `id="specimen-title"` on the heading. Use an ID for one unique element in a document. The `#` here belongs to a selector; the `#` in the color value introduces a hex color code.
 
-`p` selects both paragraphs, `.note` selects only the paragraph with that class, and `#specimen-title` selects the unique heading. The demo is already complete.
+## Try the selection
 
-## Next
-
-Continue to **Exercise: Target Exhibit Details** and reproduce the idea from a starter file.
+Run the page. Both paragraphs have the line-height rule, but only the care note is yellow. Change `.note` to `p` in the background rule and Run again: both paragraphs gain that background. Restore `.note` before the Sea Star exercise.

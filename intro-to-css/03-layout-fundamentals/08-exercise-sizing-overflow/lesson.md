@@ -17,22 +17,20 @@ hints:
   - Run Preview before submitting your tests.
 ---
 
-# Exercise: Size a Seed-Swap Notice
+# Contain the longer seed notice
 
-## Mission
+The demo showed a short note beside a scrollable one. This new storage notice has more words. Its card already has `box-sizing: border-box`, padding, and a `7rem` height limit. The row layout is supplied too.
 
-The demo used a scrollable seed-swap card. This notice has a new, longer message; its card and row layout are supplied, including a height limit. Set the three missing sizing/overflow properties in `.card`.
+Add the missing settings to `.card` in `style.css`. Width chooses its preferred size; max-width caps it in a narrow row; overflow decides what happens to extra content.
 
 ## Your Tasks
 
-1. Set `.card` `width` to `14rem`.
-2. Set `.card` `max-width` to `100%`.
-3. Set `.card` `overflow` to `auto`.
+1. Set `.card`'s `width` to `14rem`.
+2. Set `.card`'s `max-width` to `100%`.
+3. Set `.card`'s `overflow` to `auto`.
 
-## Checkpoint
+## Test the cramped case
 
-Run the preview and scroll within the long note. Narrow the preview if possible; the cards should not become wider than the available row.
+Run and Submit after each task. At the end, scroll the long card until you can read the last sentence. Narrow the preview to see both cards stay inside the row. The short card should not be forced to the maximum height.
 
-## Payoff
-
-You can cap a card's width and keep long text inside its height limit. After the layout quiz, the next module returns to selectors so you can target styles more precisely.
+After the layout quiz, the next module returns to selectors so you can target elements by their relationships and states.

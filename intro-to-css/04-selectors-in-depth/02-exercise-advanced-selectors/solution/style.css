@@ -4,6 +4,7 @@ body {
   color: #f7f0d8;
   font-family: Georgia, serif;
 }
+a { color: #ffd166; text-decoration: none; }
 .book-card {
   max-width: 430px;
   margin: 56px auto;

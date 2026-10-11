@@ -5,7 +5,7 @@ order: 1
 language: html
 summary: "Grid creates explicit rows and columns, called tracks."
 seo_title: "Grid Tracks Demo | Introduction to CSS"
-seo_description: "Learn grid creates explicit rows and columns, called tracks in a completed CSS preview."
+seo_description: "Flexbox arranged items along one main axis. Grid lets you define a shared set of columns and rows. It is useful when cards should line up with the cards above and below them."
 seo_keywords: [CSS, grid-tracks-demo, layout, beginner CSS]
 lesson_type: coding
 hints:
@@ -13,26 +13,18 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Grid Tracks Demo
+# Give the workshop cards equal columns
 
-## Mission
+Flexbox arranged items along one main axis. Grid lets you define a shared set of columns and rows. It is useful when cards should line up with the cards above and below them.
 
-A volunteer board needs tidy columns for three workshop cards.
+`display: grid` on `.workshop-grid` makes its direct children grid items. A **track** is a column or a row, not an individual card. In `style.css`, `grid-template-columns: repeat(3, 1fr)` defines three column tracks. `repeat(3, ...)` repeats the size three times; it is a shorter way to write `1fr 1fr 1fr`.
 
-## What to notice
+The `fr` unit is a share of the available space. Here each column gets one equal share after the two gaps are allowed for. The supplied `overflow-wrap: anywhere` on the cards lets a long word break if it would otherwise force a track wider than its share. This matters for longer labels in the next exercise. The supplied `gap: 1rem` separates the tracks.
 
-`display: grid` creates a grid container. `repeat(3, 1fr)` gives it three equal column tracks. Find the selector, property, and value in `style.css` and compare the preview.
+![Three equal column tracks containing Map, Snacks, and First aid, matching the starting preview.](grid-tracks.svg)
 
-![Diagram of CSS Grid rows, columns, and gaps.](assets/grid-tracks.svg)
-
-## Try the preview
-
-Change three columns to two and watch the last card wrap, then restore three.
-
-## Checkpoint
-
-The completed preview is your reference. The next lesson asks you to build one focused part of it from a starter.
+Run Preview, then change `repeat(3, 1fr)` to `repeat(2, 1fr)`. The browser places cards into cells in source order. With two columns, First aid moves into a new row that Grid creates automatically. A row does not need an explicit height to exist: its content gives it a height. Restore three columns before the exercise.
 
 ## Learn more
 
-MDN’s official guide has more examples of grid tracks, placement, named areas, and responsive grids. Read [MDN’s reference for CSS grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout) when you want to go further.
+[MDN's Grid guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout) covers tracks and placement when you need a reference.

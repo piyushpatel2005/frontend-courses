@@ -13,13 +13,15 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Trail kit
+# Stack the trail kit for a narrow sign
 
-The preceding demo showed a horizontal trail-kit row. Turn this version into a vertical list for a narrow sign. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
+The demo switched between a row and a column. Here the supplied cards list a different kit: Water, Torch, and Whistle. Arrange them vertically using Flexbox.
+
+Edit `.kit-row` in `style.css`. The HTML, colors, padding, and gap are supplied. The starter already looks like a stack because block elements normally appear one below another; that is not yet a flex column.
 
 ## Your Tasks
 
-1. Set `.kit-row` to `display: flex` so the cards form a flex container.
-2. Set `.kit-row` to `flex-direction: column` to stack the cards from top to bottom.
+1. Set `.kit-row` to `display: flex`.
+2. Set `.kit-row` to `flex-direction: column`.
 
-**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.
+Run Preview after each change. Step 1 makes a row using Flexbox's default direction. Step 2 turns that row into a top-to-bottom list. Submit after each step to check your progress.

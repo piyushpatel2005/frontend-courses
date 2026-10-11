@@ -1,11 +1,34 @@
-test('Use flexbox to separate the heading and button in `.schedule-head`.', () => {
-  const value = getComputedStyle(document.querySelector('.schedule-head')).getPropertyValue('display').trim();
-  assert.equal(value, 'flex', 'Set display to flex.');
+// Read authored base rules independently of the current preview width or motion preference.
+// Browser geometry and interaction are checked separately during course review.
+function declaration(selector, property, media) {
+  const rules = Array.from(document.querySelector('style[data-intercourses="user-css"]').sheet.cssRules);
+  let value = '';
+  function scan(items) {
+    for (const rule of items) {
+      if (rule.type === CSSRule.STYLE_RULE && rule.selectorText.split(',').map(s => s.trim()).includes(selector)) {
+        const next = rule.style.getPropertyValue(property).trim();
+        if (next) value = next;
+      }
+    }
+  }
+  if (media) {
+    const normalized = text => text.replace(/\s+/g, '').toLowerCase();
+    for (const rule of rules) {
+      if (rule.type === CSSRule.MEDIA_RULE && normalized(rule.conditionText) === normalized(media)) scan(rule.cssRules);
+    }
+  } else scan(rules);
+  return value;
+}
+function normalizedValue(property, value) {
+  const style = document.createElement('span').style;
+  style.setProperty(property, value);
+  return style.getPropertyValue(property).trim();
+}
+
+test("Set .schedule-head display to flex in its normal rule.", () => {
+  assert.equal(normalizedValue("display", declaration(".schedule-head", "display", null)), normalizedValue("display", "flex"), "Set .schedule-head display to flex in its normal rule.");
 });
 
-test('Use a three-column grid for `.show-grid`.', () => {
-  const rule = Array.from(document.styleSheets).flatMap(sheet => Array.from(sheet.cssRules || []))
-    .find(item => item.selectorText === '.show-grid');
-  assert.exists(rule, 'Add a .show-grid rule.');
-  assert.match(rule.style.getPropertyValue('grid-template-columns').trim(), /^repeat\(3,\s*1fr\)$/i, 'Use repeat(3, 1fr) for three equal columns.');
+test("Set .show-grid grid-template-columns to repeat(3, 1fr) in its normal rule.", () => {
+  assert.equal(normalizedValue("grid-template-columns", declaration(".show-grid", "grid-template-columns", null)), normalizedValue("grid-template-columns", "repeat(3, 1fr)"), "Set .show-grid grid-template-columns to repeat(3, 1fr) in its normal rule.");
 });

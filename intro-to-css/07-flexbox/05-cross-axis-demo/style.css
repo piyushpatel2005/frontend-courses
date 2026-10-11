@@ -11,6 +11,7 @@
   background: #edf7ee;
 }
 .card {
+  overflow-wrap: anywhere;
   padding: 1rem;
   border-radius: .75rem;
   background: #cbeed1;

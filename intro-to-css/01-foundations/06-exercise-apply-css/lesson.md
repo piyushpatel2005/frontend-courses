@@ -13,27 +13,19 @@ hints:
   - 'Use <link rel="stylesheet" href="style.css"> for external CSS.'
 ---
 
-# Exercise: Apply CSS Three Ways
+# Style the gallery notice three ways
 
-## Mission
+The previous demo put declarations in an attribute, a `<style>` block, and a separate file. This gallery notice supplies an empty internal block and `style.css`, but no stylesheet link. Edit both tabs.
 
-The demo showed three CSS locations on a finished card. Here the internal `<style>` block and external `style.css` file are ready, but the new gallery notice has no rules yet.
-
-## What you'll build
-
-An exhibit card with one inline rule, one internal rule, and an external stylesheet.
+For inline CSS, put declarations directly in the heading's `style` attribute. For internal CSS, put a complete selector-and-braces rule inside the supplied `<style>` block in `<head>`. External rules belong in `style.css`.
 
 ## Your Tasks
 
 1. Set `color: #7a1fa2;` in an inline `style` attribute on the `<h1>`.
 2. Set `font-size: 18px;` in an internal `p` rule.
-3. Link `style.css` in `<head>`.
-4. Set `background-color: #eef6ff;` on `body` in `style.css`.
+3. Add `<link rel="stylesheet" href="style.css">` inside `<head>`.
+4. Set `background-color: #eef6ff;` in a `body` rule in `style.css`.
 
-## Checkpoint
+## Check each source
 
-Run the page. The heading has its local style, the paragraph is larger, and the background color is set in `style.css`. This course's preview injects `style.css` automatically, even before you add the `<link>`; step 3 checks the connection a standalone HTML page needs.
-
-## Payoff
-
-You can now recognize the three common ways CSS reaches HTML.
+Run to inspect the purple heading, larger paragraph, and pale blue background. Submit after each step to check its location as well as its result. The preview injects the stylesheet tab automatically, so the link task will not cause a visible change here; it supplies the connection your HTML needs outside this preview.

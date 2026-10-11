@@ -13,13 +13,15 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Trail tools
+# Space out the trail tools
 
-The preceding demo spread three tools across a dashed row. Recreate that spacing in this starter. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
+The demo distributed spare room between three cards. This row contains a Compass, Torch, and Whistle. Give the tools room to separate without adding margins to each card.
+
+The dashed border and its inner padding are ready. The supplied `overflow-wrap: anywhere` lets tool names wrap when the preview is narrow. Edit `.tool-row` in `style.css`; you do not need to change the HTML.
 
 ## Your Tasks
 
-1. Set `.tool-row` to `display: flex` to arrange the tools on one row.
-2. Set `.tool-row` to `justify-content: space-between` to spread them across the dashed area.
+1. Set `.tool-row` to `display: flex`.
+2. Set `.tool-row` to `justify-content: space-between`.
 
-**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.
+Run Preview after step 1 to see the cards gather at the start. After step 2, the outer cards should reach the row's inner edges, with the remaining room shared between them. Submit to check each change.

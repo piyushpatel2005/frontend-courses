@@ -21,3 +21,5 @@ body {
   font-weight: 700;
 }
 /* Add pseudo-class rules for hover, first item, and focus. */
+
+.reserve-button:focus-visible { outline: 3px solid #67e8f9; outline-offset: 2px; }

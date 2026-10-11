@@ -13,14 +13,16 @@ hints:
   - "Run Preview before Submit to inspect the visible result."
 ---
 
-# Exercise: Supply labels
+# Make the supply labels flexible
 
-The preceding demo wrapped supply cards when the available width became narrow. Recreate that flexible arrangement. Its starter already includes the HTML and card styling; edit only the layout declarations in `style.css`.
+The demo let supply cards wrap and share the available room. Apply that pattern to Water, Batteries, and Bandages here. The starter supplies the card padding and a gap, but no Flexbox layout.
+
+You will edit both the parent `.supply-row` and its child `.card` rule in `style.css`. Wrapping belongs on the parent; growing, shrinking, and the starting size belong on the items.
 
 ## Your Tasks
 
-1. Set `.supply-row` to `display: flex` so the cards share a flex row.
-2. Set `.supply-row` to `flex-wrap: wrap` so they can flow onto a new row.
-3. Set `.card` to `flex: 1 1 9rem` so each card grows and shrinks from a 9rem basis.
+1. Set `.supply-row` to `display: flex`.
+2. Set `.supply-row` to `flex-wrap: wrap`.
+3. Set `.card` to `flex: 1 1 9rem` so every card can grow and shrink from a 9rem basis.
 
-**Checkpoint:** Run Preview and compare the card arrangement with the demo. Submit after each step to see the matching check pass.
+Run Preview and Submit after each step. Step 2 permits wrapping, but short labels may still fit until you add the basis in step 3. With all three steps complete, narrow the preview: cards should move to another line instead of being forced into one row.
