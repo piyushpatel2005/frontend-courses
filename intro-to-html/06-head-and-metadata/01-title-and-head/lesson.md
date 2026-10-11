@@ -56,13 +56,13 @@ A `<link>` can connect a real stylesheet when you have one; this page does not n
 
 ## Checkpoint
 
-Run the page and look at its browser tab or preview title. It should name the walking-club page, even though the title is not in the visible body. If text appears in the page instead, move that element inside `<head>`.
+Edit `index.html`, then Run. The visible heading should stay unchanged: head metadata does not add content to the body. This embedded preview does not rename the course’s browser tab. Inspect your `<head>` and Submit to check the title and meta tags; opening the document on its own would show its title in a tab.
 
 ## Your Tasks
 
 1. In `<head>`, set a `<title>` that names the City Walking Club river walk.
 2. Add a viewport meta tag with `content="width=device-width, initial-scale=1.0"`.
-3. Add a description meta tag with a meaningful summary of the walk.
+3. Add a description meta tag with a sentence about the river walk (at least 20 characters).
 
 ## Payoff
 

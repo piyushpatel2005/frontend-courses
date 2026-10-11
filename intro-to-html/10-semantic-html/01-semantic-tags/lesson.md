@@ -12,85 +12,71 @@ hints:
   - "Use <main> for the primary content area — there should only be one per page."
   - "<article> is for self-contained content (a blog post, a news article) that could stand alone."
   - "<section> groups related content under a theme. It usually has a heading."
-  - "<nav>, <header>, and <footer> are landmark elements that help screen reader users navigate."
+  - "Page-level header and footer, navigation, and main help identify regions; an article has its own semantics."
+lesson_type: coding
 ---
 
-# Semantic HTML Tags
+# Semantic HTML tags
 
-## Mission
+Media adds content to a page; semantic HTML explains how the page is organized. Build a harvest update for Riverstone Community Garden, a new setting separate from the hall examples.
 
-The Riverstone Community Garden is publishing a short harvest update. This is a new page, separate from the hall’s media examples. Build a page whose regions are clear enough for a visitor—or a screen-reader user—to jump straight to the update, its related links, or its contact details.
+## Choose an element for its job
 
-## What you'll build
-
-A page with semantic landmarks: a site header and navigation, one self-contained article update, a related-links sidebar, and a footer — all organized inside a single main content region.
-
-**Target:** a page with a site header and navigation, one self-contained update, a related-links sidebar, and a footer. When you preview it, the update sits inside the page's single primary-content region.
-
-## Give each part a job
-
-Semantic HTML names the role of a region instead of using a generic `<div>` everywhere. Those names create landmarks that assistive technology can announce and navigate. They also make the document easier for a teammate and a search engine to understand.
-
-For this garden update, use:
+A `<div>` groups content without saying what it means. More specific elements describe the job of a region:
 
 | Element | Job on this page |
 | --- | --- |
-| `<header>` | Introduces the garden site |
-| `<nav>` | Holds site-navigation links |
-| `<main>` | Holds this page's primary content; use one per page |
-| `<article>` | Contains an update that could stand on its own |
-| `<aside>` | Holds related, secondary links |
-| `<footer>` | Holds closing contact or copyright information |
+| `<header>` | Introduces the site with its name |
+| `<nav>` | Groups navigation links |
+| `<main>` | Contains the page's primary content |
+| `<article>` | Holds an update that makes sense on its own |
+| `<aside>` | Holds related, secondary information |
+| `<footer>` | Provides closing contact information |
 
-`<section>` groups related content that belongs to the current page. An `<article>` is stronger: its content should still make sense if shared or listed by itself.
+Use one visible `<main>` for this page. A `<section>` groups a topic, usually under a heading; use `<article>` when that topic is also a self-contained item, such as a news update. These elements describe structure, not columns or colors. CSS would control the layout.
 
-## Build the update's landmarks
+Main and navigation create landmarks that assistive technology can use. Not every semantic element is a landmark: an article has article semantics, and a header or footer inside an article does not become the page-wide banner or content-information landmark.
 
-Here is the same landmark pattern on a **library** notice. Notice that `<nav>` belongs inside the `<header>`, while the announcement and its sidebar belong inside `<main>`. Transfer that structure to the garden update.
+![Header contains navigation; main contains the article and related aside; footer follows main.](semantic-page-landmarks.svg)
+
+## Read a different example
+
+The library notice below uses the structure you need, with different content:
 
 ```html
 <header>
-    <h1>Willow Lane Library</h1>
-    <nav>
-        <a href="/catalog">Catalog</a>
-        <a href="/hours">Hours</a>
-    </nav>
+  <h1>Willow Lane Library</h1>
+  <nav>
+    <a href="/catalog">Catalog</a>
+    <a href="/hours">Hours</a>
+  </nav>
 </header>
-
 <main>
-    <article>
-        <h2>Saturday Story Hour</h2>
-        <p>Story hour starts at ten in the reading room.</p>
-        <time datetime="2026-08-15">August 15, 2026</time>
-    </article>
-
-    <aside>
-        <h3>Library links</h3>
-        <a href="/membership">Become a member</a>
-    </aside>
+  <article>
+    <h2>Saturday story hour</h2>
+    <p>Story hour starts at ten in the reading room.</p>
+    <time datetime="2026-08-15">August 15, 2026</time>
+  </article>
+  <aside>
+    <h2>Library links</h2>
+    <a href="/membership">Become a member</a>
+  </aside>
 </main>
-
 <footer>
-    <p>Willow Lane Library</p>
+  <p>Ask at the library desk for more information.</p>
 </footer>
 ```
 
-`<time>` gives the browser a machine-readable date through `datetime` while visitors read the friendly date. Use it for a specific date or time, not for vague phrases such as “last week.”
-
-## Checkpoint
-
-Preview the page. You should be able to point to a header, one navigation area, one main content area, the harvest update, related links, and a footer. If the update is outside `<main>`, check the opening and closing tags first.
+`<time>` pairs a readable date with a machine-readable `datetime`. Here the date is August 15, 2026 in `YYYY-MM-DD` form. The visible words and the attribute should describe the same date.
 
 ## Your Tasks
 
-1. Add one `<header>` element to introduce the garden page.
-2. Inside the header, add a `<nav>` with at least two links.
-3. Add one `<main>` element for the primary content.
-4. Inside `<main>`, add an `<article>` for a garden update.
-5. Add a `<time>` element with a `datetime` attribute inside the article.
-6. Add one `<aside>` with related links.
-7. Add one `<footer>` element with closing contact or copyright information.
+1. Add one page-level `<header>` containing an `<h1>` with the garden's name.
+2. Inside that header, add a `<nav>` with at least two labeled links and nonempty destinations.
+3. Add one page-level `<main>` after the header.
+4. Inside `<main>`, add an `<article>` with an `<h2>` for a garden update and a paragraph describing it.
+5. Inside the article, add `<time datetime="2026-08-15">August 15, 2026</time>` for the update date.
+6. Inside `<main>`, after the article, add one `<aside>` with an `<h2>` and a labeled related link.
+7. After `<main>`, add one page-level `<footer>` with closing contact or copyright text.
 
-## Payoff
-
-With those landmarks in place, the garden update is no longer just a stack of boxes: its structure explains where visitors are and where they can go next.
+Edit `index.html`, Run, then Submit. The starter supplies only the document shell. Build one region at a time; the checks follow the task order. In the preview, headings should identify each region's content even though the browser stacks the regions vertically. The diagram shows nesting, not a promised visual layout.

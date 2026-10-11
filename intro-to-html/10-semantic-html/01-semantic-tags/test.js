@@ -1,36 +1,34 @@
-test("page has a header element", () => {
-  assert.count("header", 1, "Add a <header> element");
+const text = el => (el?.textContent || "").trim();
+const nonemptyLink = a => Boolean(text(a) && (a.getAttribute("href") || "").trim() && a.getAttribute("href") !== "#");
+test("page header introduces the garden", () => {
+  assert.equal(document.querySelectorAll("header").length, 1, "Use one header");
+  assert.equal(Boolean(text(document.querySelector("body > header > h1"))), true, "Put a garden-name h1 in the page header");
 });
-
-test("header contains a nav", () => {
-  var nav = document.querySelector("header nav");
-  assert.exists(nav, "Add a <nav> inside your <header>");
-  var links = nav.querySelectorAll("a");
-  assert.equal(links.length >= 2, true, "Add at least 2 links inside the <nav>");
+test("header navigation has useful links", () => {
+  const links = [...document.querySelectorAll("body > header nav a")];
+  assert.equal(links.filter(nonemptyLink).length >= 2, true, "Add at least two labeled navigation links with destinations inside header");
 });
-
-test("page has a main element", () => {
-  assert.count("main", 1, "Add a <main> element for primary content");
+test("one main follows the header", () => {
+  assert.equal(document.querySelectorAll("main").length, 1, "Use one main region");
+  const main = document.querySelector("body > main"), header = document.querySelector("body > header");
+  assert.equal(Boolean(main && header && header.compareDocumentPosition(main) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Put main after the page header");
 });
-
-test("main contains an article", () => {
-  var article = document.querySelector("main article");
-  assert.exists(article, "Add an <article> inside <main>");
-  assert.exists(article.querySelector("h2"), "Give the update a heading");
-  assert.equal(Boolean(article.querySelector("p")?.textContent.trim()), true, "Add update text inside the article");
+test("main contains a headed garden update", () => {
+  const article = document.querySelector("body > main > article");
+  assert.equal(Boolean(text(article?.querySelector(":scope > h2")) && text(article?.querySelector(":scope > p"))), true, "Add a headed article with update text directly inside main");
 });
-
-test("article has a time element", () => {
-  var time = document.querySelector("main article time[datetime]");
-  assert.equal(Boolean(time && !Number.isNaN(Date.parse(time.getAttribute("datetime"))) && time.textContent.trim()), true, "Add a dated, readable <time> inside your article");
+test("article pairs a readable date with datetime", () => {
+  const time = document.querySelector('main > article time[datetime="2026-08-15"]');
+  assert.equal(text(time), "August 15, 2026", "Use the requested matching visible date and datetime inside the article");
 });
-
-test("page has an aside", () => {
-  assert.count("main aside", 1, "Add an <aside> inside main");
-  assert.exists(document.querySelector("main aside a[href]"), "Give the aside a related link");
+test("main has a headed related-links aside", () => {
+  assert.equal(document.querySelectorAll("aside").length, 1, "Add one aside");
+  const aside = document.querySelector("body > main > aside"), article = document.querySelector("body > main > article");
+  assert.equal(Boolean(aside && article && article.compareDocumentPosition(aside) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Place aside after article, inside main");
+  assert.equal(Boolean(text(aside?.querySelector("h2")) && [...aside.querySelectorAll("a")].some(nonemptyLink)), true, "Give the aside a heading and a labeled related link");
 });
-
-test("page has a footer", () => {
-  assert.count("footer", 1, "Add a <footer> element");
-  assert.equal(Boolean(document.querySelector("footer")?.textContent.trim()), true, "Add closing contact or copyright text");
+test("page footer follows main with closing information", () => {
+  assert.equal(document.querySelectorAll("footer").length, 1, "Use one footer");
+  const footer = document.querySelector("body > footer"), main = document.querySelector("body > main");
+  assert.equal(Boolean(text(footer) && main && main.compareDocumentPosition(footer) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Put a footer with closing text after main");
 });

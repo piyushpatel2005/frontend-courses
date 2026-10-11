@@ -25,16 +25,20 @@ After reading the relay intake demo, build a night-shift check-in form for a dif
 
 ## What you'll build
 
-A night-shift check-in form with connected labels, text, email, and password fields, plus a submit action.
+A night-shift check-in form with connected labels, text, email, and password fields, plus a submit action. Edit `index.html`, Run to inspect each addition, and Submit to check it. Use made-up values only; `/night-shift` is an illustrative route with no receiving service. You do not need to submit the form in the preview.
 
 ## Your Tasks
 
-1. Add one `<form>` element around the controls.
-2. Add a text input for the night-shift operator.
-3. Add an email input for a backup address.
-4. Add a password input for an access phrase.
-5. Add a submit button.
-6. Connect a label to every text, email, and password input using matching `for` and `id` values.
+1. Add one `<form>` for the check-in controls.
+2. Inside it, add a text input with `name="operator-name"` for the operator.
+3. Add an email input with `name="backup-email"` for the backup address.
+4. Add a password input with `name="access-phrase"` for the practice access phrase.
+5. Add a submit button with visible action text inside the form.
+6. Connect a visible Operator name label to the text input using matching `for` and a unique `id`.
+7. Connect a visible Backup email label to the email input in the same way.
+8. Connect a visible Access phrase label to the password input in the same way.
+
+![The label’s for value and the input’s id must match; name is a separate submission key.](form-label-connection.svg)
 
 ## Checkpoint
 

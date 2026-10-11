@@ -31,7 +31,7 @@ The starter already includes the Contact Us heading; build the form below it.
 
 ## One idea: labels make a form usable before it is styled
 
-A label tells people and assistive technology what a control means. Connect it with matching `for` and `id` values; repeat that pattern for inputs, textareas, and selects.
+A label tells people and assistive technology what a control means. Connect it with matching `for` and `id` values; repeat that pattern for inputs, textareas, and selects. Placeholder text is only a hint inside a field: it can disappear as someone types and does not replace a label.
 
 ```html
 <label for="topic">Topic</label>
@@ -42,24 +42,27 @@ A label tells people and assistive technology what a control means. Connect it w
 </select>
 ```
 
-The browser can require an answer with `required`. Put the controls inside one `<form method="post">` so they travel together when someone submits.
+The browser can require an answer with `required`. Put the controls inside one `<form method="post">`. Each field also needs a non-empty `name`, which becomes its key in the submitted data. An `id` alone does not send an answer. POST puts data in the request body; a real site still needs HTTPS and a receiving service that validates the answers.
 
 ## Checkpoint
 
-Run the page. You should see a complete first-draft contact form. Try submitting it without Name or Email; the browser should point to a required field. If clicking a label does not focus its control, compare its `for` and `id` values.
+Edit `index.html`, Run to inspect each new field, then Submit to check your tasks. With Name empty, clicking Send Message should trigger the browser’s required-field prompt rather than send a request. Do not submit a completed form: `/contact` is only an example destination. If clicking a label does not focus its control, compare its `for` and `id` values.
 
 ## Your Tasks
 
 1. Add a `<form method="post">` below the heading.
-2. Add a text input for Name inside the form.
-3. Add an email input for Email inside the form.
-4. Add a `<textarea>` for Message inside the form.
+2. Add a text input with `name="name"` inside the form.
+3. Add an email input with `name="email"` inside the form.
+4. Add a Message `<textarea name="message">` inside the form.
 5. Mark the Name input `required`.
 6. Mark the Email input `required`.
-7. Add a Topic `<select>` with at least three relevant choices (room booking, volunteering, and accessibility).
-8. Add a submit button inside the form.
-9. Give each of the four fields a visible `<label>` connected by matching `for` and `id`.
+7. Add a Topic `<select name="topic">` with distinct values for room booking, volunteering, and accessibility.
+8. Add a submit button with visible action text inside the form.
+9. Connect a visible Name label to the text input with matching `for` and a unique `id`.
+10. Connect a visible Email label to the email input in the same way.
+11. Connect a visible Message label to the textarea in the same way.
+12. Connect a visible Topic label to the select in the same way.
 
 ## Payoff
 
-The hall now has a solid contact-form structure that can collect a useful first message.
+The next lesson starts with this completed reference form. If you changed the wording, carry your version forward and keep its fields as you add reply preferences.

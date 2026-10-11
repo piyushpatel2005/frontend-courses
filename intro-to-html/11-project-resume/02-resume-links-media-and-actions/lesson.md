@@ -11,65 +11,40 @@ validationRules: []
 hints:
   - "Use anchor links for portfolio/GitHub/LinkedIn."
   - "Use figure/figcaption for profile image or project snapshot."
+lesson_type: coding
 ---
 
-# Project 3: Resume (Links, Media, and Actions)
+# Project 3: Resume links and a project image
 
-## Mission
+Sam's resume now explains the candidate's experience. Add ways for the organizer to inspect work, start an email, and save a PDF. Your starter is the previous lesson's completed sample; keep its header, sections, skills, and footer.
 
-The Riverstone Makers' Fair organizer can now scan Sam's resume, but needs quick ways to view work, send a message, and save a copy. Your starter is the completed resume from the previous lesson; keep its header, three sections, skills list, and footer. Add those actions without losing the clear structure you built in the first resume lesson.
+## Give each link a clear destination
 
-## What you'll build
-
-Sam’s existing resume enhanced with a captioned project image, two external links opening in new tabs, an email action, and a download link. The portfolio URLs and PDF filename are placeholders until Sam hosts real work and a PDF.
-
-**Target:** a resume with a captioned work image, two external destinations, an email action, and a download link. In the preview, visitors can tell what the image represents and where every action will take them.
-
-## Turn reference information into useful actions
-
-An anchor becomes an action when its `href` points somewhere useful. Use a full `https://` URL for an external portfolio or profile. `target="_blank"` opens that external destination in a new tab; add `rel="noopener"` as a safe companion when you use it.
+Here is a different applicant's portfolio link:
 
 ```html
-<p>
-    <a href="https://portfolio.example.com" target="_blank" rel="noopener">View portfolio</a>
-    <a href="https://github.com/example" target="_blank" rel="noopener">View code samples</a>
-</p>
+<a href="https://example.com/mira-work" target="_blank" rel="noopener">View Mira's library projects (new tab)</a>
 ```
 
-For direct contact, a `mailto:` URL opens the visitor's email app with the address ready to use.
+`target="_blank"` opens a new tab or window. `rel="noopener"` prevents the newly opened page from receiving an opener reference. The label tells visitors what they will find and warns them about the new tab.
 
-```html
-<a href="mailto:sam.rivera@example.com">Email Sam</a>
-```
+For email, an address such as `mailto:mira@example.com` asks the visitor's configured email app to compose a message; it does not send anything. A relative file link with `download`, such as `<a href="mira-resume.pdf" download>Download Mira's resume PDF</a>`, asks the browser to save a file. It does not create that file. The download attribute is generally limited to same-origin, blob, or data URLs, and browser settings can affect the result.
 
-Use `download` when the link is a file that visitors should save instead of navigate to. Host a same-origin PDF at the named path before sharing this link; no PDF is supplied in the editor. Likewise, replace example portfolio URLs with Sam’s real work before publishing.
+In this exercise, `https://example.com/portfolio`, `https://example.com/projects`, and `sam-rivera-resume.pdf` are placeholders. Do not expect them to display Sam's work or download a real resume. Replace them with hosted resources before publishing; no PDF is supplied.
 
-```html
-<a href="sam-rivera-resume.pdf" download>Download resume PDF</a>
-```
+## Add the project illustration
 
-## Give the image context
-
-A profile image or project snapshot needs a text alternative and a visible caption. Put the image and its explanation in one `<figure>` so they are understood as one piece of evidence.
-
-```html
-<figure>
-    <img src="fair-display.jpg" alt="Sam arranging ceramic pieces at a community makers' fair">
-    <figcaption>Sam's volunteer display at the Riverstone Makers' Fair.</figcaption>
-</figure>
-```
-
-## Checkpoint
-
-Preview the page. The figure caption should sit with the image. Try your own image URL or a small data-URL illustration so the preview can display it without an uploaded file. The two portfolio links should be ready to open in a new tab, the email link should begin with `mailto:`, and the download link should carry `download`. If a link acts like plain text, check that the destination is in its `href` attribute.
+The starter includes an image below the existing resume, ready to move into main. It uses a data URL, so you do not need an image upload. A figure groups the image with a visible caption; its alt text describes the illustration for someone who cannot see it. You practiced those relationships on the garden page.
 
 ## Your Tasks
 
-1. Add a `<figure>` inside `<main>` with a project image, descriptive `alt` text, and a visible `<figcaption>`.
-2. Add two labeled `https://` links to work samples inside `<main>`; open both in a new tab with `target="_blank"` and `rel="noopener"`.
-3. Add a `mailto:sam.rivera@example.com` link so a visitor can start a contact email.
-4. Add a download link to `sam-rivera-resume.pdf` using the `download` attribute. This filename is a placeholder; it will work when you host the actual PDF beside the page.
+1. Move the supplied image into a `<figure>` inside `<main>` and add alt text describing the Makers Fair sign.
+2. Add a nonempty `<figcaption>` directly inside that figure, before or after the image.
+3. Inside main, add a link labeled with `portfolio` to `https://example.com/portfolio` with `target="_blank"` and `rel="noopener"`; mention the new tab in its text.
+4. Inside main, add a separate link labeled with `projects` to `https://example.com/projects` with the same new-tab attributes and a new-tab notice in its text.
+5. Add a labeled `mailto:sam.rivera@example.com` link inside the resume's main region or footer.
+6. Add a labeled link to `sam-rivera-resume.pdf` with the `download` attribute inside main or the footer.
 
-## Payoff
+Edit `index.html`, Run, then Submit. Read the page from the name through the footer. The added image should have both useful alt text and a visible caption, and each link should explain its action. You do not need to open external pages, launch an email app, or download a file to complete the checks.
 
-The resume now gives the organizer a clear path from a quick scan to real evidence, a direct message, or a saved copy.
+Before publishing a real resume, replace the sample contact details and destinations, test the hosted PDF, and check keyboard navigation. Passing this exercise verifies the authored HTML, not the availability of the linked resources.

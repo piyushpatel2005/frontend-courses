@@ -24,7 +24,7 @@ hints:
 
 ## Mission
 
-The makers' fair program page needs three quick-jump stops — about, projects, and contact — and a row of project cards. Give each stop a unique landing point while keeping the cards easy to style as a group.
+The makers' fair program page needs three quick-jump stops — about, projects, and contact — and a group of information cards. Give each stop a unique landing point while keeping the cards easy to style as a group.
 
 ## What you'll build
 
@@ -57,21 +57,21 @@ Use `id` for one unique element on the page. An ID becomes an anchor target when
 
 ```html
 <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#hours">Opening hours</a>
+    <a href="#supplies">Supplies</a>
+    <a href="#location">Location</a>
 </nav>
 
-<section id="about"><h2>About</h2></section>
-<section id="projects"><h2>Projects</h2></section>
-<section id="contact"><h2>Contact</h2></section>
+<section id="hours"><h2>Opening hours</h2></section>
+<section id="supplies"><h2>Supplies</h2></section>
+<section id="location"><h2>Location</h2></section>
 ```
 
-CSS uses `#` before an ID: `#contact { ... }`.
+This example is a workshop information page; the exercise uses different destinations for the fair. CSS uses `#` before an ID: `#location { ... }`. A class or ID is only a label until a stylesheet, link, or script uses it.
 
 ## Checkpoint
 
-Run the page and select each navigation link. It should land on the section with the same ID. If a link does not move, compare its `href="#..."` value with the section's `id`; they must match exactly.
+Run the page and select each navigation link. It should target the section with the same ID. A short page may not need to scroll, so check the matching values in the source too. If a link does not move, compare its `href="#..."` value with the section's `id`; they must match exactly.
 
 ## Class vs. ID
 
@@ -82,15 +82,17 @@ Run the page and select each navigation link. It should land on the section with
 | Multiple per element | Yes | Only one id per element |
 | Use for | Styling groups | Unique landmarks, anchors |
 
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+
 ## Your Tasks
 
 Build the fair program in the starter:
 
-1. Add a `<nav>` with three anchor links: `#about`, `#projects`, `#contact`.
-2. Add three `<section>` elements, each with the matching `id`.
+1. Add a `<nav>` with readable links to `#about`, `#projects`, and `#contact`.
+2. Below the nav, add one `<section>` for each matching `id`. Each ID must occur only once on the page.
 3. Give each section a short `<h2>` label.
 4. Put at least one non-empty `<div class="card">` inside each section.
-5. Give one of those cards a second class (e.g., `class="card featured"`).
+5. Give one of those cards a second, distinct class name (for example, `class="card featured"`).
 
 ## Payoff
 

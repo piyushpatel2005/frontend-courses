@@ -13,26 +13,20 @@ hints:
   - "Add a separate <p> element for each signal detail."
 ---
 
-# Exercise: Build the Meridian Signal
+# Build the Meridian signal
 
-## Mission
+The survey team has reached a new landing site. Write an arrival signal for the bridge using the heading and paragraph tags you just saw. Choose new words rather than copying the demo's transmission.
 
-The signal card is empty. Rebuild it with the same heading and paragraph tags from the demo.
-
-## What you'll build
-
-A mission signal card with one title and two short details.
+The starter already contains the document setup. Edit `index.html` between `<body>` and `</body>`. Each paragraph needs its own opening `<p>` and closing `</p>`.
 
 ## Your Tasks
 
-1. Add an `<h1>` that includes **Meridian** or **Signal**.
-2. Add a `<p>` with a signal detail of your choice.
-3. Add a second `<p>` with a next-step message of your choice.
+1. Add exactly one `<h1>` that includes **Meridian** or **Signal**.
+2. Add a non-empty `<p>` with an arrival detail of your choice.
+3. Add a second non-empty `<p>` with the team's next step.
 
-## Checkpoint
+## Check your page
 
-Run the page. You should see one prominent heading followed by two paragraphs.
+Press **Run** to see a heading followed by two paragraphs. Press **Submit** to check each task. If text disappears or runs into the wrong element, compare your opening and closing tags.
 
-## Payoff
-
-The bridge has a readable signal card. The next lesson shows the complete document that holds it.
+The next demo explains the document setup that was supplied here.

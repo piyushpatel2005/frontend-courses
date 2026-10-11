@@ -24,7 +24,9 @@ test("profile portrait", () => {
 test("contact list", () => {
   const contact = document.querySelector(".card div.contact");
   assert.exists(contact, "Nest a div.contact in the card");
-  assert.equal(contact.querySelectorAll("ul > li").length >= 2, true, "Add two contact list items");
+  const items = Array.from(contact.querySelectorAll('ul > li'));
+  assert.equal(items.length >= 2, true, "Add Email and Phone contact list items");
+  assert.equal([/email/i, /phone/i].every(pattern => items.some(li => pattern.test(li.textContent))), true, "Include Email and Phone contact details");
 });
 
 test("contact labels and values", () => {
@@ -33,5 +35,5 @@ test("contact labels and values", () => {
     const spans = li.querySelectorAll("span");
     return spans.length >= 2 && spans[0].textContent.trim() && spans[1].textContent.trim();
   });
-  assert.equal(labeled.length >= 2, true, "Put a non-empty label and value in separate spans in two items");
+  assert.equal([/email/i, /phone/i].every(pattern => labeled.some(li => pattern.test(li.querySelector('span').textContent))), true, "Put each Email and Phone label and value in separate spans");
 });

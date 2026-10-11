@@ -1,28 +1,27 @@
-test("page has an iframe", () => {
-  assert.count("iframe", 1, "Add an <iframe> element to embed an external page");
+test("one iframe follows the heading", () => {
+  assert.equal(document.querySelectorAll("iframe").length, 1, "Add exactly one iframe");
+  const frame = document.querySelector("iframe"), heading = document.querySelector("h1");
+  assert.equal(Boolean(heading && heading.compareDocumentPosition(frame) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Place the frame after the heading");
 });
-
-test("iframe has a src attribute", () => {
-  var iframe = document.querySelector("iframe");
-  assert.equal(Boolean(iframe && /^https:\/\/[^/]+\/[^\s]+/.test(iframe.getAttribute("src") || "")), true, "Use a full HTTPS map embed URL in src");
+test("frame uses the supplied map embed address", () => {
+  const frame = document.querySelector("iframe");
+  assert.exists(frame, "Add the iframe first");
+  assert.equal(frame.hasAttribute("srcdoc"), false, "Remove srcdoc so the map src is used");
+  let url; try { url = new URL(frame.getAttribute("src")); } catch (_) {}
+  assert.equal(Boolean(url && url.origin === "https://www.openstreetmap.org" && url.pathname === "/export/embed.html" && url.searchParams.get("bbox") === "-0.15,51.50,-0.12,51.52" && url.searchParams.get("layer") === "mapnik"), true, "Use the supplied OpenStreetMap embed address, not a regular map page");
 });
-
-test("iframe has a title for accessibility", () => {
-  var iframe = document.querySelector("iframe");
-  assert.equal(Boolean(iframe && /map/i.test(iframe.getAttribute("title") || "")), true, "Describe the map in the iframe title");
+test("frame title identifies the hall map", () => {
+  const title = document.querySelector("iframe")?.getAttribute("title") || "";
+  assert.equal(/map/i.test(title) && /Riverlight Community Hall/i.test(title), true, "Name the map and Riverlight Community Hall in title");
 });
-
-test("iframe has width and height", () => {
-  var iframe = document.querySelector("iframe");
-  assert.equal(Boolean(iframe && Number(iframe.getAttribute("width")) > 0 && Number(iframe.getAttribute("height")) > 0), true, "Set positive width and height attributes on your iframe");
+test("frame reserves a positive whole-number size", () => {
+  const frame = document.querySelector("iframe");
+  assert.equal(["width", "height"].every(a => /^\d+$/.test(frame?.getAttribute(a) || "") && Number(frame?.getAttribute(a)) > 0), true, "Use positive whole-number width and height attributes");
 });
-
-test("iframe has a sandbox attribute", () => {
-  var iframe = document.querySelector("iframe");
-  assert.equal(Boolean(iframe && (iframe.getAttribute("sandbox") || "").split(/\s+/).includes("allow-scripts") && !(iframe.getAttribute("sandbox") || "").split(/\s+/).includes("allow-same-origin")), true, "Use sandbox with allow-scripts but not allow-same-origin");
+test("sandbox allows scripts only", () => {
+  const tokens = (document.querySelector("iframe")?.getAttribute("sandbox") || "").trim().split(/\s+/);
+  assert.equal(tokens.length === 1 && tokens[0] === "allow-scripts", true, "Use only allow-scripts in sandbox");
 });
-
-test("iframe loads lazily", () => {
-  const iframe = document.querySelector("iframe");
-  assert.equal(iframe && iframe.getAttribute("loading"), "lazy", "Add loading=\"lazy\" to the iframe");
+test("frame loads lazily", () => {
+  assert.equal(document.querySelector("iframe")?.getAttribute("loading"), "lazy", 'Add loading="lazy"');
 });

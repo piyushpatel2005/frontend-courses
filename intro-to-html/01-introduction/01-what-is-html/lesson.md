@@ -12,40 +12,30 @@ hints:
   - "This is a completed demo. Read the code and use the preview before moving to the exercise."
 ---
 
-# What Is HTML? See Tags in Action
+# What is HTML?
 
-## Course context
+HTML stands for HyperText Markup Language. It labels the parts of a page: a heading, a paragraph, a link. The browser reads those labels and displays the content.
 
-You are the web-systems trainee aboard the survey vessel **Meridian**. The crew is building a small mission site for a newly discovered world. Each section adds one useful capability to that site; this first one makes a signal readable.
+Our first examples come from the survey vessel **Meridian**. You will make short signal pages before trying separate community projects later in the course. You do not need to carry code between lessons.
 
-## Mission
-
-The bridge needs a short signal card. Run the completed example and compare the preview with the HTML that gives it structure.
-
-## What you'll see
-
-A completed `index.html` page with a browser-tab title, one main heading, and two short signal paragraphs.
-
-## Read the demo code
+## Read a tag pair
 
 ```html
-<h1>Meridian Signal</h1>
 <p>A transmission has arrived from the survey zone.</p>
-<p>The bridge crew is preparing a response.</p>
 ```
 
-- `<h1>` marks the main heading and browsers display it prominently by default.
-- `<p>` marks a paragraph; browsers separate paragraphs by default.
-- `<title>` labels the browser tab but is not visible inside the page body.
+`<p>` is the opening tag. `</p>` is the closing tag; notice the slash. The tags and the text between them make one **element**. Type the angle brackets as shown, and change the words between them when you want different content.
 
-## Try the preview
+The completed `index.html` in the editor uses `<h1>` for its main heading and two `<p>` elements for separate paragraphs. Tags tell the browser what each piece is, not just how large to draw it.
 
-Run the page. The first line is the prominent heading, and the two paragraphs appear as separate blocks. The `<title>` supplies **Meridian Signal** as the document title, although the embedded preview may not show a tab.
+## Run and compare
 
-## Checkpoint
+Press **Run**. Find the prominent “Meridian Signal” heading and the two paragraphs below it. In the editor, change only the heading's words, run again, then restore them. This is an ungraded demo.
 
-You should be able to connect every visible part of the preview to its tag. For a safe experiment, change the heading text, rerun the preview, then restore it. The document title may not appear as a tab in the embedded preview.
+The surrounding document has two parts:
 
-## Next
+![The html element contains head for page information and body for visible content.](html-document-structure.svg)
 
-Continue to **Exercise: Build the Meridian Signal** and recreate the same structure from an empty body.
+The `<title>` in the head names the document, while the `<h1>` in the body appears on the page. The embedded preview has no separate browser tab to display its title. We will read the rest of that document setup after your first exercise.
+
+Next, write a new arrival signal using the same heading-and-paragraph pattern.

@@ -20,27 +20,21 @@ hints:
   - "A comment starts with <!-- and ends with -->."
 ---
 
-# Exercise: Build a Complete HTML5 Page
+# Build a complete HTML5 page
 
-## Mission
+Give one Meridian crew member a profile. The demo described the crew as a group; this page should name a person and explain their job.
 
-You have inspected a complete mission profile. The starter already has the doctype, English language, head, and body; fill in the missing content without removing that frame.
-
-## What you'll build
-
-A complete HTML5 mission profile with a meaningful tab title, an English language declaration, visible profile content, and a source-only note.
+The doctype, English language attribute, character encoding, head, and body are supplied in `index.html`. Leave that frame in place. Your work is to fill the empty title and body, not to rebuild the supplied tags.
 
 ## Your Tasks
 
-1. Give the existing `<title>` element a meaningful, non-empty title.
-2. Add one non-empty `<h1>` inside `<body>` with a crew member's name.
-3. Add one non-empty `<p>` inside `<body>` describing that crew member.
-4. Add an HTML comment above the `<h1>`.
+1. Give the existing `<title>` a non-empty document title.
+2. Add exactly one non-empty `<h1>` inside `<body>` with a crew member's name.
+3. Add a non-empty `<p>` inside `<body>` describing that crew member.
+4. Add a non-empty HTML comment immediately above the `<h1>`.
 
-## Checkpoint
+## Check your page
 
-Run the page. The document title is in the source (the embedded preview may not show a browser tab); the preview should show only the heading and paragraph. Open the source to confirm that the comment is present but not visible in the page.
+Press **Run**. You should see the name and description, but not the comment. Read the title in the source; the embedded preview has no separate tab. Press **Submit** to check your changes.
 
-## Payoff
-
-You have rebuilt the full structure behind a browser-ready HTML page. The next module expands the content you can place inside its body.
+You now know where page information and visible content belong. The next module gives that content a clearer outline.

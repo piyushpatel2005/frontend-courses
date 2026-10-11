@@ -34,7 +34,9 @@ A completed response form with a multi-line textarea, a preselected role, and ba
 <datalist id="bases">...</datalist>
 ```
 
-Use a textarea for longer words, a select for a fixed choice, and a datalist for suggestions.
+Use a textarea for multi-line text, a select for a fixed choice, and a datalist for suggestions. `rows` sets the textarea’s visible height, not a maximum answer length. A select normally displays its first option; `selected` lets you choose a different default.
+
+The input’s `list` must match the datalist’s `id`. Unlike a select, it still accepts text that is not in the suggestions. Give each submitted control a `name`; the datalist itself is only a source of suggestions.
 
 ## Try the preview
 
@@ -42,7 +44,7 @@ Run the demo. The briefing box allows multiple lines; Rescue is already selected
 
 ## Checkpoint
 
-Use the preview to connect each visible result to the HTML that created it. This is a completed demonstration, so you do not need to edit the code.
+Type two lines in the briefing, choose Scout, and type a base not listed in the suggestions. All three should remain editable. Suggestion popups vary by browser; the typed base is allowed even if no popup appears. This page does not send a reply.
 
 ## Next
 

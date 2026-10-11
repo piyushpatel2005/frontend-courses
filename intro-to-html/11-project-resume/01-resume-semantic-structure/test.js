@@ -1,29 +1,39 @@
-test("resume introduces Sam in its header", () => {
-  assert.count("header", 1, "Add one <header> for the resume");
-  const header = document.querySelector("header");
-  assert.equal(Boolean(header.querySelector("h1")?.textContent.trim() && header.querySelector("p")?.textContent.trim()), true, "Add Sam’s name and role in the header");
+const text = el => (el?.textContent || "").trim();
+const nonemptyLink = a => Boolean(text(a) && (a.getAttribute("href") || "").trim() && a.getAttribute("href") !== "#");
+const sections = () => [...document.querySelectorAll("body > main > section")];
+const heading = s => text(s?.querySelector(":scope > h2")).toLowerCase();
+test("header introduces Sam and the role", () => {
+  assert.equal(document.querySelectorAll("header").length, 1, "Use one page header");
+  const header = document.querySelector("body > header");
+  assert.equal(text(header?.querySelector(":scope > h1")), "Sam Rivera", "Put Sam Rivera in the header h1");
+  const name = header?.querySelector("h1"), role = header?.querySelector(":scope > p");
+  assert.equal(Boolean(text(role) === "Volunteer Coordinator" && name.compareDocumentPosition(role) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Put Volunteer Coordinator in a paragraph beneath the name");
 });
-
-test("resume has one main region", () => {
-  assert.count("main", 1, "Add one <main> for resume content");
+test("one main follows the header", () => {
+  assert.equal(document.querySelectorAll("main").length, 1, "Use one main region");
+  const main = document.querySelector("body > main"), header = document.querySelector("body > header");
+  assert.equal(Boolean(main && header && header.compareDocumentPosition(main) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Put main after header at page level");
 });
-
-test("main has three headed sections in order", () => {
-  const sections = Array.from(document.querySelectorAll("main > section"));
-  assert.equal(sections.length >= 3, true, "Add three sections inside main");
-  const headings = sections.slice(0, 3).map(s => s.querySelector("h2")?.textContent.trim().toLowerCase());
-  assert.equal(headings.join("|"), "professional summary|skills|work experience", "Head the sections Summary, Skills, and Work Experience in order");
-  assert.equal(Boolean(sections[0].querySelector("p")?.textContent.trim() && sections[2].querySelector("p")?.textContent.trim()), true, "Describe the summary and work experience");
+test("first section introduces Sam's work", () => {
+  const section = sections()[0];
+  assert.equal(heading(section), "professional summary", "Head the first main section Professional Summary");
+  assert.equal(Boolean(text(section?.querySelector(":scope > p"))), true, "Describe Sam's work in that section");
 });
-
-test("skills section contains a list", () => {
-  const skills = Array.from(document.querySelectorAll("main > section")).find(s => s.querySelector("h2")?.textContent.trim().toLowerCase() === "skills");
-  const list = skills?.querySelector("ul");
-  assert.exists(list, "Add an unordered list inside the Skills section");
-  assert.equal(Array.from(list.querySelectorAll("li")).filter(li => li.textContent.trim()).length >= 3, true, "List at least three distinct skills");
+test("second section is headed Skills", () => {
+  assert.equal(heading(sections()[1]), "skills", "Add the Skills section after Professional Summary");
 });
-
-test("resume ends with contact details", () => {
-  assert.count("footer", 1, "Add one <footer> for contact details");
-  assert.equal(Boolean(document.querySelector("footer")?.textContent.trim()), true, "Write contact details in the footer");
+test("skills are separate unordered list items", () => {
+  const skills = sections().find(s => heading(s) === "skills");
+  const items = [...(skills?.querySelectorAll(":scope > ul > li") || [])].map(el => text(el).toLowerCase()).filter(Boolean);
+  assert.equal(new Set(items).size >= 3, true, "List at least three different nonempty skills in a ul inside Skills");
+});
+test("third section describes work experience", () => {
+  const section = sections()[2];
+  assert.equal(heading(section), "work experience", "Add Work Experience after Skills");
+  assert.equal(Boolean(text(section?.querySelector(":scope > p"))), true, "Describe the experience inside its section");
+});
+test("footer follows main with Sam's contact address", () => {
+  assert.equal(document.querySelectorAll("footer").length, 1, "Use one footer");
+  const footer = document.querySelector("body > footer"), main = document.querySelector("body > main");
+  assert.equal(Boolean(text(footer).includes("sam.rivera@example.com") && main && main.compareDocumentPosition(footer) & Node.DOCUMENT_POSITION_FOLLOWING), true, "Put Sam's contact address in a page footer after main");
 });

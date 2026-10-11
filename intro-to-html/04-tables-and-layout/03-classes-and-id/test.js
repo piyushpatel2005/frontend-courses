@@ -10,7 +10,8 @@ test("nav links to three fair stops", () => {
 
 test("each stop has a unique section ID", () => {
   ["about", "projects", "contact"].forEach(id => {
-    assert.count(`body section#${id}`, 1, `Add one <section id="${id}">`);
+    assert.equal(document.querySelectorAll(`[id="${id}"]`).length, 1, `Use the ${id} ID exactly once`);
+    assert.exists(document.querySelector(`body nav ~ section#${id}`), `Add <section id="${id}"> below the nav`);
   });
 });
 
@@ -31,6 +32,6 @@ test("each stop contains a reusable card", () => {
 });
 
 test("one card carries a second class", () => {
-  const cards = document.querySelectorAll("section div.card");
+  const cards = document.querySelectorAll("section#about div.card, section#projects div.card, section#contact div.card");
   assert.equal(Array.from(cards).some(card => card.classList.length >= 2), true, "Give a .card a second class");
 });

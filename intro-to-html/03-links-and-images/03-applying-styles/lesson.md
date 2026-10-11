@@ -29,7 +29,7 @@ Give a neighborhood book-exchange notice its first bit of visual hierarchy. Try 
 
 A book-exchange notice with three style scopes: an inline heading color, an internal paragraph rule, and an external background color.
 
-HTML gives you three ways to apply CSS to a page. Knowing the difference helps you choose the right one.
+CSS controls presentation. A declaration such as `color: blue;` has a property (`color`), a colon, a value (`blue`), and a semicolon. In a stylesheet, a selector such as `p` chooses the elements, and braces surround their declarations. `px` means pixels. You will use only color, font size, and background color here; the CSS course covers layout later.
 
 ## 1. Inline styles
 
@@ -98,15 +98,17 @@ h1 {
 |--------|-------|----------|
 | Inline | One element | Quick overrides, dynamic JS styles |
 | `<style>` tag | One page | Small demos, email templates |
-| External file | Whole site | All real projects |
+| External file | Whole site | Styles shared by several pages |
 
 ## Checkpoint
 
-Preview after each change. The heading color should affect only the `<h1>`, the internal rule should change paragraph text, and the external stylesheet should change the page background. If the background stays unchanged, check that the stylesheet link points to `style.css`.
+Preview after each change. The heading color should affect only the `<h1>`, the internal rule should change paragraph text, and the external stylesheet should change the page background. This preview injects `style.css` automatically, so removing the `<link>` does not demonstrate a broken connection here. Keep the supplied link: an ordinary standalone page needs it. For this exercise, check the CSS rule and selected editor tab if a style does not change.
+
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
 
 ## Your Tasks
 
-The starter `index.html` already links to `style.css`. Edit that file for the last step:
+The starter `index.html` already links to `style.css`. Use the HTML tab for steps 1–2 and the CSS tab for step 3:
 
 1. Add an inline style to the `<h1>` that sets `color` to any colour you choose.
 2. Add a `<style>` block in `<head>` that styles `p` — change the `font-size` to at least `16px`.

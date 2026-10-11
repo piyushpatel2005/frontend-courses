@@ -41,11 +41,11 @@ A table is made of rows. Put each row in `<tr>`, then use `<td>` for ordinary da
 ```html
 <table>
     <tr>
-        <th scope="col">Station</th>
+        <th scope="col">Workshop</th>
         <th scope="col">Time</th>
     </tr>
     <tr>
-        <td>Bike repair</td>
+        <td>Pottery</td>
         <td>10:00</td>
     </tr>
 </table>
@@ -60,23 +60,25 @@ A table is made of rows. Put each row in `<tr>`, then use `<td>` for ordinary da
 ```html
 <table>
     <thead>
-        <tr><th scope="col">Station</th><th scope="col">Slots</th><th scope="col">Host</th></tr>
+        <tr><th scope="col">Workshop</th><th scope="col">Slots</th><th scope="col">Host</th></tr>
     </thead>
     <tbody>
-        <tr><td>Bike repair</td><td>2</td><td>Mika</td></tr>
-        <tr><td>Book mending</td><td>3</td><td>Ren</td></tr>
+        <tr><td>Pottery</td><td>2</td><td>Mika</td></tr>
+        <tr><td>Painting</td><td>3</td><td>Ren</td></tr>
     </tbody>
     <tfoot>
-        <tr><td colspan="2">Open stations</td><td>2</td></tr>
+        <tr><td colspan="2">Open workshops</td><td>2</td></tr>
     </tfoot>
 </table>
 ```
 
-`colspan="2"` lets the footer label cover two columns. `rowspan="2"` works the same way down across two rows.
+`colspan="2"` lets the footer label cover two columns. In a three-column row, one ordinary cell plus one cell spanning two columns fills the row. Do not keep three cells and also make one span two: that would create four column slots. `rowspan="2"` spans two rows; cells in the next row must leave room for that occupied slot. You do not need rowspan in this exercise.
 
 ## Checkpoint
 
 Run the page. You should see a header row above at least two schedule rows, plus one wider cell spanning columns. If the columns shift, count the cells in every row and check the `colspan` value.
+
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
 
 ## Your Tasks
 
@@ -84,8 +86,8 @@ Build the repair café’s two-day station schedule:
 
 1. Add one `<table>` element.
 2. Add a `<thead>` row with three `<th scope="col">` headers: time, day, and station.
-3. Add a `<tbody>` with at least **2 rows** of schedule data, using `<td>` cells for their times, days, and stations.
-4. Add one `<td colspan="2">` to a schedule row so its content spans two columns.
+3. Add a `<tbody>` with at least two schedule rows. Give each row three non-empty `<td>` cells: time, day, and station.
+4. Add a separate announcement row at the end of `<tbody>`: one non-empty `<td>` for its time, followed by one non-empty `<td colspan="2">` for its message.
 
 ## Payoff
 

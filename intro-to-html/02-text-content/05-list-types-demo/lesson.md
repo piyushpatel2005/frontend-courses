@@ -33,7 +33,7 @@ A completed loadout using an ordered list, unordered list, and description list.
 <dl><dt>Beacon sight</dt><dd>Locates a nearby distress signal.</dd></dl>
 ```
 
-Use `<ol>` for a sequence, `<ul>` when order does not matter, and `<dl>` for terms and definitions.
+Use `<ol>` for a sequence and `<ul>` when order does not matter. Put each item inside an `<li>` within its list. A `<dl>` holds a description list: each `<dt>` names a term and the following `<dd>` explains it. Indent the inner elements to make those relationships easy to see.
 
 ## Try the preview
 
@@ -41,8 +41,8 @@ Run the page. The launch sequence is numbered, the rescue kit is bulleted, and e
 
 ## Checkpoint
 
-Use the preview to connect each visible result to the HTML that created it. For a safe experiment, change the `<ol>` to `<ul>`, rerun to see the numbering turn into bullets, then restore it.
+Use the preview to connect each visible result to the HTML that created it. For a safe experiment, change both the opening `<ol>` and closing `</ol>` to `<ul>` and `</ul>`, rerun to see the numbering turn into bullets, then restore it.
 
 ## Next
 
-Continue to **Exercise: Build a Rescue Loadout**. You will recreate the same idea from a smaller starter file.
+Continue to **Exercise: Build a Crew Member Loadout**. You will recreate the same idea from a smaller starter file.

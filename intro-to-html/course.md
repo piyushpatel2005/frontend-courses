@@ -41,20 +41,30 @@ modules:
     sort_order: 11
 ---
 
-# HTML5
+# Build your first web pages
 
-HTML (HyperText Markup Language) is the skeleton of every web page you've ever visited. It provides the structure and meaning — headings, paragraphs, links, images, forms, and more — that browsers render into the pages you see. Everything runs directly in your browser with no installs required.
+HTML describes the content of a web page and the meaning of its parts. You mark a line as a heading, give a link a destination, or connect a form label to its input. The browser turns that markup into the page you can see and use. You do not need programming experience or a local installation to start these lessons.
 
-You'll start with small signal pages, practise each new element on a different page, and bring those pieces together in a contributor card, a community-hall contact form, and a resume. These are separate practice projects, not one page you must keep editing throughout the course.
+You'll begin with small signal pages, practise each new element on a different example, and bring those pieces together in a contributor card, a community-hall contact form, and a resume. These are separate projects. Within a project's sequence, the next starter supplies the earlier work so you can focus on the new step.
+
+## How to work through a lesson
+
+- Read the short explanation and compare its example with the preview.
+- In a demo, try the suggested small edit and notice what changes. A demo shows the pattern; the following exercise asks you to use it on different content.
+- In an exercise, edit the named file and complete one numbered task at a time. Use Run to inspect your page and Submit to check your work.
+- Read a failed check as a specific thing to inspect. A page can look right while a label, link, or heading relationship still needs fixing.
+- Finish each section with its quiz. In a project, use the earlier examples as a reference rather than copying a whole answer.
 
 ## What you will learn
 
-- How browsers read and render HTML documents.
-- Core tags: headings, paragraphs, lists, links, images, tables, and forms.
-- How to group content with `div` and `span`, and how to reach for semantic tags instead.
-- Forms and all the different input types the browser natively supports.
-- How to embed video, audio, and external pages with iframes.
-- Modern semantic HTML5 elements that make pages more accessible and SEO-friendly.
+- How tags, elements, attributes, and a complete HTML document fit together.
+- How to organize headings, paragraphs, lists, links, images, and data tables.
+- When to use `div` and `span`, and when an element with a more specific meaning is a better choice.
+- How to label common form controls, group choices, and use the browser's built-in validation.
+- How to include video, audio, and embedded pages, with accessible text and clear expectations about external content.
+- How semantic elements give a page a useful structure for people and assistive technology.
+
+HTML supplies structure and meaning. The small styling lesson introduces CSS, but detailed visual design belongs in the next course. A form can collect fields and validate them in the browser; delivering a message needs a separate service, which these exercises do not build. Do not enter personal information into practice forms.
 
 ## Course outline
 

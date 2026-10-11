@@ -1,24 +1,31 @@
-test("form has a destination", () => {
-  const form = document.querySelector("form[action]");
-  assert.exists(form, "Add a form with a non-empty action attribute");
-  assert.notEqual(form.getAttribute("action").trim(), "", "Give the form an action value");
+function hasLabel(control) {
+  return !!control && !!control.id && document.querySelectorAll('[id]').length > 0 &&
+    Array.from(document.querySelectorAll('[id]')).filter(el => el.id === control.id).length === 1 &&
+    Array.from(control.labels || []).some(label => label.control === control && label.textContent.trim());
+}
+function enabled(control) { return !!control && !control.matches(':disabled'); }
+function explicitLabel(control) { return hasLabel(control) && Array.from(control.labels).some(label => label.htmlFor === control.id && label.textContent.trim()); }
+function labeled(control) {
+  return Array.from(control.labels || []).some(label => label.control === control && label.textContent.trim());
+}
+function choices(type) { return Array.from(document.querySelectorAll(`form input[type="${type}"]`)).filter(el => !el.matches(':disabled')); }
+function distinctValues(items) { return items.every(el => el.getAttribute('value')?.trim()) && new Set(items.map(el => el.value)).size === items.length; }
+test("practice destination", () => {
+  const form = document.querySelector('form[action]');
+  assert.exists(form, "Add a form with a practice action");
+  const action = form.getAttribute('action').trim();
+  assert.equal(/^(\/(?!\/)[^\s]+|https:\/\/[^\s]+)$/.test(action), true, "Use a practice path such as /emergency-beacon or an HTTPS URL");
 });
-
-test("email field has a connected label", () => {
-  const email = document.querySelector('input[type="email"]');
-  assert.exists(email, "Add an email input");
-  assert.exists(email.id, "Give the email input an id");
-  assert.exists(document.querySelector(`label[for="${email.id}"]`), "Add a label whose for value matches the email input id");
+test("labeled contact email", () => {
+  const input = document.querySelector('form input[type="email"]');
+  assert.equal(enabled(input) && explicitLabel(input) && !!input.name.trim(), true, "Put a named email input and its connected visible label in the form");
 });
-
-test("form has radio choices and a submit button", () => {
-  const radios = document.querySelectorAll('input[type="radio"]');
-  assert.equal(radios.length >= 2, true, "Add at least two radio inputs");
-  assert.notEqual(radios[0].name, "", "Give the radio inputs a shared name");
-  assert.equal(Array.from(radios).every((radio) => radio.name === radios[0].name), true, "Use the same name for both radio choices");
-  assert.equal(Array.from(radios).every(radio => radio.labels && Array.from(radio.labels).some(label => label.textContent.trim())), true, "Label each response channel");
+test("response channel group", () => {
+  const inputs = choices('radio');
+  assert.equal(inputs.length >= 2 && !!inputs[0].name.trim() && inputs.every(i => i.name === inputs[0].name && i.form === inputs[0].form && labeled(i)) && distinctValues(inputs), true, "Add labeled channels with distinct values and one shared name inside the form");
 });
-
-test("form can submit", () => {
-  assert.exists(document.querySelector('form button[type="submit"], form input[type="submit"]'), "Put a submit button in the form");
+test("send button", () => {
+  const button = document.querySelector('form button[type="submit"], form input[type="submit"]');
+  assert.equal(enabled(button), true, "Add a submit button inside the form");
+  assert.exists((button.textContent || button.value).trim(), "Give the button action text");
 });

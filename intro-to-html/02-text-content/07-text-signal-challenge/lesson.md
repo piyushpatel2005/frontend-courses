@@ -30,11 +30,13 @@ A compact rescue signal with one heading, a status paragraph, and a three-item g
 
 When you preview the card, you should see one main heading, a readable paragraph, and a bulleted list with three or more items.
 
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+
 ## Your Tasks
 
 1. Add exactly one `<h1>` with non-empty text.
 2. Add a `<p>` with at least 20 characters of visible text.
-3. Add a `<ul>` containing at least three `<li>` items.
+3. Add a `<ul>` containing at least three non-empty `<li>` items.
 
 ## Payoff
 

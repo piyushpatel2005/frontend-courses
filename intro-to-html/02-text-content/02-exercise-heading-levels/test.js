@@ -2,7 +2,7 @@ test("signal source has an h3 below the first h2", () => {
   const h3 = document.querySelector("body h3");
   assert.exists(h3, "Add a <h3> signal source");
   assert.notEqual(h3.textContent.trim(), "", "Name the signal source");
-  assert.equal(h3.previousElementSibling?.tagName, "H2", "Put <h3> below the first <h2>");
+  assert.equal(h3.previousElementSibling, document.querySelector("body h2"), "Put <h3> below the first <h2>");
 });
 
 test("location has an h4 after h3", () => {

@@ -1,5 +1,5 @@
 test("rescue signal has one main heading", () => {
-  assert.count("body h1", 1, "Add exactly one non-empty <h1> in the page body");
+  assert.equal(document.querySelectorAll("body h1").length, 1, "Add exactly one non-empty <h1> in the body");
   assert.notEqual(document.querySelector("body h1").textContent.trim(), "", "Give the heading text");
 });
 
@@ -10,5 +10,9 @@ test("rescue signal reports the status", () => {
 });
 
 test("rescue signal has three list items", () => {
-  assert.equal(document.querySelectorAll("body ul li").length >= 3, true, "Add a bulleted list with at least three items");
+  const lists = Array.from(document.querySelectorAll("body ul"));
+  assert.equal(lists.some(list => {
+    const items = Array.from(list.children).filter(item => item.tagName === "LI");
+    return items.length >= 3 && items.every(item => item.textContent.trim());
+  }), true, "Add one bulleted list with at least three non-empty items");
 });

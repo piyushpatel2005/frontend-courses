@@ -26,12 +26,12 @@ A mission log using paragraphs plus `<em>`, `<strong>`, `<b>`, `<i>`, `<u>`, `<s
 
 ```html
 <p><strong>Priority:</strong> keep the <em>survey channel</em> open.</p>
-<p><b>Legacy bold</b>, <i>legacy italic</i>, and <u>underlined text</u> are available.</p>
+<p>Keyword: <b>beacon</b>. Vessel: <i>Meridian</i>. Spelling to review: <u>recieve</u>.</p>
 <p><small>Sensor note:</small> H<sub>2</sub>O and E = mc<sup>2</sup>.</p>
 <p><mark>Review this reading.</mark> <del>Old course</del> <ins>New course</ins></p>
 ```
 
-`<em>` and `<strong>` describe emphasis and importance. `<b>`, `<i>`, and `<u>` are presentation-oriented tags retained from older HTML; they remain valid, but modern pages normally use **CSS** when the goal is purely visual bold, italic, or underlined styling. Use semantic tags when the text itself is important or emphasized.
+`<em>` marks stress emphasis and `<strong>` marks importance. They usually look italic and bold. `<b>` draws attention without adding importance, `<i>` sets off text such as a technical term or a ship name, and `<u>` marks an annotation such as a spelling error. These tags have meanings too; use CSS when you only want a visual effect.
 
 `<small>`, `<sub>`, and `<sup>` still express useful text relationships: a note, subscript, and superscript. `<mark>`, `<del>`, and `<ins>` show highlighted, removed, and added text.
 
@@ -41,8 +41,8 @@ Run the page. Notice that every example remains inside an ordinary paragraph; th
 
 ## Checkpoint
 
-Try removing the `<br>` from the first paragraph and rerun to see how the lines flow, then restore it. Notice which tags carry meaning (`<em>`, `<strong>`, `<del>`, `<ins>`) and which visual effects are usually better controlled with CSS (`<b>`, `<i>`, `<u>`).
+Try removing the `<br>` from the first paragraph and rerun to see how the lines flow, then restore it. The `<br>` creates a line break inside the paragraph; it has no closing tag. The other tags wrap the exact words whose meaning you want to mark.
 
 ## Next
 
-Continue to **Exercise: Write a Mission Log** and use paragraphs, emphasis, strong text, a line break, and a divider yourself.
+Continue to **Exercise: Write Meridian's Survey Notes** and use paragraphs, emphasis, strong text, a line break, and a divider yourself.

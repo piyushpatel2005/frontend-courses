@@ -1,24 +1,32 @@
-test("email action matches card", () => {
-  const link = document.querySelector('.card nav a[href="mailto:riya@example.com"]');
-  assert.exists(link, "Link to the card's email address from the nav");
-  assert.notEqual(link.textContent.trim(), "", "Name the email action");
+function contactValue(kind) {
+  const items = Array.from(document.querySelectorAll('.card .contact li'));
+  const item = items.find(li => kind.test(li.querySelector('span')?.textContent || ''));
+  return item?.querySelectorAll('span')[1]?.textContent.trim() || '';
+}
+function actionLinks() { return Array.from(document.querySelectorAll('.card nav a:not(.contact-invitation)')); }
+test("email matches card", () => {
+  const email = contactValue(/email/i);
+  assert.exists(email, "Keep an Email label and address in the contact list");
+  const link = actionLinks().find(a => a.getAttribute('href')?.toLowerCase() === 'mailto:' + email.toLowerCase());
+  assert.exists(link, "Link to the email shown on the card");
+  assert.exists(link.textContent.trim(), "Name the email action");
 });
-
-test("phone action matches card", () => {
-  const link = document.querySelector('.card nav a[href="tel:+15550142"]');
-  assert.exists(link, "Add a valid tel link for the card's +1 555 0142 number");
-  assert.notEqual(link.textContent.trim(), "", "Name the call action");
+test("phone matches card", () => {
+  const phone = contactValue(/phone/i).replace(/[^0-9]/g, '');
+  assert.exists(phone, "Keep a Phone label and number in the contact list");
+  const link = actionLinks().find(a => /^tel:\+?[0-9]+$/.test(a.getAttribute('href') || '') && a.getAttribute('href').replace(/[^0-9]/g, '') === phone);
+  assert.exists(link, "Use tel: with the card's phone digits, optionally starting with +");
+  assert.exists(link.textContent.trim(), "Name the phone action");
 });
-
-test("safe external portfolio action", () => {
-  const link = Array.from(document.querySelectorAll('.card nav a[target="_blank"]'))
-    .find(a => /^https:\/\//.test(a.getAttribute("href") || "") && /portfolio|work|linkedin/i.test(a.textContent));
-  assert.exists(link, "Add an HTTPS portfolio link opening in a new tab");
-  assert.equal(link.relList.contains("noopener") && link.relList.contains("noreferrer"), true, "Protect the new tab with rel=\"noopener noreferrer\"");
+test("portfolio in a new tab", () => {
+  const link = actionLinks().find(a => a.target === '_blank' && /^https:\/\/[^\s]+$/.test(a.getAttribute('href') || ''));
+  assert.exists(link, "Add an HTTPS portfolio link with target=_blank");
+  assert.exists(link.textContent.trim(), "Name the portfolio destination");
+  assert.equal(link.relList.contains('noopener') && link.relList.contains('noreferrer'), true, "Add both noopener and noreferrer rel tokens");
 });
-
-test("distinct call to action", () => {
-  const links = Array.from(document.querySelectorAll('.card nav a'));
-  const cta = links.find(a => /ask|contact|book|hire|work together/i.test(a.textContent.trim()) && a.getAttribute("href") && a !== links[0]);
-  assert.exists(cta, "Add a separate linked invitation to get in touch");
+test("contact invitation", () => {
+  const link = document.querySelector('.card nav a.contact-invitation');
+  assert.exists(link, "Add a contact-invitation link");
+  assert.equal(link.textContent.trim().split(/\s+/).length >= 2, true, "Use a descriptive invitation of at least two words");
+  assert.equal(/^(mailto:[^\s@]+@[^\s@]+|tel:\+?[0-9]+|https:\/\/[^\s]+)$/.test(link.getAttribute('href') || ''), true, "Give the invitation a mailto, tel, or HTTPS destination, not #");
 });

@@ -18,6 +18,7 @@ test("nav has an anchor link to #about", () => {
 });
 
 test("about section follows the nav", () => {
+  assert.equal(document.querySelectorAll('[id="about"]').length, 1, "Use the about ID only once");
   assert.exists(document.querySelector("nav ~ section#about"), 'Add <section id="about"> below <nav>');
 });
 

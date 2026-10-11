@@ -10,14 +10,14 @@ seo_keywords: [HTML links, mailto link, tel link, external links, HTML visiting 
 validationRules: []
 hints:
   - "Use anchor links for email (mailto:) and phone (tel:)."
-  - "External links should open in new tab with target=\"_blank\"."
+  - "For this portfolio link, use target=\"_blank\" to request a new tab."
 ---
 
 # Project 1: Visiting Card (Links and Actions)
 
 ## Mission
 
-Riya’s card already shows her portrait and contact list from the previous lesson. Now make those details actionable. The contributor card is useful only if a visitor can act on it. Add direct ways to email, call, and view the contributor's work, plus one clear next step. In the preview, each action should look like a link a visitor can use.
+Riya’s card already shows her portrait and contact list from the previous lesson. Add ways to email her, call her, and view her work. Keep the existing card; edit only the empty action area in `index.html`. If you brought your own contributor forward, use that person’s email address and phone number.
 
 ## What you'll build
 
@@ -25,20 +25,20 @@ A visiting card with four usable action links: email (mailto:), phone (tel:), ex
 
 ## Link to an action
 
-An anchor can open an email app or phone app when its `href` starts with `mailto:` or `tel:`.
+An anchor can open an email app or phone app when its `href` starts with `mailto:` or `tel:`. For this exercise, write the phone link with digits and an optional leading `+`; leave spaces and punctuation in the visible contact list, not in the link.
 
 ```html
 <a href="mailto:samira@example.com">Email Samira</a>
-<a href="tel:555-0100">Call Samira</a>
+<a href="tel:5550100">Call Samira</a>
 ```
 
-For a portfolio on another site, use its complete URL. `target="_blank"` opens it in a new tab.
+For a portfolio on another site, use its complete URL. Links normally stay in the same tab; this project asks you to request a new tab with `target="_blank"`. `rel="noopener noreferrer"` prevents access to the opening page and omits referrer information.
 
 ```html
-<a href="https://example.com" target="_blank">View portfolio</a>
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">View portfolio</a>
 ```
 
-Use words that describe the destination or action. A call-to-action can still be an ordinary anchor; its label should tell the visitor what happens next.
+The supplied `<nav>` groups the action links; `aria-label` gives that group a name for assistive technology. You will study these semantic elements later. Use words that describe the destination or action. A call-to-action can still be an ordinary anchor; its label should tell the visitor what happens next.
 
 ```html
 <a href="mailto:samira@example.com">Ask about a map project</a>
@@ -52,9 +52,9 @@ Run the page and inspect the links. The email link should begin with `mailto:`, 
 
 1. In the supplied card’s `<nav>`, add an email link whose `mailto:` address matches the contact list.
 2. Add a phone link whose `tel:` number matches the contact list (digits, optionally starting with `+`).
-3. Add an external portfolio link that opens in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
-4. Add a distinct call-to-action link with a descriptive invitation and a real `href`, such as an email inquiry.
+3. Add an HTTPS portfolio link that opens in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
+4. Add a separate invitation link with `class="contact-invitation"`, an invitation of at least two words, and a non-empty `mailto:`, `tel:`, or HTTPS destination.
 
 ## Payoff
 
-The visiting card now turns a quick introduction into useful, visible actions.
+Submit to check your links. You do not need to open an email or phone app or contact anyone. The example.com portfolio is a placeholder, not Riya’s real website.

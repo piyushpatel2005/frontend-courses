@@ -13,7 +13,7 @@ seo_keywords:
   - image accessibility
 validationRules: []
 hints:
-  - "The <img> tag is self-closing: <img src=\"path/to/image.jpg\" alt=\"description\" />"
+  - "The <img> tag is a void element with no closing tag: <img src=\"path/to/image.jpg\" alt=\"description\" />"
   - "alt text is not optional — it's read aloud by screen readers and shown when the image fails to load."
   - "Use width and height attributes to reserve space and prevent layout shifts."
   - "For decorative images that add no meaning, use alt=\"\" (empty string) so screen readers skip them."
@@ -81,7 +81,7 @@ The `<img>` tag puts an image on a page. It is a **void** element with no conten
 
 Setting `width` and `height` lets the browser reserve space before the image loads. That prevents distracting layout jumps.
 
-> **Tip:** For responsive images, omit the pixel attributes and use CSS `width: 100%; height: auto;` instead.
+Keep width and height in the image's proportions. Later, CSS such as `max-width: 100%; height: auto;` can shrink an image to fit its container while the HTML dimensions still describe its aspect ratio.
 
 ## Linking an image
 
@@ -95,13 +95,17 @@ Wrap an `<img>` in an `<a>` tag to make it a clickable link:
 
 ## Checkpoint
 
-Preview the page. If remote images cannot load in the embedded preview, read their descriptive alt text and check your markup; the tests do not require a network connection. Every meaningful image should have a useful `alt` description; at least one should reserve visible space with `width` and `height`, and clicking one should follow its link.
+Preview the page. If remote images cannot load in the embedded preview, read their descriptive alt text and check your markup; the tests do not require a network connection. Every meaningful image should have a useful `alt` description; at least one should reserve visible space with `width` and `height`, and one image should be inside a link. You do not need to open an external page to complete the exercise.
+
+Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+
+The relative filenames above are syntax examples, not files supplied here. For this exercise, you may use the public Wikimedia image URL shown above twice with different widths, or choose two public HTTPS images. Remote files may be unavailable; the checks validate markup, not successful downloads or the accuracy of a description. Read your alt text against the image yourself.
 
 ## Your Tasks
 
-1. Add at least **two** `<img>` elements using public image URLs.
+1. Add at least two `<img>` elements with public HTTPS image URLs in `src`.
 2. Give **both images** non-empty, descriptive `alt` text.
-3. Add `width` and `height` attributes to at least one `<img>`.
+3. Give at least one image positive whole-number `width` and `height` attributes, without `px`.
 4. Wrap one image in an `<a href="https://...">` so it links to a useful page.
 
 ## Payoff

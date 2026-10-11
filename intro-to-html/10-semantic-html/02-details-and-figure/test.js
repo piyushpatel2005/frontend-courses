@@ -1,32 +1,22 @@
-test("page has at least 2 details elements", () => {
-  var details = document.querySelectorAll("details");
-  assert.equal(details.length >= 2, true, "Add at least 2 <details> elements for your FAQ");
-  Array.from(details).forEach(d => assert.equal(Boolean(d.querySelector("p")?.textContent.trim()), true, "Each FAQ needs answer text"));
+const text = el => (el?.textContent || "").trim();
+const nonemptyLink = a => Boolean(text(a) && (a.getAttribute("href") || "").trim() && a.getAttribute("href") !== "#");
+test("two separate answers use details", () => {
+  const items = [...document.querySelectorAll("details")];
+  assert.equal(items.length, 2, "Add two separate details elements");
+  assert.equal(items.every(d => !d.parentElement.closest("details") && text(d.querySelector(":scope > p"))), true, "Give each separate details element its own answer paragraph");
 });
-
-test("each details has a summary", () => {
-  var details = document.querySelectorAll("details");
-  var allHaveSummary = Array.from(details).every(function(d) {
-    return d.querySelector("summary") !== null;
-  });
-  assert.equal(details.length >= 2 && allHaveSummary && Array.from(details).every(d => Boolean(d.querySelector("summary")?.textContent.trim())), true, "Give each FAQ a nonempty summary");
+test("each summary is its details first element", () => {
+  const items = [...document.querySelectorAll("details")];
+  assert.equal(items.length === 2 && items.every(d => d.firstElementChild?.tagName === "SUMMARY" && text(d.firstElementChild)), true, "Put a readable summary first inside each details");
 });
-
-test("one details is open by default", () => {
-  var open = document.querySelector("details[open]");
-  assert.exists(open, "Add the open attribute to one <details> to expand it by default");
-  assert.count("details[open]", 1, "Only one FAQ should start expanded");
+test("exactly one answer starts open", () => {
+  assert.equal(document.querySelectorAll("details[open]").length, 1, "Add open to exactly one details element");
 });
-
-test("page has a figure with an image", () => {
-  var figure = document.querySelector("figure");
-  assert.exists(figure, "Add a <figure> element");
-  var img = figure.querySelector("img");
-  assert.exists(img, "Put an <img> inside your <figure>");
-  assert.equal(Boolean(img.getAttribute("src")?.trim() && img.getAttribute("alt")?.trim()), true, "Give the image a source and descriptive alt text");
+test("a figure contains the described seedling image", () => {
+  const image = document.querySelector("figure > img");
+  assert.equal(Boolean(image?.getAttribute("src")?.startsWith("data:image/svg+xml,") && /seedling/i.test(image.getAttribute("alt") || "")), true, "Move the supplied image into a figure and describe the seedlings in alt");
 });
-
-test("figure has a figcaption", () => {
-  var caption = document.querySelector("figure figcaption");
-  assert.equal(Boolean(caption && caption.textContent.trim()), true, "Add a nonempty <figcaption> inside your <figure>");
+test("caption is a direct first or last figure child", () => {
+  const figure = document.querySelector("figure"), caption = figure?.querySelector(":scope > figcaption");
+  assert.equal(Boolean(text(caption) && (caption === figure.firstElementChild || caption === figure.lastElementChild)), true, "Put a readable figcaption directly at the start or end of the figure");
 });

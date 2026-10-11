@@ -24,15 +24,15 @@ After exploring the reply demo, build a rescue dispatch report with incident not
 
 ## What you'll build
 
-A dispatch report with a multi-line textarea, four urgency choices (one default), and rendezvous suggestions.
+A dispatch report with a multi-line textarea, four urgency choices (one default), and rendezvous suggestions. The form and visible labels are supplied. In `index.html`, match the Notes and Urgency labels with `id="brief"` and `id="role"` on their controls. Give both controls a non-empty `name`.
 
 ## Your Tasks
 
-1. Add a `<textarea>` with at least four rows for incident notes.
-2. Add a `<select>` containing at least four `<option>` choices.
-3. Preselect one option using `selected`.
-4. Add a `<datalist>` with at least three suggested rendezvous points.
-5. Add a text input whose `list` matches the datalist’s `id`, with a visible label for the input.
+1. Add a named `<textarea id="brief">` with at least four rows after the Incident notes label.
+2. Add a named `<select id="role">` after the Urgency label, with at least four non-empty options with distinct values.
+3. Preselect exactly one urgency option using `selected`.
+4. Add a `<datalist>` with a unique `id` and at least three distinct non-empty rendezvous suggestions.
+5. Add a named text input with `id="base"` after the supplied label; set its `list` to the datalist’s `id`.
 
 ## Checkpoint
 
@@ -40,4 +40,4 @@ Run the page. The incident-notes field should accept multiple lines, the default
 
 ## Payoff
 
-The crew can now send both detailed and structured information through one clear response form.
+Run to compare the three kinds of answer, then Submit. Try typing a rendezvous point that is not suggested: a datalist permits it. This practice page collects input locally but has no service to send a report.

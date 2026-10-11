@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" role="img" aria-labelledby="title desc">
+<title id="title">Video Resource Relationships</title><desc id="desc">One video element contains two alternative source elements for the same clip and an English captions track. Its poster attribute points to a separate still image.</desc>
+<rect width="800" height="420" fill="#fffdf7"/>
+<g font-family="Arial, sans-serif" fill="#242424" text-anchor="middle">
+<text x="400" y="38" font-size="25">One Player, Several Resources</text>
+<rect x="35" y="65" width="495" height="315" rx="16" fill="#a5d8ff" stroke="#242424" stroke-width="2"/>
+<text x="282" y="100" font-size="23">&lt;video controls&gt;</text>
+<rect x="60" y="125" width="445" height="115" rx="12" fill="#b2f2bb" stroke="#242424" stroke-width="2"/>
+<text x="282" y="157" font-size="19">Alternative Encodings Of The Same Clip</text>
+<text x="282" y="190" font-size="18">&lt;source&gt; hall-welcome.mp4</text>
+<text x="282" y="220" font-size="18">&lt;source&gt; hall-welcome.webm</text>
+<rect x="60" y="260" width="445" height="90" rx="12" fill="#d0bfff" stroke="#242424" stroke-width="2"/>
+<text x="282" y="295" font-size="20">&lt;track&gt; hall-welcome-en.vtt</text>
+<text x="282" y="327" font-size="18">Timed English Captions</text>
+<rect x="560" y="165" width="210" height="120" rx="12" fill="#fff3bf" stroke="#242424" stroke-width="2"/>
+<text x="665" y="200" font-size="20">poster Attribute</text>
+<text x="665" y="232" font-size="18">hall-welcome.jpg</text>
+<text x="665" y="260" font-size="17">Still Image</text>
+<text x="400" y="407" font-size="16">Example filenames: the referenced files must also be hosted.</text>
+</g></svg>
