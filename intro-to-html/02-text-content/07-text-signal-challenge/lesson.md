@@ -18,15 +18,11 @@ hints:
 
 # Review: Text Content
 
-## Mission
-
 The Meridian crew must transmit a short rescue signal. It needs a title, a clear status paragraph, and a compact list of gear for the response team.
 
-## What you'll build
+The starter in `index.html` contains only a document shell. Add your signal inside its body.
 
-A compact rescue signal with one heading, a status paragraph, and a three-item gear list.
-
-## Checkpoint
+## Check your page
 
 When you preview the card, you should see one main heading, a readable paragraph, and a bulleted list with three or more items.
 
@@ -37,7 +33,5 @@ Edit `index.html`, press **Run** to inspect your page, then **Submit** to check 
 1. Add exactly one `<h1>` with non-empty text.
 2. Add a `<p>` with at least 20 characters of visible text.
 3. Add a `<ul>` containing at least three non-empty `<li>` items.
-
-## Payoff
 
 The response team can scan your signal title, status, and gear list.

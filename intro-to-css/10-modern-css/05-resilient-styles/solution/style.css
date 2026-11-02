@@ -1,0 +1,10 @@
+body { margin: 1rem; font-family: system-ui, sans-serif; }
+.supplies article { padding: 1rem; margin-bottom: 1rem; background: #e0f2fe; }
+@supports (display: grid) {
+  .supplies { gap: 1rem; }
+  .supplies article { margin-bottom: 0; }
+}
+.supplies { display: block; }
+@supports (display: grid) {
+  .supplies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

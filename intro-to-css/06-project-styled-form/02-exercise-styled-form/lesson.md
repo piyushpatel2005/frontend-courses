@@ -1,10 +1,10 @@
 ---
-title: Community garden request card exercise
+title: Community garden request card
 slug: exercise-styled-form
 order: 2
-language: html
+language: css
 summary: Style a clear seed-request form for the Community Garden tool shed.
-seo_title: Community garden request card exercise | Intro to CSS
+seo_title: Community garden request card | Intro to CSS
 seo_description: Learn form controls and focus feedback by building a small, visible CSS interface.
 seo_keywords:
   - CSS

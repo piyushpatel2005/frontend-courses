@@ -1,10 +1,10 @@
 ---
-title: Harbor radio schedule exercise
+title: Harbor radio schedule
 slug: exercise-flexbox-grid-website
 order: 2
-language: html
+language: css
 summary: Combine flexbox and grid for a one-page Harbor Radio schedule.
-seo_title: Harbor radio schedule exercise | Intro to CSS
+seo_title: Harbor radio schedule | Intro to CSS
 seo_description: Learn using flexbox for controls and grid for cards by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,11 +17,10 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Harbor radio schedule exercise
-
+# Harbor radio schedule
 Arrange Harbor Radio's heading and shows using the two layout tools from the River Radio demo. This is a fresh lineup, not an extension of the previous workshop page.
 
-The HTML supplies the title, placeholder button, and three shows. The CSS supplies colors, spacing, the header's alignment settings, and `display: grid` for the shows. Edit only `style.css`.
+The HTML supplies the title, placeholder button, and three shows. The CSS supplies colors, spacing, the header's alignment settings, and `display: grid` for the shows. The supplied wrapping rule lets long show names fit narrow equal tracks. Edit only `style.css`.
 
 ## Your Tasks
 

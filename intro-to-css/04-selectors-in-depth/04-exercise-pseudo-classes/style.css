@@ -20,6 +20,17 @@ body {
   color: #2d1b08;
   font-weight: 700;
 }
-/* Add pseudo-class rules for hover, first item, and focus. */
+
 
 .reserve-button:focus-visible { outline: 3px solid #67e8f9; outline-offset: 2px; }
+
+/* Write the new declarations at the marked sites below. */
+.reserve-button:hover {
+  /* TODO: Step 1: Set background-color here. */
+}
+.reading-list li:first-child {
+  /* TODO: Step 2: Set font-weight here. */
+}
+.email:focus {
+  /* TODO: Step 3: Set outline here. */
+}

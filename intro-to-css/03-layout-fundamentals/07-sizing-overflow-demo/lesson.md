@@ -1,12 +1,12 @@
 ---
-title: "Sizing and Overflow Demo"
+title: "Sizing and Overflow"
 slug: sizing-overflow-demo
 order: 7
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "Width, max-width, max-height, and overflow control how a box responds when its content or screen changes."
-seo_title: "Sizing and Overflow Demo | Introduction to CSS"
+seo_title: "Sizing and Overflow | Introduction to CSS"
 seo_description: "Width, max-width, max-height, and overflow control how a box responds when its content or screen changes. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS

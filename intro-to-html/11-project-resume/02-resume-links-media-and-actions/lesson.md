@@ -26,7 +26,7 @@ Here is a different applicant's portfolio link:
 <a href="https://example.com/mira-work" target="_blank" rel="noopener">View Mira's library projects (new tab)</a>
 ```
 
-`target="_blank"` opens a new tab or window. `rel="noopener"` prevents the newly opened page from receiving an opener reference. The label tells visitors what they will find and warns them about the new tab.
+`target="_blank"` opens a new tab or window. `rel="noopener"` prevents the newly opened page from receiving an opener reference. Modern browsers already give ordinary `_blank` links implicit `noopener` behavior; writing the token explicitly documents that choice. The label tells visitors what they will find and warns them about the new tab.
 
 For email, an address such as `mailto:mira@example.com` asks the visitor's configured email app to compose a message; it does not send anything. A relative file link with `download`, such as `<a href="mira-resume.pdf" download>Download Mira's resume PDF</a>`, asks the browser to save a file. It does not create that file. The download attribute is generally limited to same-origin, blob, or data URLs, and browser settings can affect the result.
 
@@ -48,3 +48,5 @@ The starter includes an image below the existing resume, ready to move into main
 Edit `index.html`, Run, then Submit. Read the page from the name through the footer. The added image should have both useful alt text and a visible caption, and each link should explain its action. You do not need to open external pages, launch an email app, or download a file to complete the checks.
 
 Before publishing a real resume, replace the sample contact details and destinations, test the hosted PDF, and check keyboard navigation. Passing this exercise verifies the authored HTML, not the availability of the linked resources.
+
+You now have the content and reading order of a complete page. Continue with CSS to work on type, spacing, colors, and layouts without changing what these elements mean. JavaScript comes after CSS; later, the DOM course will use vanilla JavaScript to find and update these same elements. Neither a framework nor custom JavaScript is needed for the HTML controls you have used here.

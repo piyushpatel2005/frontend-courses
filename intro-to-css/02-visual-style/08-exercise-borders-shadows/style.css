@@ -14,8 +14,19 @@
 .card {
   padding: 1.25rem;
   background: #fffbeb;
-  /* Add border, border-radius, and box-shadow here. */
+  
 }
 .featured {
   background: #fef3c7;
+}
+
+/* Write the new declarations at the marked sites below. */
+.card {
+  /* TODO: Step 1: Set border here. */
+}
+.card {
+  /* TODO: Step 2: Set border-radius here. */
+}
+.card {
+  /* TODO: Step 3: Set box-shadow here. */
 }

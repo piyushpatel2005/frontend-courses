@@ -11,7 +11,7 @@ function declarations(element, property) {
       } else if (rule.cssRules) visit(rule.cssRules);
     }
   }
-  for (const sheet of document.styleSheets) {
+  for (const sheet of Array.from(document.querySelectorAll('style[data-intercourses="user-css"], head style:not([data-intercourses])'), node => node.sheet).filter(Boolean)) {
     try { visit(sheet.cssRules); } catch (_) { /* External sheets are not learner CSS. */ }
   }
   return values;
@@ -42,6 +42,7 @@ test('Create three equal fractional columns.', () => {
       assert.equal(near(cards[0].left, box.left) && near(cards[2].right, box.right), true, 'Let the fractional tracks share the available width rather than using fixed pixel widths.');
     }
   } finally {
+    grid.getAttribute('style');
     if (originalStyle === null) grid.removeAttribute('style');
     else grid.setAttribute('style', originalStyle);
   }

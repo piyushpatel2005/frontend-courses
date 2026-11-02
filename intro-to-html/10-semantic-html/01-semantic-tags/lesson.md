@@ -67,7 +67,7 @@ The library notice below uses the structure you need, with different content:
 </footer>
 ```
 
-`<time>` pairs a readable date with a machine-readable `datetime`. Here the date is August 15, 2026 in `YYYY-MM-DD` form. The visible words and the attribute should describe the same date.
+`<time>` pairs a readable date with a machine-readable `datetime`. Here the sample date is August 15, 2026 in `YYYY-MM-DD` form, not a claim about today. The visible words and the attribute should describe the same date. The library and garden link paths illustrate a larger site; those destination pages are not supplied here, so inspect the destinations without navigating away.
 
 ## Your Tasks
 

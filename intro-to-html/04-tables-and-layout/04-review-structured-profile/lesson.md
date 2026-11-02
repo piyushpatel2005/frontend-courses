@@ -14,17 +14,11 @@ hints:
 
 # Review: Structured Profile
 
-## Mission
+Bring the containers and labels together in a volunteer profile for the repair café. `index.html` supplies only the document shell. Build a main region, a name and description, and repeated skill labels. In the preview, the labels remain plain text until CSS styles them.
 
-The repair café needs a separate volunteer profile to accompany its schedule. Turn the empty starter into one clear card: a main region identified as `profile`, a short description, and repeatable skill tags. The preview should make all three pieces easy to spot.
+`<main>` names a page’s primary content. Keep one main region here; you will study page landmarks later. A `span` stays within a line, and several skill spans can share `class="tag"`. Classes do not style themselves.
 
-## What you'll build
-
-A profile card with a unique `id` on its `<main>` container, a heading and description inside, and at least two reusable `tag` class elements for skill labels.
-
-`<main>` names the page's central content; you will study semantic landmarks in detail later. Here it lets one profile have a unique `id`, while the repeated skill labels share a `class`. Unlike a `div`, the main landmark also tells readers what part of the document is primary. Keep just one `<main>` on this page.
-
-## Checkpoint
+## Check your page
 
 Run the starter: it is empty except for a source comment. After your edits you should see a profile heading, a description, and two skill tags. The class names will not make the tags look different until you add CSS later.
 
@@ -38,7 +32,5 @@ For a skill label, use a `<span>` like the inline hook from the div-and-span les
 2. Inside it, add an `<h1>` with the volunteer’s name.
 3. Add a non-empty `<p>` describing their role inside the profile.
 4. Inside the profile, add at least two non-empty skill labels with `class="tag"`.
-
-## Payoff
 
 The café now has a focused volunteer profile with a unique page landmark and reusable skill labels.

@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Flex Direction"
+title: "Flex Direction"
 slug: exercise-flex-direction
 order: 2
-language: html
+language: css
 summary: "A flex container has a main axis; `flex-direction` changes it."
-seo_title: "Exercise: Flex Direction | Introduction to CSS"
+seo_title: "Flex Direction | Introduction to CSS"
 seo_description: "Practice stacking trail-kit cards using display flex and flex-direction column."
 seo_keywords: [CSS, exercise-flex-direction, layout, CSS exercise]
 lesson_type: coding

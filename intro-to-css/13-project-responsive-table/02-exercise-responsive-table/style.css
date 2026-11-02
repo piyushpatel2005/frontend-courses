@@ -3,12 +3,12 @@ body {
   font-family: system-ui, sans-serif;
 }
 .table-wrap {
-  /* Add overflow-x. */
+  
 }
 table {
   width: 100%;
   border-collapse: collapse;
-  /* Add min-width. */
+  
 }
 th, td {
   padding: .75rem;
@@ -22,4 +22,12 @@ th {
 .table-wrap:focus-visible {
   outline: 3px solid #075985;
   outline-offset: 4px;
+}
+
+/* Write the new declarations at the marked sites below. */
+.table-wrap {
+  /* TODO: Step 1: Set overflow-x here. */
+}
+table {
+  /* TODO: Step 2: Set min-width here. */
 }

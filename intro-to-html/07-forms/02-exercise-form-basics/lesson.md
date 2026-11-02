@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Build a Night-Shift Check-In"
+title: "Build a Night-Shift Check-In"
 slug: exercise-form-basics
 order: 2
 language: html
 summary: Build a night-shift check-in with labeled text, email, password, and submit controls.
-seo_title: "Exercise: Build a Night-Shift Check-In | Introduction to HTML"
+seo_title: "Build a Night-Shift Check-In | Introduction to HTML"
 seo_description: Build a night-shift check-in with labeled text, email, password, and submit controls.
 seo_keywords:
   - HTML exercise
@@ -17,15 +17,11 @@ hints:
   - 'Use type="submit" on the button.'
 ---
 
-# Exercise: Build a Night-Shift Check-In
+# Build a Night-Shift Check-In
 
-## Mission
+Build a night-shift check-in for a different crew, using the relay intake as a reference. It needs an operator name, backup email, and access phrase.
 
-After reading the relay intake demo, build a night-shift check-in form for a different crew. It needs an operator name, backup email, and access phrase.
-
-## What you'll build
-
-A night-shift check-in form with connected labels, text, email, and password fields, plus a submit action. Edit `index.html`, Run to inspect each addition, and Submit to check it. Use made-up values only; `/night-shift` is an illustrative route with no receiving service. You do not need to submit the form in the preview.
+Edit `index.html` below the supplied heading. Run to inspect each addition and Submit to check it. Use made-up values only; `/night-shift` is an illustrative route with no receiving service. Do not submit the form itself in the preview.
 
 ## Your Tasks
 
@@ -40,10 +36,8 @@ A night-shift check-in form with connected labels, text, email, and password fie
 
 ![The label’s for value and the input’s id must match; name is a separate submission key.](form-label-connection.svg)
 
-## Checkpoint
+## Check your page
 
 Run the page and click each label. It should focus the corresponding field; the submit button should be visible at the end of the form.
-
-## Payoff
 
 The crew has a clear route into the Meridian Relay, and every field has a human-readable label.

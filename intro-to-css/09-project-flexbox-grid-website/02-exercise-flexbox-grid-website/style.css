@@ -10,16 +10,25 @@ body {
 .schedule-head {
   justify-content: space-between;
   align-items: center;
-  /* Add display. */
+  
 }
 .show-grid {
   display: grid;
   gap: 1rem;
-  /* Add grid-template-columns. */
+  
 }
 .show-grid article {
+  overflow-wrap: anywhere;
   padding: 1rem;
   background: white;
   border-radius: .75rem;
   box-shadow: 0 2px 8px #19324d22;
+}
+
+/* Write the new declarations at the marked sites below. */
+.schedule-head {
+  /* TODO: Step 1: Set display here. */
+}
+.show-grid {
+  /* TODO: Step 2: Set grid-template-columns here. */
 }

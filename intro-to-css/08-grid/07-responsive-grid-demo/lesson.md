@@ -1,10 +1,10 @@
 ---
-title: "Responsive Grid Demo"
+title: "Responsive Grid"
 slug: responsive-grid-demo
 order: 7
-language: html
+language: css
 summary: "A media query can change grid tracks when the available screen width becomes small."
-seo_title: "Responsive Grid Demo | Introduction to CSS"
+seo_title: "Responsive Grid | Introduction to CSS"
 seo_description: "Three columns fit a wide board, but each card gets cramped in a narrow preview. A **media query** applies a set of CSS rules only when a condition is true. This example checks the viewport, the area where the page is displayed. In this course, that is the preview frame's width, not necessarily the whole browser window."
 seo_keywords: [CSS, responsive-grid-demo, layout, beginner CSS]
 lesson_type: coding

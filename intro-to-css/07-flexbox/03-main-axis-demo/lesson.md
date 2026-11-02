@@ -1,10 +1,10 @@
 ---
-title: "Main-Axis Spacing Demo"
+title: "Main-Axis Spacing"
 slug: main-axis-demo
 order: 3
-language: html
+language: css
 summary: "`justify-content` distributes items along the main axis."
-seo_title: "Main-Axis Spacing Demo | Introduction to CSS"
+seo_title: "Main-Axis Spacing | Introduction to CSS"
 seo_description: "See justify-content distribute three trail tools across the main axis."
 seo_keywords: [CSS, main-axis-demo, layout, beginner CSS]
 lesson_type: coding

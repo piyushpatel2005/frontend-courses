@@ -16,3 +16,8 @@
 .card:first-child {
   background: #f7bf61;
 }
+
+/* Write the new declarations at the marked sites below. */
+.card:first-child {
+  /* TODO: Step 1: Set grid-column here. */
+}

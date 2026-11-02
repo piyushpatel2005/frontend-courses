@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Style Night Cart States"
+title: "Style Night Cart States"
 slug: exercise-pseudo-classes
 order: 4
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Use hover, first-child, and focus pseudo-classes to give a book cart order panel clear feedback.
-seo_title: CSS Pseudo-Classes Exercise | Night Cart States
+seo_title: CSS Pseudo-Classes | Night Cart States
 seo_description: Practice CSS hover, first-child, and focus pseudo-classes on a Moonlit Book Cart order panel.
 seo_keywords:
   - CSS pseudo-classes exercise

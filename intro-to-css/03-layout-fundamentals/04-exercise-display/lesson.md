@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Arrange Swap Table Labels"
+title: "Arrange Swap Table Labels"
 slug: exercise-display
 order: 4
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Apply CSS display values to arrange compact labels, a full-width note, and hidden helper text.
-seo_title: CSS Display Exercise | Arrange Swap Table Labels
+seo_title: CSS Display | Arrange Swap Table Labels
 seo_description: Practice inline-block, block, and none by arranging labels on a Riverside Seed Swap table.
 seo_keywords:
   - CSS display exercise

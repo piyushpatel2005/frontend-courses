@@ -1,12 +1,12 @@
 ---
-title: "Box Model Demo: Seed Packet Card"
+title: "Box Model Seed Packet Card"
 slug: box-model-demo
 order: 1
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Inspect how padding, borders, and margins shape a readable seed packet card.
-seo_title: CSS Box Model Demo | Seed Packet Card
+seo_title: CSS Box Model | Seed Packet Card
 seo_description: See padding, borders, and margins change the size and spacing of a CSS seed packet card.
 seo_keywords:
   - CSS box model
@@ -22,7 +22,7 @@ hints:
 
 This module styles a Riverside Seed Swap card. Its text, inner spacing, outline, and outer spacing are different parts of the CSS **box model**.
 
-The content is the text itself. `padding: 20px` adds space around it inside the border. `border: 4px solid #3c6e47` draws the green edge. `margin: 24px 0` sets 24px above and below the packet and zero at the left and right. Two margin values read “vertical, horizontal.”
+The content is the text itself. `padding: 20px` adds space around it inside the border. `border: 4px solid #3c6e47` draws the green edge. `margin: 24px 0` sets 24px above and below the packet and zero at the left and right. Two margin values read “vertical, horizontal.” The same shorthand works for padding. With four values, read clockwise: top, right, bottom, left. One value applies to all four sides. An auto horizontal margin can share remaining space on either side of a width-limited block, which is how the supplied main element is centered.
 
 ![Nested content, padding, border, and margin layers, with a border-box width example.](seed-packet-box-model.svg)
 

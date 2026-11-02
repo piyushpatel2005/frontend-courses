@@ -1,10 +1,10 @@
 ---
-title: Field note color system exercise
+title: Field note color system
 slug: exercise-modern-css
 order: 2
-language: html
+language: css
 summary: Use reusable CSS values to give a field-note card a stable color system.
-seo_title: Field note color system exercise | Intro to CSS
+seo_title: Field note color system | Intro to CSS
 seo_description: Learn custom properties and transitions by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,8 +17,7 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Field note color system exercise
-
+# Field note color system
 Use one named accent for the fox-track observation. The starter already reads `var(--accent)` on its border and highlighted button, but that custom property is missing. Until you define it, those declarations cannot use the intended accent.
 
 Work in `style.css`. The keyboard highlight, focus outline, and reduced-motion override are supplied. As in the bluebird demo, define the shared value on `:root`, then smooth the button's color change.

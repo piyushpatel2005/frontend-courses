@@ -1,12 +1,12 @@
 ---
-title: "Borders and Shadows Demo"
+title: "Borders and Shadows"
 slug: borders-shadows-demo
 order: 7
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "Borders define an edge; border radius softens it; a box shadow gives an element visual elevation."
-seo_title: "Borders and Shadows Demo | Introduction to CSS"
+seo_title: "Borders and Shadows | Introduction to CSS"
 seo_description: "Borders define an edge; border radius softens it; a box shadow gives an element visual elevation. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS

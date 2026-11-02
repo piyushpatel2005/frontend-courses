@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Write Meridian's Survey Notes"
+title: "Write Meridian's Survey Notes"
 slug: exercise-paragraphs-emphasis
 order: 4
 language: html
@@ -22,13 +22,7 @@ hints:
 
 # Paragraphs, Emphasis, and Line Breaks
 
-## Mission
-
-The Meridian crew is writing a flight log after the first controlled rooftop landing. Use paragraphs for the report, emphasis for the key move, strong text for the system update, and one deliberate line break for a radio-style sign-off.
-
-## What you'll build
-
-A survey log with a heading, a two-sentence landing report, an emphasized phrase, a priority update, a line break, and a divider.
+The Meridian crew is writing a flight log after a rooftop landing. Your `index.html` has a complete document with an empty body. Build a different log from the previous example, using paragraphs for the report and inline elements for selected phrases.
 
 ## From the demo to your log
 
@@ -40,7 +34,7 @@ The preceding survey-log demo showed paragraphs with `<em>`, `<strong>`, and a `
 <p><strong>Priority: check the beacon.</strong></p>
 ```
 
-## Checkpoint
+## Check your page
 
 Run the page after each change. The first paragraph contains two lines, while the horizontal rule separates it from the second paragraph.
 
@@ -57,7 +51,5 @@ The starter `index.html` has an empty body:
 5. Wrap an important phrase in the second paragraph with `<strong>`.
 6. Add a `<br>` between the two sentences in the first paragraph.
 7. Add an `<hr>` between the first and second paragraphs.
-
-## Payoff
 
 Your survey log now separates the landing report from the important update.

@@ -3,7 +3,7 @@ body { margin: 0; font-family: system-ui, sans-serif; }
 .brand { display: inline-block; margin-right: 1rem; color: white; }
 .menu-item { display: inline-block; position: relative; }
 .menu-trigger { padding: .5rem .75rem; border: 0; border-radius: .4rem; cursor: pointer; }
-.menu-trigger:focus-visible, .submenu a:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.submenu a:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
 .submenu {
   position: absolute;
   top: 100%; left: 0;
@@ -14,5 +14,6 @@ body { margin: 0; font-family: system-ui, sans-serif; }
   display: none;
 }
 .submenu a { display: block; padding: .35rem; color: #17324d; }
-.menu-item:hover .submenu,
-.menu-item:focus-within .submenu { display: block; }
+.menu-item[open] .submenu { display: block; }
+
+.menu-trigger:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }

@@ -3,7 +3,7 @@ body { margin: 0; font-family: system-ui, sans-serif; }
 .brand { display: inline-block; margin-right: 1rem; color: white; }
 .menu-item { display: inline-block; position: relative; }
 .menu-trigger { padding: .5rem .75rem; border: 0; border-radius: .4rem; cursor: pointer; }
-.menu-trigger:focus-visible, .submenu a:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.submenu a:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
 .submenu {
   position: absolute;
   top: 100%; left: 0;
@@ -11,7 +11,17 @@ body { margin: 0; font-family: system-ui, sans-serif; }
   padding: .5rem;
   background: #f7c948;
   z-index: 1;
-  /* Hide the submenu until the menu is hovered or focused. */
+  
 }
 .submenu a { display: block; padding: .35rem; color: #17324d; }
-/* Add pointer and keyboard reveal rules here. */
+
+/* Write the new declarations at the marked sites below. */
+.submenu {
+  /* TODO: Step 1: Set display here. */
+}
+.menu-item[open] .submenu {
+  /* TODO: Step 2: Set display here. */
+}
+.menu-trigger:focus-visible {
+  /* TODO: Step 3: Set outline here. */
+}

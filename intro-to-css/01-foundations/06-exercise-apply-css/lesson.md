@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Apply CSS Three Ways"
+title: "Apply CSS Three Ways"
 slug: exercise-apply-css
 order: 6
 language: html
 summary: Practice inline, internal, and external CSS in an exhibit card.
-seo_title: "Exercise: Apply CSS Three Ways | Introduction to CSS"
+seo_title: "Apply CSS Three Ways | Introduction to CSS"
 seo_description: Practice inline, internal, and external CSS in an exhibit card.
 seo_keywords: [CSS exercise, exercise-apply-css]
 lesson_type: coding

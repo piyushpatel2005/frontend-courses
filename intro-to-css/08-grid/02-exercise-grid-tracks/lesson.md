@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Grid Tracks"
+title: "Grid Tracks"
 slug: exercise-grid-tracks
 order: 2
-language: html
+language: css
 summary: "Grid creates explicit rows and columns, called tracks."
-seo_title: "Exercise: Grid Tracks | Introduction to CSS"
+seo_title: "Grid Tracks | Introduction to CSS"
 seo_description: "Registration, Set-up, and Clean-up need equal space on the shift board. The workshop demo showed how a container defines tracks for its children; use the same technique with these new cards."
 seo_keywords: [CSS, exercise-grid-tracks, layout, CSS exercise]
 lesson_type: coding

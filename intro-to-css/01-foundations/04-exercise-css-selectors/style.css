@@ -1,1 +1,12 @@
-/* Add a p rule, a .care-tip rule, and a #sea-star-title rule. */
+
+
+/* Write the new declarations at the marked sites below. */
+p {
+  /* TODO: Step 1: Set line-height here. */
+}
+.care-tip {
+  /* TODO: Step 2: Set background-color here. */
+}
+#sea-star-title {
+  /* TODO: Step 3: Set color here. */
+}

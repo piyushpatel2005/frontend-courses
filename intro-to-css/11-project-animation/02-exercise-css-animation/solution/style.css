@@ -10,7 +10,7 @@ body {
   color: #f97316;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 2;
   animation-direction: alternate;
   animation-name: drift;
 }

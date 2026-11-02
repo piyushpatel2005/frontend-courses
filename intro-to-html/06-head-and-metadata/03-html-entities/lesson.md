@@ -17,13 +17,7 @@ hints:
 
 # HTML Entities
 
-## Mission
-
 The walking-club route notes need to show a trail rule, a copyright line, and “Maps & Snacks” exactly as written. Some of those characters mean something special to HTML, so use entities to make the browser display the intended text. Your preview should show the symbols, not broken markup.
-
-## What you'll build
-
-A route notes snippet that displays comparison operators, a copyright symbol, an ampersand, and a non-breaking distance label — all as visible text using HTML entities.
 
 The starter supplies the document and heading; add four short route notes below it, each in its own `<p>`. The tests check these paragraphs, not the heading or page scripts.
 
@@ -62,7 +56,7 @@ A `<` before a tag name starts markup, so `&lt;` is the safe way to show it as t
 
 You can also use numeric forms such as `&#60;` or `&#x3C;` for `<`, but named entities are often easier to read.
 
-## Checkpoint
+## Check your page
 
 Run the page. You should see the comparison signs, copyright symbol, and ampersand as ordinary text. If a line disappears or becomes a tag, inspect each entity for its opening `&` and closing `;`.
 
@@ -72,7 +66,5 @@ Run the page. You should see the comparison signs, copyright symbol, and ampersa
 2. Show a copyright line using `&copy;`, including the words `All rights reserved`.
 3. Use `&amp;` to display a literal ampersand, for example `Maps & Snacks`.
 4. Use `&nbsp;` to prevent a line break between two words.
-
-## Payoff
 
 Edit `index.html`, Run to read all four notes, then Submit. The checks see the browser’s parsed text, so they cannot distinguish a typed © from `&copy;`. Practise writing the entity even though either produces the same character.

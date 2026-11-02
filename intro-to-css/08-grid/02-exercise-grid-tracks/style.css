@@ -12,3 +12,11 @@
   border-radius: .75rem;
   background: #e6d9ff;
 }
+
+/* Write the new declarations at the marked sites below. */
+.workshop-grid {
+  /* TODO: Step 1: Set display here. */
+}
+.workshop-grid {
+  /* TODO: Step 2: Set grid-template-columns here. */
+}

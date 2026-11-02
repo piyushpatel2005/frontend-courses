@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Wrapping and Flex Items"
+title: "Wrapping and Flex Items"
 slug: exercise-wrapping-flex-items
 order: 8
-language: html
+language: css
 summary: "`flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size."
-seo_title: "Exercise: Wrapping and Flex Items | Introduction to CSS"
+seo_title: "Wrapping and Flex Items | Introduction to CSS"
 seo_description: "Practice wrapping flex items with a nine-rem flexible base size."
 seo_keywords: [CSS, exercise-wrapping-flex-items, layout, CSS exercise]
 lesson_type: coding

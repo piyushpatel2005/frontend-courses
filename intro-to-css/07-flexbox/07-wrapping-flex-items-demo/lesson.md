@@ -1,10 +1,10 @@
 ---
-title: "Wrapping and Flex Items Demo"
+title: "Wrapping and Flex Items"
 slug: wrapping-flex-items-demo
 order: 7
-language: html
+language: css
 summary: "`flex-wrap` allows a flex line to continue on a new row; `flex` gives each item a useful base size."
-seo_title: "Wrapping and Flex Items Demo | Introduction to CSS"
+seo_title: "Wrapping and Flex Items | Introduction to CSS"
 seo_description: "See flex-wrap and flex basis keep supply cards readable on narrow screens."
 seo_keywords: [CSS, wrapping-flex-items-demo, layout, beginner CSS]
 lesson_type: coding
@@ -22,6 +22,8 @@ Wrapping and item sizing are separate decisions. This example puts `flex: 1 1 9r
 - `flex-grow: 1`: the card can take a share of spare room on its line. These cards have equal grow values, so they receive equal shares.
 - `flex-shrink: 1`: the card may shrink when a line is too small, subject to its content's minimum size.
 - `flex-basis: 9rem`: start the sizing calculation from a 9rem main-axis size. This is not a fixed final width.
+
+A flex item’s automatic minimum can stop it shrinking below a long unbroken label. For content that may wrap, min-width: 0 on the item and overflow-wrap: anywhere on its text can let the box and words shrink together. Do not hide important text merely to make a row fit.
 
 The supplied cards use the default content-box sizing, so their padding is added outside that basis. The gaps also take space. That is why three cards may need another line even when three lots of 9rem seem to fit.
 

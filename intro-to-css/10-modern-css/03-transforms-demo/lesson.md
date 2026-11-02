@@ -1,12 +1,12 @@
 ---
-title: "Transforms Demo"
+title: "Transforms"
 slug: transforms-demo
 order: 3
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "`transform` changes an element visually without changing the surrounding layout flow."
-seo_title: "Transforms Demo | Introduction to CSS"
+seo_title: "Transforms | Introduction to CSS"
 seo_description: "`transform` changes an element visually without changing the surrounding layout flow. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS
@@ -17,8 +17,7 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Transforms demo
-
+# Transforms
 Give the pinned field note a slight tilt while leaving the neighboring fern survey in place. This is a fresh two-card example; it does not continue the color-system card.
 
 `transform: rotate(-3deg)` turns `.tilted` by three degrees counterclockwise. `deg` means degrees; a positive value turns clockwise. The browser still reserves the card's original, unrotated space in the Flexbox row. Its painted edges can extend outside that space, so leave a gap around transformed items.

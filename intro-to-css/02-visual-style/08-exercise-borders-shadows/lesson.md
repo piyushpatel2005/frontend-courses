@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Borders and Shadows"
+title: "Borders and Shadows"
 slug: exercise-borders-shadows
 order: 8
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "Use borders, radius, and shadows to separate a surface from its background."
-seo_title: "Exercise: Borders and Shadows | Introduction to CSS"
+seo_title: "Borders and Shadows | Introduction to CSS"
 seo_description: "Use borders, radius, and shadows to separate a surface from its background. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS

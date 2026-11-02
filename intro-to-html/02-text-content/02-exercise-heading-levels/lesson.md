@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Extend the Signal Brief"
+title: "Extend the Signal Brief"
 slug: exercise-heading-levels
 order: 2
 language: html
 summary: Use h3 through h6 to extend an existing h1 and h2 rescue signal hierarchy.
-seo_title: "Exercise: Extend the Signal Brief | Introduction to HTML"
+seo_title: "Extend the Signal Brief | Introduction to HTML"
 seo_description: Use h3 through h6 to extend an existing h1 and h2 rescue signal hierarchy.
 seo_keywords:
   - HTML exercise
@@ -17,17 +17,11 @@ hints:
   - "A comment starts with <!-- and ends with -->."
 ---
 
-# Exercise: Extend the Signal Brief
+# Extend the Signal Brief
 
-## Mission
+The starter supplies the page title and two `<h2>` sections for the Meridian signal brief. Under the first section, add increasingly specific rescue details. This explores heading depth; a real page only needs the levels its content calls for.
 
-A signal has arrived from the east ridge. The starter supplies the page title and two `<h2>` sections. Under the first section, build a chain of increasingly specific rescue details. This is practice with heading depth, not a rule that every page needs six levels.
-
-## What you'll build
-
-A signal brief that keeps the existing `<h1>` and `<h2>` headings, then adds every remaining heading level from `<h3>` through `<h6>` plus a source-only note.
-
-Edit `index.html`, press **Run** to inspect your page, then **Submit** to check the tasks. You can submit after each step; later tasks may still be incomplete.
+Edit `index.html`. Keep the supplied headings, add your detail headings as siblings, then Run to follow the outline and Submit to check each step.
 
 ## Your Tasks
 
@@ -37,10 +31,8 @@ Edit `index.html`, press **Run** to inspect your page, then **Submit** to check 
 4. After it, add an `<h6>` with a final check.
 5. Add an HTML comment immediately above the new detail headings explaining what they describe.
 
-## Checkpoint
+## Check your page
 
 Run the page. Follow the outline from signal source to final check; default font sizes may vary by browser. The comment should remain visible only in the editor source.
-
-## Payoff
 
 The Meridian crew can now turn a broad emergency signal into a readable chain of rescue details.

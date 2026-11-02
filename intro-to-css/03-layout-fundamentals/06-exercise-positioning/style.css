@@ -17,5 +17,19 @@ body {
   background: #f59e0b;
   color: #1f2937;
   font-weight: 700;
-  /* Position this pin inside the map card. */
+  
+}
+
+/* Write the new declarations at the marked sites below. */
+.map-card {
+  /* TODO: Step 1: Set position here. */
+}
+.pickup-pin {
+  /* TODO: Step 2: Set position here. */
+}
+.pickup-pin {
+  /* TODO: Step 3: Set top here. */
+}
+.pickup-pin {
+  /* TODO: Step 4: Set right here. */
 }

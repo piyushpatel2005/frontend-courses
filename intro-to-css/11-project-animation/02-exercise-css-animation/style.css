@@ -10,9 +10,9 @@ body {
   color: #f97316;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 2;
   animation-direction: alternate;
-  /* Add animation-name: drift; */
+  
 }
 button {
   padding: .7rem 1rem;
@@ -20,7 +20,7 @@ button {
   border-radius: .5rem;
   background: #075985;
   color: white;
-  /* Add transition. */
+  
 }
 button:hover,
 button:focus-visible {
@@ -44,4 +44,12 @@ button:focus-visible {
 button:focus-visible {
   outline: 3px solid #183153;
   outline-offset: 4px;
+}
+
+/* Write the new declarations at the marked sites below. */
+.kite {
+  /* TODO: Step 1: Set animation-name here. */
+}
+button {
+  /* TODO: Step 2: Set transition here. */
 }

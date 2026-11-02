@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Grid Placement"
+title: "Grid Placement"
 slug: exercise-grid-placement
 order: 6
-language: html
+language: css
 summary: "`grid-column` lets an item occupy selected grid tracks."
-seo_title: "Exercise: Grid Placement | Introduction to CSS"
+seo_title: "Grid Placement | Introduction to CSS"
 seo_description: "The Featured workshop demo placed one card across both columns. Here the Opening talk should take the full width, with Crafts and Games side by side below it."
 seo_keywords: [CSS, exercise-grid-placement, layout, CSS exercise]
 lesson_type: coding

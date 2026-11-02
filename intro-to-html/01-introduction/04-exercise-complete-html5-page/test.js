@@ -21,5 +21,6 @@ test("comment appears before the heading", () => {
   let node = heading.previousSibling;
   while (node && node.nodeType === 3 && !node.textContent.trim()) node = node.previousSibling;
   assert.equal(node?.nodeType, 8, "Add a comment immediately above the <h1>");
+  assert.equal(/^\s*TODO:\s*Step/i.test(node.textContent), false, "Write your own source note, not a supplied TODO marker");
   assert.notEqual(node.textContent.trim(), "", "Write a source note in the comment");
 });

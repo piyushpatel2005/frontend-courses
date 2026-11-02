@@ -1,12 +1,12 @@
 ---
-title: "Fluid weather bulletin exercise"
+title: "Fluid weather bulletin"
 slug: exercise-fluid-sizing
 order: 4
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "Build a fluid forecast with min(), auto-fit minmax(), and clamp()."
-seo_title: "Fluid weather bulletin exercise | Intro to CSS"
+seo_title: "Fluid weather bulletin | Intro to CSS"
 seo_description: "Practice a fluid-width page, auto-fit grid columns, and bounded card padding."
 seo_keywords:
   - CSS
@@ -14,8 +14,7 @@ seo_keywords:
   - CSS exercise
 ---
 
-# Fluid weather bulletin exercise
-
+# Fluid weather bulletin
 The morning and afternoon forecast cards already have a basic grid and colors, but still need fluid sizing. Use the preceding park forecast to guide three independent CSS rules. Work in `style.css`; the supplied markup needs no edits.
 
 `min()` picks the smaller width, `minmax()` gives a grid column a minimum and a flexible maximum, and `clamp()` keeps padding between two bounds. Add the rules in this order and preview after each one.

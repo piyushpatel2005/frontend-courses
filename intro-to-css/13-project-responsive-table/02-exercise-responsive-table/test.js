@@ -1,3 +1,29 @@
+
+// Check that the authored value actually wins on every matching target.
+// Temporary probes normalize values; they never modify the learner's declaration.
+function applied(selector, property, value) {
+ const els=[...document.querySelectorAll(selector)]; assert.equal(els.length>0,true,'Keep the supplied '+selector+' element.');
+ for(const el of els){
+  const probe=document.createElement('div'),s=getComputedStyle(el),box=el.getBoundingClientRect();
+  probe.style.cssText='all:initial;position:absolute;visibility:hidden;box-sizing:border-box';
+  probe.style.width=el.offsetWidth+'px';probe.style.height=el.offsetHeight+'px';probe.style.fontSize=s.fontSize;
+  if(property.startsWith('--')){assert.equal(getComputedStyle(document.documentElement).getPropertyValue(property).trim(),value);continue;}
+  probe.style.setProperty(property,value);document.body.append(probe);
+  try {
+   if(property==='transform'){
+    const a=new DOMMatrix(getComputedStyle(el).transform),b=new DOMMatrix(getComputedStyle(probe).transform);
+    assert.equal(['a','b','c','d','e','f'].every(k=>Math.abs(a[k]-b[k])<.001),true,'Make the requested transform apply.');
+   } else if(property==='transform-origin'){
+    const expected=getComputedStyle(probe).transformOrigin.split(' ').map(Number.parseFloat),actual=s.transformOrigin.split(' ').map(Number.parseFloat);
+    assert.equal(actual.every((v,i)=>Math.abs(v-expected[i])<1),true,'Keep the pivot at the requested edge.');
+   } else {assert.equal(s.getPropertyValue(property),getComputedStyle(probe).getPropertyValue(property),'Make '+property+' apply on '+selector+'.');}
+  } finally {probe.remove();}
+ }
+}
+function withWidth(element, check) {
+ const old=element.getAttribute('style');try{for(const width of [320,640]){element.style.setProperty('width',width+'px','important');check();}}finally{element.getAttribute('style');if(old===null)element.removeAttribute('style');else element.setAttribute('style',old);}
+}
+
 // Read authored base rules independently of the current preview width or motion preference.
 // Browser geometry and interaction are checked separately during course review.
 function declaration(selector, property, media) {
@@ -27,8 +53,12 @@ function normalizedValue(property, value) {
 
 test("Set .table-wrap overflow-x to auto in its normal rule.", () => {
   assert.equal(normalizedValue("overflow-x", declaration(".table-wrap", "overflow-x", null)), normalizedValue("overflow-x", "auto"), "Set .table-wrap overflow-x to auto in its normal rule.");
+
+  applied(".table-wrap","overflow-x","auto");
 });
 
 test("Set table min-width to 32rem in its normal rule.", () => {
   assert.equal(normalizedValue("min-width", declaration("table", "min-width", null)), normalizedValue("min-width", "32rem"), "Set table min-width to 32rem in its normal rule.");
+
+  applied("table","min-width","32rem");
 });

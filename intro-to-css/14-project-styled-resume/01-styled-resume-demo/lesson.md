@@ -1,10 +1,10 @@
 ---
-title: "Community maker profile demo"
+title: "Community maker profile"
 slug: styled-resume-demo
 order: 1
-language: html
+language: css
 summary: "Inspect fluid typography and a width cap on a one-page maker profile."
-seo_title: "Community maker profile demo | Intro to CSS"
+seo_title: "Community maker profile | Intro to CSS"
 seo_description: "See a profile sheet use max-width and clamp() across screen sizes."
 seo_keywords:
   - CSS
@@ -14,8 +14,7 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Community maker profile demo
-
+# Community maker profile
 A one-page profile should be easy to read both on a phone and at a desk. This finished example combines typography and spacing from earlier lessons with the fluid sizing you just practiced.
 
 The HTML supplies a name, role, selected work, skills, and availability. In `style.css`, `.maker-profile` has `max-width: 38rem` to limit line length on wide screens; its width can still shrink on a phone. `box-sizing: border-box` counts its padding inside that available width. The `h1` uses `clamp(2rem, 6vw, 4rem)` to let the name grow with the viewport while staying within legible limits. The role's uppercase treatment and the section's bottom border establish a simple hierarchy.

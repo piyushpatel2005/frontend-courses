@@ -1,12 +1,12 @@
 ---
-title: "Display Demo: Swap Table Labels"
+title: "Display Swap Table Labels"
 slug: display-demo
 order: 3
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Compare inline, inline-block, block, and none while arranging labels on a seed swap table.
-seo_title: CSS Display Demo | Seed Swap Labels
+seo_title: CSS Display | Seed Swap Labels
 seo_description: Inspect CSS display values by arranging labels, a note, and a hidden helper on a seed swap table.
 seo_keywords:
   - CSS display

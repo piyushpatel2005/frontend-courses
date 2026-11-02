@@ -1,10 +1,10 @@
 ---
-title: "CSS Rule Demo: Style an Exhibit Card"
+title: "CSS Rule Style an Exhibit Card"
 slug: css-rule-demo
 order: 1
-language: html
+language: css
 summary: See a complete CSS rule change the background and heading color of a museum exhibit card.
-seo_title: "CSS Rule Demo: Style an Exhibit Card | Introduction to CSS"
+seo_title: "CSS Rule Style an Exhibit Card | Introduction to CSS"
 seo_description: See a complete CSS rule change the background and heading color of a museum exhibit card.
 seo_keywords: [CSS demo, CSS preview, css-rule-demo]
 lesson_type: coding
@@ -14,7 +14,7 @@ hints:
 
 # Your first CSS rule
 
-The Tideglass Museum's exhibit card already has a heading and paragraph. HTML gives the words their structure. CSS (Cascading Style Sheets) controls how they look. Open `style.css` beside `index.html` to see the two files working together.
+In HTML, you used color, font-size, and background-color to see how styles attach to a page. This museum card gives those rules a closer look. Its heading and paragraph are already supplied. HTML gives the words their structure. CSS (Cascading Style Sheets) controls how they look. Open `style.css` beside `index.html` to see the two files working together.
 
 ## Read one rule
 
@@ -30,7 +30,7 @@ The **selector**, `h1`, chooses every level-one heading. Inside the braces, the 
 
 CSS ignores text between `/*` and `*/`; those comments leave notes for the person editing a stylesheet. They do not change the preview.
 
-The `body` rule uses `background-color` to paint behind the page content. Its supplied `font-family: system-ui, sans-serif` chooses the device's interface font, with a generic fallback. Text inside the body can inherit this font without a separate rule for every element. You will practice fonts later.
+The `body` rule uses `background-color` to paint behind the page content. Its supplied `font-family: system-ui, sans-serif` chooses the device's interface font, with a generic fallback. This is new typography vocabulary: the browser tries the named families from left to right. A generic fallback names a category rather than a particular installed font. Text inside the body can inherit the font: if it has no family of its own, it uses its parent’s family. Not every property inherits; padding and backgrounds, for example, do not. You will practice that distinction after specificity, then work on fonts in the next module.
 
 ## Change one thing
 

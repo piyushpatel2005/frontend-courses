@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Build a Complete HTML5 Page"
+title: "Build a Complete HTML5 Page"
 slug: exercise-complete-html5-page
 order: 4
 language: html
 summary: Rebuild a complete HTML5 mission profile using the document structure from the preceding demo.
-seo_title: "Exercise: Build a Complete HTML5 Page | Introduction to HTML"
+seo_title: "Build a Complete HTML5 Page | Introduction to HTML"
 seo_description: Practice a document title, body heading, paragraph, and source-only comment in a supplied HTML5 page.
 seo_keywords:
   - HTML5 exercise

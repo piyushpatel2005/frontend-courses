@@ -1,14 +1,25 @@
 .page-shell {
   margin: 3rem auto;
   font-family: system-ui, sans-serif;
-  /* Add width here. */
+  
 }
 .bulletin {
   display: grid;
   gap: 1rem;
-  /* Add grid-template-columns here. */
+  
 }
 .card {
   background: #e0f2fe;
-  /* Add padding here. */
+  
+}
+
+/* Write the new declarations at the marked sites below. */
+.page-shell {
+  /* TODO: Step 1: Set width here. */
+}
+.bulletin {
+  /* TODO: Step 2: Set grid-template-columns here. */
+}
+.card {
+  /* TODO: Step 3: Set padding here. */
 }

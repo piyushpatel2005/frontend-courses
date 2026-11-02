@@ -1,0 +1,16 @@
+body { margin: 1rem; font-family: system-ui, sans-serif; }
+.scroll-panel { height: 12rem; max-width: 30rem; overflow: auto; border: 2px solid #28536b; }
+.scroll-heading { margin: 0; padding: 1rem; background: #dff3e4; }
+.entry { position: relative; margin: 0; padding: 2rem 1rem; background: white; }
+.scroll-panel:focus-visible { outline: 3px solid #075985; outline-offset: 3px; }
+
+/* Write the new declarations at the marked sites below. */
+.scroll-heading {
+  /* TODO: Step 1: Set position here. */
+}
+.scroll-heading {
+  /* TODO: Step 2: Set top here. */
+}
+.scroll-heading {
+  /* TODO: Step 3: Set z-index here. */
+}

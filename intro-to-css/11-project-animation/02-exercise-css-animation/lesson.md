@@ -1,10 +1,10 @@
 ---
-title: Garden festival signal exercise
+title: Garden festival signal
 slug: exercise-css-animation
 order: 2
-language: html
+language: css
 summary: Add gentle motion to the Garden Festival signal without making it distracting.
-seo_title: Garden festival signal exercise | Intro to CSS
+seo_title: Garden festival signal | Intro to CSS
 seo_description: Learn transitions and keyframe animation by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,11 +17,10 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Garden festival signal exercise
-
+# Garden festival signal
 Attach the drift animation to a garden banner, then smooth its button interaction. The `.kite` class is reused for the banner symbol; this is a new festival page, not the earlier field-note project.
 
-The starter supplies `@keyframes drift` and separate animation settings for duration, timing, repetition, and direction. These longhand properties are the individual parts of the demo's `animation` shorthand. Only `animation-name` is missing. The button's hover/focus transform, focus outline, and complete reduced-motion override are also supplied.
+The starter supplies `@keyframes drift` and separate animation settings for duration, timing, two-iteration count, and direction. These longhand properties are the individual parts of the demo's `animation` shorthand. Only `animation-name` is missing. The button's hover/focus transform, focus outline, and complete reduced-motion override are also supplied.
 
 Edit `style.css`, keeping your declarations in the normal rules above the reduced-motion query. A later override must remain able to stop the motion.
 

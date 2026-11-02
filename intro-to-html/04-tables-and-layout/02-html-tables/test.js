@@ -2,6 +2,12 @@ test("page has one schedule table", () => {
   assert.equal(document.querySelectorAll("body table").length, 1, "Add exactly one schedule table");
 });
 
+test("schedule has a first-child caption", () => {
+  const table = document.querySelector('body table');
+  assert.equal(table?.firstElementChild?.tagName, 'CAPTION', 'Put caption first inside table');
+  assert.exists(table.firstElementChild.textContent.trim(), 'Name the schedule in its caption');
+});
+
 test("table has time, day, and station column headers", () => {
   const row = document.querySelector("body table > thead > tr");
   assert.exists(row, "Add a header row inside <thead>");
@@ -21,7 +27,9 @@ test("table has two three-cell schedule entries", () => {
   ordinary.forEach(row => {
     assert.equal(row.children.length, 3, "Give each schedule entry three cells: time, day, station");
     Array.from(row.children).forEach(cell => {
-      assert.equal(cell.tagName, "TD", "Use <td> for schedule data");
+      const first = cell === row.firstElementChild;
+      assert.equal(cell.tagName, first ? "TH" : "TD", "Use a time row header, then two data cells");
+      if (first) assert.equal(cell.getAttribute('scope'), 'row', 'Give the time header scope="row"');
       assert.equal(cell.colSpan, 1, "Keep ordinary schedule entries in three separate columns");
       assert.notEqual(cell.textContent.trim(), "", "Write data in each schedule cell");
     });
@@ -35,7 +43,9 @@ test("last row has a two-column announcement", () => {
   const cells = Array.from(row.children);
   assert.equal(cells.length, 2, "Use one time cell and one announcement cell");
   cells.forEach(cell => {
-    assert.equal(cell.tagName, "TD", "Use <td> in the announcement row");
+    const first = cell === cells[0];
+    assert.equal(cell.tagName, first ? "TH" : "TD", "Use a time header followed by the announcement data");
+    if (first) assert.equal(cell.getAttribute('scope'), 'row', 'Label the announcement time with scope="row"');
     assert.notEqual(cell.textContent.trim(), "", "Fill both announcement cells");
   });
   assert.equal(cells[0].colSpan, 1, "The time occupies one column");

@@ -1,10 +1,10 @@
 ---
-title: "Apply CSS Demo: Three Sources"
+title: "Apply CSS Three Sources"
 slug: apply-css-demo
 order: 5
 language: html
 summary: See inline, internal, and external CSS sources working together in one exhibit card.
-seo_title: "Apply CSS Demo: Three Sources | Introduction to CSS"
+seo_title: "Apply CSS Three Sources | Introduction to CSS"
 seo_description: See inline, internal, and external CSS sources working together in one exhibit card.
 seo_keywords: [CSS demo, CSS preview, apply-css-demo]
 lesson_type: coding

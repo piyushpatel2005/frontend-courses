@@ -1,12 +1,12 @@
 ---
-title: "Positioning Demo: Pickup Pin"
+title: "Positioning Pickup Pin"
 slug: positioning-demo
 order: 5
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: See relative and absolute positioning place a pickup pin at the corner of a seed swap map card.
-seo_title: CSS Positioning Demo | Pickup Pin
+seo_title: CSS Positioning | Pickup Pin
 seo_description: Inspect relative and absolute CSS positioning with a pickup pin attached to a seed swap map card.
 seo_keywords:
   - CSS positioning
@@ -20,7 +20,7 @@ hints:
 
 # Attach a pin to the map card
 
-The “Today” pin belongs in the library card's upper-right corner. Normal flow lays out elements in document order. Absolute positioning lets this small label leave that flow and sit over the card instead.
+The “Today” pin belongs in the library card's upper-right corner. Normal flow lays out block and inline boxes in document order. The default position is static: offsets such as top do not move that box. With relative positioning, offsets shift the painted box while its original space stays reserved. Absolute positioning lets this small label leave that flow and sit over the card instead.
 
 `.map-card { position: relative; }` keeps the card in its normal place while making it a reference for its absolutely positioned child. `.pickup-pin { position: absolute; }` removes the pin's reserved space. The text no longer moves down to make room for it.
 

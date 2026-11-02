@@ -1,10 +1,10 @@
 ---
-title: "Cross-Axis Alignment Demo"
+title: "Cross-Axis Alignment"
 slug: cross-axis-demo
 order: 5
-language: html
+language: css
 summary: "`align-items` aligns items across the cross axis."
-seo_title: "Cross-Axis Alignment Demo | Introduction to CSS"
+seo_title: "Cross-Axis Alignment | Introduction to CSS"
 seo_description: "See align-items center line up short and tall trip-briefing cards."
 seo_keywords: [CSS, cross-axis-demo, layout, beginner CSS]
 lesson_type: coding

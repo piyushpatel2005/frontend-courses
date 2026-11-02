@@ -24,15 +24,11 @@ hints:
 
 # HTML Tables
 
-## Mission
-
 The community repair café is posting a two-day schedule. Visitors need to scan times and stations in rows and columns, not read a paragraph. Build the schedule so its labels and data stay connected.
 
 > **Note:** Use tables for related data — schedules, price lists, comparison charts — not for page layout. CSS Flexbox or Grid handles layout.
 
-## What you'll build
-
-A structured schedule table with a header row, at least two data rows, and one cell that spans multiple columns.
+The supplied heading is already in `index.html`. Below it, add a captioned schedule with column headers, time labels for each row, and one spanning announcement.
 
 ## The table frame
 
@@ -51,7 +47,9 @@ A table is made of rows. Put each row in `<tr>`, then use `<td>` for ordinary da
 </table>
 ```
 
-`scope="col"` tells assistive technology that each header describes a column. Use `scope="row"` when a header describes the row instead.
+`scope="col"` says that a header labels a column. Use `<th scope="row">` when a cell labels its row. A workshop row might begin `<th scope="row">Pottery</th>`, followed by `<td>` cells for its time and host. The header’s role comes from the relationship, not its default bold appearance.
+
+A `<caption>` gives the whole table a visible name. Put it directly inside `<table>`, before the row groups, for example `<caption>Saturday workshop places</caption>`. A nearby page heading names the page; a caption identifies this particular table.
 
 ## Give the schedule sections
 
@@ -74,7 +72,7 @@ A table is made of rows. Put each row in `<tr>`, then use `<td>` for ordinary da
 
 `colspan="2"` lets the footer label cover two columns. In a three-column row, one ordinary cell plus one cell spanning two columns fills the row. Do not keep three cells and also make one span two: that would create four column slots. `rowspan="2"` spans two rows; cells in the next row must leave room for that occupied slot. You do not need rowspan in this exercise.
 
-## Checkpoint
+## Check your page
 
 Run the page. You should see a header row above at least two schedule rows, plus one wider cell spanning columns. If the columns shift, count the cells in every row and check the `colspan` value.
 
@@ -84,11 +82,10 @@ Edit `index.html`, press **Run** to inspect your page, then **Submit** to check 
 
 Build the repair café’s two-day station schedule:
 
-1. Add one `<table>` element.
-2. Add a `<thead>` row with three `<th scope="col">` headers: time, day, and station.
-3. Add a `<tbody>` with at least two schedule rows. Give each row three non-empty `<td>` cells: time, day, and station.
-4. Add a separate announcement row at the end of `<tbody>`: one non-empty `<td>` for its time, followed by one non-empty `<td colspan="2">` for its message.
-
-## Payoff
+1. Add one `<table>` element below the supplied page heading.
+2. Give the table a non-empty `<caption>` as its first element, naming the two-day repair schedule.
+3. Add a `<thead>` row with three `<th scope="col">` headers: time, day, and station.
+4. Add a `<tbody>` with at least two schedule rows. Begin each row with a non-empty `<th scope="row">` for its time, followed by non-empty `<td>` cells for day and station.
+5. Add a separate announcement row at the end of `<tbody>`: one non-empty `<th scope="row">` for its time, followed by one non-empty `<td colspan="2">` for its message.
 
 The repair café now has a schedule whose column headers label the times, days, and stations.

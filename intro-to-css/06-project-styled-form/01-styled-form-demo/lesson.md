@@ -1,10 +1,10 @@
 ---
-title: Community garden request card demo
+title: Community garden request card
 slug: styled-form-demo
 order: 1
-language: html
+language: css
 summary: Style a clear seed-request form for the Community Garden tool shed.
-seo_title: Community garden request card demo | Intro to CSS
+seo_title: Community garden request card | Intro to CSS
 seo_description: Learn form controls and focus feedback by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,8 +17,7 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Seed request form demo
-
+# Seed request form
 A community garden volunteer needs a reply address for seed requests. This completed card puts the label above the field and shows which control has keyboard focus.
 
 The HTML connects `label for="email"` to `input id="email"`. Click Contact email: focus moves to the field. A placeholder is only a typing example, so it does not replace that visible label.

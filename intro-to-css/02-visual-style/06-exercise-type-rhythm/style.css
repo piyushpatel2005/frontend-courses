@@ -24,3 +24,14 @@ body {
 h1 {
   margin: 0.7rem 0;
 }
+
+/* Write the new declarations at the marked sites below. */
+body {
+  /* TODO: Step 1: Set font-family here. */
+}
+.note p {
+  /* TODO: Step 2: Set line-height here. */
+}
+h1 {
+  /* TODO: Step 3: Set letter-spacing here. */
+}

@@ -1,0 +1,15 @@
+body { margin: 1rem; font-family: system-ui, sans-serif; }
+.image-card { max-width: 36rem; }
+.landscape { display: block; width: 800px; height: 400px; }
+.thumbnail { display: block; width: 8rem; height: 8rem; }
+
+/* Write the new declarations at the marked sites below. */
+.landscape {
+  /* TODO: Step 1: Set max-width here. */
+}
+.landscape {
+  /* TODO: Step 2: Set height here. */
+}
+.thumbnail {
+  /* TODO: Step 3: Set object-fit here. */
+}

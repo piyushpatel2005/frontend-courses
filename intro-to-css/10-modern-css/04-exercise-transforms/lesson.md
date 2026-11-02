@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Rotate a Field Note"
+title: "Rotate a Field Note"
 slug: exercise-transforms
 order: 4
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "Run Preview: the pinned card should tilt while its neighbor stays put."
-seo_title: "Exercise: Rotate a Field Note | Introduction to CSS"
+seo_title: "Rotate a Field Note | Introduction to CSS"
 seo_description: "Run Preview: the pinned card should tilt while its neighbor stays put. Build and inspect the result in a live CSS preview."
 seo_keywords:
   - CSS
@@ -17,7 +17,7 @@ hints:
   - Run Preview before submitting your tests.
 ---
 
-# Exercise: rotate a field note
+# rotate a field note
 
 Tilt the pinned creek-walk note without moving the adjacent oak survey. The preceding demo showed how `rotate()` changes the painted card and how `transform-origin` chooses its pivot.
 

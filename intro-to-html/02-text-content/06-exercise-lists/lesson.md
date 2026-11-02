@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Build a Crew Member Loadout"
+title: "Build a Crew Member Loadout"
 slug: exercise-lists
 order: 6
 language: html
@@ -22,13 +22,7 @@ hints:
 
 # HTML Lists
 
-## Mission
-
-A crew member is preparing a daytime river survey, rather than the demo's night rescue. Write a numbered departure sequence, a bulleted kit list, and definitions for two survey terms. Choose your own details for each list.
-
-## What you'll build
-
-A page with three list types: numbered departure steps, a bulleted survey kit, and a glossary pairing mission terms with their meanings.
+A crew member is preparing a daytime river survey rather than the previous example’s night rescue. The document shell in `index.html` is supplied; its body is empty. Write your own departure steps, kit items, and two survey terms. Their jobs determine which list to use.
 
 ## Choose a list by its job
 
@@ -46,7 +40,7 @@ For a different brief, a supply list could look like this:
 </dl>
 ```
 
-## Checkpoint
+## Check your page
 
 Preview the page. The setup steps should be numbered, the supplies should have bullets, and each term in the description list should be followed by its explanation. If the sequence is not numbered, inspect the outer list tag first.
 
@@ -62,7 +56,5 @@ Build a page that uses all three list types:
 4. Inside your `<ul>`, add at least **3 non-empty `<li>`** items.
 5. Add a `<dl>` to the page.
 6. Inside your `<dl>`, add at least **2 non-empty `<dt>`** terms, each followed by a matching `<dd>` definition.
-
-## Payoff
 
 The crew now has steps, supplies, and short explanations in the right list shapes.

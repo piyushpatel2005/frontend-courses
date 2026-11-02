@@ -1,10 +1,10 @@
 ---
-title: "Grid Placement Demo"
+title: "Grid Placement"
 slug: grid-placement-demo
 order: 5
-language: html
+language: css
 summary: "`grid-column` lets an item occupy selected grid tracks."
-seo_title: "Grid Placement Demo | Introduction to CSS"
+seo_title: "Grid Placement | Introduction to CSS"
 seo_description: "A grid's lines are the boundaries of its tracks. Two columns have three column lines: the start, the boundary between columns, and the end. Count from `1` at the start. Negative numbers count backward from the end of the explicitly defined grid, so `-1` means its last line."
 seo_keywords: [CSS, grid-placement-demo, layout, beginner CSS]
 lesson_type: coding

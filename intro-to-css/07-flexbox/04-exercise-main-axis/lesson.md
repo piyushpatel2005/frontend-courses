@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Main-Axis Spacing"
+title: "Main-Axis Spacing"
 slug: exercise-main-axis
 order: 4
-language: html
+language: css
 summary: "`justify-content` distributes items along the main axis."
-seo_title: "Exercise: Main-Axis Spacing | Introduction to CSS"
+seo_title: "Main-Axis Spacing | Introduction to CSS"
 seo_description: "Practice justify-content space-between on a row of trail tools."
 seo_keywords: [CSS, exercise-main-axis, layout, CSS exercise]
 lesson_type: coding

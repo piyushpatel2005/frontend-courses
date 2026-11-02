@@ -15,13 +15,9 @@ hints:
 
 # Project 1: Visiting Card (Links and Actions)
 
-## Mission
+Riya’s portrait and contact list are carried forward from the previous lesson. Keep that card and edit only the empty action area in `index.html`. If you brought your own contributor forward, use their displayed email and phone details in the links.
 
-Riya’s card already shows her portrait and contact list from the previous lesson. Add ways to email her, call her, and view her work. Keep the existing card; edit only the empty action area in `index.html`. If you brought your own contributor forward, use that person’s email address and phone number.
-
-## What you'll build
-
-A visiting card with four usable action links: email (mailto:), phone (tel:), external portfolio (opens in new tab), and a clear call-to-action.
+Add email, phone, portfolio, and invitation links so visitors can tell what each action would do. You do not need to activate external links or contact anyone.
 
 ## Link to an action
 
@@ -32,7 +28,7 @@ An anchor can open an email app or phone app when its `href` starts with `mailto
 <a href="tel:5550100">Call Samira</a>
 ```
 
-For a portfolio on another site, use its complete URL. Links normally stay in the same tab; this project asks you to request a new tab with `target="_blank"`. `rel="noopener noreferrer"` prevents access to the opening page and omits referrer information.
+For a portfolio on another site, use its complete URL. Links normally stay in the same tab; this project asks you to request a new tab with `target="_blank"`. Modern browsers give ordinary `_blank` links implicit `noopener` behavior. We write `rel="noopener"` explicitly to state that intent; adding `noreferrer` also omits referrer information. This project asks for both tokens, but withholding the referrer is a separate privacy choice.
 
 ```html
 <a href="https://example.com" target="_blank" rel="noopener noreferrer">View portfolio</a>
@@ -44,7 +40,7 @@ The supplied `<nav>` groups the action links; `aria-label` gives that group a na
 <a href="mailto:samira@example.com">Ask about a map project</a>
 ```
 
-## Checkpoint
+## Check your page
 
 Run the page and inspect the links. The email link should begin with `mailto:`, the phone link with `tel:`, and the external portfolio link should open in a new tab. If a link is plain text, make sure it is inside `<a>` and has an `href`.
 
@@ -54,7 +50,5 @@ Run the page and inspect the links. The email link should begin with `mailto:`, 
 2. Add a phone link whose `tel:` number matches the contact list (digits, optionally starting with `+`).
 3. Add an HTTPS portfolio link that opens in a new tab with `target="_blank"` and `rel="noopener noreferrer"`.
 4. Add a separate invitation link with `class="contact-invitation"`, an invitation of at least two words, and a non-empty `mailto:`, `tel:`, or HTTPS destination.
-
-## Payoff
 
 Submit to check your links. You do not need to open an email or phone app or contact anyone. The example.com portfolio is a placeholder, not Riya’s real website.

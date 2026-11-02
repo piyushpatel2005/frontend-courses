@@ -16,3 +16,11 @@
 .card:nth-child(2) {
   padding-block: 2.5rem;
 }
+
+/* Write the new declarations at the marked sites below. */
+.briefing-row {
+  /* TODO: Step 1: Set display here. */
+}
+.briefing-row {
+  /* TODO: Step 2: Set align-items here. */
+}

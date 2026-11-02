@@ -14,5 +14,16 @@
   max-height: 7rem;
   padding: 1rem;
   background: #ecfdf5;
-  /* Add width, max-width, and overflow here. */
+  
+}
+
+/* Write the new declarations at the marked sites below. */
+.card {
+  /* TODO: Step 1: Set width here. */
+}
+.card {
+  /* TODO: Step 2: Set max-width here. */
+}
+.card {
+  /* TODO: Step 3: Set overflow here. */
 }

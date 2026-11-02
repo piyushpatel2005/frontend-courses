@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Target a Book Cart Sign"
+title: "Target a Book Cart Sign"
 slug: exercise-advanced-selectors
 order: 2
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Use descendant, child, and attribute selectors to style specific parts of a book cart sign.
-seo_title: Advanced CSS Selectors Exercise | Book Cart Sign
+seo_title: Advanced CSS Selectors | Book Cart Sign
 seo_description: Practice descendant, child, and attribute CSS selectors on a Moonlit Book Cart sign.
 seo_keywords:
   - advanced CSS selectors exercise

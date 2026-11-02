@@ -1,5 +1,5 @@
 ---
-title: "Complete HTML5 Page Structure: See It in Action"
+title: "Complete HTML5 Page Structure"
 slug: complete-html5-page-structure
 order: 3
 language: html
@@ -13,9 +13,6 @@ seo_keywords:
   - HTML body
   - HTML comment
 lesson_type: coding
-hints:
-  - "This is a completed demo. Use it to connect each structural tag to its effect before the next exercise."
-  - "Only content inside <body> is visible in the page preview."
 ---
 
 # Read a complete HTML5 page
@@ -42,6 +39,20 @@ You have written content inside a body. This finished crew profile shows what su
 The `<head>` holds page information rather than visible paragraphs. `<meta charset="UTF-8">` declares the text encoding so characters can display correctly. `<title>` names the document; the embedded preview does not have its own tab to show that name.
 
 The `<body>` holds the visible content. Indenting elements inside their parent makes the nesting easier to read; indentation does not create the page layout.
+
+## Keep pairs inside their parent
+
+An inner element must close before its outer element closes:
+
+```html
+<p>The survey is <strong>ready</strong> to begin.</p>
+```
+
+Here `<strong>` marks an important phrase. It starts and ends inside the paragraph; the next module explains when to use it. Writing `<p>...<strong>ready</p></strong>` crosses the tag pairs. Browsers try to repair mistakes, so a page that looks plausible can still have the wrong structure. Match the pairs in the source rather than relying on the preview to catch every error.
+
+Write attributes in the opening tag, separated by spaces, for example `<html lang="en">`. The closing tag is just `</html>`, without attributes. Quote attribute values so a value containing spaces stays together. Ordinary source line breaks collapse into text spacing; they do not create extra paragraphs.
+
+Some elements have no contents or closing tag. These are **void elements**, including the `<meta>` above and the images and inputs you will meet later. Both `<meta charset="UTF-8">` and `<meta charset="UTF-8" />` are common HTML spellings; the slash does not create a separate closing tag.
 
 ## A note that stays in the source
 

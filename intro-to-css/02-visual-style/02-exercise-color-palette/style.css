@@ -26,3 +26,17 @@ h1 {
   border-radius: 999px;
   font-weight: bold;
 }
+
+/* Write the new declarations at the marked sites below. */
+.ticket {
+  /* TODO: Step 1: Set background-color here. */
+}
+h1 {
+  /* TODO: Step 2: Set color here. */
+}
+.entry {
+  /* TODO: Step 3: Set background-color here. */
+}
+.entry {
+  /* TODO: Step 4: Set color here. */
+}

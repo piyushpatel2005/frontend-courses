@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Cross-Axis Alignment"
+title: "Cross-Axis Alignment"
 slug: exercise-cross-axis
 order: 6
-language: html
+language: css
 summary: "`align-items` aligns items across the cross axis."
-seo_title: "Exercise: Cross-Axis Alignment | Introduction to CSS"
+seo_title: "Cross-Axis Alignment | Introduction to CSS"
 seo_description: "Practice cross-axis alignment with align-items center."
 seo_keywords: [CSS, exercise-cross-axis, layout, CSS exercise]
 lesson_type: coding

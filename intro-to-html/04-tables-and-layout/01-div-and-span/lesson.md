@@ -23,13 +23,7 @@ hints:
 
 # Div and Span
 
-## Mission
-
-The community seed swap needs a simple swap-list page with two item cards. You'll group each item's information in a block container, then highlight one useful word inside a description.
-
-## What you'll build
-
-A page with two stacked cards. Each card groups a title and description; a span marks a key word inside one description for future styling.
+A community seed swap needs two item cards. The supplied `index.html` has an empty body: group each item’s information in a block, then mark one useful word inside its description. These containers give CSS places to work later; they do not draw card borders or highlights on their own.
 
 ## The two container jobs
 
@@ -47,7 +41,7 @@ Use `<div>` when a whole block belongs together. It begins on a new line and can
 </div>
 ```
 
-The `div` keeps the item information together. The `span` stays inside the sentence, so it does not split the paragraph into another block.
+These are default display behaviors, not permanent rules: CSS can change how either element is displayed. The `div` keeps the item information together. The `span` stays inside the sentence, so it does not split the paragraph into another block.
 
 ## Reusable hooks
 
@@ -62,7 +56,7 @@ A generic container does not name a particular kind of content. A div still has 
 
 `card` can label every card. `swap-list` identifies one page region. You will practice reusable classes and unique IDs in more detail later in this module.
 
-## Checkpoint
+## Check your page
 
 Run the page. Each card should start on its own line, while the span stays within its paragraph. Without CSS, the marked word will not look different yet. If everything runs together, check that each card is wrapped in its own opening and closing `<div>`.
 
@@ -77,7 +71,5 @@ In the tasks, `.card` is shorthand for an element with `class="card"`; the dot b
 3. Add a non-empty `<h2>` naming the item in each `.card`.
 4. Add a non-empty `<p>` describing the item in each `.card`.
 5. In one paragraph, wrap a key word in `<span class="highlight">` for future styling.
-
-## Payoff
 
 You now have a clean structure for a swap-list page: repeatable cards outside, a precise inline hook inside.

@@ -23,3 +23,14 @@ h1 {
   background-color: #312e81;
   padding: 1rem;
 }
+
+/* Write the new declarations at the marked sites below. */
+.announcement {
+  /* TODO: Step 1: Set background-color here. */
+}
+.announcement {
+  /* TODO: Step 2: Set background-image here. */
+}
+.announcement {
+  /* TODO: Step 3: Set color here. */
+}

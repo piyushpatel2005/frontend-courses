@@ -1,1 +1,12 @@
-/* Add p, .alert, and #opening color rules here. */
+
+
+/* Write the new declarations at the marked sites below. */
+p {
+  /* TODO: Step 1: Set color here. */
+}
+.alert {
+  /* TODO: Step 2: Set color here. */
+}
+#opening {
+  /* TODO: Step 3: Set color here. */
+}

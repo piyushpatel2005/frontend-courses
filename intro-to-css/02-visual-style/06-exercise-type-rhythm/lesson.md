@@ -1,10 +1,10 @@
 ---
-title: Type Rhythm Exercise
+title: Type Rhythm
 slug: exercise-type-rhythm
 order: 6
-language: html
+language: css
 summary: Style a readable CSS market note with font family, line height, and letter spacing.
-seo_title: CSS Typography Exercise | Visual Style
+seo_title: CSS Typography | Visual Style
 seo_description: Practice font-family, line-height, and letter-spacing while styling a readable CSS market note.
 seo_keywords:
   - CSS typography exercise

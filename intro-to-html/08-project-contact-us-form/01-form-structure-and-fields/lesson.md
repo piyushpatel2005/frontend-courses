@@ -19,32 +19,25 @@ hints:
 
 # Project 2: Create a Contact Us Form (Structure)
 
-## Mission
+You have practiced the controls separately. Apply them to the Riverlight Community Hall contact page for room bookings, volunteering, and accessibility requests.
 
-You have practiced labels, input types, and choice controls at the Meridian Relay. Now apply those patterns to the Riverlight Community Hall contact page for room bookings, volunteer questions, and accessibility requests.
-
-## What you'll build
-
-A labeled contact form with required Name and Email fields, a Message box, a Topic menu, and a submit button — all inside one form. The action URL in the reference answer is illustrative; the preview does not deliver messages to the hall.
-
-The starter already includes the Contact Us heading; build the form below it.
+The starter in `index.html` supplies the Contact Us heading. Add a labeled form below it. The example `/contact` path has no receiving service here; this preview does not deliver messages to the hall.
 
 ## One idea: labels make a form usable before it is styled
 
 A label tells people and assistive technology what a control means. Connect it with matching `for` and `id` values; repeat that pattern for inputs, textareas, and selects. Placeholder text is only a hint inside a field: it can disappear as someone types and does not replace a label.
 
 ```html
-<label for="topic">Topic</label>
-<select id="topic" name="topic">
-    <option value="booking">Room booking</option>
-    <option value="volunteer">Volunteering</option>
-    <option value="access">Accessibility</option>
+<label for="workshop">Workshop</label>
+<select id="workshop" name="workshop">
+    <option value="clay">Clay modeling</option>
+    <option value="print">Printmaking</option>
 </select>
 ```
 
 The browser can require an answer with `required`. Put the controls inside one `<form method="post">`. Each field also needs a non-empty `name`, which becomes its key in the submitted data. An `id` alone does not send an answer. POST puts data in the request body; a real site still needs HTTPS and a receiving service that validates the answers.
 
-## Checkpoint
+## Check your page
 
 Edit `index.html`, Run to inspect each new field, then Submit to check your tasks. With Name empty, clicking Send Message should trigger the browser’s required-field prompt rather than send a request. Do not submit a completed form: `/contact` is only an example destination. If clicking a label does not focus its control, compare its `for` and `id` values.
 
@@ -62,7 +55,5 @@ Edit `index.html`, Run to inspect each new field, then Submit to check your task
 10. Connect a visible Email label to the email input in the same way.
 11. Connect a visible Message label to the textarea in the same way.
 12. Connect a visible Topic label to the select in the same way.
-
-## Payoff
 
 The next lesson starts with this completed reference form. If you changed the wording, carry your version forward and keep its fields as you add reply preferences.

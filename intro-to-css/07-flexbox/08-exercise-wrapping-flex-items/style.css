@@ -11,3 +11,14 @@
   border-radius: .75rem;
   background: #ffe0e0;
 }
+
+/* Write the new declarations at the marked sites below. */
+.supply-row {
+  /* TODO: Step 1: Set display here. */
+}
+.supply-row {
+  /* TODO: Step 2: Set flex-wrap here. */
+}
+.card {
+  /* TODO: Step 3: Set flex here. */
+}

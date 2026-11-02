@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Target Exhibit Details"
+title: "Target Exhibit Details"
 slug: exercise-css-selectors
 order: 4
-language: html
+language: css
 summary: Practice element, class, and ID selectors on a specimen card.
-seo_title: "Exercise: Target Exhibit Details | Introduction to CSS"
+seo_title: "Target Exhibit Details | Introduction to CSS"
 seo_description: Practice element, class, and ID selectors on a specimen card.
 seo_keywords: [CSS exercise, exercise-css-selectors]
 lesson_type: coding

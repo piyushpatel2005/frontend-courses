@@ -24,7 +24,7 @@ input {
 }
 input:focus {
   outline-offset: 2px;
-  /* Add focus outline below. */
+  
 }
 button {
   display: block;
@@ -36,3 +36,11 @@ button {
 }
 
 button:focus-visible { outline: 3px solid #1e40af; outline-offset: 2px; }
+
+/* Write the new declarations at the marked sites below. */
+input {
+  /* TODO: Step 1: Set margin-bottom here. */
+}
+input:focus {
+  /* TODO: Step 2: Set outline here. */
+}

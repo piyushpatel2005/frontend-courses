@@ -52,9 +52,9 @@ modules:
 
 # CSS
 
-CSS (Cascading Style Sheets) controls how an HTML page looks: its colors, text, spacing, and layout. You should already recognize basic HTML elements, classes, and links. You do not need to know any CSS yet.
+CSS (Cascading Style Sheets) controls how an HTML page looks: its colors, text, spacing, and layout. You should already recognize basic HTML elements, classes, and links. The HTML course introduced simple color and text-size declarations; this course explains how they work and builds the layout skills that HTML did not cover. JavaScript comes afterward, followed by a vanilla-JavaScript DOM course.
 
-Each topic starts with a working demo. Read its stylesheet, change one value, and use the preview to see what that value does. The following exercise gives you a different page so you can try the technique yourself. The HTML is supplied; edit `style.css` unless a task specifically asks you to change the markup.
+Most visual topics start with a working example. Focused lessons fill gaps where another demo would repeat the same idea. Read its stylesheet, change one value, and use the preview to see what that value does. The following exercise gives you a different page so you can try the technique yourself. The HTML is supplied; edit `style.css` unless a task specifically asks you to change the markup. Numbered TODO comments mark each edit site. Empty rules at the end are places to add your declarations; they extend or override the supplied rules above without removing the page’s setup.
 
 Start with individual elements and cards, then use selectors and spacing in a menu and form. Flexbox and Grid introduce ways to arrange several elements together. Later projects add motion and adapt layouts to smaller screens. Each project includes its own starting files, so you do not need to copy your work from an earlier lesson.
 

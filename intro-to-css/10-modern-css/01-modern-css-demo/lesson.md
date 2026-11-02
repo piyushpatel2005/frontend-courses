@@ -1,10 +1,10 @@
 ---
-title: Field note color system demo
+title: Field note color system
 slug: modern-css-demo
 order: 1
-language: html
+language: css
 summary: Use reusable CSS values to give a field-note card a stable color system.
-seo_title: Field note color system demo | Intro to CSS
+seo_title: Field note color system | Intro to CSS
 seo_description: Learn custom properties and transitions by building a small, visible CSS interface.
 seo_keywords:
   - CSS
@@ -17,11 +17,10 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Field note color system demo
-
+# Field note color system
 The bluebird note repeats an accent color on its border and button. A CSS custom property lets you name that color once and reuse it.
 
-`:root` selects the document's root element. A custom property starts with two hyphens: `--accent: #e76f51`. Other rules read it with `var(--accent)`. The supplied `--ink` and `--paper` names work the same way. These properties inherit into the page's children, so the border and button can share them.
+`:root` selects the document's root element. A custom property starts with two hyphens: `--accent: #e76f51`. Other rules read it with `var(--accent)`. The supplied `--ink` and `--paper` names work the same way. Custom-property names are case-sensitive. You can provide a missing-value fallback with var(--accent, #183153). A fallback does not repair every invalid value: if --accent exists but contains a value that is not a color, that color declaration can still fail. These properties inherit into the page's children, so the border and button can share them.
 
 The button's `transition: background-color 180ms ease` describes a change: `background-color` is the property to animate, `180ms` is the duration (milliseconds), and `ease` changes the pace rather than keeping a constant speed. Put the transition on the normal button rule so it works both when entering and leaving the highlighted state.
 

@@ -1,10 +1,10 @@
 ---
-title: "Specificity Demo: Resolve a Style Conflict"
+title: "Specificity Resolve a Style Conflict"
 slug: specificity-demo
 order: 7
-language: html
+language: css
 summary: See an ID selector override class and element color rules on one exhibit note.
-seo_title: "Specificity Demo: Resolve a Style Conflict | Introduction to CSS"
+seo_title: "Specificity Resolve a Style Conflict | Introduction to CSS"
 seo_description: See an ID selector override class and element color rules on one exhibit note.
 seo_keywords: [CSS demo, CSS preview, specificity-demo]
 lesson_type: coding

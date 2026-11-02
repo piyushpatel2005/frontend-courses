@@ -1,10 +1,10 @@
 ---
-title: "Tool checkout table exercise"
+title: "Tool checkout table"
 slug: exercise-responsive-table
 order: 2
-language: html
+language: css
 summary: "Keep checkout columns readable with a minimum table width and scrolling wrapper."
-seo_title: "Tool checkout table exercise | Intro to CSS"
+seo_title: "Tool checkout table | Intro to CSS"
 seo_description: "Practice responsive table overflow and a 32rem table minimum width."
 seo_keywords:
   - CSS
@@ -14,8 +14,7 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Tool checkout table exercise
-
+# Tool checkout table
 The supplied checkout table already has headings, data, and cell styles. Like the seed inventory demo, it needs a minimum width for readable columns and a wrapper that handles the extra width on a phone. Edit only `style.css`.
 
 ## Your Tasks

@@ -1,7 +1,7 @@
 // CSSOM checks confirm the selector technique; computed styles check its result.
 function rulesFor(selector) {
   const normalize = value => value.replace(/\s*>\s*/g, '>').replace(/['"]/g, '').trim();
-  return Array.from(document.styleSheets).flatMap(sheet => {
+  return Array.from(document.querySelectorAll('style[data-intercourses="user-css"], head style:not([data-intercourses])'), node => node.sheet).filter(Boolean).flatMap(sheet => {
     try { return Array.from(sheet.cssRules); } catch { return []; }
   }).filter(rule => rule.selectorText?.split(',').some(part => normalize(part) === normalize(selector)));
 }

@@ -1,12 +1,12 @@
 ---
-title: "Fluid sizing demo"
+title: "Fluid sizing"
 slug: fluid-sizing-demo
 order: 3
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: "Explore min(), minmax(), and clamp() in a fluid forecast layout."
-seo_title: "Fluid sizing demo | Intro to CSS"
+seo_title: "Fluid sizing | Intro to CSS"
 seo_description: "Inspect a fluid-width page, an auto-fit grid, and bounded padding."
 seo_keywords:
   - CSS
@@ -14,8 +14,7 @@ seo_keywords:
   - CSS demo
 ---
 
-# Fluid sizing demo
-
+# Fluid sizing
 A breakpoint can flip a grid at a chosen width. This park forecast instead lets available space determine the layout between sizes.
 
 In `style.css`, `.page-shell` uses `width: min(90%, 46rem)`. `min()` chooses the smaller value, so the page takes 90% of its container until it reaches the 46rem cap.
@@ -26,7 +25,7 @@ The third decision belongs to `.card`: `padding: clamp(.75rem, 2vw, 1.5rem)` mak
 
 ## Read the units and limits
 
-`rem` follows the root font size: with a 16px root, `12rem` is 192px. A percentage width such as `90%` follows the containing block. `vw` instead follows the preview viewport: `1vw` is one hundredth of its width. Those are different reference sizes.
+`rem` follows the root font size: with a 16px root, `12rem` is 192px. A percentage width such as `90%` follows the containing block. `vw` instead follows the preview viewport: `1vw` is one hundredth of its width. Those are different reference sizes. max(1rem, 2vw) chooses the larger value, useful for enforcing a lower bound. calc(100% - 2rem) combines compatible lengths; keep spaces around + and -. For this example, min() already expresses the width cap without another calculation.
 
 Read `clamp(minimum, preferred, maximum)` from left to right. Here padding follows `2vw` only while that value sits between `.75rem` and `1.5rem`; outside the range it stays at the nearest bound.
 

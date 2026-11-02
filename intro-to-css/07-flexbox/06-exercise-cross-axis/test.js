@@ -11,7 +11,7 @@ function declarations(element, property) {
       } else if (rule.cssRules) visit(rule.cssRules);
     }
   }
-  for (const sheet of document.styleSheets) {
+  for (const sheet of Array.from(document.querySelectorAll('style[data-intercourses="user-css"], head style:not([data-intercourses])'), node => node.sheet).filter(Boolean)) {
     try { visit(sheet.cssRules); } catch (_) { /* External sheets are not learner CSS. */ }
   }
   return values;

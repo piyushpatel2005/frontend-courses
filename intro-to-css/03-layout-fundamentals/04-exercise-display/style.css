@@ -16,4 +16,14 @@ body {
   border-radius: 999px;
   background: #d8e9c8;
 }
-/* Add one display rule for each class. */
+
+/* Write the new declarations at the marked sites below. */
+.tag {
+  /* TODO: Step 1: Set display here. */
+}
+.swap-note {
+  /* TODO: Step 2: Set display here. */
+}
+.hidden-helper {
+  /* TODO: Step 3: Set display here. */
+}

@@ -19,15 +19,9 @@ hints:
 
 # Project 2: Contact Us Form (User Actions)
 
-## Mission
+The Riverlight form can now collect a message. Keep its supplied Name, Email, Topic, Message, and submit controls; they are earlier work, not new task credit.
 
-The Riverlight Community Hall contact form can now collect a message. Add the choices that help the team route it: interests, one preferred reply method, and clear consent.
-
-## What you'll build
-
-A contact form extended with checkbox interests, an optional phone number, a radio-button group for a single reply method, required consent, and the existing submit button — all properly labeled.
-
-The starter carries forward the completed Name, Email, Topic, Message, and submit controls. Add the choices before the button in `index.html`; do not rebuild the previous form. These existing fields are setup, not new task credit.
+In `index.html`, add interests, an optional phone number, one preferred reply method, and consent before the existing button. These choices help a future receiving service route the request; HTML alone will not process it.
 
 ## One idea: names define a radio group
 
@@ -45,7 +39,7 @@ Checkboxes allow several independent answers. Add an optional phone field so a v
 
 Use a separate checkbox for consent and add `required` when it must be accepted before sending. Leave it unchecked so the visitor makes the choice. Every checkbox and radio needs visible label text, just like a text field. Give the choices non-empty `name` and `value` attributes; unchecked checkboxes are not included in submitted form data.
 
-## Checkpoint
+## Check your page
 
 Run the form. You should be able to select several interests but only one reply method. Try to submit without consent: the browser should stop the request. If both reply options remain checked, make sure they use the same `name`. This HTML-only preview has no server to deliver messages or check that someone choosing a phone reply also supplied a number.
 
@@ -59,7 +53,5 @@ Run the form. You should be able to select several interests but only one reply 
 6. Give both interest checkboxes visible labels, wrapping each input or using matching `for` and `id`.
 7. Give both reply-method radios visible labels in the same way.
 8. Give the consent checkbox a visible label explaining agreement to be contacted.
-
-## Payoff
 
 Submit to check the new choices. This completes the contact page’s HTML; it does not configure delivery or store consent. In the next module, you will use the hall setting again to study media rather than keep extending this form.

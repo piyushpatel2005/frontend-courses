@@ -1,10 +1,10 @@
 ---
-title: "Flexbox Navigation Demo"
+title: "Flexbox Navigation"
 slug: flexbox-navigation-demo
 order: 9
-language: html
+language: css
 summary: "Combining flex direction, main-axis spacing, alignment, and gaps creates a dependable one-dimensional layout."
-seo_title: "Flexbox Navigation Demo | Introduction to CSS"
+seo_title: "Flexbox Navigation | Introduction to CSS"
 seo_description: "Inspect a two-group expedition header built with Flexbox spacing and alignment."
 seo_keywords: [CSS, flexbox-navigation-demo, layout, beginner CSS]
 lesson_type: coding

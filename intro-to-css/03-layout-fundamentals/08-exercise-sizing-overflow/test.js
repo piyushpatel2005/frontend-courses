@@ -23,8 +23,8 @@ test("Both cards have a 14rem preferred width", () => {
   each('.card', (style, element) => {
     const row = element.parentElement;
     const root = document.documentElement;
-    const originalRow = row.style.cssText;
-    const originalRoot = root.style.cssText;
+    const originalRow = row.getAttribute('style');
+    const originalRoot = root.getAttribute('style');
     try {
       row.style.maxWidth = 'none';
       row.style.flexWrap = 'wrap';
@@ -36,8 +36,9 @@ test("Both cards have a 14rem preferred width", () => {
         }
       }
     } finally {
-      row.style.cssText = originalRow;
-      root.style.cssText = originalRoot;
+      row.getAttribute('style'); root.getAttribute('style');
+      if (originalRow === null) row.removeAttribute('style'); else row.setAttribute('style', originalRow);
+      if (originalRoot === null) root.removeAttribute('style'); else root.setAttribute('style', originalRoot);
     }
   });
 });

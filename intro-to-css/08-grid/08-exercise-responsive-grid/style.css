@@ -1,0 +1,15 @@
+.page-shell { max-width: 46rem; margin: 3rem auto; font-family: system-ui, sans-serif; }
+.responsive-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.card { overflow-wrap: anywhere; padding: 1rem; background: #cfe8ff; }
+@media (max-width: 36rem) {
+  .responsive-grid {
+    
+  }
+}
+
+/* Write the new declarations at the marked sites below. */
+@media (max-width: 36rem) {
+  .responsive-grid {
+    /* TODO: Step 1: Set grid-template-columns here. */
+  }
+}

@@ -16,7 +16,7 @@ lesson_type: informational
 
 # Iframes
 
-A video or audio element loads a media file. An `<iframe>` embeds a separate HTML document, such as a map on a visitor page. The examples here are for reading; this lesson does not load embedded pages.
+A video or audio element loads a media file. An `<iframe>` embeds a separate HTML document, such as a map on a visitor page. The examples here are for reading; this lesson does not load embedded pages. The course preview rejects nested frames before rendering and also blocks them through its content security policy, so pasting these examples into that preview would not prove whether a provider allows embedding. Test real embeds separately on a page you control.
 
 ## Name the embedded page
 
@@ -67,6 +67,6 @@ Sandbox tokens lift particular restrictions:
 | `allow-popups` | Open new windows |
 | `allow-same-origin` | Retain the embedded page's normal origin rather than an opaque origin |
 
-The map example allows scripts only; it is an illustration of restricted markup, not a promise that the provider works with those permissions. Combining scripts and same-origin permissions is especially risky when embedding content from your own origin. A sandbox is one restriction mechanism, not a guarantee that arbitrary content is safe.
+The map example allows scripts only; it is an illustration of restricted markup, not a promise that the provider works with those permissions. Combining scripts and same-origin permissions is especially risky when embedding content from your own origin. A sandbox is one restriction mechanism, not a guarantee that arbitrary content is safe. The separate `allow` attribute controls permissions such as camera or fullscreen; it does not replace `sandbox`. Grant only the features your chosen content genuinely needs.
 
 A provider can forbid framing through response headers, and a sandbox can prevent required features from working. A blank or blocked frame therefore does not by itself mean the HTML is wrong. Before publishing a real embed, check the provider's documented embed address and required permissions; do not weaken the sandbox by trial and error.

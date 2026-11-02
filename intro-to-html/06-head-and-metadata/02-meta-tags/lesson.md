@@ -9,12 +9,9 @@ seo_description: Learn common HTML meta tags, including charset, viewport, descr
 seo_keywords: [HTML meta tags, SEO meta tags, Open Graph tags, viewport meta tag, robots meta tag]
 lesson_type: informational
 validationRules: []
-hints: []
 ---
 
 # Meta Tags
-
-## Mission
 
 The walking club is sharing its route page with new members. The visible page stays the same. Metadata helps phone browsers size it and gives sharing services a title and summary to use. Those services decide what to display, so metadata is a suggestion rather than a guaranteed preview.
 
@@ -24,7 +21,7 @@ This is a reading lesson, not an editor exercise. Use it as a reference for meta
 
 You already set the route page’s title, viewport, and description. Here are other metadata fields you might meet when sharing it.
 
-## The core briefing
+## Read the attributes
 
 Meta tags live inside `<head>` and use attributes to carry information that visitors do not see in the page body.
 
@@ -67,13 +64,7 @@ The `robots` tag gives instructions to cooperating search crawlers. `index, foll
 <meta name="robots" content="index, follow" />
 ```
 
-You may encounter older `http-equiv` tags that mimic HTTP headers, such as a delayed redirect. Prefer a server redirect when you control the server.
-
-```html
-<meta http-equiv="refresh" content="5; url=https://example.com" />
-```
-
-## Checkpoint
+## Read a shared-link preview
 
 Imagine sharing the route URL in a group chat. The Open Graph title and description are the details a platform can use for the preview; the body text has not changed. Keep the title, description, and URL about the same page so the preview does not mislead visitors.
 

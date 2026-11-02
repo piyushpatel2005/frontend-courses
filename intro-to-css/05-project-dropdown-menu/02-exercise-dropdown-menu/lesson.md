@@ -1,14 +1,14 @@
 ---
-title: Lantern Market navigation exercise
+title: Lantern Market navigation
 slug: exercise-dropdown-menu
 order: 2
-language: html
+language: css
 summary: Build a compact navigation sign for the Lantern Market directory.
-seo_title: Lantern Market navigation exercise | Intro to CSS
-seo_description: Learn dropdown display and hover reveal by building a small, visible CSS interface.
+seo_title: Lantern Market navigation | Intro to CSS
+seo_description: Learn native disclosure states by building a small, visible CSS interface.
 seo_keywords:
   - CSS
-  - dropdown display and hover reveal
+  - native disclosure states
   - HTML
   - beginner CSS
 lesson_type: coding
@@ -17,18 +17,16 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Build a keyboard-friendly dropdown
+# Style the directory disclosure
 
-Finish the Lantern Market navigation from the demo. The button, in-page links, positioning, and keyboard focus rings are supplied. The links are visible in the starter; your first rule will hide them.
+The supplied details and summary already toggle the directory. The links, positioning, and link-focus outlines are setup. Finish its closed/open presentation and the summary’s keyboard focus ring in style.css. Leave the HTML unchanged.
 
-Edit `style.css`. Put the hiding rule before the reveal rules so the open states can override it. The parent `.menu-item` contains both the trigger and links: use its hover state to keep the pointer route connected, and its `:focus-within` state to keep the keyboard route connected.
+Use the open attribute rather than a hover-only rule: the same native toggle then works with a pointer, touch, Enter, and Space. Put your base hiding rule before the open-state rule.
 
 ## Your Tasks
 
-1. Set `.submenu` to `display: none` so the links start hidden.
-2. On `.menu-item:hover .submenu`, set `display: block` to reveal the links on pointer hover.
-3. On `.menu-item:focus-within .submenu`, set `display: block` so focus on the button or either link keeps the menu open.
+1. Set `.submenu` to `display: none` as the closed-state rule.
+2. Set `.menu-item[open] .submenu` to `display: block` to reveal the expanded directory.
+3. Set `.menu-trigger:focus-visible` to `outline: 3px solid #2563eb` so the native summary has a visible keyboard focus ring.
 
-Run and Submit after each change. After task 1 the links stay hidden; task 2 adds the pointer route; task 3 adds the keyboard route. Move the pointer away, click blank preview space, and Tab to Stalls, then through both links. The open menu should stay visible until focus leaves it.
-
-This exercise covers CSS visibility states. It does not add click toggling, Escape-to-close, or a complete touch interaction.
+Run and Submit after each change. Open Stalls and Tab through Tea counter and Paper goods, then return to Stalls and press Space to close it. The open directory stays open when the pointer leaves; this is a disclosure, not an ARIA application menu. Escape-to-close would need additional behavior later in the vanilla-DOM course.

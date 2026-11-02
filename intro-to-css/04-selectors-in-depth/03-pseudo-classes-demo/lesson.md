@@ -1,12 +1,12 @@
 ---
-title: "Pseudo-Classes Demo: Night Cart States"
+title: "Pseudo-Classes Night Cart States"
 slug: pseudo-classes-demo
 order: 3
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Inspect hover, first-child, and focus pseudo-classes on a moonlit book cart order panel.
-seo_title: CSS Pseudo-Classes Demo | Night Cart States
+seo_title: CSS Pseudo-Classes | Night Cart States
 seo_description: See CSS hover, first-child, and focus pseudo-classes style states in a Moonlit Book Cart panel.
 seo_keywords:
   - CSS pseudo-classes

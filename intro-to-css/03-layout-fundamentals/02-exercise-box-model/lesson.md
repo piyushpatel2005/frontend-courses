@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Space a Seed Packet"
+title: "Space a Seed Packet"
 slug: exercise-box-model
 order: 2
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Use padding, a border, and a margin to turn a plain seed listing into a packet card.
-seo_title: CSS Box Model Exercise | Space a Seed Packet
+seo_title: CSS Box Model | Space a Seed Packet
 seo_description: Practice CSS padding, borders, and margins by spacing a Riverside Seed Swap packet card.
 seo_keywords:
   - CSS box model exercise

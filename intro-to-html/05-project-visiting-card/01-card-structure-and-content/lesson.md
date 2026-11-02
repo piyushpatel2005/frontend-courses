@@ -23,13 +23,9 @@ hints:
 
 # Project 1: Create a Visiting Card (Structure)
 
-## Mission
+The neighborhood skills map is collecting contributor profiles. Build a new visiting card with a name, role, portrait, and contact list; this is separate from the repair-café profile.
 
-The neighborhood skills map is collecting profiles for people who can help at community events. Build a visiting card for one contributor so someone can see their name, role, portrait, and contact details at a glance.
-
-## What you'll build
-
-A single card with a name, a role, a profile image, and a contact list. This is a new page, separate from the repair-café profile. Edit `index.html`; build one piece at a time, Run to inspect it, then Submit to check your tasks. A `div` groups the content but does not draw a border by itself.
+The document shell in `index.html` is supplied. Build one piece at a time, Run to inspect it, then Submit to check your tasks. A `div` groups the content but does not draw a border by itself.
 
 ## Build the card in layers
 
@@ -53,7 +49,7 @@ Add a profile image with text that describes the image, not just the filename. T
 </div>
 ```
 
-## Checkpoint
+## Check your page
 
 Run the page. You should see one card containing a name, a role, an image, and a short contact list. If contact details appear outside the card, check that the contact `<div>` closes before the outer card closes.
 
@@ -65,7 +61,5 @@ Run the page. You should see one card containing a name, a role, an image, and a
 4. Add a profile `<img>` with a non-empty `src` and descriptive `alt` inside the card.
 5. Inside the card, add a nested `<div class="contact">` with a `<ul>` containing Email and Phone contact items.
 6. In the Email and Phone items, use separate `<span>` elements for a non-empty label and value.
-
-## Payoff
 
 Next you will add links to this card. The following starter includes Riya’s completed reference card; if you chose another contributor, copy your finished card into that starter before adding the links. The checks inspect the image attributes, not whether a remote image service is available. For a practice portrait, you can use `https://placehold.co/160x160/png?text=Profile`, or another image you are allowed to use.

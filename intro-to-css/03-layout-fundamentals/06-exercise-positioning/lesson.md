@@ -1,12 +1,12 @@
 ---
-title: "Exercise: Pin the Pickup Location"
+title: "Pin the Pickup Location"
 slug: exercise-positioning
 order: 6
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Use relative and absolute positioning to attach a pickup pin to a seed swap map card.
-seo_title: CSS Positioning Exercise | Pin the Pickup Location
+seo_title: CSS Positioning | Pin the Pickup Location
 seo_description: Practice relative and absolute CSS positioning by pinning a label to a Riverside Seed Swap map card.
 seo_keywords:
   - CSS positioning exercise

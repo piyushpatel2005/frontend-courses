@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Grid Gaps"
+title: "Grid Gaps"
 slug: exercise-grid-gaps
 order: 4
-language: html
+language: css
 summary: "`gap` creates space between grid tracks without adding margins to each card."
-seo_title: "Exercise: Grid Gaps | Introduction to CSS"
+seo_title: "Grid Gaps | Introduction to CSS"
 seo_description: "Water, Rest stop, and Finish are already in a two-column grid. They touch because the starter has no gap. Use the event-card demo's spacing technique without changing the track definition or adding card margins."
 seo_keywords: [CSS, exercise-grid-gaps, layout, CSS exercise]
 lesson_type: coding

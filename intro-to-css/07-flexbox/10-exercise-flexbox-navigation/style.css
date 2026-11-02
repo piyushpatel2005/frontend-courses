@@ -8,6 +8,16 @@
   padding: 1rem;
   background: #153c57;
   color: white;
+  /* Write the new declarations at the marked sites below. */
+}
+.nav-row {
+  /* TODO: Step 1: Set display here. */
+}
+.nav-row {
+  /* TODO: Step 2: Set justify-content here. */
+}
+.nav-row {
+  /* TODO: Step 3: Set align-items here. */
 }
 .card {
   padding: .65rem .9rem;

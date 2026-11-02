@@ -1,0 +1,7 @@
+body { font-family: system-ui, sans-serif; }
+.notice { font-size: 20px; }
+.notice strong { color: #b91c1c; }
+.notice button { font: 13px monospace; }
+.notice { color: #174a3a; }
+.notice strong { color: inherit; }
+.notice button { font: inherit; }

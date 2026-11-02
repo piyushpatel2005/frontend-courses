@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Build a Rescue Dispatch Report"
+title: "Build a Rescue Dispatch Report"
 slug: exercise-response-controls
 order: 8
 language: html
 summary: Use a textarea, select menu, and datalist to report an incident, choose urgency, and suggest a rendezvous point.
-seo_title: "Exercise: Build a Rescue Dispatch Report | Introduction to HTML"
+seo_title: "Build a Rescue Dispatch Report | Introduction to HTML"
 seo_description: Use a textarea, select menu, and datalist to report an incident, choose urgency, and suggest a rendezvous point.
 seo_keywords:
   - HTML exercise
@@ -16,15 +16,9 @@ hints:
   - "The input list value must match the datalist id."
 ---
 
-# Exercise: Build a Rescue Dispatch Report
+# Build a Rescue Dispatch Report
 
-## Mission
-
-After exploring the reply demo, build a rescue dispatch report with incident notes, one urgency level, and a suggested rendezvous point.
-
-## What you'll build
-
-A dispatch report with a multi-line textarea, four urgency choices (one default), and rendezvous suggestions. The form and visible labels are supplied. In `index.html`, match the Notes and Urgency labels with `id="brief"` and `id="role"` on their controls. Give both controls a non-empty `name`.
+Build a rescue dispatch report with incident notes, one urgency level, and a suggested rendezvous point. The form and labels are already in `index.html`. Match the Notes and Urgency labels with `id="brief"` and `id="role"` on their controls, and give each a non-empty `name`.
 
 ## Your Tasks
 
@@ -34,10 +28,8 @@ A dispatch report with a multi-line textarea, four urgency choices (one default)
 4. Add a `<datalist>` with a unique `id` and at least three distinct non-empty rendezvous suggestions.
 5. Add a named text input with `id="base"` after the supplied label; set its `list` to the datalist’s `id`.
 
-## Checkpoint
+## Check your page
 
 Run the page. The incident-notes field should accept multiple lines, the default urgency should show in the menu, and typing in the linked input should reveal rendezvous suggestions.
-
-## Payoff
 
 Run to compare the three kinds of answer, then Submit. Try typing a rendezvous point that is not suggested: a datalist permits it. This practice page collects input locally but has no service to send a report.

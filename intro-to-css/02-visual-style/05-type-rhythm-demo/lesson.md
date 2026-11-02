@@ -1,10 +1,10 @@
 ---
-title: Type Rhythm Demo
+title: Type Rhythm
 slug: type-rhythm-demo
 order: 5
-language: html
+language: css
 summary: Inspect font family, line height, and letter spacing in a readable CSS market note.
-seo_title: CSS Typography Demo | Visual Style
+seo_title: CSS Typography | Visual Style
 seo_description: See font-family, line-height, and letter-spacing shape the readability of a CSS event note.
 seo_keywords:
   - CSS typography
@@ -26,6 +26,6 @@ The `.story` selector targets the longer paragraph. Its unitless `line-height: 1
 
 ## Compare the spacing
 
-Run. Change `.story`'s line height to `1.2`, Run again, and compare the distance between lines. Restore `1.7`. Change the heading's letter spacing to `0`, compare, then restore `0.04em`. The supplied card layout stays the same.
+Run. Change `.story`'s line height to `1.2`, Run again, and compare the distance between lines. Restore `1.7`. Change the heading's letter spacing to `0`, compare, then restore `0.04em`. The supplied card layout stays the same. For ordinary reading text, start with comfortable text size and a unitless line height rather than a fixed card height. A roughly 45–75-character line is a useful starting range, not a rule for every label. Check actual paragraphs at narrow widths and with enlarged text; a heading treatment does not automatically suit body text.
 
 The exercise uses `.note p`, a selector with a space meaning “paragraphs anywhere inside `.note`.” It applies line height to both the label and the longer paragraph.

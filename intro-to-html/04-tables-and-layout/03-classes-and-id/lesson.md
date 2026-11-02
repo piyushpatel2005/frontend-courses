@@ -22,13 +22,7 @@ hints:
 
 # Classes and IDs
 
-## Mission
-
-The makers' fair program page needs three quick-jump stops — about, projects, and contact — and a group of information cards. Give each stop a unique landing point while keeping the cards easy to style as a group.
-
-## What you'll build
-
-A makers’ fair program with navigation links to three stops and reusable exhibit cards. One card gets a second class as a future styling hook.
+The seed-swap cards shared a class. Now a makers’ fair program also needs unique destinations for its About, Projects, and Contact links. The starter in `index.html` supplies the main heading; add the navigation and section content below it.
 
 ## One name or a reusable label
 
@@ -40,12 +34,11 @@ Use `class` for a label that can appear on many elements. One element can carry 
 <div class="card featured">Repair map</div>
 ```
 
-In CSS, a dot selects a class:
+In CSS, a dot selects a class. This brief example uses the colors introduced earlier; you will apply selectors in depth in the CSS course:
 
 ```css
 .card {
-    border: 1px solid #ccc;
-    padding: 1rem;
+    color: darkgreen;
 }
 
 .featured {
@@ -69,7 +62,7 @@ Use `id` for one unique element on the page. An ID becomes an anchor target when
 
 This example is a workshop information page; the exercise uses different destinations for the fair. CSS uses `#` before an ID: `#location { ... }`. A class or ID is only a label until a stylesheet, link, or script uses it.
 
-## Checkpoint
+## Check your page
 
 Run the page and select each navigation link. It should target the section with the same ID. A short page may not need to scroll, so check the matching values in the source too. If a link does not move, compare its `href="#..."` value with the section's `id`; they must match exactly.
 
@@ -93,7 +86,5 @@ Build the fair program in the starter:
 3. Give each section a short `<h2>` label.
 4. Put at least one non-empty `<div class="card">` inside each section.
 5. Give one of those cards a second, distinct class name (for example, `class="card featured"`).
-
-## Payoff
 
 Your fair page can now link directly to each stop and style every project card with one reusable label.

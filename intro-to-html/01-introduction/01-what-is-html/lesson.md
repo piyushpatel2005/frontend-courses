@@ -8,8 +8,6 @@ seo_title: "What Is HTML? See Tags in Action | Introduction to HTML"
 seo_description: See h1 and p tags rendered in a working HTML page before completing a guided HTML exercise.
 seo_keywords: [HTML, HTML tags, h1 tag, p tag, HTML preview]
 lesson_type: coding
-hints:
-  - "This is a completed demo. Read the code and use the preview before moving to the exercise."
 ---
 
 # What is HTML?
@@ -26,7 +24,7 @@ Our first examples come from the survey vessel **Meridian**. You will make short
 
 `<p>` is the opening tag. `</p>` is the closing tag; notice the slash. The tags and the text between them make one **element**. Type the angle brackets as shown, and change the words between them when you want different content.
 
-The completed `index.html` in the editor uses `<h1>` for its main heading and two `<p>` elements for separate paragraphs. Tags tell the browser what each piece is, not just how large to draw it.
+The completed `index.html` in the editor uses `<h1>` for its main heading and two `<p>` elements for separate paragraphs. Tags tell the browser what each piece is, not just how large to draw it. HTML describes content; CSS changes its appearance, and JavaScript adds programmed behavior. You do not need either one to write this page.
 
 ## Run and compare
 

@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Build the Meridian Signal"
+title: "Build the Meridian Signal"
 slug: exercise-first-html-page
 order: 2
 language: html
 summary: Recreate the Meridian signal with the heading and paragraph tags from the preceding demo.
-seo_title: "Exercise: Build the Meridian Signal | Introduction to HTML"
+seo_title: "Build the Meridian Signal | Introduction to HTML"
 seo_description: Practice h1 and p tags by rebuilding a mission signal card after seeing the tags in action.
 seo_keywords: [HTML exercise, HTML practice, h1 tag, p tag, first HTML page]
 lesson_type: coding

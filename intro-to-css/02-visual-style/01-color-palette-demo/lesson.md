@@ -1,10 +1,10 @@
 ---
-title: Color Palette Demo
+title: Color Palette
 slug: color-palette-demo
 order: 1
-language: html
+language: css
 summary: Inspect how a small CSS color palette gives a night-market flyer contrast and emphasis.
-seo_title: CSS Color Palette Demo | Visual Style
+seo_title: CSS Color Palette | Visual Style
 seo_description: See text, surface, and accent colors work together in a CSS night-market flyer, then safely experiment in the preview.
 seo_keywords:
   - CSS colors
@@ -22,7 +22,7 @@ This module moves from museum notes to a Lantern Lane Night Market flyer. The pa
 
 In `.flyer`, `background-color: #172554` paints the panel navy. `color: #fff7ed` sets cream text that its children inherit unless they have their own color rule. The `.badge` rule gives “Free entry” a coral background and navy text. Background and text colors are separate choices.
 
-A hex color starts with `#`. In a six-digit code, the pairs describe red, green, and blue amounts. You can also use named colors such as `navy`, or `rgb()` values. The tasks give exact colors so you can compare your result.
+A hex color starts with `#`. In a six-digit code, the pairs describe red, green, and blue amounts. You can also use named colors such as `navy`, or `rgb()` values. The tasks give exact colors so you can compare your result. Color alone should not communicate a warning or selected state: keep a text label or another visible cue too. For normal text, WCAG AA asks for at least 4.5:1 contrast against its background (3:1 for qualifying large text). Check the actual text/background pair rather than trusting that a color is “bright.”
 
 The sizing and centering rules are supplied. You will learn Grid and the sizing functions later; leave those rules alone here.
 

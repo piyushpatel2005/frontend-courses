@@ -11,7 +11,7 @@ body {
   padding: clamp(1rem, 4vw, 3rem);
   background: white;
   border-top: .6rem solid #7f5539;
-  /* Add max-width. */
+  
 }
 .role {
   margin: 0;
@@ -22,9 +22,17 @@ body {
 }
 h1 {
   margin: .25rem 0 2rem;
-  /* Add font-size. */
+  
 }
 h2 {
   border-bottom: 2px solid #ddb892;
   padding-bottom: .4rem;
+}
+
+/* Write the new declarations at the marked sites below. */
+.maker-profile {
+  /* TODO: Step 1: Set max-width here. */
+}
+h1 {
+  /* TODO: Step 2: Set font-size here. */
 }

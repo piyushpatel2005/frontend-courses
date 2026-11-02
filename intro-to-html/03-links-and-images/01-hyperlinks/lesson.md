@@ -21,15 +21,9 @@ hints:
 
 # Hyperlinks
 
-## Mission
+Your signal pages can organize text. A visitor now needs a way to reach another page or a particular part of this one. Add navigation to a neighborhood repair café page, a separate example from the Meridian signals.
 
-Build the navigation strip for a neighborhood repair café page. Visitors should be able to open a useful outside resource, then jump straight to the café's about section.
-
-## What you'll build
-
-A repair-café navigation strip with an external link opening in a new tab and an in-page anchor link to the about section.
-
-The `<a>` (anchor) tag makes a link. We will put the links in a `<nav>`, which groups navigation, and the about content in a `<section>`, which groups a topic. You will learn more about these page regions later; for now, both use opening and closing tags around their contents.
+The starter supplies a heading and an empty `<nav>`. A nav groups navigation links; a `<section>` groups a topic. Both have ordinary opening and closing tags, and you will return to their meaning in the semantic HTML module.
 
 ## Basic link syntax
 
@@ -50,7 +44,7 @@ Use an external link for a page on another website:
 <a href="https://www.google.com">Google</a>
 ```
 
-Use the full URL, including `https://`, for external sites.
+Use the full URL, including `https://`, for external sites. A link can be reached with Tab and activated with Enter; choose text that explains its destination instead of “click here.”
 
 ### Internal links (relative path)
 
@@ -64,11 +58,11 @@ Use an internal link for a page on the same website:
 <a href="../index.html">Home</a>
 ```
 
-A relative path depends on where the current file sits in the folder structure. These filenames illustrate a multi-page site; `about.html` is not supplied in this exercise, so do not expect that example path to load in the preview. `example.com` is an example address, not a repair-café resource.
+A relative path depends on where the current file sits in the folder structure. `images/logo.png` starts in the current folder; `../` goes up one folder. A leading `/`, as in `/about.html`, starts at the site root instead. File paths are not paths on your own computer, and their letter case must match the hosted filenames. These filenames illustrate a multi-page site; `about.html` is not supplied in this exercise, so do not expect that example path to load in the preview. `example.com` is an example address, not a repair-café resource.
 
 ### Opening links in a new tab
 
-Add `target="_blank"` to open a link in a new tab. In this exercise, pair it with `rel="noopener noreferrer"`: `noopener` prevents access to the opening page through `window.opener`, and `noreferrer` omits the referring page address. Use a label that warns readers about the new tab:
+Add `target="_blank"` to open a link in a new tab. In this exercise, pair it with `rel="noopener noreferrer"`: `noopener` prevents access to the opening page through `window.opener`, and `noreferrer` omits the referring page address. Modern browsers already treat an ordinary `target="_blank"` link as having `noopener` unless you opt into an opener. Writing it explicitly makes the intent clear. `noreferrer` is a separate privacy choice, not a requirement for every new-tab link. Use a label that warns readers about the new tab:
 
 ```html
 <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google (new tab)</a>
@@ -88,7 +82,7 @@ An `id` gives an element a **unique identifier** on the page, so no two elements
 
 This is how "Back to top" links and table-of-contents navigation work.
 
-## Checkpoint
+## Check your page
 
 Preview the page and inspect both link labels. Test the `#about` link after adding its target; on a short page, the whole section may already be visible, so there may be no noticeable scroll. Compare the `href` after `#` with the section's `id`. You do not need to open Wikipedia to pass; the checks inspect the link attributes without contacting another site.
 
@@ -104,7 +98,5 @@ The starter supplies a heading and an empty `<nav>`. Add the links inside that n
 4. Add a `<section id="about">` below the nav.
 5. Inside that section, add an `<h2>` naming it.
 6. Add a `<p>` describing the repair café inside the section.
-
-## Payoff
 
 Your repair-café page now gives visitors a safe route outward and a quick route to the information they need on the page.

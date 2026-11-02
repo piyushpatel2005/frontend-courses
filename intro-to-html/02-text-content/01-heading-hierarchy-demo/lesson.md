@@ -1,23 +1,21 @@
 ---
-title: "Heading Hierarchy Demo: H1 and H2"
+title: "Heading Hierarchy: H1 and H2"
 slug: heading-hierarchy-demo
 order: 1
 language: html
 summary: See how h1 and h2 create a clear signal-brief hierarchy before extending it in an exercise.
-seo_title: "Heading Hierarchy Demo: H1 and H2 | Introduction to HTML"
+seo_title: "Heading Hierarchy: H1 and H2 | Introduction to HTML"
 seo_description: See how h1 and h2 create a clear signal-brief hierarchy before extending it in an exercise.
 seo_keywords:
   - HTML demo
   - HTML preview
   - HTML heading hierarchy
 lesson_type: coding
-hints:
-  - "This is a completed demo. Run the preview, then read the matching code."
 ---
 
 # Heading hierarchy: a page outline
 
-The Meridian signal brief has one page title and two sections. Run the completed demo and match its `<h1>` and `<h2>` tags to the headings in the preview.
+The Meridian signal brief has one page title and two sections. Run the completed `index.html` and match its `<h1>` and `<h2>` tags to the headings in the preview.
 
 ```html
 <h1>Meridian's Signal Brief</h1>

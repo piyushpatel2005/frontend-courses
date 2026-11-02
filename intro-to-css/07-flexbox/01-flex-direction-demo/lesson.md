@@ -1,10 +1,10 @@
 ---
-title: "Flex Direction Demo"
+title: "Flex Direction"
 slug: flex-direction-demo
 order: 1
-language: html
+language: css
 summary: "A flex container has a main axis; `flex-direction` changes it."
-seo_title: "Flex Direction Demo | Introduction to CSS"
+seo_title: "Flex Direction | Introduction to CSS"
 seo_description: "Inspect flex-direction and compare a horizontal trail-kit row with a vertical column."
 seo_keywords: [CSS, flex-direction-demo, layout, beginner CSS]
 lesson_type: coding

@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Write Your First CSS Rule"
+title: "Write Your First CSS Rule"
 slug: exercise-first-css-rule
 order: 2
-language: html
+language: css
 summary: Practice CSS rule syntax by styling a museum exhibit card.
-seo_title: "Exercise: Write Your First CSS Rule | Introduction to CSS"
+seo_title: "Write Your First CSS Rule | Introduction to CSS"
 seo_description: Practice CSS rule syntax by styling a museum exhibit card.
 seo_keywords: [CSS exercise, exercise-first-css-rule]
 lesson_type: coding

@@ -8,7 +8,7 @@ body {
   display: inline-block;
   font-size: 5rem;
   color: #f97316;
-  animation: drift 2s ease-in-out infinite alternate;
+  animation: drift 2s ease-in-out 2 alternate;
 }
 button {
   padding: .7rem 1rem;

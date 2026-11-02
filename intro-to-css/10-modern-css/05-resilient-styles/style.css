@@ -1,0 +1,21 @@
+body { margin: 1rem; font-family: system-ui, sans-serif; }
+.supplies article { padding: 1rem; margin-bottom: 1rem; background: #e0f2fe; }
+@supports (display: grid) {
+  .supplies { gap: 1rem; }
+  .supplies article { margin-bottom: 0; }
+}
+
+/* Write the new declarations at the marked sites below. */
+.supplies {
+  /* TODO: Step 1: Set display here. */
+}
+@supports (display: grid) {
+  .supplies {
+    /* TODO: Step 2: Set display here. */
+  }
+}
+@supports (display: grid) {
+  .supplies {
+    /* TODO: Step 3: Set grid-template-columns here. */
+  }
+}

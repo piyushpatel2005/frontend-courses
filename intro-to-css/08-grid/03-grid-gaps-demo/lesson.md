@@ -1,10 +1,10 @@
 ---
-title: "Grid Gaps Demo"
+title: "Grid Gaps"
 slug: grid-gaps-demo
 order: 3
-language: html
+language: css
 summary: "`gap` creates space between grid tracks without adding margins to each card."
-seo_title: "Grid Gaps Demo | Introduction to CSS"
+seo_title: "Grid Gaps | Introduction to CSS"
 seo_description: "The `.event-grid` already has two equal columns. Its third card starts the next row. This lets you see both kinds of track spacing at once."
 seo_keywords: [CSS, grid-gaps-demo, layout, beginner CSS]
 lesson_type: coding

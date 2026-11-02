@@ -1,0 +1,6 @@
+body { margin: 1rem; font-family: system-ui, sans-serif; }
+.image-card { max-width: 36rem; }
+.landscape { display: block; width: 800px; height: 400px; }
+.thumbnail { display: block; width: 8rem; height: 8rem; }
+.landscape { max-width: 100%; height: auto; }
+.thumbnail { object-fit: cover; }

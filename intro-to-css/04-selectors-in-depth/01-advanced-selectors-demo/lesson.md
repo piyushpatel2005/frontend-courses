@@ -1,12 +1,12 @@
 ---
-title: "Advanced Selectors Demo: Book Cart Sign"
+title: "Advanced Selectors Book Cart Sign"
 slug: advanced-selectors-demo
 order: 1
 language: css
 lesson_type: coding
 runtime: srcdoc
 summary: Inspect descendant, child, and attribute selectors while styling a moonlit book cart sign.
-seo_title: Advanced CSS Selectors Demo | Book Cart Sign
+seo_title: Advanced CSS Selectors | Book Cart Sign
 seo_description: See descendant, child, and attribute CSS selectors target parts of a Moonlit Book Cart sign.
 seo_keywords:
   - advanced CSS selectors

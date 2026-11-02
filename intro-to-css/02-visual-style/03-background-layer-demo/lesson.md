@@ -1,10 +1,10 @@
 ---
-title: Background Layer Demo
+title: Background Layer
 slug: background-layer-demo
 order: 3
-language: html
+language: css
 summary: See how a CSS linear gradient layers color over a night-market hero panel.
-seo_title: CSS Background Gradient Demo | Visual Style
+seo_title: CSS Background Gradient | Visual Style
 seo_description: Inspect a CSS linear-gradient and background color working together in a night-market hero panel.
 seo_keywords:
   - CSS backgrounds

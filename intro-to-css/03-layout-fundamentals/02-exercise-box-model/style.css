@@ -14,5 +14,16 @@ main {
 .packet {
   width: 100%;
   background: #fff8df;
-  /* Add padding, border, and margin here. */
+  
+}
+
+/* Write the new declarations at the marked sites below. */
+.packet {
+  /* TODO: Step 1: Set padding here. */
+}
+.packet {
+  /* TODO: Step 2: Set border here. */
+}
+.packet {
+  /* TODO: Step 3: Set margin here. */
 }

@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Flexbox Navigation"
+title: "Flexbox Navigation"
 slug: exercise-flexbox-navigation
 order: 10
-language: html
+language: css
 summary: "Combining flex direction, main-axis spacing, alignment, and gaps creates a dependable one-dimensional layout."
-seo_title: "Exercise: Flexbox Navigation | Introduction to CSS"
+seo_title: "Flexbox Navigation | Introduction to CSS"
 seo_description: "Practice spacing and aligning the title and links of a Flexbox header."
 seo_keywords: [CSS, exercise-flexbox-navigation, layout, CSS exercise]
 lesson_type: coding

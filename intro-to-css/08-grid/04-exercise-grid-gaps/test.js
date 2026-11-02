@@ -11,7 +11,7 @@ function declarations(element, property) {
       } else if (rule.cssRules) visit(rule.cssRules);
     }
   }
-  for (const sheet of document.styleSheets) {
+  for (const sheet of Array.from(document.querySelectorAll('style[data-intercourses="user-css"], head style:not([data-intercourses])'), node => node.sheet).filter(Boolean)) {
     try { visit(sheet.cssRules); } catch (_) { /* External sheets are not learner CSS. */ }
   }
   return values;
@@ -29,6 +29,5 @@ test('Add a one-rem gap in both directions.', () => {
   const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
   assert.equal(declarations(grid, 'row-gap').includes('1rem') && declarations(grid, 'column-gap').includes('1rem'), true, 'Use gap: 1rem for both rows and columns.');
   assert.equal(near(parseFloat(style.rowGap), rem) && near(parseFloat(style.columnGap), rem), true, 'Apply the gap in both directions.');
-  const cards = rects('.event-grid');
-  assert.equal(near(cards[1].left - cards[0].right, rem) && near(cards[2].top - cards[0].bottom, rem), true, 'Separate the card columns and rows by 1rem.');
+  const old=grid.getAttribute('style');try{for(const width of [320,640]){grid.style.width=width+'px';const cards=rects('.event-grid');assert.equal(near(cards[1].left-cards[0].right,rem)&&near(cards[2].top-cards[0].bottom,rem),true,'Separate both track directions by 1rem.');}}finally{grid.getAttribute('style');if(old===null)grid.removeAttribute('style');else grid.setAttribute('style',old);}
 });

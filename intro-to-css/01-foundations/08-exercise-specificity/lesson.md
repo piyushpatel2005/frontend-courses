@@ -1,10 +1,10 @@
 ---
-title: "Exercise: Resolve Specificity"
+title: "Resolve Specificity"
 slug: exercise-specificity
 order: 8
-language: html
+language: css
 summary: Practice element, class, and ID specificity rules on one exhibit note.
-seo_title: "Exercise: Resolve Specificity | Introduction to CSS"
+seo_title: "Resolve Specificity | Introduction to CSS"
 seo_description: Practice element, class, and ID specificity rules on one exhibit note.
 seo_keywords: [CSS exercise, exercise-specificity]
 lesson_type: coding

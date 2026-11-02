@@ -1,10 +1,10 @@
 ---
-title: Background Layer Exercise
+title: Background Layer
 slug: exercise-background-layer
 order: 4
-language: html
+language: css
 summary: Create a layered CSS background with a fallback color and diagonal gradient.
-seo_title: CSS Background Gradient Exercise | Visual Style
+seo_title: CSS Background Gradient | Visual Style
 seo_description: Practice background-color, linear-gradient, and text color in a CSS event panel.
 seo_keywords:
   - CSS background exercise

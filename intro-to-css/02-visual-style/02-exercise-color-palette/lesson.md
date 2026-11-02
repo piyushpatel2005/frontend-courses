@@ -1,10 +1,10 @@
 ---
-title: Color Palette Exercise
+title: Color Palette
 slug: exercise-color-palette
 order: 2
-language: html
+language: css
 summary: Build a readable three-color CSS palette for a Lantern Lane Night Market ticket.
-seo_title: CSS Color Palette Exercise | Visual Style
+seo_title: CSS Color Palette | Visual Style
 seo_description: Practice CSS color and background-color declarations by styling a readable night-market ticket.
 seo_keywords:
   - CSS color exercise

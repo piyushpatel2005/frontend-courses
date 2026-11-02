@@ -1,29 +1,21 @@
 ---
-title: "Choice Controls Demo: Select Training Modes"
+title: "Choice Controls: Select Training Modes"
 slug: choice-controls-demo
 order: 5
 language: html
 summary: See checkboxes allow many mission choices while radio buttons allow one training window.
-seo_title: "Choice Controls Demo: Select Training Modes | Introduction to HTML"
+seo_title: "Choice Controls: Select Training Modes | Introduction to HTML"
 seo_description: See checkboxes allow many mission choices while radio buttons allow one training window.
 seo_keywords:
   - HTML demo
   - HTML preview
   - choice-controls-demo
 lesson_type: coding
-hints:
-  - "This is a completed demo. Run the preview, then read the matching code."
 ---
 
-# Choice Controls Demo: Select Training Modes
+# Choice Controls: Select Training Modes
 
-## Mission
-
-The crew can practise several capabilities but must reserve only one training window. The relay form needs both kinds of choice.
-
-## What you'll see
-
-A completed form using fieldsets, legends, three checkboxes, and a one-choice radio group.
+The crew can practise several capabilities but must reserve only one training window. The completed form in `index.html` uses checkboxes for the first decision and radios for the second. Run it and compare what stays selected.
 
 ## Read the code
 
@@ -40,10 +32,10 @@ A `<fieldset>` groups related controls. Its first child, `<legend>`, names the d
 
 Run the demo. Turn on more than one practice mission, then choose a training window; selecting a new radio choice replaces the old one.
 
-## Checkpoint
+## Check your page
 
 Select Flight and Shield together, then switch from Dawn to Night. Both checkboxes should stay selected; only Night should remain selected in the radio group. You can change the default by moving `checked` to Midday, Run, then restore Dawn.
 
 ## Next
 
-Continue to **Exercise: Plan a Supply Pickup**. You will recreate the same idea from a smaller starter file.
+Continue to **Plan a Supply Pickup**. You will recreate the same idea from a smaller starter file.

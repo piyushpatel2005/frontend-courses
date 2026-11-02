@@ -1,14 +1,14 @@
 ---
-title: Lantern Market navigation demo
+title: Lantern Market navigation
 slug: dropdown-menu-demo
 order: 1
-language: html
+language: css
 summary: Build a compact navigation sign for the Lantern Market directory.
-seo_title: Lantern Market navigation demo | Intro to CSS
-seo_description: Learn dropdown display and hover reveal by building a small, visible CSS interface.
+seo_title: Lantern Market navigation | Intro to CSS
+seo_description: Learn native disclosure states by building a small, visible CSS interface.
 seo_keywords:
   - CSS
-  - dropdown display and hover reveal
+  - native disclosure states
   - HTML
   - beginner CSS
 lesson_type: coding
@@ -17,22 +17,18 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Lantern Market dropdown demo
+# A dropdown with a native toggle
 
-The market directory has two stall links. This finished CSS example hides them until a visitor points at Stalls or moves keyboard focus into the menu.
+The directory has two stall links inside a native details element. Its summary, Stalls, is the control that opens and closes it. HTML already supplies the toggle behavior: click or tap the summary, or focus it and press Enter or Space. CSS only changes the presentation.
 
-## Keep the links reachable
+`.menu-item[open] .submenu` uses the attribute selector you learned earlier. The browser adds the boolean open attribute when details expands and removes it when it closes. There is no `open="false"` state: the attribute’s presence means open.
 
-`.menu-item:hover .submenu` matches the submenu while the pointer is over its parent, including the open submenu itself. Targeting only the button's hover state would make it hard to move down to a link.
+The base `.submenu` rule uses display: none; the more specific open-state rule changes it to block. The parent’s relative positioning anchors its absolute submenu, and top: 100% places it below the summary. A small z-index keeps the panel above the content that follows. This remains ordinary site navigation, not an ARIA menu with application-style arrow-key behavior.
 
-`:focus-within` is broader than `:focus`: it matches an element when that element **or any descendant** has focus. `.menu-item:focus-within .submenu` therefore keeps the links visible as you Tab from Stalls into the submenu. A comma between these two selectors lets them share `display: block`.
+![A native summary toggles details between a closed panel and an open group of links.](menu-interaction-states.svg)
 
-![Either pointer hover or focus inside the menu keeps it open; it closes when both conditions are absent.](menu-interaction-states.svg)
+## Try the toggle and focus path
 
-The starter layout uses `position: relative` on the parent and `position: absolute` on the submenu. `top: 100%` places the submenu below the parent's height; there is no gap for the pointer to cross. The links use `display: block` to stack. The supplied `:focus-visible` outline marks the control reached by keyboard.
+Run, open Stalls, and Tab through the two links. Shift+Tab moves back. The summary and links have visible focus outlines. Return to Stalls and press Space to close it. Moving focus or the pointer away does not close an open native disclosure; the visitor controls its state. Escape-to-close is not supplied here.
 
-## Try both routes
-
-Run, hover over Stalls, and move down onto Coffee counter. The menu should stay open. Move to blank space to close it. Click a blank part of the preview, then press Tab to reach the brand link and Stalls. Tab through both stall links; Shift+Tab moves back. The menu closes after focus leaves it, provided the pointer is also outside.
-
-Change `.submenu` background in `style.css`, run, and inspect the open menu. Restore `#f7c948` before continuing. This is practice with CSS states, not a complete production navigation widget: click-to-toggle, Escape-to-close, and reliable touch interaction need a fuller disclosure design. Do not treat this example as an accessibility-compliance claim.
+Change the submenu background in style.css, Run, and inspect the open panel. Restore #f7c948. A hover-only reveal would not give touch and keyboard users the same toggle. Elsewhere, :focus-within is useful for highlighting a field group while any descendant has focus; it is not needed to replace details’ native open state.

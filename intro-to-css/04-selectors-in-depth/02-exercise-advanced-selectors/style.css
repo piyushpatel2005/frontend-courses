@@ -12,4 +12,14 @@ a { color: #ffd166; text-decoration: none; }
   border: 1px solid #6b6f9e;
   background: #262849;
 }
-/* Add three targeted selector rules here. */
+
+/* Write the new declarations at the marked sites below. */
+.book-card p {
+  /* TODO: Step 1: Set color here. */
+}
+.book-card > h2 {
+  /* TODO: Step 2: Set font-size here. */
+}
+a[target="_blank"] {
+  /* TODO: Step 3: Set text-decoration here. */
+}

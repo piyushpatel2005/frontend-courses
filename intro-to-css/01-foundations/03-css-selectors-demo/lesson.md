@@ -1,10 +1,10 @@
 ---
-title: "CSS Selectors Demo: Target Exhibit Details"
+title: "CSS Selectors Target Exhibit Details"
 slug: css-selectors-demo
 order: 3
-language: html
+language: css
 summary: See element, class, and ID selectors target different parts of a museum specimen card.
-seo_title: "CSS Selectors Demo: Target Exhibit Details | Introduction to CSS"
+seo_title: "CSS Selectors Target Exhibit Details | Introduction to CSS"
 seo_description: See element, class, and ID selectors target different parts of a museum specimen card.
 seo_keywords: [CSS demo, CSS preview, css-selectors-demo]
 lesson_type: coding

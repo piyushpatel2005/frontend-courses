@@ -10,4 +10,11 @@
   background: #1f2937;
   color: #f8fafc;
 }
-/* Add the decorative mark to the first card here. */
+
+/* Write the new declarations at the marked sites below. */
+.card:first-child::before {
+  /* TODO: Step 1: Set content here. */
+}
+.card:first-child::before {
+  /* TODO: Step 2: Set color here. */
+}

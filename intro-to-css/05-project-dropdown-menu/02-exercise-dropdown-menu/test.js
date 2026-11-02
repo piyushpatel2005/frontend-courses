@@ -1,33 +1,39 @@
-// CSSOM checks confirm the selector technique; computed styles check its result.
-function rulesFor(selector) {
-  const normalize = value => value.replace(/\s*>\s*/g, '>').replace(/['"]/g, '').trim();
-  return Array.from(document.styleSheets).flatMap(sheet => {
-    try { return Array.from(sheet.cssRules); } catch { return []; }
-  }).filter(rule => rule.selectorText?.split(',').some(part => normalize(part) === normalize(selector)));
+// Use the real iframe's computed styles; only selector/source lessons inspect CSSOM.
+function each(selector, check) {
+  const elements = Array.from(document.querySelectorAll(selector));
+  assert.equal(elements.length > 0, true, 'Keep the supplied ' + selector + ' elements.');
+  elements.forEach(element => check(getComputedStyle(element), element));
 }
-function uses(selector, property) {
-  return rulesFor(selector).some(rule => rule.style.getPropertyValue(property));
+function valueFor(property, value, target) {
+  if (property === 'display') return value;
+  const probe = document.createElement('span');
+  probe.style.cssText = 'all: initial; position: absolute; visibility: hidden;';
+  if (/^border-.*-width$/.test(property)) probe.style.borderStyle = 'solid';
+  if (target) probe.style.fontSize = getComputedStyle(target).fontSize;
+  probe.style.setProperty(property, value);
+  document.body.append(probe);
+  try { return getComputedStyle(probe).getPropertyValue(property); }
+  finally { probe.remove(); }
 }
-test('Stall links have an initial hiding rule', () => {
-  assert.equal(rulesFor('.submenu').some(rule => rule.style.display === 'none'), true, 'Set .submenu to display: none.');
-  const menu = document.querySelector('.menu-item');
-  // Submit can be pressed while the preview is hovered or focused.
-  if (!menu.matches(':hover, :focus-within')) {
-    assert.equal(getComputedStyle(document.querySelector('.submenu')).display, 'none', 'Hide the menu when neither open state is active.');
-  }
-});
-test('Pointer hover has a block reveal rule', () => {
-  assert.equal(rulesFor('.menu-item:hover .submenu').some(rule => rule.style.display === 'block'), true, 'Reveal .submenu when its parent menu is hovered.');
-});
-test('Keyboard focus keeps both stall links reachable', () => {
-  assert.equal(rulesFor('.menu-item:focus-within .submenu').some(rule => rule.style.display === 'block'), true, 'Use :focus-within to keep the menu open.');
-  const previous = document.activeElement;
-  const controls = document.querySelectorAll('.menu-trigger, .submenu a');
-  try {
-    for (const control of controls) {
-      control.focus();
-      assert.equal(document.activeElement, control, 'Each menu control must receive focus.');
-      assert.equal(getComputedStyle(document.querySelector('.submenu')).display, 'block', 'Keep the submenu visible while focus moves through it.');
-    }
-  } finally { document.activeElement?.blur(); if (previous !== document.body) previous?.focus(); }
-});
+function expectStyle(selector, property, value) {
+  each(selector, (style, element) => assert.equal(style.getPropertyValue(property), valueFor(property, value, element), 'Set ' + selector + ' ' + property + ' to ' + value + '.'));
+}
+function sourceRules(source = 'external') {
+  const nodes = source === 'external'
+    ? document.querySelectorAll('style[data-intercourses="user-css"]')
+    : document.querySelectorAll('head style:not([data-intercourses])');
+  return Array.from(nodes).flatMap(node => Array.from(node.sheet?.cssRules || []));
+}
+function declaration(selector, property, source = 'external') {
+  const rules = sourceRules(source).filter(rule => rule.selectorText?.split(',').map(s => s.trim()).includes(selector) && rule.style.getPropertyValue(property));
+  assert.equal(rules.length > 0, true, 'Add a ' + selector + ' rule with ' + property + ' in ' + source + ' CSS.');
+  return rules[rules.length - 1].style;
+}
+function expectDeclared(selector, property, value, source = 'external') {
+  const style = declaration(selector, property, source);
+  assert.equal(valueFor(property, style.getPropertyValue(property)), valueFor(property, value), 'Use ' + value + ' for ' + selector + ' ' + property + '.');
+}
+
+test('Closed submenu has an authored hiding rule',()=>{assert.equal(declaration('.submenu','display').display,'none');const d=document.querySelector('.menu-item'),old=d.open;try{d.open=false;expectStyle('.submenu','display','none');}finally{d.open=old;}});
+test('Open disclosure reveals its links',()=>{assert.equal(declaration('.menu-item[open] .submenu','display').display,'block');const d=document.querySelector('.menu-item'),old=d.open;try{d.open=true;expectStyle('.submenu','display','block');}finally{d.open=old;}});
+test('Summary has an authored keyboard focus ring',()=>{const s=declaration('.menu-trigger:focus-visible','outline');assert.equal(s.outlineWidth,'3px');assert.equal(s.outlineStyle,'solid');assert.equal(valueFor('outline-color',s.outlineColor),valueFor('outline-color','#2563eb'));});
