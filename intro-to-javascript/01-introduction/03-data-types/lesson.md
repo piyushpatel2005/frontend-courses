@@ -27,7 +27,7 @@ For the final summary, insert each value and its `typeof` result into a backtick
 
 ## Example
 
-```javascript
+```javascript run
 const petName = "Nori";
 const petAge = 2;
 const isAdopted = false;

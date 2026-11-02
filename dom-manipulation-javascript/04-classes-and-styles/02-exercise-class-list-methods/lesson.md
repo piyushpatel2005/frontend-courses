@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: mark a favourite card'
+title: mark a favourite card
 slug: exercise-class-list-methods
 order: 2
 language: javascript

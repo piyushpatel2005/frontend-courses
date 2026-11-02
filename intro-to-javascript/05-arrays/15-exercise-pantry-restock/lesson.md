@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Pantry Restock Plan"
+title: "Pantry Restock Plan"
 slug: exercise-pantry-restock
 order: 15
 language: javascript
@@ -13,7 +13,7 @@ hints:
   - "Sort a copy with (a, b) => a[1] - b[1], then sum target - pair[1]."
 ---
 
-# Exercise: pantry restock plan
+# pantry restock plan
 
 Use the charging-rack pattern to plan an event-pantry refill. Each pair is `[name, count]`. The plan itself is `[names, missingTotal]`, an array containing a name list and a number.
 

@@ -26,7 +26,7 @@ The description should work in either state and use the instance's title and aut
 
 A different private-state class exposes behavior without exposing its field:
 
-```javascript
+```javascript run
 class Lamp {
   #on = false;
   switchOn() { this.#on = true; }
@@ -34,7 +34,7 @@ class Lamp {
 }
 const lamp = new Lamp();
 lamp.switchOn();
-console.log(lamp.isOn); // true
+console.log(lamp.isOn);
 ```
 
 Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.

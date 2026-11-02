@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: update only the chosen card'
+title: update only the chosen card
 slug: exercise-safe-scoped-selection
 order: 6
 language: javascript

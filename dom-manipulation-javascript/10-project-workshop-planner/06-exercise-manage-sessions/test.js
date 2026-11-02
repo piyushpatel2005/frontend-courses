@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 function withWorkshop(check) {
   const saved = window.workshopSessions.map(session => ({ ...session }));
   const query = document.querySelector("#session-query");
@@ -28,7 +33,7 @@ function removeControl(row) {
   button.append(nested);
   return nested;
 }
-test("typing filters titles without deleting state", () => withWorkshop(() => {
+test("typing filters titles without deleting state", () => withPreviewLayout(async () => (await new Promise(resolve => requestAnimationFrame(resolve)), withWorkshop(() => {
   for (const [term, expected] of [["  REPAIR  ", 1], ["09:00", 0], ["Making", 0], ["Remove", 0], ["absent", 0], ["   ", 2]]) {
     searchWorkshop(term);
     const rows = [...document.querySelectorAll("#sessions li")];
@@ -36,8 +41,8 @@ test("typing filters titles without deleting state", () => withWorkshop(() => {
     assert.equal(rows.filter(row => !row.hidden).length, expected, "Search only normalized titles");
     assert.equal(window.workshopSessions.length, 2);
   }
-}));
-test("every current and future row has a named native Remove button", () => withWorkshop(() => {
+}))));
+test("every current and future row has a named native Remove button", () => withPreviewLayout(() => withWorkshop(() => {
   window.workshopSessions.push({ title: "<em>New weaving</em>", time: "15:00", track: "Art" });
   renderSessions();
   [...document.querySelectorAll("#sessions li")].forEach((row, index) => {
@@ -49,14 +54,15 @@ test("every current and future row has a named native Remove button", () => with
     assert.includes(name, window.workshopSessions[index].title);
     assert.equal(button.querySelector("em"), null, "Keep button labels literal too");
   });
-}));
-test("delegated nested clicks remove the matching stored session", () => withWorkshop(() => {
+})));
+test("delegated nested clicks remove the matching stored session", () => withPreviewLayout(() => withWorkshop(() => {
   window.workshopSessions.push({ title: "Repair café", time: "16:00", track: "Art" });
   renderSessions();
   searchWorkshop("repair");
   let rows = [...document.querySelectorAll("#sessions li")];
   removeControl(rows[2]).click();
   assert.equal(window.workshopSessions.length, 2, "Delete the matching object from state");
+  assert.equal(document.querySelectorAll("#sessions li").length, 2, "Rerender immediately in the removal handler");
   assert.equal(window.workshopSessions[1].time, "11:00", "Keep the other session with the same title");
   searchWorkshop("");
   rows = [...document.querySelectorAll("#sessions li")];
@@ -65,20 +71,20 @@ test("delegated nested clicks remove the matching stored session", () => withWor
   assert.equal(document.querySelectorAll("#sessions li").length, 1);
   renderSessions();
   assert.equal(document.querySelectorAll("#sessions li").length, 1, "Removal survives another render");
-}));
-test("Update handles an empty itinerary", () => withWorkshop(() => {
+})));
+test("Update handles an empty itinerary", () => withPreviewLayout(() => withWorkshop(() => {
   window.workshopSessions.splice(0);
   renderSessions();
   document.querySelector("#session-status").textContent = "";
   document.querySelector("#update-session").click();
   assert.equal(document.querySelector("#session-status").textContent, "No sessions to update.");
-}));
-test("count is a polite live region", () => {
+})));
+test("count is a polite live region", () => withPreviewLayout(() => {
   const count = document.querySelector("#session-count");
   assert.equal(count.getAttribute("role"), "status");
   assert.equal(count.getAttribute("aria-live"), "polite");
-});
-test("status counts visible rows on every render and query", () => withWorkshop(() => {
+}));
+test("status counts visible rows on every render and query", () => withPreviewLayout(() => withWorkshop(() => {
   const count = document.querySelector("#session-count");
   assert.match(count.textContent, /^2\b/, "Count on load");
   searchWorkshop("repair");
@@ -91,8 +97,8 @@ test("status counts visible rows on every render and query", () => withWorkshop(
   assert.match(count.textContent, /^0\b/, "Refresh after removing the last matches");
   searchWorkshop("");
   assert.match(count.textContent, /^1\b/);
-}));
-test("removal announces the title", () => withWorkshop(() => {
+})));
+test("removal announces the title", () => withPreviewLayout(() => withWorkshop(() => {
   const row = document.querySelector("#sessions li");
   const title = window.workshopSessions[0].title;
   const nested = removeControl(row);
@@ -100,10 +106,10 @@ test("removal announces the title", () => withWorkshop(() => {
   document.querySelector("#session-status").textContent = "";
   nested.click();
   assert.includes(document.querySelector("#session-status").textContent, title);
-}));
-test("removal restores keyboard focus", () => withWorkshop(() => {
+})));
+test("removal restores keyboard focus", () => withPreviewLayout(() => withWorkshop(() => {
   const nested = removeControl(document.querySelector("#sessions li"));
   nested.closest("button").focus();
   nested.click();
   assert.equal(document.activeElement, document.querySelector("#session-query"));
-}));
+})));

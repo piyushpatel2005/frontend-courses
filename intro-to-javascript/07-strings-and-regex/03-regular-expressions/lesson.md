@@ -38,10 +38,10 @@ For example, `/^\d{5}$/` requires five digits and nothing else. The `^` outside 
 
 ![An unanchored digit pattern finds 42 inside text; an anchored pattern accepts only the complete digit string.](regex-match-scope.svg)
 
-```javascript
-console.log(/^\d{5}$/.test("12345")); // true
-console.log(/^\d{5}$/.test("1234")); // false
-console.log("3 cats and 12 dogs".match(/\d+/g)); // matches "3" and "12"
+```javascript run
+console.log(/^\d{5}$/.test("12345"));
+console.log(/^\d{5}$/.test("1234"));
+console.log("3 cats and 12 dogs".match(/\d+/g));
 ```
 
 `pattern.test(text)` returns a boolean. `text.match(pattern)` with `g` (global) finds all matches as an array of strings, or returns `null` when there are none. `text.match(/\d+/g) || []` replaces that no-match result with an empty array. Here a "number" means a digit sequence: signs and decimal points are not part of the match.

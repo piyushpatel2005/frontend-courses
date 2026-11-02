@@ -18,12 +18,12 @@ The preceding tally demo held the award constant while updating a running balanc
 
 For a different budget, the update pattern looks like this:
 
-```javascript
+```javascript run
 const grant = 50;
 let balance = grant;
 balance += 8;
 balance -= 6;
-console.log(balance); // 52
+console.log(balance);
 ```
 
 The starter copies the number in `basePrice` into `ticketPrice`. It does not create a permanent link between them: updating `ticketPrice` leaves `basePrice` at 24. Keep the charge and credit values supplied above the update comments.

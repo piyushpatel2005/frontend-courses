@@ -22,7 +22,7 @@ A higher-order function accepts a function, returns a function, or does both. In
 
 ## Example
 
-```javascript
+```javascript run
 function makeDiscount(percent) {
   return function (price) {
     return price * (1 - percent);

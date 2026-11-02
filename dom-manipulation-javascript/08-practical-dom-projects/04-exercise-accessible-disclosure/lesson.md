@@ -35,7 +35,9 @@ question.addEventListener("click", () => {
 });
 ```
 
-The exercise uses a menu of links rather than a single answer. Its `aria-controls` must reference the correct panel, and a second activation must close it again.
+The exercise uses a navigation disclosure containing links, not an ARIA application menu. Keep the native links and their ordinary Tab behavior; no arrow-key menu system is needed. The starter separates opening and closing branches so you can implement one transition at a time. The earlier toggle expression is another valid final approach.
+
+This exercise uses a menu of links rather than a single answer. Its `aria-controls` must reference the correct panel, and a second activation must close it again.
 
 Run the starter, then edit `script.js`. Run after each task to inspect the preview; Submit checks your changes in task order.
 

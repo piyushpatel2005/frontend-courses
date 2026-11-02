@@ -1,26 +1,31 @@
-test("Only the original stations are staffed", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("Only the original stations are staffed", () => withPreviewLayout(() => {
   const rows = Array.from(document.querySelectorAll("#stations > li.station"), (row) => row.textContent.trim());
   assert.equal(rows.filter((name) => name === "Printing — staffed").length, 1,
     "Staff the original Printing station once");
   assert.equal(rows.filter((name) => name === "Sewing — staffed").length, 1,
     "Staff the original Sewing station once");
-});
+}));
 
-test("Each original station has one unstaffed backup", () => {
+test("Each original station has one unstaffed backup", () => withPreviewLayout(() => {
   const rows = Array.from(document.querySelectorAll("#stations > li.station"), (row) => row.textContent.trim());
   assert.equal(rows.length, 4, "Keep both original stations and add one backup for each");
   assert.equal(rows.filter((name) => name === "Printing — backup").length, 1,
     "Add an unstaffed Printing backup");
   assert.equal(rows.filter((name) => name === "Sewing — backup").length, 1,
     "Add an unstaffed Sewing backup");
-});
+}));
 
-test("The live count includes the appended backups", () => {
+test("The live count includes the appended backups", () => withPreviewLayout(() => {
   assert.equal(document.getElementById("live-count").textContent.trim(), String(document.getElementsByClassName("station").length),
     "Show the live collection's current size after your updates");
-});
+}));
 
-test("The earlier static count remains two", () => {
+test("The earlier static count remains two", () => withPreviewLayout(() => {
   assert.equal(document.getElementById("static-count").textContent.trim(), "2",
     "Show the static NodeList's original size");
-});
+}));

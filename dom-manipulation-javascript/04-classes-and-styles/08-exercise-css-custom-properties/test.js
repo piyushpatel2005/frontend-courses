@@ -1,8 +1,13 @@
-test("Names the initial accent", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("Names the initial accent", () => withPreviewLayout(() => {
   assert.equal(document.querySelector("#theme-status").textContent.trim(),
     "Teal accent selected.", "Show the initial status on load");
-});
-test("Plum changes the shared card accent", () => {
+}));
+test("Plum changes the shared card accent", () => withPreviewLayout(() => {
   const card = document.querySelector("#workshop-card");
   const tag = card.querySelector(".tag");
   const previous = card.getAttribute("style");
@@ -16,14 +21,14 @@ test("Plum changes the shared card accent", () => {
   } finally {
     if (previous === null) card.removeAttribute("style"); else card.setAttribute("style", previous);
   }
-});
-test("Plum reports the selected accent", () => {
+}));
+test("Plum reports the selected accent", () => withPreviewLayout(() => {
   const status = document.querySelector("#theme-status");
   status.textContent = "Waiting";
   document.querySelector("#plum-accent").click();
   assert.equal(status.textContent.trim(), "Plum accent selected.", "Announce the plum selection");
-});
-test("Reset removes an override and returns to stylesheet colors", () => {
+}));
+test("Reset removes an override and returns to stylesheet colors", () => withPreviewLayout(() => {
   const card = document.querySelector("#workshop-card");
   const tag = card.querySelector(".tag");
   const previous = card.getAttribute("style");
@@ -36,10 +41,10 @@ test("Reset removes an override and returns to stylesheet colors", () => {
   } finally {
     if (previous === null) card.removeAttribute("style"); else card.setAttribute("style", previous);
   }
-});
-test("Reset reports the restored accent", () => {
+}));
+test("Reset reports the restored accent", () => withPreviewLayout(() => {
   const status = document.querySelector("#theme-status");
   status.textContent = "Waiting";
   document.querySelector("#reset-accent").click();
   assert.equal(status.textContent.trim(), "Teal accent restored.", "Announce the reset");
-});
+}));

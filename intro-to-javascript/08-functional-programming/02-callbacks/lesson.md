@@ -24,7 +24,7 @@ Your exercise callback needs no arguments. Each call pushes another `"run"` into
 
 ## Example
 
-```javascript
+```javascript run
 function repeatNotice(times, callback) {
   for (let index = 0; index < times; index++) callback(index);
 }

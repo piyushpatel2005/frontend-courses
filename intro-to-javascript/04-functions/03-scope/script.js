@@ -1,5 +1,6 @@
 // Step 1
 
+// TODO: Step 1: Set the outer siteName to "Frontend Lab".
 const siteName = "";
 
 // Supplied probe: leave this in place.
@@ -12,6 +13,7 @@ try {
 
 // Step 2
 
+// TODO: Step 2: Complete task 2 for buildLabel().
 function buildLabel() {
   // Build the label here.
 }
@@ -27,3 +29,5 @@ try {
 // Step 3
 
 // Complete this step here.
+
+// TODO: Step 3: Log the returned value of buildLabel() on its own line.

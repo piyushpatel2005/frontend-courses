@@ -14,7 +14,7 @@ document.querySelector("#add-item").addEventListener("click", function () {
 });
 
 function removePantryItem(event) {
-  // Task 1: add your code here.
+  // TODO: Step 1: complete the corresponding task here.
 }
-// Task 2: add your code here.
+// TODO: Step 2: complete the corresponding task here.
 window.removePantryItem = removePantryItem;

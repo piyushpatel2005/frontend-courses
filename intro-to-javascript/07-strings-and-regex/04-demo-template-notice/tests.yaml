@@ -1,3 +1,8 @@
-blocks:
-  - index: 0
-    expected_output: "Hi Maya, Field Guide is ready. Pick it up by Friday."
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Hi Maya, Field Guide is ready. Pick it up by Friday."
+    }
+  ]
+}

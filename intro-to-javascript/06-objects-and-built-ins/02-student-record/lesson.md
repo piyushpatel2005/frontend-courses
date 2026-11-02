@@ -17,10 +17,10 @@ hints:
 
 A coordinator records Riley's course and score. When Riley improves, update the score inside the existing object rather than creating a second record.
 
-```javascript
+```javascript run
 const exhibit = { title: "Fossils", visitors: 6 };
 exhibit.visitors = 7;
-console.log(exhibit.title, exhibit.visitors); // Fossils 7
+console.log(exhibit.title, exhibit.visitors);
 ```
 
 Dot notation reads a property; an assignment to that property replaces its value. Assigning to a new key adds a property. `const` stops you from replacing the whole object with another value, but it does not freeze the object's properties.

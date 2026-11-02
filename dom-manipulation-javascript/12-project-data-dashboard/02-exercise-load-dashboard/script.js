@@ -46,32 +46,25 @@ const status = document.querySelector("#status");
 const retry = document.querySelector("#retry");
 
 window.makeEventRow = function(item) {
-  // TODO 1
-return document.createElement("li");
+  // TODO: Step 1: complete the corresponding task here.
 };
 window.render = function(items) {
-  // TODO 2
-
+  // TODO: Step 2: complete the corresponding task here.
 };
 window.showEventCount = function(items) {
-  // TODO 3
-
+  // TODO: Step 3: complete the corresponding task here.
 };
 window.showDashboardLoading = function() {
-  // TODO 4
-
+  // TODO: Step 4: complete the corresponding task here.
 };
 window.checkDashboardResponse = function(response) {
-  // TODO 5
-
+  // TODO: Step 5: complete the corresponding task here.
 };
 window.showDashboardFailure = function() {
-  // TODO 6
-
+  // TODO: Step 6: complete the corresponding task here.
 };
 window.showDashboardEmpty = function() {
-  // TODO 7
-
+  // TODO: Step 7: complete the corresponding task here.
 };
 window.loadEntries = async function() {
   window.showDashboardLoading();

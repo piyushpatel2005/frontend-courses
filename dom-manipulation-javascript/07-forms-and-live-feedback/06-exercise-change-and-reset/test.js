@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 // Restore the exact form/display state even when an assertion fails.
 async function withRestoredState(check) {
   const elements = [...document.querySelectorAll("input, select, [role='status'], strong, button")];
@@ -14,7 +19,7 @@ async function withRestoredState(check) {
     if (focus?.isConnected) focus.focus();
   }
 }
-test("change updates the summary every time", () => withRestoredState(async () => {
+test("change updates the summary every time", () => withPreviewLayout(() => withRestoredState(async () => {
   const lights = document.querySelector("#lights");
   const summary = document.querySelector("#lights-summary");
   for (const choice of ["Cool", "Bright"]) {
@@ -22,8 +27,8 @@ test("change updates the summary every time", () => withRestoredState(async () =
     lights.dispatchEvent(new Event("change", { bubbles: true }));
     assert.equal(summary.textContent.trim(), choice, `Show ${choice} after change`);
   }
-}));
-test("reset restores the displayed state", () => withRestoredState(async () => {
+})));
+test("reset restores the displayed state", () => withPreviewLayout(() => withRestoredState(async () => {
   const form = document.querySelector("#lights-form");
   const lights = document.querySelector("#lights");
   const summary = document.querySelector("#lights-summary");
@@ -33,4 +38,4 @@ test("reset restores the displayed state", () => withRestoredState(async () => {
   await new Promise((resolve) => setTimeout(resolve, 0));
   assert.equal(lights.value, "Warm", "The native reset restores the original option");
   assert.equal(summary.textContent.trim(), "Warm", "Reset the displayed summary too");
-}));
+})));

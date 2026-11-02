@@ -3,6 +3,7 @@ const seat = "B12";
 
 // Task 1: Trimmed two-line guest sign
 
+// TODO: Step 1: Complete task 1 for guestSign(name, seat).
 function guestSign(name, seat) {
   // Return the two-line sign.
 }
@@ -18,3 +19,5 @@ try {
 // Task 2: Separate supplied guest sign
 
 // Log the supplied guest sign here.
+
+// TODO: Step 2: Log guestSign(guest, seat) separately.

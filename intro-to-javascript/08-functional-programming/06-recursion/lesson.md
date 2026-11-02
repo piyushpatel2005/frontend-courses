@@ -28,15 +28,15 @@ For `power`, the supported exponents are nonnegative integers. Each recursive ca
 
 ## Trace a smaller input
 
-```javascript
+```javascript run
 function sum(arr) {
   if (arr.length === 0) return 0;
   return arr[0] + sum(arr.slice(1));
 }
-console.log(sum([2, 3])); // 5
+console.log(sum([2, 3]));
 ```
 
-`slice(1)` returns a new array without the first item, so the input gets shorter on each call. Your power function reduces an exponent instead; your flatten function descends into nested arrays.
+This trace favors clarity over efficiency: each `slice(1)` copies the remaining entries, so the total copying grows quadratically with the list length. An iterative sum avoids those copies and deep call stacks. `slice(1)` returns a new array without the first item, so the input gets shorter on each call. Your power function reduces an exponent instead; your flatten function descends into nested arrays.
 
 Edit `script.js`, Run the checkpoints, then Submit after each task.
 

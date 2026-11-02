@@ -1,4 +1,9 @@
-test("Favourite click adds active without removing note", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("Favourite click adds active without removing note", () => withPreviewLayout(() => {
   const card = document.querySelector("#book-card");
   const status = document.querySelector("#favourite-status");
   const originalClass = card.getAttribute("class");
@@ -12,8 +17,8 @@ test("Favourite click adds active without removing note", () => {
     card.setAttribute("class", originalClass);
     status.textContent = originalText;
   }
-});
-test("Favourite click reports the selected state", () => {
+}));
+test("Favourite click reports the selected state", () => withPreviewLayout(() => {
   const card = document.querySelector("#book-card");
   const status = document.querySelector("#favourite-status");
   const originalClass = card.getAttribute("class");
@@ -27,8 +32,8 @@ test("Favourite click reports the selected state", () => {
     card.setAttribute("class", originalClass);
     status.textContent = originalText;
   }
-});
-test("Remove click clears only active", () => {
+}));
+test("Remove click clears only active", () => withPreviewLayout(() => {
   const card = document.querySelector("#book-card");
   const status = document.querySelector("#favourite-status");
   const originalClass = card.getAttribute("class");
@@ -42,8 +47,8 @@ test("Remove click clears only active", () => {
     card.setAttribute("class", originalClass);
     status.textContent = originalText;
   }
-});
-test("Remove click reports the cleared state", () => {
+}));
+test("Remove click reports the cleared state", () => withPreviewLayout(() => {
   const card = document.querySelector("#book-card");
   const status = document.querySelector("#favourite-status");
   const originalClass = card.getAttribute("class");
@@ -57,4 +62,4 @@ test("Remove click reports the cleared state", () => {
     card.setAttribute("class", originalClass);
     status.textContent = originalText;
   }
-});
+}));

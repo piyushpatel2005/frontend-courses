@@ -1,17 +1,17 @@
 ---
-title: 'Exercise: Promises and Async Await'
+title: 'Promises and Async Await'
 slug: promises-async-await
 order: 4
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Create a delayed Promise, await an uppercase message, and reject division by zero.
-seo_title: 'Exercise: Promises and Async Await | Introduction to JavaScript'
+seo_title: 'Promises and Async Await | Introduction to JavaScript'
 seo_description: Create a delayed Promise, await an uppercase message, and reject division by zero.
 seo_keywords: javascript, promises, async, await, asynchronous programming
 ---
 
-# Exercise: Promises and async/await
+# Promises and async/await
 
 Build a delayed broadcast message, then add a division helper that can reject invalid input. The rehearsal demo showed both the successful cue and its rejected empty-cue case.
 

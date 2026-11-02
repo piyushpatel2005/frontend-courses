@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: change a workshop card accent'
+title: change a workshop card accent
 slug: exercise-css-custom-properties
 order: 8
 language: javascript

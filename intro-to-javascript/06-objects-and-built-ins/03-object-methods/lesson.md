@@ -20,10 +20,10 @@ Jordan's record stores a name and several scores. Read the name into local varia
 
 ## Read properties into variables
 
-```javascript
+```javascript run
 const book = { title: "Dune", author: "Herbert" };
 const { title, author } = book;
-console.log(title, author); // Dune Herbert
+console.log(title, author);
 ```
 
 The braces on the left are **destructuring**: read the named properties from `book` and create variables with those names. `const { title: bookTitle } = book` reads the same property but names the new variable `bookTitle`. It does not rename the property in the object.

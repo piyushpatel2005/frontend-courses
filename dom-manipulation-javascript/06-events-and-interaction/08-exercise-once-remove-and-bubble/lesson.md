@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Control Workshop Notifications'
+title: Control Workshop Notifications
 slug: exercise-once-remove-and-bubble
 order: 8
 language: javascript

@@ -1,7 +1,8 @@
-blocks:
-- index: 0
-  expected_output: 'true
-
-    false
-
-    0'
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "true\nfalse\n0"
+    }
+  ]
+}

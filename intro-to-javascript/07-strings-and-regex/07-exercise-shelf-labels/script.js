@@ -1,5 +1,6 @@
 // Task 1: Trim and uppercase labels
 
+// TODO: Step 1: Complete normalizeShelfLabel(input) by trimming and uppercasing the input string.
 function normalizeShelfLabel(input) {
   // Return the normalized string.
 }
@@ -14,6 +15,7 @@ try {
 
 // Task 2: Rows, bay boundaries, and whole input
 
+// TODO: Step 2: Complete task 2 for isValidShelfLabel(input).
 function isValidShelfLabel(input) {
   // Return the validation result.
 }
@@ -29,3 +31,5 @@ try {
 // Task 3: Separate label comparison
 
 // Log the comparison here.
+
+// TODO: Step 3: Log a separate comparison for " b-07 " and "D-07": B-07: true | D-07: false.

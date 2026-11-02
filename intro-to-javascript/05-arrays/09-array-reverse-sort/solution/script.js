@@ -1,4 +1,4 @@
-const numbers = [3,1,4,2];
+const numbers = [3,12,4,2];
 
 // Step 1
 

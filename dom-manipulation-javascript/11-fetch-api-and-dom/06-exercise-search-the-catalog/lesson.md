@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: search the catalog'
+title: search the catalog
 slug: exercise-search-the-catalog
 order: 6
 language: javascript
@@ -11,7 +11,7 @@ seo_description: Search a mock catalog using URLSearchParams and safely render m
 seo_keywords: search query, URLSearchParams, DOM list
 ---
 
-# Exercise: search the catalog
+# search the catalog
 
 Search the catalog for `tea & honey`. The ampersand belongs inside one `q` value, not between two parameters. `URLSearchParams` handles that encoding; `textContent` has a different job when the result reaches the page.
 

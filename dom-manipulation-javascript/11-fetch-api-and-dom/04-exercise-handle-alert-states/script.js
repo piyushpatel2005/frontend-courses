@@ -11,26 +11,21 @@ window.mockFetch = async function mockFetch(url) {
 };
 
 window.showAlertLoading = function() {
-  // TODO 1
-
+  // TODO: Step 1: complete the corresponding task here.
 };
 window.renderAlerts = function(alerts) {
   const list = document.querySelector("#alert-list");
   list.replaceChildren();
-  // TODO 2
-
+  // TODO: Step 2: complete the corresponding task here.
 };
 window.showEmptyAlerts = function() {
-  // TODO 3
-
+  // TODO: Step 3: complete the corresponding task here.
 };
 window.checkAlertResponse = function(response) {
-  // TODO 4
-
+  // TODO: Step 4: complete the corresponding task here.
 };
 window.showAlertFailure = function() {
-  // TODO 5
-
+  // TODO: Step 5: complete the corresponding task here.
 };
 window.loadAlerts = async function() {
   window.showAlertLoading();

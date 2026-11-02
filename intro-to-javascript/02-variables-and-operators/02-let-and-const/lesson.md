@@ -28,11 +28,11 @@ The declarations are already in the starter. Fill their initial values, then add
 
 A different counter shows why the label stays fixed while a value changes:
 
-```javascript
+```javascript run
 const station = "Harbor";
 let visitors = 3;
 visitors += 2;
-console.log(`${station}: ${visitors}`); // Harbor: 5
+console.log(`${station}: ${visitors}`);
 ```
 
 Edit `script.js`, Run to inspect each checkpoint, then Submit to check the completed tasks. The supplied probes do not need rewriting.

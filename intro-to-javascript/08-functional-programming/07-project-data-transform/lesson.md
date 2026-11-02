@@ -25,7 +25,7 @@ Grouping uses an object as the reduce accumulator instead of a number. Start fro
 
 ## Worked example
 
-```javascript
+```javascript run
 const books = [
   { title: "Orbit", available: true },
   { title: "Harbor", available: false }

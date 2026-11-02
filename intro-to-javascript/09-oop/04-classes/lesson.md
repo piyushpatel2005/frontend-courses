@@ -25,7 +25,7 @@ A deposit changes state but does not need to return a value here. A withdrawal r
 
 ## Basic class
 
-```javascript
+```javascript run
 class WorkshopSession {
   constructor(topic, seats) {
     this.topic = topic;

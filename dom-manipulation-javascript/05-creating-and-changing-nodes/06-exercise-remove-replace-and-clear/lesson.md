@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Refresh a Museum Display'
+title: Refresh a Museum Display
 slug: exercise-remove-replace-and-clear
 order: 6
 language: javascript

@@ -1,5 +1,6 @@
 // Step 1
 
+// TODO: Step 1: Implement add(a, b) to return their sum.
 function add(a, b) {}
 
 // Supplied probe: leave this in place.
@@ -12,6 +13,7 @@ try {
 
 // Step 2
 
+// TODO: Step 2: Implement subtract(a, b) to return a - b.
 function subtract(a, b) {}
 
 // Supplied probe: leave this in place.
@@ -24,6 +26,7 @@ try {
 
 // Step 3
 
+// TODO: Step 3: Implement multiply(a, b) to return their product.
 function multiply(a, b) {}
 
 // Supplied probe: leave this in place.
@@ -36,6 +39,7 @@ try {
 
 // Step 4
 
+// TODO: Step 4: Implement divide(a, b) to return a / b, or null when b is zero.
 function divide(a, b) {}
 
 // Supplied probe: leave this in place.
@@ -48,6 +52,7 @@ try {
 
 // Step 5
 
+// TODO: Step 5: Complete task 5 for calculate(a, op, b).
 function calculate(a, op, b) {}
 
 // Supplied probe: leave this in place.
@@ -65,3 +70,7 @@ try {
 // Step 7
 
 // Complete this step here.
+
+// TODO: Step 6: Log 10 + 5 = 15 using the result of calculate(10, "+", 5).
+
+// TODO: Step 7: Complete task 7 for 8 / 0 = Error: Division by zero.

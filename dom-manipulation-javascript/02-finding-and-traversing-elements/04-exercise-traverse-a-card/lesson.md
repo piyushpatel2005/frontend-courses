@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: trace a nested card'
+title: trace a nested card
 slug: exercise-traverse-a-card
 order: 4
 language: javascript

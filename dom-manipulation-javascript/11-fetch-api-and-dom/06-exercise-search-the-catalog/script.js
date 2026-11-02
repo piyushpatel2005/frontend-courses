@@ -9,20 +9,17 @@ window.mockFetch = async function mockFetch(url) {
 };
 
 window.catalogURL = function(term) {
-  // TODO 2
-return "/api/catalog";
+  // TODO: Step 2: complete the corresponding task here.
+  return "/api/catalog";
 };
 window.showCatalogURL = function(url) {
-  // TODO 3
-
+  // TODO: Step 3: complete the corresponding task here.
 };
 window.renderProducts = function(products) {
-  // TODO 4
-
+  // TODO: Step 4: complete the corresponding task here.
 };
 window.showCatalogEmpty = function() {
-  // TODO 5
-
+  // TODO: Step 5: complete the corresponding task here.
 };
 window.searchCatalog = async function() {
   const url = window.catalogURL(document.querySelector("#catalog-query").value);
@@ -34,7 +31,6 @@ window.searchCatalog = async function() {
   else document.querySelector("#search-status").textContent = "Matches found.";
 };
 document.querySelector("#catalog-form").addEventListener("submit", event => {
-  // TODO 1
-
+  // TODO: Step 1: complete the corresponding task here.
   window.lastLoad = window.searchCatalog();
 });

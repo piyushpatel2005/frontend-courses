@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Check Library Hours'
+title: Check Library Hours
 slug: exercise-click-listener
 order: 2
 language: javascript

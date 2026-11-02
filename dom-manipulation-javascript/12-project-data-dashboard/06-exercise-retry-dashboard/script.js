@@ -94,22 +94,20 @@ let latestRequest = 0;
 
 window.loadEntries = async function() {
   const request = ++latestRequest;
-  // TODO 1
-controller = new AbortController();
+  // TODO: Step 1: complete the corresponding task here.
+  controller = new AbortController();
   window.showDashboardLoading();
   retry.hidden = true;
   try {
     const response = await window.dashboardFetch(window.requestURL(), {signal: controller.signal});
     window.checkDashboardResponse(response);
     const data = await response.json();
-    // TODO 2
-
+    // TODO: Step 2: complete the corresponding task here.
     window.render(data.items);
     if (data.items.length) window.showEventCount(data.items);
     else window.showDashboardEmpty();
   } catch (error) {
-    // TODO 3
-
+    // TODO: Step 3: complete the corresponding task here.
     window.showDashboardFailure();
   }
 };

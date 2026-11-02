@@ -1,4 +1,7 @@
 const query = document.querySelector("#trail-query");
 const trails = document.querySelectorAll("#trails li");
 const count = document.querySelector("#trail-count");
-// React to each edit, hide nonmatches, and update the result count.
+query.addEventListener("input", () => {
+  // TODO: Step 1: complete the corresponding task here.
+  // TODO: Step 2: complete the corresponding task here.
+});

@@ -1,0 +1,4 @@
+body { max-width: 40rem; margin: 2rem auto; padding: 1rem; font: 1rem/1.6 system-ui; color: #213547; }
+label { display: block; }
+input, button { font: inherit; padding: .5rem; }
+:focus-visible { outline: 3px solid #a24d00; outline-offset: 2px; }

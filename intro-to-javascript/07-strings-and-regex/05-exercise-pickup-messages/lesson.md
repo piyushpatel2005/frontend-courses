@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Format Pantry Pickup Messages"
+title: "Format Pantry Pickup Messages"
 slug: exercise-pickup-messages
 order: 5
 language: javascript
@@ -17,11 +17,11 @@ hints:
 
 The pantry needs one notice per request. Each record has a `name`, an `item` description, and a `quantity`. Keep the records as data and build messages from them.
 
-```javascript
+```javascript run
 function bookReminder(name, title) {
   return `Hi ${name.trim()}, ${title} is ready.`;
 }
-console.log(bookReminder(" Eva ", "Field Notes")); // Hi Eva, Field Notes is ready.
+console.log(bookReminder(" Eva ", "Field Notes"));
 ```
 
 Your notice format is `Hi NAME, your QUANTITY ITEM are ready for pickup.` Trim only the name; preserve the supplied item description. Keep this wording for all supplied quantities; choosing singular or plural wording is outside this exercise.

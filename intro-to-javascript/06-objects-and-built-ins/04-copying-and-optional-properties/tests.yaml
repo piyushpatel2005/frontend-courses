@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Atlas Field Atlas\ntrue\nCity unknown"
+    }
+  ]
+}

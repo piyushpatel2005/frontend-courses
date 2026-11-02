@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: unlock a volunteer sign-up'
+title: unlock a volunteer sign-up
 slug: exercise-boolean-attributes-and-properties
 order: 8
 language: javascript
@@ -23,12 +23,12 @@ A kitchen volunteer must confirm that they have read the shift details before si
 
 The starter supplies the selectors, the function, a `change` listener, and an initial call. Leave those connections in place; put your updates inside the function. As in the tour demo, the browser calls it after the checkbox changes, and the last call sets up the initial page. You are practicing boolean properties here, not writing event wiring.
 
-First add the initial message. Next assign `joinShift.disabled` from the opposite of `agreement.checked`. Finally replace your fixed message with an `if`/`else` using `joinShift.hasAttribute("disabled")` to select the right wording.
+First add the initial message. Next assign `joinShift.disabled` from the opposite of `agreement.checked`. Keep the unchecked message inside `if (!agreement.checked)`, so it returns after unchecking. After setting the button property, use `if (!joinShift.hasAttribute("disabled"))` to write the ready message only when enabled.
 
 Run after each task. Once the button update is done, check and uncheck the agreement to try both directions. After the final task, the status should follow those changes too. Submit to check each outcome.
 
 ## Your Tasks
 
-1. Inside `updateShift()`, show `Read the shift details first.` in `#shift-status` for the initially unchecked agreement.
+1. Inside `updateShift()`, show `Read the shift details first.` in `#shift-status` whenever the agreement is unchecked, including on load.
 2. Set `joinShift.disabled` from the current `agreement.checked` value so checking enables the button and unchecking disables it.
-3. Select the status message with `joinShift.hasAttribute("disabled")`: show `Sign-up is ready.` when enabled and `Read the shift details first.` when disabled.
+3. Use `joinShift.hasAttribute("disabled")` to show `Sign-up is ready.` only when the button is enabled. Keep the unchecked message from step 1.

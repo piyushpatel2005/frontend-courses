@@ -1,17 +1,17 @@
 ---
-title: 'Exercise: Async API Simulation'
+title: 'Async API Simulation'
 slug: async-api-simulation
 order: 6
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Combine offline user, post, and notification requests with Promise.all and a fallback.
-seo_title: 'Exercise: Async API Simulation | Introduction to JavaScript'
+seo_title: 'Async API Simulation | Introduction to JavaScript'
 seo_description: Combine offline user, post, and notification requests with Promise.all and a fallback.
 seo_keywords: javascript, async, api, simulation, asynchronous programming
 ---
 
-# Exercise: An offline activity dashboard
+# An offline activity dashboard
 
 Apply the rehearsal's dependency pattern to a user's activity summary. `fetchUser`, `fetchPosts`, and `fetchNotifications` are supplied local fixtures. Despite their names, they make no HTTP requests.
 

@@ -1,17 +1,17 @@
 ---
-title: 'Demo: Offline API Coordination'
+title: 'Offline API Coordination'
 slug: offline-api-coordination
 order: 5
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Run dependent and concurrent offline fixture calls with a Promise.all fallback.
-seo_title: 'Demo: Offline API Coordination | Introduction to JavaScript'
+seo_title: 'Offline API Coordination | Introduction to JavaScript'
 seo_description: Run dependent and concurrent offline fixture calls with a Promise.all fallback.
 seo_keywords: javascript, offline, api, coordination, async programming
 ---
 
-# Demo: Coordinate offline lookups
+# Coordinate offline lookups
 
 A rehearsal schedule needs an event ID before it can look up acts and seats. These are offline fixture functions: they return Promises containing local data, not HTTP responses. No request leaves the preview.
 

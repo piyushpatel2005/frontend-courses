@@ -1,8 +1,8 @@
 function updateBikeStatus() {
-  // Find the bike card, then safely update its status.
+  // TODO: Step 1: complete the corresponding task here.
 }
 function updateOptionalAlert() {
-  // Look for an optional alert and update it only if present.
+  // TODO: Step 2: complete the corresponding task here.
 }
 updateBikeStatus();
 updateOptionalAlert();

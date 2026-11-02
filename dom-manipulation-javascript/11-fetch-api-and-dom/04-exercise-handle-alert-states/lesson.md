@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: handle alert states'
+title: handle alert states
 slug: exercise-handle-alert-states
 order: 4
 language: javascript
@@ -11,7 +11,7 @@ seo_description: Give an alert viewer honest loading, empty, HTTP error, and net
 seo_keywords: HTTP error, network error, loading state
 ---
 
-# Exercise: handle alert states
+# handle alert states
 
 The trail board must distinguish no alerts from a failed lookup. Its selector chooses fixed local scenarios; these are not current trail conditions.
 

@@ -1,1 +1,2 @@
-// Start at the featured label; travel to its row and its article.
+// TODO: Step 1: complete the corresponding task here.
+// TODO: Step 2: complete the corresponding task here.

@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "false\ntrue\ntrue\ntrue false"
+    }
+  ]
+}

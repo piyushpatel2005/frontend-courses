@@ -1,4 +1,9 @@
-test("typing filters case insensitively and clearing restores all", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("typing filters case insensitively and clearing restores all", () => withPreviewLayout(() => {
   const query = document.querySelector("#trail-query");
   const items = [...document.querySelectorAll("#trails li")];
   query.value = "  RIVER  ";
@@ -8,8 +13,8 @@ test("typing filters case insensitively and clearing restores all", () => {
   query.value = "";
   query.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(items.every(item => !item.hidden && item.isConnected), true, "Clear search to restore the same connected nodes");
-});
-test("live count follows zero and multiple matches", () => {
+}));
+test("live count follows zero and multiple matches", () => withPreviewLayout(() => {
   const query = document.querySelector("#trail-query");
   const count = document.querySelector("#trail-count");
   query.value = "unmapped";
@@ -18,4 +23,4 @@ test("live count follows zero and multiple matches", () => {
   query.value = "River";
   query.dispatchEvent(new Event("input", { bubbles: true }));
   assert.match(count.textContent, /^2\b/, "Show two matches");
-});
+}));

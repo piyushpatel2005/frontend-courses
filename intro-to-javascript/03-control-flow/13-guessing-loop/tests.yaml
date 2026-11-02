@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Not this one: 18\nFound ticket: 42"
+    }
+  ]
+}

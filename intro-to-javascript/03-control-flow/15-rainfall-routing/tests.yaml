@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Normal: 4 mm\nAlert: 18 mm\nNormal: 0 mm\nAlert: 23 mm\nNormal: 12 mm\nAlert days: 2"
+    },
+    {
+      "index": 1,
+      "expected_output": "Normal: 4 mm\nNormal: 18 mm\nNormal: 0 mm\nAlert: 23 mm\nNormal: 12 mm\nAlert days: 1"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workshop seat request</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Workshop seat request</h1>
+    <form id="seat-form">
+      <label for="seats">Seats (1 to 12)</label>
+      <input id="seats" name="seats" type="number" required min="1" max="12" step="1" aria-describedby="seat-status">
+      <button type="submit">Request seats</button>
+    </form>
+    <p id="seat-status" role="status">No quantity entered.</p>
+  </main>
+</body>
+</html>

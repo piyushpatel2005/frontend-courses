@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "art: 2 | music: 1"
+    }
+  ]
+}

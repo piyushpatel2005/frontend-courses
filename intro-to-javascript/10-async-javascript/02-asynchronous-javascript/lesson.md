@@ -1,17 +1,17 @@
 ---
-title: 'Exercise: Asynchronous JavaScript'
+title: 'Asynchronous JavaScript'
 slug: asynchronous-javascript
 order: 2
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Schedule a callback that records broadcast cues in actual execution order.
-seo_title: 'Exercise: Asynchronous JavaScript | Introduction to JavaScript'
+seo_title: 'Asynchronous JavaScript | Introduction to JavaScript'
 seo_description: Schedule a callback that records broadcast cues in actual execution order.
 seo_keywords: javascript, callbacks, timers, asynchronous programming
 ---
 
-# Exercise: Schedule a broadcast cue
+# Schedule a broadcast cue
 
 Record a broadcast's opening and closing cues before its delayed announcement. The previous demo showed the same timing rule with different stage cues.
 

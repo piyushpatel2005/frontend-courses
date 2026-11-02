@@ -1,5 +1,5 @@
 ---
-title: 'Demo: Retry a Local Delivery'
+title: 'Retry a Local Delivery'
 slug: retry-local-delivery
 order: 9
 language: javascript
@@ -7,7 +7,7 @@ runtime: srcdoc
 lesson_type: coding
 summary: Retry a deterministic offline delivery until it succeeds or its budget runs
   out.
-seo_title: 'Demo: Retry a Local Delivery | Introduction to JavaScript'
+seo_title: 'Retry a Local Delivery | Introduction to JavaScript'
 seo_description: Retry a deterministic offline delivery until it succeeds or its budget
   runs out.
 seo_keywords:
@@ -16,7 +16,7 @@ seo_keywords:
 - async programming
 ---
 
-# Demo: Retry a local delivery
+# Retry a local delivery
 
 A rehearsal courier fails on its first handoff and accepts the second. `makeCueCourier()` returns a fresh offline function with its own attempt counter; it sends no request.
 

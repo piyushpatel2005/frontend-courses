@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: update an accessible link'
+title: update an accessible link
 slug: exercise-reading-and-changing-attributes
 order: 4
 language: javascript

@@ -79,20 +79,19 @@ window.showDashboardEmpty = function() {
 const form = document.querySelector("#search-form");
 const search = document.querySelector("#search");
 window.requestURL = function() {
-  // TODO 1
-return API_URL;
+  // TODO: Step 1: complete the corresponding task here.
+  return API_URL;
 };
 form.addEventListener("submit", event => {
-  // TODO 3
-
+  // TODO: Step 3: complete the corresponding task here.
 });
 
 window.loadEntries = async function() {
   window.showDashboardLoading();
   retry.hidden = true;
   try {
-    // TODO 2
-const response = await window.dashboardFetch(API_URL);
+    // TODO: Step 2: complete the corresponding task here.
+    const response = await window.dashboardFetch(API_URL);
     window.checkDashboardResponse(response);
     const data = await response.json();
     window.render(data.items);

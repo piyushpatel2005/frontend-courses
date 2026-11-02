@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: style and hide a notice'
+title: style and hide a notice
 slug: exercise-inline-style-and-hidden-state
 order: 6
 language: javascript

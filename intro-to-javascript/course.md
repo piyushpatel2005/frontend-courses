@@ -46,7 +46,7 @@ You will start by printing a value, then learn to make decisions, repeat work, o
 
 ## Before you begin
 
-You do not need previous programming experience. Familiarity with a basic HTML page helps with the opening example, but the course explains the connection to `script.js`. After that, most work happens in a JavaScript file and the Console. You do not need to know CSS or a JavaScript framework.
+This is the third course in HTML → CSS → JavaScript → vanilla DOM. You can already structure and style a page; you do not need previous programming experience. The opening example explains the connection to `script.js`. After that, most work happens in a JavaScript file and the Console. You will not use a JavaScript framework.
 
 ## What you will learn
 
@@ -71,12 +71,12 @@ You do not need previous programming experience. Familiarity with a basic HTML p
 9. **Object-Oriented Programming** — give objects behavior, then build classes with inheritance and private state.
 10. **Asynchronous JavaScript** — understand delayed work, await Promises, combine independent results, and retry failures.
 
-> After this course, continue with a dedicated **JavaScript DOM** course to learn browser interactivity, or move into **Node.js** and frameworks like **React**.
+> Next, continue with **vanilla JavaScript DOM**: select native elements, respond to browser events, and connect the language to the HTML and CSS you already know. No framework is needed.
 
 
 ## How to work through the lessons
 
-The opening lessons connect an HTML page to `script.js`. Later exercises focus on JavaScript and its Console output rather than changing page elements.
+The opening lesson connects an HTML page to `script.js`. Later exercises focus on JavaScript and its Console output rather than changing page elements.
 
 - Read the explanation, then run the example and compare its output with the description.
 - Try the suggested small change. Predict what will happen before you run it again.

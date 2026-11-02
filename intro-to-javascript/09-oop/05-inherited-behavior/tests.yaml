@@ -1,5 +1,8 @@
-blocks:
-- index: 0
-  expected_output: 'true
-
-    Notice: Garden club at 10:00'
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "true\nNotice: Garden club at 10:00"
+    }
+  ]
+}

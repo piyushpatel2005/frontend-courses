@@ -43,4 +43,4 @@ Duplicate sessions are allowed, even with the same title and time. Reset only th
 6. Announce the added title in `#session-status`.
 7. Return focus to the title field after a successful addition.
 
-Try an invalid time, then enter a session with angle brackets in its title. The preview should show those brackets literally.
+The starter supplies separate blank-title and missing-time branches. Add their messages and focus behavior in order; leave their early returns in place. Preventing default submission belongs to the title-validation task and must run before either branch. Try a missing time, then enter a session with angle brackets in its title. The preview should show those brackets literally.

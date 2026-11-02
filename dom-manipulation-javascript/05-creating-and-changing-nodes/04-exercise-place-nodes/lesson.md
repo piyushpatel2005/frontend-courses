@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Order the Workshop Agenda'
+title: Order the Workshop Agenda
 slug: exercise-place-nodes
 order: 4
 language: javascript

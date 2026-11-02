@@ -1,13 +1,13 @@
 const communityNotice = document.querySelector("#community-notice");
 document.querySelector("#set-border").addEventListener("click", () => {
-  // Add this button\'s updates here.
+  // TODO: Step 1: complete the corresponding task here.
 });
 document.querySelector("#emphasize").addEventListener("click", () => {
-  // Add this button\'s updates here.
+  // TODO: Step 2: complete the corresponding task here.
 });
 document.querySelector("#dismiss").addEventListener("click", () => {
-  // Add this button\'s updates here.
+  // TODO: Step 3: complete the corresponding task here.
 });
 document.querySelector("#restore").addEventListener("click", () => {
-  // Add this button\'s updates here.
+  // TODO: Step 4: complete the corresponding task here.
 });

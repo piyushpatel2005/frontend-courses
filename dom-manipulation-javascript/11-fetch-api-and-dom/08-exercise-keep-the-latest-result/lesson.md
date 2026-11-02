@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: keep the latest result'
+title: keep the latest result
 slug: exercise-keep-the-latest-result
 order: 8
 language: javascript
@@ -11,7 +11,7 @@ seo_description: Use AbortController to keep only the newest lookup result in a 
 seo_keywords: abort fetch, latest response, JavaScript exercise
 ---
 
-# Exercise: keep the latest result
+# keep the latest result
 
 The ferry board already connects each button to an async request. Finish the four state helpers so a slow old selection cannot replace a newer one. All routes come from the local timed fixture; this is not a ferry timetable.
 

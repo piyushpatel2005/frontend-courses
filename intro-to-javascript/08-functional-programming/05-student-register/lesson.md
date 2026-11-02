@@ -22,10 +22,10 @@ First supply the records. Then implement `activeRegister(records)` so it uses it
 
 A different register combines a filter with a map:
 
-```javascript
+```javascript run
 const books = [{ title: "Atlas", ready: true }, { title: "Drift", ready: false }];
 const readyTitles = books.filter(book => book.ready).map(book => book.title);
-console.log(readyTitles.join(", ")); // Atlas
+console.log(readyTitles.join(", "));
 ```
 
 Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.

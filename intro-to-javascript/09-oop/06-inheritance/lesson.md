@@ -25,7 +25,7 @@ The `Dog` example below has no constructor of its own; JavaScript supplies a der
 
 ## Basic inheritance
 
-```javascript
+```javascript run
 class Animal {
     constructor(name) {
         this.name = name;
@@ -53,8 +53,8 @@ class Cat extends Animal {
 }
 
 const dog = new Dog("Rex");
-dog.speak();     // "Rex barks."
-dog.toString();  // "Animal(Rex)" — inherited from Animal
+console.log(dog.speak());
+console.log(dog.toString());
 ```
 
 ## Calling the parent with `super`

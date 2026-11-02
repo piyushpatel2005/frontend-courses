@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: label every trail stop'
+title: label every trail stop
 slug: exercise-select-all
 order: 2
 language: javascript

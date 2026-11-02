@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: inspect a room input and its nodes'
+title: inspect a room input and its nodes
 slug: exercise-properties-attributes-and-node-types
 order: 11
 language: javascript

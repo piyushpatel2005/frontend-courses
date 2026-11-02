@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: follow the document reference'
+title: follow the document reference
 slug: exercise-document-reference
 order: 5
 language: javascript

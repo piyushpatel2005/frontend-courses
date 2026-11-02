@@ -27,7 +27,7 @@ The starter already includes two checkpoint logs. Leave those in place and chang
 
 ## Example
 
-```javascript
+```javascript run
 const trailMarker = "Checkpoint Cedar";
 const distancePerGroup = 48 / 6;
 console.log(trailMarker, distancePerGroup);

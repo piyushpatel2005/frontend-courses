@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 // Restore the exact form/display state even when an assertion fails.
 async function withRestoredState(check) {
   const elements = [...document.querySelectorAll("input, select, [role='status'], strong, button")];
@@ -20,28 +25,29 @@ function submitTitle(value) {
   document.querySelector("#request").dispatchEvent(event);
   return event;
 }
-test("Every submission stays on the page", () => withRestoredState(async () => {
+test("Every submission stays on the page", () => withPreviewLayout(() => withRestoredState(async () => {
   for (const value of ["", "   ", "River Atlas"]) {
     assert.equal(submitTitle(value).defaultPrevented, true, "Cancel every submit default");
   }
-}));
-test("Blank titles get a useful message", () => withRestoredState(async () => {
+})));
+test("Blank titles get a useful message", () => withPreviewLayout(() => withRestoredState(async () => {
   const status = document.querySelector("#request-status");
   for (const blank of ["", "  "]) {
     status.textContent = "Previous request";
     submitTitle(blank);
     assert.includes(status.textContent, "Enter a book title");
   }
-}));
-test("Blank titles expose the invalid field and focus it", () => withRestoredState(async () => {
+})));
+test("Blank titles expose the invalid field and focus it", () => withPreviewLayout(() => withRestoredState(async () => {
+  await new Promise(resolve => requestAnimationFrame(resolve));
   const book = document.querySelector("#book");
   book.removeAttribute("aria-invalid");
   document.querySelector("button").focus();
   submitTitle("   ");
   assert.equal(book.getAttribute("aria-invalid"), "true");
   assert.equal(document.activeElement, book);
-}));
-test("Valid titles receive a trimmed, literal confirmation", () => withRestoredState(async () => {
+})));
+test("Valid titles receive a trimmed, literal confirmation", () => withPreviewLayout(() => withRestoredState(async () => {
   const status = document.querySelector("#request-status");
   for (const title of ["River Atlas", "<em>Reed & River</em>"]) {
     status.textContent = "Old message";
@@ -49,10 +55,10 @@ test("Valid titles receive a trimmed, literal confirmation", () => withRestoredS
     assert.equal(status.textContent, `Hold requested for ${title}.`);
     assert.equal(status.children.length, 0, "Display the title as text");
   }
-}));
-test("A corrected title loses its invalid state", () => withRestoredState(async () => {
+})));
+test("A corrected title loses its invalid state", () => withPreviewLayout(() => withRestoredState(async () => {
   const book = document.querySelector("#book");
   book.setAttribute("aria-invalid", "true");
   submitTitle("River Atlas");
   assert.notEqual(book.getAttribute("aria-invalid"), "true");
-}));
+})));

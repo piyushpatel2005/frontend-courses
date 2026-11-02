@@ -5,14 +5,14 @@ const sessions = [
 window.workshopSessions = sessions; // Preview checks can try temporary data without changing the seed.
 const sessionList = document.querySelector("#sessions");
 const updateButton = document.querySelector("#update-session");
-// Return one prepared <li>; leave insertion to renderSessions().
 function createSessionRow(session) {
+  // TODO: Step 1: complete the corresponding task here.
   return null;
 }
 function renderSessions() {
-  // Rebuild the list from sessions.
+  // TODO: Step 2: complete the corresponding task here.
 }
 updateButton.addEventListener("click", () => {
-  // Change state, then render.
+  // TODO: Step 3: complete the corresponding task here.
 });
 renderSessions();

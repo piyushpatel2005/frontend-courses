@@ -30,7 +30,7 @@ For an average, first keep the matching records, sum their salaries, then divide
 
 ## Combining all three
 
-```javascript
+```javascript run
 const orders = [
     { product: "Book", price: 12, qty: 2 },
     { product: "Pen",  price: 1,  qty: 10 },
@@ -42,7 +42,7 @@ const total = orders
     .map(o => o.price * o.qty)                // calculate line total
     .reduce((sum, lineTotal) => sum + lineTotal, 0); // sum up
 
-console.log(total); // 34 (12*2 + 1*10 = 24 + 10)
+console.log(total);
 ```
 
 Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.

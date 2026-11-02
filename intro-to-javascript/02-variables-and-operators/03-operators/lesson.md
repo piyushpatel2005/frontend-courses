@@ -27,7 +27,7 @@ Other operators you will see are `-` for subtraction and `/` for division. The `
 
 ## Example
 
-```javascript
+```javascript run
 const hours = 3;
 const hourlyRate = 8;
 const helmetFee = 4;

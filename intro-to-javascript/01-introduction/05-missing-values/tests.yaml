@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "undefined null\nNo note\n0"
+    }
+  ]
+}

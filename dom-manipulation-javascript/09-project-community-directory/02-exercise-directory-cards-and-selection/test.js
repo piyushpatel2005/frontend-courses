@@ -1,4 +1,9 @@
-test("static member cards and labelled detail panel are present", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("static member cards and labelled detail panel are present", () => withPreviewLayout(() => {
   const cards = document.querySelectorAll("#members li");
   assert.equal(cards.length, 3, "Start with three member cards");
   const leah = [...cards].find((card) => card.dataset.name === "Leah Chen");
@@ -11,8 +16,8 @@ test("static member cards and labelled detail panel are present", () => {
     assert.exists(card.querySelector("button.select"), "Give every card a View button");
   });
   assert.equal(leah.querySelector("button.select").type, "button", "Use a native non-submit View button");
-});
-test("View button copies its own card data as literal text", () => {
+}));
+test("View button copies its own card data as literal text", () => withPreviewLayout(() => {
   const card = document.querySelectorAll("#members li")[1];
   const savedName = card.dataset.name;
   const savedSkill = card.dataset.skill;
@@ -33,12 +38,12 @@ test("View button copies its own card data as literal text", () => {
     document.querySelector("#detail-name").textContent = "Choose a member";
     document.querySelector("#detail-skill").textContent = "Their skill will appear here.";
   }
-});
-test("changing selection highlights only the chosen card", () => {
+}));
+test("changing selection highlights only the chosen card", () => withPreviewLayout(() => {
   const cards = document.querySelectorAll("#members li");
   cards[0].querySelector("button.select").click();
   cards[1].querySelector("button.select").click();
   assert.equal(cards[0].classList.contains("selected"), false, "Remove the previous selection");
   assert.equal(cards[1].classList.contains("selected"), true, "Mark the newly selected card");
   assert.equal(document.querySelectorAll("#members li.selected").length, 1, "Select exactly one card");
-});
+}));

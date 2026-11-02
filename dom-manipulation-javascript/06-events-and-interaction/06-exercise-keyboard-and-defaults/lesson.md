@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Search the Recipe Box'
+title: Search the Recipe Box
 slug: exercise-keyboard-and-defaults
 order: 6
 language: javascript

@@ -16,11 +16,11 @@ function setupWorkshop(root) {
   root.querySelector("#private").addEventListener("click", () => {
     output.textContent += "Private ";
   });
-  // Task 1: add your code here.
-  // Task 2: add your code here.
-  // Task 3: add your code here.
-  // Task 4: add your code here.
-  // Task 5: add your code here.
+  // TODO: Step 1: complete the corresponding task here.
+  // TODO: Step 2: complete the corresponding task here.
+  // TODO: Step 3: complete the corresponding task here.
+  // TODO: Step 4: complete the corresponding task here.
+  // TODO: Step 5: complete the corresponding task here.
 }
 setupWorkshop(document.querySelector("main"));
 window.setupWorkshop = setupWorkshop;

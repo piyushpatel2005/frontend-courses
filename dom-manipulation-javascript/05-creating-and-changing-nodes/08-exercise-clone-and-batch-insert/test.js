@@ -1,4 +1,9 @@
-test("The helper returns an independent, detached deep clone", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("The helper returns an independent, detached deep clone", () => withPreviewLayout(() => {
   const list = document.querySelector("#exhibits");
   const saved = [...list.childNodes];
   const original = list.querySelector(".exhibit");
@@ -25,8 +30,8 @@ test("The helper returns an independent, detached deep clone", () => {
     note.textContent = oldNote;
     list.replaceChildren(...saved);
   }
-});
-test("The insertion helper transfers a fragment's two children", () => {
+}));
+test("The insertion helper transfers a fragment's two children", () => withPreviewLayout(() => {
   const list = document.querySelector("#exhibits");
   const saved = [...list.childNodes];
   const original = list.querySelector(".exhibit");
@@ -61,4 +66,4 @@ test("The insertion helper transfers a fragment's two children", () => {
     Node.prototype.appendChild = appendChild;
     list.replaceChildren(...saved);
   }
-});
+}));

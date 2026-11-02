@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 // Restore the exact form/display state even when an assertion fails.
 async function withRestoredState(check) {
   const elements = [...document.querySelectorAll("input, select, [role='status'], strong, button")];
@@ -14,7 +19,7 @@ async function withRestoredState(check) {
     if (focus?.isConnected) focus.focus();
   }
 }
-test("input updates the greeting repeatedly as safe text", () => withRestoredState(async () => {
+test("input updates the greeting repeatedly as safe text", () => withPreviewLayout(() => withRestoredState(async () => {
   const input = document.querySelector("#volunteer");
   const output = document.querySelector("#greeting");
   input.value = "Ada";
@@ -24,12 +29,12 @@ test("input updates the greeting repeatedly as safe text", () => withRestoredSta
   input.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(output.textContent.trim(), "<em>Bea</em>", "Treat typed characters as text");
   assert.equal(output.querySelector("em"), null, "Do not parse typed markup");
-}));
-test("clearing the field restores the fallback", () => withRestoredState(async () => {
+})));
+test("clearing the field restores the fallback", () => withPreviewLayout(() => withRestoredState(async () => {
   const input = document.querySelector("#volunteer");
   const output = document.querySelector("#greeting");
   input.value = "";
   output.textContent = "Previously shown name"; // Do not depend on the preceding test.
   input.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(output.textContent.trim(), "friend", "Restore friend when empty");
-}));
+})));

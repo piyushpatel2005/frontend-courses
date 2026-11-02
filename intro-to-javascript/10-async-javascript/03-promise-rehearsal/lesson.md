@@ -1,17 +1,17 @@
 ---
-title: 'Demo: Promise Rehearsal'
+title: 'Promise Rehearsal'
 slug: promise-rehearsal
 order: 3
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Run an offline Promise and await a rehearsal cue before reporting it.
-seo_title: 'Demo: Promise Rehearsal | Introduction to JavaScript'
+seo_title: 'Promise Rehearsal | Introduction to JavaScript'
 seo_description: Run an offline Promise and await a rehearsal cue before reporting it.
 seo_keywords: javascript, promise, rehearsal, async programming
 ---
 
-# Demo: Promise rehearsal
+# Promise rehearsal
 
 A rehearsal cue is not ready when the script starts. A Promise lets the caller describe what to do with the cue when it arrives.
 

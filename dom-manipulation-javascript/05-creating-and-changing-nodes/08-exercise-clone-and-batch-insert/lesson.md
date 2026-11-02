@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Clone Two Exhibit Cards'
+title: Clone Two Exhibit Cards
 slug: exercise-clone-and-batch-insert
 order: 8
 language: javascript

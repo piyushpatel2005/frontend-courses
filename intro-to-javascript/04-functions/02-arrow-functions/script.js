@@ -1,5 +1,6 @@
 // Step 1
 
+// TODO: Step 1: Replace null in square with an arrow function that returns its number multiplied by itself.
 const square = null;
 
 // Supplied probe: leave this in place.
@@ -12,6 +13,7 @@ try {
 
 // Step 2
 
+// TODO: Step 2: Complete task 2 for null.
 const celsius = null;
 
 // Supplied probe: leave this in place.
@@ -24,6 +26,7 @@ try {
 
 // Step 3
 
+// TODO: Step 3: Replace null in isEven with an arrow function returning whether n % 2 === 0.
 const isEven = null;
 
 // Supplied probe: leave this in place.
@@ -37,3 +40,5 @@ try {
 // Step 4
 
 // Complete this step here.
+
+// TODO: Step 4: Log 5² = 25 | 98°F = 36.7°C | 4 is even: true using the three functions.

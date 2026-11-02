@@ -5,6 +5,7 @@ const requests = [
 
 // Task 1: Personalized pickup notice
 
+// TODO: Step 1: Complete task 1 for formatPickup(name, item, quantity).
 function formatPickup(name, item, quantity) {
   // Return the formatted notice.
 }
@@ -19,6 +20,7 @@ try {
 
 // Task 2: Joined pickup list and empty input
 
+// TODO: Step 2: Complete task 2 for buildPickupList(requests).
 function buildPickupList(requests) {
   // Return newline-separated notices.
 }
@@ -34,3 +36,5 @@ try {
 // Task 3: Separate supplied pickup list
 
 // Log the list for requests here.
+
+// TODO: Step 3: Complete task 3 for buildPickupList(requests).

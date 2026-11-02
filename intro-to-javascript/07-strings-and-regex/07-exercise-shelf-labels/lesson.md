@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Validate Storage Shelf Labels"
+title: "Validate Storage Shelf Labels"
 slug: exercise-shelf-labels
 order: 7
 language: javascript
@@ -19,10 +19,10 @@ A storage clerk enters a label such as `b-07` with accidental spaces around it. 
 
 A normalized label has row `A`, `B`, or `C`, a hyphen, and a two-digit bay from `01` through `12`. This checks the format; it does not look up which shelves are currently in use.
 
-```javascript
+```javascript run
 const ticket = /^[A-Z]{2}-[0-9]{2}$/;
-console.log(ticket.test("AB-07")); // true
-console.log(ticket.test("xAB-07")); // false
+console.log(ticket.test("AB-07"));
+console.log(ticket.test("xAB-07"));
 ```
 
 For your pattern, `[A-C]` limits the row. `(0[1-9]|1[0-2])` allows either `01` through `09`, or `10` through `12`. Keep `^` and `$` so extra characters cannot pass. Do not use `g` for these repeated yes/no checks: global regexes remember a search position, which can make repeated `test()` calls surprising.

@@ -1,9 +1,14 @@
-test("count is a polite live status", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("count is a polite live status", () => withPreviewLayout(() => {
   const count = document.querySelector("#result-count");
   assert.equal(count.getAttribute("role"), "status", "Announce the result count");
   assert.equal(count.getAttribute("aria-live"), "polite", "Use polite announcements");
-});
-test("input filters names and skills without deleting cards", () => {
+}));
+test("input filters names and skills without deleting cards", () => withPreviewLayout(() => {
   const search = document.querySelector("#member-search");
   const cards = [...document.querySelectorAll("#members li")];
   search.value = "  BIKE  ";
@@ -16,8 +21,8 @@ test("input filters names and skills without deleting cards", () => {
   search.value = "";
   search.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(cards.every((card) => !card.hidden && card.isConnected), true, "Clearing restores all cards");
-});
-test("result count follows the visible cards", () => {
+}));
+test("result count follows the visible cards", () => withPreviewLayout(() => {
   const search = document.querySelector("#member-search");
   const count = document.querySelector("#result-count");
   search.value = "nothing matches";
@@ -26,8 +31,8 @@ test("result count follows the visible cards", () => {
   search.value = "bike";
   search.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(/^1\b/.test(count.textContent), true, "Report one matching member");
-});
-test("empty state tracks zero results and recovery", () => {
+}));
+test("empty state tracks zero results and recovery", () => withPreviewLayout(() => {
   const search = document.querySelector("#member-search");
   const empty = document.querySelector("#empty-state");
   search.value = "nothing matches";
@@ -36,8 +41,8 @@ test("empty state tracks zero results and recovery", () => {
   search.value = "";
   search.dispatchEvent(new Event("input", { bubbles: true }));
   assert.equal(empty.hidden, true, "Hide the empty state when results return");
-});
-test("hidden selected card clears the selection and details", () => {
+}));
+test("hidden selected card clears the selection and details", () => withPreviewLayout(() => {
   const selected = document.querySelector("#members li");
   const search = document.querySelector("#member-search");
   selected.classList.add("selected");
@@ -53,4 +58,4 @@ test("hidden selected card clears the selection and details", () => {
   assert.equal(selected.classList.contains("selected"), false, "Clear the hidden selection");
   assert.equal(document.querySelector("#detail-name").textContent, "Choose a member", "Clear the detail name");
   assert.equal(document.querySelector("#detail-skill").textContent, "Their skill will appear here.", "Clear the detail skill");
-});
+}));

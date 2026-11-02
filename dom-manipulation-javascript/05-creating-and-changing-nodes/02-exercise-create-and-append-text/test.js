@@ -1,4 +1,9 @@
-test("The helper prepares a detached, text-only book", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("The helper prepares a detached, text-only book", () => withPreviewLayout(() => {
   const list = document.querySelector("#books");
   const saved = [...list.childNodes];
   try {
@@ -10,11 +15,11 @@ test("The helper prepares a detached, text-only book", () => {
       assert.equal(book.children.length, 0, "Do not parse titles as HTML");
     }
   } finally { list.replaceChildren(...saved); }
-});
-test("The prepared Hobbit appears after the original", () => {
+}));
+test("The prepared Hobbit appears after the original", () => withPreviewLayout(() => {
   const items = document.querySelectorAll("#books > li");
   assert.equal(items.length, 2, "Append exactly one new book to #books");
   assert.equal(items[0].textContent, "The Secret Garden");
   assert.equal(items[1].textContent, "The Hobbit");
   assert.equal(items[1].children.length, 0);
-});
+}));

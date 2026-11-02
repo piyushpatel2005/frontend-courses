@@ -27,7 +27,7 @@ console.log(formatParcel("Mina", "B"));
 
 This is a **function expression**: the function is the value on the right of `=`. `formatParcel` is the variable used to call it. As with an arrow assigned to `const`, initialize the variable before calling it.
 
-A declaration such as `function formatParcel(...) { ... }` names the function directly. Both forms can accept parameters and return values. The expression above uses braces, so it needs `return`; it does not have the arrow shorthand's automatic expression return.
+A declaration such as `function formatParcel(...) { ... }` names the function directly. Both forms can accept parameters and return values. A function declaration is available earlier in its enclosing scope (often called hoisting). A `const` function expression is unavailable until its declaration runs; calling it earlier throws a `ReferenceError`. Define helpers before their first call while learning so the order is easy to follow. The expression above uses braces, so it needs `return`; it does not have the arrow shorthand's automatic expression return.
 
 Run the parcel example. Then complete the supplied welcome expression for student names without changing the two jobs: return a string first, print a call's result afterward.
 

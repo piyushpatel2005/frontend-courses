@@ -1,1 +1,1 @@
-// The <html> element has lang="en". Read it through document.
+// TODO: Step 1: complete the corresponding task here.

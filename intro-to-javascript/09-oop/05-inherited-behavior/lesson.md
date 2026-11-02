@@ -1,11 +1,11 @@
 ---
-title: "Demo: An inherited notice"
+title: "An inherited notice"
 slug: demo-inherited-behavior
 order: 5
 language: javascript
 lesson_type: interactive
 summary: "A scheduled notice is a notice with one extra field. `extends Notice` links the child class to its parent. The child constructor calls `super(label)` to initialize the parent's part of the same object, then stores `hour`. Call `super` before using `this` in a derived constructor."
-seo_title: "Demo: An inherited notice | Introduction to JavaScript"
+seo_title: "An inherited notice | Introduction to JavaScript"
 seo_description: "A scheduled notice is a notice with one extra field. `extends Notice` links the child class to its parent. The child constructor calls `super(label)` to initialize the parent's part of the same object, then stores `hour`. Call `super` before using `this` in a derived constructor."
 seo_keywords: javascript, inheritance, extends, super, override
 ---

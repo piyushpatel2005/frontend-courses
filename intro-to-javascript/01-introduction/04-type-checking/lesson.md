@@ -27,7 +27,7 @@ Read the two example outputs as separate answers: the status is a string, and th
 
 ## Example
 
-```javascript
+```javascript run
 const status = "queued";
 const route = ["map", "compass"];
 console.log(typeof status);

@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Private Budget Ledger"
+title: "Private Budget Ledger"
 slug: exercise-budget-ledger
 order: 10
 language: javascript

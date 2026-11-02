@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 // Restore the exact form/display state even when an assertion fails.
 async function withRestoredState(check) {
   const elements = [...document.querySelectorAll("input, select, [role='status'], strong, button")];
@@ -14,7 +19,7 @@ async function withRestoredState(check) {
     if (focus?.isConnected) focus.focus();
   }
 }
-test("Enter in the search field is handled and canceled", () => withRestoredState(async () => {
+test("Enter in the search field is handled and canceled", () => withPreviewLayout(() => withRestoredState(async () => {
   const input = document.querySelector("#recipe");
   const result = document.querySelector("#recipe-result");
   input.value = "  Bread  ";
@@ -26,12 +31,12 @@ test("Enter in the search field is handled and canceled", () => withRestoredStat
   const letterAccepted = input.dispatchEvent(new KeyboardEvent("keydown", { key: "p", bubbles: true, cancelable: true }));
   assert.equal(tabAccepted, true, "Do not cancel Tab navigation");
   assert.equal(letterAccepted, true, "Do not cancel ordinary typing");
-}));
-test("Form submission shows the same result without navigation", () => withRestoredState(async () => {
+})));
+test("Form submission shows the same result without navigation", () => withPreviewLayout(() => withRestoredState(async () => {
   const input = document.querySelector("#recipe");
   const form = document.querySelector("#recipe-form");
   input.value = "Pie";
   const submitted = form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
   assert.equal(submitted, false, "Prevent the form from navigating on submit");
   assert.equal(document.querySelector("#recipe-result").textContent, "Finding: Pie", "The Search button should use the same result");
-}));
+})));

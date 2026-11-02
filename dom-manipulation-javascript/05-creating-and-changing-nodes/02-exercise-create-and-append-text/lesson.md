@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Add a Reading List Item'
+title: Add a Reading List Item
 slug: exercise-create-and-append-text
 order: 2
 language: javascript

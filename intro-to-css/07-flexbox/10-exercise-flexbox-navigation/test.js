@@ -50,6 +50,12 @@ test('Separate the navigation groups.', () => {
 });
 test('Center the navigation items.', () => {
   expectProperty('.nav-row', 'align-items', 'center');
-  const groups = rects('.nav-row');
-  assert.equal(near(groups[0].top + groups[0].height / 2, groups[1].top + groups[1].height / 2), true, 'Line up the title and link group by their vertical centers.');
+  const row = document.querySelector('.nav-row');
+  assert.equal(getComputedStyle(row).display, 'flex', 'First make .nav-row a flex container; align-items must align flex items.');
+  atLayoutWidths(row, () => {
+    const groups = rects('.nav-row');
+    assert.equal(Math.abs(groups[0].height - groups[1].height) > 2, true, 'Keep the supplied differently sized navigation groups.');
+    assert.equal(near(groups[0].top + groups[0].height / 2, groups[1].top + groups[1].height / 2), true, 'Line up the title and link group by their vertical centers.');
+    assert.equal(groups[1].left >= groups[0].right, true, 'Align the two groups on the same flex row.');
+  });
 });

@@ -18,13 +18,13 @@ seo_keywords: javascript, what is javascript?, beginner javascript, programming 
 # What is JavaScript?
 
 
-The Starline Awards scoreboard starts as a static page. In this one bridge lesson, connect `index.html` to `script.js` and show a calculated result in the page. The remaining lessons in these sections use only `script.js` and the Console.
+You have used HTML for structure and CSS for appearance. The Starline Awards scoreboard still needs a calculation. In this one bridge lesson, connect `index.html` to `script.js` and show a calculated result in the page. The remaining lessons in these sections use only `script.js` and the Console.
 
 Run the starter: the preview paragraph is blank, and the Console shows the two unfinished values. You will fill those values in one at a time before displaying their combined message. Leave the supplied HTML in place.
 
 A statement is one instruction. JavaScript runs these statements from top to bottom. In `const notice = "Exhibit open";`, `const` creates a name, `=` assigns its first value, and the quotes mark text. The semicolon ends the statement. Change the value on the right of `=`, not the name on the left.
 
-The page-output line uses `document.getElementById("output")` to find the supplied paragraph, then assigns its `textContent`. For step 3, replace the empty string with a backtick string containing `${introMessage} | ${introNumber}`. You do not need to write any other page code.
+The browser supplies `document`, the page-access API; it is not part of the JavaScript language itself. We will learn that API in the next, vanilla DOM course. Here the page-output line uses `document.getElementById("output")` to find the supplied paragraph, then assigns its `textContent`. For step 3, replace the empty string with a backtick string containing `${introMessage} | ${introNumber}`. You do not need to write any other page code.
 
 In a saved web page, the script tag loads the file. This learning preview also injects your JavaScript so it can run edited code; removing the tag may not stop the preview, but the connection is still required for a standalone page.
 
@@ -32,7 +32,7 @@ JavaScript runs in the browser and powers the interactive parts of the web. This
 
 ## HTML, CSS, and JavaScript have different jobs
 
-![Three side-by-side cards compare HTML structure, CSS appearance, and JavaScript behavior.](web-page-roles.svg)
+![HTML provides structure, CSS controls appearance, and JavaScript supplies calculations and behavior.](web-page-roles.svg)
 
 - **HTML** gives the page its structure and content.
 - **CSS** controls the visual presentation.
@@ -56,7 +56,7 @@ The built-in editor combines the tabs into a preview when you press Run; it does
 
 `const` gives a value a name. In the last line, `${...}` inserts a value into the backtick-delimited message. The Console displays the result; the starter's `document.getElementById("output").textContent` displays it on the page instead. You will study these tools in more detail later.
 
-```javascript
+```javascript run
 const notice = "Exhibit open";
 const visitors = 4 * 6 - 1;
 console.log(`${notice}: ${visitors}`);

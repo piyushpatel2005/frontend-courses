@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Subscriber 1\nSubscriber 2\nSubscriber 3"
+    }
+  ]
+}

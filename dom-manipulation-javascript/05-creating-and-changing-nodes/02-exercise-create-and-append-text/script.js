@@ -1,5 +1,6 @@
 function makeBook(title) {
-  // Task 1: add your code here.
+  // TODO: Step 1: complete the corresponding task here.
+  return null;
 }
-// Task 2: add your code here.
+// TODO: Step 2: complete the corresponding task here.
 window.makeBook = makeBook;

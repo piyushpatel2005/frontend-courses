@@ -1,11 +1,11 @@
 ---
-title: "Demo: A private seat counter"
+title: "A private seat counter"
 slug: demo-private-state
 order: 7
 language: javascript
 lesson_type: interactive
 summary: "A seat counter needs to reject reservations after its seats run out. Keeping `#available` private prevents outside code from bypassing that rule with a direct assignment."
-seo_title: "Demo: A private seat counter | Introduction to JavaScript"
+seo_title: "A private seat counter | Introduction to JavaScript"
 seo_description: "A seat counter needs to reject reservations after its seats run out. Keeping `#available` private prevents outside code from bypassing that rule with a direct assignment."
 seo_keywords: javascript, encapsulation, private fields, getter
 ---

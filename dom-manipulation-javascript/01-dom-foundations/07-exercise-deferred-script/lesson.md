@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: initialize a deferred script'
+title: initialize a deferred script
 slug: exercise-deferred-script
 order: 7
 language: javascript

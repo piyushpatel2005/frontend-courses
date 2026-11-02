@@ -1,0 +1,12 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "8 string\n8 number\n10"
+    },
+    {
+      "index": 1,
+      "expected_output": "82\n10"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: toggle the help panel'
+title: toggle the help panel
 slug: exercise-toggle-and-aria-expanded
 order: 4
 language: javascript

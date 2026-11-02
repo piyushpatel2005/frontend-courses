@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: select a notice and label'
+title: select a notice and label
 slug: exercise-find-one-element
 order: 9
 language: javascript

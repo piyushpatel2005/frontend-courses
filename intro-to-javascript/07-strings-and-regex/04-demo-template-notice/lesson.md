@@ -1,5 +1,5 @@
 ---
-title: "Demo: Build a Reminder with Template Literals"
+title: "Build a Reminder with Template Literals"
 slug: demo-template-notice
 order: 4
 language: javascript

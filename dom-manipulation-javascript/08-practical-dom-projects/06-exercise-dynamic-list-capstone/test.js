@@ -1,4 +1,10 @@
-test("blank submit reports the missing title without adding a task", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("blank submit reports the missing title without adding a task", () => withPreviewLayout(async () => {
+  await new Promise(resolve => requestAnimationFrame(resolve));
   const form = document.querySelector("#task-form");
   const input = document.querySelector("#task-name");
   const status = document.querySelector("#task-status");
@@ -12,8 +18,8 @@ test("blank submit reports the missing title without adding a task", () => {
     assert.equal(document.querySelectorAll("#tasks li").length, before);
     assert.equal(status.textContent.trim().length > 0, true, "Explain the missing title");
   }
-});
-test("helper builds a detached safe task with a named button", () => {
+}));
+test("helper builds a detached safe task with a named button", () => withPreviewLayout(() => {
   for (const title of ["<em>Carry chairs</em>", "Sweep path"]) {
     const item = createTask(title);
     assert.exists(item, "Return the prepared row");
@@ -26,8 +32,8 @@ test("helper builds a detached safe task with a named button", () => {
     assert.equal(button.type, "button");
     assert.includes(button.getAttribute("aria-label") || button.textContent, title);
   }
-});
-test("valid submit inserts a task without replacing existing rows", () => {
+}));
+test("valid submit inserts a task without replacing existing rows", () => withPreviewLayout(() => {
   const list = document.querySelector("#tasks");
   const original = [...list.children];
   try {
@@ -38,7 +44,7 @@ test("valid submit inserts a task without replacing existing rows", () => {
     assert.equal(list.lastElementChild.querySelector("span").textContent, "<b>Carry chairs</b>");
     assert.equal(list.lastElementChild.querySelector("b"), null);
   } finally { list.replaceChildren(...original); }
-});
+}));
 function withTask(check) {
   const list = document.querySelector("#tasks");
   const original = [...list.children];
@@ -48,20 +54,20 @@ function withTask(check) {
   try { check(item, original); }
   finally { list.replaceChildren(...original); }
 }
-test("delegation removes future and original rows through nested clicks", () => withTask((item, original) => {
+test("delegation removes future and original rows through nested clicks", () => withPreviewLayout(() => withTask((item, original) => {
   item.querySelector("strong").click();
   assert.equal(item.isConnected, false);
   original[0].querySelector("button").click();
   assert.equal(original[0].isConnected, false);
-}));
-test("removal announces the clicked task", () => withTask(item => {
+})));
+test("removal announces the clicked task", () => withPreviewLayout(() => withTask(item => {
   const status = document.querySelector("#task-status");
   status.textContent = "";
   item.querySelector("strong").click();
   assert.includes(status.textContent, "Temporary fixture");
-}));
-test("removal returns focus to the task field", () => withTask(item => {
+})));
+test("removal returns focus to the task field", () => withPreviewLayout(() => withTask(item => {
   item.querySelector("button").focus();
   item.querySelector("strong").click();
   assert.equal(document.activeElement, document.querySelector("#task-name"));
-}));
+})));

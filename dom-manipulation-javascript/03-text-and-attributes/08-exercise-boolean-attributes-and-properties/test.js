@@ -1,8 +1,13 @@
-test("Explains the initial unchecked state", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("Explains the initial unchecked state", () => withPreviewLayout(() => {
   assert.equal(document.querySelector("#shift-status").textContent.trim(),
     "Read the shift details first.", "Initialize the status inside updateShift");
-});
-test("The button follows the current checkbox state", () => {
+}));
+test("The button follows the current checkbox state", () => withPreviewLayout(() => {
   const box = document.querySelector("#shift-agreement");
   const button = document.querySelector("#join-shift");
   const checked = box.checked;
@@ -21,8 +26,8 @@ test("The button follows the current checkbox state", () => {
     button.disabled = disabled;
     status.textContent = text;
   }
-});
-test("The status follows the button's disabled attribute", () => {
+}));
+test("The status follows the button's disabled attribute", () => withPreviewLayout(() => {
   const box = document.querySelector("#shift-agreement");
   const button = document.querySelector("#join-shift");
   const status = document.querySelector("#shift-status");
@@ -43,4 +48,4 @@ test("The status follows the button's disabled attribute", () => {
     button.disabled = disabled;
     status.textContent = text;
   }
-});
+}));

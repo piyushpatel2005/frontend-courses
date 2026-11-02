@@ -39,8 +39,34 @@ const form = document.querySelector("#member-form");
 const newName = document.querySelector("#new-name");
 const newSkill = document.querySelector("#new-skill");
 const status = document.querySelector("#form-status");
-// Build one detached card; the submit handler will insert it later.
 function createMemberCard(name, skill) {
+  // TODO: Step 3: complete the corresponding task here.
   return null;
 }
-// Add a submit handler and delegate Remove clicks from #members.
+
+form.addEventListener("submit", (event) => {
+  // TODO: Step 1: complete the corresponding task here.
+  const name = newName.value.trim();
+  const skill = newSkill.value.trim();
+  if (!name || !skill) {
+    // TODO: Step 2: complete the corresponding task here.
+    return;
+  }
+  // TODO: Step 4: complete the corresponding task here.
+  // TODO: Step 5: complete the corresponding task here.
+  // TODO: Step 6: complete the corresponding task here.
+  form.reset();
+  newName.focus();
+});
+
+members.addEventListener("click", (event) => {
+  const button = event.target.closest("button.remove");
+  if (!button || !members.contains(button)) return;
+  const card = button.closest("li");
+  const name = card.dataset.name;
+  // TODO: Step 9: complete the corresponding task here.
+  // TODO: Step 7: complete the corresponding task here.
+  // TODO: Step 10: complete the corresponding task here.
+  // TODO: Step 8: complete the corresponding task here.
+  // TODO: Step 11: complete the corresponding task here.
+});

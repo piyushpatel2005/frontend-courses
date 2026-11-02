@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: safely expand a live collection'
+title: safely expand a live collection
 slug: exercise-live-collections-and-static-lists
 order: 8
 language: javascript

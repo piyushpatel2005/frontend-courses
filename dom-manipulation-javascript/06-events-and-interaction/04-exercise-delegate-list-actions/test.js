@@ -1,4 +1,9 @@
-test("The handler removes only a matching row inside its list", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("The handler removes only a matching row inside its list", () => withPreviewLayout(() => {
   const pantry = document.querySelector("#pantry");
   const saved = [...pantry.childNodes];
   const row = document.createElement("li");
@@ -17,8 +22,8 @@ test("The handler removes only a matching row inside its list", () => {
     window.removePantryItem({target: span, currentTarget: pantry});
     assert.equal(row.parentNode, null, "Find the button from its nested label");
   } finally { outside.remove(); pantry.replaceChildren(...saved); }
-});
-test("One parent listener handles existing and newly added buttons", () => {
+}));
+test("One parent listener handles existing and newly added buttons", () => withPreviewLayout(() => {
   const pantry = document.querySelector("#pantry");
   const saved = [...pantry.childNodes];
   const outside = pantry.querySelector("li").cloneNode(true);
@@ -36,4 +41,4 @@ test("One parent listener handles existing and newly added buttons", () => {
     fresh.querySelector("span").click();
     assert.equal(fresh.isConnected, false, "Handle a button added after registration");
   } finally { outside.remove(); pantry.replaceChildren(...saved); }
-});
+}));

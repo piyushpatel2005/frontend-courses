@@ -29,6 +29,8 @@ console.log(notes.join(" | "));
 console.log(labels.join(" | "));
 ```
 
+Passing `formatItem` gives a method a function to call; passing `formatItem()` calls it now and supplies its result instead. In the arrow callback above, the arrow creates the callback without calling it.
+
 `forEach()` performs an action for each item. Here the action pushes a note into an existing array; the method itself returns `undefined`.
 
 `map()` collects each callback's returned value into a new array of the same length. Its callback may also receive the index as a second parameter: `(item, index) => ...`. If you use a braced callback body, remember `return` or the mapped entries become `undefined`.

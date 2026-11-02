@@ -3,6 +3,7 @@ const phrases = ["hello world","js"];
 
 // Step 1
 
+// TODO: Step 1: Set flatNumbers to nested.flat() to remove one level of nesting.
 const flatNumbers = [];
 
 // Supplied probe: leave this in place.
@@ -15,6 +16,7 @@ try {
 
 // Step 2
 
+// TODO: Step 2: Set splitWords using phrases.flatMap() and phrase.split(" ") to collect the words.
 const splitWords = [];
 
 // Supplied probe: leave this in place.

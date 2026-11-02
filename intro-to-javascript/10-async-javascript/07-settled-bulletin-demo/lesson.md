@@ -1,12 +1,12 @@
 ---
-title: 'Demo: Partial Results Bulletin'
+title: 'Partial Results Bulletin'
 slug: partial-results-bulletin
 order: 7
 language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Keep successful offline dispatches when one concurrent Promise rejects.
-seo_title: 'Demo: Partial Results Bulletin | Introduction to JavaScript'
+seo_title: 'Partial Results Bulletin | Introduction to JavaScript'
 seo_description: Keep successful offline dispatches when one concurrent Promise rejects.
 seo_keywords:
 - javascript
@@ -14,7 +14,7 @@ seo_keywords:
 - async programming
 ---
 
-# Demo: Keep partial results
+# Keep partial results
 
 A rehearsal bulletin checks three offline dispatch desks. Sound and lights can still appear in the bulletin when signage fails. Using `Promise.all` would reject the combined result; `Promise.allSettled` waits for every input and fulfills with an array of outcome objects instead.
 

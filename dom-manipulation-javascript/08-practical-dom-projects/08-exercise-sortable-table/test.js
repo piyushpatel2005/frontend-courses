@@ -1,11 +1,16 @@
-test("header has a labelled native sort control and unsorted state", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("header has a labelled native sort control and unsorted state", () => withPreviewLayout(() => {
   const heading = document.querySelector("#resource-heading");
   assert.equal(heading.getAttribute("aria-sort"), "none");
   const button = heading.querySelector("button");
   assert.exists(button, "Add a keyboard-accessible sort button");
   assert.equal(button.type, "button");
   assert.equal((button.getAttribute("aria-label") || button.textContent).trim().length > 0, true);
-});
+}));
 function withResourceRows(direction, check) {
   const heading = document.querySelector("#resource-heading");
   const body = document.querySelector("#resources");
@@ -30,14 +35,14 @@ function checkRows(body, rows, pairs, expected) {
   assert.equal([...body.rows].every(row => rows.includes(row)), true, "Move original row nodes rather than replacing them");
   rows.forEach(row => assert.equal(row.textContent, pairs.get(row), "Keep both cells in each original row"));
 }
-test("first activation sorts whole rows A to Z", () => withResourceRows("none", (heading, body, rows, pairs) => {
+test("first activation sorts whole rows A to Z", () => withPreviewLayout(() => withResourceRows("none", (heading, body, rows, pairs) => {
   const button = heading.querySelector("button");
   assert.exists(button);
   button.click();
   assert.equal(heading.getAttribute("aria-sort"), "ascending");
   checkRows(body, rows, pairs, "Apron,Extension cord,Hand drill,Tripod");
-}));
-test("next activation sorts Z to A and continues alternating", () => withResourceRows("ascending", (heading, body, rows, pairs) => {
+})));
+test("next activation sorts Z to A and continues alternating", () => withPreviewLayout(() => withResourceRows("ascending", (heading, body, rows, pairs) => {
   const button = heading.querySelector("button");
   assert.exists(button);
   button.click();
@@ -46,4 +51,4 @@ test("next activation sorts Z to A and continues alternating", () => withResourc
   button.click();
   assert.equal(heading.getAttribute("aria-sort"), "ascending");
   checkRows(body, rows, pairs, "Apron,Extension cord,Hand drill,Tripod");
-}));
+})));

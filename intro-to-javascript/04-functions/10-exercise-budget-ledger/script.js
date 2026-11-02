@@ -1,6 +1,9 @@
 // Step 1
 
-function makeBudget(startingBalance) {}
+// TODO: Step 1: Complete makeBudget(startingBalance) so it returns a spending function.
+function makeBudget(startingBalance) {
+  // TODO: Step 2: Add a guard before subtraction: if amount > balance, return null without changing balance.
+}
 
 // Supplied probe: leave this in place.
 
@@ -24,4 +27,4 @@ try {
 
 // Step 3
 
-// Complete this step here.
+// TODO: Step 3: Complete task 3 for Independent: 8,19.

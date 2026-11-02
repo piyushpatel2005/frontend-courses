@@ -62,11 +62,11 @@ document.querySelector("#sort-books")
 
 `Array.from` makes an array of the row elements; `localeCompare` compares words; `replaceChildren(...rows)` reattaches those very elements. The `aria-sort` value begins at `none`, then alternates `ascending` and `descending`. Use a real button so Enter and Space already work. For your resource table, retain the category cells with their original rows.
 
-Edit `index.html` for the button and `script.js` for its listener. Run to inspect each direction, then Submit. Sorting should also work if another resource row is added; do not hardcode the three titles.
+Edit `index.html` for the button and `script.js` for the marked listener steps. The supplied optional `?.` skips listener registration while the button is still missing, so the unfinished starter can Run without throwing. Add the button with `id="sort-resources"` to connect it. Run to inspect each direction, then Submit. Sorting should also work if another resource row is added; do not hardcode the three titles.
 
 ## Your Tasks
 
-1. In the Resource header, add a labelled `type="button"` sort control and initialize that header with `aria-sort="none"`.
+1. In the Resource header, add a labelled `type="button"` sort control with `id="sort-resources"` and initialize that header with `aria-sort="none"`.
 2. On its first click, sort whole resource rows A–Z and mark the header `aria-sort="ascending"`.
 3. On the next click, sort the whole rows Z–A and mark `aria-sort="descending"`; keep alternating on subsequent clicks.
 

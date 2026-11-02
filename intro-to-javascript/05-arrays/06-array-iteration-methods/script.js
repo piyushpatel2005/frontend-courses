@@ -7,6 +7,7 @@ const labels = [];
 
 // Supplied probe: leave this in place.
 
+// TODO: Step 1: Use numbers.forEach() to push Number: <value> into labels for each number.
 try {
   console.log(`Labels: ${labels.join(", ")}`);
 } catch (error) {
@@ -15,6 +16,7 @@ try {
 
 // Step 2
 
+// TODO: Step 2: Set doubledNumbers to a numbers.map() call that returns each number multiplied by two.
 const doubledNumbers = [];
 
 // Supplied probe: leave this in place.

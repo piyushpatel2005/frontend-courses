@@ -1,1 +1,1 @@
-// The head script needs to wait for the body before using it.
+// TODO: Step 2: complete the corresponding task here.

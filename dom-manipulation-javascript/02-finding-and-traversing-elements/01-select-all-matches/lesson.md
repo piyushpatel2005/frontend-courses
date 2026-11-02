@@ -17,7 +17,7 @@ seo_keywords:
 
 The market board has three stalls. `querySelector` would find only the first one; `querySelectorAll(".stall")` collects every matching element in document order.
 
-Its result is a NodeList, a list of nodes rather than one element. Use `forEach` to work on each match:
+Its result is a NodeList, a list of nodes rather than one element. A NodeList is not an Array: it has `forEach`, but not Array methods such as `map` or `filter`. Use `Array.from(stalls)` first when you need those methods. Use `forEach` to work on each match:
 
 ```javascript
 const stalls = document.querySelectorAll(".stall");

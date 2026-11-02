@@ -15,15 +15,20 @@ function renderSessions() {
   sessionList.replaceChildren();
   for (const session of sessions) {
     const item = createSessionRow(session);
-    if (item) sessionList.append(item);
+    if (!item) continue;
+    // TODO: Step 2: complete the corresponding task here.
+    sessionList.append(item);
   }
+  filterSessions();
 }
 updateButton.addEventListener("click", () => {
-  if (!sessions.length) return; // Keep unfinished empty-state work safe.
+  if (!sessions.length) {
+    // TODO: Step 4: complete the corresponding task here.
+    return;
+  }
   sessions[0].time = "10:00";
   renderSessions();
 });
-renderSessions();
 
 const form = document.querySelector("#session-form");
 const titleField = document.querySelector("#session-title");
@@ -45,3 +50,27 @@ form.addEventListener("submit", (event) => {
   form.reset();
   titleField.focus();
 });
+
+const query = document.querySelector("#session-query");
+const count = document.querySelector("#session-count");
+function filterSessions() {
+  const term = query.value.trim().toLowerCase();
+  let shown = 0;
+  for (const item of sessionList.children) {
+    // TODO: Step 1: complete the corresponding task here.
+    // TODO: Step 6: complete the corresponding task here.
+  }
+  // TODO: Step 6: complete the corresponding task here.
+}
+query.addEventListener("input", filterSessions);
+sessionList.addEventListener("click", (event) => {
+  const button = event.target.closest("button.remove-session");
+  if (!button || !sessionList.contains(button)) return;
+  const item = button.closest("li");
+  const index = Array.from(sessionList.children).indexOf(item);
+  if (index < 0) return;
+  // TODO: Step 3: complete the corresponding task here.
+  // TODO: Step 7: complete the corresponding task here.
+  // TODO: Step 8: complete the corresponding task here.
+});
+renderSessions();

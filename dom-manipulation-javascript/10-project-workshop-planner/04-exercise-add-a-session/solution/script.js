@@ -33,9 +33,14 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   const title = titleField.value.trim();
   const time = timeField.value;
-  if (!title || !time) {
-    status.textContent = "Enter a title and start time.";
-    (!title ? titleField : timeField).focus();
+  if (!title) {
+    status.textContent = "Enter a title.";
+    titleField.focus();
+    return;
+  }
+  if (!time) {
+    status.textContent = "Enter a start time.";
+    timeField.focus();
     return;
   }
   sessions.push({ title, time, track: trackField.value });

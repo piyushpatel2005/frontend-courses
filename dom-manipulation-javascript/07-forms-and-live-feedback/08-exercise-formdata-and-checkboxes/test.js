@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 // Restore the exact form/display state even when an assertion fails.
 async function withRestoredState(check) {
   const elements = [...document.querySelectorAll("input, select, [role='status'], strong, button")];
@@ -19,13 +24,13 @@ function submitGarden() {
   document.querySelector("#garden-form").dispatchEvent(event);
   return event;
 }
-test("Submit prevents navigation with or without a name", () => withRestoredState(async () => {
+test("Submit prevents navigation with or without a name", () => withPreviewLayout(() => withRestoredState(async () => {
   for (const name of ["Ari", "  "]) {
     document.querySelector("#guest").value = name;
     assert.equal(submitGarden().defaultPrevented, true);
   }
-}));
-test("Each request reads current successful help controls", () => withRestoredState(async () => {
+})));
+test("Each request reads current successful help controls", () => withPreviewLayout(() => withRestoredState(async () => {
   const form = document.querySelector("#garden-form");
   const status = document.querySelector("#garden-status");
   document.querySelector("#guest").value = "Ari";
@@ -51,8 +56,8 @@ test("Each request reads current successful help controls", () => withRestoredSt
     extra.remove();
     saved.forEach(({box,checked,disabled}) => {box.checked=checked;box.disabled=disabled;});
   }
-}));
-test("The report begins with the trimmed, literal guest name", () => withRestoredState(async () => {
+})));
+test("The report begins with the trimmed, literal guest name", () => withPreviewLayout(() => withRestoredState(async () => {
   const status = document.querySelector("#garden-status");
   for (const name of ["Ari", "<em>Jo</em>"]) {
     document.querySelector("#guest").value = "  " + name + "  ";
@@ -60,8 +65,8 @@ test("The report begins with the trimmed, literal guest name", () => withRestore
     assert.equal(status.textContent.startsWith(name + " requested "), true);
     assert.equal(status.children.length, 0, "Names must not become HTML");
   }
-}));
-test("Blank names replace the old request with an error", () => withRestoredState(async () => {
+})));
+test("Blank names replace the old request with an error", () => withPreviewLayout(() => withRestoredState(async () => {
   const status = document.querySelector("#garden-status");
   for (const blank of ["", "   "]) {
     document.querySelector("#guest").value = blank;
@@ -70,4 +75,4 @@ test("Blank names replace the old request with an error", () => withRestoredStat
     assert.includes(status.textContent.toLowerCase(), "enter your name");
     assert.equal(status.textContent.includes("requested"), false);
   }
-}));
+})));

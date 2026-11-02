@@ -8,24 +8,20 @@ window.mockFetch = async function mockFetch(url) {
 };
 
 window.makeRecipeItem = function(recipe) {
-  // TODO 1
-return document.createElement("li");
+  // TODO: Step 1: complete the corresponding task here.
 };
 window.renderRecipes = function(recipes) {
-  // TODO 2
-
+  // TODO: Step 2: complete the corresponding task here.
 };
 window.readRecipes = async function() {
-  // TODO 3
-return [];
+  // TODO: Step 3: complete the corresponding task here.
+  return [];
 };
 window.showRecipeLoading = function() {
-  // TODO 4
-
+  // TODO: Step 4: complete the corresponding task here.
 };
 window.showRecipeDone = function() {
-  // TODO 5
-
+  // TODO: Step 5: complete the corresponding task here.
 };
 window.loadRecipes = async function() {
   window.showRecipeLoading();

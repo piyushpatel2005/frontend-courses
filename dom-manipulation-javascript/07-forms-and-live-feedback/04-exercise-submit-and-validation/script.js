@@ -2,13 +2,13 @@ const request = document.querySelector("#request");
 const book = document.querySelector("#book");
 const status = document.querySelector("#request-status");
 request.addEventListener("submit", event => {
-  // Task 1: add your code here.
+  // TODO: Step 1: complete the corresponding task here.
   const title = book.value.trim();
   if (!title) {
-    // Task 2: add your code here.
-    // Task 3: add your code here.
+    // TODO: Step 2: complete the corresponding task here.
+    // TODO: Step 3: complete the corresponding task here.
     return;
   }
-  // Task 4: add your code here.
-  // Task 5: add your code here.
+  // TODO: Step 4: complete the corresponding task here.
+  // TODO: Step 5: complete the corresponding task here.
 });

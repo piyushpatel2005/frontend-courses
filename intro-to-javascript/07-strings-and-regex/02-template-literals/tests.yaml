@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Trail: Cove\nDistance: 3 km"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 ---
-title: "Demo: Validate a Time Slot with Regex"
+title: "Validate a Time Slot with Regex"
 slug: demo-regex-validation
 order: 6
 language: javascript

@@ -19,6 +19,8 @@ seo_keywords:
 
 A message board can add rows after the page loads. One listener on the stable list can handle Remove buttons in both old and new rows. This is called **event delegation**.
 
+The browser passes an event object to each listener. Naming the callback parameter `event` gives this function a local name for that argument; it is not a selector or an automatically shared variable. Read it during the callback, when `currentTarget` identifies the running listener.
+
 A click normally bubbles: after the target's listeners, the browser visits listeners on its ancestors. Inside the list listener, `event.target` is the clicked element and `event.currentTarget` is the list running that listener. Clicking the nested label makes the `span` the target, not the button.
 
 `element.closest(selector)` checks the element itself and then walks upward until it finds a match, or returns `null`. `list.contains(node)` checks whether a node belongs inside the list. Together they let the handler ignore plain text and buttons outside its own list.

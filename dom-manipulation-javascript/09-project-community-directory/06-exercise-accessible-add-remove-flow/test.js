@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 function submitMember(name, skill) {
   document.querySelector("#new-name").value = name;
   document.querySelector("#new-skill").value = skill;
@@ -28,10 +33,11 @@ function memberFixture(list) {
   list.append(card);
   return card;
 }
-test("submit prevents navigation", () => {
+test("submit prevents navigation", () => withPreviewLayout(async () => {
+  await new Promise(resolve => requestAnimationFrame(resolve));
   assert.equal(submitMember("", "").defaultPrevented, true, "Prevent form navigation");
-});
-test("blank fields are rejected with new feedback", () => withMembers(list => {
+}));
+test("blank fields are rejected with new feedback", () => withPreviewLayout(() => withMembers(list => {
   const before = list.children.length;
   for (const [name, skill] of [["   ", "Painting"], ["Ada", "   "], ["", ""]]) {
     document.querySelector("#form-status").textContent = "";
@@ -39,8 +45,8 @@ test("blank fields are rejected with new feedback", () => withMembers(list => {
     assert.equal(list.children.length, before);
     assert.equal(document.querySelector("#form-status").textContent.trim().length > 0, true);
   }
-}));
-test("builder returns a detached literal-text card and named actions", () => {
+})));
+test("builder returns a detached literal-text card and named actions", () => withPreviewLayout(() => {
   for (const [name, skill] of [["<em>Ada</em>", "<b>Painting</b>"], ["Niko", "Mending"]]) {
     const card = createMemberCard(name, skill);
     assert.exists(card, "Return a prepared card");
@@ -58,8 +64,8 @@ test("builder returns a detached literal-text card and named actions", () => {
       assert.includes(button.getAttribute("aria-label") || button.textContent, name);
     }
   }
-});
-test("valid submit appends trimmed cards including duplicate names", () => withMembers(list => {
+}));
+test("valid submit appends trimmed cards including duplicate names", () => withPreviewLayout(() => withMembers(list => {
   const before = list.children.length;
   submitMember("  <em>Ada</em>  ", "  Painting  ");
   submitMember("<em>Ada</em>", "Mending");
@@ -70,8 +76,8 @@ test("valid submit appends trimmed cards including duplicate names", () => withM
   assert.equal(cards[0].querySelector("em"), null);
   cards[1].querySelector("button.select").click();
   assert.equal(document.querySelector("#detail-skill").textContent, "Mending", "Keep the supplied selection working for new cards");
-}));
-test("addition reapplies search visibility and feedback", () => withMembers(list => {
+})));
+test("addition reapplies search visibility and feedback", () => withPreviewLayout(() => withMembers(list => {
   const search = document.querySelector("#member-search");
   search.value = "weaving";
   filterMembers();
@@ -81,27 +87,27 @@ test("addition reapplies search visibility and feedback", () => withMembers(list
   assert.equal(list.lastElementChild.hidden, false);
   assert.match(document.querySelector("#result-count").textContent, /^1\b/);
   assert.equal(document.querySelector("#empty-state").hidden, true);
-}));
-test("addition is announced", () => withMembers(() => {
+})));
+test("addition is announced", () => withPreviewLayout(() => withMembers(() => {
   document.querySelector("#form-status").textContent = "";
   submitMember("Niko Vale", "Mending");
   assert.includes(document.querySelector("#form-status").textContent, "Niko Vale");
-}));
-test("delegation removes original and future cards from nested clicks", () => withMembers(list => {
+})));
+test("delegation removes original and future cards from nested clicks", () => withPreviewLayout(() => withMembers(list => {
   const original = list.firstElementChild;
   const later = memberFixture(list);
   later.querySelector("strong").click();
   assert.equal(later.isConnected, false);
   original.querySelector("button.remove").click();
   assert.equal(original.isConnected, false);
-}));
-test("removal is announced", () => withMembers(list => {
+})));
+test("removal is announced", () => withPreviewLayout(() => withMembers(list => {
   const card = memberFixture(list);
   document.querySelector("#form-status").textContent = "";
   card.querySelector("strong").click();
   assert.includes(document.querySelector("#form-status").textContent, "Zuri Moss");
-}));
-test("removal clears only stale selected details", () => withMembers(list => {
+})));
+test("removal clears only stale selected details", () => withPreviewLayout(() => withMembers(list => {
   const selected = list.firstElementChild;
   selected.querySelector("button.select").click();
   const other = memberFixture(list);
@@ -110,18 +116,18 @@ test("removal clears only stale selected details", () => withMembers(list => {
   selected.querySelector("button.remove").click();
   assert.equal(document.querySelector("#detail-name").textContent, "Choose a member");
   assert.equal(document.querySelector("#detail-skill").textContent, "Their skill will appear here.");
-}));
-test("removing the last match refreshes search feedback", () => withMembers(list => {
+})));
+test("removing the last match refreshes search feedback", () => withPreviewLayout(() => withMembers(list => {
   const card = memberFixture(list);
   document.querySelector("#member-search").value = "weaving";
   filterMembers();
   card.querySelector("strong").click();
   assert.equal(document.querySelector("#empty-state").hidden, false);
   assert.match(document.querySelector("#result-count").textContent, /^0\b/);
-}));
-test("removal restores keyboard focus to search", () => withMembers(list => {
+})));
+test("removal restores keyboard focus to search", () => withPreviewLayout(() => withMembers(list => {
   const card = memberFixture(list);
   card.querySelector("button.remove").focus();
   card.querySelector("strong").click();
   assert.equal(document.activeElement, document.querySelector("#member-search"));
-}));
+})));

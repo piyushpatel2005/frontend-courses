@@ -60,7 +60,7 @@ An HTML page can change after it loads. A filter hides cards, a form adds a new 
 
 ## Before you begin
 
-You should be comfortable with basic HTML and JavaScript variables, functions, conditions, arrays, and objects. Recognizing CSS selectors such as `#status` and `.card` will help. The lessons explain the DOM methods as they appear; the Fetch section also reviews the asynchronous steps it needs.
+This is the fourth course, after HTML, CSS, and JavaScript fundamentals. Bring your knowledge of variables, functions, conditions, arrays, objects, and asynchronous JavaScript; the lessons connect those skills to the browser rather than introducing a framework. Recognizing CSS selectors such as `#status` and `.card` will help. The lessons explain the DOM methods as they appear; the Fetch section also reviews the asynchronous steps it needs.
 
 You only need a desktop browser to begin. The opening lessons show how to open its developer Console, read a result or an error, and try a small DOM change on a blank practice tab. These experiments come before the course's editor lessons, so you can use the browser as a place to investigate rather than only follow instructions.
 
@@ -104,3 +104,7 @@ The Fetch exercises use clearly labeled offline services for repeatable practice
 10. Project — Workshop Planner — show, add, and manage sessions with accessible feedback.
 11. Fetch API and DOM Updates — requests, responses, loading and errors, query parameters, and cancellation.
 12. Project — Data Dashboard — build a resilient API-style interface using the DOM.
+
+## What stays in this preview
+
+Project state lives in the current page. Run creates a fresh preview; it is not a save-to-storage operation. The sandbox uses an opaque origin, where localStorage access can throw a SecurityError. These projects do not promise persistence. A deployed application that adds storage must handle access failures and malformed stored JSON rather than assuming every browser permits it. No storage permission or framework is needed for this course.

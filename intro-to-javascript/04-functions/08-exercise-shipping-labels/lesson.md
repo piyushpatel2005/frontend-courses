@@ -1,5 +1,5 @@
 ---
-title: "Exercise: Shipping Labels with Defaults"
+title: "Shipping Labels with Defaults"
 slug: exercise-shipping-labels
 order: 8
 language: javascript

@@ -1,11 +1,11 @@
 ---
-title: "Demo: Equipment desk checkout"
+title: "Equipment desk checkout"
 slug: demo-equipment-checkout
 order: 9
 language: javascript
 lesson_type: interactive
 summary: "An equipment desk loans camera kits. The base `Equipment` class owns private loan state and the methods that change it. `CameraKit` adds a lens and a more specific description."
-seo_title: "Demo: Equipment desk checkout | Introduction to JavaScript"
+seo_title: "Equipment desk checkout | Introduction to JavaScript"
 seo_description: "An equipment desk loans camera kits. The base `Equipment` class owns private loan state and the methods that change it. `CameraKit` adds a lens and a more specific description."
 seo_keywords: javascript, oop project, inheritance, private state
 ---

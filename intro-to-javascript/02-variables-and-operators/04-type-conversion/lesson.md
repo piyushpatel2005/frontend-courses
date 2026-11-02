@@ -23,12 +23,12 @@ A price arrives as text. Convert it into a number before calculating the order t
 
 `Number("42")` returns the number `42`. It does not change the original string; store the returned value under a new name. `typeof` lets you check the difference even when the Console prints the same digits.
 
-```javascript
+```javascript run
 const deliveryText = "8";
 const delivery = Number(deliveryText);
-console.log(deliveryText, typeof deliveryText); // 8 string
-console.log(delivery, typeof delivery); // 8 number
-console.log(delivery + 2); // 10
+console.log(deliveryText, typeof deliveryText);
+console.log(delivery, typeof delivery);
+console.log(delivery + 2);
 ```
 
 `String(42)` goes the other way and returns `"42"`. A template literal also turns inserted values into text for display. Keep the calculation numeric until you need that final message.
@@ -39,9 +39,9 @@ console.log(delivery + 2); // 10
 
 With two numbers, `+` adds. With a string operand, it joins text instead:
 
-```javascript
-console.log("8" + 2);         // 82
-console.log(Number("8") + 2); // 10
+```javascript run
+console.log("8" + 2);
+console.log(Number("8") + 2);
 ```
 
 Other arithmetic operators can convert strings automatically: `"8" * 2` produces `16`. That automatic conversion is called coercion. Use explicit `Number()` here so the code says what kind of value the calculation expects; getting a numeric product alone does not prove you converted the input yourself.

@@ -1,5 +1,6 @@
 // Task 1: Basic email shape
 
+// TODO: Step 1: Complete task 1 for isValidEmail(email).
 function isValidEmail(email) {
   return false;
 }
@@ -14,6 +15,7 @@ try {
 
 // Task 2: Digit sequences and no-match inputs
 
+// TODO: Step 2: Complete task 2 for extractNumbers(text).
 function extractNumbers(text) {
   return [];
 }
@@ -28,6 +30,7 @@ try {
 
 // Task 3: Mask local parts of different lengths
 
+// TODO: Step 3: Complete task 3 for maskEmail(email).
 function maskEmail(email) {
   return "";
 }
@@ -43,3 +46,5 @@ try {
 // Task 4: Separate regex summary
 
 // Log the combined result here.
+
+// TODO: Step 4: Complete task 4 for "alice@example.com".

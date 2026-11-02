@@ -1,3 +1,6 @@
 const clubLink = document.querySelector("#club-link");
 const destination = document.querySelector("#destination");
-// Read the current href before changing it; then update the link.
+// TODO: Step 1: complete the corresponding task here.
+// TODO: Step 2: complete the corresponding task here.
+// TODO: Step 3: complete the corresponding task here.
+// TODO: Step 4: complete the corresponding task here.

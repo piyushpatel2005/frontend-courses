@@ -1,1 +1,1 @@
-// Find all three .stop elements and visit each one.
+// TODO: Step 1: complete the corresponding task here.

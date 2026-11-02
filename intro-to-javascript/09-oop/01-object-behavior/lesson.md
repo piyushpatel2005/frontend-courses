@@ -1,11 +1,11 @@
 ---
-title: "Demo: A notebook object"
+title: "A notebook object"
 slug: demo-object-behavior
 order: 1
 language: javascript
 lesson_type: interactive
 summary: "The previous section passed data into functions. An object can instead keep related state and operations together. This notebook has a page count and an `addPages` method that changes it."
-seo_title: "Demo: A notebook object | Introduction to JavaScript"
+seo_title: "A notebook object | Introduction to JavaScript"
 seo_description: "The previous section passed data into functions. An object can instead keep related state and operations together. This notebook has a page count and an `addPages` method that changes it."
 seo_keywords: javascript, oop, object methods, this
 ---

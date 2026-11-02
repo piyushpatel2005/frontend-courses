@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: announce session availability'
+title: announce session availability
 slug: exercise-dataset-conditional-content
 order: 6
 language: javascript

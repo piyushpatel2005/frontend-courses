@@ -1,13 +1,19 @@
 class LibraryItem {
   #checkedOut = false;
-  constructor(title) {  }
-  get available() {  }
-  checkout() {  }
-  returnItem() {  }
+  // TODO: Step 1: Store title in the LibraryItem constructor.
+constructor(title) {  }
+  // TODO: Step 2: Return the opposite of private #checkedOut from the available getter.
+get available() {  }
+  // TODO: Step 4: Complete task 4 for checkout().
+checkout() {  }
+  // TODO: Step 5: Complete task 5 for returnItem().
+returnItem() {  }
 }
 class Book extends LibraryItem {
-  constructor(title,author) { super(title);  }
-  describe() {  }
+  // TODO: Step 3: Store author in Book after the supplied super(title) call.
+constructor(title,author) { super(title);  }
+  // TODO: Step 6: Complete task 6 for Book.describe().
+describe() {  }
 }
 
 // Supplied checkpoints. Do not replace them with fixed answers.

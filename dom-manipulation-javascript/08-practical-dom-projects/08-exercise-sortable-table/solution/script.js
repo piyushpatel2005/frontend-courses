@@ -1,6 +1,6 @@
 const heading = document.querySelector("#resource-heading");
 const body = document.querySelector("#resources");
-document.querySelector("#sort-resources").addEventListener("click", () => {
+document.querySelector("#sort-resources")?.addEventListener("click", () => {
   const direction = heading.getAttribute("aria-sort") === "ascending" ? "descending" : "ascending";
   const rows = Array.from(body.rows);
   rows.sort((a, b) => {

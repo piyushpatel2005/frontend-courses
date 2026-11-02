@@ -1,5 +1,6 @@
 // Step 1
 
+// TODO: Step 1: Complete greet(name) so it returns Hello, <name>! for the supplied name.
 function greet(name) {
   // Return the greeting.
 }
@@ -15,3 +16,5 @@ try {
 // Step 2
 
 // Complete this step here.
+
+// TODO: Step 2: Log Hello, Alice! | Hello, Bob! on its own line by calling greet twice.

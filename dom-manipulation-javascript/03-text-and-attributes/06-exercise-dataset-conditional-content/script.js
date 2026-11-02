@@ -2,9 +2,9 @@ const sessionCard = document.querySelector("#session-card");
 const sessionMessage = document.querySelector("#session-message");
 function updateSessionMessage() {
   if (sessionCard.dataset.sessionState === "open") {
-    // Show the open message here.
+    // TODO: Step 2: complete the corresponding task here.
   } else {
-    // Show the full message here.
+    // TODO: Step 1: complete the corresponding task here.
   }
 }
 updateSessionMessage();

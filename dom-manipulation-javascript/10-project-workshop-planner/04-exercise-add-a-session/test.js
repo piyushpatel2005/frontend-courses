@@ -1,3 +1,8 @@
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
 function withSessions(check) {
   const saved = window.workshopSessions.map(session => ({ ...session }));
   try { check(); }
@@ -14,15 +19,15 @@ function submitSession(title, time, track = "Art") {
   document.querySelector("#session-form").dispatchEvent(event);
   return event;
 }
-test("fields point to a live feedback region", () => {
+test("fields point to a live feedback region", () => withPreviewLayout(() => {
   const status = document.querySelector("#session-status");
   assert.equal(status.getAttribute("role"), "status");
   for (const id of ["session-title", "session-time"]) {
     const field = document.getElementById(id);
     assert.equal(field.getAttribute("aria-describedby"), status.id);
   }
-});
-test("blank titles cannot submit", () => withSessions(() => {
+}));
+test("blank titles cannot submit", () => withPreviewLayout(() => withSessions(() => {
   const before = window.workshopSessions.length;
   for (const value of ["", "   "]) {
     document.querySelector("#session-status").textContent = "";
@@ -32,16 +37,16 @@ test("blank titles cannot submit", () => withSessions(() => {
     assert.equal(document.activeElement, document.querySelector("#session-title"));
     assert.equal(document.querySelector("#session-status").textContent.trim().length > 0, true);
   }
-}));
-test("missing time cannot submit", () => withSessions(() => {
+})));
+test("missing time cannot submit", () => withPreviewLayout(() => withSessions(() => {
   const before = window.workshopSessions.length;
   document.querySelector("#session-status").textContent = "";
   submitSession("Fold paper", "");
   assert.equal(window.workshopSessions.length, before);
   assert.equal(document.activeElement, document.querySelector("#session-time"));
   assert.equal(document.querySelector("#session-status").textContent.trim().length > 0, true);
-}));
-test("valid entries join state and render literal details", () => withSessions(() => {
+})));
+test("valid entries join state and render literal details", () => withPreviewLayout(() => withSessions(() => {
   const before = window.workshopSessions.length;
   submitSession("  <em>Paper flowers</em>  ", "14:30", "Making");
   assert.equal(window.workshopSessions.length, before + 1);
@@ -55,20 +60,20 @@ test("valid entries join state and render literal details", () => withSessions((
   assert.equal(rows[before].querySelector("em"), null);
   renderSessions();
   assert.equal(document.querySelectorAll("#sessions li").length, before + 1, "The addition survives another render");
-}));
-test("success resets the form", () => withSessions(() => {
+})));
+test("success resets the form", () => withPreviewLayout(() => withSessions(() => {
   submitSession("Paper folding", "15:00", "Making");
   assert.equal(document.querySelector("#session-title").value, "");
   assert.equal(document.querySelector("#session-time").value, "");
   assert.equal(document.querySelector("#session-track").value, "Art");
-}));
-test("success announces the added title", () => withSessions(() => {
+})));
+test("success announces the added title", () => withPreviewLayout(() => withSessions(() => {
   document.querySelector("#session-status").textContent = "";
   submitSession("Paper folding", "15:00");
   assert.includes(document.querySelector("#session-status").textContent, "Paper folding");
-}));
-test("success returns focus to the title field", () => withSessions(() => {
+})));
+test("success returns focus to the title field", () => withPreviewLayout(() => withSessions(() => {
   document.querySelector("#session-form button").focus();
   submitSession("Paper folding", "15:00");
   assert.equal(document.activeElement, document.querySelector("#session-title"));
-}));
+})));

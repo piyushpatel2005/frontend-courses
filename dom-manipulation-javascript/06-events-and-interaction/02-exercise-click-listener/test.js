@@ -1,4 +1,9 @@
-test("The named handler updates the hours when called", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("The named handler updates the hours when called", () => withPreviewLayout(() => {
   const hours = document.querySelector("#hours");
   const saved = hours.textContent;
   try {
@@ -6,8 +11,8 @@ test("The named handler updates the hours when called", () => {
     window.showHours();
     assert.equal(hours.textContent, "Open until 6 pm", "Update #hours inside showHours");
   } finally { hours.textContent = saved; }
-});
-test("Button activation, not setup, updates the hours", () => {
+}));
+test("Button activation, not setup, updates the hours", () => withPreviewLayout(() => {
   const hours = document.querySelector("#hours");
   const saved = hours.textContent;
   try {
@@ -17,4 +22,4 @@ test("Button activation, not setup, updates the hours", () => {
     document.querySelector("#hours-button").click();
     assert.equal(hours.textContent, "Open until 6 pm");
   } finally { hours.textContent = saved; }
-});
+}));

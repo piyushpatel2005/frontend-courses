@@ -1,3 +1,4 @@
 files:
   - path: index.html
+    readonly: true
   - path: script.js

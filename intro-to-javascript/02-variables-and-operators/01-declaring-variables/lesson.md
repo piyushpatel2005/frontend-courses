@@ -27,7 +27,7 @@ The initial and updated probes sit on opposite sides of your assignment. They re
 
 ## Example
 
-```javascript
+```javascript run
 const sectionLabel = "History";
 let returnedBooks = 4;
 returnedBooks += 2;

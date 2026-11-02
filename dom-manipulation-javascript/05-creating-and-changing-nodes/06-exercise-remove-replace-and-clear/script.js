@@ -1,3 +1,3 @@
-// Task 1: add your code here.
-// Task 2: add your code here.
-// Task 3: add your code here.
+// TODO: Step 1: complete the corresponding task here.
+// TODO: Step 2: complete the corresponding task here.
+// TODO: Step 3: complete the corresponding task here.

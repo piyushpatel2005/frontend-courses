@@ -1,5 +1,8 @@
-blocks:
-- index: 0
-  expected_output: 'Field notes: 4
-
-    Field notes: 7'
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "Field notes: 4\nField notes: 7"
+    }
+  ]
+}

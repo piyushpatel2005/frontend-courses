@@ -21,22 +21,19 @@ window.mockFetch = function mockFetch(url, options = {}) {
 
 let routeController;
 window.beginRoute = function() {
-  // TODO 2
-
+  // TODO: Step 2: complete the corresponding task here.
   routeController = new AbortController();
   return routeController.signal;
 };
 window.showRouteLoading = function() {
-  // TODO 1
-
+  // TODO: Step 1: complete the corresponding task here.
 };
 window.showRouteResult = function(data, signal) {
-  // TODO 3
-
+  // TODO: Step 3: complete the corresponding task here.
 };
 window.showRouteError = function(error, signal) {
-  // TODO 4
-document.querySelector("#route-status").textContent = "Lookup failed.";
+  // TODO: Step 4: complete the corresponding task here.
+  document.querySelector("#route-status").textContent = "Lookup failed.";
 };
 window.lookUpRoute = async function(route) {
   const signal = window.beginRoute();

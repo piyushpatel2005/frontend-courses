@@ -4,6 +4,7 @@
 
 // Supplied probe: leave this in place.
 
+// TODO: Step 1: Create scores containing 84, 91, and 76.
 try {
   console.log(`Scores: ${JSON.stringify(scores)}`);
 } catch (error) {
@@ -12,6 +13,7 @@ try {
 
 // Step 2
 
+// TODO: Step 2: Complete task 2 for courseAverage(values).
 function courseAverage(values) {}
 
 // Supplied probe: leave this in place.
@@ -24,6 +26,7 @@ try {
 
 // Step 3
 
+// TODO: Step 3: Implement topScore(values) for a nonempty array.
 function topScore(values) {}
 
 // Supplied probe: leave this in place.
@@ -37,3 +40,5 @@ try {
 // Step 4
 
 // Complete this step here.
+
+// TODO: Step 4: Log Average: 83.66666666666667 | Top: 91 using both helpers with scores.

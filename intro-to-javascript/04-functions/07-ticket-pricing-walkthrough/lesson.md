@@ -1,5 +1,5 @@
 ---
-title: "Demo: Ticket Pricing Walkthrough"
+title: "Ticket Pricing Walkthrough"
 slug: ticket-pricing-walkthrough
 order: 7
 language: javascript

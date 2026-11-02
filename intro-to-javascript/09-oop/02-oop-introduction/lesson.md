@@ -22,7 +22,7 @@ Use `this.speed` inside `accelerate(amount)` so the method updates the object th
 
 ## Example
 
-```javascript
+```javascript run
 const thermostat = {
   temperature: 20,
   raise(degrees) {

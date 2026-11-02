@@ -1,4 +1,9 @@
-test("Every click toggles the panel class", () => {
+// Native focus/layout checks need a rendered document, not only parsed markup.
+async function withPreviewLayout(check) {
+  await new Promise(resolve => requestAnimationFrame(resolve));
+  return await check();
+}
+test("Every click toggles the panel class", () => withPreviewLayout(() => {
   const button = document.querySelector("#help-toggle");
   const panel = document.querySelector("#help-panel");
   const before = panel.getAttribute("class");
@@ -13,8 +18,8 @@ test("Every click toggles the panel class", () => {
     panel.hidden = true;
     button.setAttribute("aria-expanded", "false");
   }
-});
-test("Panel visibility follows its class in both directions", () => {
+}));
+test("Panel visibility follows its class in both directions", () => withPreviewLayout(() => {
   const button = document.querySelector("#help-toggle");
   const panel = document.querySelector("#help-panel");
   const before = panel.getAttribute("class");
@@ -35,8 +40,8 @@ test("Panel visibility follows its class in both directions", () => {
     panel.hidden = true;
     button.setAttribute("aria-expanded", "false");
   }
-});
-test("The button announces the expanded and collapsed states", () => {
+}));
+test("The button announces the expanded and collapsed states", () => withPreviewLayout(() => {
   const button = document.querySelector("#help-toggle");
   const panel = document.querySelector("#help-panel");
   const before = panel.getAttribute("class");
@@ -54,4 +59,4 @@ test("The button announces the expanded and collapsed states", () => {
     panel.hidden = true;
     button.setAttribute("aria-expanded", "false");
   }
-});
+}));

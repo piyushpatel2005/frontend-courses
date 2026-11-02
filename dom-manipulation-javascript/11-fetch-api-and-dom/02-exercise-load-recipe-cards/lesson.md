@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: load recipe cards'
+title: load recipe cards
 slug: exercise-load-recipe-cards
 order: 2
 language: javascript
@@ -11,7 +11,7 @@ seo_description: Load an offline fixture with a fetch-shaped function and show r
 seo_keywords: mock fetch, recipe cards, safe DOM rendering
 ---
 
-# Exercise: load recipe cards
+# load recipe cards
 
 The noticeboard loaded one object. This shelf receives an array, so each title needs its own `li`. Build an item while it is detached, then put the items in the list. Use `textContent` even when a title looks like HTML.
 

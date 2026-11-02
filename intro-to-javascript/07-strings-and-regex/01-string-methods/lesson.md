@@ -18,13 +18,10 @@ seo_keywords: javascript, string methods, beginner javascript, programming pract
 
 Prepare an uppercase caption and check whether the original text contains a particular word. String methods return results without changing the original string.
 
-```javascript
+```javascript run
 const trailName = "river loop";
-// RIVER LOOP
 console.log(trailName.toUpperCase());
-// true
 console.log(trailName.includes("loop"));
-// river loop
 console.log(trailName);
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: Delegate Pantry Actions'
+title: Delegate Pantry Actions
 slug: exercise-delegate-list-actions
 order: 4
 language: javascript

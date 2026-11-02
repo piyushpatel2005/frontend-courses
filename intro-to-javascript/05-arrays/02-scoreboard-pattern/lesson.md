@@ -1,16 +1,16 @@
 ---
-title: "Demo: Student Scoreboard"
+title: "Student Scoreboard"
 slug: scoreboard-pattern
 order: 2
 language: javascript
 lesson_type: interactive
 summary: "An array keeps related scores together. To find their average, add the values and divide by the number of values."
-seo_title: "Demo: Student Scoreboard | Introduction to JavaScript"
+seo_title: "Student Scoreboard | Introduction to JavaScript"
 seo_description: "An array keeps related scores together. To find their average, add the values and divide by the number of values."
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Demo: student scoreboard
+# student scoreboard
 
 An array keeps related scores together. To find their average, add the values and divide by the number of values.
 

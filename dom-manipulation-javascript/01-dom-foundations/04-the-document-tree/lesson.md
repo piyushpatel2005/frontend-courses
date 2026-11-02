@@ -19,6 +19,8 @@ seo_keywords:
 
 You changed a blank page through `document.body`. A page with more HTML uses the same entry point. The browser turns that HTML into the **Document Object Model (DOM)**, a tree of nodes that JavaScript can read and change.
 
+The DOM is the browser's current tree, not a photograph of the original source. Parsing can repair malformed nesting, and JavaScript can add or remove nodes later. Element nodes represent tags; text and comments are nodes too. `window` provides the page's browser environment, while `window.document` is the document you are changing.
+
 ## Follow the nesting
 
 Open `index.html` in the course editor. In this noticeboard, `<html>` contains `<head>` and `<body>`. The title is inside the head; `<main>` is inside the body. An element containing another node is its parent, and the contained node is its child.

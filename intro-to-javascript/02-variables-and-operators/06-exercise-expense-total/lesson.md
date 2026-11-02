@@ -18,12 +18,12 @@ The preceding expense demo converted text prices and separated per-night costs f
 
 A different supply order follows the same shape:
 
-```javascript
+```javascript run
 const pens = Number("3");
 const folders = Number("2");
 const kits = 4;
 const delivery = Number("5");
-console.log((pens + folders) * kits + delivery); // 25
+console.log((pens + folders) * kits + delivery);
 ```
 
 All raw inputs and the guest count are supplied. Keep them unchanged and replace the numeric placeholders below them. Convert one field at a time; each probe reports both the value and `number`, so a quoted answer will not look like a completed conversion.

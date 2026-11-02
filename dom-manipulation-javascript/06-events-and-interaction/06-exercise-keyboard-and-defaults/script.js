@@ -4,5 +4,5 @@ const form = document.querySelector("#recipe-form");
 function showRecipe() {
   document.querySelector("#recipe-result").textContent = "Finding: " + input.value.trim();
 }
-// Task 1: add your code here.
-// Task 2: add your code here.
+// TODO: Step 1: complete the corresponding task here.
+// TODO: Step 2: complete the corresponding task here.

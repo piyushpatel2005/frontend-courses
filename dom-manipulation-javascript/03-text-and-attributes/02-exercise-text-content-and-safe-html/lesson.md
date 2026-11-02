@@ -1,5 +1,5 @@
 ---
-title: 'Exercise: render a safe notice'
+title: render a safe notice
 slug: exercise-text-content-and-safe-html
 order: 2
 language: javascript

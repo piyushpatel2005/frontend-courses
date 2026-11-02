@@ -1,0 +1,8 @@
+{
+  "blocks": [
+    {
+      "index": 0,
+      "expected_output": "{\"dish\":\"Soup\",\"servings\":4}\n4"
+    }
+  ]
+}

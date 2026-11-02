@@ -1,11 +1,11 @@
 ---
-title: "Demo: Independent workshop passes"
+title: "Independent workshop passes"
 slug: demo-class-blueprint
 order: 3
 language: javascript
 lesson_type: interactive
 summary: "A class describes how to create objects with the same methods but separate state. `new WorkshopPass(\"Mina\", 2)` creates an instance and calls its `constructor` with those two arguments. Inside the constructor, `this` is that new instance."
-seo_title: "Demo: Independent workshop passes | Introduction to JavaScript"
+seo_title: "Independent workshop passes | Introduction to JavaScript"
 seo_description: "A class describes how to create objects with the same methods but separate state. `new WorkshopPass(\"Mina\", 2)` creates an instance and calls its `constructor` with those two arguments. Inside the constructor, `this` is that new instance."
 seo_keywords: javascript, classes, constructor, instance methods
 ---

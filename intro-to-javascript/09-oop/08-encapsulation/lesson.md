@@ -25,7 +25,7 @@ Array `push` appends an item. Array `pop` already returns `undefined` for an emp
 
 ## Private fields with `#`
 
-```javascript
+```javascript run
 class Counter {
     #count = 0;           // private — not accessible outside
 
@@ -38,7 +38,7 @@ class Counter {
 const c = new Counter();
 c.increment();
 c.increment();
-console.log(c.value);  // 2
+console.log(c.value);
 // c.#count outside Counter would be a SyntaxError; leave it commented out.
 ```
 
@@ -46,7 +46,7 @@ console.log(c.value);  // 2
 
 A setter runs when you assign a property, such as `temperature.celsius = 25`. Its parameter receives the assigned value. Here the constructor uses that setter too, so initialization follows the same validation rule. `throw new Error(...)` stops the operation on invalid input; unlike the earlier callback example, the error is thrown rather than passed to another function.
 
-```javascript
+```javascript run
 class Temperature {
     #celsius;
 
@@ -61,7 +61,7 @@ class Temperature {
 }
 const temperature = new Temperature(20);
 temperature.celsius = 25;
-console.log(temperature.fahrenheit); // 77
+console.log(temperature.fahrenheit);
 ```
 
 Edit `script.js`, then use **Run** to inspect the supplied checkpoints. Use **Submit** to check your tasks in order. Keep the supplied probes; change only the requested definitions and final logs.

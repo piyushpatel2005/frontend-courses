@@ -6,6 +6,7 @@ const student = { firstName: "Jordan", lastName: "Lee", scores: [88, 92, 79, 95,
 
 // Supplied check 1: leave this code in place.
 
+// TODO: Step 1: Destructure firstName and lastName from student.
 try {
   console.log("CHECK 1: " + (`${firstName} | ${lastName}`));
 } catch (error) {
@@ -14,6 +15,7 @@ try {
 
 // Task 2: Full name for different records
 
+// TODO: Step 2: Complete fullName(s) to return the given record's first and last names separated by a space.
 function fullName(s) {
   // Return the full name.
 }
@@ -28,6 +30,7 @@ try {
 
 // Task 3: Average and one-decimal rounding
 
+// TODO: Step 3: Complete averageScore(s) to return the mean of its scores, rounded to one decimal place.
 function averageScore(s) {
   // Return the rounded mean.
 }
@@ -43,3 +46,5 @@ try {
 // Task 4: Separate student average
 
 // Log the final average here.
+
+// TODO: Step 4: Log Jordan Lee — avg: 87.8 on a separate line using both helpers and student.

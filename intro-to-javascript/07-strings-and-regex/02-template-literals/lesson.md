@@ -17,13 +17,12 @@ hints:
 
 Build a two-line guest sign from a name and a seat. Backticks create a **template literal**; `${expression}` inserts the value of an expression into its text. Ordinary single or double quotes do not perform that substitution.
 
-```javascript
+```javascript run
 function trailSign(place, distance) {
   return `Trail: ${place}
 Distance: ${distance} km`;
 }
 console.log(trailSign("Cove", 3));
-// Trail: Cove
 // Distance: 3 km
 ```
 
