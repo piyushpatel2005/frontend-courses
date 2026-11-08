@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" style="--a:#6ee7ca;--b:#a4a5ff;--bg:#142235;--muted:#47627a" role="img" aria-labelledby="title"><title id="title">Dom Manipulation Javascript course illustration</title>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#20354b"/><stop offset="1" stop-color="#101b2b"/></linearGradient></defs>
+<rect width="512" height="512" rx="48" fill="url(#bg)"/>
+<circle cx="430" cy="70" r="140" fill="#6ee7ca" opacity=".04"/>
+<circle cx="70" cy="450" r="140" fill="#a4a5ff" opacity=".04"/>
+<rect x="30" y="30" width="452" height="452" rx="32" fill="none" stroke="#6ee7ca" stroke-opacity=".12" stroke-width="2"/>
+<path d="M256 192V239H148V284M256 239H364V284M256 239V284" fill="none" stroke="var(--muted)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" /><rect x="208" y="126" width="96" height="66" rx="13" fill="var(--a)" opacity="0.9"/><rect x="110" y="284" width="76" height="62" rx="12" fill="var(--a)" opacity="0.3"/><rect x="218" y="284" width="76" height="62" rx="12" fill="var(--a)" opacity="0.3"/><rect x="326" y="284" width="76" height="62" rx="12" fill="var(--b)" opacity="0.8"/><path d="M304 328L320 394L338 370L368 366Z" fill="var(--bg)" stroke="var(--b)" stroke-width="8" stroke-linejoin="round"/>
+<path d="M64 440H108" stroke="#6ee7ca" stroke-width="6" stroke-linecap="round"/><circle cx="124" cy="440" r="3" fill="#a4a5ff"/>
+</svg>

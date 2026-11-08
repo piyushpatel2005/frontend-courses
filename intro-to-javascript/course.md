@@ -1,5 +1,9 @@
 ---
 slug: intro-to-javascript
+image: cover.svg
+prerequisites:
+  - course: intro-to-css
+    note: "Recommended earlier step in the Front End Track; familiarity with styled HTML pages provides context for browser examples."
 title: Introduction to JavaScript
 description: Learn JavaScript from the ground up — variables, functions, arrays, objects, OOP, and async programming, all in an interactive coding environment.
 language: javascript

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" style="--a:#6ee7ca;--b:#a4a5ff;--bg:#142235;--muted:#47627a" role="img" aria-labelledby="title"><title id="title">Intro To Javascript course illustration</title>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#20354b"/><stop offset="1" stop-color="#101b2b"/></linearGradient></defs>
+<rect width="512" height="512" rx="48" fill="url(#bg)"/>
+<circle cx="430" cy="70" r="140" fill="#6ee7ca" opacity=".04"/>
+<circle cx="70" cy="450" r="140" fill="#a4a5ff" opacity=".04"/>
+<rect x="30" y="30" width="452" height="452" rx="32" fill="none" stroke="#6ee7ca" stroke-opacity=".12" stroke-width="2"/>
+<path d="M199 153H181Q157 153 157 181V223Q157 256 131 256Q157 256 157 289V331Q157 359 181 359H199M313 153H331Q355 153 355 181V223Q355 256 381 256Q355 256 355 289V331Q355 359 331 359H313" fill="none" stroke="var(--a)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" /><path d="M268 183L218 266H255L244 329L299 241H263Z" fill="var(--b)"/>
+<path d="M64 440H108" stroke="#6ee7ca" stroke-width="6" stroke-linecap="round"/><circle cx="124" cy="440" r="3" fill="#a4a5ff"/>
+</svg>

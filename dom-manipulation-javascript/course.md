@@ -1,5 +1,9 @@
 ---
 slug: dom-manipulation-javascript
+image: cover.svg
+prerequisites:
+  - course: intro-to-javascript
+    note: "Use JavaScript functions, arrays, objects, and asynchronous code to add page interactions."
 title: DOM Manipulation with JavaScript
 description: Learn to select, update, create, and remove HTML elements with JavaScript, then build accessible interactions, API-powered interfaces, and practical browser projects.
 language: javascript

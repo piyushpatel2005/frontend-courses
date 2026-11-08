@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" style="--a:#6ee7ca;--b:#a4a5ff;--bg:#142235;--muted:#47627a" role="img" aria-labelledby="title"><title id="title">Intro To Html course illustration</title>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#20354b"/><stop offset="1" stop-color="#101b2b"/></linearGradient></defs>
+<rect width="512" height="512" rx="48" fill="url(#bg)"/>
+<circle cx="430" cy="70" r="140" fill="#6ee7ca" opacity=".04"/>
+<circle cx="70" cy="450" r="140" fill="#a4a5ff" opacity=".04"/>
+<rect x="30" y="30" width="452" height="452" rx="32" fill="none" stroke="#6ee7ca" stroke-opacity=".12" stroke-width="2"/>
+<rect x="120" y="122" width="272" height="268" rx="24" fill="var(--a)" opacity="0.12"/><rect x="120" y="122" width="272" height="43" rx="14" fill="var(--a)" opacity="0.55"/><circle cx="141" cy="143" r="5" fill="var(--bg)"/><circle cx="159" cy="143" r="5" fill="var(--bg)"/><circle cx="177" cy="143" r="5" fill="var(--bg)"/><path d="M213 213L165 257L213 301M299 213L347 257L299 301M274 204L238 310" fill="none" stroke="var(--a)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" /><path d="M159 348H244" fill="none" stroke="var(--b)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+<path d="M64 440H108" stroke="#6ee7ca" stroke-width="6" stroke-linecap="round"/><circle cx="124" cy="440" r="3" fill="#a4a5ff"/>
+</svg>

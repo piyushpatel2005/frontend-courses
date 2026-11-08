@@ -1,5 +1,7 @@
 ---
 slug: intro-to-html
+image: cover.svg
+prerequisites: []
 title: Introduction to HTML
 description: Learn HTML5 from scratch — structure, text, links, forms, media, and semantic elements through hands-on coding exercises.
 language: html

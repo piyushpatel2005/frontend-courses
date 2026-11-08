@@ -1,5 +1,9 @@
 ---
 slug: intro-to-css
+image: cover.svg
+prerequisites:
+  - course: intro-to-html
+    note: "Understand elements, attributes, and HTML page structure before styling pages."
 title: CSS
 description: Style familiar HTML pages step by step, from your first CSS rule to readable layouts and responsive designs.
 language: html
