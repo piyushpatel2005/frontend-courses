@@ -1,5 +1,5 @@
 ---
-title: Semantic HTML Tags
+title: "Semantic Tags"
 slug: semantic-tags
 order: 1
 language: html

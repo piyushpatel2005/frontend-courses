@@ -1,5 +1,5 @@
 ---
-title: Listen for Clicks with a Named Handler
+title: "Click Listeners And Named Handlers"
 slug: click-listeners-and-named-handlers
 order: 1
 language: javascript

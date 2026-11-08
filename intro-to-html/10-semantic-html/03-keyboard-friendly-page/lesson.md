@@ -1,5 +1,5 @@
 ---
-title: A keyboard-friendly page
+title: "Keyboard Friendly Page"
 slug: keyboard-friendly-page
 order: 3
 language: html

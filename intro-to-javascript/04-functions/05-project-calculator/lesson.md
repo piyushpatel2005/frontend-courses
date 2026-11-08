@@ -1,5 +1,5 @@
 ---
-title: Project - Calculator
+title: "Project Calculator"
 slug: project-calculator
 order: 5
 language: javascript

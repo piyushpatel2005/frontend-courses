@@ -1,5 +1,5 @@
 ---
-title: let and const in Practice
+title: "Let And Const"
 slug: let-and-const
 order: 2
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Project 3 - Resume Semantic Structure
+title: "Resume Semantic Structure"
 slug: resume-semantic-structure
 order: 1
 language: html

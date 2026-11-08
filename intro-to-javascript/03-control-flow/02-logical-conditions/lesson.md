@@ -1,5 +1,5 @@
 ---
-title: Truthiness and combined conditions
+title: "Logical Conditions"
 slug: logical-conditions
 order: 2
 language: javascript

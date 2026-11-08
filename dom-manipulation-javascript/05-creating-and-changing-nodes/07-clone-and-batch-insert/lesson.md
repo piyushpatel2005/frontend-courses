@@ -1,5 +1,5 @@
 ---
-title: Clone a Card and Insert a Batch
+title: "Clone And Batch Insert"
 slug: clone-and-batch-insert
 order: 7
 language: javascript

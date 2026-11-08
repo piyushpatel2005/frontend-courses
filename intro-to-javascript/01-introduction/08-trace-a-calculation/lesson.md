@@ -1,5 +1,5 @@
 ---
-title: Trace a Faulty Calculation
+title: "Trace A Calculation"
 slug: trace-a-calculation
 order: 8
 language: javascript

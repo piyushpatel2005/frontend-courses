@@ -1,5 +1,5 @@
 ---
-title: Move from a child to its relatives
+title: "Travel Through The Tree"
 slug: travel-through-the-tree
 order: 3
 language: javascript

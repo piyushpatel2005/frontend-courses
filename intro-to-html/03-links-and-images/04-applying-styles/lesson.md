@@ -1,5 +1,5 @@
 ---
-title: Applying Styles to HTML
+title: "Applying Styles"
 slug: applying-styles
 order: 4
 language: html

@@ -1,5 +1,5 @@
 ---
-title: The page is a tree
+title: "The Document Tree"
 slug: the-document-tree
 order: 4
 language: javascript

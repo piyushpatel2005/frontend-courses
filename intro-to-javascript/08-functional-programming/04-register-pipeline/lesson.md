@@ -1,5 +1,5 @@
 ---
-title: "Student Register with map"
+title: "Register Pipeline"
 slug: register-pipeline
 order: 4
 language: javascript

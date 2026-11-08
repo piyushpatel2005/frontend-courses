@@ -1,5 +1,5 @@
 ---
-title: Resilient styles
+title: "Resilient Styles"
 slug: resilient-styles
 order: 5
 language: css

@@ -1,5 +1,5 @@
 ---
-title: Missing values and deliberate emptiness
+title: "Missing Values"
 slug: missing-values
 order: 5
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Switch Statement
+title: "Switch Case"
 slug: switch-case
 order: 7
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Keyboard Events Without Trapping Keys
+title: "Keyboard Events And Defaults"
 slug: keyboard-events-and-defaults
 order: 5
 language: javascript

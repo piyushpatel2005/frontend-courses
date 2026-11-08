@@ -1,5 +1,5 @@
 ---
-title: Safe text and HTML
+title: "Text Content And Safe HTML"
 slug: text-content-and-safe-html
 order: 1
 language: javascript

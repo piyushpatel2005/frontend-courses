@@ -1,5 +1,5 @@
 ---
-title: Object Methods and Destructuring
+title: "Object Methods"
 slug: object-methods
 order: 3
 language: javascript

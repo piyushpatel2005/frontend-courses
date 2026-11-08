@@ -1,5 +1,5 @@
 ---
-title: Check for missing elements and search within a card
+title: "Safe And Scoped Queries"
 slug: safe-and-scoped-queries
 order: 5
 language: javascript

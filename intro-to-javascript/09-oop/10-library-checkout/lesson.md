@@ -1,5 +1,5 @@
 ---
-title: "Project: Library Checkout"
+title: "Library Checkout"
 slug: library-checkout
 order: 10
 language: javascript

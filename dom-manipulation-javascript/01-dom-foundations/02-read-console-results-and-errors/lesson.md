@@ -1,5 +1,5 @@
 ---
-title: Read results, fix a typo, and try again
+title: "Read Console Results And Errors"
 slug: read-console-results-and-errors
 order: 2
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Filter a list as someone types
+title: "Filter A List"
 slug: filter-a-list
 order: 1
 language: javascript

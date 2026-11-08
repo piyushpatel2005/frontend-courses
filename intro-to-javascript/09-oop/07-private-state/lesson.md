@@ -1,6 +1,6 @@
 ---
-title: "A private seat counter"
-slug: demo-private-state
+title: "Private State"
+slug: private-state
 order: 7
 language: javascript
 lesson_type: interactive

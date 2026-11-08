@@ -1,6 +1,6 @@
 ---
-title: "Independent workshop passes"
-slug: demo-class-blueprint
+title: "Class Blueprint"
+slug: class-blueprint
 order: 3
 language: javascript
 lesson_type: interactive

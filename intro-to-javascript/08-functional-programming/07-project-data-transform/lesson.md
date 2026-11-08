@@ -1,5 +1,5 @@
 ---
-title: Project - Data Transform Pipeline
+title: "Project Data Transform"
 slug: project-data-transform
 order: 7
 language: javascript

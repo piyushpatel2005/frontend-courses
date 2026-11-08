@@ -1,5 +1,5 @@
 ---
-title: Change your blank practice page
+title: "Experiment On A Blank Page"
 slug: experiment-on-a-blank-page
 order: 3
 language: javascript

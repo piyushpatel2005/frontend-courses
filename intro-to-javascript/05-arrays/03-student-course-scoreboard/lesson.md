@@ -1,5 +1,5 @@
 ---
-title: "Challenge: Student Course Scoreboard"
+title: "Student Course Scoreboard"
 slug: student-course-scoreboard
 order: 3
 language: javascript

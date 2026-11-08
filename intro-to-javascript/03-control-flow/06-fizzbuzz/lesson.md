@@ -1,5 +1,5 @@
 ---
-title: "Challenge: FizzBuzz Announcer"
+title: "FizzBuzz"
 slug: fizzbuzz
 order: 6
 language: javascript

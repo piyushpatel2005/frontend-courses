@@ -1,5 +1,5 @@
 ---
-title: Add a validated item through a form
+title: "Add A Session With A Form"
 slug: add-a-session-with-a-form
 order: 3
 language: javascript

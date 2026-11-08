@@ -1,5 +1,5 @@
 ---
-title: Read selectable cards and detail updates
+title: "Directory Cards And Selection"
 slug: directory-cards-and-selection
 order: 1
 language: javascript

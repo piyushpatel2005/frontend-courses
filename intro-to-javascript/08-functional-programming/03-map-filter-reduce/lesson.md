@@ -1,5 +1,5 @@
 ---
-title: map, filter, and reduce
+title: "Map Filter Reduce"
 slug: map-filter-reduce
 order: 3
 language: javascript

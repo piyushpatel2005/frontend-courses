@@ -1,5 +1,5 @@
 ---
-title: Boolean attributes and DOM properties
+title: "Boolean Attributes And Properties"
 slug: boolean-attributes-and-properties
 order: 7
 language: javascript

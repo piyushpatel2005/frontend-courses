@@ -1,5 +1,5 @@
 ---
-title: Array Reduce, Some, and Every
+title: "Array Reduce Some Every"
 slug: array-reduce-some-every
 order: 13
 language: javascript

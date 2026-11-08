@@ -1,5 +1,5 @@
 ---
-title: Remove, Replace, and Clear Safely
+title: "Remove Replace And Clear"
 slug: remove-replace-and-clear
 order: 5
 language: javascript

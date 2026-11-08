@@ -1,5 +1,5 @@
 ---
-title: Student Course Record
+title: "Student Record"
 slug: student-record
 order: 2
 language: javascript

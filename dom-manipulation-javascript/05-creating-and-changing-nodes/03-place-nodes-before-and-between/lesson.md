@@ -1,5 +1,5 @@
 ---
-title: Place Nodes Before and Between
+title: "Place Nodes Before And Between"
 slug: place-nodes-before-and-between
 order: 3
 language: javascript

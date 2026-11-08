@@ -1,5 +1,5 @@
 ---
-title: 'Abort outdated requests'
+title: "Abort Outdated Requests"
 slug: abort-outdated-requests
 order: 7
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: 'Handle loading, empty, and failed responses'
+title: "Response States And Errors"
 slug: response-states-and-errors
 order: 3
 language: javascript

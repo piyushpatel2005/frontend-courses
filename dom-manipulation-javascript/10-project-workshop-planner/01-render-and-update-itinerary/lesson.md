@@ -1,5 +1,5 @@
 ---
-title: Read and update a live itinerary
+title: "Render And Update Itinerary"
 slug: render-and-update-itinerary
 order: 1
 language: javascript

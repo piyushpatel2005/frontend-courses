@@ -1,5 +1,5 @@
 ---
-title: "Student Scoreboard"
+title: "Scoreboard Pattern"
 slug: scoreboard-pattern
 order: 2
 language: javascript

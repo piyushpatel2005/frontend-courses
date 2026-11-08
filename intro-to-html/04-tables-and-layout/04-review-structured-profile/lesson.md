@@ -1,5 +1,5 @@
 ---
-title: "Review: Structured Profile"
+title: "Review Structured Profile"
 slug: review-structured-profile
 order: 4
 language: html

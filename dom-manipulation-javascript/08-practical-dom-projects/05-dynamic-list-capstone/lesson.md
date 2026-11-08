@@ -1,5 +1,5 @@
 ---
-title: Create and remove items with one delegated listener
+title: "Dynamic List Capstone"
 slug: dynamic-list-capstone
 order: 5
 language: javascript

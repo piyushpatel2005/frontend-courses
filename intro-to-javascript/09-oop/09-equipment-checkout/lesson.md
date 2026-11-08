@@ -1,6 +1,6 @@
 ---
-title: "Equipment desk checkout"
-slug: demo-equipment-checkout
+title: "Equipment Checkout"
+slug: equipment-checkout
 order: 9
 language: javascript
 lesson_type: interactive

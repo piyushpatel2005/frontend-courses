@@ -1,5 +1,5 @@
 ---
-title: Object copies and optional properties
+title: "Copying And Optional Properties"
 slug: copying-and-optional-properties
 order: 4
 language: javascript

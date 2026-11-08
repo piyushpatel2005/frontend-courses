@@ -1,5 +1,5 @@
 ---
-title: Read multiple checked values with FormData
+title: "FormData And Checkboxes"
 slug: formdata-and-checkboxes
 order: 7
 language: javascript

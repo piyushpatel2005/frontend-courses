@@ -1,5 +1,5 @@
 ---
-title: Read a number from a form
+title: "Read A Number From A Form"
 slug: read-a-number-from-a-form
 order: 9
 language: javascript

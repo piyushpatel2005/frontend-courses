@@ -1,5 +1,5 @@
 ---
-title: "Seat Ledger Closure Walkthrough"
+title: "Seat Ledger Walkthrough"
 slug: seat-ledger-walkthrough
 order: 9
 language: javascript

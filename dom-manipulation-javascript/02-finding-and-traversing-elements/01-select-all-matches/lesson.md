@@ -1,5 +1,5 @@
 ---
-title: Find every match with querySelectorAll
+title: "Select All Matches"
 slug: select-all-matches
 order: 1
 language: javascript

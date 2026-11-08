@@ -1,5 +1,5 @@
 ---
-title: Inheritance and the cascade
+title: "Inheritance And Cascade"
 slug: inheritance-and-cascade
 order: 9
 language: css

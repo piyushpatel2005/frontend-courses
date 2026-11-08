@@ -1,5 +1,5 @@
 ---
-title: Extend the inventory report
+title: "Inventory Category Report"
 slug: inventory-category-report
 order: 8
 language: javascript

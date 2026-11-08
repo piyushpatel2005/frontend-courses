@@ -1,5 +1,5 @@
 ---
-title: "Combined Conditions Before FizzBuzz"
+title: "FizzBuzz Rules"
 slug: fizzbuzz-rules
 order: 5
 language: javascript

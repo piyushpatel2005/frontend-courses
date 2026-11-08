@@ -1,5 +1,5 @@
 ---
-title: 'Build a query with URLSearchParams'
+title: "Query Parameters With URLSearchParams"
 slug: query-parameters-with-urlsearchparams
 order: 5
 language: javascript

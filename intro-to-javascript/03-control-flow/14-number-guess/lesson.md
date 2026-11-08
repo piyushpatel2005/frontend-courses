@@ -1,5 +1,5 @@
 ---
-title: "Challenge: Number Guess Referee"
+title: "Number Guess"
 slug: number-guess
 order: 14
 language: javascript

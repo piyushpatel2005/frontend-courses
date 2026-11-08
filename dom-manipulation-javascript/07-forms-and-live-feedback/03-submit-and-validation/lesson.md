@@ -1,5 +1,5 @@
 ---
-title: Handle submit without leaving the page
+title: "Submit And Validation"
 slug: submit-and-validation
 order: 3
 language: javascript

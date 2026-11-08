@@ -1,5 +1,5 @@
 ---
-title: Sticky scroll headings
+title: "Sticky Scroll Headings"
 slug: sticky-scroll-headings
 order: 9
 language: css

@@ -1,5 +1,5 @@
 ---
-title: "Switch a Venue Sign"
+title: "Power Selection"
 slug: power-selection
 order: 8
 language: javascript

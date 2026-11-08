@@ -1,5 +1,5 @@
 ---
-title: What is JavaScript?
+title: "What Is JavaScript"
 slug: what-is-javascript
 order: 1
 language: javascript

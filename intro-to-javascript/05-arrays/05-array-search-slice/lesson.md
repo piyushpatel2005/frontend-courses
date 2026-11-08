@@ -1,5 +1,5 @@
 ---
-title: Array Slice and Concat
+title: "Array Search Slice"
 slug: array-search-slice
 order: 5
 language: javascript

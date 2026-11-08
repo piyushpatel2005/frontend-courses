@@ -1,5 +1,5 @@
 ---
-title: Track a Changing Points Tally
+title: "Tally With Const And Let"
 slug: tally-with-const-and-let
 order: 7
 language: javascript

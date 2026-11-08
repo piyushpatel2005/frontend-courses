@@ -1,5 +1,5 @@
 ---
-title: Create an Element and Append It
+title: "Create And Append Text"
 slug: create-and-append-text
 order: 1
 language: javascript

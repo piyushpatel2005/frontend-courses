@@ -1,5 +1,5 @@
 ---
-title: Read a field while someone types
+title: "Live Input Preview"
 slug: live-input-preview
 order: 1
 language: javascript

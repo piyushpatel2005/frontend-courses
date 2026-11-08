@@ -1,5 +1,5 @@
 ---
-title: "Rainfall Routing Walkthrough"
+title: "Rainfall Routing"
 slug: rainfall-routing
 order: 15
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Function inputs and results
+title: "Function Inputs And Results"
 slug: function-inputs-and-results
 order: 3
 language: javascript

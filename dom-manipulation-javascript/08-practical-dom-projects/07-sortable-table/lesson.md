@@ -1,5 +1,5 @@
 ---
-title: Sort a workshop table with accessible buttons
+title: "Sortable Table"
 slug: sortable-table
 order: 7
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Comparisons and strict equality
+title: "Comparison Results"
 slug: comparison-results
 order: 1
 language: javascript

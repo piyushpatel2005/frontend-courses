@@ -1,5 +1,5 @@
 ---
-title: 'Fetch JSON and render safe text'
+title: "Fetch JSON And Render Text"
 slug: fetch-json-and-render-text
 order: 1
 language: javascript

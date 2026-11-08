@@ -1,6 +1,6 @@
 ---
-title: "A notebook object"
-slug: demo-object-behavior
+title: "Object Behavior"
+slug: object-behavior
 order: 1
 language: javascript
 lesson_type: interactive

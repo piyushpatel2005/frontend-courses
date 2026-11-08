@@ -1,5 +1,5 @@
 ---
-title: Read and change link attributes
+title: "Reading And Changing Attributes"
 slug: reading-and-changing-attributes
 order: 3
 language: javascript

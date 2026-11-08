@@ -1,5 +1,5 @@
 ---
-title: Compare a live HTMLCollection with a static NodeList
+title: "Live Collections And Static Lists"
 slug: live-collections-and-static-lists
 order: 7
 language: javascript

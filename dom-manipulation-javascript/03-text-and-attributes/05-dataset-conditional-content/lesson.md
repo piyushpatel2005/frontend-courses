@@ -1,5 +1,5 @@
 ---
-title: Data attributes and conditional text
+title: "Dataset Conditional Content"
 slug: dataset-conditional-content
 order: 5
 language: javascript

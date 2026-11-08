@@ -1,5 +1,5 @@
 ---
-title: Open the browser Console safely
+title: "Open The Browser Console"
 slug: open-the-browser-console
 order: 1
 language: javascript

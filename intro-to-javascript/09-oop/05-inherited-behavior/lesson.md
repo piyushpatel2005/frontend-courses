@@ -1,6 +1,6 @@
 ---
-title: "An inherited notice"
-slug: demo-inherited-behavior
+title: "Inherited Behavior"
+slug: inherited-behavior
 order: 5
 language: javascript
 lesson_type: interactive

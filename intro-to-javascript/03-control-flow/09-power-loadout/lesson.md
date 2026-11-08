@@ -1,5 +1,5 @@
 ---
-title: "Challenge: Power Loadout"
+title: "Power Loadout"
 slug: power-loadout
 order: 9
 language: javascript

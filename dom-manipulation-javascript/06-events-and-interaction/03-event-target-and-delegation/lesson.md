@@ -1,5 +1,5 @@
 ---
-title: Event Target, Current Target, and Delegation
+title: "Event Target And Delegation"
 slug: event-target-and-delegation
 order: 3
 language: javascript

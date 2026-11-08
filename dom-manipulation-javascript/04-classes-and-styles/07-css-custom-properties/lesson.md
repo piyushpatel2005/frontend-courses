@@ -1,5 +1,5 @@
 ---
-title: Change a CSS custom property from JavaScript
+title: "CSS Custom Properties"
 slug: css-custom-properties
 order: 7
 language: javascript

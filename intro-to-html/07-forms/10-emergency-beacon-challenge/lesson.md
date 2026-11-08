@@ -1,5 +1,5 @@
 ---
-title: "Challenge: Send an Emergency Beacon"
+title: "Emergency Beacon Challenge"
 slug: emergency-beacon-challenge
 order: 10
 language: html

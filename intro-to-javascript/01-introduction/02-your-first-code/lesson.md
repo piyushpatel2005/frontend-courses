@@ -1,5 +1,5 @@
 ---
-title: Your First JavaScript Code
+title: "Your First Code"
 slug: your-first-code
 order: 2
 language: javascript

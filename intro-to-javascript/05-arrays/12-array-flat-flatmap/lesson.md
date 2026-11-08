@@ -1,5 +1,5 @@
 ---
-title: Array Flat and FlatMap
+title: "Array Flat Flatmap"
 slug: array-flat-flatmap
 order: 12
 language: javascript

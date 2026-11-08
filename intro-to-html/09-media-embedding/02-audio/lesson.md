@@ -1,5 +1,5 @@
 ---
-title: Embedding Audio
+title: "Audio"
 slug: audio
 order: 2
 language: html

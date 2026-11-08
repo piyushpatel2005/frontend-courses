@@ -1,5 +1,5 @@
 ---
-title: Inline styles, classes, and hidden
+title: "Inline Style And Hidden State"
 slug: inline-style-and-hidden-state
 order: 5
 language: javascript

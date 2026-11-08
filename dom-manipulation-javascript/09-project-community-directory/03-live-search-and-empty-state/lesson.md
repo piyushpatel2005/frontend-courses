@@ -1,5 +1,5 @@
 ---
-title: Trace live search and an empty state
+title: "Live Search And Empty State"
 slug: live-search-and-empty-state
 order: 3
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Map and Set Collections
+title: "Map Set Collections"
 slug: map-set-collections
 order: 5
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Math and Date
+title: "Math And Date"
 slug: math-and-date
 order: 11
 language: javascript

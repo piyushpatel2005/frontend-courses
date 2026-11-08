@@ -1,5 +1,5 @@
 ---
-title: "Stop a Ticket Scan"
+title: "Guessing Loop"
 slug: guessing-loop
 order: 13
 language: javascript

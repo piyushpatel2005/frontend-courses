@@ -1,5 +1,5 @@
 ---
-title: Once, Remove, and Bubble
+title: "Once Remove And Bubble"
 slug: once-remove-and-bubble
 order: 7
 language: javascript

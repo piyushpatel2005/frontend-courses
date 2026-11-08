@@ -1,5 +1,5 @@
 ---
-title: Filter and remove live entries
+title: "Filter And Remove Sessions"
 slug: filter-and-remove-sessions
 order: 5
 language: javascript

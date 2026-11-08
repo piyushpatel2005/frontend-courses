@@ -1,5 +1,5 @@
 ---
-title: Toggle a panel accessibly
+title: "Toggle And ARIA Expanded"
 slug: toggle-and-aria-expanded
 order: 3
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Compare DOM properties, HTML attributes, and node types
+title: "Properties Attributes And Node Types"
 slug: properties-attributes-and-node-types
 order: 10
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Array Reverse and Sort
+title: "Array Reverse Sort"
 slug: array-reverse-sort
 order: 9
 language: javascript

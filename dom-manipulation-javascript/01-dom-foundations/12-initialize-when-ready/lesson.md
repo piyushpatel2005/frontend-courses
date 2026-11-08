@@ -1,5 +1,5 @@
 ---
-title: Initialize a page when it is ready
+title: "Initialize When Ready"
 slug: initialize-when-ready
 order: 12
 language: javascript

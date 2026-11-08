@@ -1,5 +1,5 @@
 ---
-title: Keep a selection in sync on change and reset
+title: "Change And Reset"
 slug: change-and-reset
 order: 5
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: "Challenge: Student Register"
+title: "Student Register"
 slug: student-register
 order: 5
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Trace safe additions and delegated removal
+title: "Accessible Add Remove Flow"
 slug: accessible-add-remove-flow
 order: 5
 language: javascript

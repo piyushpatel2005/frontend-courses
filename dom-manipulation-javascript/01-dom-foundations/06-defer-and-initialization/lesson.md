@@ -1,5 +1,5 @@
 ---
-title: Load a script when the page is ready
+title: "Defer And Initialization"
 slug: defer-and-initialization
 order: 6
 language: javascript

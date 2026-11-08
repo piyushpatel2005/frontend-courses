@@ -1,5 +1,5 @@
 ---
-title: Links between project files
+title: "Relative File Paths"
 slug: relative-file-paths
 order: 2
 language: html

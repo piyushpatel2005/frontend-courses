@@ -1,5 +1,5 @@
 ---
-title: Add, remove, and check classes
+title: "Class List Methods"
 slug: class-list-methods
 order: 1
 language: javascript

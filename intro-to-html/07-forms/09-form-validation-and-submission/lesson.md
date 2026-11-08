@@ -1,5 +1,5 @@
 ---
-title: Form validation and submission
+title: "Form Validation And Submission"
 slug: form-validation-and-submission
 order: 9
 language: html

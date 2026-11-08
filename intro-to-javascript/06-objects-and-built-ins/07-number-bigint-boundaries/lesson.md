@@ -1,5 +1,5 @@
 ---
-title: Number and BigInt Boundaries
+title: "Number BigInt Boundaries"
 slug: number-bigint-boundaries
 order: 7
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Inspect Values in the Console
+title: "Console Value Inspection"
 slug: console-value-inspection
 order: 6
 language: javascript

@@ -1,5 +1,5 @@
 ---
-title: Toggle an accessible disclosure
+title: "Accessible Disclosure"
 slug: accessible-disclosure
 order: 3
 language: javascript

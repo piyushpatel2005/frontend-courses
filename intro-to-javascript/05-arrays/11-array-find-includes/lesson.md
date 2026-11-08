@@ -1,5 +1,5 @@
 ---
-title: Array Find and Includes
+title: "Array Find Includes"
 slug: array-find-includes
 order: 11
 language: javascript

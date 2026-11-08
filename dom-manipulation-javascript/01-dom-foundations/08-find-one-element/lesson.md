@@ -1,5 +1,5 @@
 ---
-title: Find one element by id or CSS selector
+title: "Find One Element"
 slug: find-one-element
 order: 8
 language: javascript

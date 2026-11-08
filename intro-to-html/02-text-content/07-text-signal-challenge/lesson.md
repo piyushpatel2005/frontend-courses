@@ -1,5 +1,5 @@
 ---
-title: "Challenge: Transmit a Rescue Signal"
+title: "Text Signal Challenge"
 slug: text-signal-challenge
 order: 7
 language: html

@@ -1,5 +1,5 @@
 ---
-title: Embedding Video
+title: "Video"
 slug: video
 order: 1
 language: html

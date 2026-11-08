@@ -1,5 +1,5 @@
 ---
-title: The Head Element and Page Title
+title: "Title And Head"
 slug: title-and-head
 order: 1
 language: html

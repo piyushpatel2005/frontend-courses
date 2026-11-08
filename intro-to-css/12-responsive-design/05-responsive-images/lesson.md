@@ -1,5 +1,5 @@
 ---
-title: Images that fit
+title: "Responsive Images"
 slug: responsive-images
 order: 5
 language: css

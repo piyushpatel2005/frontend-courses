@@ -1,5 +1,5 @@
 ---
-title: Throwing and catching errors
+title: "Handling Errors"
 slug: handling-errors
 order: 10
 language: javascript

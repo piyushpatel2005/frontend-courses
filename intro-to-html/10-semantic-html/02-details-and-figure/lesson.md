@@ -1,5 +1,5 @@
 ---
-title: Details, Figure, and Figcaption
+title: "Details And Figure"
 slug: details-and-figure
 order: 2
 language: html
