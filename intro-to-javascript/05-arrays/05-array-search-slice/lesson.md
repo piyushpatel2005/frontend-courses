@@ -14,7 +14,6 @@ seo_description: "A schedule may need a short middle segment followed by extra e
 seo_keywords: javascript, array slice, array concat, beginner javascript
 ---
 
-# Array slice and concat
 
 A schedule may need a short middle segment followed by extra entries. `slice(start, end)` copies a range: it includes the start index and stops before the end index.
 

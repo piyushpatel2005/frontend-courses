@@ -15,8 +15,6 @@ seo_description: "Connect an HTML page to a script, calculate a value, and displ
 seo_keywords: javascript, what is javascript?, beginner javascript, programming practice
 ---
 
-# What is JavaScript?
-
 
 You have used HTML for structure and CSS for appearance. The Starline Awards scoreboard still needs a calculation. In this one bridge lesson, connect `index.html` to `script.js` and show a calculated result in the page. The remaining lessons in these sections use only `script.js` and the Console.
 

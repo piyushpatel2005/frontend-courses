@@ -14,7 +14,6 @@ seo_description: "The setlist queue grows when an item arrives and shrinks when 
 seo_keywords: javascript, array mutation methods, beginner javascript, programming practice
 ---
 
-# Array mutation methods
 
 The setlist queue grows when an item arrives and shrinks when its last item is removed. `push(value)` adds at the end; `pop()` removes and returns the last value.
 

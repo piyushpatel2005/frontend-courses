@@ -12,7 +12,7 @@ seo_keywords:
 - JavaScript DOM
 - classList.add, remove, and contains
 - browser preview
-- demo
+- classList methods
 ---
 
 The programme card needs a highlight that can be switched on and off. Keep the styling in CSS and change only the relevant class from JavaScript.

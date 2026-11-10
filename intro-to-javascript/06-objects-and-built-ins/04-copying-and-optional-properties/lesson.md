@@ -12,7 +12,6 @@ hints:
   - Complete one numbered change and inspect its supplied checkpoint before moving on.
 ---
 
-# Object copies and optional properties
 
 You can read and update a record. Before editing one for a new purpose, decide whether the old record should change too. Assignment shares the same object; object spread creates a new outer object.
 

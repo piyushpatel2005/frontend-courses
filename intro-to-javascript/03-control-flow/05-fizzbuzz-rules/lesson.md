@@ -10,7 +10,6 @@ seo_description: "Test a combined divisibility rule before its individual cases.
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Combined Conditions Before FizzBuzz
 
 Before you classify many numbers, classify **one** shipment count. `%` gives the remainder after division: `12 % 4` is `0`, so 12 is divisible by 4. `=== 0` checks whether that remainder is exactly zero. Check the combined case before either single case; otherwise a number divisible by both would stop at the first matching branch.
 

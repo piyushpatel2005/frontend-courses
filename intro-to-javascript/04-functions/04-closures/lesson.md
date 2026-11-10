@@ -14,7 +14,6 @@ seo_description: "A ticket counter must remember how many tickets it has issued.
 seo_keywords: javascript, closures, beginner javascript, programming practice
 ---
 
-# Closures
 
 A ticket counter must remember how many tickets it has issued. A function can return another function as its result, just as it can return a string.
 

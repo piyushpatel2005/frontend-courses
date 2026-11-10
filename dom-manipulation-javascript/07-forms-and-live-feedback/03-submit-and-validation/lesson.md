@@ -14,8 +14,6 @@ seo_keywords:
 - accessible form validation
 ---
 
-# Respond to form submission
-
 The workshop RSVP should confirm locally or explain a blank name. This is a preview only: no seat is reserved and no personal information is sent. Use a made-up name.
 
 A form's `submit` event handles both its submit button and implicit submission from Enter in this simple text field. Listen on the form, rather than only on the button. Call `event.preventDefault()` before either outcome to keep the page in place.

@@ -15,8 +15,6 @@ seo_description: "Build grade branches one at a time and check both ends of each
 seo_keywords: javascript, conditionals, beginner javascript, programming practice
 ---
 
-# Conditionals
-
 
 This section teaches a script to choose between outcomes. Keep the work in `script.js` and check results in the Console.
 

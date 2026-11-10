@@ -10,7 +10,6 @@ seo_description: "A scheduled notice is a notice with one extra field. `extends 
 seo_keywords: javascript, inheritance, extends, super, override
 ---
 
-# An inherited notice
 
 A scheduled notice is a notice with one extra field. `extends Notice` links the child class to its parent. The child constructor calls `super(label)` to initialize the parent's part of the same object, then stores `hour`. Call `super` before using `this` in a derived constructor.
 

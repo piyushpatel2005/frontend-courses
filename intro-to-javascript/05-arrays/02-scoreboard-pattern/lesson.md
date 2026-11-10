@@ -10,7 +10,6 @@ seo_description: "An array keeps related scores together. To find their average,
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# student scoreboard
 
 An array keeps related scores together. To find their average, add the values and divide by the number of values.
 

@@ -10,12 +10,10 @@ seo_title: Event Target, Current Target, and Delegation | DOM Manipulation with 
 seo_description: Understand event.target versus event.currentTarget and event delegation for dynamically created
   buttons.
 seo_keywords:
-- event target demo
+- event target
 - currentTarget
 - event delegation
 ---
-
-# Handle a list's buttons from its parent
 
 A message board can add rows after the page loads. One listener on the stable list can handle Remove buttons in both old and new rows. This is called **event delegation**.
 

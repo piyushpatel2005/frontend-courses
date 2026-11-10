@@ -14,7 +14,6 @@ seo_description: "The Starline Awards desk needs the same greeting for every gue
 seo_keywords: javascript, defining functions, beginner javascript, programming practice
 ---
 
-# Defining functions
 
 The Starline Awards desk needs the same greeting for every guest. A function lets you write that rule once and supply a different name each time.
 

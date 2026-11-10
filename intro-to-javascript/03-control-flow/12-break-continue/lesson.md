@@ -15,8 +15,6 @@ seo_description: "Stop a search with break and skip non-positive values with con
 seo_keywords: javascript, break and continue, beginner javascript, programming practice
 ---
 
-# Break and Continue
-
 
 A list scan can stop at the first match or skip entries that should not be collected.
 

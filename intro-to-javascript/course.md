@@ -28,18 +28,21 @@ modules:
   - slug: objects-and-built-ins
     title: Objects and Built-ins
     sort_order: 6
+  - slug: modules-and-packages
+    title: Modules and Packages
+    sort_order: 7
   - slug: strings-and-regex
     title: Strings and Regular Expressions
-    sort_order: 7
+    sort_order: 8
   - slug: functional-programming
     title: Functional Programming
-    sort_order: 8
+    sort_order: 9
   - slug: oop
     title: Object-Oriented Programming
-    sort_order: 9
+    sort_order: 10
   - slug: async-javascript
     title: Asynchronous JavaScript
-    sort_order: 10
+    sort_order: 11
 ---
 
 # JavaScript: from your first value to a working program
@@ -58,6 +61,7 @@ This is the third course in HTML → CSS → JavaScript → vanilla DOM. You can
 - Functions — how to define, call, and compose them.
 - Arrays and objects — the two data structures you will use every day.
 - Built-in helpers for strings, numbers, dates, and math.
+- Local ES modules: exports, imports, and organizing files in the ESM File Explorer.
 - Functional patterns: `map`, `filter`, `reduce`, and recursion.
 - Object-oriented programming with ES6 classes and inheritance.
 - Asynchronous JavaScript: callbacks, Promises, and `async`/`await`.
@@ -70,10 +74,11 @@ This is the third course in HTML → CSS → JavaScript → vanilla DOM. You can
 4. **Functions** — turn repeated steps into reusable jobs, then explore scope and closures.
 5. **Arrays** — keep ordered collections, find entries, and transform lists.
 6. **Objects and Built-ins** — name related facts and work with `Map`, `Set`, numbers, JSON, math, and dates.
-7. **Strings and Regular Expressions** — prepare messages and validate text patterns.
-8. **Functional Programming** — pass functions as values and combine transformations into a pipeline.
-9. **Object-Oriented Programming** — give objects behavior, then build classes with inheritance and private state.
-10. **Asynchronous JavaScript** — understand delayed work, await Promises, combine independent results, and retry failures.
+7. **Modules and Packages** — share values between local files, build a shift card, and distinguish a package manifest from an actual install.
+8. **Strings and Regular Expressions** — prepare messages and validate text patterns.
+9. **Functional Programming** — pass functions as values and combine transformations into a pipeline.
+10. **Object-Oriented Programming** — give objects behavior, then build classes with inheritance and private state.
+11. **Asynchronous JavaScript** — understand delayed work, await Promises, combine independent results, and retry failures.
 
 > Next, continue with **vanilla JavaScript DOM**: select native elements, respond to browser events, and connect the language to the HTML and CSS you already know. No framework is needed.
 
@@ -88,7 +93,7 @@ The opening lesson connects an HTML page to `script.js`. Later exercises focus o
 - Read an error from its first relevant line. Check the named variable, punctuation, and the value you passed before changing several things at once.
 - Work through the modules in order. Later exercises reuse earlier ideas with different data; a new scenario is a chance to apply what you already know.
 
-The asynchronous module uses an offline preview that captures delayed Console output. Its sample services do not contact real websites. Some of the later topics, such as closures and Promises, take more than one read; keep the example open while tracing what happens.
+The Modules and Packages section uses the ESM File Explorer to run local imports. Its example `package.json` is read-only: the preview does not run npm installs, scripts, or Node.js. The asynchronous module uses an offline preview that captures delayed Console output. Its sample services do not contact real websites. Some of the later topics, such as closures and Promises, take more than one read; keep the example open while tracing what happens.
 
 ## Intentionally later
 

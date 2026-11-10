@@ -10,7 +10,6 @@ seo_description: "An equipment desk loans camera kits. The base `Equipment` clas
 seo_keywords: javascript, oop project, inheritance, private state
 ---
 
-# Equipment desk checkout
 
 An equipment desk loans camera kits. The base `Equipment` class owns private loan state and the methods that change it. `CameraKit` adds a lens and a more specific description.
 

@@ -14,8 +14,6 @@ seo_keywords:
   - accessible itinerary
 ---
 
-# Read and update a live itinerary
-
 A studio booking board changes its opening time. Follow the data from an array to the visible list, then watch a click redraw the page.
 
 ## Follow the render

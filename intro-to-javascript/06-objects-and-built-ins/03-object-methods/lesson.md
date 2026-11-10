@@ -14,7 +14,6 @@ seo_description: "Read JavaScript object properties with destructuring and build
 seo_keywords: javascript, object methods and destructuring, beginner javascript, programming practice
 ---
 
-# Object methods and destructuring
 
 Jordan's record stores a name and several scores. Read the name into local variables, then write helpers that can also handle another student's record.
 

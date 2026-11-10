@@ -15,7 +15,6 @@ seo_description: "Coordinates and route stops arrive in a fixed order. Array des
 seo_keywords: javascript, destructuring, beginner javascript, programming practice
 ---
 
-# Destructuring
 
 Coordinates and route stops arrive in a fixed order. **Array destructuring** names values by position without writing a separate indexed assignment for each one.
 

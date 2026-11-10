@@ -15,7 +15,6 @@ seo_description: "Convert a text price into a number before calculating and form
 seo_keywords: javascript, type conversion, beginner javascript, programming practice
 ---
 
-# Type Conversion
 
 A price arrives as text. Convert it into a number before calculating the order total, then format the result as a message.
 

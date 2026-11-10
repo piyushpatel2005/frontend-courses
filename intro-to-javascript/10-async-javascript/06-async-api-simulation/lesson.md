@@ -11,7 +11,6 @@ seo_description: Combine offline user, post, and notification requests with Prom
 seo_keywords: javascript, async, api, simulation, asynchronous programming
 ---
 
-# An offline activity dashboard
 
 Apply the rehearsal's dependency pattern to a user's activity summary. `fetchUser`, `fetchPosts`, and `fetchNotifications` are supplied local fixtures. Despite their names, they make no HTTP requests.
 

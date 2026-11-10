@@ -14,8 +14,6 @@ seo_keywords:
 - input event list
 ---
 
-# Filter a list as someone types
-
 A neighborhood kitchen needs to search its short recipe index without reloading or deleting the underlying entries.
 
 ## Read the running example

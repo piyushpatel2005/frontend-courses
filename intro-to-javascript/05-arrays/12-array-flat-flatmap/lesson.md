@@ -14,7 +14,6 @@ seo_description: "Some setlist data arrives in groups. `flat()` returns a new ar
 seo_keywords: javascript, array flat and flatmap, beginner javascript, programming practice
 ---
 
-# Array flat and flatMap
 
 Some setlist data arrives in groups. `flat()` returns a new array with one level of nested arrays removed. `flatMap()` first transforms each item, then flattens the results by one level.
 

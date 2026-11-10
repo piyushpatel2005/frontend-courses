@@ -14,8 +14,6 @@ seo_keywords:
   - API filtering
 ---
 
-# Query a dashboard with URLSearchParams
-
 The trail dashboard now has a search field. Enter `River` and press Search: the page should stay put and show River lookout. Try `missing`, then submit a blank field to restore every trail.
 
 `requestURL()` builds the request from the field's current value. A blank field returns the base route; otherwise `URLSearchParams` encodes one `q` parameter. The form listener prevents navigation and calls the existing loader.

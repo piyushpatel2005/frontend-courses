@@ -10,7 +10,6 @@ seo_description: "The stage crew stores each rack as a `[label, units]` pair. It
 seo_keywords: javascript array filter sort reduce, array of pairs, restock report
 ---
 
-# charging rack restock report
 
 The stage crew stores each rack as a `[label, units]` pair. It needs the names of racks below five units, ordered by the smallest quantity first, and a total refill amount.
 

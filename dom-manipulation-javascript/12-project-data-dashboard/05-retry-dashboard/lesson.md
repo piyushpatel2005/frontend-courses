@@ -14,8 +14,6 @@ seo_keywords:
   - retry UI
 ---
 
-# Retry requests without stale results
-
 Set the trail fixture's delay to `800` and Run. Search for `Cedar`, then quickly search for `River`. Only River lookout should be allowed to replace the list. Reset the delay after trying it.
 
 The demo uses cancellation and a request number. Cancellation asks the earlier request to stop. The number protects later work too: if an old operation finishes anyway, it must not render or report an error over the new one.

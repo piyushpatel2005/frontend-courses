@@ -12,7 +12,6 @@ hints:
   - Complete one numbered change and inspect its supplied checkpoint before moving on.
 ---
 
-# Missing values and deliberate emptiness
 
 A field can be missing even when the rest of a record is usable. `undefined` commonly means no value was supplied: a `let` declaration without an initializer has that value. `null` is an explicit value you can choose to mean “nothing selected.” Neither is the text `"undefined"` or `"null"`.
 

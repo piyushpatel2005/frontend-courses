@@ -14,7 +14,6 @@ seo_description: "The crew needs a total and two yes-or-no answers. These method
 seo_keywords: javascript, array reduce, some, and every, beginner javascript, programming practice
 ---
 
-# Array reduce, some, and every
 
 The crew needs a total and two yes-or-no answers. These methods summarize a list rather than building a same-length transformed list.
 

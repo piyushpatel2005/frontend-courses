@@ -10,7 +10,6 @@ seo_description: "At a neighborhood concert, most visitors buy standard tickets.
 seo_keywords: [javascript, "ticket pricing walkthrough", interactive example]
 ---
 
-# Ticket pricing walkthrough
 
 At a neighborhood concert, most visitors buy standard tickets. A default parameter lets the caller omit that common choice.
 

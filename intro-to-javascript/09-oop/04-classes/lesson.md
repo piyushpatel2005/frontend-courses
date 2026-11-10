@@ -15,7 +15,6 @@ seo_description: "Model a bank account with its own owner and balance. The works
 seo_keywords: javascript, classes, beginner javascript, programming practice
 ---
 
-# Classes
 
 Model a bank account with its own owner and balance. The workshop-pass example showed why two instances can share methods without sharing their changing data.
 

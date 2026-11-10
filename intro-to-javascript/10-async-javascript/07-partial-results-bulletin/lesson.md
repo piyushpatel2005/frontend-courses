@@ -14,7 +14,6 @@ seo_keywords:
 - async programming
 ---
 
-# Keep partial results
 
 A rehearsal bulletin checks three offline dispatch desks. Sound and lights can still appear in the bulletin when signage fails. Using `Promise.all` would reject the combined result; `Promise.allSettled` waits for every input and fulfills with an array of outcome objects instead.
 

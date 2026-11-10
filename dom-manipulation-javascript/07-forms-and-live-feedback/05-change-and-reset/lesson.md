@@ -14,8 +14,6 @@ seo_keywords:
 - select summary DOM
 ---
 
-# Keep the display in sync after reset
-
 The market pickup card shows Morning or Evening next to its select. Choosing a value and restoring the default are two different event paths to the same display function.
 
 For a select, `change` reports a committed choice. Text inputs also have `change`, usually when an edited value is committed by leaving the field; use `input` when you need each edit instead. The select's `.value` gives the chosen option's value.

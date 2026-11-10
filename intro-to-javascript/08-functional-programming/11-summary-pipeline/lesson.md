@@ -10,7 +10,6 @@ seo_description: "A bike-share report counts minutes only for completed rides. T
 seo_keywords: [javascript map filter reduce, array pipeline, ride summary]
 ---
 
-# Count completed ride minutes
 
 A bike-share report counts minutes only for completed rides. Track the type of value after each step: an array of ride objects, then an array of minute values, then one number.
 

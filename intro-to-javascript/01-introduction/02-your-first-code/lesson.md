@@ -14,8 +14,6 @@ seo_description: "Print a named message and a division result in the Console."
 seo_keywords: javascript, your first javascript code, beginner javascript, programming practice
 ---
 
-# Your First JavaScript Code
-
 
 Your first standalone script prints a name and a division result in the Console. There is no page to edit.
 

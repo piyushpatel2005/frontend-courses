@@ -13,7 +13,6 @@ hints:
   - "Use student.score = 92 to replace the original score."
 ---
 
-# Student course record
 
 A coordinator records Riley's course and score. When Riley improves, update the score inside the existing object rather than creating a second record.
 

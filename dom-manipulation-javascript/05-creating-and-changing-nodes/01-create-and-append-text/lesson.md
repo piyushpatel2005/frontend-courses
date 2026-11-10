@@ -10,12 +10,10 @@ seo_title: Create an Element and Append It | DOM Manipulation with JavaScript
 seo_description: See how createElement, textContent and append build a safe new DOM node in a beginner JavaScript
   example.
 seo_keywords:
-- createElement demo
+- createElement
 - append child
 - textContent safe text
 ---
-
-# Create an element, then show it
 
 The garden supply board already lists Gloves. Add Watering cans without rewriting the list's HTML. You will use the selectors and safe text updates from the previous section.
 

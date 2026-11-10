@@ -10,7 +10,6 @@ seo_description: "Convert text prices and separate repeated charges from a one-t
 seo_keywords: javascript expense total, Number conversion, operator precedence
 ---
 
-# Group and Convert Expense Inputs
 
 The travel desk sends prices as strings. Adding raw text can join digits rather than calculate a bill. Run the faulty version first:
 

@@ -11,7 +11,6 @@ seo_description: Schedule a callback that records broadcast cues in actual execu
 seo_keywords: javascript, callbacks, timers, asynchronous programming
 ---
 
-# Schedule a broadcast cue
 
 Record a broadcast's opening and closing cues before its delayed announcement. The previous demo showed the same timing rule with different stage cues.
 

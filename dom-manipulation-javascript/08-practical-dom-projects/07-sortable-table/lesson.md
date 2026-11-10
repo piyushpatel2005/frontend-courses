@@ -6,7 +6,7 @@ language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Sort existing table rows by title with a keyboard-accessible button and an aria-sort indicator.
-seo_title: Sortable HTML Table with JavaScript DOM APIs | Demo
+seo_title: Sort an accessible HTML table | JavaScript DOM
 seo_description: Learn to reorder table rows with Array.from, sort, and replaceChildren while keeping a column header's aria-sort state accurate.
 seo_keywords:
   - sortable table JavaScript
@@ -14,8 +14,6 @@ seo_keywords:
   - DOM replaceChildren
   - accessible table button
 ---
-
-# Sort a workshop table with accessible buttons
 
 A workshop schedule needs an alphabetical session list. This finished mini-project reorders existing rows when you press the button in the Session header; the button works with keyboard activation too.
 

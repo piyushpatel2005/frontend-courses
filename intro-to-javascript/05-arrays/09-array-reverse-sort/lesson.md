@@ -14,7 +14,6 @@ seo_description: "A leaderboard needs numeric order, but the incoming scores sho
 seo_keywords: javascript, array reverse and sort, beginner javascript, programming practice
 ---
 
-# Array reverse and sort
 
 A leaderboard needs numeric order, but the incoming scores should stay untouched. Both `sort()` and `reverse()` mutate the array on which you call them. Copy first when you need to keep an earlier order.
 

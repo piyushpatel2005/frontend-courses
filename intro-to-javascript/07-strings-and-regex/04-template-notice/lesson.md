@@ -10,7 +10,6 @@ seo_description: Run a JavaScript template literal that formats a library hold r
 seo_keywords: [javascript template literals, string interpolation, reminder message]
 ---
 
-# Build a library reminder
 
 A library has a reader, a book title, and a pickup deadline. Put those inputs into one message without joining text fragments with `+`.
 

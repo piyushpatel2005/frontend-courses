@@ -14,7 +14,6 @@ seo_description: "Use Math.ceil and Date.getUTCFullYear for predictable JavaScri
 seo_keywords: javascript, math and date, beginner javascript, programming practice
 ---
 
-# Math and Date
 
 A crew rounds a supply quantity upward and reads the year of a fixed launch date. Both operations have built-in helpers.
 

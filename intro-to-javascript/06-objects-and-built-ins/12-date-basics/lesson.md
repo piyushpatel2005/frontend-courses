@@ -14,7 +14,6 @@ seo_description: "Extract a fixed timestamp's UTC year, month, and day and forma
 seo_keywords: javascript, date basics, beginner javascript, programming practice
 ---
 
-# Date basics
 
 Turn one fixed timestamp into the calendar label `2024-05-06`. The starter already creates `launchDate`; your job is to read its UTC parts and format them.
 

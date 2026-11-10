@@ -14,7 +14,6 @@ seo_description: "Give a car its starting data, then add a method that changes i
 seo_keywords: javascript, oop introduction, beginner javascript, programming practice
 ---
 
-# OOP Introduction
 
 Give a car its starting data, then add a method that changes its speed. The notebook demo used the same pattern with page counts.
 

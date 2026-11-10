@@ -3,14 +3,13 @@ title: "Class Blueprint"
 slug: class-blueprint
 order: 3
 language: javascript
-lesson_type: interactive
+lesson_type: coding
 summary: "A class describes how to create objects with the same methods but separate state. `new WorkshopPass(\"Mina\", 2)` creates an instance and calls its `constructor` with those two arguments. Inside the constructor, `this` is that new instance."
 seo_title: "Independent workshop passes | Introduction to JavaScript"
 seo_description: "A class describes how to create objects with the same methods but separate state. `new WorkshopPass(\"Mina\", 2)` creates an instance and calls its `constructor` with those two arguments. Inside the constructor, `this` is that new instance."
 seo_keywords: javascript, classes, constructor, instance methods
 ---
 
-# Independent workshop passes
 
 A class describes how to create objects with the same methods but separate state. `new WorkshopPass("Mina", 2)` creates an instance and calls its `constructor` with those two arguments. Inside the constructor, `this` is that new instance.
 
@@ -39,4 +38,10 @@ console.log(teo.describe());
 
 ## What to notice
 
-Trace a second call to `mina.useEntry()`: Mina would have zero entries while Teo would still have one. Next, build a **bank account** class.
+In `script.js`, finish a smaller version of this pass before building a bank account in the next lesson. Keep each pass's `entries` on its own instance.
+
+## Your Tasks
+
+1. In the constructor, store `holder` and `entries` on `this`. The initial descriptions should log `Mina: 2 entries` and `Teo: 1 entries`.
+2. In `useEntry()`, subtract one entry only when the current pass has any left. After two calls on Mina, log `Mina: 0 entries` and `Teo: 1 entries`; a third call must leave Mina at zero.
+3. Confirm both passes share the prototype method by logging `shared method: true`.

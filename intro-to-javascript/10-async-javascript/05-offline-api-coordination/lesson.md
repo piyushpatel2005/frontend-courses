@@ -11,7 +11,6 @@ seo_description: Run dependent and concurrent offline fixture calls with a Promi
 seo_keywords: javascript, offline, api, coordination, async programming
 ---
 
-# Coordinate offline lookups
 
 A rehearsal schedule needs an event ID before it can look up acts and seats. These are offline fixture functions: they return Promises containing local data, not HTTP responses. No request leaves the preview.
 

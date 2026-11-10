@@ -15,7 +15,6 @@ seo_description: "A recursive call asks the same function to solve a smaller inp
 seo_keywords: javascript, recursion, beginner javascript, programming practice
 ---
 
-# Recursion
 
 A recursive call asks the same function to solve a smaller input. The original call pauses until that smaller call returns. A stopping rule, or base case, must return without making another recursive call.
 

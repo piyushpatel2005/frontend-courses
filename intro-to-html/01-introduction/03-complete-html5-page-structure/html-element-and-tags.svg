@@ -1,23 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="figure-title figure-desc">
-  <title id="figure-title">An HTML element and its tags</title>
-  <desc id="figure-desc">One heading element contains an opening h1 tag, the words Meridian crew, and a closing h1 tag. The two bracketed pieces are tags; all three pieces together form the element.</desc>
-  <!-- Editable source: html-element-and-tags.excalidraw -->
-  <rect width="960" height="420" fill="#fffdf7"/>
-  <g fill="#242424" font-family="Arial, Helvetica, sans-serif">
-    <text x="48" y="59" font-size="28" font-weight="700">What makes an HTML element?</text>
-  </g>
-  <rect x="48" y="102" width="864" height="236" rx="18" fill="#e7f5ff" stroke="#1971c2" stroke-width="2.5"/>
-  <text x="75" y="143" fill="#1864ab" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1">ONE HTML ELEMENT</text>
-  <rect x="78" y="166" width="226" height="126" rx="15" fill="#a5d8ff" stroke="#1864ab" stroke-width="2"/>
-  <rect x="332" y="166" width="296" height="126" rx="15" fill="#fff3bf" stroke="#946200" stroke-width="2"/>
-  <rect x="656" y="166" width="226" height="126" rx="15" fill="#d0bfff" stroke="#6741a5" stroke-width="2"/>
-  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
-    <text x="191" y="208" fill="#1c3552" font-size="21" font-weight="700">Opening tag</text>
-    <text x="191" y="261" fill="#1c3552" font-family="monospace" font-size="30">&lt;h1&gt;</text>
-    <text x="480" y="208" fill="#4a3700" font-size="21" font-weight="700">Content</text>
-    <text x="480" y="258" fill="#4a3700" font-size="27">Meridian crew</text>
-    <text x="769" y="208" fill="#3b2862" font-size="21" font-weight="700">Closing tag</text>
-    <text x="769" y="261" fill="#3b2862" font-family="monospace" font-size="30">&lt;/h1&gt;</text>
-  </g>
-  <text x="63" y="375" fill="#343a40" font-family="Arial, Helvetica, sans-serif" font-size="18">Tags are the markers in angle brackets. The element includes both tags and the content between them.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 360" role="img" aria-labelledby="title desc">
+<title id="title">An HTML element and its tags</title>
+<desc id="desc">An h1 element is the opening tag, its text content, and the closing tag as one continuous source sequence. The brackets mark the tags.</desc>
+<rect width="620" height="360" fill="white"/>
+<text x="34" y="48" fill="#1a1a2e" font-family="DejaVu Sans, sans-serif" font-size="24" font-weight="700"><tspan x="34" dy="0">One heading element</tspan></text>
+<rect x="30" y="76" width="560" height="158" rx="10" fill="#f8fafc" stroke="#64748b" stroke-width="2"/>
+<text x="50" y="107" fill="#475569" font-family="DejaVu Sans, sans-serif" font-size="17" font-weight="700"><tspan x="50" dy="0">ONE &lt;h1&gt; ELEMENT</tspan></text>
+<rect x="48" y="131" width="524" height="67" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+<text x="66" y="176" fill="#2563eb" font-family="DejaVu Sans Mono, monospace" font-size="24" font-weight="700"><tspan x="66" dy="0">&lt;h1&gt;</tspan></text>
+<text x="157" y="176" fill="#1a1a2e" font-family="DejaVu Sans Mono, monospace" font-size="24" font-weight="700"><tspan x="157" dy="0">Meridian crew</tspan></text>
+<text x="400" y="176" fill="#7c3aed" font-family="DejaVu Sans Mono, monospace" font-size="24" font-weight="700"><tspan x="400" dy="0">&lt;/h1&gt;</tspan></text>
+<path d="M99 201 L99 248" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#open-leader-tip)"/>
+<defs><marker id="open-leader-tip" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 4.5 0 9Z" fill="#2563eb"/></marker></defs>
+<path d="M269 201 L269 248" stroke="#b45309" stroke-width="2.5" fill="none" marker-end="url(#content-leader-tip)"/>
+<defs><marker id="content-leader-tip" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 4.5 0 9Z" fill="#b45309"/></marker></defs>
+<path d="M460 201 L460 248" stroke="#7c3aed" stroke-width="2.5" fill="none" marker-end="url(#close-leader-tip)"/>
+<defs><marker id="close-leader-tip" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 4.5 0 9Z" fill="#7c3aed"/></marker></defs>
+<text x="46" y="283" fill="#2563eb" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700"><tspan x="46" dy="0">opening tag</tspan></text>
+<text x="228" y="283" fill="#b45309" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700"><tspan x="228" dy="0">content</tspan></text>
+<text x="402" y="283" fill="#7c3aed" font-family="DejaVu Sans, sans-serif" font-size="18" font-weight="700"><tspan x="402" dy="0">closing tag</tspan></text>
+<text x="34" y="337" fill="#475569" font-family="DejaVu Sans, sans-serif" font-size="16" font-weight="400"><tspan x="34" dy="0">Tags are the markers; the whole sequence is the element.</tspan></text>
 </svg>

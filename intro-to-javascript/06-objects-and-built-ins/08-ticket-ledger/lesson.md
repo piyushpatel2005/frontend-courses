@@ -13,7 +13,6 @@ hints:
   - "Convert a small BigInt count before multiplying it by a Number price."
 ---
 
-# Ticket ledger
 
 Keep a large ticket identifier exact while calculating the price of a small group of tickets. The ID is a BigInt; the decimal price is a Number. They serve different purposes and should not be multiplied together.
 

@@ -13,7 +13,6 @@ hints:
   - "A newline inside backticks remains a newline in the returned string."
 ---
 
-# Template literals
 
 Build a two-line guest sign from a name and a seat. Backticks create a **template literal**; `${expression}` inserts the value of an expression into its text. Ordinary single or double quotes do not perform that substitution.
 

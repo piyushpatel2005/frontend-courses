@@ -10,7 +10,6 @@ seo_description: Run a JSON ingestion example that groups workshop entries in a 
 seo_keywords: javascript json parse, map grouping, set deduplication
 ---
 
-# Workshop attendance feed
 
 A workshop records every visit, including repeat visits by the same attendee. Count visits by topic with a Map, and keep distinct email addresses in a Set. These answer different questions.
 

@@ -14,8 +14,6 @@ seo_keywords:
 - input.value DOM
 ---
 
-# Read a field while someone types
-
 The garden plot badge should follow its field as the visitor edits it. The event lessons showed how to wait for an action; now the action is a text edit rather than a click.
 
 The `input` event fires after a user edit, including typing, pasting, and deleting. Read the input's `.value` inside the callback so you get the current string. Setting `.value` from JavaScript does not itself fire an input event.

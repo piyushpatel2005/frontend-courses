@@ -10,7 +10,6 @@ seo_description: "Trace why grouping a one-time fee changes an invoice total."
 seo_keywords: javascript calculation debugging, console trace, parentheses
 ---
 
-# Trace a Faulty Calculation
 
 A rehearsal invoice charges for two sessions and one fixed setup fee. The wrong expression multiplies the fee too. Log the parts so you can see where the discrepancy starts.
 

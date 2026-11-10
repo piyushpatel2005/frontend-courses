@@ -14,7 +14,6 @@ seo_description: "You can pass a function to an array method. That passed functi
 seo_keywords: javascript, array iteration methods, beginner javascript, programming practice
 ---
 
-# Array iteration methods
 
 You can pass a function to an array method. That passed function is a **callback**; the method calls it for each item and supplies the item as its argument.
 

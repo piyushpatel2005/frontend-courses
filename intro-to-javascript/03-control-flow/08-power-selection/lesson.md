@@ -10,7 +10,6 @@ seo_description: "Compare a matching venue entrance with the default switch path
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Switch a Venue Sign
 
 Before choosing an effect for a stage prop, use `switch` to assign a message for a venue sign. Each case handles one exact value. `break` prevents the message from being overwritten by a later case.
 

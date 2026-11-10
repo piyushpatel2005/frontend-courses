@@ -12,7 +12,7 @@ seo_keywords:
 - JavaScript DOM
 - dataset and conditional content
 - browser preview
-- demo
+- data attributes
 ---
 
 The garden card stores its availability in `data-status`. Read that value to choose the message inside the card.

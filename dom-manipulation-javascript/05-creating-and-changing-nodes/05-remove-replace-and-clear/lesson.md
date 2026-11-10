@@ -10,12 +10,10 @@ seo_title: Remove, Replace, and Clear Safely | DOM Manipulation with JavaScript
 seo_description: Learn remove, replaceWith and replaceChildren for safe DOM cleanup without unsafe innerHTML string
   parsing.
 seo_keywords:
-- DOM remove demo
+- DOM remove
 - replaceWith JavaScript
 - replaceChildren safe clearing
 ---
-
-# Remove, replace, or empty
 
 The community notice board has three different problems: an expired announcement, an incorrect market day, and scratch notes that are no longer needed. Each calls for a different-sized change.
 

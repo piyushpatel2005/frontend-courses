@@ -14,7 +14,6 @@ hints:
   - "Return false for an invalid checkout or return without changing state."
 ---
 
-# Project: Library Checkout
 
 Build a library model using the equipment desk's pattern. `LibraryItem` owns the title and private loan status. `Book` adds an author and a description while inheriting the loan rules.
 

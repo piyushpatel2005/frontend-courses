@@ -14,7 +14,6 @@ seo_description: "A ticket-price list raises two different questions: which pric
 seo_keywords: javascript, array find and includes, beginner javascript, programming practice
 ---
 
-# Array find and includes
 
 A ticket-price list raises two different questions: which price first passes a threshold, and is a particular price present?
 

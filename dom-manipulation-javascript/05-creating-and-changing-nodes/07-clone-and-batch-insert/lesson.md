@@ -10,12 +10,10 @@ seo_title: Clone a Card and Insert a Batch | DOM Manipulation with JavaScript
 seo_description: Use cloneNode(true) and document.createDocumentFragment to prepare several DOM cards before one
   append.
 seo_keywords:
-- cloneNode true demo
+- cloneNode true
 - document fragment
 - batch DOM insertion
 ---
-
-# Copy cards and insert a batch
 
 The seed swap has a Thyme card with a nested name and note. Add Basil and Mint cards without moving the sample out of the list.
 

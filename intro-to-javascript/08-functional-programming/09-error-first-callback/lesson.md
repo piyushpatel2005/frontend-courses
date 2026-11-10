@@ -10,7 +10,6 @@ seo_description: "A delivery route lookup reports either a destination or a fail
 seo_keywords: [javascript callback, error first callback, result handling]
 ---
 
-# Look up a delivery route
 
 A delivery route lookup reports either a destination or a failure. The callback has two parameters, `(error, result)`, whose positions form a contract: success supplies `null` then a result; failure supplies an `Error` then `null`.
 

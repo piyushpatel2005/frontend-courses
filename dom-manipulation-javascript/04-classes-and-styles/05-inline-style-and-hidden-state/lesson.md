@@ -13,7 +13,7 @@ seo_keywords:
 - JavaScript DOM
 - element.style, CSS classes, and hidden
 - browser preview
-- demo
+- DOM visibility
 ---
 
 A garden-walk notice can gain a border, receive a reusable highlight, or disappear from the page. These are different kinds of change.

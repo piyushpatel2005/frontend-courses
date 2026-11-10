@@ -12,7 +12,6 @@ hints:
   - Keep the no-match return after the entire loop, so later guesses get a turn.
 ---
 
-# Challenge: Number Guess Referee
 
 The ticket-scan demo stopped at the first matching ID. Apply the same search to guesses in `findGuess(secret, guesses)`, returning a match message immediately. If the loop ends without a match, return `"No match"`. Keep all work in `script.js`; the supplied logs display the checkpoints.
 

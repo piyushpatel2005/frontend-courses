@@ -10,7 +10,6 @@ seo_description: Run a JavaScript object audit using bracket notation for dynami
 seo_keywords: javascript object entries, bracket notation, dynamic object keys
 ---
 
-# Supply bin audit
 
 The crew labels supply bins by code. A variable holds the code someone requests; bracket notation uses that variable's value as the lookup key.
 

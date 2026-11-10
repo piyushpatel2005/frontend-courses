@@ -14,8 +14,6 @@ seo_description: "Use typeof and Array.isArray to distinguish a primitive value 
 seo_keywords: javascript, type checking, beginner javascript, programming practice
 ---
 
-# Type Checking
-
 
 An incoming value might be a single label or an entire list. Check what it is before treating it as either.
 

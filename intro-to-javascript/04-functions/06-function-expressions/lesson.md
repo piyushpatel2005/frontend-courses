@@ -14,7 +14,6 @@ seo_description: "A welcome helper can be stored in a variable using the `functi
 seo_keywords: javascript, function expressions, beginner javascript, programming practice
 ---
 
-# Function expressions
 
 A welcome helper can be stored in a variable using the `function` keyword too. You saw an unnamed function returned from a closure; here you will assign one directly.
 

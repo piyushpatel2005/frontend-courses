@@ -14,8 +14,6 @@ seo_keywords:
   - accessible itinerary
 ---
 
-# Add a validated item through a form
-
 The itinerary needs new entries. Before editing it, try a smaller tool-checkout page that creates rows from a form.
 
 ## Follow the submission

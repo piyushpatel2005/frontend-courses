@@ -15,8 +15,6 @@ seo_description: "Group exact day-name cases in a switch with an unknown-name fa
 seo_keywords: javascript, switch statement, beginner javascript, programming practice
 ---
 
-# Switch Statement
-
 
 For a day name, select one of three outcomes: weekend, weekday, or unknown.
 

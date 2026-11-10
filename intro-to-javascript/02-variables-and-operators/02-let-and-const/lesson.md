@@ -15,8 +15,6 @@ seo_description: "Keep a greeting fixed while increasing a mutable score."
 seo_keywords: javascript, let and const in practice, beginner javascript, programming practice
 ---
 
-# let and const in Practice
-
 
 Keep a greeting fixed while changing a score. The Console will show both the intermediate values and the finished message.
 

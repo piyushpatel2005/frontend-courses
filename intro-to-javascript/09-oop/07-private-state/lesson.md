@@ -10,7 +10,6 @@ seo_description: "A seat counter needs to reject reservations after its seats ru
 seo_keywords: javascript, encapsulation, private fields, getter
 ---
 
-# A private seat counter
 
 A seat counter needs to reject reservations after its seats run out. Keeping `#available` private prevents outside code from bypassing that rule with a direct assignment.
 

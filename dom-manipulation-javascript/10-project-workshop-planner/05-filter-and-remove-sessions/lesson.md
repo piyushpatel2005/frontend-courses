@@ -14,8 +14,6 @@ seo_keywords:
   - accessible itinerary
 ---
 
-# Filter and remove live entries
-
 A library hold board shows a manageable way to filter and remove changing items. Use it as a model for finishing the workshop itinerary.
 
 ## Follow one update path

@@ -11,8 +11,6 @@ seo_description: Cancel a previous asynchronous lookup so slow results cannot re
 seo_keywords: AbortController, stale fetch, race condition
 ---
 
-# Abort outdated requests
-
 Click Slow: North, then quickly click Fast: South. South should remain on the board even after the older lookup would have finished. Both results come from local timers; the demo never contacts a town service.
 
 Without a guard, the last response to finish could replace the latest choice. An `AbortController` owns a `signal`. Give that signal to fetch in the options object, then call the controller's `abort()` when its work is no longer wanted.

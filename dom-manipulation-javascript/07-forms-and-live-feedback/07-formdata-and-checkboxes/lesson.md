@@ -6,7 +6,7 @@ language: javascript
 runtime: srcdoc
 lesson_type: coding
 summary: Read named form controls and checked checkbox values with FormData, then show a safe text summary.
-seo_title: FormData and Checkboxes | JavaScript DOM Form Demo
+seo_title: Read checkboxes with FormData | JavaScript DOM
 seo_description: Learn how FormData.get and getAll read a form, why unchecked checkboxes are omitted, and how textContent safely shows user input.
 seo_keywords:
   - JavaScript FormData
@@ -14,8 +14,6 @@ seo_keywords:
   - safe form output
   - DOM submit event
 ---
-
-# Read named controls with FormData
 
 The seed-swap preview collects a made-up name and any checked seed interests. A fresh `new FormData(form)` reads the controls at that moment; it does not submit the form or keep updating by itself.
 

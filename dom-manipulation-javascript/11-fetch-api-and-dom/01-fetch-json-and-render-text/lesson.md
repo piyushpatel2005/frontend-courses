@@ -11,8 +11,6 @@ seo_description: Read an asynchronous JSON response and render untrusted text wi
 seo_keywords: fetch JSON JavaScript, response.json, textContent
 ---
 
-# Fetch JSON and render safe text
-
 Click Load notice to put a service-style title on the noticeboard. The title contains `<img>` characters on purpose: the page should print them, not create an image. This preview uses `mockFetch`, an explicitly named offline fixture. No request leaves the page.
 
 ## The async code you need here

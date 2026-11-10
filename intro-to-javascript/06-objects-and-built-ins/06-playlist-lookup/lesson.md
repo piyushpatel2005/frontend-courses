@@ -13,7 +13,6 @@ hints:
   - "A Set automatically ignores a repeated value."
 ---
 
-# Playlist lookup
 
 Store each song's duration under its title, then count the distinct artists on the playlist. A repeated artist should not increase that count.
 

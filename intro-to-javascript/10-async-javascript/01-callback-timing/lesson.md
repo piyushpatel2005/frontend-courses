@@ -11,7 +11,6 @@ seo_description: Run a timer callback to see synchronous cues finish before dela
 seo_keywords: javascript, callback, timing, async programming
 ---
 
-# Callback timing
 
 You already know how to pass a function as a callback. Here the browser calls that function later. The stage crew can announce the lights and music now, then run the curtain cue when a timer is ready.
 

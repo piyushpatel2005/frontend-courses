@@ -14,7 +14,6 @@ seo_description: "The previous lesson returned a function. Here, pass a function
 seo_keywords: javascript, callbacks, beginner javascript, programming practice
 ---
 
-# Callbacks
 
 The previous lesson returned a function. Here, pass a function into `repeatAction` so that it can decide how often to run it.
 

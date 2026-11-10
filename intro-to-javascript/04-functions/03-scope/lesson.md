@@ -14,7 +14,6 @@ seo_description: "A backstage label needs a shared site name and a section name 
 seo_keywords: javascript, scope, beginner javascript, programming practice
 ---
 
-# Scope
 
 A backstage label needs a shared site name and a section name used only while building the label. **Scope** is the part of your program where a variable name is available.
 

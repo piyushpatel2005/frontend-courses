@@ -10,7 +10,6 @@ seo_description: "Compare two rainfall thresholds while keeping the readings unc
 seo_keywords: [javascript, "rainfall routing", interactive example]
 ---
 
-# Rainfall Routing Walkthrough
 
 A weather desk receives daily rainfall readings. Trace a **loop plus a branch**: every reading is visited once, but only days at or above the warning threshold add to the alert count.
 

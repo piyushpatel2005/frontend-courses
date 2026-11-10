@@ -11,7 +11,6 @@ seo_description: Run an offline Promise and await a rehearsal cue before reporti
 seo_keywords: javascript, promise, rehearsal, async programming
 ---
 
-# Promise rehearsal
 
 A rehearsal cue is not ready when the script starts. A Promise lets the caller describe what to do with the cue when it arrives.
 

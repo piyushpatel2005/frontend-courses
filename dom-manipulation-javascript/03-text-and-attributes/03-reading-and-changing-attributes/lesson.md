@@ -13,7 +13,7 @@ seo_keywords:
 - JavaScript DOM
 - getAttribute, setAttribute, and removeAttribute
 - browser preview
-- demo
+- link attributes
 ---
 
 The trail-map link starts with `href="#"`. Change its destination, read back the result, and remove a marker that is no longer needed.

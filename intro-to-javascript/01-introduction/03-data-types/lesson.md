@@ -14,8 +14,6 @@ seo_description: "Distinguish text, numbers, and booleans with visible type chec
 seo_keywords: javascript, data types, beginner javascript, programming practice
 ---
 
-# Data Types
-
 
 A check-in record has text, a number, and a true/false flag. Compare the types before formatting a summary.
 

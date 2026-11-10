@@ -14,8 +14,6 @@ seo_description: "Calculate an order cost with multiplication before addition."
 seo_keywords: javascript, operators, beginner javascript, programming practice
 ---
 
-# Operators
-
 
 Calculate an order total from an item price, a quantity, and shipping. The Console lets you verify the arithmetic.
 

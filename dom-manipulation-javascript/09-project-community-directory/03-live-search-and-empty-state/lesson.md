@@ -16,9 +16,6 @@ seo_keywords:
 - browser DOM project
 ---
 
-
-# Trace live search and an empty state
-
 A bicycle-route index filters as someone types, without destroying any routes. It is a complete, runnable worked example before the next community-directory task.
 
 ## Follow the input

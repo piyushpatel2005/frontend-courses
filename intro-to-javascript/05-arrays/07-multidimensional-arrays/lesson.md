@@ -15,7 +15,6 @@ seo_description: "A seating chart has rows and columns. An array can contain oth
 seo_keywords: javascript, multidimensional arrays, beginner javascript, programming practice
 ---
 
-# Multidimensional arrays
 
 A seating chart has rows and columns. An array can contain other arrays; `matrix[row][column]` reads the outer row first, then a value inside that row.
 

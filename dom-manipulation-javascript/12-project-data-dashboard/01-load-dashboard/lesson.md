@@ -14,8 +14,6 @@ seo_keywords:
   - response.ok
 ---
 
-# Load a dashboard from an offline API fixture
-
 Run the trail dashboard. It starts with Loading entries, then shows three trails. The `<em>` characters in the last title should stay visible as text. This completed demo uses trail data; the exercises will build a separate community events dashboard and keep its event data across stages.
 
 Follow `loadEntries()` in `script.js`: it waits for `dashboardFetch`, checks `response.ok`, reads JSON, then passes `data.items` to `render`. The response body is an object containing an array, not a bare array. `render` clears earlier rows before inserting the new ones.

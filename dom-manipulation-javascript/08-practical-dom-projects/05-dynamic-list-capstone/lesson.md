@@ -14,8 +14,6 @@ seo_keywords:
 - safe DOM text
 ---
 
-# Create and remove items with one delegated listener
-
 A repair café tracks tools to bring. Visitors can add tools and remove either an original or newly added entry.
 
 ## Read the running example

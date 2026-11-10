@@ -14,7 +14,6 @@ seo_description: "Practice JSON.stringify, JSON.parse, and the limits of copying
 seo_keywords: javascript, json, beginner javascript, programming practice
 ---
 
-# JSON
 
 An object in a running program is not the same as a text message containing its data. JSON (JavaScript Object Notation) is a text format that lets programs exchange structured values.
 

@@ -15,7 +15,6 @@ seo_description: "Read JavaScript regex syntax before using test and match to ch
 seo_keywords: javascript, regular expressions, beginner javascript, programming practice
 ---
 
-# Regular expressions
 
 A regular expression, or regex, describes a text pattern. Use one when a substring search is too loose, such as checking the shape of an email-like address or finding digit sequences inside a sentence.
 

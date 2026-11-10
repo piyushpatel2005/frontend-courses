@@ -12,7 +12,6 @@ hints:
   - Complete one numbered change and inspect its supplied checkpoint before moving on.
 ---
 
-# Truthiness and combined conditions
 
 One comparison may not be enough. A guest can enter only when a ticket is valid **and** the door is open. `&&` means both must pass; `||` means either can pass. `!value` negates its truthiness.
 

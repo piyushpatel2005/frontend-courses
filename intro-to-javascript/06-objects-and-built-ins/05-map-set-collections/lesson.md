@@ -10,7 +10,6 @@ seo_description: Run a focused JavaScript walkthrough of Map key-value entries a
 seo_keywords: javascript map, javascript set, keyed collections, unique values
 ---
 
-# Map and Set collections
 
 A profile object names fixed facts about one person. A `Map` is useful for a growing lookup table, such as a badge color for each role. A `Set` keeps distinct values, such as the cities on a tour. Map keys can also be numbers or objects; these examples use string keys.
 

@@ -12,7 +12,6 @@ hints:
   - Complete one branch in the supplied function, then check its labeled probe.
 ---
 
-# Challenge: FizzBuzz Announcer
 
 The preceding carton demo checked the combined case before the individual cases. Apply that branch order to one number at a time in `fizzBuzz(number)`. `%` returns the remainder, so `number % 15 === 0` detects a multiple of both 3 and 5. Use `return` to send a value back from the function. The supplied logs display the calls in `script.js`.
 

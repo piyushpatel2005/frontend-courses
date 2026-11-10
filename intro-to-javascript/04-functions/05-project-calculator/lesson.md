@@ -15,7 +15,6 @@ seo_description: "The awards desk needs a calculator that delegates work to smal
 seo_keywords: javascript, project - calculator, beginner javascript, programming practice
 ---
 
-# Project: calculator
 
 The awards desk needs a calculator that delegates work to small helpers. Each helper returns a number; `calculate` chooses which helper to call.
 

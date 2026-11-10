@@ -15,8 +15,6 @@ seo_description: "Sum and reverse lists with loops, including the empty-list cas
 seo_keywords: javascript, for loops, beginner javascript, programming practice
 ---
 
-# For Loops
-
 
 A loop can visit each value in a list, adding to a total or collecting a new order.
 

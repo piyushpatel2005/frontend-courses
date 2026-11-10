@@ -15,7 +15,6 @@ seo_description: "Build a stack: the last item pushed is the first item popped. 
 seo_keywords: javascript, encapsulation, beginner javascript, programming practice
 ---
 
-# Encapsulation
 
 Build a stack: the last item pushed is the first item popped. Pushing 10 then 20 makes 20 the top. `peek()` reads that top without removing it; `pop()` removes it.
 

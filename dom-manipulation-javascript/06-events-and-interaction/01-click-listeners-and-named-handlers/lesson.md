@@ -15,8 +15,6 @@ seo_keywords:
 - button interaction
 ---
 
-# Wait for a button activation
-
 The trail status begins as Not checked. Unlike the node examples, this page should wait before changing anything: the visitor decides when to check.
 
 `button.addEventListener("click", showStatus)` registers a function for a later event. Pass `showStatus`, without parentheses. Writing `showStatus()` would call it immediately and pass its return value instead.

@@ -11,8 +11,6 @@ seo_description: Distinguish HTTP failures, network rejections, and empty data i
 seo_keywords: response.ok, fetch error handling, empty state
 ---
 
-# Handle loading, empty, and failed responses
-
 A library lookup needs more than a list. People should be able to tell whether it is still working, found nothing, or failed. Run this example and try each scenario in the selector. They are fixed offline cases, not the status of a real library.
 
 ## A delivered error is still a response

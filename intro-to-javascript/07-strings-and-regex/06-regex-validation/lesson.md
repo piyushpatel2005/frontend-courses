@@ -10,7 +10,6 @@ seo_description: Learn how JavaScript regex anchors, groups, and character range
 seo_keywords: [javascript regex validation, regular expression anchors, time format]
 ---
 
-# Validate a time slot
 
 A booking tool accepts five-character times from `00:00` through `23:59`. A pattern that allowed any two digits on each side of a colon would also accept `29:75`, so the pattern needs narrower ranges.
 

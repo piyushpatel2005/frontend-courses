@@ -15,7 +15,6 @@ seo_description: "The reporting desk needs names, an average salary, and a reada
 seo_keywords: javascript, map, filter, and reduce, beginner javascript, programming practice
 ---
 
-# map, filter, and reduce
 
 The reporting desk needs names, an average salary, and a readable employee report. Each array method calls your callback once for each item it visits.
 

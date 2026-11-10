@@ -1,0 +1,12 @@
+files:
+  - path: src/packages/shift-labels/index.js
+  - path: src/main.js
+  - path: src/data/shifts.js
+  - path: src/format/shift.js
+  - path: index.html
+    readonly: true
+  - path: package.json
+    readonly: true
+  - path: src/main.test.js
+    readonly: true
+    hidden: true

@@ -11,8 +11,6 @@ seo_description: Encode a search query in a request URL without building query s
 seo_keywords: URLSearchParams, encode query, fetch URL
 ---
 
-# Build a query with URLSearchParams
-
 Search this seed library for `mint & lime`. The list should show one match, and the request line should contain `%26`. That is the encoded ampersand.
 
 In a query string, `&` separates parameters. Appending raw input as `?q=mint & lime` would give that character the wrong job. `URLSearchParams` treats the input as one value and encodes it when the object becomes a string:

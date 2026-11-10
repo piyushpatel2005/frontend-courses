@@ -12,7 +12,6 @@ hints:
   - Start the maximum at the first array value, not at zero.
 ---
 
-# Challenge: student course scoreboard
 
 Turn a course's scores into an average and a highest score. Your helpers should use the array passed to them, not always read the outer `scores` array.
 

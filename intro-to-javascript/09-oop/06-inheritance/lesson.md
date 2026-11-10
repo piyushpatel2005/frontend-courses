@@ -15,7 +15,6 @@ seo_description: "Give circles and rectangles a shared color property while lett
 seo_keywords: javascript, inheritance, beginner javascript, programming practice
 ---
 
-# Inheritance
 
 Give circles and rectangles a shared color property while letting each calculate its own area. The notice demo showed how a child constructor initializes the inherited part with `super`.
 

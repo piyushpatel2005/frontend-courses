@@ -15,8 +15,6 @@ seo_keywords:
 - event bubbling stopPropagation
 ---
 
-# Control a listener's lifetime
-
 The museum sound desk has a one-time announcement, a chime that can be disabled, and Normal and Quiet buttons inside a panel. They illustrate different reasons to limit a response.
 
 Pass `{ once: true }` as the third argument to `addEventListener` to remove that listener after its first invocation. For later cleanup, `removeEventListener("click", ring)` must receive the same function object used at registration. A new function with identical source is still a different object. The capture setting must match too; these examples use the default, `false`.

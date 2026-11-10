@@ -12,7 +12,6 @@ hints:
   - Add one case at a time inside the supplied switch; leave the probes in place.
 ---
 
-# Challenge: Power Loadout
 
 The Starline Awards rehearsal uses labeled stage props to trigger *fictional* effects: a foam `"sword"`, a toy `"gun"`, and a `"shield"`. The preceding entrance-sign demo assigned a message in each switch case. Here `choosePower(item)` should **return** a message for each prop; as you saw in the switch lesson, `return` exits the function without a `break`. Work in `script.js`, not on page elements.
 

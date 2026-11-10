@@ -15,8 +15,6 @@ seo_description: "Trace a countdown and count Collatz changes with while loops."
 seo_keywords: javascript, while loop, beginner javascript, programming practice
 ---
 
-# While Loop
-
 
 Use a condition to decide whether another iteration is needed, and update the value each time.
 

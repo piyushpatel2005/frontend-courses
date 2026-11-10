@@ -14,8 +14,6 @@ seo_description: "Name a fixed food label and update a favorite number in order.
 seo_keywords: javascript, declaring variables, beginner javascript, programming practice
 ---
 
-# Declaring Variables
-
 
 Start by naming a fixed value and a value you can update. This task uses a food label and a favorite number rather than a scoreboard.
 

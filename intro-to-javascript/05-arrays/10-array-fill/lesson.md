@@ -14,7 +14,6 @@ seo_description: "A seating row needs several adjacent seats marked unavailable.
 seo_keywords: javascript, array fill, beginner javascript, programming practice
 ---
 
-# Array fill
 
 A seating row needs several adjacent seats marked unavailable. `fill(value, start, end)` replaces existing entries from the start index up to, but not including, the end index.
 

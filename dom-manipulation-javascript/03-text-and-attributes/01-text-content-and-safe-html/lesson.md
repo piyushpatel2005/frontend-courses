@@ -12,7 +12,7 @@ seo_keywords:
 - JavaScript DOM
 - textContent and innerHTML
 - browser preview
-- demo
+- safe text rendering
 ---
 
 A visitor submits a note containing angle brackets. Show the note as written, without turning any of it into HTML.

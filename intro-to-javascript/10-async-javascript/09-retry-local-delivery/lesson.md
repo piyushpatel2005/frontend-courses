@@ -16,7 +16,6 @@ seo_keywords:
 - async programming
 ---
 
-# Retry a local delivery
 
 A rehearsal courier fails on its first handoff and accepts the second. `makeCueCourier()` returns a fresh offline function with its own attempt counter; it sends no request.
 

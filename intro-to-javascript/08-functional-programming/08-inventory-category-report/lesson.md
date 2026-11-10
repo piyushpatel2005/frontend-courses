@@ -12,7 +12,6 @@ hints:
   - Object.entries(byCategory(items)) supplies each category and its record array.
 ---
 
-# Extend the inventory report
 
 Your inventory project already selects stock, orders expensive products, totals value, and groups records by category. This starter retains that completed state. Add a category summary rather than rebuilding the earlier helpers.
 

@@ -10,7 +10,6 @@ seo_description: Run a focused JavaScript walkthrough of Number conversion, inva
 seo_keywords: javascript number, javascript bigint, numeric conversion, integer precision
 ---
 
-# Number and BigInt boundaries
 
 Numeric text and a number are different values. `Number("42.5")` converts text so you can calculate with it. If conversion fails, the result is `NaN`, short for "not a number"; use `Number.isNaN(value)` to check for that result.
 

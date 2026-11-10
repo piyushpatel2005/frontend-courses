@@ -15,7 +15,6 @@ seo_description: "Turn the supplied inventory into a short report. This is a fla
 seo_keywords: javascript, project - data transform pipeline, beginner javascript, programming practice
 ---
 
-# Project — Data Transform Pipeline
 
 Turn the supplied inventory into a short report. This is a flat list, so array methods are a better fit than the recursion you just practiced.
 

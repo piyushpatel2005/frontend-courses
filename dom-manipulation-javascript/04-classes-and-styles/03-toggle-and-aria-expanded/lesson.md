@@ -12,7 +12,7 @@ seo_keywords:
 - JavaScript DOM
 - classList.toggle and aria-expanded
 - browser preview
-- demo
+- accessible disclosure
 ---
 
 A Route details button opens and closes a panel. The panel's appearance, visibility, and accessible state must describe the same result.

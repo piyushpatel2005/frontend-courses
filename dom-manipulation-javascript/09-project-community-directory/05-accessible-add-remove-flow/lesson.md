@@ -16,9 +16,6 @@ seo_keywords:
 - browser DOM project
 ---
 
-
-# Trace safe additions and delegated removal
-
 The seed-swap table is a separate completed example. Its form adds varieties, and its one stable list listener removes both the original row and rows created later.
 
 ## Follow both events

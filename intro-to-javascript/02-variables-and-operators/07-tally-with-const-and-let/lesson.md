@@ -3,14 +3,13 @@ title: "Tally With Const And Let"
 slug: tally-with-const-and-let
 order: 7
 language: javascript
-lesson_type: interactive
+lesson_type: coding
 summary: "Trace a running tally as two additions and one correction change its value."
-seo_title: Track a Changing Points Tally | JavaScript Console Practice
+seo_title: Track a Changing Points Tally | JavaScript
 seo_description: "Trace a running tally as two additions and one correction change its value."
 seo_keywords: javascript const let, running tally, compound assignment
 ---
 
-# Track a Changing Points Tally
 
 The volunteer desk awards a fixed number of points per completed shift. That rule does not change, but each volunteer's tally does. `const` names the fixed award; `let` names the changing tally.
 
@@ -37,4 +36,9 @@ tally -= 2;
 console.log("adjusted:", tally);
 ```
 
-The next exercise changes a ticket price instead of a volunteer tally. Identify what stays fixed and what must change.
+Now edit `script.js` to apply the same pattern to a different volunteer, starting at 8 points. Run after each step and compare the Console lines. The next lesson uses the pattern to adjust a ticket price.
+
+## Your Tasks
+
+1. Keep `pointsPerShift` fixed at 6 and add it to `tally` twice; log `after shifts: 20`.
+2. Subtract 3 points for a correction; log `corrected: 17`.

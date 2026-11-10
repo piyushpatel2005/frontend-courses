@@ -14,7 +14,6 @@ seo_description: "A multiplier has two inputs that arrive at different times: fi
 seo_keywords: javascript, higher-order functions, beginner javascript, programming practice
 ---
 
-# Higher-Order Functions
 
 A multiplier has two inputs that arrive at different times: first the factor, then the value to multiply. You will return a function that remembers the factor.
 

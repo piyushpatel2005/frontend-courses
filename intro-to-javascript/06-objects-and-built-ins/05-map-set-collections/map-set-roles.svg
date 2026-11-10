@@ -1,2 +1,51 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 530" width="520" height="530" role="img" aria-labelledby="figure-title figure-desc"><title id="figure-title">Lookup Keys or Keep Unique Values</title><desc id="figure-desc">Map associates host with gold and producer with silver. Set keeps Seoul and Lisbon once despite duplicate input.</desc><!-- svg-source:excalidraw --><metadata></metadata><defs><style class="style-fonts">
-      </style></defs><rect x="0" y="0" width="520" height="530" fill="#fffdf7"></rect><g transform="translate(64.75390625 40) rotate(0 195.24609375 13.799999999999997)"><text x="195.24609375" y="20.280468749999997" font-family="Helvetica, Segoe UI Emoji" font-size="24px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Lookup Keys or Keep Unique Values</text></g><g stroke-linecap="round" transform="translate(20 20) rotate(0 240 245)"><path d="M32 0 C168.84 0, 305.67 0, 448 0 M32 0 C162.28 0, 292.57 0, 448 0 M448 0 C469.33 0, 480 10.67, 480 32 M448 0 C469.33 0, 480 10.67, 480 32 M480 32 C480 131.01, 480 230.02, 480 458 M480 32 C480 177.94, 480 323.88, 480 458 M480 458 C480 479.33, 469.33 490, 448 490 M480 458 C480 479.33, 469.33 490, 448 490 M448 490 C294.61 490, 141.23 490, 32 490 M448 490 C356.49 490, 264.99 490, 32 490 M32 490 C10.67 490, 0 479.33, 0 458 M32 490 C10.67 490, 0 479.33, 0 458 M0 458 C0 299.52, 0 141.05, 0 32 M0 458 C0 315.42, 0 172.84, 0 32 M0 32 C0 10.67, 10.67 0, 32 0 M0 32 C0 10.67, 10.67 0, 32 0" stroke="transparent" stroke-width="2" fill="none"></path></g><g stroke-linecap="round" transform="translate(20 105) rotate(0 240 60)"><path d="M30 0 C170.09 0, 310.19 0, 450 0 C470 0, 480 10, 480 30 C480 51.79, 480 73.58, 480 90 C480 110, 470 120, 450 120 C285.27 120, 120.54 120, 30 120 C10 120, 0 110, 0 90 C0 68.71, 0 47.41, 0 30 C0 10, 10 0, 30 0" stroke="none" stroke-width="0" fill="#a5d8ff"></path><path d="M30 0 C135.25 0, 240.5 0, 450 0 M30 0 C145.43 0, 260.86 0, 450 0 M450 0 C470 0, 480 10, 480 30 M450 0 C470 0, 480 10, 480 30 M480 30 C480 45.48, 480 60.95, 480 90 M480 30 C480 51.78, 480 73.55, 480 90 M480 90 C480 110, 470 120, 450 120 M480 90 C480 110, 470 120, 450 120 M450 120 C332.52 120, 215.05 120, 30 120 M450 120 C365.76 120, 281.52 120, 30 120 M30 120 C10 120, 0 110, 0 90 M30 120 C10 120, 0 110, 0 90 M0 90 C0 71.46, 0 52.92, 0 30 M0 90 C0 74.39, 0 58.78, 0 30 M0 30 C0 10, 10 0, 30 0 M0 30 C0 10, 10 0, 30 0" stroke="#242424" stroke-width="1" fill="none"></path></g><g transform="translate(167.36328125 140) rotate(0 92.63671875 11.5)"><text x="92.63671875" y="16.900390625" font-family="Helvetica, Segoe UI Emoji" font-size="20px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Map: Keys → Values</text></g><g transform="translate(128.9462890625 165) rotate(0 131.0537109375 10.349999999999994)"><text x="131.0537109375" y="15.2103515625" font-family="Helvetica, Segoe UI Emoji" font-size="18px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">host → gold     producer → silver</text></g><g stroke-linecap="round" transform="translate(20 280) rotate(0 240 60)"><path d="M30 0 C190.59 0, 351.18 0, 450 0 C470 0, 480 10, 480 30 C480 53.58, 480 77.16, 480 90 C480 110, 470 120, 450 120 C288.08 120, 126.16 120, 30 120 C10 120, 0 110, 0 90 C0 75.12, 0 60.23, 0 30 C0 10, 10 0, 30 0" stroke="none" stroke-width="0" fill="#c3fae8"></path><path d="M30 0 C184.69 0, 339.37 0, 450 0 M30 0 C162.63 0, 295.26 0, 450 0 M450 0 C470 0, 480 10, 480 30 M450 0 C470 0, 480 10, 480 30 M480 30 C480 51.85, 480 73.7, 480 90 M480 30 C480 46.79, 480 63.58, 480 90 M480 90 C480 110, 470 120, 450 120 M480 90 C480 110, 470 120, 450 120 M450 120 C313.45 120, 176.91 120, 30 120 M450 120 C317.04 120, 184.08 120, 30 120 M30 120 C10 120, 0 110, 0 90 M30 120 C10 120, 0 110, 0 90 M0 90 C0 76.99, 0 63.98, 0 30 M0 90 C0 73.36, 0 56.71, 0 30 M0 30 C0 10, 10 0, 30 0 M0 30 C0 10, 10 0, 30 0" stroke="#242424" stroke-width="1" fill="none"></path></g><g transform="translate(174.033203125 315) rotate(0 85.966796875 11.5)"><text x="85.966796875" y="16.900390625" font-family="Helvetica, Segoe UI Emoji" font-size="20px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Set: Distinct Values</text></g><g transform="translate(108.8984375 340) rotate(0 151.1015625 10.349999999999994)"><text x="151.1015625" y="15.2103515625" font-family="Helvetica, Segoe UI Emoji" font-size="18px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">Seoul, Lisbon, Seoul → Seoul, Lisbon</text></g><g transform="translate(136.6806640625 445) rotate(0 123.3193359375 20.69999999999999)"><text x="123.3193359375" y="15.2103515625" font-family="Helvetica, Segoe UI Emoji" font-size="18px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">get("producer") returns "silver".</text><text x="123.3193359375" y="35.9103515625" font-family="Helvetica, Segoe UI Emoji" font-size="18px" fill="#242424" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">The city Set has size 2.</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-16 -16 852 447" role="img" aria-labelledby="figure-title figure-desc">
+<title id="figure-title">Lookup Keys or Keep Unique Values</title>
+<desc id="figure-desc">Map associates host with gold and producer with silver. Set keeps Seoul and Lisbon once despite duplicate input.</desc>
+<defs><marker id="arrow-tip" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0L9 4.5 0 9Z" fill="#64748b"/></marker></defs>
+<rect x="-16" y="-16" width="852" height="447" fill="#ffffff"/>
+<path d="M600 211 L600 244" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow-tip)"/>
+<rect x="42" y="94" width="355" height="250" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+<rect x="423" y="94" width="355" height="250" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+<text x="187.25" y="43.75" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">
+<tspan x="187.25">Lookup Keys or Keep Unique Values</tspan>
+</text>
+<text x="127.28" y="128.27" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">
+<tspan x="127.28">Map: key → value</tspan>
+</text>
+<text x="90" y="194.53" fill="#1a1a2e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" font-weight="600">
+<tspan x="90">host</tspan>
+</text>
+<text x="220.87" y="194.53" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600">
+<tspan x="220.87">→</tspan>
+</text>
+<text x="270" y="194.53" fill="#1a1a2e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" font-weight="600">
+<tspan x="270">gold</tspan>
+</text>
+<text x="90" y="261.53" fill="#1a1a2e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" font-weight="600">
+<tspan x="90">producer</tspan>
+</text>
+<text x="220.87" y="261.53" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600">
+<tspan x="220.87">→</tspan>
+</text>
+<text x="270" y="261.53" fill="#1a1a2e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="19" font-weight="600">
+<tspan x="270">silver</tspan>
+</text>
+<text x="95.28" y="324.92" fill="#1a1a2e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="16" font-weight="500">
+<tspan x="95.28">get(&quot;producer&quot;) → &quot;silver&quot;</tspan>
+</text>
+<text x="497.94" y="128.27" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">
+<tspan x="497.94">Set: unique values</tspan>
+</text>
+<text x="487.14" y="198.53" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="600">
+<tspan x="487.14">Seoul   Lisbon   Seoul</tspan>
+</text>
+<text x="514.95" y="281.27" fill="#1a1a2e" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="600">
+<tspan x="514.95">Seoul    Lisbon</tspan>
+</text>
+<text x="564.89" y="325.79" fill="#1a1a2e" text-anchor="start" font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17" font-weight="500">
+<tspan x="564.89">size: 2</tspan>
+</text>
+<text x="168.08" y="385.92" fill="#475569" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="500">
+<tspan x="168.08">Map associates keys with values; Set removes duplicates.</tspan>
+</text>
+</svg>

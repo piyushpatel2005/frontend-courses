@@ -12,7 +12,6 @@ hints:
   - Complete one numbered change and inspect its supplied checkpoint before moving on.
 ---
 
-# Throwing and catching errors
 
 The JSON lesson supplied valid text. A real input may not parse. A thrown error interrupts the current operation and travels back through callers until a matching `catch` handles it. Without a handler, the run stops.
 

@@ -12,7 +12,6 @@ hints:
   - Complete one numbered change and inspect its supplied checkpoint before moving on.
 ---
 
-# Function inputs and results
 
 The next lesson puts decisions inside reusable functions. Write a small calculation first so its punctuation does not compete with the branch rules.
 

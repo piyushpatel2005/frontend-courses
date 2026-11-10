@@ -12,7 +12,6 @@ hints:
   - Start with the smallest function signature, then test one case at a time.
 ---
 
-# Challenge: Student Register
 
 Build a register from student records. Keep the `name`, `course`, and `active` keys shown in the preceding demo: the transformation reads those exact keys.
 

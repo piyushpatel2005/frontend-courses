@@ -14,7 +14,6 @@ seo_description: "The Starline Awards setlist needs an ordered place to store it
 seo_keywords: javascript, arrays, beginner javascript, programming practice
 ---
 
-# Arrays
 
 The Starline Awards setlist needs an ordered place to store its stops. An **array** groups values inside square brackets, separated by commas.
 

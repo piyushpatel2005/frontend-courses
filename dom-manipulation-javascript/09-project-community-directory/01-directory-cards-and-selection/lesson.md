@@ -15,9 +15,6 @@ seo_keywords:
 - browser DOM project
 ---
 
-
-# Read selectable cards and detail updates
-
 A tool-lending shelf lets visitors inspect one tool at a time. This finished example is separate from the community directory you will build next: its tools, field names, and copy are intentionally different.
 
 ## Follow the click

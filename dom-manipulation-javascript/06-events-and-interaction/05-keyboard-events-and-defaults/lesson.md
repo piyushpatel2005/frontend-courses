@@ -10,12 +10,10 @@ seo_title: Keyboard Events Without Trapping Keys | DOM Manipulation with JavaScr
 seo_description: Learn keydown and preventDefault with an accessible search field while preserving ordinary typing
   and Tab.
 seo_keywords:
-- keydown demo
+- keydown
 - preventDefault form
 - accessible keyboard behavior
 ---
-
-# Handle a field's Enter key
 
 The trail finder searches locally. It must not navigate away when someone presses Enter or activates Search. This example demonstrates a field-specific shortcut; an ordinary form usually needs only its submit handler.
 

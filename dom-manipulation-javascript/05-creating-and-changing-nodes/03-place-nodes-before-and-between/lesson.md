@@ -9,12 +9,10 @@ summary: Use prepend and insertBefore to position new nodes at the beginning and
 seo_title: Place Nodes Before and Between | DOM Manipulation with JavaScript
 seo_description: Compare prepend with insertBefore to place DOM elements at specific positions in a JavaScript list.
 seo_keywords:
-- DOM prepend demo
+- DOM prepend
 - insertBefore example
 - node placement
 ---
-
-# Choose a node's position
 
 The trail board needs an urgent notice first and a reminder before Sunday's walk. You already know how to create a labeled element; now choose where it belongs.
 

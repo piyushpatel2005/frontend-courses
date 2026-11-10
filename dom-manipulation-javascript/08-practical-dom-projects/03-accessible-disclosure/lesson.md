@@ -14,8 +14,6 @@ seo_keywords:
 - hidden panel
 ---
 
-# Toggle an accessible disclosure
-
 A transit help page keeps long directions tucked away until the visitor asks for them.
 
 ## Read the running example

@@ -10,7 +10,6 @@ seo_description: "Compare the value and type of text and numeric check-in fields
 seo_keywords: javascript console inspection, typeof values, debugging input
 ---
 
-# Inspect Values in the Console
 
 The check-in desk has two fields that look like counts. Before adding anything, inspect what JavaScript actually received. `console.log()` can print a label beside a value; `typeof` tells you its primitive type. A quoted digit is still text.
 

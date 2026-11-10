@@ -12,7 +12,6 @@ hints:
   - Complete one numbered change and inspect its supplied checkpoint before moving on.
 ---
 
-# Comparisons and strict equality
 
 Your earlier calculations produced numbers. A comparison produces a boolean instead, so a program can decide what to do next.
 

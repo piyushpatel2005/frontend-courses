@@ -11,7 +11,6 @@ seo_description: Create a delayed Promise, await an uppercase message, and rejec
 seo_keywords: javascript, promises, async, await, asynchronous programming
 ---
 
-# Promises and async/await
 
 Build a delayed broadcast message, then add a division helper that can reject invalid input. The rehearsal demo showed both the successful cue and its rejected empty-cue case.
 

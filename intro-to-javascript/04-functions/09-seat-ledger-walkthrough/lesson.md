@@ -10,7 +10,6 @@ seo_description: "The concert desk must remember its remaining seats and refuse 
 seo_keywords: [javascript, "seat ledger walkthrough", interactive example]
 ---
 
-# Seat ledger closure walkthrough
 
 The concert desk must remember its remaining seats and refuse a reservation when none are left. A guard at the beginning of the returned function checks that limit before changing the count.
 

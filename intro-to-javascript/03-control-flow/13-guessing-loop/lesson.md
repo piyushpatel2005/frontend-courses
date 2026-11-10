@@ -10,7 +10,6 @@ seo_description: "Trace a ticket scan that stops when its target appears."
 seo_keywords: javascript, interactive demo, practical programming
 ---
 
-# Stop a Ticket Scan
 
 Before searching a list of guesses, watch a desk scan ticket IDs. `break` stops when the target appears; entries after it are never inspected.
 

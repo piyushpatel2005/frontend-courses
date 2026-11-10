@@ -14,7 +14,6 @@ seo_description: "Use JavaScript toUpperCase and includes without changing the o
 seo_keywords: javascript, string methods, beginner javascript, programming practice
 ---
 
-# String methods
 
 Prepare an uppercase caption and check whether the original text contains a particular word. String methods return results without changing the original string.
 

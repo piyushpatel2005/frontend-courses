@@ -10,7 +10,6 @@ seo_description: Learn how JavaScript objects pair property keys with values thr
 seo_keywords: javascript objects, key value pairs, object properties, beginner javascript
 ---
 
-# Object key-value pairs
 
 A producer profile needs a name, a role, and a city. An array could hold all three, but you would have to remember which position means what. An object gives each value a name.
 

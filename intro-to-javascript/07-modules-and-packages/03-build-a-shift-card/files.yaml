@@ -1,0 +1,9 @@
+files:
+  - path: src/data/shifts.js
+  - path: src/format/shift.js
+  - path: src/main.js
+  - path: index.html
+    readonly: true
+  - path: src/main.test.js
+    readonly: true
+    hidden: true

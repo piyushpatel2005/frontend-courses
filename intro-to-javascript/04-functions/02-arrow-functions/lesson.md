@@ -15,7 +15,6 @@ seo_description: "The backstage desk needs three small calculations. An arrow fu
 seo_keywords: javascript, arrow functions, beginner javascript, programming practice
 ---
 
-# Arrow functions
 
 The backstage desk needs three small calculations. An arrow function is a function value you can assign to a variable and call by that variable's name.
 
