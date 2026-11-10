@@ -6,7 +6,7 @@ prerequisites:
     note: "Understand elements, attributes, and HTML page structure before styling pages."
 title: CSS
 description: Style familiar HTML pages step by step, from your first CSS rule to readable layouts and responsive designs.
-language: html
+language: css
 level: Beginner
 sort_order: 2
 modules:
@@ -60,7 +60,7 @@ CSS (Cascading Style Sheets) controls how an HTML page looks: its colors, text, 
 
 Most visual topics start with a working example. Focused lessons fill gaps where another demo would repeat the same idea. Read its stylesheet, change one value, and use the preview to see what that value does. The following exercise gives you a different page so you can try the technique yourself. The HTML is supplied; edit `style.css` unless a task specifically asks you to change the markup. Numbered TODO comments mark each edit site. Empty rules at the end are places to add your declarations; they extend or override the supplied rules above without removing the page’s setup.
 
-Start with individual elements and cards, then use selectors and spacing in a menu and form. Flexbox and Grid introduce ways to arrange several elements together. Later projects add motion and adapt layouts to smaller screens. Each project includes its own starting files, so you do not need to copy your work from an earlier lesson.
+Start with individual elements and cards, then finish a two-step neighborhood-poster project using colors, type, borders, and a shadow. Next, use selectors and spacing in a menu and form. Flexbox and Grid introduce ways to arrange several elements together. Later projects add motion and adapt layouts to smaller screens. Each project includes its own starting files, so you do not need to copy your work from an earlier lesson.
 
 ## Working through an exercise
 
@@ -81,7 +81,7 @@ A CSS rule can be valid without producing the result you intended. Compare the p
 ## Course outline
 
 1. Foundations: rules, selectors, and specificity
-2. Visual style: color, backgrounds, type, and borders
+2. Visual style: color, backgrounds, type, and borders, then a two-step poster project
 3. Layout fundamentals: boxes, display, positioning, and overflow
 4. Selectors in depth: relationships and interactive states
 5. Apply those basics in a dropdown menu and styled form

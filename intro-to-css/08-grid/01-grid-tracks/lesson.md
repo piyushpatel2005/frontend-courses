@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Give the workshop cards equal columns
-
 Flexbox arranged items along one main axis. Grid lets you define a shared set of columns and rows. It is useful when cards should line up with the cards above and below them.
 
 `display: grid` on `.workshop-grid` makes its direct children grid items. A **track** is a column or a row, not an individual card. In `style.css`, `grid-template-columns: repeat(3, 1fr)` defines three column tracks. `repeat(3, ...)` repeats the size three times; it is a shorter way to write `1fr 1fr 1fr`.

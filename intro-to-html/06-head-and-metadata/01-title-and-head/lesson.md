@@ -15,8 +15,6 @@ hints:
   - "You can link external resources (stylesheets, fonts) and add scripts inside <head>."
 ---
 
-# The Head Element and Page Title
-
 Your visiting card used a simple page title; now give a new walking-club page the hidden details a browser and search tool need. Set up its `<head>` so the tab has a useful title and phones display the page at device width.
 
 A walking-club page with a proper `<head>` containing a supplied charset and your title, viewport, and description. The visible body is already in `index.html`; edit only its head information.

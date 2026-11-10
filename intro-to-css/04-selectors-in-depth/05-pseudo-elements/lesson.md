@@ -17,8 +17,6 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Pseudo-elements: a note in the margin
-
 The Moonlit Book Cart adds a decorative opening quote to a reader note. The note itself stays in `index.html`; the decoration comes from CSS.
 
 A **pseudo-class** such as `:first-child` chooses an existing element by a condition. A **pseudo-element** such as `::before` lets you style a piece associated with that element. Notice the two colons.

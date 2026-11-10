@@ -13,8 +13,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Choice Controls: Select Training Modes
-
 The crew can practise several capabilities but must reserve only one training window. The completed form in `index.html` uses checkboxes for the first decision and radios for the second. Run it and compare what stays selected.
 
 ## Read the code

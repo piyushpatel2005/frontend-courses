@@ -13,8 +13,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Form Basics: Join the Meridian Relay
-
 You can now name and describe a page. Forms let a visitor give answers. The completed `index.html` shows the Meridian Relay intake form; Run it and compare the visible labels with their corresponding inputs.
 
 ## Read the code

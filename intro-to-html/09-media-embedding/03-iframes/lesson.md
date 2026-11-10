@@ -14,8 +14,6 @@ seo_keywords:
 lesson_type: informational
 ---
 
-# Iframes
-
 A video or audio element loads a media file. An `<iframe>` embeds a separate HTML document, such as a map on a visitor page. The examples here are for reading; this lesson does not load embedded pages. The course preview rejects nested frames before rendering and also blocks them through its content security policy, so pasting these examples into that preview would not prove whether a provider allows embedding. Test real embeds separately on a page you control.
 
 ## Name the embedded page

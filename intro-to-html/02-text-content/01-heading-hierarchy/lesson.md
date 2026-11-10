@@ -13,8 +13,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Heading hierarchy: a page outline
-
 The Meridian signal brief has one page title and two sections. Run the completed `index.html` and match its `<h1>` and `<h2>` tags to the headings in the preview.
 
 ```html

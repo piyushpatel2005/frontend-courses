@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="figure-title figure-desc">
+  <title id="figure-title">An HTML element and its tags</title>
+  <desc id="figure-desc">One heading element contains an opening h1 tag, the words Meridian crew, and a closing h1 tag. The two bracketed pieces are tags; all three pieces together form the element.</desc>
+  <!-- Editable source: html-element-and-tags.excalidraw -->
+  <rect width="960" height="420" fill="#fffdf7"/>
+  <g fill="#242424" font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="59" font-size="28" font-weight="700">What makes an HTML element?</text>
+  </g>
+  <rect x="48" y="102" width="864" height="236" rx="18" fill="#e7f5ff" stroke="#1971c2" stroke-width="2.5"/>
+  <text x="75" y="143" fill="#1864ab" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1">ONE HTML ELEMENT</text>
+  <rect x="78" y="166" width="226" height="126" rx="15" fill="#a5d8ff" stroke="#1864ab" stroke-width="2"/>
+  <rect x="332" y="166" width="296" height="126" rx="15" fill="#fff3bf" stroke="#946200" stroke-width="2"/>
+  <rect x="656" y="166" width="226" height="126" rx="15" fill="#d0bfff" stroke="#6741a5" stroke-width="2"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="191" y="208" fill="#1c3552" font-size="21" font-weight="700">Opening tag</text>
+    <text x="191" y="261" fill="#1c3552" font-family="monospace" font-size="30">&lt;h1&gt;</text>
+    <text x="480" y="208" fill="#4a3700" font-size="21" font-weight="700">Content</text>
+    <text x="480" y="258" fill="#4a3700" font-size="27">Meridian crew</text>
+    <text x="769" y="208" fill="#3b2862" font-size="21" font-weight="700">Closing tag</text>
+    <text x="769" y="261" fill="#3b2862" font-family="monospace" font-size="30">&lt;/h1&gt;</text>
+  </g>
+  <text x="63" y="375" fill="#343a40" font-family="Arial, Helvetica, sans-serif" font-size="18">Tags are the markers in angle brackets. The element includes both tags and the content between them.</text>
+</svg>

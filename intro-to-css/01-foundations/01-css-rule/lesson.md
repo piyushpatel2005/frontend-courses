@@ -12,8 +12,6 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# Your first CSS rule
-
 In HTML, you used color, font-size, and background-color to see how styles attach to a page. This museum card gives those rules a closer look. Its heading and paragraph are already supplied. HTML gives the words their structure. CSS (Cascading Style Sheets) controls how they look. Open `style.css` beside `index.html` to see the two files working together.
 
 ## Read one rule

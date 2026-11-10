@@ -16,8 +16,6 @@ hints:
   - "`background-image` can hold a gradient without an image file."
 ---
 
-# Paint a gradient behind the welcome message
-
 A gradient blends colors across a surface. CSS can generate that image directly, so the market welcome panel does not need an image file.
 
 ```css

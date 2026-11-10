@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 330" role="img" aria-labelledby="title desc">
+<title id="title">Two ways to mark a quotation</title><desc id="desc">A sentence contains q as a child. A separate blockquote contains a paragraph. Each relationship is shown by an indentation line, not by overlapping arrows.</desc>
+<rect width="780" height="330" rx="22" fill="#f5f8fc"/>
+<text x="36" y="45" font-family="sans-serif" font-size="22" font-weight="700" fill="#17324d">Choose the quote by where it sits</text>
+<rect x="34" y="68" width="338" height="225" rx="14" fill="white" stroke="#316a9c" stroke-width="2"/>
+<text x="56" y="106" font-family="sans-serif" font-size="18" font-weight="700" fill="#17324d">Inside a sentence</text>
+<text x="56" y="151" font-family="monospace" font-size="17" fill="#17324d">&lt;p&gt; Mina said...</text>
+<path d="M75 167 V212 H94" fill="none" stroke="#316a9c" stroke-width="3"/>
+<rect x="94" y="183" width="248" height="49" rx="8" fill="#dfedfa"/>
+<text x="107" y="214" font-family="monospace" font-size="18" fill="#17324d">&lt;q&gt; short quote &lt;/q&gt;</text>
+<text x="56" y="267" font-family="sans-serif" font-size="15" fill="#35536f">The quote belongs to the sentence.</text>
+<rect x="408" y="68" width="338" height="225" rx="14" fill="white" stroke="#22745a" stroke-width="2"/>
+<text x="430" y="106" font-family="sans-serif" font-size="18" font-weight="700" fill="#17324d">On its own</text>
+<text x="430" y="151" font-family="monospace" font-size="17" fill="#17324d">&lt;blockquote&gt;</text>
+<path d="M449 167 V212 H468" fill="none" stroke="#22745a" stroke-width="3"/>
+<rect x="468" y="183" width="247" height="49" rx="8" fill="#dff3e9"/>
+<text x="481" y="214" font-family="monospace" font-size="18" fill="#17324d">&lt;p&gt; longer quote &lt;/p&gt;</text>
+<text x="430" y="267" font-family="sans-serif" font-size="15" fill="#35536f">The paragraph belongs to the block.</text>
+</svg>

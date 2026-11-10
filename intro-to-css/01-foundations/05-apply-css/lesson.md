@@ -12,8 +12,6 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# Where CSS can live
-
 The museum inherited a page with CSS in three places. Each source has a different job here so you can find it easily. All three use the same property-and-value syntax.
 
 ## Inside an element

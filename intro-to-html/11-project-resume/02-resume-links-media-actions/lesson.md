@@ -14,8 +14,6 @@ hints:
 lesson_type: coding
 ---
 
-# Project 3: Resume links and a project image
-
 Sam's resume now explains the candidate's experience. Add ways for the organizer to inspect work, start an email, and save a PDF. Your starter is the previous lesson's completed sample; keep its header, sections, skills, and footer.
 
 ## Give each link a clear destination

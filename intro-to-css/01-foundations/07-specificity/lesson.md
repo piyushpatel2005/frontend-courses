@@ -12,8 +12,6 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# When matching rules disagree
-
 The museum note is a paragraph with both `class="highlight"` and `id="intro"`. Three selectors match it, but its text can only have one final color. The **cascade** is the browser's process for choosing that value.
 
 ```css

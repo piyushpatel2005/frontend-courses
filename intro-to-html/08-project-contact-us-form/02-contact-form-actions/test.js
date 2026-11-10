@@ -49,3 +49,13 @@ test("consent labels", () => {
   const inputs = Array.from(document.querySelectorAll('form input[type="checkbox"][name="consent"]'));
   assert.equal(inputs.length === 1 && inputs.every(labeled), true, "Give every consent choice a visible connected label");
 });
+test("topic options are grouped without losing the select label", () => {
+  const select = document.querySelector('form select#topic[name="topic"]');
+  assert.exists(select, "Keep the named Topic select");
+  assert.equal([...select.labels].some(label => label.textContent.trim() === "Topic"), true, "Keep the connected Topic label");
+  const groups = [...select.children];
+  assert.equal(groups.length, 2, "Group the three options into two optgroups");
+  assert.equal(groups.map(group => group.tagName + ':' + group.getAttribute('label')).join('|'), 'OPTGROUP:Community|OPTGROUP:Support', "Label the groups Community and Support");
+  assert.equal([...groups[0].children].map(option => option.value + ':' + option.textContent.trim()).join('|'), 'booking:Room booking|volunteering:Volunteering', "Keep the Community options and values");
+  assert.equal([...groups[1].children].map(option => option.value + ':' + option.textContent.trim()).join('|'), 'accessibility:Accessibility request', "Keep the Support option and value");
+});

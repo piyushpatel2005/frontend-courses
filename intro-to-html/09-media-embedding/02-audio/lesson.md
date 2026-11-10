@@ -16,8 +16,6 @@ validationRules: []
 hints: []
 ---
 
-# Embedding audio
-
 Riverlight Community Hall also has a spoken volunteer orientation. An audio player uses the same source pattern as video, but it has no picture. A nearby transcript lets visitors read the information without listening.
 
 ## Compare audio with video

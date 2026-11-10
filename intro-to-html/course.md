@@ -14,33 +14,36 @@ modules:
   - slug: text-content
     title: Text Content
     sort_order: 2
+  - slug: lists
+    title: Lists
+    sort_order: 3
   - slug: links-and-images
     title: Links and Images
-    sort_order: 3
+    sort_order: 4
   - slug: tables-and-layout
     title: Containers and Data Tables
-    sort_order: 4
+    sort_order: 5
   - slug: project-visiting-card
     title: Project - Visiting Card
-    sort_order: 5
+    sort_order: 6
   - slug: head-and-metadata
     title: Head and Metadata
-    sort_order: 6
+    sort_order: 7
   - slug: forms
     title: Forms
-    sort_order: 7
+    sort_order: 8
   - slug: project-contact-us-form
     title: Project - Contact Us Form
-    sort_order: 8
+    sort_order: 9
   - slug: media-embedding
     title: Media and Embedding
-    sort_order: 9
+    sort_order: 10
   - slug: semantic-html
     title: Semantic HTML
-    sort_order: 10
+    sort_order: 11
   - slug: project-resume
     title: Project - Resume
-    sort_order: 11
+    sort_order: 12
 ---
 
 # Build your first web pages
@@ -60,7 +63,7 @@ You'll begin with small signal pages, practise each new element on a different e
 ## What you will learn
 
 - How tags, elements, attributes, and a complete HTML document fit together.
-- How to organize headings, paragraphs, lists, links, images, and data tables.
+- How to organize headings, paragraphs, inline text, lists, links, images, and data tables.
 - When to use `div` and `span`, and when an element with a more specific meaning is a better choice.
 - How to label common form controls, group choices, and use the browser's built-in validation.
 - How to include video, audio, and embedded pages, with accessible text and clear expectations about external content.
@@ -71,15 +74,16 @@ HTML supplies structure and meaning. The small styling lesson introduces CSS, bu
 ## Course outline
 
 1. **Introduction to HTML** — what HTML is, tags vs. elements vs. attributes, and your first complete page.
-2. **Text Content** — headings, paragraphs, emphasis, line breaks, and lists.
-3. **Links and Images** — anchor tags, relative file paths, image alternatives, and a first CSS connection.
-4. **Containers and Data Tables** — grouping with `div`/`span`, captioned data tables with row and column headers, classes and IDs.
-5. **Project - Visiting Card** — build a personal visiting card page with content hierarchy, image, links, and structure.
-6. **Head and Metadata** — the `<head>` element, page titles, `<meta>` tags, and HTML entities.
-7. **Forms** — form structure, text/email/password inputs, checkboxes, radio buttons, select menus, textarea, GET/POST, validation, and button behavior.
-8. **Project - Contact Us Form** — build a contact form with labels, inputs, validation attributes, and a submit action; processing messages requires a separate service.
-9. **Media and Embedding** — video, audio, and iframes.
-10. **Semantic HTML** — `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`, `<figure>`, `<details>`, keyboard order, skip links, and decorative image alternatives.
-11. **Project - Resume** — create a semantic resume page with profile, experience, skills, and contact details.
+2. **Text Content** — headings, paragraphs, emphasis, subscripts, superscripts, strikethrough and edit semantics, quotations, abbreviations, and code.
+3. **Lists** — bullets, numbered and lettered sequences, custom starting positions, descriptions, and a combined survey loadout.
+4. **Links and Images** — anchor tags, relative file paths, image alternatives, and a first CSS connection.
+5. **Containers and Data Tables** — grouping with `div`/`span`, captioned data tables with row and column headers, column slots, classes and IDs.
+6. **Project - Visiting Card** — build a personal visiting card page with content hierarchy, image, links, and structure.
+7. **Head and Metadata** — the `<head>` element, page titles, `<meta>` tags, and HTML entities.
+8. **Forms** — form structure, text/email/password inputs, checkboxes, radio buttons, grouped select options, textarea, GET/POST, validation, and button behavior.
+9. **Project - Contact Us Form** — build a contact form with labels, inputs, validation attributes, and a submit action; processing messages requires a separate service.
+10. **Media and Embedding** — video, audio, and iframes.
+11. **Semantic HTML** — `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<footer>`, `<figure>`, `<details>`, `<time>`, `<mark>`, keyboard order, skip links, and decorative image alternatives.
+12. **Project - Resume** — create a semantic resume page with profile, experience, skills, and contact details.
 
 The next course is **CSS**. Bring your understanding of elements, classes, IDs, and reading order; CSS will add presentation. After that, JavaScript teaches programming, and the DOM course uses vanilla JavaScript to update pages without a framework.

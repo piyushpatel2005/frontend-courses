@@ -22,8 +22,6 @@ hints:
   - "colspan=\"2\" makes a cell span 2 columns. rowspan=\"2\" makes it span 2 rows."
 ---
 
-# HTML Tables
-
 The community repair café is posting a two-day schedule. Visitors need to scan times and stations in rows and columns, not read a paragraph. Build the schedule so its labels and data stay connected.
 
 > **Note:** Use tables for related data — schedules, price lists, comparison charts — not for page layout. CSS Flexbox or Grid handles layout.

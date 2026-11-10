@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Switch the workshop board to one column
-
 Three columns fit a wide board, but each card gets cramped in a narrow preview. A **media query** applies a set of CSS rules only when a condition is true. This example checks the viewport, the area where the page is displayed. In this course, that is the preview frame's width, not necessarily the whole browser window.
 
 The ordinary `.responsive-grid` rule defines three columns. Later in `style.css`, this rule replaces that column definition when the viewport is at most 36rem wide:

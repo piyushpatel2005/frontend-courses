@@ -17,8 +17,6 @@ hints:
   - "Use method=\"post\" for contact form submission."
 ---
 
-# Project 2: Create a Contact Us Form (Structure)
-
 You have practiced the controls separately. Apply them to the Riverlight Community Hall contact page for room bookings, volunteering, and accessibility requests.
 
 The starter in `index.html` supplies the Contact Us heading. Add a labeled form below it. The example `/contact` path has no receiving service here; this preview does not deliver messages to the hall.

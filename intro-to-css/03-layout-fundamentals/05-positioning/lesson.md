@@ -18,8 +18,6 @@ hints:
   - An absolutely positioned child uses the nearest positioned ancestor.
 ---
 
-# Attach a pin to the map card
-
 The “Today” pin belongs in the library card's upper-right corner. Normal flow lays out block and inline boxes in document order. The default position is static: offsets such as top do not move that box. With relative positioning, offsets shift the painted box while its original space stays reserved. Absolute positioning lets this small label leave that flow and sit over the card instead.
 
 `.map-card { position: relative; }` keeps the card in its normal place while making it a reference for its absolutely positioned child. `.pickup-pin { position: absolute; }` removes the pin's reserved space. The text no longer moves down to make room for it.

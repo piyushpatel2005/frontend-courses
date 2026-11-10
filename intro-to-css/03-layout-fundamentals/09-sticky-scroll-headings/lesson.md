@@ -11,8 +11,6 @@ seo_description: Keep a heading visible inside a scrolling panel and explain its
 seo_keywords: [CSS, sticky scroll headings]
 ---
 
-# Keep the storage heading in view
-
 The previous cards kept long text reachable through scrolling. This guide has several paragraphs inside one scrolling panel. Its heading should stay visible as those paragraphs pass beneath it.
 
 `position: sticky` keeps the heading in normal flow, then offsets it when scrolling would carry it past a chosen edge. `top: 0` sets that edge at the top of this scrollport. Unlike an absolute pin, the sticky heading still reserves its original space. It also stays bounded by its containing block; it cannot follow you indefinitely after that block ends.

@@ -15,9 +15,7 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Read a complete HTML5 page
-
-You have written content inside a body. This finished crew profile shows what surrounds that content. Run `index.html`, then compare the visible profile with the source.
+You have written content inside a body. This finished crew profile shows what surrounds that content. Run `index.html`, then compare the preview with the code. Here is the full document, one part at a time.
 
 ```html
 <!DOCTYPE html>
@@ -34,30 +32,38 @@ You have written content inside a body. This finished crew profile shows what su
 </html>
 ```
 
-`<!DOCTYPE html>` asks the browser to use modern HTML rendering. The `<html>` element contains the document. Its `lang="en"` is an **attribute**: extra information written in an opening tag as a name and quoted value. Here it declares English as the main language.
+## Doctype Declaration
 
-The `<head>` holds page information rather than visible paragraphs. `<meta charset="UTF-8">` declares the text encoding so characters can display correctly. `<title>` names the document; the embedded preview does not have its own tab to show that name.
+`<!DOCTYPE html>` asks the browser to use modern HTML rendering. This doctype declaration belongs before the `<html>` element, which contains the document. Its `lang="en"` is an **attribute**: extra information written in an opening tag as a name and quoted value. Here it declares English as the main language.
 
-The `<body>` holds the visible content. Indenting elements inside their parent makes the nesting easier to read; indentation does not create the page layout.
+`<html>` is the opening tag and `</html>` is its closing tag. The element between them can contain other elements, forming a nested structure.
+
+![HTML elements and tags](html-element-and-tags.svg)
+
+The `<head>` holds page information rather than visible paragraphs. `<meta charset="UTF-8">` declares the document's text encoding so characters display correctly. `<title>` names the document; it appears in a normal browser tab, though this embedded preview has no separate tab title.
+
+The `<body>` holds the visible page content. Indenting child elements makes the nesting easier to read; indentation is not a layout tool. Spaces between words can affect text, but adding indentation before a tag will not move that element across the page.
 
 ## Keep pairs inside their parent
 
-An inner element must close before its outer element closes:
+When writing your first pages, it's easy to forget the closing tag. An inner element must close before its outer element closes as you can see below.
 
 ```html
-<p>The survey is <strong>ready</strong> to begin.</p>
+<body>
+  <h1>Meridian crew</h1>
+</body>
 ```
 
-Here `<strong>` marks an important phrase. It starts and ends inside the paragraph; the next module explains when to use it. Writing `<p>...<strong>ready</p></strong>` crosses the tag pairs. Browsers try to repair mistakes, so a page that looks plausible can still have the wrong structure. Match the pairs in the source rather than relying on the preview to catch every error.
+In this example, we have `<h1>` tag closed inside `body` element before closing the `body` tag which is parent to `h1` element.
 
 Write attributes in the opening tag, separated by spaces, for example `<html lang="en">`. The closing tag is just `</html>`, without attributes. Quote attribute values so a value containing spaces stays together. Ordinary source line breaks collapse into text spacing; they do not create extra paragraphs.
 
-Some elements have no contents or closing tag. These are **void elements**, including the `<meta>` above and the images and inputs you will meet later. Both `<meta charset="UTF-8">` and `<meta charset="UTF-8" />` are common HTML spellings; the slash does not create a separate closing tag.
+Some elements have no content or closing tag. These are **void elements**, including the `<meta>` above and the images and inputs you will meet later. Both `<meta charset="UTF-8">` and `<meta charset="UTF-8" />` occur in HTML; the trailing slash is optional and does not create a closing tag.
 
 ## A note that stays in the source
 
-An HTML comment begins with `<!--` and ends with `-->`. The browser does not display it, but anyone who can read the page source can see it. Do not put private information in comments.
+An HTML comment begins with `<!--` and ends with `-->`. The browser does not display it, but anyone who can read the page source can see it. Use comments to explain the code, not to store private information.
 
-In the editor, change the comment's words and run again: the preview should not change. Restore it, then change the `<h1>` text and run again: that change should appear. Restore the heading when finished. This demo has no graded tasks.
+In the editor, change the comment's words and run again. The preview should not change. Restore it, then change the `<h1>` text and run again. Restore the heading when finished. This lesson doesn't have any tests.
 
-Next, use the same document frame for one crew member's profile.
+Next, let's apply the same kind of document structure to one crew member's profile.

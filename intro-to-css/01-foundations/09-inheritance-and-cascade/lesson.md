@@ -11,8 +11,6 @@ seo_description: Trace inherited text styles and deliberately restore a shared c
 seo_keywords: [CSS, inheritance and the cascade]
 ---
 
-# Let a notice share its text styles
-
 Specificity compares rules that target the same element. Inheritance answers a different question: if an element has no winning declaration for an inherited property, which value reaches it from its parent?
 
 The supplied notice has a heading, paragraph, emphasized phrase, and button. Color and font properties normally inherit. Padding, margin, and borders do not. A child without its own color uses its parent’s computed color; it does not compete with the parent’s selector specificity. Even a simple color rule directly on the child takes precedence over an inherited color.

@@ -11,8 +11,6 @@ seo_description: Keep a readable base layout and enhance it inside a CSS feature
 seo_keywords: [CSS, resilient styles]
 ---
 
-# Leave a usable page beneath the enhancement
-
 A visitor can read these supply stations as ordinary blocks. Grid can improve their arrangement, but the content should not depend on that improvement to exist. This is **progressive enhancement**: start with a usable result, then add capabilities when available.
 
 Browsers generally ignore declarations they do not understand and keep parsing the rule. A fallback can appear first, followed by a newer value for the same property. The later value wins only if it is valid and otherwise has equal cascade priority. A typo is not a fallback strategy; inspect unexpected results in Styles and Computed.

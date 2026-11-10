@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Let supply cards move to another line
-
 A flex container uses `nowrap` by default. Its items try to fit one line, often shrinking as the row gets narrower. `flex-wrap: wrap` on `.supply-row` lets the browser start another line instead.
 
 Wrapping and item sizing are separate decisions. This example puts `flex: 1 1 9rem` on `.card`, because `flex` describes each item rather than the container. The three values mean:

@@ -19,8 +19,6 @@ hints:
   - "An anchor with href=\"#section-id\" jumps to the element with that id on the same page."
 ---
 
-# Hyperlinks
-
 Your signal pages can organize text. A visitor now needs a way to reach another page or a particular part of this one. Add navigation to a neighborhood repair café page, a separate example from the Meridian signals.
 
 The starter supplies a heading and an empty `<nav>`. A nav groups navigation links; a `<section>` groups a topic. Both have ordinary opening and closing tags, and you will return to their meaning in the semantic HTML module.

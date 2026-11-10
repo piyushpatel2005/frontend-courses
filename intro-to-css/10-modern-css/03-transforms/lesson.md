@@ -17,7 +17,6 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Transforms
 Give the pinned field note a slight tilt while leaving the neighboring fern survey in place. This is a fresh two-card example; it does not continue the color-system card.
 
 `transform: rotate(-3deg)` turns `.tilted` by three degrees counterclockwise. `deg` means degrees; a positive value turns clockwise. The browser still reserves the card's original, unrotated space in the Flexbox row. Its painted edges can extend outside that space, so leave a gap around transformed items.

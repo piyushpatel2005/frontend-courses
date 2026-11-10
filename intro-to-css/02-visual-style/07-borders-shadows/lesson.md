@@ -17,8 +17,6 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Give vendor cards an edge
-
 The night-market cards already sit in a supplied two-column layout. Their borders and shadows make each boundary visible without changing the text.
 
 `border: 2px solid #f59e0b` is a shorthand: it sets the width, line style, and color of all four edges. `border-radius: 1rem` rounds all four corners. A `rem` is based on the root element's font size; with this page's default 16px root text, `1rem` is 16px.

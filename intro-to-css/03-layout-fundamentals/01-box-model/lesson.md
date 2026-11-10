@@ -18,8 +18,6 @@ hints:
   - Padding is inside the border; margin is outside it.
 ---
 
-# See the layers of a seed packet
-
 This module styles a Riverside Seed Swap card. Its text, inner spacing, outline, and outer spacing are different parts of the CSS **box model**.
 
 The content is the text itself. `padding: 20px` adds space around it inside the border. `border: 4px solid #3c6e47` draws the green edge. `margin: 24px 0` sets 24px above and below the packet and zero at the left and right. Two margin values read “vertical, horizontal.” The same shorthand works for padding. With four values, read clockwise: top, right, bottom, left. One value applies to all four sides. An auto horizontal margin can share remaining space on either side of a width-limited block, which is how the supplied main element is centered.

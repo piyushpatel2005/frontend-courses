@@ -1,0 +1,4 @@
+files:
+  - path: index.html
+    readonly: true
+  - path: style.css

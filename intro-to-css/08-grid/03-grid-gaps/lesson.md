@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Leave room between the event cards
-
 The `.event-grid` already has two equal columns. Its third card starts the next row. This lets you see both kinds of track spacing at once.
 
 `gap: 1rem` sets both `row-gap` and `column-gap` to 1rem. It leaves space between the rows and between the columns. It does not add space around the outside of the grid or inside the cards; use container padding or card padding for those jobs.

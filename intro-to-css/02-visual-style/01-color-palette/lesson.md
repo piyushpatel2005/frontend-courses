@@ -16,8 +16,6 @@ hints:
   - Find the selector that matches the part of the flyer you want to recolor.
 ---
 
-# Give the market flyer a color palette
-
 This module moves from museum notes to a Lantern Lane Night Market flyer. The panel needs light text, a dark surface, and a small accent visitors can spot quickly.
 
 In `.flyer`, `background-color: #172554` paints the panel navy. `color: #fff7ed` sets cream text that its children inherit unless they have their own color rule. The `.badge` rule gives “Free entry” a coral background and navy text. Background and text colors are separate choices.

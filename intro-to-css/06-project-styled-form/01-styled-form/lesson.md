@@ -17,7 +17,6 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Seed request form
 A community garden volunteer needs a reply address for seed requests. This completed card puts the label above the field and shows which control has keyboard focus.
 
 The HTML connects `label for="email"` to `input id="email"`. Click Contact email: focus moves to the field. A placeholder is only a typing example, so it does not replace that visible label.

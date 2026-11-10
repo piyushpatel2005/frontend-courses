@@ -16,8 +16,6 @@ hints:
   - Typography rules can target the page body, a heading, or paragraphs separately.
 ---
 
-# Make the market note easier to read
-
 The bread-stall note uses familiar HTML. This time the changes are in the letters and lines rather than their background.
 
 `font-family: Georgia, serif` on `body` asks for Georgia first, then a generic serif font if Georgia is unavailable. A serif font has small finishing strokes on its letters. The note inherits this family; the small label has its own supplied Arial rule.

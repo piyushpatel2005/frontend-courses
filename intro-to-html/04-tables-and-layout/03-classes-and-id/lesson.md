@@ -20,8 +20,6 @@ hints:
   - "IDs double as anchor targets: <h2 id=\"contact\"> can be linked with <a href=\"#contact\">"
 ---
 
-# Classes and IDs
-
 The seed-swap cards shared a class. Now a makers’ fair program also needs unique destinations for its About, Projects, and Contact links. The starter in `index.html` supplies the main heading; add the navigation and section content below it.
 
 ## One name or a reusable label

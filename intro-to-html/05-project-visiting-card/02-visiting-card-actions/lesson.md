@@ -13,8 +13,6 @@ hints:
   - "For this portfolio link, use target=\"_blank\" to request a new tab."
 ---
 
-# Project 1: Visiting Card (Links and Actions)
-
 Riya’s portrait and contact list are carried forward from the previous lesson. Keep that card and edit only the empty action area in `index.html`. If you brought your own contributor forward, use their displayed email and phone details in the links.
 
 Add email, phone, portfolio, and invitation links so visitors can tell what each action would do. You do not need to activate external links or contact anyone.

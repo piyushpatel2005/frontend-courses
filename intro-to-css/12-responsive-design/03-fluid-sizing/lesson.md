@@ -14,7 +14,6 @@ seo_keywords:
   - CSS demo
 ---
 
-# Fluid sizing
 A breakpoint can flip a grid at a chosen width. This park forecast instead lets available space determine the layout between sizes.
 
 In `style.css`, `.page-shell` uses `width: min(90%, 46rem)`. `min()` chooses the smaller value, so the page takes 90% of its container until it reaches the 46rem cap.

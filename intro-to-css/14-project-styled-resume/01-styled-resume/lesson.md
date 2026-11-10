@@ -14,7 +14,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Community maker profile
 A one-page profile should be easy to read both on a phone and at a desk. This finished example combines typography and spacing from earlier lessons with the fluid sizing you just practiced.
 
 The HTML supplies a name, role, selected work, skills, and availability. In `style.css`, `.maker-profile` has `max-width: 38rem` to limit line length on wide screens; its width can still shrink on a phone. `box-sizing: border-box` counts its padding inside that available width. The `h1` uses `clamp(2rem, 6vw, 4rem)` to let the name grow with the viewport while staying within legible limits. The role's uppercase treatment and the section's bottom border establish a simple hierarchy.

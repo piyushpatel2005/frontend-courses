@@ -12,8 +12,6 @@ hints:
   - Use main for the profile, id for its unique name, and class on each repeated skill label.
 ---
 
-# Review: Structured Profile
-
 Bring the containers and labels together in a volunteer profile for the repair café. `index.html` supplies only the document shell. Build a main region, a name and description, and repeated skill labels. In the preview, the labels remain plain text until CSS styles them.
 
 `<main>` names a page’s primary content. Keep one main region here; you will study page landmarks later. A `span` stays within a line, and several skill spans can share `class="tag"`. Classes do not style themselves.

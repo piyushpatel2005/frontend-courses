@@ -16,9 +16,13 @@
 
     <label for="topic">Topic</label>
     <select id="topic" name="topic">
-      <option value="booking">Room booking</option>
-      <option value="volunteering">Volunteering</option>
-      <option value="accessibility">Accessibility request</option>
+      <optgroup label="Community">
+        <option value="booking">Room booking</option>
+        <option value="volunteering">Volunteering</option>
+      </optgroup>
+      <optgroup label="Support">
+        <option value="accessibility">Accessibility request</option>
+      </optgroup>
     </select>
 
     <label for="message">Message</label>

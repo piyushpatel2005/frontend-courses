@@ -18,8 +18,6 @@ hints:
   - A space selects descendants; `>` selects only direct children.
 ---
 
-# Advanced selectors: book cart sign
-
 The Moonlit Book Cart sign has a heading, a summary tucked inside a wrapper, and a sample link. You can target each part without giving every element a new class.
 
 ## Follow the HTML relationships

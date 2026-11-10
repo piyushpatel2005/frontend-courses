@@ -18,8 +18,6 @@ seo_keywords:
 - reset button
 ---
 
-# Form validation and submission
-
 You can collect text and choices. Now trace what happens between filling a form and sending its answers. A workshop search is a useful small example: its search words are not private, and the result could have a shareable address.
 
 ## Choose how answers travel

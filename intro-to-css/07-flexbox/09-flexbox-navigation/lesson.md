@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Keep the expedition title and links together
-
 This header combines the Flexbox properties you have just used. Inspect `index.html`: `.nav-row` has two direct children, a `<strong>` title and a `.nav-actions` group. The two links are inside that group. Flexbox arranges the title and the group, not all three pieces separately.
 
 In `style.css`, `display: flex` makes those two children share a row. `justify-content: space-between` moves spare room between the groups. `align-items: center` lines up their vertical centers even though the padded links are taller than the title.

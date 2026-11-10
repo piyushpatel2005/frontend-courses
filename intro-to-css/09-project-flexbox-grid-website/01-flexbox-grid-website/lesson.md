@@ -17,7 +17,6 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# River radio schedule
 River Radio needs a title and listening button above its daily shows. This is a new page, not the completed workshop grid from the previous module. It reuses your Flexbox and Grid skills; it does not inherit that page's media query.
 
 In `style.css`, `.schedule-head` is the flex container. `display: flex` puts its two children in a row. `justify-content: space-between` pushes them to opposite ends, and `align-items: center` aligns them vertically. The button is a visual placeholder; it does not play audio.

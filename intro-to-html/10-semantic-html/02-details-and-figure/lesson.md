@@ -16,8 +16,6 @@ hints:
 lesson_type: coding
 ---
 
-# Details, figure, and figcaption
-
 The garden's visitor page needs two short answers and a captioned seedling illustration. Use native HTML to let visitors open the answers and keep the image's caption attached to it.
 
 ## Make an answer expandable

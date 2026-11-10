@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Put the trail kit in a row
-
 Without a layout rule, the three cards would be ordinary block elements stacked one below another. `display: flex` on `.kit-row` changes how that section arranges its direct children: Map, Snacks, and First aid become **flex items**. Put the layout rule on their parent, not on each card.
 
 Flexbox works along two directions, called axes. The **main axis** follows `flex-direction`. With `row`, these English, left-to-right cards run across the page. With `column`, they run down the page. The **cross axis** is perpendicular to the main axis, so it changes too. “Main” does not always mean horizontal.

@@ -16,8 +16,6 @@ hints:
 lesson_type: coding
 ---
 
-# Semantic HTML tags
-
 Media adds content to a page; semantic HTML explains how the page is organized. Build a harvest update for Riverstone Community Garden, a new setting separate from the hall examples.
 
 ## Choose an element for its job

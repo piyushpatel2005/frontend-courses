@@ -18,8 +18,6 @@ hints:
   - Focus appears after clicking or tabbing into the email field.
 ---
 
-# Pseudo-classes: night cart states
-
 A reader needs to see which control will respond to the keyboard. This reservation panel uses **pseudo-classes**: a colon followed by a condition, such as `:focus`. They select an existing element in a particular state or position; they do not create another element.
 
 `.reserve-button:hover` matches while a pointer rests on the button. `.email:focus` matches while the email field receives keyboard input. `.reading-list li:first-child` matches a list item that is its parent's first element child. That last condition comes from the HTML order, not from moving the pointer.

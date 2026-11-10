@@ -17,8 +17,6 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# A dropdown with a native toggle
-
 The directory has two stall links inside a native details element. Its summary, Stalls, is the control that opens and closes it. HTML already supplies the toggle behavior: click or tap the summary, or focus it and press Enter or Space. CSS only changes the presentation.
 
 `.menu-item[open] .submenu` uses the attribute selector you learned earlier. The browser adds the boolean open attribute when details expands and removes it when it closes. There is no `open="false"` state: the attribute’s presence means open.

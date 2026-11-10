@@ -10,15 +10,13 @@ seo_keywords: [HTML, HTML tags, h1 tag, p tag, HTML preview]
 lesson_type: coding
 ---
 
-# What is HTML?
-
 Welcome to the world of web development. This course is about HTML coding. HTML provides the skeleton, the content of the web pages. You can see a very simple HTML code in the code editor. You may not understand it all at the moment, but do not worry, you will understand that fully by the end of the course.
 
 HTML stands for **HyperText Markup Language**. It labels the parts of a page as a heading, a paragraph, a hyperlink, an image, etc. The browser reads those labels and displays the content.
 
 Our first examples come from the survey vessel **Meridian**. You will make short signal pages before trying separate community projects later in the course. You do not need to carry code between lessons.
 
-## Read a tag pair
+## Tags and Elements
 
 Below is a single line from the code.
 

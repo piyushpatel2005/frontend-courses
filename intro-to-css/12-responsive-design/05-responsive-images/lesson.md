@@ -11,8 +11,6 @@ seo_description: Scale an image without distorting it and deliberately crop a se
 seo_keywords: [CSS, images that fit]
 ---
 
-# Fit the picture without stretching it
-
 A flexible grid does not automatically resize an image with a large intrinsic width. This card supplies an 800-by-400 illustration. The circles make distortion easy to spot; both image files are embedded in the page, so the experiment does not depend on a remote photo.
 
 `max-width: 100%` caps an image at its containing block’s width without making a smaller natural image grow unnecessarily. `height: auto` lets the browser calculate the height from its aspect ratio. Together, these rules preserve the full picture while allowing it to shrink. The HTML width and height attributes remain useful size/aspect-ratio hints; the CSS controls the final rendered size here.

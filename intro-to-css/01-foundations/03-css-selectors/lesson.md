@@ -12,8 +12,6 @@ hints:
   - "This completed example is for reading and previewing before the exercise."
 ---
 
-# Choose which elements change
-
 The Moon Jelly card has two paragraphs, but only one is a care note. A selector lets you choose how widely a rule applies. Look at the tags and attributes in `index.html` before opening `style.css`.
 
 ```css

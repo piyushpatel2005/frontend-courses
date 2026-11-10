@@ -17,8 +17,6 @@ hints:
   - Restore the original value before continuing.
 ---
 
-# Keep long notes inside their cards
-
 One seed-swap note is much longer than the other. Instead of hiding its words or letting them spill onto the page, this demo limits the card's height and lets readers scroll inside it.
 
 `width: 14rem` gives `.card` a preferred width. `max-width: 100%` caps it at the containing row's width. `max-height: 7rem` limits height but does not force a short note to fill that height. A `rem` is relative to the root font size; this page uses the browser's default.

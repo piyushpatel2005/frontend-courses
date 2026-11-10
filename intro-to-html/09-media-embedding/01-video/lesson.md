@@ -16,8 +16,6 @@ validationRules: []
 hints: []
 ---
 
-# Embedding video
-
 The hall's contact form collects messages. This section changes direction: you will describe media that visitors can watch or listen to. Start with a welcome video for Riverlight Community Hall.
 
 ## Read the player markup

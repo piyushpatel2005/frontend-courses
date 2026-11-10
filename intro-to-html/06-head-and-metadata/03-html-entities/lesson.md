@@ -15,8 +15,6 @@ hints:
   - "Write named entities with the terminating semicolon, such as &copy; or &amp;."
 ---
 
-# HTML Entities
-
 The walking-club route notes need to show a trail rule, a copyright line, and “Maps & Snacks” exactly as written. Some of those characters mean something special to HTML, so use entities to make the browser display the intended text. Your preview should show the symbols, not broken markup.
 
 The starter supplies the document and heading; add four short route notes below it, each in its own `<p>`. The tests check these paragraphs, not the heading or page scripts.

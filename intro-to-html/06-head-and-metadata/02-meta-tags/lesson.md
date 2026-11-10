@@ -11,8 +11,6 @@ lesson_type: informational
 validationRules: []
 ---
 
-# Meta Tags
-
 The walking club is sharing its route page with new members. The visible page stays the same. Metadata helps phone browsers size it and gives sharing services a title and summary to use. Those services decide what to display, so metadata is a suggestion rather than a guaranteed preview.
 
 ## What to look for

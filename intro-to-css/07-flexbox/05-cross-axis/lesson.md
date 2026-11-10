@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Line up cards of different heights
-
 The weather card has extra top and bottom padding, so it is taller than its neighbors. In `style.css`, `.card:nth-child(2)` selects that second card; `padding-block` sets its top and bottom padding in this page's writing direction.
 
 The `.briefing-row` is a flex row. Its main axis runs horizontally, so its cross axis runs vertically. `align-items: center` centers each card within the flex line, giving their vertical midpoints the same height. It aligns the boxes, not the text inside them.

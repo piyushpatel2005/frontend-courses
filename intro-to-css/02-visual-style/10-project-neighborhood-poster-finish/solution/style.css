@@ -1,0 +1,23 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  background-color: #f7f4ed;
+}
+.poster {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fff;
+  border: 2px solid #537c6d;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgb(24 54 42 / 15%);
+}
+h1 {
+  margin-top: 0;
+  color: #17324d;
+}
+.details {
+  line-height: 1.6;
+}

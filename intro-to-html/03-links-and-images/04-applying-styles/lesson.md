@@ -19,8 +19,6 @@ hints:
   - "External stylesheets are preferred — they separate content from presentation and can be reused."
 ---
 
-# Applying Styles to HTML
-
 The walking-club photos had dimensions, but the rest of the browser’s appearance was its default. This short CSS introduction shows where styling can live. The next course will teach CSS in depth.
 
 The supplied book-exchange notice already has a heading, a paragraph, and a link to the empty `style.css`. Use the HTML tab for the first two changes and the CSS tab for the third.

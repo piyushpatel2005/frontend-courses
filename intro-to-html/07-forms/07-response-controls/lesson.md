@@ -13,8 +13,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Response Controls: Send a Mission Reply
-
 Some answers do not fit a single-line input. The completed `index.html` lets the crew write a briefing, choose a role, and use base suggestions without being limited to them. Run it and compare the three controls.
 
 ## Read the code

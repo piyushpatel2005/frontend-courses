@@ -14,7 +14,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Seed inventory table
 A seed-library inventory has several columns. On a narrow phone, shrinking every column until its text is unreadable is less useful than letting the table scroll inside its own wrapper.
 
 The HTML places `<table>` inside `.table-wrap`. In `style.css`, `table` fills its wrapper but stays at least 30rem wide. `.table-wrap { overflow-x: auto; }` gives it a horizontal scrollbar only when the table is wider than the available space. The heading and rest of the page do not have to scroll sideways.

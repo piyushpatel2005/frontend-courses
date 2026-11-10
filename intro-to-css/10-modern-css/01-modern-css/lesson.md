@@ -17,7 +17,6 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Field note color system
 The bluebird note repeats an accent color on its border and button. A CSS custom property lets you name that color once and reuse it.
 
 `:root` selects the document's root element. A custom property starts with two hyphens: `--accent: #e76f51`. Other rules read it with `var(--accent)`. The supplied `--ink` and `--paper` names work the same way. Custom-property names are case-sensitive. You can provide a missing-value fallback with var(--accent, #183153). A fallback does not repair every invalid value: if --accent exists but contains a value that is not a color, that color declaration can still fail. These properties inherit into the page's children, so the border and button can share them.

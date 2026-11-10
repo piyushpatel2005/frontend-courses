@@ -21,8 +21,6 @@ hints:
   - "A visiting card should include name, role, and at least one contact method."
 ---
 
-# Project 1: Create a Visiting Card (Structure)
-
 The neighborhood skills map is collecting contributor profiles. Build a new visiting card with a name, role, portrait, and contact list; this is separate from the repair-café profile.
 
 The document shell in `index.html` is supplied. Build one piece at a time, Run to inspect it, then Submit to check your tasks. A `div` groups the content but does not draw a border by itself.

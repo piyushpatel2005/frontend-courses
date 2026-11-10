@@ -16,8 +16,6 @@ hints:
   - "Use a shared name for one-choice radio controls."
 ---
 
-# Challenge: Send an Emergency Beacon
-
 Combine the form patterns in one small Meridian page: a practice destination, contact email, and one response channel. `index.html` supplies the document shell only. This is a markup exercise, not an emergency service; never use it to request real help.
 
 ## Your Tasks

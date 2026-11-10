@@ -18,8 +18,6 @@ seo_keywords:
 - tabindex
 ---
 
-# A keyboard-friendly page
-
 The garden answers already open with native `<details>` controls. A visitor should also be able to move through a page without a mouse. Reuse native links and headings, then give keyboard users a shortcut past repeated navigation.
 
 ## Let the browser provide the controls

@@ -17,8 +17,6 @@ seo_keywords:
 - HTML href
 ---
 
-# Links between project files
-
 The café navigation used a full website address and a fragment. A site with several pages also needs links between files. A relative path starts from the current page’s folder, so the same text can point somewhere different after you move that page.
 
 Consider a library site with these files:

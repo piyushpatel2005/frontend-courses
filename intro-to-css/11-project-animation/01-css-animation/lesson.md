@@ -17,7 +17,6 @@ hints:
   - Change one declaration at a time, then use Run Preview to inspect the result.
 ---
 
-# Kite festival signal
 Make the festival kite drift upward and back. Unlike a transition, which waits for a property to change, a keyframe animation can begin as soon as the page loads. The button is only a styled placeholder; it does not reserve a pass.
 
 ## Read the motion rules

@@ -14,8 +14,6 @@ hints:
 lesson_type: coding
 ---
 
-# Project 3: A semantic resume
-
 Sam Rivera is applying to coordinate volunteers at the Riverstone Makers' Fair. Build a one-page resume that lets the organizer find Sam's summary, skills, and experience without searching through a long paragraph.
 
 You have already used headings, lists, and semantic regions. This project combines them; the next lesson will extend this same document with links and a project image.

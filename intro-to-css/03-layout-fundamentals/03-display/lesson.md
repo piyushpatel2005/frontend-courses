@@ -18,8 +18,6 @@ hints:
   - Inline-block labels can have padding while still sharing a row.
 ---
 
-# Choose how labels take up space
-
 The seed-swap table needs labels that can share a line, a note beneath them, and a nonessential helper hidden from visitors. `display` controls the kind of box an element creates.
 
 A normal `block` box starts a new line and uses the available width. An `inline` box sits in the text flow; ordinary width and height declarations do not size it like a block. `inline-block` keeps a single box in that flow while allowing block-like sizing. It can sit next to another label when there is room.

@@ -1,0 +1,66 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://excalidraw.com",
+  "elements": [
+    {
+      "type": "text", "id": "diagram-title", "x": 48, "y": 28, "width": 525, "height": 34,
+      "text": "What makes an HTML element?", "originalText": "What makes an HTML element?",
+      "fontSize": 28, "fontFamily": 1, "strokeColor": "#242424", "autoResize": true
+    },
+    {
+      "type": "rectangle", "id": "whole-element", "x": 48, "y": 102, "width": 864, "height": 236,
+      "roundness": { "type": 3 }, "strokeColor": "#1971c2", "backgroundColor": "#e7f5ff",
+      "fillStyle": "solid", "strokeWidth": 2, "roughness": 1
+    },
+    {
+      "type": "text", "id": "element-label", "x": 75, "y": 120, "width": 330, "height": 28,
+      "text": "ONE HTML ELEMENT", "originalText": "ONE HTML ELEMENT",
+      "fontSize": 22, "fontFamily": 1, "strokeColor": "#1864ab", "autoResize": true
+    },
+    {
+      "type": "rectangle", "id": "opening-tag", "x": 78, "y": 166, "width": 226, "height": 126,
+      "roundness": { "type": 3 }, "strokeColor": "#1864ab", "backgroundColor": "#a5d8ff",
+      "fillStyle": "solid", "strokeWidth": 2, "roughness": 1,
+      "boundElements": [{ "id": "opening-label", "type": "text" }]
+    },
+    {
+      "type": "text", "id": "opening-label", "x": 90, "y": 184, "width": 202, "height": 92,
+      "text": "Opening tag\n<h1>", "originalText": "Opening tag\n<h1>",
+      "fontSize": 24, "fontFamily": 1, "strokeColor": "#1c3552", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "opening-tag", "autoResize": true
+    },
+    {
+      "type": "rectangle", "id": "content", "x": 332, "y": 166, "width": 296, "height": 126,
+      "roundness": { "type": 3 }, "strokeColor": "#946200", "backgroundColor": "#fff3bf",
+      "fillStyle": "solid", "strokeWidth": 2, "roughness": 1,
+      "boundElements": [{ "id": "content-label", "type": "text" }]
+    },
+    {
+      "type": "text", "id": "content-label", "x": 344, "y": 184, "width": 272, "height": 92,
+      "text": "Content\nMeridian crew", "originalText": "Content\nMeridian crew",
+      "fontSize": 24, "fontFamily": 1, "strokeColor": "#4a3700", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "content", "autoResize": true
+    },
+    {
+      "type": "rectangle", "id": "closing-tag", "x": 656, "y": 166, "width": 226, "height": 126,
+      "roundness": { "type": 3 }, "strokeColor": "#6741a5", "backgroundColor": "#d0bfff",
+      "fillStyle": "solid", "strokeWidth": 2, "roughness": 1,
+      "boundElements": [{ "id": "closing-label", "type": "text" }]
+    },
+    {
+      "type": "text", "id": "closing-label", "x": 668, "y": 184, "width": 202, "height": 92,
+      "text": "Closing tag\n</h1>", "originalText": "Closing tag\n</h1>",
+      "fontSize": 24, "fontFamily": 1, "strokeColor": "#3b2862", "textAlign": "center",
+      "verticalAlign": "middle", "containerId": "closing-tag", "autoResize": true
+    },
+    {
+      "type": "text", "id": "footer", "x": 63, "y": 361, "width": 852, "height": 28,
+      "text": "Tags are the markers in angle brackets. The element includes both tags and the content between them.",
+      "originalText": "Tags are the markers in angle brackets. The element includes both tags and the content between them.",
+      "fontSize": 18, "fontFamily": 1, "strokeColor": "#343a40", "autoResize": true
+    }
+  ],
+  "appState": { "viewBackgroundColor": "#fffdf7" },
+  "files": {}
+}

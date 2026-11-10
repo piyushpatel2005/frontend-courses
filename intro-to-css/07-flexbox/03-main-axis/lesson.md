@@ -13,8 +13,6 @@ hints:
   - "Run Preview after each change; restore the value before the exercise."
 ---
 
-# Spread the trail tools across the row
-
 The dashed `.tool-row` is wider than its three cards. The room left after the cards and any gaps take their space is **free space**. `justify-content` decides where to put that remaining room along the main axis.
 
 Here `display: flex` uses the default `row` direction. `justify-content: space-between` puts free space between the cards. The first and last cards sit against the inside edges of the row's padding, not against its outer border.

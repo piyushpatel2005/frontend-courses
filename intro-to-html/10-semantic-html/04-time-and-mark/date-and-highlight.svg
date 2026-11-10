@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 272" role="img" aria-labelledby="title desc">
+<title id="title">Readable date, machine date, and contextual highlight</title><desc id="desc">The left card shows April 17, 2027 inside time, with datetime set to 2027-04-17. The right card shows a search sentence with seeds highlighted by mark.</desc>
+<rect width="760" height="272" rx="20" fill="#f4f7fb"/>
+<text x="28" y="42" font-family="sans-serif" font-size="22" font-weight="700" fill="#17324d">Two meanings in ordinary text</text>
+<rect x="28" y="65" width="341" height="174" rx="12" fill="white" stroke="#24628c" stroke-width="2"/>
+<text x="48" y="99" font-family="sans-serif" font-size="18" font-weight="700" fill="#17324d">Event date</text>
+<text x="48" y="137" font-family="sans-serif" font-size="17" fill="#17324d">People read: April 17, 2027</text>
+<rect x="48" y="157" width="300" height="53" rx="8" fill="#e4f0fa"/>
+<text x="60" y="190" font-family="monospace" font-size="16" fill="#17324d">datetime="2027-04-17"</text>
+<rect x="391" y="65" width="341" height="174" rx="12" fill="white" stroke="#8a6d13" stroke-width="2"/>
+<text x="411" y="99" font-family="sans-serif" font-size="18" font-weight="700" fill="#17324d">Search match</text>
+<rect x="492" y="116" width="52" height="28" rx="5" fill="#ffe792"/>
+<text x="411" y="137" font-family="sans-serif" font-size="17" fill="#17324d">Save your seeds for spring.</text>
+<text x="411" y="185" font-family="monospace" font-size="16" fill="#17324d">&lt;mark&gt;seeds&lt;/mark&gt;</text>
+<text x="411" y="212" font-family="sans-serif" font-size="14" fill="#425c72">Relevant here, not necessarily important.</text>
+</svg>

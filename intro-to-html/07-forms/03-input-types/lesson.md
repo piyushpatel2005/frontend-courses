@@ -13,8 +13,6 @@ seo_keywords:
 lesson_type: coding
 ---
 
-# Input Types: Build a Mission Profile
-
 The crew’s mission profile needs text, a contact email, an energy level, a date, and a beacon color. The completed `index.html` supplies labels and inputs for each. Run it to compare the browser controls, then inspect the `type` attributes that request them.
 
 ## Read the code

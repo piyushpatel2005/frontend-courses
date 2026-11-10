@@ -19,8 +19,6 @@ hints:
   - "For decorative images that add no meaning, use alt=\"\" (empty string) so screen readers skip them."
 ---
 
-# Images
-
 Links connect pages; images bring visual information into them. Add a photo strip to the supplied walking-club page in `index.html`. You will write image sources and text alternatives, reserve space for one image, and turn one image into a link.
 
 The `<img>` element is void: it has no content or closing tag. Its trailing `/` is optional in HTML.

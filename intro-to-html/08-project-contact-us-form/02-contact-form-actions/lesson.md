@@ -17,8 +17,6 @@ hints:
   - "Ensure submit control is inside the form."
 ---
 
-# Project 2: Contact Us Form (User Actions)
-
 The Riverlight form can now collect a message. Keep its supplied Name, Email, Topic, Message, and submit controls; they are earlier work, not new task credit.
 
 In `index.html`, add interests, an optional phone number, one preferred reply method, and consent before the existing button. These choices help a future receiving service route the request; HTML alone will not process it.
@@ -53,5 +51,6 @@ Run the form. You should be able to select several interests but only one reply 
 6. Give both interest checkboxes visible labels, wrapping each input or using matching `for` and `id`.
 7. Give both reply-method radios visible labels in the same way.
 8. Give the consent checkbox a visible label explaining agreement to be contacted.
+9. In the existing Topic select, group Room booking and Volunteering under `<optgroup label="Community">`, and Accessibility request under `<optgroup label="Support">`; keep the connected Topic label and all three original option values.
 
-Submit to check the new choices. This completes the contact page’s HTML; it does not configure delivery or store consent. In the next module, you will use the hall setting again to study media rather than keep extending this form.
+Submit to check the new choices. The option groups organize the existing topic choices without replacing the label for the whole menu. This completes the contact page’s HTML; it does not configure delivery or store consent. In the next module, you will use the hall setting again to study media rather than keep extending this form.

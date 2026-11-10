@@ -21,8 +21,6 @@ hints:
   - "Use class attributes to target divs and spans with CSS: <div class=\"card\">"
 ---
 
-# Div and Span
-
 A community seed swap needs two item cards. The supplied `index.html` has an empty body: group each item’s information in a block, then mark one useful word inside its description. These containers give CSS places to work later; they do not draw card borders or highlights on their own.
 
 ## The two container jobs

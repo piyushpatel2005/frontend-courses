@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+  /* Step 1: choose the page background. */
+}
+.poster {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fff;
+}
+h1 {
+  margin-top: 0;
+  /* Step 2: choose the heading color. */
+}
+.details {
+  /* Step 3: give the details more line spacing. */
+}
